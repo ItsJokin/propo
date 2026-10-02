@@ -255,6 +255,8 @@ export function Faq() {
   );
 }
 
+const MARQUEE_SECTORS = ['Construcción', 'Catering y restauración', 'Limpieza', 'Ingeniería', 'Tecnología e IT', 'Consultoría', 'Mantenimiento de edificios', 'Seguridad y vigilancia', 'Transporte', 'Jardinería y zonas verdes', 'Formación', 'Sanidad y material médico', 'Servicios sociales', 'Suministro de alimentos', 'Mobiliario y oficina', 'Vehículos y maquinaria', 'Energía', 'Residuos y medio ambiente', 'Publicidad y comunicación', 'Eventos', 'Arquitectura', 'Telecomunicaciones', 'Servicios jurídicos', 'Laboratorio e investigación', 'Vestuario y textil', 'Facility services'];
+
 export function Landing() {
   const start = (cta: string) => { track('cta_click', { cta }); navigate('/signup'); };
   return (
@@ -285,12 +287,16 @@ export function Landing() {
       </section>
 
       <section className="section-tight">
-        <div className="mk-wrap row-wrap" style={{ justifyContent: 'space-between', gap: 20 }}>
-          <p className="muted" style={{ fontSize: 15 }}>Pensado para equipos que preparan propuestas.</p>
-          <div className="sectors">
-            {['Construcción', 'Catering', 'Ingeniería', 'Tecnología', 'Consultoría', 'Facility services'].map((s, i) => (
-              <React.Fragment key={s}>{i > 0 && <span className="sep" />}<span>{s}</span></React.Fragment>
-            ))}
+        <div className="mk-wrap sector-band">
+          <p className="muted sector-band-label">Pensado para equipos que preparan propuestas.</p>
+          <div className="marquee" aria-label={`Sectores: ${MARQUEE_SECTORS.join(', ')}`}>
+            <div className="marquee-track" aria-hidden="true">
+              {[0, 1].map((k) => (
+                <div className="marquee-group" key={k}>
+                  {MARQUEE_SECTORS.map((s) => <span className="marquee-item" key={s}><span className="marquee-dot" />{s}</span>)}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
