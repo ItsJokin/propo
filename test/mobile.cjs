@@ -1,0 +1,27 @@
+const { chromium } = require('/home/claude/.npm-global/lib/node_modules/playwright');
+(async () => {
+  const b = await chromium.launch();
+  const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
+  const p = await ctx.newPage();
+  const errs = [];
+  p.on('pageerror', e => errs.push(e.message));
+  const base = 'http://127.0.0.1:8765/dist/index.html';
+  const shot = async (n) => { await p.waitForTimeout(600); await p.screenshot({ path: `test/shots/m-${n}.png`, fullPage: false }); const w = await p.evaluate(() => [document.documentElement.scrollWidth, innerWidth]); if (w[0] > w[1]) console.log('OVERFLOW', n, w); };
+  await p.goto(base); await shot('landing');
+  await p.evaluate(() => window.scrollTo(0, 900)); await shot('landing2');
+  await p.evaluate(() => window.scrollTo(0, 2200)); await shot('landing3');
+  await p.goto(base + '#/pricing'); await shot('pricing');
+  await p.goto(base + '#/signup'); await shot('signup');
+  await p.click('text=Explorar la demo >> nth=0');
+  await shot('dash');
+  await p.goto(base + '#/app/tenders'); await shot('tenders');
+  await p.click('.t-row >> nth=0'); await shot('tender-drawer');
+  await p.goto(base + '#/app/projects/p_sample'); await shot('proj');
+  await p.goto(base + '#/app/projects/p_sample/requirements'); await shot('reqs');
+  await p.goto(base + '#/app/projects/p_sample/proposal'); await shot('proposal');
+  await p.goto(base + '#/app/projects/p_sample/compliance'); await shot('compliance');
+  await p.goto(base + '#/app/settings/billing'); await shot('billing');
+  await p.goto(base + '#/app/admin'); await shot('admin');
+  console.log(errs.join('\n') || 'no errors');
+  await b.close();
+})();

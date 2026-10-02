@@ -1,0 +1,32 @@
+const { chromium } = require('/home/claude/.npm-global/lib/node_modules/playwright');
+(async () => {
+  const b = await chromium.launch(); const p = await (await b.newContext({ viewport: { width: 1440, height: 900 } })).newPage();
+  const errs = []; p.on('pageerror', e => errs.push(e.message)); p.on('console', m => { if (m.type() === 'error' && !/ERR_TUNNEL|fonts\.g/.test(m.text())) errs.push(m.text()); });
+  const base = 'http://127.0.0.1:8765/dist/index.html';
+  const shot = async (n) => { await p.waitForTimeout(500); await p.screenshot({ path: `test/shots/x-${n}.png` }); };
+  await p.goto(base + '#/signup'); await p.click('text=Explorar la demo >> nth=0'); await p.waitForTimeout(500);
+  await p.goto(base + '#/app/tenders'); await p.waitForTimeout(500);
+  console.log('rows', await p.locator('.t-row').count());
+  await p.fill('.t-search input', 'hot dog'); await p.press('.t-search input', 'Enter'); await p.waitForTimeout(300);
+  await p.click('.t-row >> nth=0'); await shot('01-summary');
+  console.log('source:', await p.textContent('.brief-source strong'));
+  console.log('asks:', await p.locator('.brief-list li').count());
+  await p.click('.drawer .tab:has-text("Documentos")'); await shot('02-docs');
+  console.log('doc links:', await p.locator('.drawer .doc-link').count(), await p.getAttribute('.drawer .doc-link >> nth=0', 'href'));
+  await p.click('.drawer .tab:has-text("Compatibilidad")'); await shot('03-fit');
+  await p.click('.drawer-foot .btn-primary');
+  await p.waitForSelector('text=Análisis completado', { timeout: 120000 }); await shot('05-done');
+  const st = await p.evaluate(() => JSON.parse(localStorage.getItem('propo:state:v1')));
+  const pr = st.projects[0];
+  console.log('project', pr.name, '| tender', pr.tenderId, '| reqs', pr.requirements.length, '| crit', pr.criteria.length, '| deadline', pr.analysis.deadline, '| budget', pr.analysis.budget, '| authority', pr.analysis.authority);
+  console.log('docs', pr.docs.map(d => d.name + ' ' + d.pages + 'p').join(', '));
+  console.log(pr.criteria.map(c => ` * ${c.points} ${c.name}`).join('\n'));
+  await p.goto(base + '#/app/projects/' + pr.id + '/documents'); await p.waitForTimeout(500); await shot('06-project-docs');
+  console.log('official links in project:', await p.locator('.doc-link').count());
+  // anuncio-only tender
+  await p.goto(base + '#/app/tenders'); await p.waitForTimeout(400);
+  await p.fill('.t-search input', 'Ibaiondo'); await p.press('.t-search input', 'Enter'); await p.waitForTimeout(300);
+  await p.click('.t-row >> nth=0'); await shot('07-anuncio');
+  console.log('anuncio source:', await p.textContent('.brief-source strong'), '|', (await p.textContent('.drawer-body p')).slice(0, 200));
+  console.log(errs.join('\n') || 'no errors'); await b.close();
+})();

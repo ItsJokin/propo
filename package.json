@@ -1,0 +1,28 @@
+{
+  "name": "propo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PROPO — encuentra licitaciones públicas y prepara la propuesta. Web + robot de datos abiertos.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --dev && npx serve dist",
+    "test:e2e": "node test/complete.cjs && node test/smoke.cjs && node test/discovery.cjs && node test/assistant.cjs && node test/infofix.cjs && node test/flow.cjs && node test/flow.cjs --ai && node test/edge.cjs && node test/mobile.cjs",
+    "data": "node scripts/update-data.mjs",
+    "test:data": "node test/data.test.mjs"
+  },
+  "dependencies": {
+    "esbuild": "0.27.7",
+    "pdf-lib": "1.17.1",
+    "pdfjs-dist": "5.7.284",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "react-icons": "5.6.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0",
+    "typescript": "^5.9.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0"
+  }
+}

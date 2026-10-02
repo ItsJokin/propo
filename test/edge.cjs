@@ -1,0 +1,32 @@
+const { chromium } = require('/home/claude/.npm-global/lib/node_modules/playwright');
+const { PDFDocument, rgb } = require('/home/claude/.npm-global/lib/node_modules/pdf-lib');
+const fs = require('fs');
+(async () => {
+  const d = await PDFDocument.create(); for (let i = 0; i < 3; i++) d.addPage().drawRectangle({ x: 50, y: 50, width: 200, height: 300, color: rgb(.5,.5,.5) });
+  fs.writeFileSync('test/scanned.pdf', await d.save()); fs.writeFileSync('test/old.doc', 'xx');
+  const b = await chromium.launch(); const p = await (await b.newContext({ viewport: { width: 1280, height: 860 } })).newPage();
+  const errs = []; p.on('pageerror', e => errs.push(e.message));
+  const base = 'http://127.0.0.1:8765/dist/index.html';
+  await p.goto(base + '#/signup');
+  await p.fill('#su-company', 'Edge SL'); await p.fill('#su-email', 'e@test.com'); await p.fill('#su-pass', 'password123'); await p.selectOption('#su-ind', 'Construcción');
+  await p.click('button:has-text("Crear cuenta")'); await p.click('text=Saltar por ahora');
+  await p.goto(base + '#/app/projects?new=1'); await p.waitForSelector('.modal >> text=Nueva propuesta');
+  await p.fill('#np-name', 'Pliego escaneado');
+  await p.setInputFiles('.modal input[type=file]', ['test/scanned.pdf', 'test/old.doc']);
+  await p.waitForTimeout(300); await p.screenshot({ path: 'test/shots/e-01-files.png' });
+  await p.click('button:has-text("Analizar documentos")');
+  await p.waitForSelector('text=no ha podido leer', { timeout: 20000 }); await p.screenshot({ path: 'test/shots/e-02-unreadable.png' });
+  await p.click('text=Volver a subir los documentos'); await p.waitForTimeout(500);
+  const t = await p.textContent('.modal'); console.log('after restart modal:', t.slice(0, 40));
+  // use trial: create sample
+  await p.fill('#np-name', 'Real'); await p.click('text=Usar un pliego de ejemplo'); await p.waitForTimeout(800);
+  await p.click('button:has-text("Analizar documentos")'); await p.waitForSelector('text=Análisis completado', { timeout: 30000 });
+  await p.goto(base + '#/app/projects?new=1'); await p.waitForTimeout(600);
+  await p.screenshot({ path: 'test/shots/e-03-paywall.png' });
+  console.log('paywall:', await p.isVisible('text=Ya has usado tu propuesta de prueba'));
+  await p.click('text=Continuar al pago seguro >> nth=0'); await p.waitForTimeout(300);
+  console.log('notice:', await p.isVisible('text=Los pagos no están conectados'));
+  await p.click('text=Probar este plan sin pagar (solo demo) >> nth=0'); await p.waitForTimeout(300);
+  await p.goto(base + '#/app/settings/billing'); await p.waitForTimeout(500); await p.screenshot({ path: 'test/shots/e-04-billing.png' });
+  console.log(errs.join('\n') || 'no errors'); await b.close();
+})();

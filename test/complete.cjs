@@ -1,0 +1,31 @@
+const { chromium } = require('/home/claude/.npm-global/lib/node_modules/playwright');
+const { execSync } = require('child_process');
+(async () => {
+  const b = await chromium.launch(); const p = await (await b.newContext({ viewport: { width: 1440, height: 900 }, acceptDownloads: true })).newPage();
+  const errs = []; p.on('pageerror', e => errs.push(e.message));
+  const base = 'http://127.0.0.1:8765/dist/index.html';
+  const shot = async (n) => { await p.waitForTimeout(500); await p.screenshot({ path: `test/shots/c-${n}.png` }); };
+  await p.goto(base + '#/'); await p.click('text=Ver una propuesta terminada'); await p.waitForURL(/p_sample/, { timeout: 15000 }); await p.waitForTimeout(600);
+  await shot('01-overview');
+  const st = await p.evaluate(() => JSON.parse(localStorage.getItem('propo:state:v1')));
+  const pr = st.projects.find(x => x.id === 'p_sample');
+  const bad = pr.requirements.filter(r => r.status !== 'fulfilled').length;
+  console.log('demo:', st.demo, '| reqs not fulfilled:', bad, '| sections approved:', pr.sections.filter(s => s.status === 'approved').length + '/' + pr.sections.length,
+    '| info tags:', pr.sections.filter(s => /Información requerida/.test(s.content)).length, '| vault with file:', st.vault.filter(v => v.hasFile).length + '/' + st.vault.length);
+  console.log('readiness ring:', (await p.textContent('.proj-title-row [title=Preparación]')).trim(), '| guide:', await p.locator('.guide').count());
+  await p.click('role=tab[name=/PROPO te pregunta/]'); await p.waitForTimeout(500); await shot('02-assistant');
+  console.log('chat msgs:', await p.locator('.asst-msg').count(), '| input shown:', await p.locator('.asst-input').count());
+  await p.click('role=tab[name=/Propuesta/]'); await p.waitForTimeout(500); console.log('proposal info buttons:', await p.locator('.info-req-btn').count()); await shot('03-proposal');
+  await p.click('role=tab[name=/Cumplimiento/]'); await p.waitForTimeout(500); await shot('04-compliance');
+  await p.click('button:has-text("Marcar como lista")'); await p.waitForTimeout(300);
+  await p.locator('.modal button.btn-primary').last().click(); await p.waitForTimeout(500);
+  console.log('compliance head:', (await p.textContent('h2')).trim());
+  await p.click('role=tab[name=/Paquete/]'); await p.waitForTimeout(500); await shot('05-package');
+  console.log('package statuses:', (await p.locator('.file-row .badge').allInnerTexts()).join(','));
+  const [dl] = await Promise.all([p.waitForEvent('download', { timeout: 30000 }).catch(() => null), p.click('text=Descargar paquete de presentación')]);
+  if (dl) { await dl.saveAs('test/package-complete.zip'); console.log(execSync('unzip -l test/package-complete.zip | tail -25').toString()); } else console.log('no download');
+  await p.click('.demo-box button'); await p.waitForTimeout(800);
+  const st2 = await p.evaluate(() => JSON.parse(localStorage.getItem('propo:state:v1')));
+  console.log('switched back to:', st2.demo, '| tags:', st2.projects.find(x => x.id === 'p_sample').sections.filter(s => /Información requerida/.test(s.content)).length);
+  console.log(errs.join('\n') || 'no errors'); await b.close();
+})();

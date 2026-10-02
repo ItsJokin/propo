@@ -1,0 +1,113 @@
+# Robot de PROPO: mantiene la web publicada y sus datos al día sin depender de ningún ordenador.
+# - Cada 10 minutos lee lo nuevo de la Plataforma de Contratación del Sector Público y de TED.
+# - Si hay cambios (o se ha subido código nuevo), vuelve a publicar la web en GitHub Pages.
+# El estado entre ejecuciones se guarda en la caché de Actions; no ensucia el historial del repositorio.
+name: PROPO · datos y web
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      full:
+        description: 'Reconstruir los datos desde cero (ignora la caché)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # solo para el latido mensual (rama heartbeat)
+  pages: write
+  id-token: write
+
+concurrency:
+  group: propo-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # La web solo se recompila cuando cambia el código.
+      - name: Web compilada (caché)
+        id: site
+        uses: actions/cache@v4
+        with:
+          path: dist
+          key: site-${{ hashFiles('src/**', 'shared/**', 'build.mjs', 'package.json') }}
+      - name: Compilar la web
+        if: steps.site.outputs.cache-hit != 'true'
+        run: |
+          npm install --omit=dev --no-audit --no-fund
+          npm run build
+
+      # Datos de la ejecución anterior.
+      - name: Recuperar datos
+        if: ${{ !inputs.full }}
+        uses: actions/cache/restore@v4
+        with:
+          path: data
+          key: data-${{ github.run_id }}
+          restore-keys: data-
+
+      - name: Si no hay caché, partir de lo publicado
+        if: ${{ !inputs.full }}
+        env:
+          PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+        run: node scripts/seed-from-site.mjs
+
+      - name: Actualizar datos
+        id: data
+        run: node --max-old-space-size=5000 scripts/update-data.mjs
+        env:
+          DATA_DIR: data
+
+      - name: Guardar datos
+        if: steps.data.outputs.changed == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: data
+          key: data-${{ github.run_id }}
+
+      - name: Montar el sitio
+        if: steps.data.outputs.changed == 'true' || github.event_name != 'schedule'
+        run: |
+          mkdir -p _site
+          cp dist/index.html _site/index.html
+          cp dist/index.html _site/404.html
+          rsync -a --exclude '_state.json' data/ _site/data/
+          touch _site/.nojekyll
+          du -sh _site
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.data.outputs.changed == 'true' || github.event_name != 'schedule'
+        with:
+          path: _site
+          retention-days: 1
+      - id: deploy
+        if: steps.data.outputs.changed == 'true' || github.event_name != 'schedule'
+        uses: actions/deploy-pages@v4
+
+      # GitHub desactiva las tareas programadas tras 60 días sin actividad en el repositorio.
+      # Un commit mensual en la rama «heartbeat» lo evita.
+      - name: Latido
+        if: github.event_name == 'schedule'
+        run: |
+          stamp=$(date -u +%Y-%m)
+          last=$(git ls-remote --heads origin heartbeat | wc -l)
+          if [ "$last" = "1" ]; then git fetch -q origin heartbeat && prev=$(git show FETCH_HEAD:heartbeat.txt 2>/dev/null || true); else prev=""; fi
+          if [ "$prev" != "$stamp" ]; then
+            git config user.name "propo-bot"; git config user.email "propo-bot@users.noreply.github.com"
+            git checkout -q --orphan heartbeat-tmp && git rm -rfq --cached . && echo "$stamp" > heartbeat.txt
+            git add -f heartbeat.txt && git commit -qm "latido $stamp" && git push -qf origin heartbeat-tmp:heartbeat
+          fi

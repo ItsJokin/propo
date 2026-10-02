@@ -1,0 +1,41 @@
+# Carga inicial del histórico: se lanza a mano una vez (pestaña Actions → «PROPO · histórico» → Run workflow).
+# Descarga los ficheros mensuales de datos abiertos de la Plataforma y los meses de TED que se pidan.
+name: PROPO · histórico
+
+on:
+  workflow_dispatch:
+    inputs:
+      months:
+        description: 'Meses de histórico (1–24)'
+        default: '12'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: propo-data
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/cache/restore@v4
+        with:
+          path: data
+          key: data-${{ github.run_id }}
+          restore-keys: data-
+      - name: Cargar histórico
+        run: node --max-old-space-size=5500 scripts/backfill.mjs
+        env:
+          DATA_DIR: data
+          MONTHS: ${{ inputs.months }}
+      - uses: actions/cache/save@v4
+        with:
+          path: data
+          key: data-${{ github.run_id }}
