@@ -1,6 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
+import { startLive } from './lib/data/live';
+
+startLive();
 
 
 class Boundary extends React.Component<{ children: React.ReactNode }, { err: Error | null }> {

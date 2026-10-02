@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { LuSearch, LuLandmark, LuMapPin, LuEuro, LuCalendar, LuBookmark, LuExternalLink, LuArrowRight, LuCheck, LuCircleAlert, LuX, LuBell, LuInfo, LuTrash2, LuSlidersHorizontal, LuFileCheck, LuFileText, LuCircleCheck, LuTriangleAlert, LuLoaderCircle, LuEye } from 'react-icons/lu';
 import { useStore, update, navigate, toast, track, getState } from '../lib/store';
-import { TED_NOTICES, TED_SNAPSHOT_DATE, tedUrl, type TedNotice } from '../lib/discovery/tedSnapshot';
+import { type TedNotice } from '../lib/discovery/tedSnapshot';
+import { useLive, dataAgeMinutes, type LiveState } from '../lib/data/live';
 import { matchTender, SECTORS, REGIONS, regionLabel, sectorLabel, type Match } from '../lib/discovery/match';
 import { Drawer, Empty } from '../components/ui';
 import { tenderView, fichaFile } from '../lib/discovery/brief';
@@ -9,17 +10,22 @@ import { TENDER_BRIEFS } from '../lib/discovery/tenderDocs';
 import { NewProposal } from './Projects';
 import { UpgradeModal } from './common';
 import { canCreateProposal, createProject, type LimitReason } from '../lib/actions';
-import { hasPliegos, loadPliegoFiles } from '../lib/discovery/loadPliegos';
+import { hasPliegos, loadPliegoFiles, pliegoUrl } from '../lib/discovery/loadPliegos';
 import { PLIEGO_FILES } from '../lib/discovery/pliegoFiles';
-import { daysUntil, fmtDate, uid, nowIso } from '../lib/util';
+import { daysUntil, fmtDate, uid, nowIso, normalize, timeAgo } from '../lib/util';
 import { eur, PLANS } from '../lib/plans';
 
 export function scoreTone(s: number) { return s >= 70 ? '' : s >= 45 ? 'mid' : 'low'; }
 
 export function useMatches() {
   const company = useStore((s) => s.company);
-  return useMemo(() => TED_NOTICES.map((t) => ({ t, m: matchTender(t, company) })), [company]);
+  const { tenders } = useLive();
+  return useMemo(() => tenders.map((t) => ({ t, m: matchTender(t, company) })), [company, tenders]);
 }
+const PAGE = 40;
+const hay = new WeakMap<TedNotice, string>();
+const haystack = (t: TedNotice) => { let h = hay.get(t); if (!h) { h = normalize(`${t.title} ${t.buyer} ${t.desc} ${t.kind} ${t.city} ${t.live?.ref ?? ''} ${t.cpv.join(' ')}`); hay.set(t, h); } return h; };
+const SRC_LABEL = { ted: 'TED', placsp: 'Plataforma del Estado', agregadas: 'Plataforma autonómica' } as const;
 
 type Row = { t: TedNotice; m: Match };
 
@@ -32,27 +38,34 @@ export function Tenders() {
   const [region, setRegion] = useState('');
   const [size, setSize] = useState('');
   const [tab, setTab] = useState<'all' | 'high' | 'saved'>('all');
-  const [sort, setSort] = useState<'score' | 'deadline' | 'value'>('score');
+  const [sort, setSort] = useState<'score' | 'deadline' | 'value' | 'new'>('score');
   const [open, setOpen] = useState<Row | null>(null);
   const [prefill, setPrefill] = useState<TedNotice | null>(null);
   const [paywall, setPaywall] = useState<LimitReason | null>(null);
   const [showClosed, setShowClosed] = useState(false);
+  const [shown, setShown] = useState(PAGE);
+  const [source, setSource] = useState('');
+  const live = useLive();
+  useEffect(() => { setShown(PAGE); }, [query, sector, region, size, tab, sort, source]);
 
-  const filtered = all.filter(({ t }) => {
-    const d = daysUntil(t.deadline) ?? -1;
+  const words = normalize(query).split(' ').filter(Boolean);
+  const filtered = useMemo(() => all.filter(({ t }) => {
+    const d = t.deadline ? daysUntil(t.deadline) ?? -1 : 0;
     if (!showClosed && d < 0) return false;
-    if (query && !(t.title + ' ' + t.buyer + ' ' + t.desc + ' ' + t.kind + ' ' + t.city).toLowerCase().includes(query.toLowerCase())) return false;
+    if (words.length) { const h = haystack(t); if (!words.every((w) => h.includes(w))) return false; }
+    if (source && (t.live?.src ?? 'ted') !== source) return false;
     if (sector && t.sector !== sector && !(SECTORS.find((x) => x.id === sector)?.cpv.some((p) => t.cpv.some((c) => c.startsWith(p))))) return false;
     if (region && !t.nuts.startsWith(region)) return false;
-    if (size === 's' && !(t.value && t.value < 500000)) return false;
+    if (size === 's' && !(t.value && t.value >= 100000 && t.value < 500000)) return false;
     if (size === 'm' && !(t.value && t.value >= 500000 && t.value <= 2000000)) return false;
     if (size === 'l' && !(t.value && t.value > 2000000)) return false;
+    if (size === 'xs' && !(t.value && t.value < 100000)) return false;
     return true;
-  });
+  }), [all, query, sector, region, size, source, showClosed]);
   const counts = { all: filtered.length, high: filtered.filter((r) => r.m.score >= 70).length, saved: filtered.filter((r) => s.savedTenders.includes(r.t.id)).length };
-  const list = filtered
+  const list = useMemo(() => filtered
     .filter((r) => tab === 'all' || (tab === 'high' ? r.m.score >= 70 : s.savedTenders.includes(r.t.id)))
-    .sort((a, b) => sort === 'score' ? b.m.score - a.m.score : sort === 'deadline' ? a.t.deadline.localeCompare(b.t.deadline) : (b.t.value ?? 0) - (a.t.value ?? 0));
+    .sort((a, b) => sort === 'score' ? b.m.score - a.m.score || (a.t.deadline || '9').localeCompare(b.t.deadline || '9') : sort === 'deadline' ? (a.t.deadline || '9').localeCompare(b.t.deadline || '9') : sort === 'new' ? b.t.pub.localeCompare(a.t.pub) : (b.t.value ?? 0) - (a.t.value ?? 0)), [filtered, tab, sort, s.savedTenders]);
 
   const toggleSave = (id: string) => {
     const saved = getState().savedTenders.includes(id);
@@ -71,7 +84,7 @@ export function Tenders() {
     const files = [fichaFile(t), ...pdfs];   // la ficha aporta los datos oficiales ya verificados (plazos, criterios)
     setBusy(null);
     setOpen(null);
-    const r = createProject({ name: shortTitle(t.title), organization: t.buyer, type: 'public_tender', tenderId: t.id }, files);
+    const r = createProject({ name: shortTitle(t.title), organization: t.buyer, type: 'public_tender', tenderId: t.id, tender: t }, files);
     if (!r.ok) setPaywall(r.reason);
     else toast(fromFicha ? 'Proyecto creado con la ficha oficial de la licitación' : `Proyecto creado con ${pdfs.length} pliego${pdfs.length === 1 ? '' : 's'} oficial${pdfs.length === 1 ? '' : 'es'}`, 'ok');
   };
@@ -80,7 +93,7 @@ export function Tenders() {
     if (s.alerts.length >= plan.alerts) { toast(`Tu plan incluye ${plan.alerts} alerta${plan.alerts === 1 ? '' : 's'}. Mejora tu plan para crear más.`, 'warn'); return; }
     const name = [sector && sectorLabel(sector), region && REGIONS.find((r) => r.id === region)?.label, query && `«${query}»`].filter(Boolean).join(' · ') || 'Todas las licitaciones compatibles';
     update((st) => { st.alerts.unshift({ id: uid('al'), name, query, sector, region, createdAt: nowIso() }); });
-    toast('Alerta creada. Te avisaremos de las nuevas licitaciones que encajen.', 'ok');
+    toast('Alerta creada. PROPO la comprueba cada vez que abres la página.', 'ok');
     track('alert_created');
   };
   const noProfile = !s.company.cpvs.length;
@@ -92,10 +105,7 @@ export function Tenders() {
         <button className="btn btn-secondary" onClick={() => navigate('/app/company/search')}><LuSlidersHorizontal /> Perfil de búsqueda</button>
       </div>
 
-      <div className="callout neutral small" style={{ marginBottom: 20 }}>
-        <LuInfo />
-        <div>Datos reales de <strong>TED</strong>, el Diario Oficial de la UE: {TED_NOTICES.length} licitaciones de organismos españoles capturadas el {fmtDate(TED_SNAPSHOT_DATE)}. En producción la lista se actualiza cada día desde TED y la Plataforma de Contratación del Sector Público.</div>
-      </div>
+      <DataStatus live={live} />
       {noProfile && (
         <div className="callout" style={{ marginBottom: 20 }}>
           <LuSlidersHorizontal />
@@ -113,8 +123,9 @@ export function Tenders() {
       <div className="t-filters">
         <select className="select" aria-label="Sector" value={sector} onChange={(e) => setSector(e.target.value)}><option value="">Todos los sectores</option>{SECTORS.map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}</select>
         <select className="select" aria-label="Región" value={region} onChange={(e) => setRegion(e.target.value)}><option value="">Toda España</option>{REGIONS.map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}</select>
-        <select className="select" aria-label="Importe" value={size} onChange={(e) => setSize(e.target.value)}><option value="">Cualquier importe</option><option value="s">Menos de 500.000 €</option><option value="m">500.000 € – 2 M€</option><option value="l">Más de 2 M€</option></select>
-        <select className="select" aria-label="Ordenar" value={sort} onChange={(e) => setSort(e.target.value as any)}><option value="score">Más compatibles</option><option value="deadline">Cierran antes</option><option value="value">Mayor importe</option></select>
+        <select className="select" aria-label="Importe" value={size} onChange={(e) => setSize(e.target.value)}><option value="">Cualquier importe</option><option value="xs">Menos de 100.000 €</option><option value="s">100.000 € – 500.000 €</option><option value="m">500.000 € – 2 M€</option><option value="l">Más de 2 M€</option></select>
+        <select className="select" aria-label="Ordenar" value={sort} onChange={(e) => setSort(e.target.value as any)}><option value="score">Más compatibles</option><option value="new">Más recientes</option><option value="deadline">Cierran antes</option><option value="value">Mayor importe</option></select>
+        {live.status === 'live' && <select className="select" aria-label="Fuente" value={source} onChange={(e) => setSource(e.target.value)}><option value="">Todas las fuentes</option><option value="placsp">Plataforma del Estado</option><option value="agregadas">Plataformas autonómicas</option><option value="ted">TED (UE)</option></select>}
         <span className="spacer" />
         <button type="button" className="btn btn-secondary" onClick={saveAlert}><LuBell /> Crear alerta con estos filtros</button>
       </div>
@@ -133,7 +144,8 @@ export function Tenders() {
         </div>
       ) : (
         <div className="t-list">
-          {list.map((r) => <TenderRow key={r.t.id} r={r} saved={s.savedTenders.includes(r.t.id)} onOpen={() => setOpen(r)} onSave={() => toggleSave(r.t.id)} />)}
+          {list.slice(0, shown).map((r) => <TenderRow key={r.t.id} r={r} saved={s.savedTenders.includes(r.t.id)} onOpen={() => setOpen(r)} onSave={() => toggleSave(r.t.id)} />)}
+          {list.length > shown && <button className="btn btn-secondary" style={{ alignSelf: 'center', marginTop: 8 }} onClick={() => setShown(shown + PAGE)}>Mostrar {Math.min(PAGE, list.length - shown)} más · {(list.length - shown).toLocaleString('es-ES')} restantes</button>}
         </div>
       )}
       <div className="row mt-16 small muted">
@@ -144,10 +156,12 @@ export function Tenders() {
         <div className="card mt-32">
           <div className="card-head"><LuBell style={{ width: 16, height: 16, color: 'var(--accent)' }} /><h3>Tus alertas</h3><span className="spacer" /><span className="xs subtle">{s.alerts.length} de {plan.alerts >= 999 ? 'ilimitadas' : plan.alerts}</span></div>
           {s.alerts.map((a) => {
-            const n = all.filter(({ t }) => (daysUntil(t.deadline) ?? -1) >= 0 && (!a.sector || t.sector === a.sector) && (!a.region || t.nuts.startsWith(a.region)) && (!a.query || (t.title + t.desc).toLowerCase().includes(a.query.toLowerCase()))).length;
+            const aw = normalize(a.query || '').split(' ').filter(Boolean);
+            const hits = all.filter(({ t }) => (!t.deadline || (daysUntil(t.deadline) ?? -1) >= 0) && (!a.sector || t.sector === a.sector) && (!a.region || t.nuts.startsWith(a.region)) && aw.every((w) => haystack(t).includes(w)));
+            const n = hits.length; const fresh = hits.filter(({ t }) => t.pub >= a.createdAt.slice(0, 10)).length;
             return (
               <div key={a.id} className="entity">
-                <div><div style={{ fontWeight: 600 }}>{a.name}</div><div className="small muted">{n} licitaciones abiertas coinciden · aviso diario por email y en PROPO</div></div>
+                <div><div style={{ fontWeight: 600 }}>{a.name}</div><div className="small muted">{n.toLocaleString('es-ES')} licitaciones abiertas coinciden{fresh ? ` · ${fresh} publicadas desde que creaste la alerta` : ''}</div></div>
                 <div className="row">
                   <button className="btn btn-ghost btn-sm" onClick={() => { setSector(a.sector); setRegion(a.region); setQ(a.query); setQuery(a.query); window.scrollTo?.(0, 0); document.getElementById('app-main')?.scrollTo(0, 0); }}>Ver</button>
                   <button className="btn btn-ghost btn-sm btn-icon" aria-label="Eliminar alerta" onClick={() => update((st) => { st.alerts = st.alerts.filter((x) => x.id !== a.id); })}><LuTrash2 /></button>
@@ -159,9 +173,33 @@ export function Tenders() {
       )}
 
       {open && <TenderDrawer r={open} busy={busy} saved={s.savedTenders.includes(open.t.id)} onClose={() => setOpen(null)} onSave={() => toggleSave(open.t.id)} onAnalyze={() => analyze(open.t)} />}
-      {prefill && <NewProposal prefill={{ name: shortTitle(prefill.title), organization: prefill.buyer, tenderId: prefill.id, url: tedUrl(prefill.id), notice: prefill }} onClose={() => setPrefill(null)} onLimit={(r) => { setPrefill(null); setPaywall(r); }} />}
+      {prefill && <NewProposal prefill={{ name: shortTitle(prefill.title), organization: prefill.buyer, tenderId: prefill.id, url: prefill.live?.url ?? `https://ted.europa.eu/es/notice/-/detail/${prefill.id}`, notice: prefill }} onClose={() => setPrefill(null)} onLimit={(r) => { setPrefill(null); setPaywall(r); }} />}
       {paywall && <UpgradeModal reason={paywall} onClose={() => setPaywall(null)} />}
     </>
+  );
+}
+
+/** Estado de los datos: en vivo (robot) o instantánea incluida. Dice siempre de cuándo son. */
+export function DataStatus({ live }: { live: LiveState }) {
+  const m = live.meta;
+  if (live.status === 'loading') return <div className="callout neutral small" style={{ marginBottom: 20 }}><LuLoaderCircle className="spin" /><div>Cargando las licitaciones…</div></div>;
+  if (live.status === 'bundled' || !m) return (
+    <div className="callout neutral small" style={{ marginBottom: 20 }}><LuInfo /><div>Instantánea de <strong>TED</strong> (Diario Oficial de la UE) del {fmtDate(m?.checkedAt)}: {live.tenders.length} licitaciones reales. Esta copia de PROPO se ha abierto sin su carpeta de datos, así que no se actualiza sola.</div></div>
+  );
+  const age = dataAgeMinutes(m) ?? 0;
+  const src = Object.entries(m.sources ?? {});
+  const fresh = age <= 45;
+  return (
+    <div className={`callout ${fresh ? 'neutral' : 'warn'} small data-status`} style={{ marginBottom: 20 }}>
+      <span className={`live-dot ${fresh ? 'on' : ''}`} />
+      <div className="grow">
+        <strong>{live.tenders.length.toLocaleString('es-ES')} licitaciones abiertas</strong> de fuentes oficiales · {fresh ? `comprobado ${timeAgo(m.checkedAt!)}` : `datos del ${fmtDate(m.checkedAt)}, ${new Date(m.checkedAt!).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}`}
+        <div className="xs muted" style={{ marginTop: 2 }}>
+          {src.map(([k, x]) => <span key={k} style={{ marginRight: 14 }} title={x.error || ''}>{x.ok ? '✓' : '✗'} {x.label}{x.ok ? '' : ' (sin respuesta en la última lectura)'}</span>)}
+          {!fresh && <span>Esta copia no recibe datos nuevos desde entonces.</span>}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -169,18 +207,19 @@ export function shortTitle(t: string) { return t.length > 80 ? t.slice(0, 78).tr
 
 export function TenderRow({ r, saved, onOpen, onSave, compact }: { r: Row; saved: boolean; onOpen: () => void; onSave?: () => void; compact?: boolean }) {
   const { t, m } = r;
-  const d = daysUntil(t.deadline) ?? -1;
+  const d = t.deadline ? daysUntil(t.deadline) ?? -1 : 0;
+  const pliegos = t.live?.docs.filter((x) => x[2] === 'pcap' || x[2] === 'ppt').length ?? 0;
   return (
     <div className={`t-row ${m.score >= 70 ? 'hi' : m.score >= 45 ? 'mid' : ''}`} onClick={onOpen} role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter') onOpen(); }}>
       <span className={`score-pill ${scoreTone(m.score)}`} title="Compatibilidad con tu empresa">{m.score}%</span>
       <div style={{ minWidth: 0 }}>
         <div className="t-row-title">{t.title}</div>
-        {!compact && <div className="t-row-kind">{t.kind}{PLIEGO_FILES[t.id] ? <span className="badge accent" style={{ height: 20, fontSize: 11, marginLeft: 8 }}><LuFileCheck style={{ width: 12, height: 12 }} /> Pliegos incluidos</span> : TENDER_BRIEFS[t.id] ? <span className="badge outline" style={{ height: 20, fontSize: 11, marginLeft: 8 }}>Pliegos resumidos</span> : null}</div>}
+        {!compact && <div className="t-row-kind">{t.kind}{PLIEGO_FILES[t.id] ? <span className="badge accent" style={{ height: 20, fontSize: 11, marginLeft: 8 }}><LuFileCheck style={{ width: 12, height: 12 }} /> Pliegos incluidos</span> : TENDER_BRIEFS[t.id] ? <span className="badge outline" style={{ height: 20, fontSize: 11, marginLeft: 8 }}>Pliegos resumidos</span> : pliegos ? <span className="badge outline" style={{ height: 20, fontSize: 11, marginLeft: 8 }}><LuFileText style={{ width: 12, height: 12 }} /> {pliegos === 1 ? 'Pliego enlazado' : 'Pliegos enlazados'}</span> : null}{t.live && <span className="xs subtle" style={{ marginLeft: 8 }}>{SRC_LABEL[t.live.src]}</span>}</div>}
         <div className="t-row-meta">
           <span><LuLandmark />{t.buyer}</span>
           <span><LuMapPin />{t.city !== 'No consta' ? t.city : regionLabel(t.nuts)}</span>
           {t.value ? <span><LuEuro />{eur(t.value)}</span> : <span className="subtle"><LuEuro />Importe no publicado</span>}
-          <span style={{ color: d >= 0 && d <= 7 ? 'var(--warn-ink)' : undefined }}><LuCalendar />{d < 0 ? 'Cerrada' : `${d} días · ${fmtDate(t.deadline, { day: 'numeric', month: 'short' })}`}</span>
+          <span style={{ color: d >= 0 && d <= 7 ? 'var(--warn-ink)' : undefined }}><LuCalendar />{!t.deadline ? 'Plazo en la ficha oficial' : d < 0 ? 'Cerrada' : `${d} días · ${fmtDate(t.deadline, { day: 'numeric', month: 'short' })}`}</span>
         </div>
       </div>
       <div className="row" onClick={(e) => e.stopPropagation()}>
@@ -193,7 +232,7 @@ export function TenderRow({ r, saved, onOpen, onSave, compact }: { r: Row; saved
 
 function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; saved: boolean; busy: string | null; onClose: () => void; onSave: () => void; onAnalyze: () => void }) {
   const { t, m } = r;
-  const d = daysUntil(t.deadline) ?? -1;
+  const d = t.deadline ? daysUntil(t.deadline) ?? -1 : 0;
   const v = useMemo(() => tenderView(t), [t]);
   const [tab, setTab] = useState<'summary' | 'docs' | 'fit'>('summary');
   const nature = t.nature === 'services' ? 'Servicios' : t.nature === 'supplies' ? 'Suministros' : 'Obras';
@@ -205,7 +244,7 @@ function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; 
         <button className="btn btn-primary grow" onClick={onAnalyze} disabled={d < 0 || !!busy}>{busy ? <><LuLoaderCircle className="spin" /> {busy}</> : <>{PLIEGO_FILES[t.id] ? 'Analizar los pliegos con PROPO' : 'Analizar licitación'} <LuArrowRight /></>}</button>
         <button className={`btn btn-secondary bookmark ${saved ? 'on' : ''}`} onClick={onSave}><LuBookmark /> {saved ? 'Guardada' : 'Guardar'}</button>
       </>}>
-      <div className="row-wrap"><span className={`score-pill ${scoreTone(m.score)}`}>{m.score}%</span>{d >= 0 ? <span className="badge ok">Abierta · {d} días</span> : <span className="badge">Cerrada</span>}<span className="badge outline">{nature}</span><span className="badge outline">{sectorLabel(t.sector)}</span></div>
+      <div className="row-wrap"><span className={`score-pill ${scoreTone(m.score)}`}>{m.score}%</span>{!t.deadline ? <span className="badge ok">Abierta</span> : d >= 0 ? <span className="badge ok">Abierta · {d} días</span> : <span className="badge">Cerrada</span>}<span className="badge outline">{nature}</span><span className="badge outline">{sectorLabel(t.sector)}</span></div>
       <h2 className="mt-12" style={{ fontSize: 21, lineHeight: 1.3, letterSpacing: '-.02em' }}>{t.title}</h2>
       <div className="row-wrap small muted mt-8"><span className="row" style={{ gap: 6 }}><LuLandmark style={{ width: 14, height: 14 }} />{t.buyer}</span><span className="row" style={{ gap: 6 }}><LuMapPin style={{ width: 14, height: 14 }} />{t.city !== 'No consta' ? `${t.city} · ` : ''}{regionLabel(t.nuts)}</span></div>
 
@@ -269,7 +308,7 @@ function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; 
               <p className="small muted mt-4">PROPO ya ha traído estos pliegos de la plataforma oficial. Al pulsar «Analizar» se leen automáticamente: no tienes que descargar ni subir nada.</p>
               <div className="doc-links mt-12">
                 {PLIEGO_FILES[t.id].map((f) => (
-                  <a key={f.path} className="doc-link" style={{ background: 'var(--surface)' }} href={f.path} target="_blank" rel="noopener noreferrer">
+                  <a key={f.path} className="doc-link" style={{ background: 'var(--surface)' }} href={pliegoUrl(f.path)} target="_blank" rel="noopener noreferrer">
                     <span className="file-ico pdf">{f.kind === 'pcap' ? 'PCAP' : f.kind === 'ppt' ? 'PPT' : 'DOC'}</span>
                     <span className="grow" style={{ minWidth: 0 }}><span className="doc-link-name">{f.name}</span><span className="xs subtle">{f.kb >= 1024 ? (f.kb / 1024).toFixed(1).replace('.', ',') + ' MB' : f.kb + ' KB'} · incluido en PROPO</span></span>
                     <LuEye className="muted" />
@@ -293,11 +332,11 @@ function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; 
               {v.otherDocs.length > 0 && <p className="xs subtle">También en la plataforma: {v.otherDocs.join(' · ')}.</p>}
             </>
           ) : PLIEGO_FILES[t.id] ? null : (
-            <div className="callout neutral small"><LuInfo /><div>PROPO aún no ha leído los pliegos de esta licitación. Están publicados en <strong>{v.officialHost ?? 'la plataforma del organismo'}</strong>; el resumen se basa en el anuncio oficial de TED.</div></div>
+            <div className="callout neutral small"><LuInfo /><div>PROPO aún no ha leído los pliegos de esta licitación. Están publicados en <strong>{v.officialHost ?? 'la plataforma del organismo'}</strong>; el resumen se basa en el anuncio oficial de {v.sourceName}.</div></div>
           )}
           <div className="row-wrap">
             {v.officialPage && <a className="btn btn-secondary" href={v.officialPage} target="_blank" rel="noopener noreferrer"><LuExternalLink /> Todos los documentos en {v.officialHost}</a>}
-            <a className="btn btn-ghost" href={v.tedUrl} target="_blank" rel="noopener noreferrer"><LuExternalLink /> Anuncio en TED</a>
+            <a className="btn btn-ghost" href={v.tedUrl} target="_blank" rel="noopener noreferrer"><LuExternalLink /> Ficha oficial en {v.sourceName === 'TED' ? 'TED' : v.officialHost ?? 'la plataforma'}</a>
           </div>
           {v.submitUrl && <p className="xs subtle">La oferta se presenta en la plataforma del organismo: {v.submitUrl.replace(/^https?:\/\//, '').split('/')[0]}. PROPO prepara la documentación; la presentación la hace siempre una persona de tu equipo.</p>}
         </div>
@@ -319,10 +358,10 @@ function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; 
           </div>
           <dl className="fact-list">
             <dt>Importe estimado</dt><dd>{t.value ? `${eur(t.value)} sin IVA` : 'No publicado en el anuncio'}</dd>
-            <dt>Fecha límite</dt><dd>{fmtDate(t.deadline)}{d >= 0 ? ` · quedan ${d} días` : ''}</dd>
+            <dt>Fecha límite</dt><dd>{t.deadline ? `${fmtDate(t.deadline)}${d >= 0 ? ` · quedan ${d} días` : ''}` : 'Consulta la ficha oficial'}</dd>
             <dt>Publicación</dt><dd>{fmtDate(t.pub)}</dd>
             <dt>CPV</dt><dd>{t.cpv.join(', ')}</dd>
-            <dt>Anuncio TED</dt><dd>{t.id}</dd>
+            <dt>{t.live && t.live.src !== 'ted' ? 'Expediente' : 'Anuncio TED'}</dt><dd>{t.live && t.live.src !== 'ted' ? t.live.ref || '—' : t.id}</dd>
           </dl>
         </div>
       )}

@@ -832,3 +832,5 @@ input, select, textarea { font: inherit; color: inherit; }
 .an-speed > div.on { color: var(--fg); background: var(--accent-soft); }
 .an-speed .mono { white-space: nowrap; }
 @media (max-width: 900px) { .analysis.has-side { grid-template-columns: 1fr; gap: 24px; } .an-side { position: static; margin-top: 0; } }
+.live-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--fg-3); flex: none; margin-top: 5px; }
+.live-dot.on { background: var(--ok); box-shadow: 0 0 0 4px color-mix(in oklab, var(--ok) 22%, transparent); }

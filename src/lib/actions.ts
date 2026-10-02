@@ -84,13 +84,13 @@ export function removeVaultDoc(id: string) {
 
 const pendingFiles = new Map<string, File[]>();
 
-export function createProject(meta: { name: string; organization: string; type: ProjectType; tenderId?: string }, files: File[]) {
+export function createProject(meta: { name: string; organization: string; type: ProjectType; tenderId?: string; tender?: Project['tender'] }, files: File[]) {
   const s = getState();
   const check = canCreateProposal(s);
   if (!check.ok) return check;
   const id = uid('p');
   const project: Project = {
-    id, name: meta.name.trim(), organization: meta.organization.trim(), type: meta.type, tenderId: meta.tenderId, createdAt: nowIso(), isSample: false,
+    id, name: meta.name.trim(), organization: meta.organization.trim(), type: meta.type, tenderId: meta.tenderId, tender: meta.tender, createdAt: nowIso(), isSample: false,
     stage: 'analyzing', docs: [], analysis: null, requirements: [], criteria: [], sections: [], manualChecks: { signature: false, financialApproved: false },
     markedReady: null, chat: [], activity: [{ at: nowIso(), text: `${files.length} archivo${files.length === 1 ? '' : 's'} subido${files.length === 1 ? '' : 's'}` }], aiActionsUsed: 0,
   };

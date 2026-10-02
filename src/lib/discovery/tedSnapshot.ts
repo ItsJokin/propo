@@ -13,6 +13,12 @@ export interface TedNotice {
   id: string; kind: string; title: string; buyer: string; city: string; cpv: string[];
   deadline: string; value: number | null; nuts: string; pub: string; desc: string;
   nature: 'services' | 'supplies' | 'works'; sector: string;
+  /** Solo en datos en vivo: lo que publica la fuente oficial además del anuncio. */
+  live?: LiveExtra;
+}
+export interface LiveExtra {
+  src: 'ted' | 'placsp' | 'agregadas'; url: string; docs: [string, string, string][]; crit: [string, string, number][];
+  ref: string; proc: string; dur: number; reqs: string[]; budget: number; lots: number;
 }
 
 type Row = [string, string, string, string, string, string[], string, number | null, string, string, string, TedNotice['nature'], string];

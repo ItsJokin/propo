@@ -158,7 +158,7 @@ export function Welcome() {
             <div className="field">
               <span className="label">¿Qué tipo de contratos buscas?</span>
               <div className="row-wrap">
-                {SECTORS.map((s) => <button type="button" key={s.id} className={`chip ${sectors.includes(s.id) ? 'on' : ''}`} onClick={() => toggle(sectors, setSectors, s.id)}>{sectors.includes(s.id) && <LuCheck />}{s.label}</button>)}
+                {SECTORS.filter((s) => s.cpv.length).map((s) => <button type="button" key={s.id} className={`chip ${sectors.includes(s.id) ? 'on' : ''}`} onClick={() => toggle(sectors, setSectors, s.id)}>{sectors.includes(s.id) && <LuCheck />}{s.label}</button>)}
               </div>
             </div>
             <div className="field">

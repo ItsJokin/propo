@@ -200,7 +200,7 @@ function SearchTab() {
         <p className="small muted">PROPO usa este perfil para calcular la compatibilidad de cada licitación y para tus alertas.</p>
         <div className="field">
           <span className="label">Sectores (códigos CPV)</span>
-          <div className="row-wrap">{SECTORS.map((s) => <button type="button" key={s.id} className={`chip ${selected.includes(s.id) ? 'on' : ''}`} onClick={() => toggleSector(s.id)}>{selected.includes(s.id) && <LuCheck />}{s.label}</button>)}</div>
+          <div className="row-wrap">{SECTORS.filter((s) => s.cpv.length).map((s) => <button type="button" key={s.id} className={`chip ${selected.includes(s.id) ? 'on' : ''}`} onClick={() => toggleSector(s.id)}>{selected.includes(s.id) && <LuCheck />}{s.label}</button>)}</div>
           {c.cpvs.length > 0 && <span className="hint">CPV que empiezan por: {c.cpvs.join(', ')}</span>}
         </div>
         <div className="field">

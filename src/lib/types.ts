@@ -236,6 +236,7 @@ export interface Project {
   createdAt: string;
   isSample: boolean;
   tenderId?: string;        // TED / PLACSP notice this proposal comes from
+  tender?: import('./discovery/tedSnapshot').TedNotice; // copia del anuncio al crear el proyecto (la licitación deja de estar en la lista al cerrar el plazo)
   stage: 'analyzing' | 'failed' | 'active' | 'submitted';
   docs: SourceDoc[];
   analysis: ProjectAnalysis | null;

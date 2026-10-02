@@ -88,7 +88,7 @@ export function tedAward(n) {
   row[A.offers] = avg('tenders') ?? 0; row[A.sme] = avg('t-sme') ?? -1; row[A.budget] = 0;
   row[A.amount] = money(n['result-value-notice']) || money(n['total-value']) || Math.round(tv.reduce((a, b) => a + b, 0) * 100) / 100;
   row[A.low] = low.length === 1 ? low[0] : 0; row[A.high] = high.length === 1 ? high[0] : 0; row[A.winners] = [];
-  row[A.dur] = durMonths(n); row[A.start] = ''; row[A.ref] = clean(spa(n['internal-identifier-proc']), 60);
+  row[A.dur] = durMonths(n); row[A.start] = ''; row[A.ref] = clean(spa(n['internal-identifier-proc']), 60); row[A.link] = '';
   return { row, buyer: clean(spa(n['buyer-name']), 140), winners };
 }
 

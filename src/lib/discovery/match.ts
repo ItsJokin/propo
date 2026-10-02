@@ -18,7 +18,19 @@ export const SECTORS: { id: string; label: string; cpv: string[] }[] = [
   { id: 'transporte', label: 'Transporte', cpv: ['601', '6012', '6017', '6018'] },
   { id: 'eventos', label: 'Eventos y comunicación', cpv: ['7995', '6351'] },
   { id: 'jardineria', label: 'Jardinería y zonas verdes', cpv: ['773', '7731'] },
-  { id: 'formacion', label: 'Formación', cpv: ['805', '8053', '853'] },
+  { id: 'formacion', label: 'Formación', cpv: ['805', '8053', '80'] },
+  { id: 'sanidad', label: 'Sanidad y material médico', cpv: ['33', '851'] },
+  { id: 'social', label: 'Servicios sociales', cpv: ['853', '983'] },
+  { id: 'alimentacion', label: 'Suministro de alimentos', cpv: ['15', '03'] },
+  { id: 'oficina', label: 'Mobiliario y material de oficina', cpv: ['39', '301', '22'] },
+  { id: 'vehiculos', label: 'Vehículos y maquinaria', cpv: ['34', '42', '43', '16'] },
+  { id: 'energia', label: 'Energía y suministros', cpv: ['09', '65', '31'] },
+  { id: 'residuos', label: 'Residuos y medio ambiente', cpv: ['905', '907', '9051'] },
+  { id: 'comunicacion', label: 'Publicidad y marketing', cpv: ['793', '798', '92'] },
+  { id: 'juridico', label: 'Servicios jurídicos y financieros', cpv: ['791', '792', '66'] },
+  { id: 'laboratorio', label: 'Laboratorio e investigación', cpv: ['38', '73', '24'] },
+  { id: 'textil', label: 'Vestuario y textil', cpv: ['18', '19'] },
+  { id: 'otros', label: 'Otros sectores', cpv: [] },
 ];
 
 export const INDUSTRY_TO_SECTORS: Record<string, string[]> = {

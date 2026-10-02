@@ -46,6 +46,7 @@ export const A = {
   dur: 15,      // duración en meses (0 = no consta)
   start: 16,    // inicio del contrato «YYYY-MM-DD» o ''
   ref: 17,      // n.º de expediente
+  link: 18,     // identificador de la ficha en la Plataforma (idEvl) o ''; con TED el enlace sale del id
 };
 
 /** Adjudicatario en el diccionario `winners` de cada partición. */
@@ -67,3 +68,10 @@ export function winnerIdentity(name, id) {
   const person = /\*/.test(nif) || /^\d{8}[A-Z]$/.test(nif) || /^[XYZKLM]\d{7}[A-Z]$/.test(nif) || (!nif && !COMPANY_FORM.test(name || ''));
   return person ? [PERSON, ''] : [String(name || '').replace(/\s+/g, ' ').trim().slice(0, 110), /^[A-HJNP-SUVW]\d{7}[0-9A-J]$/.test(nif) ? nif : ''];
 }
+
+/** Enlace a la ficha oficial de una adjudicación. */
+export const awardUrl = (id, link) => id.startsWith('t:') ? `https://ted.europa.eu/es/notice/-/detail/${id.slice(2)}` : link ? `https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=${link}` : '';
+
+/** Divisiones del CPV (dos primeros dígitos). */
+export const CPV_DIVISIONS = { '03': 'Productos agrícolas, ganaderos y pesqueros', '09': 'Combustibles y energía', 14: 'Productos de minería', 15: 'Alimentos y bebidas', 16: 'Maquinaria agrícola', 18: 'Ropa, calzado y accesorios', 19: 'Cuero, textiles y plásticos', 22: 'Impresos y publicaciones', 24: 'Productos químicos', 30: 'Equipos de oficina e informática', 31: 'Material eléctrico e iluminación', 32: 'Equipos de radio, televisión y telecomunicaciones', 33: 'Equipamiento médico y farmacéutico', 34: 'Vehículos y equipos de transporte', 35: 'Equipos de seguridad y defensa', 37: 'Instrumentos musicales y material deportivo', 38: 'Equipos de laboratorio y de precisión', 39: 'Mobiliario, menaje y limpieza', 41: 'Agua', 42: 'Maquinaria industrial', 43: 'Maquinaria de construcción y minería', 44: 'Materiales de construcción', 45: 'Obras de construcción', 48: 'Programas y software', 50: 'Reparación y mantenimiento', 51: 'Servicios de instalación', 55: 'Hostelería y restauración', 60: 'Transporte', 63: 'Servicios auxiliares de transporte y viajes', 64: 'Correos y telecomunicaciones', 65: 'Suministro de agua, gas y electricidad', 66: 'Servicios financieros y seguros', 70: 'Servicios inmobiliarios', 71: 'Arquitectura e ingeniería', 72: 'Servicios informáticos', 73: 'Investigación y desarrollo', 75: 'Administración pública y servicios sociales', 76: 'Servicios para el sector del petróleo y gas', 77: 'Agricultura, silvicultura y jardinería', 79: 'Servicios a empresas', 80: 'Educación y formación', 85: 'Salud y asistencia social', 90: 'Residuos, limpieza y medio ambiente', 92: 'Cultura, deporte y ocio', 98: 'Otros servicios' };
+export const cpvDivision = (cpv) => CPV_DIVISIONS[String(cpv || '').slice(0, 2)] || CPV_DIVISIONS[Number(String(cpv || '').slice(0, 2))] || '';

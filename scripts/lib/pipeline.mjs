@@ -12,12 +12,17 @@ const UA = 'PROPO-data-bot/1.0 (+https://github.com; datos abiertos de contratac
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 export const today = () => new Date().toISOString().slice(0, 10);
 
-async function getText(url, fetchImpl, tries = 3) {
+/** Descarga un fichero del feed. Con `cond` (etag / lastModified) devuelve null si no ha cambiado (HTTP 304). */
+async function getText(url, fetchImpl, cond = null, tries = 3) {
   let last;
+  const headers = { 'User-Agent': UA, Accept: 'application/atom+xml, application/xml, */*' };
+  if (cond?.etag) headers['If-None-Match'] = cond.etag;
+  if (cond?.lastModified) headers['If-Modified-Since'] = cond.lastModified;
   for (let i = 0; i < tries; i++) {
     try {
-      const r = await fetchImpl(url, { headers: { 'User-Agent': UA, Accept: 'application/atom+xml, application/xml, */*' }, signal: AbortSignal.timeout(180000) });
-      if (r.ok) return await r.text();
+      const r = await fetchImpl(url, { headers, signal: AbortSignal.timeout(180000) });
+      if (r.status === 304) return null;
+      if (r.ok) { if (cond) { cond.etag = r.headers?.get?.('etag') || ''; cond.lastModified = r.headers?.get?.('last-modified') || ''; } return await r.text(); }
       last = new Error(`HTTP ${r.status}`);
       if (r.status === 404) break;
     } catch (e) { last = e; }
@@ -43,8 +48,10 @@ export async function syncFeed(store, name, { fetchImpl = fetch, maxFiles = 40, 
   const cursor = st.cursor || '';
   const limit = cursor ? maxFiles : firstRunFiles;
   const pending = []; let url = feed.url; let files = 0; let newest = cursor; let reached = false; let deleted = [];
+  const cond = { etag: st.etag || '', lastModified: st.lastModified || '' };
   while (url && files < limit) {
-    const xml = await getText(url, fetchImpl);
+    const xml = await getText(url, fetchImpl, files === 0 ? cond : null);
+    if (xml == null) { log(`  ${name}: sin cambios desde la última lectura`); return { ok: true, at: new Date().toISOString(), files: 0, entries: 0, gap: false, feedUpdatedTo: cursor }; }
     const f = splitFeed(xml); files++;
     let older = 0;
     for (const e of f.entries) {
@@ -63,7 +70,7 @@ export async function syncFeed(store, name, { fetchImpl = fetch, maxFiles = 40, 
   pending.sort((a, b) => a.updated.localeCompare(b.updated));
   for (const p of pending) applyEntry(store, p, feed.prefix, day);
   for (const id of deleted) store.removeTender(`${feed.prefix}:${id}`);
-  store.state.feeds[name] = { cursor: newest, at: new Date().toISOString() };
+  store.state.feeds[name] = { cursor: newest, at: new Date().toISOString(), etag: cond.etag, lastModified: cond.lastModified };
   return { ok: true, at: new Date().toISOString(), files, entries: pending.length, gap: Boolean(cursor) && !reached && files >= limit, feedUpdatedTo: newest };
 }
 

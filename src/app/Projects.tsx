@@ -103,7 +103,7 @@ export function NewProposal({ onClose, onLimit, prefill }: { onClose: () => void
   const submit = () => {
     if (!name.trim()) return setErr('Ponle un nombre a la propuesta.');
     if (!valid.length) return setErr('Sube al menos un documento compatible.');
-    const r = createProject({ name, organization: org, type, tenderId: prefill?.tenderId }, valid.map((f) => f.file));
+    const r = createProject({ name, organization: org, type, tenderId: prefill?.tenderId, tender: prefill?.notice }, valid.map((f) => f.file));
     if (!r.ok) onLimit(r.reason);
   };
   return (

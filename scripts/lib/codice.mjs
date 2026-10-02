@@ -126,6 +126,7 @@ export function awardRows(p, prefix) {
     row[A.budget] = lot ? lot.budget : single ? p.budget : 0;
     row[A.amount] = r.amount; row[A.low] = r.low; row[A.high] = r.high; row[A.winners] = [];
     row[A.dur] = p.dur; row[A.start] = r.start; row[A.ref] = p.ref;
+    row[A.link] = (p.url.match(/[?&]idEvl=([^&]+)/) || [])[1] || '';
     const [name, nif] = winnerIdentity(r.winner.name, r.winner.id);
     out.push({ row, buyer: p.buyer, winners: [[name, nif, r.winner.sme]] });
   }

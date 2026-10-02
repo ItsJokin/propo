@@ -6,7 +6,7 @@ import { kb } from '../../lib/util';
 import { Modal } from '../../components/ui';
 import { ACCEPTED } from '../../lib/pipeline/parse';
 import { addDocumentsAndReanalyze } from '../../lib/actions';
-import { TED_NOTICES } from '../../lib/discovery/tedSnapshot';
+import { findTender } from '../../lib/data/live';
 import { tenderView } from '../../lib/discovery/brief';
 
 export function Documents({ p }: { p: Project }) {
@@ -14,7 +14,7 @@ export function Documents({ p }: { p: Project }) {
   const [picked, setPicked] = useState<File[] | null>(null);
   const [busy, setBusy] = useState(false);
   const [over, setOver] = useState(false);
-  const notice = useMemo(() => (p.tenderId ? TED_NOTICES.find((t) => t.id === p.tenderId) : undefined), [p.tenderId]);
+  const notice = useMemo(() => p.tender ?? (p.tenderId ? findTender(p.tenderId) : undefined), [p.tenderId, p.tender]);
   const view = useMemo(() => (notice ? tenderView(notice) : null), [notice]);
   const onlyFicha = p.docs.length > 0 && p.docs.every((d) => d.name.startsWith('Ficha de la licitación'));
   const pick = (list: FileList | null) => { if (list?.length) setPicked(Array.from(list)); };
