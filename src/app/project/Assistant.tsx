@@ -26,9 +26,13 @@ export function Assistant({ p }: { p: Project }) {
   const stats = interviewStats(p);
   const toDraft = p.sections.filter((s) => s.status === 'not_started').length;
   // La pregunta en curso se pinta como tarjeta, no como burbuja.
-  const history = q && msgs[msgs.length - 1]?.qid === q.id ? msgs.slice(0, -1) : msgs;
+  // Una pregunta antigua que se quedó sin respuesta (el requisito se resolvió en otra pantalla) no se enseña.
+  const history = (q && msgs[msgs.length - 1]?.qid === q.id ? msgs.slice(0, -1) : msgs)
+    .filter((m, i, a) => !(m.role === 'propo' && m.qid?.startsWith('req:') && a[i + 1]?.role !== 'user'));
 
   useEffect(() => { if (!p.interview) { startInterview(p); askNext(p.id); } }, [p.id, !!p.interview]);
+  // Si la pregunta en curso cambia sin pasar por una respuesta, se deja constancia de la nueva en la conversación.
+  useEffect(() => { if (p.interview && q && msgs[msgs.length - 1]?.qid !== q.id) askNext(p.id); }, [q?.id]);
   useEffect(() => { if (msgs.length > 2 || drafting) end.current?.scrollIntoView({ behavior: 'smooth', block: 'end' }); }, [msgs.length, drafting, busy]);
   useEffect(() => { setMulti([]); setText(''); }, [q?.id]);
 
@@ -59,7 +63,7 @@ export function Assistant({ p }: { p: Project }) {
       <div className="conv-head">
         <div style={{ minWidth: 0 }}>
           <div className="eyebrow">Paso 1 · Requisitos</div>
-          <h2>{q ? 'PROPO necesita confirmar unas cosas contigo' : 'Todo confirmado'}</h2>
+          <h2>{q ? 'PROPO necesita confirmar unas cosas contigo' : 'Preguntas respondidas'}</h2>
           <p className="muted">Solo te pregunta lo que no ha encontrado en los pliegos ni en tu memoria de empresa. Lo que respondas se guarda y no te lo vuelve a preguntar en otras licitaciones.</p>
         </div>
         <div className="conv-progress">
@@ -152,7 +156,7 @@ export function Assistant({ p }: { p: Project }) {
         {!q && !drafting && !busy && (
           <div className="conv-done">
             <span className="rev-done-ic"><LuCheck /></span>
-            <h3>{toDraft > 0 && !p.interview?.drafted ? 'Ya tengo lo que necesito' : 'Requisitos confirmados'}</h3>
+            <h3>{toDraft > 0 && !p.interview?.drafted ? 'Ya tengo lo que necesito' : 'Preguntas respondidas'}</h3>
             <p className="muted">{toDraft > 0 && !p.interview?.drafted ? 'Con tus respuestas y la memoria de tu empresa puedo redactar la propuesta. Después la revisas sección a sección.' : 'El siguiente paso es leer la propuesta y aprobar cada sección.'}</p>
             <div className="row-wrap" style={{ justifyContent: 'center' }}>
               {toDraft > 0 && !p.interview?.drafted && <button className="btn btn-primary btn-lg" onClick={draftAll}><LuSparkles /> Redactar la propuesta ({toDraft} secciones)</button>}
