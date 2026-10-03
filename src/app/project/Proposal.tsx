@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { LuPencil, LuRefreshCw, LuCheck, LuX, LuFileText, LuChevronRight, LuCircleStop, LuSparkles, LuBookmarkPlus, LuRotateCcw, LuTriangleAlert, LuInfo } from 'react-icons/lu';
+import { LuPencil, LuRefreshCw, LuCheck, LuX, LuFileText, LuChevronRight, LuChevronLeft, LuCircleStop, LuSparkles, LuBookmarkPlus, LuRotateCcw, LuTriangleAlert, LuInfo } from 'react-icons/lu';
 import type { Project, Section } from '../../lib/types';
 import { runGenerate, stopGenerate, setSectionStatus, saveSectionContent, aiActionsLeft } from '../../lib/actions';
 import { RichText, SECTION_LABEL, SECTION_TONE, SourceChip, Bar } from '../../components/ui';
 import { openSource, useAIState } from '../common';
-import { update, toast, useStore, getState } from '../../lib/store';
+import { update, toast, useStore, getState, navigate } from '../../lib/store';
 import { estimatePages, pageLimitNumber } from '../../lib/derive';
 import { uid, nowIso, wordCount, timeAgo } from '../../lib/util';
 import { InfoFixModal } from './InfoFix';
@@ -13,7 +13,7 @@ import { planFor } from '../../lib/infoFix';
 const FLOW: Section['status'][] = ['draft', 'ai_generated', 'reviewed', 'approved'];
 
 export function Proposal({ p }: { p: Project }) {
-  const [active, setActive] = useState(p.sections[0]?.id);
+  const [active, setActive] = useState((p.sections.find((s) => s.status !== 'approved') ?? p.sections[0])?.id);
   const ai = useAIState();
   const state = useStore((s) => s);
   const approved = p.sections.filter((s) => s.status === 'approved').length;
@@ -27,15 +27,29 @@ export function Proposal({ p }: { p: Project }) {
     for (const s of notStarted) { await runGenerate(p.id, s.id); }
     setBulk(false);
   };
-  const jump = (id: string) => { setActive(id); document.getElementById(`sec-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+  // Revisión sección a sección: se muestra una cada vez y, al aprobarla, se pasa a la siguiente pendiente.
+  const [finished, setFinished] = useState(false);
+  const idx = Math.max(0, p.sections.findIndex((s) => s.id === active));
+  const cur = p.sections[idx];
+  const allApproved = p.sections.length > 0 && approved === p.sections.length;
+  const jump = (id: string) => { setActive(id); setFinished(false); document.getElementById('rev-top')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+  const afterApprove = () => {
+    const next = p.sections.find((s, i) => i > idx && s.status !== 'approved') ?? p.sections.find((s) => s.id !== cur?.id && s.status !== 'approved');
+    if (next) jump(next.id); else { setFinished(true); document.getElementById('rev-top')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  };
+  const segTone = (s: Section) => (s.status === 'approved' ? 'ok' : s.status === 'rejected' ? 'bad' : s.status === 'not_started' ? '' : 'draft');
   return (
     <div className="stack gap-16">
       <div className="card card-pad">
         <div className="row-wrap" style={{ justifyContent: 'space-between', gap: 16 }}>
           <div style={{ minWidth: 220, flex: 1 }}>
-            <div className="row"><h3 style={{ fontSize: 17 }}>Propuesta</h3><span className="small subtle">{approved} de {p.sections.length} aprobadas</span></div>
-            <div className="mt-8" style={{ maxWidth: 420 }}><Bar value={p.sections.length ? (approved / p.sections.length) * 100 : 0} tone="ok" /></div>
-            <p className="xs subtle mt-8">Estructura adaptada a este pliego{p.criteria.length ? ' y a sus criterios de adjudicación' : ''}. {limit ? `Estimadas ${est} de ${limit} páginas.` : `Estimadas ${est} páginas.`}</p>
+            <div className="eyebrow">Paso 2 · Propuesta</div>
+            <h2 className="mt-8" style={{ fontSize: 22 }}>{allApproved ? 'Propuesta aprobada' : 'Lee cada sección y apruébala'}</h2>
+            <p className="muted mt-4">{allApproved ? 'Todas las secciones tienen tu visto bueno.' : 'PROPO redacta; tú decides. Nada se da por bueno hasta que lo apruebas.'} <span className="subtle">{limit ? `Estimadas ${est} de ${limit} páginas.` : `Estimadas ${est} páginas.`}</span></p>
+            <div className="rev-segs mt-16" role="list" aria-label={`${approved} de ${p.sections.length} secciones aprobadas`}>
+              {p.sections.map((s, i) => <button key={s.id} role="listitem" className={`rev-seg ${segTone(s)} ${s.id === cur?.id && !finished ? 'on' : ''}`} title={`${i + 1}. ${s.title} — ${SECTION_LABEL[s.status]}`} onClick={() => jump(s.id)} aria-label={`Sección ${i + 1}: ${s.title}`} />)}
+            </div>
+            <div className="small mt-8"><strong className="num">{approved} de {p.sections.length}</strong> <span className="muted">secciones aprobadas</span></div>
           </div>
           <div className="row-wrap">
             {notStarted.length > 0 && <button className="btn btn-primary" disabled={bulk} onClick={generateAll}><LuSparkles /> {bulk ? 'Redactando…' : `Redactar ${notStarted.length} sección${notStarted.length > 1 ? 'es pendientes' : ' pendiente'}`}</button>}
@@ -44,25 +58,38 @@ export function Proposal({ p }: { p: Project }) {
         {ai !== 'available' && <div className="callout neutral small mt-16"><LuInfo /><div>{getState().demo ? <>Estás en la demo: las secciones se redactan con la memoria de la empresa de ejemplo para que veas el resultado. Con la IA activada, PROPO las escribe a medida de cada pliego.</> : <>La redacción con IA no está disponible en esta vista. Al generar una sección se crea un <strong>borrador de plantilla</strong>: PROPO ordena los requisitos y las fuentes de empresa y marca lo que tu equipo tiene que escribir.</>}</div></div>}
         {!p.isSample && Number.isFinite(left) && left < 20 && <div className="callout warn small mt-8"><LuTriangleAlert /><div>Te quedan {left} acciones de IA para esta propuesta en tu plan.</div></div>}
       </div>
-      <div className="prop-layout">
+      <div className="prop-layout" id="rev-top">
         <nav className="outline" aria-label="Secciones">
           {p.sections.map((s, i) => (
-            <button key={s.id} className={active === s.id ? 'on' : ''} onClick={() => jump(s.id)}>
-              <span className="n">{String(i + 1).padStart(2, '0')}</span>
+            <button key={s.id} className={active === s.id && !finished ? 'on' : ''} onClick={() => jump(s.id)}>
+              {s.status === 'approved' ? <span className="rev-check"><LuCheck /></span> : <span className="n">{String(i + 1).padStart(2, '0')}</span>}
               <span className="grow truncate">{s.title}</span>
-              <span className={`dot ${s.status === 'approved' ? 'ok' : s.status === 'reviewed' ? 'warn' : s.status === 'ai_generated' || s.status === 'generating' ? 'accent' : s.status === 'rejected' ? 'bad' : ''}`} />
+              {s.status !== 'approved' && <span className={`dot ${s.status === 'reviewed' ? 'warn' : s.status === 'ai_generated' || s.status === 'generating' || s.status === 'draft' ? 'accent' : s.status === 'rejected' ? 'bad' : ''}`} />}
             </button>
           ))}
         </nav>
         <div style={{ minWidth: 0 }}>
-          {p.sections.map((s, i) => <SectionCard key={s.id} p={p} s={s} n={i + 1} />)}
+          {finished && allApproved ? (
+            <div className="sec-card rev-done">
+              <span className="rev-done-ic"><LuCheck /></span>
+              <h3>Propuesta aprobada</h3>
+              <p className="muted">Has dado el visto bueno a las {p.sections.length} secciones. Queda la comprobación final antes de descargar el paquete.</p>
+              <div className="row-wrap" style={{ justifyContent: 'center' }}>
+                <button className="btn btn-primary btn-lg" onClick={() => navigate(`/app/projects/${p.id}/compliance`)}>Ir a la comprobación final <LuChevronRight /></button>
+                <button className="btn btn-ghost" onClick={() => jump(p.sections[0].id)}>Repasar las secciones</button>
+              </div>
+            </div>
+          ) : cur ? (
+            <SectionCard key={cur.id} p={p} s={cur} n={idx + 1} total={p.sections.length} onApproved={afterApprove}
+              onPrev={idx > 0 ? () => jump(p.sections[idx - 1].id) : undefined} onNext={idx < p.sections.length - 1 ? () => jump(p.sections[idx + 1].id) : undefined} />
+          ) : null}
         </div>
       </div>
     </div>
   );
 }
 
-function SectionCard({ p, s, n }: { p: Project; s: Section; n: number }) {
+function SectionCard({ p, s, n, total, onApproved, onPrev, onNext }: { p: Project; s: Section; n: number; total: number; onApproved: () => void; onPrev?: () => void; onNext?: () => void }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(s.content);
   const [showSources, setShowSources] = useState(false);
@@ -137,24 +164,32 @@ function SectionCard({ p, s, n }: { p: Project; s: Section; n: number }) {
           )}
         </div>
       )}
-      {!generating && !editing && s.content && (
-        <div className="sec-foot">
-          <div className="status-flow hide-sm" aria-label="Estado de revisión">
-            {FLOW.map((f, i) => <React.Fragment key={f}>{i > 0 && <LuChevronRight />}<i className={s.status === f ? 'on' : ''}>{SECTION_LABEL[f]}</i></React.Fragment>)}
+      {!editing && (
+        <div className="rev-bar">
+          <div className="row rev-nav">
+            <button className="btn btn-ghost btn-sm btn-icon" disabled={!onPrev} onClick={onPrev} aria-label="Sección anterior"><LuChevronLeft /></button>
+            <span className="small muted num">{n} de {total}</span>
+            <button className="btn btn-ghost btn-sm btn-icon" disabled={!onNext} onClick={onNext} aria-label="Sección siguiente"><LuChevronRight /></button>
           </div>
           <span className="spacer" />
-          <button className="btn btn-ghost btn-sm" onClick={() => setShowSources(!showSources)}><LuFileText /> {showSources ? 'Ocultar fuentes' : `Ver fuentes (${s.citations.length})`}</button>
-          <button className="btn btn-secondary btn-sm" onClick={() => { setDraft(s.content); setEditing(true); }}><LuPencil /> Editar</button>
-          <button className="btn btn-secondary btn-sm" onClick={() => runGenerate(p.id, s.id, true)}><LuRefreshCw /> Regenerar</button>
-          {s.status === 'approved' ? (
+          {!generating && s.content && (
             <>
-              <button className="btn btn-ghost btn-sm" onClick={saveTemplate}><LuBookmarkPlus /> Guardar como plantilla</button>
-              <button className="btn btn-ghost btn-sm" onClick={() => setSectionStatus(p.id, s.id, 'reviewed')}><LuRotateCcw /> Reabrir</button>
-            </>
-          ) : (
-            <>
-              <button className="btn btn-ghost btn-sm" onClick={() => { setSectionStatus(p.id, s.id, 'rejected'); toast('Sección rechazada. Regénerala o escríbela tú.'); }}><LuX /> Rechazar</button>
-              <button className="btn btn-primary btn-sm" onClick={() => { setSectionStatus(p.id, s.id, 'approved'); toast(s.missing.length ? 'Aprobada con información todavía pendiente' : 'Sección aprobada', s.missing.length ? 'warn' : 'ok'); }}><LuCheck /> Aprobar</button>
+              <button className="btn btn-ghost btn-sm hide-sm" onClick={() => setShowSources(!showSources)}><LuFileText /> {showSources ? 'Ocultar fuentes' : `Fuentes (${s.citations.length})`}</button>
+              <button className="btn btn-secondary btn-sm" onClick={() => { setDraft(s.content); setEditing(true); }}><LuPencil /> Editar</button>
+              <button className="btn btn-secondary btn-sm" onClick={() => runGenerate(p.id, s.id, true)}><LuRefreshCw /> Regenerar</button>
+              {s.status === 'approved' ? (
+                <>
+                  <button className="btn btn-ghost btn-sm hide-sm" onClick={saveTemplate}><LuBookmarkPlus /> Guardar como plantilla</button>
+                  <button className="btn btn-ghost btn-sm" onClick={() => setSectionStatus(p.id, s.id, 'reviewed')}><LuRotateCcw /> Reabrir</button>
+                  <span className="rev-ok"><LuCheck /> Aprobada</span>
+                  {onNext && <button className="btn btn-primary" onClick={onNext}>Siguiente <LuChevronRight /></button>}
+                </>
+              ) : (
+                <>
+                  <button className="btn btn-ghost btn-sm" onClick={() => { setSectionStatus(p.id, s.id, 'rejected'); toast('Sección rechazada. Regénerala o escríbela tú.'); }}><LuX /> Rechazar</button>
+                  <button className="btn btn-approve" onClick={() => { setSectionStatus(p.id, s.id, 'approved'); if (s.missing.length) toast('Aprobada con información todavía pendiente', 'warn'); onApproved(); }}><LuCheck /> Aprobar y continuar</button>
+                </>
+              )}
             </>
           )}
         </div>

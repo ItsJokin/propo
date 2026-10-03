@@ -83,13 +83,9 @@ export function ProjectView({ id, tab }: { id: string; tab: string }) {
               </Menu>
             </div>
           </div>
-          <div className="tabs proj-tabs" role="tablist">
-            {tabs.map(([k, l, n]) => (
-              <button key={k} role="tab" aria-selected={tab === k} className={`tab ${tab === k ? 'on' : ''}`} onClick={() => navigate(`/app/projects/${p.id}${k === 'overview' ? '' : '/' + k}`)}>{l}{n ? <span className="count">{n}</span> : null}</button>
-            ))}
-          </div>
+          <GuideBar p={p} tab={tab} />
         </div>
-        <div className="proj-body">{(!p.isSample || (p.id === 'p_sample' && demo === 'complete')) && <GuideBar p={p} tab={tab} />}{body}</div>
+        <div className="proj-body">{body}</div>
       </div>
       {chat && <Chat p={p} onClose={() => setChat(false)} />}
       <SourceViewerHost />
