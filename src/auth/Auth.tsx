@@ -7,7 +7,7 @@ import { knowledgeScore } from '../lib/derive';
 import { uid } from '../lib/util';
 import { startDemo } from '../marketing/Layout';
 import { ACCEPTED } from '../lib/pipeline/parse';
-import { INDUSTRIES, INDUSTRY_TO_SECTORS, SECTORS, REGIONS, cpvsForSectors } from '../lib/discovery/match';
+import { INDUSTRIES } from '../lib/discovery/match';
 
 const ROLES = ['Gerencia / Dirección', 'Licitaciones', 'Comercial / Desarrollo de negocio', 'Operaciones', 'Administración y finanzas', 'Consultoría', 'Otro'];
 
@@ -116,77 +116,6 @@ export function Login() {
           <div className="row mt-24 small muted" style={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
             <span>¿Nuevo en PROPO? <a style={{ cursor: 'pointer' }} onClick={() => navigate('/signup')}>Crea una cuenta</a></span>
             <span className="row" style={{ gap: 14 }}><a style={{ cursor: 'pointer' }} onClick={() => startDemo('/app')}>Explorar la demo</a><a style={{ cursor: 'pointer' }} onClick={() => startDemo('/app/projects/p_sample', true)}>Demo completa</a></span>
-          </div>
-        </div>
-      </main>
-    </div>
-  );
-}
-
-export function Welcome() {
-  const user = useStore((s) => s.user);
-  const ob = useStore((s) => s.onboarding);
-  const company = useStore((s) => s.company);
-  const [what, setWhat] = useState(ob.whatWeDo);
-  const [freq, setFreq] = useState(ob.frequency);
-  const [team, setTeam] = useState(ob.teamSize);
-  const [sectors, setSectors] = useState<string[]>(() => INDUSTRY_TO_SECTORS[company.industry] ?? []);
-  const [regions, setRegions] = useState<string[]>(company.regions);
-  const toggle = (arr: string[], set: (v: string[]) => void, v: string) => set(arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v]);
-  const go = () => {
-    update((s) => {
-      s.onboarding.whatWeDo = what; s.onboarding.frequency = freq; s.onboarding.teamSize = team;
-      if (what && !s.company.description) s.company.description = what;
-      s.company.cpvs = cpvsForSectors(sectors); s.company.regions = regions;
-      s.company.sectors = sectors.map((id) => SECTORS.find((x) => x.id === id)!.label);
-    });
-    track('welcome_answered', { frequency: freq, team, sectors: sectors.length, regions: regions.length });
-    navigate('/onboarding');
-  };
-  return (
-    <div className="auth" style={{ gridTemplateColumns: '1fr' }}>
-      <main className="auth-main">
-        <div className="auth-card" style={{ width: 'min(640px, 100%)' }}>
-          <Logo />
-          <h1 className="mt-32">Te damos la bienvenida a PROPO{user?.name ? `, ${user.name.split(' ')[0]}` : ''}</h1>
-          <p className="muted mt-8">Unas preguntas rápidas para buscar las licitaciones adecuadas y adaptar PROPO a tu forma de trabajar.</p>
-          <div className="stack mt-32" style={{ gap: 28 }}>
-            <div className="field">
-              <label htmlFor="w-what">¿A qué se dedica tu empresa?</label>
-              <textarea id="w-what" className="textarea" style={{ minHeight: 72 }} placeholder="p. ej. Comedores escolares y de empresa en el área de Barcelona, con cocina central propia." value={what} onChange={(e) => setWhat(e.target.value)} />
-            </div>
-            <div className="field">
-              <span className="label">¿Qué tipo de contratos buscas?</span>
-              <div className="row-wrap">
-                {SECTORS.filter((s) => s.cpv.length).map((s) => <button type="button" key={s.id} className={`chip ${sectors.includes(s.id) ? 'on' : ''}`} onClick={() => toggle(sectors, setSectors, s.id)}>{sectors.includes(s.id) && <LuCheck />}{s.label}</button>)}
-              </div>
-            </div>
-            <div className="field">
-              <span className="label">¿Dónde trabajas?</span>
-              <div className="row-wrap">
-                {REGIONS.map((r) => <button type="button" key={r.id} className={`chip ${regions.includes(r.id) ? 'on' : ''}`} onClick={() => toggle(regions, setRegions, r.id)}>{regions.includes(r.id) && <LuCheck />}{r.label}</button>)}
-              </div>
-            </div>
-            <div className="field">
-              <span className="label">¿Con qué frecuencia preparas propuestas?</span>
-              <div className="grid-2" style={{ gap: 8 }}>
-                {['Menos de una al mes', '1–3 al mes', '4–10 al mes', 'Más de 10'].map((o) => (
-                  <button type="button" key={o} className={`choice ${freq === o ? 'on' : ''}`} onClick={() => setFreq(o)}>{o}</button>
-                ))}
-              </div>
-            </div>
-            <div className="field">
-              <span className="label">¿Cuántas personas trabajan en las propuestas?</span>
-              <div className="grid-4" style={{ gap: 8 }}>
-                {['Solo yo', '2–3', '4–10', 'Más de 10'].map((o) => (
-                  <button type="button" key={o} className={`choice ${team === o ? 'on' : ''}`} onClick={() => setTeam(o)}>{o}</button>
-                ))}
-              </div>
-            </div>
-            <div className="row">
-              <button className="btn btn-primary btn-lg" onClick={go}>Continuar <LuArrowRight /></button>
-              <button className="btn btn-ghost" onClick={() => { update((s) => { s.onboarding.dismissed = true; }); navigate('/app'); }}>Saltar por ahora</button>
-            </div>
           </div>
         </div>
       </main>
