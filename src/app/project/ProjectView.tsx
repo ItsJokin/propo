@@ -17,6 +17,7 @@ import { Documents } from './Documents';
 import { Chat } from './Chat';
 import { Assistant } from './Assistant';
 import { GuideBar } from './GuideBar';
+import { ExplainHost } from './Explain';
 import { pendingQuestions } from '../../lib/interview';
 
 const TYPE_LABEL = { public_tender: 'Licitación pública', private_rfp: 'RFP privado', commercial: 'Propuesta comercial', other: 'Propuesta' };
@@ -89,6 +90,7 @@ export function ProjectView({ id, tab }: { id: string; tab: string }) {
       </div>
       {chat && <Chat p={p} onClose={() => setChat(false)} />}
       <SourceViewerHost />
+      <ExplainHost p={p} />
       {confirmDelete && (
         <Modal title="¿Eliminar este proyecto?" sub="Se eliminarán para siempre los documentos de la licitación, los requisitos y la propuesta redactada. Tu memoria de empresa no se ve afectada." onClose={() => setConfirmDelete(false)}
           footer={<><button className="btn btn-ghost" onClick={() => setConfirmDelete(false)}>Cancelar</button><button className="btn btn-danger" onClick={() => { deleteProject(p.id); toast('Proyecto eliminado'); navigate('/app/projects'); }}><LuTrash2 /> Eliminar proyecto</button></>}>

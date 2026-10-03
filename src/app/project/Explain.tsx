@@ -1,6 +1,6 @@
 // «¿Qué significa?»: un chat breve que explica un requisito en lenguaje llano a quien no lo conoce.
 // Con IA responde a medida del pliego y de la empresa; sin IA usa el glosario de PROPO.
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { LuInfo, LuSend, LuSparkles, LuFileText } from 'react-icons/lu';
 import type { Project, Requirement } from '../../lib/types';
 import { Modal, RichText } from '../../components/ui';
@@ -11,15 +11,23 @@ import { openSource } from '../common';
 
 interface Msg { role: 'user' | 'propo'; text: string }
 
+// El chat vive en un único punto de la pantalla del proyecto (ExplainHost): así no se cierra cuando la lista
+// de requisitos se vuelve a dibujar.
+let current: string | null = null;   // id del requisito que se está explicando
+const subs = new Set<() => void>();
+const setCurrent = (id: string | null) => { current = id; subs.forEach((f) => f()); };
+
 /** Botón pequeño que abre la explicación de un requisito. */
-export function ExplainButton({ p, r, label = '¿Qué significa?' }: { p: Project; r: Requirement; label?: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <>
-      <button type="button" className="explain-btn" onClick={(e) => { e.stopPropagation(); setOpen(true); track('requirement_explained', { category: r.category }); }}><LuInfo /> {label}</button>
-      {open && <ExplainChat p={p} r={r} onClose={() => setOpen(false)} />}
-    </>
-  );
+export function ExplainButton({ r, label = '¿Qué significa?' }: { p?: Project; r: Requirement; label?: string }) {
+  return <button type="button" className="explain-btn" onClick={(e) => { e.stopPropagation(); setCurrent(r.id); track('requirement_explained', { category: r.category }); }}><LuInfo /> {label}</button>;
+}
+
+/** Se monta una vez por proyecto y muestra el chat del requisito elegido. */
+export function ExplainHost({ p }: { p: Project }) {
+  const id = useSyncExternalStore((f) => { subs.add(f); return () => { subs.delete(f); }; }, () => current);
+  useEffect(() => () => { current = null; }, [p.id]);
+  const r = id ? p.requirements.find((x) => x.id === id) : undefined;
+  return r ? <ExplainChat key={r.id} p={p} r={r} onClose={() => setCurrent(null)} /> : null;
 }
 
 function ExplainChat({ p, r, onClose }: { p: Project; r: Requirement; onClose: () => void }) {
