@@ -99,7 +99,7 @@ input, select, textarea { font: inherit; color: inherit; }
 .badge.warn { background: var(--warn-soft); color: var(--warn-ink); }
 .badge.bad { background: var(--bad-soft); color: var(--bad-ink); }
 .badge.accent { background: var(--accent-soft); color: var(--accent); }
-.badge.outline { background: transparent; border-color: var(--border-strong); }
+.badge.outline { background: transparent; border-color: var(--border-strong); display: inline-flex; position: static; gap: 6px; } /* no heredar el .outline del índice de la propuesta */
 .badge.sample { background: var(--surface-2); border: 1px solid var(--border); color: var(--fg-3); font-size: 11.5px; font-weight: 600; height: 22px; }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--fg-3); flex: none; display: inline-block; }
 .dot.ok { background: var(--ok); } .dot.warn { background: var(--warn); } .dot.bad { background: var(--bad); } .dot.accent { background: var(--accent); }
