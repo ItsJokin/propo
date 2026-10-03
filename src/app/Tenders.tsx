@@ -354,7 +354,7 @@ function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; 
               : <>
                 <p className="small muted">Qué ha pasado en contratos como este: cuántas empresas se presentan, con qué rebaja se adjudican y quién los gana. Datos de adjudicaciones publicadas en las fuentes oficiales.</p>
                 {comp.buyer && <CompBlock title={`Este organismo: ${t.buyer}`} sub={`${comp.buyer.n} ${comp.buyer.n === 1 ? 'adjudicación' : 'adjudicaciones'} en este sector`} s={comp.buyer} />}
-                {comp.similar && <CompBlock title="Contratos parecidos en toda España" sub={`${comp.similar.n.toLocaleString('es-ES')} adjudicaciones de ${comp.scope}`} s={comp.similar} />}
+                {comp.similar && <CompBlock title="Contratos parecidos en toda España" sub={`${comp.similar.n.toLocaleString('es-ES')} adjudicaciones ${comp.scope}`} s={comp.similar} />}
                 <p className="xs subtle">Las medianas son orientativas: resumen adjudicaciones publicadas entre el {fmtDate((comp.similar ?? comp.buyer)!.from)} y el {fmtDate((comp.similar ?? comp.buyer)!.to)}. La rebaja se calcula sobre el presupuesto base cuando el anuncio publica los dos importes.</p>
               </>}
         </div>

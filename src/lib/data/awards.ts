@@ -1,7 +1,7 @@
 // Adjudicaciones publicadas por el robot (data/awards/<cpv2>-<año>.json): quién gana, con cuántas ofertas y a qué precio.
 // Se cargan a demanda, por división CPV, y se resumen para una licitación concreta.
 // @ts-ignore: módulo JS compartido con el robot
-import { A, W, awardUrl } from '../../../shared/schema.mjs';
+import { A, W, awardUrl, PERSON } from '../../../shared/schema.mjs';
 import type { TedNotice } from '../discovery/tedSnapshot';
 import { normalize } from '../util';
 
@@ -73,6 +73,7 @@ function stats(rows: Award[]): CompStats | null {
   const known = rows.filter((r) => r.winners.some((w) => w.sme >= 0));
   const by = new Map<string, { name: string; wins: number; amount: number }>();
   for (const r of rows) for (const w of r.winners) {
+    if (w.name === PERSON) continue;   // los autónomos van agrupados y anónimos: no son un competidor
     const k = normalize(w.name); const e = by.get(k) ?? { name: w.name, wins: 0, amount: 0 };
     e.wins++; e.amount += r.amount / r.winners.length; by.set(k, e);
   }
@@ -101,7 +102,7 @@ export async function competitionFor(t: Pick<TedNotice, 'cpv' | 'buyer'>): Promi
   for (const len of [4, 3, 2]) {
     const pre = new Set(cpv.map((c) => c.slice(0, len)));
     similar = all.filter((r) => pre.has(r.cpv.slice(0, len)));
-    scope = len === 4 ? 'el mismo tipo de contrato' : len === 3 ? 'contratos del mismo grupo' : 'el mismo sector';
+    scope = len === 4 ? 'del mismo tipo de contrato' : len === 3 ? 'de contratos del mismo grupo' : 'del mismo sector';
     if (similar.length >= 12) break;
   }
   return { buyer, similar: stats(similar), scope };
