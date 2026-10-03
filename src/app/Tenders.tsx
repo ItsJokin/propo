@@ -3,6 +3,7 @@ import { LuSearch, LuLandmark, LuMapPin, LuEuro, LuCalendar, LuBookmark, LuExter
 import { useStore, update, navigate, toast, track, getState } from '../lib/store';
 import { type TedNotice } from '../lib/discovery/tedSnapshot';
 import { useLive, dataAgeMinutes, type LiveState } from '../lib/data/live';
+import { competitionFor, goNoGo, type Competition, type CompStats } from '../lib/data/awards';
 import { matchTender, SECTORS, REGIONS, regionLabel, sectorLabel, type Match } from '../lib/discovery/match';
 import { Drawer, Empty } from '../components/ui';
 import { tenderView, fichaFile } from '../lib/discovery/brief';
@@ -234,8 +235,11 @@ function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; 
   const { t, m } = r;
   const d = t.deadline ? daysUntil(t.deadline) ?? -1 : 0;
   const v = useMemo(() => tenderView(t), [t]);
-  const [tab, setTab] = useState<'summary' | 'docs' | 'fit'>('summary');
-  const nature = t.nature === 'services' ? 'Servicios' : t.nature === 'supplies' ? 'Suministros' : 'Obras';
+  const [tab, setTab] = useState<'summary' | 'docs' | 'comp' | 'fit'>('summary');
+  const [comp, setComp] = useState<Competition | null | 'loading'>('loading');
+  useEffect(() => { let on = true; setComp('loading'); competitionFor(t).then((c) => { if (on) setComp(c); }).catch(() => { if (on) setComp(null); }); return () => { on = false; }; }, [t.id]);
+  const go = goNoGo(m.score, t.deadline ? d : null, comp === 'loading' ? null : comp);
+  const nature =t.nature === 'services' ? 'Servicios' : t.nature === 'supplies' ? 'Suministros' : 'Obras';
   const maxW = Math.max(1, ...v.criteria.map((c) => c.weight ?? 0));
   useEffect(() => { track('tender_opened', { id: t.id, depth: v.depth }); }, [t.id]);
   return (
@@ -251,7 +255,8 @@ function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; 
       <div className="tabs mt-16" role="tablist">
         <button className={`tab ${tab === 'summary' ? 'on' : ''}`} onClick={() => setTab('summary')}>Resumen</button>
         <button className={`tab ${tab === 'docs' ? 'on' : ''}`} onClick={() => setTab('docs')}>Documentos{v.docs.length > 0 && <span className="count">{v.docs.length}</span>}</button>
-        <button className={`tab ${tab === 'fit' ? 'on' : ''}`} onClick={() => setTab('fit')}>Compatibilidad</button>
+        <button className={`tab ${tab === 'comp' ? 'on' : ''}`} onClick={() => { setTab('comp'); track('tender_competition_opened', { id: t.id }); }}>Competencia</button>
+        <button className={`tab ${tab === 'fit' ? 'on' : ''}`} onClick={() => setTab('fit')}>¿Me presento?</button>
       </div>
 
       {tab === 'summary' && (
@@ -342,8 +347,33 @@ function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; 
         </div>
       )}
 
+      {tab === 'comp' && (
+        <div className="stack gap-20 mt-16">
+          {comp === 'loading' ? <div className="callout neutral small"><LuLoaderCircle className="spin" /><div>Buscando adjudicaciones parecidas…</div></div>
+            : !comp || (!comp.buyer && !comp.similar) ? <div className="callout neutral small"><LuInfo /><div>Todavía no hay adjudicaciones publicadas de contratos parecidos. PROPO las va recogiendo de las fuentes oficiales cada día.</div></div>
+              : <>
+                <p className="small muted">Qué ha pasado en contratos como este: cuántas empresas se presentan, con qué rebaja se adjudican y quién los gana. Datos de adjudicaciones publicadas en las fuentes oficiales.</p>
+                {comp.buyer && <CompBlock title={`Este organismo: ${t.buyer}`} sub={`${comp.buyer.n} ${comp.buyer.n === 1 ? 'adjudicación' : 'adjudicaciones'} en este sector`} s={comp.buyer} />}
+                {comp.similar && <CompBlock title="Contratos parecidos en toda España" sub={`${comp.similar.n.toLocaleString('es-ES')} adjudicaciones de ${comp.scope}`} s={comp.similar} />}
+                <p className="xs subtle">Las medianas son orientativas: resumen adjudicaciones publicadas entre el {fmtDate((comp.similar ?? comp.buyer)!.from)} y el {fmtDate((comp.similar ?? comp.buyer)!.to)}. La rebaja se calcula sobre el presupuesto base cuando el anuncio publica los dos importes.</p>
+              </>}
+        </div>
+      )}
+
       {tab === 'fit' && (
         <div className="stack gap-20 mt-16">
+          <div className={`verdict ${go.verdict}`}>
+            <div className="verdict-head">{go.verdict === 'yes' ? <LuCircleCheck /> : go.verdict === 'maybe' ? <LuInfo /> : <LuTriangleAlert />}<strong>{go.title}</strong></div>
+            <div className="stack mt-12" style={{ gap: 8 }}>
+              {go.reasons.map((x) => (
+                <div key={x.text} className="row small" style={{ alignItems: 'flex-start' }}>
+                  {x.ok === true ? <LuCheck style={{ width: 15, height: 15, color: 'var(--ok)', marginTop: 2, flex: 'none' }} /> : x.ok === false ? <LuCircleAlert style={{ width: 15, height: 15, color: 'var(--warn)', marginTop: 2, flex: 'none' }} /> : <LuInfo style={{ width: 15, height: 15, color: 'var(--fg-3)', marginTop: 2, flex: 'none' }} />}
+                  <span>{x.text}</span>
+                </div>
+              ))}
+            </div>
+            <p className="xs subtle mt-12">Recomendación orientativa calculada con reglas: compatibilidad, días disponibles y competencia en adjudicaciones parecidas. La decisión es tuya.</p>
+          </div>
           <div className="card" style={{ padding: 20 }}>
             <div className="row"><strong>Compatibilidad con tu empresa</strong><span className="spacer" /><span className={`score-pill ${scoreTone(m.score)}`}>{m.score}%</span></div>
             <div className="stack mt-12" style={{ gap: 8 }}>
@@ -366,6 +396,52 @@ function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; 
         </div>
       )}
     </Drawer>
+  );
+}
+
+const pct = (x: number | null) => (x == null ? '—' : `${String(Math.round(x * 1000) / 10).replace('.', ',')} %`);
+
+/** Resumen de adjudicaciones: ofertas, rebaja, pymes, quién gana y los últimos contratos. */
+function CompBlock({ title, sub, s }: { title: string; sub: string; s: CompStats }) {
+  const maxWins = Math.max(1, ...s.top.map((w) => w.wins));
+  return (
+    <div className="card comp-card">
+      <div className="comp-head"><strong>{title}</strong><span className="xs subtle">{sub}</span></div>
+      <div className="brief-facts comp-facts">
+        <div><div className="xs subtle">Ofertas por contrato</div><div className="comp-num">{s.offers == null ? '—' : String(Math.round(s.offers * 10) / 10).replace('.', ',')}</div><div className="xs subtle">mediana</div></div>
+        <div><div className="xs subtle">Rebaja del ganador</div><div className="comp-num">{pct(s.baja)}</div><div className="xs subtle">{s.withBaja ? `mediana de ${s.withBaja}` : 'sin importes publicados'}</div></div>
+        <div><div className="xs subtle">Rebajas más fuertes</div><div className="comp-num">{pct(s.bajaHigh)}</div><div className="xs subtle">una de cada cuatro la supera</div></div>
+        <div><div className="xs subtle">Ganados por pymes</div><div className="comp-num">{s.sme == null ? '—' : `${Math.round(s.sme * 100)} %`}</div><div className="xs subtle">de los contratos</div></div>
+      </div>
+      {s.top.length > 0 && (
+        <div className="comp-sec">
+          <div className="eyebrow">Quién gana</div>
+          <div className="stack mt-8" style={{ gap: 8 }}>
+            {s.top.map((w) => (
+              <div key={w.name} className="comp-win">
+                <span className="truncate">{w.name}</span>
+                <span className="comp-bar"><span style={{ width: `${(w.wins / maxWins) * 100}%` }} /></span>
+                <span className="small num">{w.wins} {w.wins === 1 ? 'contrato' : 'contratos'}{w.amount > 0 ? ` · ${eur(Math.round(w.amount))}` : ''}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      <div className="comp-sec">
+        <div className="eyebrow">Últimas adjudicaciones</div>
+        <div className="stack mt-8" style={{ gap: 10 }}>
+          {s.recent.map((a) => (
+            <div key={a.id} className="comp-award">
+              <div style={{ minWidth: 0 }}>
+                {a.url ? <a href={a.url} target="_blank" rel="noopener noreferrer" className="comp-award-t">{shortTitle(a.title)}</a> : <span className="comp-award-t">{shortTitle(a.title)}</span>}
+                <div className="xs subtle">{fmtDate(a.date, { day: 'numeric', month: 'short', year: 'numeric' })} · {a.winners.map((w) => w.name).join(', ') || 'Adjudicatario no publicado'}</div>
+              </div>
+              <div className="small num" style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>{a.amount > 0 ? eur(Math.round(a.amount)) : '—'}<div className="xs subtle">{a.offers > 0 ? `${a.offers} ${a.offers === 1 ? 'oferta' : 'ofertas'}` : ''}{a.baja != null ? ` · −${pct(a.baja)}` : ''}</div></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 

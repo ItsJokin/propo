@@ -951,3 +951,27 @@ textarea.wz-input { height: auto; min-height: 120px; padding: 14px 16px; }
   .dash-prop > .grow { flex: 1 0 100%; }
   .dash-prop-d { width: auto; margin-left: auto; }
 }
+
+/* Competencia (adjudicaciones) y recomendación de presentarse */
+.comp-card { padding: 18px 20px; }
+.comp-head { display: flex; flex-direction: column; gap: 2px; }
+.comp-facts { margin-top: 14px; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+.comp-num { font-size: 22px; font-weight: 750; letter-spacing: -.02em; font-variant-numeric: tabular-nums; margin: 2px 0; }
+.comp-sec { margin-top: 18px; }
+.comp-win { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(40px, 1fr) auto; gap: 12px; align-items: center; font-size: 13.5px; }
+.comp-bar { height: 6px; border-radius: 6px; background: var(--surface-2); overflow: hidden; }
+.comp-bar span { display: block; height: 100%; border-radius: 6px; background: var(--accent); }
+.comp-award { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px; align-items: start; padding-top: 10px; border-top: 1px solid var(--border); }
+.comp-award:first-child { border-top: 0; padding-top: 0; }
+.comp-award-t { font-size: 13.5px; font-weight: 550; color: var(--fg); display: block; }
+a.comp-award-t:hover { color: var(--accent); }
+.verdict { padding: 18px 20px; border-radius: var(--r-lg); border: 1px solid var(--border); background: var(--surface); }
+.verdict-head { display: flex; align-items: center; gap: 10px; font-size: 17px; letter-spacing: -.015em; }
+.verdict-head svg { width: 22px; height: 22px; flex: none; }
+.verdict.yes { background: var(--ok-soft); border-color: color-mix(in srgb, var(--ok) 35%, transparent); }
+.verdict.yes .verdict-head svg { color: var(--ok); }
+.verdict.maybe { background: var(--accent-soft); border-color: var(--accent-line); }
+.verdict.maybe .verdict-head svg { color: var(--accent); }
+.verdict.no { background: var(--warn-soft); border-color: color-mix(in srgb, var(--warn) 35%, transparent); }
+.verdict.no .verdict-head svg { color: var(--warn); }
+@media (max-width: 640px) { .comp-win { grid-template-columns: minmax(0, 1fr) auto; } .comp-bar { display: none; } }
