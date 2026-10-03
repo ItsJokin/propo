@@ -9,7 +9,7 @@ const fs = require('fs');
   const base = 'http://127.0.0.1:8765/dist/index.html';
   await p.goto(base + '#/signup');
   await p.fill('#su-company', 'Edge SL'); await p.fill('#su-email', 'e@test.com'); await p.fill('#su-pass', 'password123'); await p.selectOption('#su-ind', 'Construcción');
-  await p.click('button:has-text("Crear cuenta")'); await p.click('text=Saltar por ahora');
+  await p.click('button:has-text("Crear cuenta")'); await p.click('text=Hacerlo más tarde');
   await p.goto(base + '#/app/projects?new=1'); await p.waitForSelector('.modal >> text=Nueva propuesta');
   await p.fill('#np-name', 'Pliego escaneado');
   await p.setInputFiles('.modal input[type=file]', ['test/scanned.pdf', 'test/old.doc']);
