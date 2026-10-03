@@ -5,6 +5,7 @@ import { getState, update, useStore, navigate, toast } from '../../lib/store';
 import { updateRequirement, addVaultFiles } from '../../lib/actions';
 import { ReqIcon, REQ_LABEL, REQ_TONE, SourceChip, Modal, Empty } from '../../components/ui';
 import { openSource } from '../common';
+import { ExplainButton } from './Explain';
 import { reqCounts } from '../../lib/derive';
 import { uid, fmtShort, nowIso } from '../../lib/util';
 import { ACCEPTED } from '../../lib/pipeline/parse';
@@ -147,7 +148,7 @@ export function Requirements({ p }: { p: Project }) {
                   )}
                   {(r.status === 'needs_info' || r.status === 'missing') && r.ask && (
                     <div className="ask-box">
-                      <div className="who">PROPO pregunta</div>
+                      <div className="who">PROPO pregunta<span className="spacer" /><ExplainButton p={p} r={r} /></div>
                       <div>{r.ask}</div>
                       <div className="row-wrap">
                         {(r.actions ?? ['Add information', 'Skip']).map((a, i) => <button key={a} className={`btn btn-sm ${i === 0 ? 'btn-primary' : a === 'Skip' ? 'btn-ghost' : 'btn-secondary'}`} onClick={() => act(r, a)}>{a === 'Upload document' && <LuUpload />}{ACTION_LABEL[a] ?? a}</button>)}

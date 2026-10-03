@@ -5,6 +5,7 @@ import { navigate, updateProject, getState } from '../../lib/store';
 import { pendingQuestions, startInterview, askNext, answer, interviewStats, type Question } from '../../lib/interview';
 import { runGenerate } from '../../lib/actions';
 import { openSource } from '../common';
+import { ExplainButton } from './Explain';
 import { ACCEPTED } from '../../lib/pipeline/parse';
 import { reqCounts } from '../../lib/derive';
 
@@ -76,7 +77,7 @@ export function Assistant({ p }: { p: Project }) {
 
         {q && (
           <div className="asst-input">
-            {q.hint && <div className="xs subtle" style={{ marginBottom: 8 }}>{q.hint}</div>}
+            {(() => { const req = q.reqId ? p.requirements.find((x) => x.id === q.reqId) : undefined; return (q.hint || req) ? <div className="row xs subtle" style={{ marginBottom: 8 }}><span className="grow">{q.hint}</span>{req && <ExplainButton p={p} r={req} />}</div> : null; })()}
             {q.multi && (
               <div className="row-wrap" style={{ marginBottom: 10 }}>
                 {q.multi.map((m) => <button key={m} type="button" className={`chip ${multi.includes(m) ? 'on' : ''}`} onClick={() => setMulti(multi.includes(m) ? multi.filter((x) => x !== m) : [...multi, m])}>{multi.includes(m) && <LuCircleCheck />}{m}</button>)}

@@ -1052,3 +1052,15 @@ a.comp-award-t:hover { color: var(--accent); }
 .rev-done p { max-width: 46ch; margin-bottom: 8px; }
 @media (max-width: 900px) { .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .journey { grid-template-columns: 1fr; } .jstep { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 4px 10px; padding: 12px 14px 14px; } .jstep-top { width: auto; margin: 0; } .jstep-s { flex: 1 0 100%; } .rev-bar .btn-approve { flex: 1 0 100%; order: -1; } }
+
+/* «¿Qué significa?»: explicación de un requisito en un chat */
+.explain-btn { display: inline-flex; align-items: center; gap: 5px; height: 26px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--fg-2); font: 600 12px/1 var(--font-body); cursor: pointer; white-space: nowrap; flex: none; transition: border-color .15s, color .15s, background .15s; }
+.explain-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.explain-btn svg { width: 13px; height: 13px; }
+.explain-body { display: flex; flex-direction: column; gap: 14px; max-height: min(56vh, 520px); overflow-y: auto; margin: -4px -8px -8px; padding: 4px 8px 8px; }
+.explain-row { display: flex; gap: 10px; align-items: flex-start; }
+.explain-row .msg.assistant { flex: 1; min-width: 0; }
+.explain-body .msg.assistant strong { color: var(--fg); }
+.explain-suggest { padding-left: 38px; }
+.explain-input { display: flex; gap: 8px; width: 100%; }
+.explain-input .input { flex: 1; }
