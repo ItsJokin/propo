@@ -19,8 +19,8 @@ export function AIBadge() {
   const s = useAIState();
   const label = s === 'available' ? 'IA conectada' : s === 'checking' ? 'Comprobando IA…' : s === 'declined' ? 'IA no permitida · modo básico' : 'Modo básico · IA no disponible';
   const tip = s === 'available'
-    ? 'El análisis, la redacción y Pregunta a PROPO usan Claude a través de esta página (con tu cuenta de Claude; se te pide permiso antes de la primera llamada).'
-    : 'La IA solo está disponible al abrir PROPO dentro de claude.ai. Mientras tanto, PROPO usa extracción por reglas y borradores de plantilla, y lo indica.';
+    ? 'El análisis, la redacción y Pregunta a PROPO usan Claude.'
+    : 'La IA no está disponible ahora mismo. Mientras tanto, PROPO usa extracción por reglas y borradores de plantilla, y lo indica.';
   return (
     <div className="row xs subtle" title={tip} style={{ padding: '4px 6px' }}>
       <LuCpu style={{ width: 13, height: 13 }} />

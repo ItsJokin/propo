@@ -1,0 +1,45 @@
+# Despliega el servidor intermedio de IA (worker/) en Cloudflare Workers.
+# Necesita tres secretos del repositorio (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID y ANTHROPIC_API_KEY.
+name: PROPO · servidor de IA
+
+on:
+  push:
+    branches: [main]
+    paths: ['worker/**', '.github/workflows/ai-worker.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HAS_SECRETS: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' && secrets.ANTHROPIC_API_KEY != '' }}
+    steps:
+      - name: Comprobar secretos
+        if: env.HAS_SECRETS != 'true'
+        run: echo "::warning::Faltan secretos (CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, ANTHROPIC_API_KEY). No se despliega el servidor de IA."
+      - uses: actions/checkout@v4
+        if: env.HAS_SECRETS == 'true'
+      - uses: actions/setup-node@v4
+        if: env.HAS_SECRETS == 'true'
+        with:
+          node-version: 22
+      - name: Instalar dependencias
+        if: env.HAS_SECRETS == 'true'
+        working-directory: worker
+        run: npm install --no-audit --no-fund
+      - name: Desplegar en Cloudflare
+        if: env.HAS_SECRETS == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: worker
+          secrets: |
+            ANTHROPIC_API_KEY
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

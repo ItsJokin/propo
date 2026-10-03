@@ -1,0 +1,21 @@
+# Servidor intermedio de IA de PROPO. Se despliega con el workflow «PROPO · servidor de IA».
+name = "propo-ai"
+main = "src/index.ts"
+compatibility_date = "2026-09-01"
+
+[vars]
+# Webs que pueden usar la IA (separadas por comas, sin barra final).
+ALLOWED_ORIGINS = "https://itsjokin.github.io"
+# Modelo de Claude. Más barato: "claude-sonnet-5-5" (la mitad) o "claude-haiku-4-5".
+MODEL = "claude-opus-5-5"
+# Tamaño máximo de una petición, en caracteres.
+MAX_INPUT_CHARS = "600000"
+
+# Límite por dirección IP: 20 peticiones por minuto.
+[[ratelimits]]
+name = "LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 20
+  period = 60

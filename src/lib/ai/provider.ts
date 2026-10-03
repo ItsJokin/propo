@@ -19,10 +19,62 @@ let state: AIState = 'checking';
 
 function setState(s: AIState) { state = s; listeners.forEach((l) => l(s)); }
 
+/** Dirección del servidor intermedio de IA (worker/). La fija la compilación; vacía = sin IA fuera de claude.ai. */
+const AI_URL = String(process.env.PROPO_AI_URL || '').replace(/\/+$/, '');
+const coded = (code: string) => Object.assign(new Error(code), { code });
+
+/** Lee el primer objeto o lista JSON de una respuesta de texto (por si viene envuelta en ``` o con una frase delante). */
+function parseJson<T>(text: string): T {
+  const a = text.search(/[{[]/);
+  const b = Math.max(text.lastIndexOf('}'), text.lastIndexOf(']'));
+  if (a < 0 || b <= a) throw coded('invalid_json');
+  try { return JSON.parse(text.slice(a, b + 1)) as T; } catch { throw coded('invalid_json'); }
+}
+
+/** Misma interfaz que `sample` de claude.ai, pero a través del servidor intermedio de PROPO. */
+function remoteSample(base: string): SampleFn {
+  const run = async (input: string | { role: 'user' | 'assistant'; content: string }[], opts: any = {}) => {
+    let res: Response;
+    try {
+      res = await fetch(`${base}/v1/generate`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ input, tier: opts.modelTier ?? 'default' }), signal: opts.signal });
+    } catch (e: any) { throw coded(e?.name === 'AbortError' ? 'cancelled' : 'upstream_error'); }
+    if (!res.ok || !res.body) { let code = 'upstream_error'; try { code = (await res.json()).error || code; } catch { /* sin cuerpo */ } throw coded(code); }
+    const reader = res.body.getReader(); const dec = new TextDecoder();
+    let buf = ''; let text = ''; let truncated = false; let done = false;
+    const line = (l: string) => {
+      if (!l.trim()) return;
+      const m = JSON.parse(l);
+      if (m.error) throw coded(m.error);
+      if (typeof m.t === 'string') { text += m.t; opts.onText?.({ text }); }
+      if (m.done) { done = true; truncated = !!m.truncated; if (typeof m.text === 'string') text = m.text; }
+    };
+    try {
+      for (;;) {
+        const r = await reader.read();
+        if (r.done) break;
+        buf += dec.decode(r.value, { stream: true });
+        let i: number;
+        while ((i = buf.indexOf('\n')) >= 0) { line(buf.slice(0, i)); buf = buf.slice(i + 1); }
+      }
+      line(buf);
+    } catch (e: any) { throw e?.code ? e : coded(e?.name === 'AbortError' ? 'cancelled' : 'upstream_error'); }
+    if (!done) throw coded('upstream_error');
+    return { text, truncated };
+  };
+  return Object.assign(run, { json: async <T = unknown>(input: any, opts?: any) => parseJson<T>((await run(input, opts)).text) }) as SampleFn;
+}
+
 export function getSample(): Promise<SampleFn | null> {
   if (!samplePromise) {
     samplePromise = (async () => {
       const c = (window as any).claude;
+      if (!c?.use && AI_URL) {
+        try {
+          const r = await fetch(`${AI_URL}/health`);
+          if (r.ok) { setState('available'); return remoteSample(AI_URL); }
+        } catch { /* servidor no disponible */ }
+        setState('unavailable'); return null;
+      }
       if (!c?.use) { setState('unavailable'); return null; }
       try {
         const s = await c.use('sample');
