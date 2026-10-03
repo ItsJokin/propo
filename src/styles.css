@@ -1064,3 +1064,46 @@ a.comp-award-t:hover { color: var(--accent); }
 .explain-suggest { padding-left: 38px; }
 .explain-input { display: flex; gap: 8px; width: 100%; }
 .explain-input .input { flex: 1; }
+
+/* «PROPO te pregunta»: conversación con la pregunta en curso como tarjeta */
+.conv { max-width: 860px; margin: 0 auto; }
+.conv-head { display: flex; gap: 24px; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; margin-bottom: 22px; }
+.conv-head h2 { font-size: 22px; margin-top: 8px; }
+.conv-head p { margin-top: 4px; max-width: 58ch; font-size: 13.5px; }
+.conv-progress { display: grid; gap: 6px; justify-items: end; min-width: 200px; }
+.conv-progress .rev-segs { width: 200px; max-width: none; }
+.conv-progress .rev-seg { cursor: default; }
+.conv-progress .rev-seg:hover { transform: none; }
+.conv-thread { display: flex; flex-direction: column; gap: 14px; }
+.conv-thread .asst-msg { align-items: flex-start; max-width: 88%; }
+.conv-thread .asst-msg.user { max-width: 78%; }
+.asst-bubble.past-q { display: grid; gap: 1px; background: transparent; box-shadow: none; border-style: dashed; color: var(--fg-2); font-size: 13.5px; }
+.conv-thread .asst-msg:has(.qcard) { max-width: 100%; width: 100%; }
+.qcard { flex: 1; min-width: 0; background: var(--surface); border: 1px solid var(--accent-line); border-radius: 20px 20px 20px 6px; padding: 20px 22px 16px; box-shadow: 0 10px 30px rgba(20, 99, 255, .09); animation: wz-in .4s cubic-bezier(.2, .8, .2, 1) both; }
+.qcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.qcard-n { font-size: 12.5px; font-weight: 700; color: var(--accent); margin-right: 4px; }
+.qcard-title { font-size: 20px; letter-spacing: -.025em; line-height: 1.25; margin-top: 10px; }
+.qcard-block { margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border); }
+.qcard-label { display: flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--fg-3); margin-bottom: 6px; }
+.qcard-label svg { width: 13px; height: 13px; }
+.qcard-block blockquote { margin: 0 0 6px; font-size: 14.5px; line-height: 1.55; color: var(--fg); }
+.qcard-block.found.yes { background: var(--ok-soft); border-color: color-mix(in srgb, var(--ok) 28%, transparent); }
+.found-chip { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 8px; background: var(--surface); border: 1px solid color-mix(in srgb, var(--ok) 35%, transparent); font-size: 12.5px; font-weight: 600; color: var(--ok-ink); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.qcard-q { margin-top: 16px; font-size: 16.5px; font-weight: 650; letter-spacing: -.01em; line-height: 1.4; color: var(--fg); }
+.qcard-q.solo { margin-top: 10px; font-size: 18px; }
+.qcard-answers { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.ans { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 46px; padding: 0 20px; border-radius: 12px; border: 1px solid var(--border-strong); background: var(--surface); font: 600 14.5px/1 var(--font-body); color: var(--fg); cursor: pointer; transition: background .15s, border-color .15s, color .15s, transform .1s; }
+.ans:hover { border-color: var(--fg-3); background: var(--bg-subtle); }
+.ans:active { transform: scale(.98); }
+.ans:disabled { opacity: .5; cursor: not-allowed; }
+.ans svg { width: 17px; height: 17px; }
+.ans.yes { background: var(--ok); border-color: var(--ok); color: #fff; box-shadow: 0 4px 14px rgba(18, 183, 106, .25); flex: 1 1 200px; }
+.ans.yes:hover { background: #0E9F5B; border-color: #0E9F5B; }
+.ans.no:hover { border-color: var(--bad); color: var(--bad-ink); background: var(--bad-soft); }
+.qcard-form { display: flex; gap: 8px; margin-top: 12px; }
+.qcard-form .input { flex: 1; height: 44px; border-radius: 12px; }
+.qcard-foot { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+.conv-done { margin-top: 8px; padding: 36px 24px; border-radius: 20px; border: 1px solid var(--border); background: var(--surface); box-shadow: var(--shadow-sm); text-align: center; display: grid; justify-items: center; gap: 10px; }
+.conv-done h3 { font-size: 22px; letter-spacing: -.03em; }
+.conv-done p { max-width: 50ch; margin-bottom: 8px; }
+@media (max-width: 640px) { .conv-progress { justify-items: start; } .conv-thread .asst-msg, .conv-thread .asst-msg.user { max-width: 100%; } .conv-thread .asst-msg:has(.qcard) > .asst-avatar { display: none; } .qcard { padding: 16px; border-radius: 16px; } .ans { flex: 1 1 100%; } }

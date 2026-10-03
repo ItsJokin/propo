@@ -1,29 +1,35 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { LuSend, LuPaperclip, LuSparkles, LuArrowRight, LuCircleCheck, LuLoaderCircle, LuFileText, LuRotateCcw } from 'react-icons/lu';
-import type { Project } from '../../lib/types';
+import { LuSend, LuUpload, LuSparkles, LuArrowRight, LuCheck, LuX, LuCircleCheck, LuLoaderCircle, LuFileText, LuRotateCcw, LuBuilding2 } from 'react-icons/lu';
+import type { Project, InterviewMsg } from '../../lib/types';
 import { navigate, updateProject, getState } from '../../lib/store';
 import { pendingQuestions, startInterview, askNext, answer, interviewStats, type Question } from '../../lib/interview';
 import { runGenerate } from '../../lib/actions';
 import { openSource } from '../common';
 import { ExplainButton } from './Explain';
 import { ACCEPTED } from '../../lib/pipeline/parse';
-import { reqCounts } from '../../lib/derive';
 
+const CATS: Record<string, string> = { administrative: 'Documentación', technical: 'Técnico', financial: 'Económico', experience: 'Experiencia', certification: 'Certificación', format: 'Presentación', legal: 'Legal', team: 'Equipo' };
+const GENERIC = /^(mock|¿pregunta simulada|¿puede tu empresa cumplir)/i;
+const quoteOf = (t: string) => t.replace(/^se exigir[áa]n?:\s*/i, '').replace(/\s+/g, ' ').trim();
+
+// «PROPO te pregunta»: una conversación en la que la pregunta en curso es una tarjeta con todo a la vista
+// (qué pide el pliego, qué ha encontrado PROPO, la pregunta y las respuestas) y lo ya contestado queda arriba, resumido.
 export function Assistant({ p }: { p: Project }) {
   const [text, setText] = useState('');
   const [multi, setMulti] = useState<string[]>([]);
   const [busy, setBusy] = useState(false);
   const [drafting, setDrafting] = useState<string | null>(null);
-  const body = useRef<HTMLDivElement>(null);
+  const end = useRef<HTMLDivElement>(null);
   const file = useRef<HTMLInputElement>(null);
   const q: Question | undefined = useMemo(() => pendingQuestions(p)[0], [p]);
   const msgs = p.interview?.msgs ?? [];
   const stats = interviewStats(p);
-  const rc = reqCounts(p);
   const toDraft = p.sections.filter((s) => s.status === 'not_started').length;
+  // La pregunta en curso se pinta como tarjeta, no como burbuja.
+  const history = q && msgs[msgs.length - 1]?.qid === q.id ? msgs.slice(0, -1) : msgs;
 
   useEffect(() => { if (!p.interview) { startInterview(p); askNext(p.id); } }, [p.id, !!p.interview]);
-  useEffect(() => { body.current?.scrollTo({ top: body.current.scrollHeight, behavior: 'smooth' }); }, [msgs.length, drafting]);
+  useEffect(() => { if (msgs.length > 2 || drafting) end.current?.scrollIntoView({ behavior: 'smooth', block: 'end' }); }, [msgs.length, drafting, busy]);
   useEffect(() => { setMulti([]); setText(''); }, [q?.id]);
 
   const send = async (a: { choice?: string; text?: string; multi?: string[]; file?: File }) => {
@@ -45,76 +51,118 @@ export function Assistant({ p }: { p: Project }) {
     });
   };
   const restart = () => updateProject(p.id, (pr) => { pr.interview = undefined; });
+  const req = q?.reqId ? p.requirements.find((x) => x.id === q.reqId) : undefined;
+  const reqOfMsg = (m: InterviewMsg) => (m.qid?.startsWith('req:') ? p.requirements.find((x) => x.id === m.qid!.slice(4)) : undefined);
 
   return (
-    <div className="asst">
-      <div className="asst-main">
-        <div className="asst-body" ref={body}>
-          {msgs.map((m) => (
+    <div className="conv">
+      <div className="conv-head">
+        <div style={{ minWidth: 0 }}>
+          <div className="eyebrow">Paso 1 · Requisitos</div>
+          <h2>{q ? 'PROPO necesita confirmar unas cosas contigo' : 'Todo confirmado'}</h2>
+          <p className="muted">Solo te pregunta lo que no ha encontrado en los pliegos ni en tu memoria de empresa. Lo que respondas se guarda y no te lo vuelve a preguntar en otras licitaciones.</p>
+        </div>
+        <div className="conv-progress">
+          <div className="rev-segs" aria-hidden="true">{Array.from({ length: Math.max(1, stats.total) }, (_, i) => <span key={i} className={`rev-seg ${i < stats.answered ? 'ok' : i === stats.answered && q ? 'on draft' : ''}`} />)}</div>
+          <div className="small"><strong className="num">{stats.answered} de {stats.total}</strong> <span className="muted">respondidas</span></div>
+          {msgs.length > 2 && <button className="link xs" onClick={restart}><LuRotateCcw style={{ width: 11, height: 11, verticalAlign: -1, marginRight: 3 }} />Empezar de nuevo</button>}
+        </div>
+      </div>
+
+      <div className="conv-thread">
+        {history.map((m) => {
+          const r = reqOfMsg(m);
+          return (
             <div key={m.id} className={`asst-msg ${m.role}`}>
               {m.role === 'propo' && <span className="asst-avatar"><LuSparkles /></span>}
-              <div className="asst-bubble">
-                <div>{m.text}</div>
+              <div className={`asst-bubble ${r ? 'past-q' : ''}`}>
+                {r ? <><span className="xs subtle">Te pregunté por</span><strong>{r.title.replace(/…$/, '')}</strong></> : <div>{m.text}</div>}
                 {m.actions?.map((x) => <button key={x.to + x.label} className="asst-act" onClick={() => navigate(x.to)}>{x.label} <LuArrowRight /></button>)}
-                {m.source && (
+                {!r && m.source && (
                   <button className="asst-source" onClick={() => openSource({ project: p, docId: m.source!.docId, page: m.source!.page, quote: m.source!.quote })}>
                     <LuFileText /> Ver en {m.source.docName?.startsWith('Ficha') ? 'la ficha' : 'el pliego'} · p. {m.source.page}
                   </button>
                 )}
               </div>
             </div>
-          ))}
-          {busy && <div className="asst-msg propo"><span className="asst-avatar"><LuSparkles /></span><div className="asst-bubble typing-dots"><span /><span /><span /></div></div>}
-          {drafting && <div className="asst-msg propo"><span className="asst-avatar"><LuSparkles /></span><div className="asst-bubble"><span className="row small"><LuLoaderCircle className="spin" /> Redactando «{drafting}»…</span></div></div>}
-          {!q && !drafting && (
-            <div className="asst-actions">
-              {toDraft > 0 && !p.interview?.drafted && <button className="btn btn-primary" onClick={draftAll}><LuSparkles /> Redactar la propuesta ({toDraft} secciones)</button>}
-              <button className={`btn ${toDraft > 0 && !p.interview?.drafted ? 'btn-secondary' : 'btn-primary'}`} onClick={() => navigate(`/app/projects/${p.id}/proposal`)}>Revisar la propuesta <LuArrowRight /></button>
-              <button className="btn btn-ghost" onClick={() => navigate(`/app/projects/${p.id}/requirements`)}>Ver todos los requisitos</button>
-            </div>
-          )}
-        </div>
+          );
+        })}
 
-        {q && (
-          <div className="asst-input">
-            {(() => { const req = q.reqId ? p.requirements.find((x) => x.id === q.reqId) : undefined; return (q.hint || req) ? <div className="row xs subtle" style={{ marginBottom: 8 }}><span className="grow">{q.hint}</span>{req && <ExplainButton p={p} r={req} />}</div> : null; })()}
-            {q.multi && (
-              <div className="row-wrap" style={{ marginBottom: 10 }}>
-                {q.multi.map((m) => <button key={m} type="button" className={`chip ${multi.includes(m) ? 'on' : ''}`} onClick={() => setMulti(multi.includes(m) ? multi.filter((x) => x !== m) : [...multi, m])}>{multi.includes(m) && <LuCircleCheck />}{m}</button>)}
+        {busy && <div className="asst-msg propo"><span className="asst-avatar"><LuSparkles /></span><div className="asst-bubble typing-dots"><span /><span /><span /></div></div>}
+
+        {q && !busy && (
+          <div className="asst-msg propo" key={q.id}>
+            <span className="asst-avatar"><LuSparkles /></span>
+            <div className="qcard">
+              <div className="qcard-top">
+                <span className="qcard-n">Pregunta {stats.answered + 1} de {stats.total}</span>
+                {req && <span className="badge outline">{CATS[req.category] ?? 'Requisito'}</span>}
+                {req && q.critical && <span className="badge warn">Obligatorio</span>}
+                <span className="spacer" />
+                {req && <ExplainButton r={req} />}
               </div>
-            )}
-            <div className="row-wrap" style={{ marginBottom: 10 }}>
-              {q.multi && <button className="btn btn-primary btn-sm" disabled={!multi.length || busy} onClick={() => send({ multi })}>Confirmar</button>}
-              {q.choices.map((c) => <button key={c} className={`btn btn-sm ${c.startsWith('Sí') ? 'btn-primary' : 'btn-secondary'}`} disabled={busy} onClick={() => send({ choice: c })}>{c}</button>)}
+
+              {req ? (
+                <>
+                  <h3 className="qcard-title">{req.title.replace(/…$/, '')}</h3>
+                  <div className="qcard-block">
+                    <div className="qcard-label"><LuFileText /> El pliego pide</div>
+                    <blockquote>«{quoteOf(req.text)}»</blockquote>
+                    <button className="link xs" onClick={() => openSource({ project: p, docId: req.source.docId, page: req.source.page, quote: req.source.quote ?? req.text })}>Ver en {req.source.docName.startsWith('Ficha') ? 'la ficha' : 'el pliego'} · página {req.source.page}</button>
+                  </div>
+                  <div className={`qcard-block found ${req.evidence.length ? 'yes' : ''}`}>
+                    <div className="qcard-label"><LuBuilding2 /> En tu empresa</div>
+                    {req.evidence.length
+                      ? <div className="row-wrap">{req.evidence.map((e) => <span key={e.label} className="found-chip">{e.label}</span>)}<span className="xs subtle">Lo he encontrado, pero no puedo comprobar solo que cumple lo exigido.</span></div>
+                      : <div className="small muted">No he encontrado nada en tu memoria de empresa que lo acredite.</div>}
+                  </div>
+                  <p className="qcard-q">{!req.ask || GENERIC.test(req.ask) ? '¿Lo cumple tu empresa?' : req.ask}</p>
+                </>
+              ) : (
+                <p className="qcard-q solo">{q.text}</p>
+              )}
+
+              {q.multi && (
+                <div className="row-wrap" style={{ marginBottom: 12 }}>
+                  {q.multi.map((m) => <button key={m} type="button" className={`chip ${multi.includes(m) ? 'on' : ''}`} onClick={() => setMulti(multi.includes(m) ? multi.filter((x) => x !== m) : [...multi, m])}>{multi.includes(m) && <LuCircleCheck />}{m}</button>)}
+                </div>
+              )}
+              <div className="qcard-answers">
+                {q.multi && <button className="ans yes" disabled={!multi.length} onClick={() => send({ multi })}><LuCheck /> Confirmar selección</button>}
+                {q.choices.filter((c) => c !== 'Saltar').map((c) => (
+                  <button key={c} className={`ans ${c.startsWith('Sí') ? 'yes' : c === 'No' ? 'no' : ''}`} onClick={() => send({ choice: c })}>{c.startsWith('Sí') ? <LuCheck /> : c === 'No' ? <LuX /> : null}{c}</button>
+                ))}
+              </div>
+              <form className="qcard-form" onSubmit={(e) => { e.preventDefault(); if (text.trim()) send({ text: text.trim(), multi: q.multi ? multi : undefined }); }}>
+                <input className="input" aria-label="Tu respuesta" placeholder={q.kind === 'req' ? 'O cuéntalo con tus palabras: «Tenemos la póliza con Mapfre hasta 2027»' : q.placeholder} value={text} onChange={(e) => setText(e.target.value)} />
+                <button className="btn btn-primary btn-icon" aria-label="Enviar" disabled={!text.trim()}><LuSend /></button>
+              </form>
+              <div className="qcard-foot">
+                {q.kind === 'req' && <button type="button" className="btn btn-ghost btn-sm" onClick={() => file.current?.click()}><LuUpload /> Subir el documento que lo acredita</button>}
+                <input ref={file} type="file" hidden accept={ACCEPTED} onChange={(e) => { const f = e.target.files?.[0]; e.target.value = ''; if (f) send({ file: f }); }} />
+                <span className="spacer" />
+                {q.choices.includes('Saltar') && <button type="button" className="btn btn-ghost btn-sm" onClick={() => send({ choice: 'Saltar' })}>Saltar por ahora <LuArrowRight /></button>}
+              </div>
             </div>
-            <form className="asst-form" onSubmit={(e) => { e.preventDefault(); if (text.trim()) send({ text: text.trim(), multi: q.multi ? multi : undefined }); }}>
-              {q.kind === 'req' && <button type="button" className="btn btn-ghost btn-icon" aria-label="Adjuntar documento" title="Adjuntar el documento que lo acredita" onClick={() => file.current?.click()}><LuPaperclip /></button>}
-              <input ref={file} type="file" hidden accept={ACCEPTED} onChange={(e) => { const f = e.target.files?.[0]; e.target.value = ''; if (f) send({ file: f }); }} />
-              <input className="input" aria-label="Tu respuesta" placeholder={q.placeholder} value={text} onChange={(e) => setText(e.target.value)} disabled={busy} />
-              <button className="btn btn-primary btn-icon" aria-label="Enviar" disabled={!text.trim() || busy}><LuSend /></button>
-            </form>
           </div>
         )}
-      </div>
 
-      <aside className="asst-side">
-        <div className="card" style={{ padding: 18 }}>
-          <div className="eyebrow">Tu progreso</div>
-          <div className="asst-progress mt-12"><span style={{ width: `${stats.total ? (stats.answered / stats.total) * 100 : 100}%` }} /></div>
-          <div className="small mt-8"><strong>{stats.answered}</strong> de {stats.total} preguntas respondidas</div>
-          <div className="divider mt-16" />
-          <div className="stack mt-16" style={{ gap: 8 }}>
-            <div className="row small"><span className="dot ok" />{rc.fulfilled} requisitos cumplidos</div>
-            <div className="row small"><span className="dot bad" />{rc.missing} no cumplidos</div>
-            <div className="row small"><span className="dot" />{rc.needs_info} otros requisitos del pliego, para revisar cuando quieras</div>
+        {drafting && <div className="asst-msg propo"><span className="asst-avatar"><LuSparkles /></span><div className="asst-bubble"><span className="row small"><LuLoaderCircle className="spin" /> Redactando «{drafting}»…</span></div></div>}
+
+        {!q && !drafting && !busy && (
+          <div className="conv-done">
+            <span className="rev-done-ic"><LuCheck /></span>
+            <h3>{toDraft > 0 && !p.interview?.drafted ? 'Ya tengo lo que necesito' : 'Requisitos confirmados'}</h3>
+            <p className="muted">{toDraft > 0 && !p.interview?.drafted ? 'Con tus respuestas y la memoria de tu empresa puedo redactar la propuesta. Después la revisas sección a sección.' : 'El siguiente paso es leer la propuesta y aprobar cada sección.'}</p>
+            <div className="row-wrap" style={{ justifyContent: 'center' }}>
+              {toDraft > 0 && !p.interview?.drafted && <button className="btn btn-primary btn-lg" onClick={draftAll}><LuSparkles /> Redactar la propuesta ({toDraft} secciones)</button>}
+              <button className={`btn ${toDraft > 0 && !p.interview?.drafted ? 'btn-secondary' : 'btn-primary'} btn-lg`} onClick={() => navigate(`/app/projects/${p.id}/proposal`)}>Revisar la propuesta <LuArrowRight /></button>
+              <button className="btn btn-ghost" onClick={() => navigate(`/app/projects/${p.id}/requirements`)}>Ver todos los requisitos</button>
+            </div>
           </div>
-        </div>
-        <div className="card mt-16" style={{ padding: 18 }}>
-          <div className="eyebrow">Cómo funciona</div>
-          <p className="small muted mt-8">PROPO solo te pregunta lo que no ha encontrado en los pliegos ni en tu memoria de empresa. Tus respuestas se guardan en los requisitos y en tu perfil, así no te las vuelve a preguntar en otras licitaciones.</p>
-          {msgs.length > 2 && <button className="btn btn-ghost btn-sm mt-8" onClick={restart}><LuRotateCcw /> Reiniciar conversación</button>}
-        </div>
-      </aside>
+        )}
+        <div ref={end} />
+      </div>
     </div>
   );
 }
