@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { LuDownload, LuShieldCheck, LuCircleCheck, LuCircleAlert, LuInfo, LuLoaderCircle, LuExternalLink } from 'react-icons/lu';
+import { LuDownload, LuFileText, LuShieldCheck, LuCircleCheck, LuCircleAlert, LuInfo, LuLoaderCircle, LuExternalLink } from 'react-icons/lu';
 import type { Project } from '../../lib/types';
 import { useStore, navigate, toast, track } from '../../lib/store';
 import { packageItems, buildPackageZip, type PkgStatus } from '../../lib/package';
+import { technicalProposalDocx } from '../../lib/docx';
 import { offerDownload } from '../../lib/services/download';
 import { complianceChecks } from '../../lib/derive';
 import { fmtDate } from '../../lib/util';
@@ -29,6 +30,14 @@ export function Package({ p }: { p: Project }) {
       toast('No se ha podido generar el paquete. Inténtalo de nuevo.', 'bad');
     } finally { setBusy(false); }
   };
+  const word = async () => {
+    try {
+      const r = await offerDownload(`${p.name.replace(/[^\p{L}\p{N}\- ]+/gu, '').trim() || 'Propuesta'} — memoria técnica.docx`, technicalProposalDocx(p, s));
+      track('proposal_docx_downloaded', { projectId: p.id, result: r });
+      if (r === 'saved') toast('Memoria técnica descargada en Word', 'ok');
+      else if (r === 'unavailable') toast('Las descargas no están disponibles en esta vista.', 'warn');
+    } catch (e) { console.error(e); toast('No se ha podido generar el documento. Inténtalo de nuevo.', 'bad'); }
+  };
   return (
     <div className="stack gap-16">
       <div className="card card-pad">
@@ -40,6 +49,7 @@ export function Package({ p }: { p: Project }) {
           </div>
           <div className="row-wrap">
             <button className="btn btn-primary" onClick={download} disabled={busy}>{busy ? <LuLoaderCircle className="spin" /> : <LuDownload />} Descargar paquete de presentación</button>
+            <button className="btn btn-secondary" onClick={word} disabled={!p.sections.length}><LuFileText /> Memoria en Word</button>
             {!p.markedReady && <button className="btn btn-secondary" onClick={() => navigate(`/app/projects/${p.id}/compliance`)}><LuShieldCheck /> Marcar como lista</button>}
           </div>
         </div>

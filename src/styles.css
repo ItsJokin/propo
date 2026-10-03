@@ -975,3 +975,19 @@ a.comp-award-t:hover { color: var(--accent); }
 .verdict.no { background: var(--warn-soft); border-color: color-mix(in srgb, var(--warn) 35%, transparent); }
 .verdict.no .verdict-head svg { color: var(--warn); }
 @media (max-width: 640px) { .comp-win { grid-template-columns: minmax(0, 1fr) auto; } .comp-bar { display: none; } }
+
+/* Simulador de oferta económica */
+.eco-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.eco-result { padding: 22px; border-radius: 16px; border: 1px solid var(--accent-line); background: linear-gradient(180deg, #F5F8FF, var(--surface)); }
+.eco-big { font-size: 44px; font-weight: 800; letter-spacing: -.04em; line-height: 1.1; margin-top: 2px; color: var(--accent); }
+.eco-range { width: 100%; margin: 10px 0 4px; accent-color: var(--accent); }
+.eco-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+.eco-v { font-size: 18px; font-weight: 750; letter-spacing: -.02em; margin-top: 2px; }
+.eco-table { padding: 8px 12px 12px; }
+.eco-row { width: 100%; display: flex; align-items: center; gap: 14px; padding: 8px 12px; border: 0; background: none; border-radius: 10px; cursor: pointer; text-align: left; font-size: 13.5px; }
+.eco-row:hover { background: var(--bg-subtle); }
+.eco-row.on { background: var(--accent-soft); font-weight: 650; }
+.eco-bar { flex: 1; height: 8px; border-radius: 8px; background: var(--surface-2); overflow: hidden; }
+.eco-bar span { display: block; height: 100%; border-radius: 8px; background: var(--accent); }
+.eco-bar span.risk { background: var(--warn); }
+@media (max-width: 860px) { .eco-grid { grid-template-columns: 1fr; } .eco-kpis { grid-template-columns: 1fr 1fr; } }

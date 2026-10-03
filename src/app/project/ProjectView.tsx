@@ -10,6 +10,7 @@ import { Overview } from './Overview';
 import { Requirements } from './Requirements';
 import { Proposal } from './Proposal';
 import { Criteria } from './Criteria';
+import { Economic } from './Economic';
 import { Compliance } from './Compliance';
 import { Package } from './Package';
 import { Documents } from './Documents';
@@ -33,7 +34,7 @@ export function ProjectView({ id, tab }: { id: string; tab: string }) {
   if (p.stage === 'failed') { navigate(`/app/analyze/${p.id}`); return null; }
   const rc = reqCounts(p);
   const tabs: [string, string, number?][] = [
-    ['overview', 'Resumen'], ['assistant', 'PROPO te pregunta', pendingQuestions(p).length || undefined], ['requirements', 'Requisitos', rc.needs_info + rc.missing || undefined], ['proposal', 'Propuesta'], ['criteria', 'Criterios'],
+    ['overview', 'Resumen'], ['assistant', 'PROPO te pregunta', pendingQuestions(p).length || undefined], ['requirements', 'Requisitos', rc.needs_info + rc.missing || undefined], ['proposal', 'Propuesta'], ['criteria', 'Criterios'], ['economic', 'Oferta económica'],
     ['compliance', 'Cumplimiento'], ['package', 'Paquete'], ['documents', 'Documentos del pliego', p.docs.length],
   ];
   const r = readiness(p);
@@ -43,6 +44,7 @@ export function ProjectView({ id, tab }: { id: string; tab: string }) {
       case 'requirements': return <Requirements p={p} />;
       case 'proposal': return <Proposal p={p} />;
       case 'criteria': return <Criteria p={p} />;
+      case 'economic': return <Economic p={p} />;
       case 'compliance': return <Compliance p={p} />;
       case 'package': return <Package p={p} />;
       case 'documents': return <Documents p={p} />;
