@@ -4,7 +4,7 @@ import type { Project, Section } from '../../lib/types';
 import { runGenerate, stopGenerate, setSectionStatus, saveSectionContent, aiActionsLeft } from '../../lib/actions';
 import { RichText, SECTION_LABEL, SECTION_TONE, SourceChip, Bar } from '../../components/ui';
 import { openSource, useAIState } from '../common';
-import { update, toast, useStore } from '../../lib/store';
+import { update, toast, useStore, getState } from '../../lib/store';
 import { estimatePages, pageLimitNumber } from '../../lib/derive';
 import { uid, nowIso, wordCount, timeAgo } from '../../lib/util';
 import { InfoFixModal } from './InfoFix';
@@ -41,7 +41,7 @@ export function Proposal({ p }: { p: Project }) {
             {notStarted.length > 0 && <button className="btn btn-primary" disabled={bulk} onClick={generateAll}><LuSparkles /> {bulk ? 'Redactando…' : `Redactar ${notStarted.length} sección${notStarted.length > 1 ? 'es pendientes' : ' pendiente'}`}</button>}
           </div>
         </div>
-        {ai !== 'available' && <div className="callout neutral small mt-16"><LuInfo /><div>La redacción con IA no está disponible en esta vista. Al generar una sección se crea un <strong>borrador de plantilla</strong>: PROPO ordena los requisitos y las fuentes de empresa y marca lo que tu equipo tiene que escribir.</div></div>}
+        {ai !== 'available' && <div className="callout neutral small mt-16"><LuInfo /><div>{getState().demo ? <>Estás en la demo: las secciones se redactan con la memoria de la empresa de ejemplo para que veas el resultado. Con la IA activada, PROPO las escribe a medida de cada pliego.</> : <>La redacción con IA no está disponible en esta vista. Al generar una sección se crea un <strong>borrador de plantilla</strong>: PROPO ordena los requisitos y las fuentes de empresa y marca lo que tu equipo tiene que escribir.</>}</div></div>}
         {!p.isSample && Number.isFinite(left) && left < 20 && <div className="callout warn small mt-8"><LuTriangleAlert /><div>Te quedan {left} acciones de IA para esta propuesta en tu plan.</div></div>}
       </div>
       <div className="prop-layout">

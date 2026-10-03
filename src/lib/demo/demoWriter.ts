@@ -49,16 +49,16 @@ export function demoSection(project: Project, section: Section, reqs: Requiremen
     : need('personas clave que se adscribirán al contrato');
   const answers = (max: number, from: Requirement[] = reqs) => from.slice(0, max).map((r) => {
     const ev = r.evidence[0]?.label;
-    return `- **${r.title.replace(/…$/, '')}**${forReq(r)}: ${r.status === 'fulfilled' && ev ? `lo acreditamos con ${lower(ev)}.` : r.status === 'fulfilled' ? 'lo cumplimos y lo acreditamos en la documentación adjunta.' : 'asumimos este compromiso desde el inicio del contrato y lo detallamos en el plan de trabajo.'}`;
+    return `- **${r.title.replace(/…$/, '')}**${forReq(r)}: ${r.status === 'fulfilled' && ev ? `lo acreditamos con: ${ev.replace(/.$/, "")}.` : r.status === 'fulfilled' ? 'lo cumplimos y lo acreditamos en la documentación adjunta.' : 'asumimos este compromiso desde el inicio del contrato y lo detallamos en el plan de trabajo.'}`;
   }).join('\n');
   // Requisitos determinantes del pliego: primero los que ya acredita la memoria de empresa.
   const key = project.requirements.filter((r) => r.mandatory && r.category !== 'format').sort((a, b) => Number(b.status === 'fulfilled' && !!b.evidence.length) - Number(a.status === 'fulfilled' && !!a.evidence.length));
-  const tender = project.name.length > 80 ? 'esta licitación' : `«${project.name}»`;
+  const tender = project.name.length > 60 || /…$/.test(project.name) ? 'esta licitación' : `«${project.name}»`;
 
   switch (kindOf(section.title)) {
     case 'summary':
       paras.push(`${co} presenta esta propuesta para ${tender}, convocada por ${buyer}.${desc ? ` ${desc}${mk(profile)}.` : ''}`);
-      paras.push(`Nuestra oferta se apoya en tres pilares:\n- **Experiencia demostrable** en contratos de la misma naturaleza${projects[0] ? `, como ${lower(projects[0].title)}${forItem(projects[0].title)}` : ''}.\n- **Un equipo estable y cualificado**${team[0] ? `, coordinado por ${team[0].name}${forItem(team[0].name)}` : ''}.\n- **Sistemas de gestión certificados**${certs.length ? ` (${list(certs.slice(0, 3))})` : ''} que garantizan un servicio controlado y medible.`);
+      paras.push(`Nuestra oferta se apoya en tres pilares:\n- **Experiencia demostrable** en contratos de la misma naturaleza${projects[0] ? `, como «${projects[0].title}»${forItem(projects[0].title)}` : ''}.\n- **Un equipo estable y cualificado**${team[0] ? `, coordinado por ${team[0].name}${forItem(team[0].name)}` : ''}.\n- **Sistemas de gestión certificados**${certs.length ? ` (${list(certs.slice(0, 3))})` : ''} que garantizan un servicio controlado y medible.`);
       paras.push(`Las secciones siguientes responden, punto por punto, a los requisitos del pliego y a los criterios con los que ${buyer} valorará las ofertas.`);
       break;
     case 'company':
@@ -95,7 +95,7 @@ export function demoSection(project: Project, section: Section, reqs: Requiremen
       paras.push(`${caps.length ? caps.slice(0, 3).map((c) => `- ${c}, puesto a disposición de este contrato.`).join('\n') + '\n' : ''}- Panel de seguimiento en línea con los indicadores del servicio.\n- Reunión trimestral de revisión con propuestas de mejora documentadas.`);
       break;
     default:
-      paras.push(`${co} plantea «${section.title}» a partir de su experiencia en contratos equivalentes${projects[0] ? `, como ${lower(projects[0].title)}${forItem(projects[0].title)}` : ''}${mk(profile)}.`);
+      paras.push(`${co} plantea «${section.title}» a partir de su experiencia en contratos equivalentes${projects[0] ? `, como «${projects[0].title}»${forItem(projects[0].title)}` : ''}${mk(profile)}.`);
       paras.push('Nuestro método de trabajo se organiza en cuatro pasos:\n- **Planificar.** Definimos con el responsable del contrato objetivos, medios y calendario.\n- **Ejecutar.** Prestamos el servicio con procedimientos escritos y personal formado.\n- **Controlar.** Medimos el resultado con indicadores e inspecciones internas.\n- **Mejorar.** Revisamos los datos cada mes y proponemos ajustes.');
       if (caps.length) paras.push(`Para este contrato ponemos a disposición: ${list(caps.map(lower))}.`);
       if (reqs.length) paras.push(`Cómo respondemos a lo que pide el pliego en este apartado:\n${answers(4)}`);
