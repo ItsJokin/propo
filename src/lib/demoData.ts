@@ -21,6 +21,7 @@ export const SAMPLE_COMPANY: CompanyInfo = {
   sectors: ['Educación', 'Servicios sociales', 'Empresas', 'Eventos'],
   cpvs: ['553', '555', '554', '7995'],
   regions: ['ES51'],
+  brandColor: '#1F6F54',
 };
 
 export const SAMPLE_PAST_PROJECTS: PastProject[] = [

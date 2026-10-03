@@ -61,10 +61,13 @@ export function Company({ tab }: { tab: string }) {
 function InfoTab() {
   const c = useStore((s) => s.company);
   const [f, setF] = useState(c);
-  const dirty = JSON.stringify(f) !== JSON.stringify(c);
-  const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => setF({ ...f, [k]: e.target.value });
+  const sansBrand = (x: typeof c) => JSON.stringify({ ...x, logo: undefined, brandColor: undefined });
+  const dirty = sansBrand(f) !== sansBrand(c);   // el logo y el color se guardan al momento, en su propia tarjeta
+  const set =(k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => setF({ ...f, [k]: e.target.value });
   const fields: [keyof typeof f, string, string?][] = [['legalName', 'Razón social'], ['tradeName', 'Nombre comercial'], ['taxId', 'NIF'], ['country', 'País'], ['industry', 'Sector'], ['employees', 'Empleados'], ['revenue', 'Facturación anual', 'Se usa para la solvencia económica y la compatibilidad. PROPO nunca la estima.'], ['website', 'Web']];
   return (
+    <>
+    <BrandCard />
     <div className="card">
       <div className="card-head"><h3>Datos de empresa</h3></div>
       <div className="card-body stack">
@@ -73,7 +76,55 @@ function InfoTab() {
         </div>
         <div className="field"><label htmlFor="ci-address">Dirección</label><input id="ci-address" className="input" value={f.address} onChange={set('address')} /></div>
         <div className="field"><label htmlFor="ci-desc">Descripción</label><textarea id="ci-desc" className="textarea" value={f.description} onChange={set('description')} /><span className="hint">Unas frases sobre lo que hacéis. PROPO las usa en la presentación de la empresa.</span></div>
-        <div className="row"><button className="btn btn-primary" disabled={!dirty} onClick={() => { update((s) => { s.company = f; }); toast('Datos de empresa guardados', 'ok'); }}>Guardar cambios</button>{dirty && <button className="btn btn-ghost" onClick={() => setF(c)}>Descartar</button>}</div>
+        <div className="row"><button className="btn btn-primary" disabled={!dirty} onClick={() => { update((s) => { s.company = { ...f, logo: s.company.logo, brandColor: s.company.brandColor }; }); toast('Datos de empresa guardados', 'ok'); }}>Guardar cambios</button>{dirty && <button className="btn btn-ghost" onClick={() => setF(c)}>Descartar</button>}</div>
+      </div>
+    </div>
+    </>
+  );
+}
+
+/** Logo y color corporativo: personalizan la portada, la cabecera y las tablas de los PDF de cada propuesta. */
+function BrandCard() {
+  const c = useStore((s) => s.company);
+  const input = React.useRef<HTMLInputElement>(null);
+  const color = c.brandColor || '#0B1730';
+  const pick = (file: File | undefined) => {
+    if (!file) return;
+    if (!/^image\//.test(file.type)) { toast('Sube una imagen: PNG, JPG o SVG.', 'warn'); return; }
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      // Se guarda reducido y en PNG: ocupa poco y es el formato que admiten los PDF.
+      const k = Math.min(1, 640 / img.width, 320 / img.height);
+      const cv = document.createElement('canvas'); cv.width = Math.max(1, Math.round(img.width * k)); cv.height = Math.max(1, Math.round(img.height * k));
+      cv.getContext('2d')!.drawImage(img, 0, 0, cv.width, cv.height);
+      URL.revokeObjectURL(url);
+      try { const data = cv.toDataURL('image/png'); update((s) => { s.company.logo = data; }); toast('Logo guardado. Aparecerá en tus documentos.', 'ok'); }
+      catch { toast('No se ha podido leer esta imagen. Prueba con un PNG o un JPG.', 'bad'); }
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); toast('No se ha podido leer esta imagen. Prueba con un PNG o un JPG.', 'bad'); };
+    img.src = url;
+  };
+  const initials = (c.tradeName || c.legalName || 'E').split(/\s+/).slice(0, 2).map((x) => x[0]).join('').toUpperCase();
+  return (
+    <div className="card" style={{ marginBottom: 20 }}>
+      <div className="card-head"><h3>Imagen de marca</h3><span className="xs subtle">Se usa en la portada y la cabecera de tus PDF</span></div>
+      <div className="card-body brand-card">
+        <div className="brand-preview" style={{ borderColor: color }}>
+          {c.logo ? <img src={c.logo} alt="Logo de la empresa" /> : <span className="brand-mono" style={{ background: color }}>{initials}</span>}
+        </div>
+        <div className="stack" style={{ gap: 10, minWidth: 0 }}>
+          <div className="row-wrap">
+            <button className="btn btn-secondary" onClick={() => input.current?.click()}>{c.logo ? 'Cambiar logo' : 'Subir logo'}</button>
+            {c.logo && <button className="btn btn-ghost" onClick={() => update((s) => { s.company.logo = undefined; })}>Quitar</button>}
+            <input ref={input} type="file" accept="image/png,image/jpeg,image/svg+xml,image/webp" hidden onChange={(e) => { pick(e.target.files?.[0]); e.target.value = ''; }} />
+          </div>
+          <span className="hint">PNG, JPG o SVG. Mejor con fondo transparente o blanco.{!c.logo && ' Sin logo, PROPO usa un monograma con tus iniciales.'}</span>
+          <label className="row small" style={{ gap: 10 }}>
+            <input type="color" className="brand-color" value={color} onChange={(e) => update((s) => { s.company.brandColor = e.target.value; })} aria-label="Color corporativo" />
+            <span>Color corporativo <span className="subtle">· títulos, portada y tablas</span></span>
+          </label>
+        </div>
       </div>
     </div>
   );

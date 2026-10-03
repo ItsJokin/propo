@@ -58,6 +58,8 @@ export interface CompanyInfo {
   sectors: string[];
   cpvs: string[];          // CPV prefixes the company bids for (discovery matching)
   regions: string[];       // NUTS prefixes where the company works, e.g. ES51
+  logo?: string;           // data URL (PNG) del logo: portada y cabecera de los PDF
+  brandColor?: string;     // color corporativo en hexadecimal, p. ej. #0B1730
 }
 
 export interface PastProject {
