@@ -263,7 +263,7 @@ export async function generateSection(opts: {
   for (const k of kHits) citations.push({ marker: `S${++n}`, kind: 'company', label: `Empresa — ${k.label}`, quote: k.text });
 
   const approvedExamples = project.sections.filter((s) => s.status === 'approved' && s.id !== section.id).length;
-  const words = Math.min(450, Math.max(160, (section.pageBudget ?? 2) * 110));
+  const words = Math.min(900, Math.max(350, (section.pageBudget ?? 2) * 220));   // secciones desarrolladas: de 350 a 900 palabras
   const sample = await getSample();
   if (sample && aiState() !== 'declined') {
     try {
