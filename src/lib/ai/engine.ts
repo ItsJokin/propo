@@ -10,6 +10,7 @@ import { chunkPages, search, quoteOnPage, type Passage } from '../pipeline/retri
 import { knowledgeForPrompt, knowledgeIndex, toRequirements, type Knowledge } from '../pipeline/matching';
 import { getPages } from '../storage';
 import { uid, nowIso, normalize, tokens, wordCount } from '../util';
+import { demoSection } from '../demo/demoWriter';
 
 export type StageId = 'read' | 'requirements' | 'deadlines' | 'criteria' | 'documents' | 'structure';
 export const STAGES: { id: StageId; label: string }[] = [
@@ -242,7 +243,7 @@ export interface GenOutput { content: string; citations: Citation[]; missing: st
 const PRICE_LEAK = /(€\s?\d|\d[\d.,]*\s?(€|eur\b|euros)|unit price|precio unitario|discount of|descuento del)/i;
 
 export async function generateSection(opts: {
-  project: Project; section: Section; knowledge: Knowledge; pages: Map<string, string[]>; regenerate?: boolean; signal?: AbortSignal;
+  project: Project; section: Section; knowledge: Knowledge; pages: Map<string, string[]>; regenerate?: boolean; signal?: AbortSignal; demo?: boolean;
 }): Promise<GenOutput> {
   const { project, section, knowledge, pages } = opts;
   const crits = project.criteria.filter((c) => section.criteria.includes(c.id));
@@ -294,6 +295,7 @@ export async function generateSection(opts: {
       return { ...t, aiError: e instanceof AIError ? e.code : 'upstream_error' };
     }
   }
+  if (opts.demo) return demoSection(project, section, linkedReqs, citations, knowledge);   // espacio de demostración sin IA
   return templateSection(section, linkedReqs, citations, knowledge, approvedExamples);
 }
 

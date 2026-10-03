@@ -4,6 +4,7 @@ import { useStore, update, navigate, toast, track, getState } from '../lib/store
 import { type TedNotice } from '../lib/discovery/tedSnapshot';
 import { useLive, dataAgeMinutes, type LiveState } from '../lib/data/live';
 import { competitionFor, goNoGo, type Competition, type CompStats } from '../lib/data/awards';
+import { demoPliegoFile } from '../lib/demo/demoPliego';
 import { matchTender, SECTORS, REGIONS, regionLabel, sectorLabel, type Match } from '../lib/discovery/match';
 import { Drawer, Empty } from '../components/ui';
 import { tenderView, fichaFile } from '../lib/discovery/brief';
@@ -82,12 +83,13 @@ export function Tenders() {
     setBusy('Preparando los documentos oficiales…');
     const pdfs = hasPliegos(t.id) ? await loadPliegoFiles(t.id, setBusy) : [];
     const fromFicha = pdfs.length === 0;
-    const files = [fichaFile(t), ...pdfs];   // la ficha aporta los datos oficiales ya verificados (plazos, criterios)
+    const demoDoc = fromFicha && !!getState().demo;   // demo: pliego simulado con las cláusulas habituales, para ver el recorrido completo
+    const files = [fichaFile(t), ...pdfs, ...(demoDoc ? [demoPliegoFile(t)] : [])];   // la ficha aporta los datos oficiales ya verificados (plazos, criterios)
     setBusy(null);
     setOpen(null);
     const r = createProject({ name: shortTitle(t.title), organization: t.buyer, type: 'public_tender', tenderId: t.id, tender: t }, files);
     if (!r.ok) setPaywall(r.reason);
-    else toast(fromFicha ? 'Proyecto creado con la ficha oficial de la licitación' : `Proyecto creado con ${pdfs.length} pliego${pdfs.length === 1 ? '' : 's'} oficial${pdfs.length === 1 ? '' : 'es'}`, 'ok');
+    else toast(demoDoc ? 'Demo: proyecto creado con la ficha oficial y un pliego simulado' : fromFicha ? 'Proyecto creado con la ficha oficial de la licitación' : `Proyecto creado con ${pdfs.length} pliego${pdfs.length === 1 ? '' : 's'} oficial${pdfs.length === 1 ? '' : 'es'}`, 'ok');
   };
   const plan = PLANS[s.subscription.plan];
   const saveAlert = () => {

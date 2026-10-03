@@ -40,7 +40,7 @@ export function Assistant({ p }: { p: Project }) {
     updateProject(p.id, (pr) => {
       pr.interview ??= { msgs: [], answered: [] };
       pr.interview.drafted = true;
-      pr.interview.msgs.push({ id: 'm' + Date.now(), role: 'propo', at: new Date().toISOString(), text: mode === 'ai' ? `He redactado ${todo.length} sección${todo.length === 1 ? '' : 'es'} de la propuesta con tus respuestas y tu memoria de empresa. Cada afirmación cita su fuente; lo que no sé lo marco como «Información requerida». Revísalas y apruébalas: nada se da por bueno sin una persona.` : `He preparado ${todo.length} sección${todo.length === 1 ? '' : 'es'} con la estructura del pliego, tus respuestas y las fuentes. En esta vista la IA no está disponible, así que son borradores de plantilla: ábrelos en claude.ai para que los redacte la IA, o complétalos tú.` });
+      pr.interview.msgs.push({ id: 'm' + Date.now(), role: 'propo', at: new Date().toISOString(), text: mode === 'ai' ? `He redactado ${todo.length} sección${todo.length === 1 ? '' : 'es'} de la propuesta con tus respuestas y tu memoria de empresa. Cada afirmación cita su fuente; lo que no sé lo marco como «Información requerida». Revísalas y apruébalas: nada se da por bueno sin una persona.` : `He preparado ${todo.length} sección${todo.length === 1 ? '' : 'es'} con la estructura del pliego, tus respuestas y las fuentes. ${getState().demo ? 'Como es la demo, las he redactado con la memoria de la empresa de ejemplo para que veas cómo queda una propuesta completa.' : 'En esta vista la IA no está disponible, así que son borradores de plantilla: ábrelos en claude.ai para que los redacte la IA, o complétalos tú.'}` });
     });
   };
   const restart = () => updateProject(p.id, (pr) => { pr.interview = undefined; });

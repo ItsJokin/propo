@@ -26,6 +26,7 @@ export function subscriptionActive(s: AppState) {
 }
 
 export function canCreateProposal(s: AppState): { ok: true } | { ok: false; reason: LimitReason } {
+  if (s.demo) return { ok: true };   // la demo no consume propuestas: se puede repetir el recorrido
   const sub = s.subscription;
   if (sub.status === 'past_due') return { ok: false, reason: 'past_due' };
   if (sub.status === 'trialing') {
@@ -211,7 +212,7 @@ export async function runGenerate(projectId: string, sectionId: string, regenera
   updateProject(projectId, (pr) => { const x = pr.sections.find((y) => y.id === sectionId)!; x.status = 'generating'; });
   try {
     const pages = await projectPages(p);
-    const out = await generateSection({ project: p, section: sec, knowledge: knowledgeOf(getState()), pages, regenerate, signal: ctl.signal });
+    const out = await generateSection({ project: p, section: sec, knowledge: knowledgeOf(getState()), pages, regenerate, signal: ctl.signal, demo: !!getState().demo });
     updateProject(projectId, (pr) => {
       const x = pr.sections.find((y) => y.id === sectionId)!;
       x.content = out.content; x.citations = out.citations; x.missing = out.missing; x.confidence = out.confidence;
