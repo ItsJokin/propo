@@ -134,7 +134,9 @@ export function bullet(w: W, s: string, o: TextOpts = {}) {
 
 /** Título de primer nivel: número y texto en el color de la empresa, con filete. Entra en el índice. */
 export function h1(w: W, title: string, o: { tag?: string; newPage?: boolean } = {}) {
-  if (o.newPage) addPage(w); else { ensure(w, 90); if (w.y < TOP - 4) w.y -= 14; }
+  // Un título nunca queda solo al pie: necesita sitio para él y unas líneas. Los anexos abren página si queda menos de media.
+  if (w.y < TOP - 4 && w.y - BOTTOM < (o.newPage ? 340 : 170)) addPage(w);
+  if (w.y < TOP - 4) w.y -= 16;
   w.toc.push({ title, page: w.doc.getPageCount(), level: 1 });
   const size = 17;
   for (const line of layout(w, title, size, CW, w.bold)) { drawLine(w, w.page, line.map((t) => ({ t: t.t, f: w.bold })), ML, w.y - size, size, w.brand.color, w.bold); w.y -= size * 1.3; }
