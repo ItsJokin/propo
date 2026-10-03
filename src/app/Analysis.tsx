@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { LuCircleCheck, LuLoaderCircle, LuCircle, LuTriangleAlert, LuArrowRight, LuFileX, LuCpu, LuCircleStop, LuInfo, LuClock } from 'react-icons/lu';
-import { useStore, navigate, update } from '../lib/store';
+import { useStore, navigate, update, getState } from '../lib/store';
 import { pendingQuestions } from '../lib/interview';
-import { runAnalysis, hasPendingFiles, deleteProject, STAGES, type AnalysisProgress } from '../lib/actions';
+import { runAnalysis, runGenerate, hasPendingFiles, deleteProject, STAGES, type AnalysisProgress } from '../lib/actions';
 import { Empty } from '../components/ui';
 import { fmtDate } from '../lib/util';
 import { useAIState } from './common';
@@ -12,6 +12,15 @@ export function AnalysisScreen({ id }: { id: string }) {
   const ai = useAIState();
   const [prog, setProg] = useState<AnalysisProgress>({ stage: 'read', detail: {} });
   const started = useRef(false);
+  const demo = useStore((s) => !!s.demo);
+  const [writing, setWriting] = useState<string | null>(null);
+  /** Redacta todas las secciones pendientes, una a una, y abre la propuesta. */
+  const generateAll = async () => {
+    const todo = getState().projects.find((p) => p.id === id)?.sections.filter((s) => s.status === 'not_started') ?? [];
+    for (const s of todo) { setWriting(s.title); await runGenerate(id, s.id, false, true); }
+    setWriting(null);
+    navigate(`/app/projects/${id}/proposal`);
+  };
   const ctl = useRef<AbortController | null>(null);
   const start = (forceRules = false) => {
     started.current = true;
@@ -109,8 +118,12 @@ export function AnalysisScreen({ id }: { id: string }) {
             </div>
           )}
           {!a.deadline && <div className="callout neutral small mt-8"><LuInfo /><div>No se ha encontrado la fecha límite de presentación. Añádela en el resumen del proyecto para que PROPO te avise.</div></div>}
+          {demo && <div className="callout neutral small mt-16"><LuInfo /><div><strong>Estás en la demo.</strong> Pulsa «Generar la propuesta» y PROPO redactará todas las secciones con la memoria de la empresa de ejemplo, para que veas cómo continúa el trabajo.</div></div>}
           <div className="row-wrap mt-24">
-            <button className="btn btn-primary btn-lg" onClick={() => navigate(`/app/projects/${id}/assistant`)}>{pendingQuestions(project).length ? `Responder a PROPO (${pendingQuestions(project).length} preguntas)` : 'Continuar con PROPO'} <LuArrowRight /></button>
+            {project.sections.some((s) => s.status === 'not_started') && (
+              <button className={`btn ${demo ? 'btn-primary' : 'btn-secondary'} btn-lg`} onClick={generateAll} disabled={!!writing}>{writing ? <><LuLoaderCircle className="spin" /> Redactando «{writing.length > 34 ? writing.slice(0, 32) + '…' : writing}»</> : <>Generar la propuesta <LuArrowRight /></>}</button>
+            )}
+            <button className={`btn ${demo ? 'btn-secondary' : 'btn-primary'} btn-lg`} onClick={() => navigate(`/app/projects/${id}/assistant`)}>{pendingQuestions(project).length ? `Responder a PROPO (${pendingQuestions(project).length} preguntas)` : 'Continuar con PROPO'} <LuArrowRight /></button>
             <button className="btn btn-secondary btn-lg" onClick={() => navigate(`/app/projects/${id}/requirements`)}>Revisar requisitos</button>
           </div>
         </div>

@@ -47,14 +47,17 @@ export function demoSection(project: Project, section: Section, reqs: Requiremen
   const teamLines = () => team.length
     ? team.map((m) => `- **${m.name}**, ${lower(m.role)}${m.years ? `, con ${m.years} años de experiencia` : ''}${m.qualifications ? `. ${m.qualifications.replace(/\.$/, '')}` : ''}${forItem(m.name)}`).join('\n')
     : need('personas clave que se adscribirán al contrato');
-  const answers = (max: number) => reqs.slice(0, max).map((r) => {
+  const answers = (max: number, from: Requirement[] = reqs) => from.slice(0, max).map((r) => {
     const ev = r.evidence[0]?.label;
-    return `- **${r.title}**${forReq(r)}: ${r.status === 'fulfilled' && ev ? `lo acreditamos con ${lower(ev)}.` : r.status === 'fulfilled' ? 'lo cumplimos y lo acreditamos en la documentación adjunta.' : need(`cómo cumple ${co} «${lower(r.title)}»`)}`;
+    return `- **${r.title.replace(/…$/, '')}**${forReq(r)}: ${r.status === 'fulfilled' && ev ? `lo acreditamos con ${lower(ev)}.` : r.status === 'fulfilled' ? 'lo cumplimos y lo acreditamos en la documentación adjunta.' : 'asumimos este compromiso desde el inicio del contrato y lo detallamos en el plan de trabajo.'}`;
   }).join('\n');
+  // Requisitos determinantes del pliego: primero los que ya acredita la memoria de empresa.
+  const key = project.requirements.filter((r) => r.mandatory && r.category !== 'format').sort((a, b) => Number(b.status === 'fulfilled' && !!b.evidence.length) - Number(a.status === 'fulfilled' && !!a.evidence.length));
+  const tender = project.name.length > 80 ? 'esta licitación' : `«${project.name}»`;
 
   switch (kindOf(section.title)) {
     case 'summary':
-      paras.push(`${co} presenta esta propuesta para «${project.name}», convocada por ${buyer}.${desc ? ` ${desc}${mk(profile)}.` : ''}`);
+      paras.push(`${co} presenta esta propuesta para ${tender}, convocada por ${buyer}.${desc ? ` ${desc}${mk(profile)}.` : ''}`);
       paras.push(`Nuestra oferta se apoya en tres pilares:\n- **Experiencia demostrable** en contratos de la misma naturaleza${projects[0] ? `, como ${lower(projects[0].title)}${forItem(projects[0].title)}` : ''}.\n- **Un equipo estable y cualificado**${team[0] ? `, coordinado por ${team[0].name}${forItem(team[0].name)}` : ''}.\n- **Sistemas de gestión certificados**${certs.length ? ` (${list(certs.slice(0, 3))})` : ''} que garantizan un servicio controlado y medible.`);
       paras.push(`Las secciones siguientes responden, punto por punto, a los requisitos del pliego y a los criterios con los que ${buyer} valorará las ofertas.`);
       break;
@@ -65,8 +68,8 @@ export function demoSection(project: Project, section: Section, reqs: Requiremen
       if (certs.length) paras.push(`Trabajamos con sistemas de gestión certificados: ${list(certs)}${forItem(certs[0])}.`);
       break;
     case 'understanding':
-      paras.push(`Hemos analizado los pliegos de «${project.name}» y entendemos que ${buyer} necesita un adjudicatario que garantice la continuidad del servicio, cumpla los requisitos sin excepciones y aporte control y transparencia durante toda la ejecución.`);
-      paras.push(reqs.length ? `Estos son los requisitos que consideramos determinantes y cómo los cubrimos:\n${answers(6)}` : need('requisitos clave del pliego'));
+      paras.push(`Hemos analizado los pliegos de ${tender} y entendemos que ${buyer} necesita un adjudicatario que garantice la continuidad del servicio, cumpla los requisitos sin excepciones y aporte control y transparencia durante toda la ejecución.`);
+      paras.push(key.length ? `Estos son los requisitos que consideramos determinantes y cómo los cubrimos:\n${answers(7, key)}` : need('requisitos clave del pliego'));
       break;
     case 'team':
       paras.push(`${co} adscribirá a este contrato un equipo con experiencia directa en servicios equivalentes, con funciones y responsables definidos desde el primer día.`);
