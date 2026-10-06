@@ -45,7 +45,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: dist
-          key: site-${{ hashFiles('src/**', 'shared/**', 'build.mjs', 'package.json') }}-${{ vars.PROPO_AI_URL }}
+          key: site-${{ hashFiles('src/**', 'shared/**', 'build.mjs', 'package.json', 'gate.json') }}-${{ vars.PROPO_AI_URL }}
       - name: Compilar la web
         if: steps.site.outputs.cache-hit != 'true'
         run: |
@@ -88,6 +88,7 @@ jobs:
           mkdir -p _site
           cp dist/index.html _site/index.html
           cp dist/index.html _site/404.html
+          if [ -f dist/app.enc ]; then cp dist/app.enc _site/app.enc; fi   # la web, cifrada
           rsync -a --exclude '_state.json' data/ _site/data/
           cp -r media _site/media   # vídeo de presentación de la pantalla de acceso
           touch _site/.nojekyll

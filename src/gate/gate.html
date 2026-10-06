@@ -1,0 +1,40 @@
+<div class="gate" id="gate">
+  <div class="gate-bg" aria-hidden="true">
+    <i class="gate-blob g1"></i><i class="gate-blob g2"></i><i class="gate-blob g3"></i><i class="gate-blob g4"></i>
+    <i class="gate-grid"></i>
+    <svg class="gate-tri t1" viewBox="0 0 10 10"><path d="M0 0h10L0 10z"/></svg>
+    <svg class="gate-tri t2" viewBox="0 0 10 10"><path d="M0 0h10L0 10z"/></svg>
+    <svg class="gate-tri t3" viewBox="0 0 10 10"><path d="M0 0h10L0 10z"/></svg>
+  </div>
+
+  <main class="gate-main" id="gate-main" hidden>
+    <div class="gate-brand">
+      <svg width="44" height="44" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#fff"/><path fill-rule="evenodd" fill="#0B1730" d="M9 7.5h8.2a6.3 6.3 0 0 1 0 12.6H13.6V25H9zM13.6 11.4v4.8h3.4a2.4 2.4 0 0 0 0-4.8z"/><path fill="#1463FF" d="M13.6 16.2h3.9l-3.9 3.9z"/></svg>
+      <span>PROPO</span>
+    </div>
+    <h1 class="gate-title">Las licitaciones,<br>como deberían ser.</h1>
+
+    <form class="gate-card" id="gate-form">
+      <label class="gate-label" for="gate-pw">Acceso privado</label>
+      <p class="gate-hint">PROPO todavía no está abierto al público. Escribe la contraseña para entrar.</p>
+      <div class="gate-row">
+        <input id="gate-pw" class="gate-input" type="password" autocomplete="current-password" placeholder="Contraseña" aria-describedby="gate-msg">
+        <button class="gate-btn" id="gate-btn" type="submit" disabled>Entrar</button>
+      </div>
+      <p class="gate-msg" id="gate-msg" role="alert"></p>
+    </form>
+
+    <button class="gate-video" id="gate-video" type="button">
+      <span class="gate-play" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg></span>
+      <span><b>Ver qué es PROPO</b><small>Vídeo de 1 minuto, con sonido</small></span>
+    </button>
+  </main>
+  <p class="gate-wait" id="gate-wait" hidden>Abriendo PROPO…</p>
+
+  <div class="gate-modal" id="gate-modal" role="dialog" aria-modal="true" aria-label="Vídeo de PROPO" hidden>
+    <div class="gate-player">
+      <button class="gate-close" id="gate-close" type="button" aria-label="Cerrar el vídeo">×</button>
+      <video id="gate-player" controls playsinline preload="none"></video>
+    </div>
+  </div>
+</div>
