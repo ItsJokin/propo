@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   LuArrowRight, LuCircleCheck, LuCircleAlert, LuCircleX, LuFileText, LuCheck, LuPlus, LuListChecks, LuSearch,
   LuShieldCheck, LuBuilding2, LuFileCheck, LuLoaderCircle, LuHouse, LuFolderKanban, LuLibrary, LuBell, LuMapPin,
-  LuCalendar, LuEuro, LuLandmark, LuSparkles, LuBookmark, LuChevronRight,
+  LuCalendar, LuEuro, LuLandmark, LuSparkles, LuBookmark, LuChevronRight, LuPlay, LuClock, LuTrendingUp, LuBookOpen, LuX,
 } from 'react-icons/lu';
 import { MkLayout, startDemo, startCompleteDemo } from './Layout';
 import { navigate, track } from '../lib/store';
@@ -13,6 +13,63 @@ import { matchTender } from '../lib/discovery/match';
 import { SAMPLE_COMPANY } from '../lib/demoData';
 import { daysUntil, fmtDate } from '../lib/util';
 import { eur } from '../lib/plans';
+import { useLive } from '../lib/data/live';
+
+const VIDEO = 'media/anuncio-propo.mp4';
+const nf = (n: number) => n.toLocaleString('es-ES');
+
+/** Cifras reales de lo que el robot tiene publicado ahora mismo. */
+function LiveStats() {
+  const live = useLive();
+  const open = useCountUp(live.meta?.counts?.tenders ?? live.tenders.length, 1500);
+  const awards = useCountUp(live.meta?.counts?.awards ?? 0, 1700);
+  return (
+    <section className="stats-dark" aria-label="PROPO en cifras">
+      <div className="mk-wrap">
+        <span className="sd-live"><i />Datos en directo de las fuentes oficiales</span>
+        <div className="stats-dark-grid">
+          <div className="sd"><b>{nf(open)}</b><span>licitaciones abiertas ahora mismo</span></div>
+          {awards > 0 && <div className="sd"><b>{nf(awards)}</b><span>contratos adjudicados analizados para conocer a tu competencia</span></div>}
+          <div className="sd"><b>3</b><span>fuentes oficiales: Estado, comunidades autónomas y Unión Europea</span></div>
+          <div className="sd"><b>10 min</b><span>cada cuánto revisa PROPO si hay licitaciones nuevas</span></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function VideoModal({ onClose }: { onClose: () => void }) {
+  useEffect(() => {
+    const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', esc);
+    return () => window.removeEventListener('keydown', esc);
+  }, [onClose]);
+  return (
+    <div className="vmodal" role="dialog" aria-modal="true" aria-label="Vídeo de PROPO" onClick={onClose}>
+      <div className="vmodal-in" onClick={(e) => e.stopPropagation()}>
+        <button className="vmodal-x" onClick={onClose} aria-label="Cerrar el vídeo"><LuX /></button>
+        <video src={VIDEO} controls autoPlay playsInline />
+      </div>
+    </div>
+  );
+}
+
+/** Las piezas de la portada entran con suavidad cuando llegan a la pantalla. */
+function useReveal() {
+  useEffect(() => {
+    if (!('IntersectionObserver' in window) || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+    const els = Array.from(document.querySelectorAll<HTMLElement>('.mk .section-head, .mk .pain-grid > div, .mk .value-line > div, .mk .feature > *, .mk .principle > div, .mk .price-card, .mk .sd, .mk .video-card > *, .mk .cta-band, .mk .steps'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    els.forEach((el) => {
+      const sibs = el.parentElement ? Array.from(el.parentElement.children) : [];
+      el.style.setProperty('--rv-d', el.matches('.section-head, .cta-band, .steps') ? '0s' : `${Math.min(sibs.indexOf(el), 5) * 0.07}s`);
+      el.classList.add('rv'); io.observe(el);
+    });
+    return () => { io.disconnect(); els.forEach((el) => el.classList.remove('rv', 'in')); };
+  }, []);
+}
 
 function useCountUp(target: number, ms = 1400) {
   const [v, setV] = useState(target);
@@ -68,6 +125,7 @@ function HeroMock() {
           </div>
         </div>
       </div>
+      <div className="mock-chip"><LuCircleCheck />Paquete listo para presentar</div>
       <div className="mock-float">
         <div className="row" style={{ gap: 12 }}>
           <Ring value={ready} size={54} stroke={5} tone="accent" label={<span style={{ fontSize: 13 }}>{ready}%</span>} />
@@ -259,9 +317,14 @@ const MARQUEE_SECTORS = ['Construcción', 'Catering y restauración', 'Limpieza'
 
 export function Landing() {
   const start = (cta: string) => { track('cta_click', { cta }); navigate('/signup'); };
+  const [video, setVideo] = useState(false);
+  const play = (from: string) => { track('cta_click', { cta: 'video_' + from }); setVideo(true); };
+  useReveal();
   return (
     <MkLayout>
-      <section className="hero">
+      {video && <VideoModal onClose={() => setVideo(false)} />}
+      <section className="hero hero-v2">
+        <div className="wz-bg" aria-hidden="true"><i className="wz-blob b1" /><i className="wz-blob b2" /><i className="wz-blob b3" /><i className="wz-grid" /></div>
         <div className="mk-wrap hero-grid">
           <div>
             <span className="hero-kicker"><span className="new">Nuevo</span>La forma más inteligente de trabajar con licitaciones</span>
@@ -274,6 +337,7 @@ export function Landing() {
             <div className="hero-note">
               <span><LuCheck /> 14 días de prueba</span><span><LuCheck /> Sin tarjeta</span><span><LuCheck /> Tu equipo aprueba todo</span>
             </div>
+            <button className="hero-video" onClick={() => play('hero')}><span><LuPlay /></span><div>Ver PROPO en un minuto<small>Vídeo con sonido</small></div></button>
           </div>
           <HeroMock />
         </div>
@@ -285,6 +349,8 @@ export function Landing() {
           </div>
         </div>
       </section>
+
+      <LiveStats />
 
       <section className="section-tight">
         <div className="mk-wrap sector-band">
@@ -309,8 +375,8 @@ export function Landing() {
             <p>Encontrar y preparar una sola oferta supone semanas de lectura, documentos y redacción. La mayoría de pymes lo hace con una persona y una hoja de cálculo.</p>
           </div>
           <div className="pain-grid">
-            {PAINS.map(([t, d]) => (
-              <div key={t}><LuCheck style={{ width: 16, height: 16, color: 'var(--accent)', flex: 'none', marginTop: 3 }} /><div><div style={{ fontWeight: 600 }}>{t}</div><div className="small muted">{d}</div></div></div>
+            {PAINS.map(([t, d], i) => (
+              <div key={t}><span className="pain-n">{String(i + 1).padStart(2, '0')}</span><div><div style={{ fontWeight: 600 }}>{t}</div><div className="small muted">{d}</div></div></div>
             ))}
           </div>
           <div className="section-head mt-48" style={{ marginBottom: 24 }}>
@@ -318,10 +384,27 @@ export function Landing() {
             <h2>Menos tiempo preparando. <span className="blue">Más tiempo creciendo.</span></h2>
           </div>
           <div className="value-line">
-            <div><strong>Menos búsqueda</strong><p className="muted mt-8">Las licitaciones que encajan contigo llegan solas, con su nivel de compatibilidad.</p></div>
-            <div><strong>Menos lectura</strong><p className="muted mt-8">PROPO lee cada página y te entrega los requisitos con la página de la que salen.</p></div>
-            <div><strong>Menos olvidos</strong><p className="muted mt-8">Cada requisito se sigue hasta estar cumplido y hay un control final antes de presentar.</p></div>
-            <div><strong>Más ofertas</strong><p className="muted mt-8">El mismo equipo puede presentar más propuestas porque la base ya está hecha.</p></div>
+            <div><span className="vl-ico"><LuSearch /></span><strong>Menos búsqueda</strong><p className="muted mt-8">Las licitaciones que encajan contigo llegan solas, con su nivel de compatibilidad.</p></div>
+            <div><span className="vl-ico"><LuBookOpen /></span><strong>Menos lectura</strong><p className="muted mt-8">PROPO lee cada página y te entrega los requisitos con la página de la que salen.</p></div>
+            <div><span className="vl-ico"><LuShieldCheck /></span><strong>Menos olvidos</strong><p className="muted mt-8">Cada requisito se sigue hasta estar cumplido y hay un control final antes de presentar.</p></div>
+            <div><span className="vl-ico"><LuTrendingUp /></span><strong>Más ofertas</strong><p className="muted mt-8">El mismo equipo puede presentar más propuestas porque la base ya está hecha.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="mk-wrap">
+          <div className="video-card">
+            <div>
+              <div className="eyebrow">En un minuto</div>
+              <h2>Mira cómo trabaja PROPO.</h2>
+              <p>De miles de licitaciones abiertas a una propuesta lista para firmar: qué hace PROPO en cada paso y qué decides tú.</p>
+              <button className="btn btn-primary btn-lg mt-24" onClick={() => play('section')}><LuPlay /> Ver el vídeo</button>
+            </div>
+            <button className="video-thumb" onClick={() => play('thumb')} aria-label="Reproducir el vídeo de PROPO">
+              <video src={VIDEO + '#t=5.5'} preload="metadata" muted playsInline tabIndex={-1} aria-hidden="true" />
+              <span className="video-play"><span><LuPlay /></span></span>
+            </button>
           </div>
         </div>
       </section>
@@ -411,7 +494,7 @@ export function Landing() {
         </div>
       </section>
 
-      <section className="section band">
+      <section className="section band dark">
         <div className="mk-wrap">
           <div className="section-head">
             <div className="eyebrow">Con supervisión humana</div>
@@ -419,9 +502,9 @@ export function Landing() {
             <p>La IA lee y hace el primer borrador. Las decisiones con peso legal y comercial las toman personas.</p>
           </div>
           <div className="principle">
-            <div><div className="big">Prepara</div><p className="muted mt-8">Extrae requisitos, cruza los datos de tu empresa, redacta secciones y declaraciones y monta el paquete.</p></div>
-            <div><div className="big">Avisa</div><p className="muted mt-8">Marca lo que no tiene claro, lo que falta y lo que podría excluirte. Nunca rellena huecos con datos inventados.</p></div>
-            <div><div className="big">Tú apruebas</div><p className="muted mt-8">Cada sección pasa de Borrador a Generada por IA, Revisada y Aprobada. Precios, experiencia y datos legales los valida una persona.</p></div>
+            <div><span className="pr-n">01</span><div className="big">Prepara</div><p className="muted mt-8">Extrae requisitos, cruza los datos de tu empresa, redacta secciones y declaraciones y monta el paquete.</p></div>
+            <div><span className="pr-n">02</span><div className="big">Avisa</div><p className="muted mt-8">Marca lo que no tiene claro, lo que falta y lo que podría excluirte. Nunca rellena huecos con datos inventados.</p></div>
+            <div><span className="pr-n">03</span><div className="big">Tú apruebas</div><p className="muted mt-8">Cada sección pasa de Borrador a Generada por IA, Revisada y Aprobada. Precios, experiencia y datos legales los valida una persona.</p></div>
           </div>
         </div>
       </section>
@@ -448,6 +531,7 @@ export function Landing() {
       <section className="section">
         <div className="mk-wrap">
           <div className="cta-band">
+            <i className="cta-glow" aria-hidden="true" />
             <div>
               <h2>Encuentra la licitación. PROPO hace el trabajo. Tú apruebas.</h2>
               <p>Crea tu primera propuesta en minutos. Sin tarjeta.</p>
