@@ -294,7 +294,7 @@ export function Landing() {
             <div className="hero-note">
               <span><LuCheck /> 14 días de prueba</span><span><LuCheck /> Sin tarjeta</span><span><LuCheck /> Tu equipo aprueba todo</span>
             </div>
-            <button className="hero-video" onClick={() => { track('cta_click', { cta: 'video_hero' }); setVideo(true); }}><span><LuPlay /></span><div>Ver PROPO en un minuto<small>Vídeo con sonido</small></div></button>
+            <button className="hero-video" onClick={() => setVideo(true)}><span><LuPlay /></span><div>Ver PROPO en un minuto<small>Vídeo con sonido</small></div></button>
           </div>
           <HeroMock />
         </div>
