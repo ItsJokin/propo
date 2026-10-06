@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
+import { Gate } from './auth/Gate';
 import { startLive } from './lib/data/live';
 
 startLive();
@@ -22,4 +23,4 @@ class Boundary extends React.Component<{ children: React.ReactNode }, { err: Err
   }
 }
 
-createRoot(document.getElementById('root')!).render(<Boundary><App /></Boundary>);
+createRoot(document.getElementById('root')!).render(<Boundary><Gate><App /></Gate></Boundary>);

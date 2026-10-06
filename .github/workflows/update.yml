@@ -89,6 +89,7 @@ jobs:
           cp dist/index.html _site/index.html
           cp dist/index.html _site/404.html
           rsync -a --exclude '_state.json' data/ _site/data/
+          cp -r media _site/media   # vídeo de presentación de la pantalla de acceso
           touch _site/.nojekyll
           du -sh _site
       - uses: actions/upload-pages-artifact@v3
