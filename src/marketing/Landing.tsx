@@ -16,7 +16,7 @@ import { eur } from '../lib/plans';
 import { useLive } from '../lib/data/live';
 
 const VIDEO = 'media/anuncio-propo.mp4';
-const nf = (n: number) => n.toLocaleString('es-ES');
+const nf = (n: number) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');   // 6.235: es-ES no separa los millares de cuatro cifras
 
 /** Cifras reales de lo que el robot tiene publicado ahora mismo. */
 function LiveStats() {
