@@ -24,10 +24,10 @@ function LiveStats() {
   const open = useCountUp(live.meta?.counts?.tenders ?? live.tenders.length, 1500);
   const awards = useCountUp(live.meta?.counts?.awards ?? 0, 1700);
   return (
-    <section className="stats-dark" aria-label="PROPO en cifras">
+    <section className="stats-live" aria-label="PROPO en cifras">
       <div className="mk-wrap">
         <span className="sd-live"><i />Datos en directo de las fuentes oficiales</span>
-        <div className="stats-dark-grid">
+        <div className="stats-live-grid">
           <div className="sd"><b>{nf(open)}</b><span>licitaciones abiertas ahora mismo</span></div>
           {awards > 0 && <div className="sd"><b>{nf(awards)}</b><span>contratos adjudicados analizados para conocer a tu competencia</span></div>}
           <div className="sd"><b>3</b><span>fuentes oficiales: Estado, comunidades autónomas y Unión Europea</span></div>
@@ -494,7 +494,7 @@ export function Landing() {
         </div>
       </section>
 
-      <section className="section band dark">
+      <section className="section band soft">
         <div className="mk-wrap">
           <div className="section-head">
             <div className="eyebrow">Con supervisión humana</div>
