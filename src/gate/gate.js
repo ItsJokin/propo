@@ -39,7 +39,13 @@
   }
 
   const main = $('gate-main'), wait = $('gate-wait'), form = $('gate-form'), input = $('gate-pw'), btn = $('gate-btn'), msg = $('gate-msg');
-  const show = (asking) => { main.hidden = !asking; wait.hidden = asking; if (asking) input.focus(); };
+  const corner = $('gate-corner'), lock = $('gate-lock');
+  const show = (asking) => { main.hidden = !asking; corner.hidden = !asking; wait.hidden = asking; };
+  // La contraseña vive tras el candado de la esquina.
+  const pop = (open) => { form.hidden = !open; lock.setAttribute('aria-expanded', String(open)); if (open) input.focus(); };
+  lock.addEventListener('click', () => pop(form.hidden));
+  document.addEventListener('click', (e) => { if (!form.hidden && !corner.contains(e.target)) pop(false); });
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !form.hidden) { pop(false); lock.focus(); } });
 
   // Este navegador ya entró antes: se abre solo.
   let saved = null;
