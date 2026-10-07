@@ -94,16 +94,19 @@
         wlMsg.textContent = 'Escribe un correo válido, por ejemplo tu@empresa.com.'; wlEmail.setAttribute('aria-invalid', 'true'); wlEmail.focus(); return;
       }
       wlEmail.removeAttribute('aria-invalid'); wlMsg.textContent = ''; wlBtn.disabled = true; wlBtn.textContent = 'Enviando…';
+      const done = () => { wl.hidden = true; wlDone.hidden = false; };
+      const soon = setTimeout(done, 2500);       // el servicio puede tardar; no se hace esperar a nadie mirando un botón
       try {
         const res = await fetch(CFG.waitlist, {
-          method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify({ Correo: email, Sector: $('wl-sector').value || 'Sin indicar', _honey: $('wl-honey').value, _subject: 'PROPO · nueva alta en la lista de espera', _template: 'table', _captcha: 'false' }),
         });
         const out = await res.json().catch(() => ({}));
         if (!res.ok || String(out.success) !== 'true') throw new Error('send');
+        clearTimeout(soon); done();
         try { localStorage.setItem(WL_STORE, '1'); } catch { /* nada */ }
-        wl.hidden = true; wlDone.hidden = false;
       } catch {
+        clearTimeout(soon); wlDone.hidden = true; wl.hidden = false;
         wlMsg.textContent = 'No se ha podido enviar. Tu correo sigue en la casilla: inténtalo de nuevo en un momento.';
         wlBtn.disabled = false; wlBtn.textContent = 'Avísame';
       }
