@@ -74,6 +74,36 @@
     }
   });
 
+  // Lista de espera: «Avísame cuando abra». El destino lo pone build.mjs (waitlist.json); sin él, el formulario no se enseña.
+  const wl = $('wl-form'), wlDone = $('wl-done'), wlMsg = $('wl-msg'), wlBtn = $('wl-btn'), wlEmail = $('wl-email');
+  const WL_STORE = 'propo.waitlist';
+  if (CFG.waitlist) {
+    let joined = false;
+    try { joined = localStorage.getItem(WL_STORE) === '1'; } catch { /* sin almacenamiento */ }
+    wl.hidden = joined; wlDone.hidden = !joined;
+    wl.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = wlEmail.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        wlMsg.textContent = 'Escribe un correo válido, por ejemplo tu@empresa.com.'; wlEmail.setAttribute('aria-invalid', 'true'); wlEmail.focus(); return;
+      }
+      wlEmail.removeAttribute('aria-invalid'); wlMsg.textContent = ''; wlBtn.disabled = true; wlBtn.textContent = 'Enviando…';
+      try {
+        const res = await fetch(CFG.waitlist, {
+          method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ Correo: email, Sector: $('wl-sector').value || 'Sin indicar', _honey: $('wl-honey').value, _subject: 'PROPO · nueva alta en la lista de espera', _template: 'table', _captcha: 'false' }),
+        });
+        const out = await res.json().catch(() => ({}));
+        if (!res.ok || String(out.success) !== 'true') throw new Error('send');
+        try { localStorage.setItem(WL_STORE, '1'); } catch { /* nada */ }
+        wl.hidden = true; wlDone.hidden = false;
+      } catch {
+        wlMsg.textContent = 'No se ha podido enviar. Tu correo sigue en la casilla: inténtalo de nuevo en un momento.';
+        wlBtn.disabled = false; wlBtn.textContent = 'Avísame';
+      }
+    });
+  }
+
   // Vídeo de presentación.
   const modal = $('gate-modal'), player = $('gate-player');
   const close = () => { player.pause(); modal.hidden = true; };

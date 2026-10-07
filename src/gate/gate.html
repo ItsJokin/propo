@@ -24,6 +24,28 @@
       <p class="gate-msg" id="gate-msg" role="alert"></p>
     </form>
 
+    <form class="gate-card gate-wl" id="wl-form" hidden novalidate>
+      <label class="gate-label" for="wl-email">¿Te avisamos cuando abra?</label>
+      <p class="gate-hint">Déjanos tu correo y serás de los primeros en probar PROPO. Solo te escribiremos para eso.</p>
+      <div class="gate-row">
+        <input id="wl-email" class="gate-input" type="email" name="email" autocomplete="email" inputmode="email" placeholder="tu@empresa.com" aria-describedby="wl-msg" required>
+        <button class="gate-btn" id="wl-btn" type="submit">Avísame</button>
+      </div>
+      <label class="gate-sub" for="wl-sector">¿A qué se dedica tu empresa? <span>(opcional)</span></label>
+      <select id="wl-sector" class="gate-input gate-select" name="sector">
+        <option value="">Elige un sector</option>
+        <option>Construcción y obras</option><option>Limpieza y mantenimiento</option><option>Catering y alimentación</option>
+        <option>Tecnología e informática</option><option>Consultoría e ingeniería</option><option>Seguridad</option>
+        <option>Transporte y logística</option><option>Sanidad y servicios sociales</option><option>Suministros</option><option>Otro</option>
+      </select>
+      <input type="text" name="_honey" id="wl-honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="gate-honey">
+      <p class="gate-msg" id="wl-msg" role="status"></p>
+    </form>
+    <div class="gate-card gate-wl gate-done" id="wl-done" hidden>
+      <span class="gate-check" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <div><b>Apuntado. Gracias.</b><p>Te escribiremos en cuanto PROPO abra sus puertas.</p></div>
+    </div>
+
     <button class="gate-video" id="gate-video" type="button">
       <span class="gate-play" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg></span>
       <span><b>Ver qué es PROPO</b><small>Vídeo de 1 minuto, con sonido</small></span>

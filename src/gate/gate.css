@@ -52,3 +52,17 @@ body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-
 .gate-close { position: absolute; right: 0; top: -46px; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .3); background: rgba(255, 255, 255, .1); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; }
 @media (max-width: 480px) { .gate-row { flex-direction: column; } .gate-btn { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .gate-blob, .gate-grid, .gate-tri, .gate-main, .gate-card.is-wrong { animation: none; } }
+/* Lista de espera */
+.gate-wl { margin-top: 14px; }
+.gate-sub { display: block; margin: 14px 0 6px; font-size: 14px; font-weight: 600; color: #fff; }
+.gate-sub span { font-weight: 400; color: rgba(255, 255, 255, .7); }
+.gate-select { width: 100%; appearance: auto; }
+.gate-select option { color: #0B1730; background: #fff; }
+.gate-honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.gate-done { display: flex; align-items: center; gap: 16px; }
+.gate-done b { display: block; font-size: 17px; }
+.gate-done p { margin: 4px 0 0; font-size: 14px; color: rgba(255, 255, 255, .78); }
+.gate-check { flex: none; width: 44px; height: 44px; border-radius: 50%; background: #12B76A; color: #fff; display: grid; place-items: center; box-shadow: 0 0 0 7px rgba(18, 183, 106, .22); }
+.gate { place-items: start center; }
+.gate-main { margin-block: auto; }
+.gate-wait { margin-block: auto; }

@@ -45,7 +45,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: dist
-          key: site-${{ hashFiles('src/**', 'shared/**', 'build.mjs', 'package.json', 'gate.json') }}-${{ vars.PROPO_AI_URL }}
+          key: site-${{ hashFiles('src/**', 'shared/**', 'build.mjs', 'package.json', 'gate.json', 'waitlist.json') }}-${{ vars.PROPO_AI_URL }}
       - name: Compilar la web
         if: steps.site.outputs.cache-hit != 'true'
         run: |

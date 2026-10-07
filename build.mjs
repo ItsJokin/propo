@@ -63,6 +63,7 @@ if (!dev && fs.existsSync('gate.json')) {
     contentKey: b64(await subtle.encrypt({ name: 'RSA-OAEP' }, pub, await subtle.exportKey('raw', key))),
     app: 'app.enc?v=' + b64(await subtle.digest('SHA-256', blob)).replace(/[^a-z0-9]/gi, '').slice(0, 12),
     video: 'media/anuncio-propo.mp4',
+    waitlist: fs.existsSync('waitlist.json') ? JSON.parse(fs.readFileSync('waitlist.json', 'utf8')).endpoint : '',   // «Avísame cuando abra»
   };
   page = `<title>PROPO</title>
 <meta name="robots" content="noindex">
