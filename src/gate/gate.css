@@ -77,3 +77,4 @@ body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-
 .gate-pop .gate-msg { min-height: 0; }
 .gate-pop .gate-msg:empty { display: none; }
 @media (prefers-reduced-motion: reduce) { .gate-pop { animation: none; } }
+.gate-other { width: 100%; margin-top: 10px; }

@@ -87,6 +87,9 @@
     let joined = false;
     try { joined = localStorage.getItem(WL_STORE) === '1'; } catch { /* sin almacenamiento */ }
     wl.hidden = joined; wlDone.hidden = !joined;
+    const wlSector = $('wl-sector'), wlOther = $('wl-other');
+    wlSector.addEventListener('change', () => { wlOther.hidden = wlSector.value !== 'Otro'; if (!wlOther.hidden) wlOther.focus(); });
+    const sector = () => (wlSector.value === 'Otro' ? (wlOther.value.trim() ? 'Otro: ' + wlOther.value.trim() : 'Otro') : wlSector.value || 'Sin indicar');
     wl.addEventListener('submit', async (e) => {
       e.preventDefault();
       const email = wlEmail.value.trim();
@@ -99,7 +102,7 @@
       try {
         const res = await fetch(CFG.waitlist, {
           method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({ Correo: email, Sector: $('wl-sector').value || 'Sin indicar', _honey: $('wl-honey').value, _subject: 'PROPO · nueva alta en la lista de espera', _template: 'table', _captcha: 'false' }),
+          body: JSON.stringify({ Correo: email, Sector: sector(), _honey: $('wl-honey').value, _subject: 'PROPO · nueva alta en la lista de espera', _template: 'table', _captcha: 'false' }),
         });
         const out = await res.json().catch(() => ({}));
         if (!res.ok || String(out.success) !== 'true') throw new Error('send');
