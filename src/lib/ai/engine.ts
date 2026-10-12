@@ -138,10 +138,23 @@ function mergeExtractions(parts: ExtractionResult[]): ExtractionResult {
     if (p.formsOnly) { out.formsOnly = true; out.formNote ??= p.formNote; }
   }
   // Si lo técnico se entrega solo en formularios, sobran las secciones de memoria que no responden a ningún criterio.
+  // La oferta económica no es una sección: los precios los pone siempre la empresa.
+  out.structure = out.structure.filter((x) => !/oferta econ|proposici[oó]n econ|sobre (n[ºo.]? ?)?3/i.test(`${x.title} ${x.form ?? ''}`));
+  // Un bloque puede haber creado una sección «paraguas» para un anexo (leyendo solo su descripción en el pliego) y otro
+  // bloque una sección por cada formulario de ese anexo (leyendo el archivo): se quedan las concretas.
+  const perDoc = new Map<string, number>();
+  for (const x of out.structure) if (x.form && x.formDoc) perDoc.set(normalize(x.formDoc), (perDoc.get(normalize(x.formDoc)) ?? 0) + 1);
+  out.structure = out.structure.filter((x) => {
+    const annex = x.form?.match(/anexo\s+[ivxlc\d]+/i)?.[0];
+    if (!annex) return true;
+    const own = normalize(x.formDoc ?? '');
+    return ![...perDoc].some(([doc, n]) => n >= 3 && doc !== own && doc.includes(normalize(annex)));
+  });
   if (out.formsOnly && out.structure.some((x) => x.form)) {
     const byForms = new Set(out.structure.filter((x) => x.form).flatMap((x) => x.criteria.map(normalize)));
-    out.structure = out.structure.filter((x) => x.form || x.criteria.some((c) => !byForms.has(normalize(c)))).slice(0, 16);
+    out.structure = out.structure.filter((x) => x.form || x.criteria.some((c) => !byForms.has(normalize(c))));
   }
+  out.structure = out.structure.slice(0, 20);
   return out;
 }
 
