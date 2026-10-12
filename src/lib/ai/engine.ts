@@ -271,8 +271,8 @@ export function sectionWordTarget(project: Project, section: Section): number {
   return round(900 + pts(section) * 50, 1000, 2400);
 }
 
-/** Cuántos datos puede pedir al cliente una sección, como mucho. */
-const MAX_ASKS = 2;
+/** Cuántos datos puede pedir al cliente una sección, como mucho: los que deciden puntos, no los detalles. */
+const MAX_ASKS = 4;
 
 export async function generateSection(opts: {
   project: Project; section: Section; knowledge: Knowledge; pages: Map<string, string[]>; regenerate?: boolean; signal?: AbortSignal; demo?: boolean;

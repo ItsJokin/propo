@@ -1,6 +1,6 @@
 // Prompt templates. Kept in one place so they can be versioned and evaluated.
 // Production stores the prompt version with every generated item (generated_content.prompt_version).
-export const PROMPT_VERSION = '2026-10-12.3';
+export const PROMPT_VERSION = '2026-10-12.4';
 
 export function extractionPrompt(knowledgeJson: string, pagesBlock: string, batch: number, total: number) {
   return `You are PROPO's tender analysis engine. Read the tender pages below and extract structured data for a company preparing its bid.
@@ -61,7 +61,7 @@ Hard rules
   1. Use the company sources, including the answers the company has already given for this tender (marked "Respuesta de la empresa").
   2. Where the tender fixes a figure (a deadline, a frequency, a minimum team, a ratio, a standard), commit to meeting that exact figure and cite it.
   3. For the organisation of the work (meeting and report frequency, internal checks, review steps, response and escalation circuits, training sessions, indicators and their targets), propose concrete commitments yourself: the usual good practice in this sector, demanding enough to score well and realistic for a small or medium company. Write them as commitments of the offer ("nos comprometemos a..."), never as things the company already does or has. Every commitment you propose this way must also appear in "## Compromisos verificables", so the owner sees them when approving.
-  4. Only when a fact is decisive for the score AND only the company can know it (a named person and their profile, a certificate it holds, a reference contract, how many vehicles, machines, premises or staff it really has), write the placeholder [Información requerida: qué dato falta, en palabras sencillas] and list it in "missing". At most ${p.maxAsks} placeholders in the whole section: choose the ones worth the most points and write around the rest with what you have.
+  4. When a fact would win or secure points AND only the company can know it (a named person and their profile, a certificate it holds, a reference contract with client, year and amount, how many vehicles, machines, premises or staff it really has, a result it has achieved), ASK for it: write the placeholder [Información requerida: qué dato falta, en palabras sencillas] exactly where the fact belongs and list it in "missing". The goal is to win the contract: a section that scores less because it lacks a decisive fact is worse than one more question. Up to ${p.maxAsks} placeholders per section, the ones worth the most points first; do not spend them on details that would not change the score.
 - Never state as a fact about the company (past clients, experience, certifications, staff, equipment, figures) anything that is not in a company source: that is what placeholders are for. Never use a placeholder for something you can solve with steps 1 to 3.
 ${p.asked ? `- These data have already been requested from the company in other sections; do NOT ask for them again here, write around them: ${p.asked}\n` : ''}- Never include prices, costs, discounts or any economic figure of the offer.
 - Cite sources inline with their markers right after the sentence they support, e.g. "... within two hours [S3]."
