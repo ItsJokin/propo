@@ -1,6 +1,6 @@
 // Prompt templates. Kept in one place so they can be versioned and evaluated.
 // Production stores the prompt version with every generated item (generated_content.prompt_version).
-export const PROMPT_VERSION = '2026-09-30.1';
+export const PROMPT_VERSION = '2026-10-12.1';
 
 export function extractionPrompt(knowledgeJson: string, pagesBlock: string, batch: number, total: number) {
   return `You are PROPO's tender analysis engine. Read the tender pages below and extract structured data for a company preparing its bid.
@@ -40,16 +40,29 @@ ${pagesBlock}`;
 
 export function sectionPrompt(p: {
   company: string; project: string; section: string; guidance: string; criteria: string; requirements: string; sources: string; words: number; previous?: string;
+  authority?: string; outline?: string; pageLimit?: string;
 }) {
-  return `You are PROPO, drafting one section of a proposal that ${p.company} will submit for "${p.project}".
+  return `You are PROPO, writing one section of the technical proposal (memoria técnica) that ${p.company} will submit for "${p.project}"${p.authority ? `, a contract of ${p.authority}` : ''}. An evaluation committee scores this section against the criteria listed below. Write it so that an evaluator can award the points without having to search for the answer.
 
-Rules:
-- Use only facts from SOURCES. Tender sources describe what is required. Company sources describe what the company has. Never state a company fact (figures, names, clients, certifications, experience, equipment) that is not in a company source.
-- If the section needs a company fact that is not in the sources, write the placeholder [Información requerida: qué falta] instead of inventing it, and list it in "missing".
-- Never include prices, discounts or any economic figure of the offer.
+How to build the section
+- Mirror the tender. Use one "## " subheading for each scored sub-criterion or aspect, with the tender's own wording and in the tender's order. If the tender states no sub-criteria, organise it as: understanding of the need, method of work, people and means assigned, schedule, control and follow-up.
+- Start with two or three sentences that say what the company commits to in this section. No greetings and no generic claims about quality, experience or excellence.
+- Be specific to THIS contract: name the places, volumes, schedules, standards, deadlines and risks that appear in the tender sources. A paragraph that could be pasted unchanged into another tender does not belong here.
+- Turn every promise into a commitment the contracting authority can verify: who does it, how often or by when, and how it is checked or reported.
+- Describe the method step by step ("1. " numbered steps) where there is a process, and explain why each step answers what the tender asks.
+- Use tables where they help the evaluator compare or check (markdown tables: a header row, a separator row, one row per item, at most 5 columns, short cells). The useful ones are: what the tender requires vs. what we offer; phases or schedule; roles, profile and dedication; indicators with target, how often they are measured and how they are reported; risks with prevention and response.
+- If company sources show the company can offer more than the tender minimum, add a short "## Mejoras sobre lo exigido" subsection. Leave it out when the sources do not support any.
+- End with "## Compromisos verificables": three to six bullets, each one a measurable commitment made in this section.
+
+Hard rules
+- Use only facts from SOURCES. Tender sources say what is required. Company sources say what the company has. Never state a company fact (figures, names, clients, certifications, experience, equipment, staff) that is not in a company source.
+- You may propose how the work will be organised, but any specific figure the company would be bound by (response times, frequencies, headcount, hours, dates) must come from a tender requirement being met or from a company source. When the figure is the company's own choice, write the placeholder [Información requerida: qué dato falta] and list it in "missing". A placeholder is always better than a vague sentence or an invented number.
+- Never include prices, costs, discounts or any economic figure of the offer.
 - Cite sources inline with their markers right after the sentence they support, e.g. "... within two hours [S3]."
-- Write in Spanish (Spain), formal and specific, in the first person plural ("nosotros"). Paragraphs separated by a blank line. Bullet lists allowed with "- ".
-- About ${p.words} words.
+- Write in Spanish (Spain), formal and direct, first person plural ("nosotros"), short sentences, the vocabulary of the tender.
+- Formatting allowed: paragraphs separated by a blank line, "## " and "### " subheadings, "- " bullets, "1. " numbered steps, **bold** for the key commitments, markdown tables. No other markup. Do not repeat the section title as a heading.
+- Length: about ${p.words} words.${p.pageLimit ? ` The tender limits the technical proposal (${p.pageLimit}); this figure is this section's share of that limit, do not exceed it.` : ''} Depth, not padding: if the sources do not support that length, write less and list what is missing.
+- Do not develop what belongs to the other sections of the proposal; refer to them by title when needed.
 ${p.previous ? `- The previous draft is below. Write a clearly improved alternative, not a copy.\n` : ''}
 Reply with ONLY JSON: {"content": "string", "missing": ["string"], "confidence": 0.0}
 "confidence" is your honest estimate (0-1) of how well the sources support the section.
@@ -60,7 +73,7 @@ EVALUATION CRITERIA IT IS SCORED UNDER:
 ${p.criteria || '(none stated)'}
 REQUIREMENTS IT MUST ADDRESS:
 ${p.requirements || '(none linked)'}
-SOURCES:
+${p.outline ? `FULL OUTLINE OF THE PROPOSAL (this section is marked with →):\n${p.outline}\n` : ''}SOURCES:
 ${p.sources}${p.previous ? `\n\nPREVIOUS DRAFT:\n${p.previous}` : ''}`;
 }
 

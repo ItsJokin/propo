@@ -40,6 +40,7 @@ export function technicalProposalDocx(p: Project, s: AppState): Uint8Array {
       if (!l) continue;
       const h = l.match(/^#{1,6}\s+(.*)$/);
       if (h) body.push(para(h[1].replace(/\*\*/g, ''), 'Heading2'));
+      else if (/^\|.*\|$/.test(l)) { if (!/^\|?[\s:|-]+\|?$/.test(l)) body.push(para(l.replace(/^\||\|$/g, '').split('|').map((c) => c.trim()).join('   ·   '))); }
       else if (/^[-•*]\s+/.test(l)) body.push(para('•\t' + l.replace(/^[-•*]\s+/, ''), undefined, '<w:tabs><w:tab w:val="left" w:pos="360"/></w:tabs><w:ind w:left="360" w:hanging="360"/><w:spacing w:after="60"/>'));
       else body.push(para(l));
     }

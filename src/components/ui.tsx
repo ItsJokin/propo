@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { LuX, LuCircleCheck, LuCircleAlert, LuCircleX, LuCircleDashed, LuFileText, LuBuilding2 } from 'react-icons/lu';
 import { useToasts } from '../lib/store';
 import type { SectionStatus, ReqStatus } from '../lib/types';
+import { richBlocks } from '../lib/richBlocks';
 
 export function LogoMark({ size = 28 }: { size?: number }) {
   // Navy tile with a white "P"; the blue notch where bowl meets stem is the brand's accent.
@@ -142,9 +143,9 @@ export function Menu({ trigger, children, align = 'right' }: { trigger: (open: b
   );
 }
 
-/** Renders generated text: paragraphs, "- " bullets, [S1] citation chips, [Information required: …] highlights. */
+/** Renders generated text: paragraphs, subheadings, lists, tables, [S1] citation chips, [Information required: …] highlights. */
 export function RichText({ text, onCite, citeKinds, onInfo }: { text: string; onCite?: (marker: string) => void; citeKinds?: Record<string, 'tender' | 'company'>; onInfo?: (tag: string, label: string) => void }) {
-  const blocks = text.split(/\n{2,}/);
+  const blocks = richBlocks(text);
   const inline = (s: string, key: string) => {
     const parts = s.split(/(\[S\d+\]|\[(?:Información requerida|Information required):[^\]]*\]|\*\*[^*]+\*\*)/g);
     return parts.map((p, i) => {
@@ -163,20 +164,18 @@ export function RichText({ text, onCite, citeKinds, onInfo }: { text: string; on
   return (
     <>
       {blocks.map((b, bi) => {
-        const lines = b.split('\n');
-        if (lines.every((l) => /^\s*[-•*]\s+/.test(l) || !l.trim())) {
-          return <ul key={bi}>{lines.filter((l) => l.trim()).map((l, li) => <li key={li}>{inline(l.replace(/^\s*[-•*]\s+/, ''), `${bi}-${li}-`)}</li>)}</ul>;
-        }
-        const head = lines.findIndex((l) => /^\s*[-•*]\s+/.test(l));
-        if (head > 0) {
+        if (b.type === 'h') return b.level === 2 ? <h4 key={bi} className="rt-h">{b.text}</h4> : <h5 key={bi} className="rt-h3">{b.text}</h5>;
+        if (b.type === 'ul') return <ul key={bi}>{b.items.map((l, li) => <li key={li}>{inline(l, `${bi}-${li}-`)}</li>)}</ul>;
+        if (b.type === 'ol') return <ol key={bi}>{b.items.map((l, li) => <li key={li}>{inline(l, `${bi}-${li}-`)}</li>)}</ol>;
+        if (b.type === 'table') {
           return (
-            <React.Fragment key={bi}>
-              <p>{inline(lines.slice(0, head).join(' '), `${bi}p`)}</p>
-              <ul>{lines.slice(head).filter((l) => l.trim()).map((l, li) => <li key={li}>{inline(l.replace(/^\s*[-•*]\s+/, ''), `${bi}-${li}-`)}</li>)}</ul>
-            </React.Fragment>
+            <div key={bi} className="rt-table-wrap"><table className="rt-table">
+              <thead><tr>{b.head.map((c, ci) => <th key={ci}>{inline(c, `${bi}h${ci}-`)}</th>)}</tr></thead>
+              <tbody>{b.rows.map((r, ri) => <tr key={ri}>{r.map((c, ci) => <td key={ci}>{inline(c, `${bi}-${ri}-${ci}-`)}</td>)}</tr>)}</tbody>
+            </table></div>
           );
         }
-        return <p key={bi}>{inline(lines.join(' '), `${bi}`)}</p>;
+        return <p key={bi}>{inline(b.text, `${bi}`)}</p>;
       })}
     </>
   );

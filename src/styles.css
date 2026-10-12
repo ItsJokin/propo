@@ -1123,3 +1123,16 @@ a.comp-award-t:hover { color: var(--accent); }
 /* Encabezado principal de las páginas públicas: mismo aspecto que los h2 de sección */
 .section-head .page-h1 { line-height: 1.08; letter-spacing: -0.04em; margin-top: 12px; font-weight: 800; }
 .section-head .page-h1 .blue { color: var(--accent); }
+
+/* ── Texto de las secciones: subtítulos, listas numeradas y tablas ─────────────────────────────────────────────── */
+.sec-body .rt-h { margin: 22px 0 8px; font-size: 17px; font-weight: 700; letter-spacing: -.02em; line-height: 1.3; }
+.sec-body .rt-h3 { margin: 16px 0 6px; font-size: 15px; font-weight: 700; }
+.sec-body .rt-h:first-child, .sec-body .callout + .rt-h { margin-top: 0; }
+.sec-body ol { padding-left: 22px; } .sec-body ol li + li, .sec-body ul li + li { margin-top: 4px; }
+.sec-body ul + p, .sec-body ol + p, .sec-body p + ol, .sec-body .rt-table-wrap + p { margin-top: 12px; }
+.rt-table-wrap { margin: 14px 0; overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; }
+.rt-table { width: 100%; border-collapse: collapse; font-size: 13.5px; line-height: 1.5; }
+.rt-table th { text-align: left; padding: 9px 12px; background: var(--surface-2); font-weight: 700; white-space: nowrap; border-bottom: 1px solid var(--border); }
+.rt-table td { padding: 9px 12px; vertical-align: top; border-bottom: 1px solid var(--border); }
+.rt-table tr:last-child td { border-bottom: 0; }
+.rt-table td:first-child { font-weight: 600; }

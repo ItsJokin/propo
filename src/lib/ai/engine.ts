@@ -242,6 +242,21 @@ export interface GenOutput { content: string; citations: Citation[]; missing: st
 
 const PRICE_LEAK = /(€\s?\d|\d[\d.,]*\s?(€|eur\b|euros)|unit price|precio unitario|discount of|descuento del)/i;
 
+/** Palabras que le corresponden a una sección. Lo que más puntúa merece más extensión; si el pliego limita las páginas
+ *  de la memoria, el límite se reparte entre las secciones en proporción a sus puntos. */
+export function sectionWordTarget(project: Project, section: Section): number {
+  const pts = (s: Section) => project.criteria.filter((c) => s.criteria.includes(c.id) && c.kind !== 'formula').reduce((a, c) => a + (Number(c.points) || 0), 0);
+  const round = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, Math.round(n / 50) * 50));
+  const lim = String(project.analysis?.pageLimit ?? '');
+  const pages = Number((lim.match(/(\d{1,3})\s*(?:p[áa]g|hojas?|folios?|caras?)/i) ?? lim.match(/(\d{1,3})/))?.[1] ?? 0);
+  if (pages > 0 && pages <= 300) {
+    const total = pages * 400 * 0.85;                                // unas 400 palabras por página, con margen para títulos y tablas
+    const sum = project.sections.reduce((a, s) => a + 4 + pts(s), 0) || 1;
+    return round((total * (4 + pts(section))) / sum, 200, 2400);
+  }
+  return round(700 + pts(section) * 45, 800, 2200);
+}
+
 export async function generateSection(opts: {
   project: Project; section: Section; knowledge: Knowledge; pages: Map<string, string[]>; regenerate?: boolean; signal?: AbortSignal; demo?: boolean;
 }): Promise<GenOutput> {
@@ -249,21 +264,21 @@ export async function generateSection(opts: {
   const crits = project.criteria.filter((c) => section.criteria.includes(c.id));
   const query = [section.title, section.guidance, ...crits.map((c) => c.name + ' ' + c.description)].join(' ');
   const reqPass = project.requirements.map((r) => ({ id: r.id, docId: r.source.docId, docName: r.source.docName, page: r.source.page, text: r.title + ' ' + r.text }));
-  const linkedReqs = search(reqPass.filter((r) => !['format', 'legal', 'administrative'].includes(project.requirements.find((x) => x.id === r.id)!.category)), query, 6).map((p) => project.requirements.find((r) => r.id === p.id)!).filter(Boolean);
-  const passages = search(projectPassages(project, pages), query + ' ' + linkedReqs.map((r) => r.title).join(' '), 6);
+  const linkedReqs = search(reqPass.filter((r) => !['format', 'legal', 'administrative'].includes(project.requirements.find((x) => x.id === r.id)!.category)), query, 10).map((p) => project.requirements.find((r) => r.id === p.id)!).filter(Boolean);
+  const passages = search(projectPassages(project, pages), query + ' ' + linkedReqs.map((r) => r.title).join(' '), 10);
   const kIdx = knowledgeIndex(knowledge).filter((k) => k.kind === 'company');
-  const kHits = search(kIdx.map((k) => ({ id: k.id, docId: 'company', docName: 'Company', page: 0, text: k.label + ' ' + k.text })), query, 5)
+  const kHits = search(kIdx.map((k) => ({ id: k.id, docId: 'company', docName: 'Company', page: 0, text: k.label + ' ' + k.text })), query, 8)
     .map((p) => kIdx.find((k) => k.id === p.id)!);
 
   const citations: Citation[] = [];
   let n = 0;
-  for (const p of passages) citations.push({ marker: `S${++n}`, kind: 'tender', label: `${p.docName} — p. ${p.page}`, docId: p.docId, page: p.page, quote: p.text.slice(0, 600) });
+  for (const p of passages) citations.push({ marker: `S${++n}`, kind: 'tender', label: `${p.docName} — p. ${p.page}`, docId: p.docId, page: p.page, quote: p.text.slice(0, 1400) });
   for (const r of linkedReqs) if (!citations.some((c) => c.docId === r.source.docId && c.page === r.source.page)) citations.push({ marker: `S${++n}`, kind: 'tender', label: `${r.source.docName} — p. ${r.source.page}`, docId: r.source.docId, page: r.source.page, quote: r.text });
   if (knowledge.company.description) citations.push({ marker: `S${++n}`, kind: 'company', label: 'Perfil de empresa — descripción', quote: `${knowledge.company.legalName}: ${knowledge.company.description}` });
   for (const k of kHits) citations.push({ marker: `S${++n}`, kind: 'company', label: `Empresa — ${k.label}`, quote: k.text });
 
   const approvedExamples = project.sections.filter((s) => s.status === 'approved' && s.id !== section.id).length;
-  const words = Math.min(900, Math.max(350, (section.pageBudget ?? 2) * 220));   // secciones desarrolladas: de 350 a 900 palabras
+  const words = sectionWordTarget(project, section);
   const sample = await getSample();
   if (sample && aiState() !== 'declined') {
     try {
@@ -271,8 +286,10 @@ export async function generateSection(opts: {
         company: knowledge.company.legalName || 'the company', project: project.name, section: section.title, guidance: section.guidance,
         criteria: crits.map((c) => `- ${c.name} (${c.points} pts): ${c.description}`).join('\n'),
         requirements: linkedReqs.map((r) => `- ${r.title}: "${r.text}" (${r.source.docName}, p. ${r.source.page})`).join('\n'),
-        sources: citations.map((c) => `[${c.marker}] (${c.kind}) ${c.label}: "${(c.quote || '').replace(/\s+/g, ' ').slice(0, 700)}"`).join('\n'),
+        sources: citations.map((c) => `[${c.marker}] (${c.kind}) ${c.label}: "${(c.quote || '').replace(/\s+/g, ' ').slice(0, 1400)}"`).join('\n'),
         words, previous: opts.regenerate && section.content ? section.content : undefined,
+        authority: project.analysis?.authority || project.organization || undefined, pageLimit: project.analysis?.pageLimit || undefined,
+        outline: project.sections.map((s, i) => `${s.id === section.id ? '→' : ' '} ${i + 1}. ${s.title}`).join('\n'),
       }), { tier: 'default', signal: opts.signal });
       let content = String(j?.content ?? '').trim();
       if (!content) throw new AIError('empty_completion', 'empty');

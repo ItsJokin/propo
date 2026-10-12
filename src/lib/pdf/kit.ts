@@ -2,6 +2,7 @@
 // títulos, texto con negritas, viñetas, cuadros y tablas con salto de página. Sobre pdf-lib, sin más dependencias.
 import { PDFDocument, StandardFonts, rgb, type PDFFont, type PDFImage, type PDFPage } from 'pdf-lib';
 import type { CompanyInfo } from '../types';
+import { richBlocks } from '../richBlocks';
 
 type Color = [number, number, number];
 export interface Brand { name: string; color: Color; logo?: PDFImage; initials: string }
@@ -164,16 +165,19 @@ export function note(w: W, s: string, o: { label?: string } = {}) {
   w.y -= h + 12;
 }
 
-/** Texto generado (párrafos, «- » viñetas, «## » subtítulos, **negritas**). */
+/** Texto generado: párrafos, subtítulos, viñetas, pasos numerados, tablas y **negritas** (ver lib/richBlocks). */
 export function body(w: W, content: string) {
-  for (const block of content.split(/\n{2,}/)) {
-    const lines = block.split('\n').map((l) => l.trim()).filter(Boolean);
-    lines.forEach((l, i) => {
-      const h = l.match(/^#{1,6}\s+(.*)$/);
-      if (h) h2(w, h[1].replace(/\*\*/g, ''));
-      else if (/^[-•*]\s+/.test(l)) bullet(w, l.replace(/^[-•*]\s+/, ''), { gap: i === lines.length - 1 ? 8 : 3 });
-      else text(w, l, { gap: i === lines.length - 1 ? 9 : 4 });
-    });
+  for (const b of richBlocks(content)) {
+    if (b.type === 'h') { if (b.level === 2) h2(w, b.text); else { ensure(w, 40); text(w, b.text, { bold: true, size: 11, gap: 4 }); } }
+    else if (b.type === 'ul') b.items.forEach((l, i) => bullet(w, l, { gap: i === b.items.length - 1 ? 8 : 3 }));
+    else if (b.type === 'ol') b.items.forEach((l, i) => text(w, `**${i + 1}.** ${l}`, { indent: 6, gap: i === b.items.length - 1 ? 9 : 4 }));
+    else if (b.type === 'table') {
+      // Anchos según lo que ocupa el texto de cada columna, sin que ninguna quede demasiado estrecha.
+      const len = b.head.map((h, i) => Math.max(h.length, ...b.rows.map((r) => Math.min(60, (r[i] ?? '').length))));
+      const total = len.reduce((a, n) => a + n, 0) || 1;
+      table(w, b.head.map((h, i) => ({ title: h.replace(/\*\*/g, ''), w: Math.max(12, (len[i] / total) * 100), bold: i === 0 })), b.rows.map((r) => r.map((c) => c.replace(/\*\*/g, ''))));
+    }
+    else text(w, b.text, { gap: 9 });
   }
 }
 
