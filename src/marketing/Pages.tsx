@@ -176,7 +176,7 @@ export function Contact() {
             )}
           </div>
           <div className="stack">
-            <div className="card card-pad"><div className="small muted">Respuesta</div><div className="mt-4" style={{ fontWeight: 600 }}>Por correo, normalmente en un día laborable</div></div>
+            <div className="card card-pad"><div className="small muted">Email</div><div className="mt-4"><a href="mailto:hola@propo.es" style={{ fontWeight: 600 }}>hola@propo.es</a></div><div className="small muted mt-4">Respondemos normalmente en un día laborable.</div></div>
             <div className="card card-pad"><div className="small muted">Dónde estamos</div><div className="mt-4" style={{ fontWeight: 600 }}>Barcelona, España</div></div>
           </div>
         </div>
@@ -193,7 +193,7 @@ function Legal({ title, updated, children }: { title: string; updated: string; c
           <div className="eyebrow">Legal</div>
           <h1 className="mt-12">{title}</h1>
           <p className="subtle mt-8">Última actualización: {updated}</p>
-          <div className="callout warn mt-24"><LuShieldCheck /><div>Borrador para el MVP. Los datos entre corchetes deben completarse y el texto debe revisarlo un abogado antes del lanzamiento.</div></div>
+          <div className="callout warn mt-24"><LuShieldCheck /><div>Texto provisional mientras PROPO está en prueba cerrada. Antes de abrir el servicio se añadirán el NIF y el domicilio del titular y lo revisará un abogado.</div></div>
           <div className="mt-24">{children}</div>
         </div>
       </section>
@@ -203,9 +203,9 @@ function Legal({ title, updated, children }: { title: string; updated: string; c
 
 export function Privacy() {
   return (
-    <Legal title="Política de privacidad" updated="1 de octubre de 2026">
+    <Legal title="Política de privacidad" updated="12 de octubre de 2026">
       <h2>Quiénes somos</h2>
-      <p>PROPO es un servicio de [razón social], con domicilio en [dirección] y NIF [NIF] («PROPO»). Somos responsables del tratamiento de los datos de tu cuenta. Para los documentos y datos que tu empresa sube para preparar propuestas actuamos como encargados del tratamiento, conforme a nuestro contrato de encargo.</p>
+      <p>PROPO es un servicio de Joaquim Fachado Belart, con sede en Barcelona (España) («PROPO»). Puedes escribirnos a hola@propo.es. Somos responsables del tratamiento de los datos de tu cuenta. Para los documentos y datos que tu empresa sube para preparar propuestas actuamos como encargados del tratamiento, conforme a nuestro contrato de encargo.</p>
       <h2>Qué datos tratamos</h2>
       <ul>
         <li>Datos de cuenta: nombre, email profesional, cargo, nombre de la empresa y sector.</li>
@@ -222,14 +222,16 @@ export function Privacy() {
       <h2>Cuánto tiempo</h2>
       <p>Mientras tu cuenta esté activa y durante el plazo de conservación que configures para proyectos cerrados (24 meses por defecto). El contenido borrado se elimina de las copias de seguridad en 30 días.</p>
       <h2>Tus derechos</h2>
-      <p>Puedes acceder, rectificar, exportar y suprimir tus datos desde Ajustes → Privacidad y datos, o escribiendo a [email de privacidad]. También puedes oponerte, limitar el tratamiento y reclamar ante la Agencia Española de Protección de Datos (AEPD).</p>
+      <p>Puedes acceder, rectificar, exportar y suprimir tus datos desde Ajustes → Privacidad y datos, o escribiendo a hola@propo.es. También puedes oponerte, limitar el tratamiento y reclamar ante la Agencia Española de Protección de Datos (AEPD).</p>
     </Legal>
   );
 }
 
 export function Terms() {
   return (
-    <Legal title="Condiciones del servicio" updated="1 de octubre de 2026">
+    <Legal title="Condiciones del servicio" updated="12 de octubre de 2026">
+      <h2>Titular</h2>
+      <p>PROPO es un servicio de Joaquim Fachado Belart, con sede en Barcelona (España). Contacto: hola@propo.es.</p>
       <h2>El servicio</h2>
       <p>PROPO ayuda a las empresas a encontrar licitaciones y preparar propuestas. PROPO prepara y revisa contenido; no presenta ofertas en tu nombre.</p>
       <h2>Tu responsabilidad</h2>
@@ -239,16 +241,16 @@ export function Terms() {
       <h2>Planes y facturación</h2>
       <p>Las suscripciones se renuevan cada mes o cada año hasta que las canceles. Puedes cancelar en cualquier momento y el plan sigue activo hasta el final del periodo pagado. Los precios no incluyen IVA.</p>
       <h2>Responsabilidad</h2>
-      <p>[Cláusula de limitación de responsabilidad, pendiente de redactar por el abogado.]</p>
+      <p>PROPO se ofrece como herramienta de apoyo. En la medida en que la ley lo permita, PROPO no responde de la exclusión, la no adjudicación o la pérdida de una licitación, ni de daños indirectos o lucro cesante, y su responsabilidad total queda limitada al importe que hayas pagado por el servicio en los doce meses anteriores. Nada de esto limita los derechos que la ley reconoce a los consumidores ni la responsabilidad por dolo o negligencia grave.</p>
       <h2>Ley aplicable</h2>
-      <p>Estas condiciones se rigen por la ley española. [Cláusula de jurisdicción pendiente.]</p>
+      <p>Estas condiciones se rigen por la ley española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de Barcelona, salvo que la normativa de consumidores establezca otro fuero.</p>
     </Legal>
   );
 }
 
 export function Cookies() {
   return (
-    <Legal title="Política de cookies" updated="1 de octubre de 2026">
+    <Legal title="Política de cookies" updated="12 de octubre de 2026">
       <h2>Qué usamos</h2>
       <p>Cookies y almacenamiento estrictamente necesarios para mantener tu sesión y tus preferencias. Con tu consentimiento, analítica para entender cómo se usa PROPO.</p>
       <h2>Tu elección</h2>
