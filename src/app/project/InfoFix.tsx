@@ -105,9 +105,9 @@ export function InfoFixModal({ p, s, tag, label, onClose }: { p: Project; s: Sec
           'Eres PROPO, asistente de licitaciones públicas en España. A la propuesta de un cliente le falta un dato que solo él conoce. Explícale qué tiene que escribir.',
           'El cliente es dueño de una pyme: NO sabe de contratación pública ni de informática. Háblale de «tú», con palabras de la calle. Si usas un término técnico o unas siglas, explica entre paréntesis qué son.',
           'Responde SOLO con un objeto JSON con estas tres claves, en castellano de España:',
-          '- "what": 2 o 3 frases. Qué tiene que escribir exactamente para ESTE dato: enumera los datos concretos que debe incluir (cantidades, nombres, fechas, unidades…) y dónde suele encontrarlos si no los sabe de memoria.',
-          '- "why": 1 o 2 frases. Para qué sirve este dato en esta licitación y en esta sección; si la sección puntúa, dilo con los puntos.',
-          '- "example": una respuesta de ejemplo breve, realista para su sector e INVENTADA, escrita como la escribiría el cliente. No uses datos reales de su empresa.',
+          '- "what": 2 o 3 frases cortas, máximo 330 caracteres. Qué tiene que escribir exactamente para ESTE dato: enumera los datos concretos que debe incluir (cantidades, nombres, fechas, unidades…) y dónde suele encontrarlos si no los sabe de memoria.',
+          '- "why": 1 o 2 frases cortas, máximo 220 caracteres. Para qué sirve este dato en esta licitación y en esta sección. Menciona puntos solo si aparecen en el contexto y cítalos tal cual, sin calcular ni repartir.',
+          '- "example": una respuesta de ejemplo de máximo 200 caracteres, realista para su sector e INVENTADA, escrita como la escribiría el cliente. No uses datos reales de su empresa.',
           'No inventes requisitos que no estén en el contexto. No prometas resultados.',
           '',
           `Licitación: ${p.name} (${p.organization || 'administración pública'})`,
@@ -117,7 +117,8 @@ export function InfoFixModal({ p, s, tag, label, onClose }: { p: Project; s: Sec
           `Dato que falta: ${label}`,
           gap ? `Frase de la propuesta donde irá: «${gap[0]} [AQUÍ VA EL DATO] ${gap[1]}»` : '',
         ].filter(Boolean).join('\n'), { tier: 'quick' });
-        const ok = (x: unknown) => (typeof x === 'string' && x.trim() ? x.trim().slice(0, 600) : '');
+        const ok = (x: unknown) => { const t = typeof x === 'string' ? x.trim() : ''; if (t.length <= 520) return t; const c = t.slice(0, 520); return c.slice(0, Math.max(c.lastIndexOf('. '), c.lastIndexOf('.
+')) + 1) || c; };   // nunca se corta a media frase
         const h = { what: ok(j?.what), why: ok(j?.why), example: ok(j?.example) };
         if (!h.what) return;
         helpCache.set(key, h);
