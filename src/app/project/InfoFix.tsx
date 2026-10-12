@@ -90,15 +90,15 @@ export function InfoFixModal({ p, s, tag, label, onClose }: { p: Project; s: Sec
   const gap = useMemo(() => gapSentence(s.content, tag), [s.content, tag]);
   const key = `${p.id}|${s.id}|${label}`;
   const [help, setHelp] = useState<Help>(helpCache.get(key) ?? HELP[plan.kind] ?? HELP.other);
-  const [tailoring, setTailoring] = useState(false);
+  const [tailoring, setTailoring] = useState(!helpCache.has(key));   // hasta que llega la explicación a medida (o se sabe que no hay IA)
   useEffect(() => {
     if (helpCache.has(key)) return;
     let alive = true;
+    const giveUp = setTimeout(() => { if (alive) setTailoring(false); }, 15000);   // si la IA tarda demasiado, se enseña la explicación general
     (async () => {
       try {
         const sample = await getSample();
         if (!sample || aiState() === 'declined' || !alive) return;
-        setTailoring(true);
         const crits = p.criteria.filter((c) => s.criteria.includes(c.id)).map((c) => `${c.name} (${c.points} puntos)`).join('; ');
         const company = getState().company;
         const j = await ai.json<Help>([
@@ -124,7 +124,7 @@ export function InfoFixModal({ p, s, tag, label, onClose }: { p: Project; s: Sec
         if (alive) setHelp(h);
       } catch { /* se queda la explicación general */ } finally { if (alive) setTailoring(false); }
     })();
-    return () => { alive = false; };
+    return () => { alive = false; clearTimeout(giveUp); };
   }, [key]);
   const done = (msg: string) => { toast(msg, 'ok'); onClose(); };
   const submit = () => {
@@ -211,11 +211,17 @@ export function InfoFixModal({ p, s, tag, label, onClose }: { p: Project; s: Sec
       <div className="stack gap-16">
         <div className="fix-help">
           <div className="fix-help-head"><LuMessageCircle /><strong>Falta este dato: {label.replace(/\.$/, '')}</strong></div>
-          {gap && <p className="fix-gap"><span className="lbl">Dónde irá en tu propuesta</span>«{gap[0]}<mark>tu dato</mark>{gap[1]}»</p>}
-          <p><span className="lbl">Qué tienes que escribir</span>{help.what}</p>
-          <p><span className="lbl">Para qué sirve</span>{help.why}</p>
-          {help.example && <p><span className="lbl">Un ejemplo inventado, para que veas la forma</span><em>{help.example}</em></p>}
-          <p className="xs muted">{tailoring ? 'PROPO está afinando esta explicación para tu licitación…' : 'Escríbelo con tus palabras, sin preocuparte de la redacción: luego pulsa «Reescribir con IA» y PROPO lo deja listo.'}</p>
+          {tailoring ? (
+            <p className="fix-wait"><LuLoaderCircle className="spin" /> PROPO está trabajando para explicártelo mejor…</p>
+          ) : (
+            <>
+              {gap && <p className="fix-gap"><span className="lbl">Dónde irá en tu propuesta</span>«{gap[0]}<mark>tu dato</mark>{gap[1]}»</p>}
+              <p><span className="lbl">Qué tienes que escribir</span>{help.what}</p>
+              <p><span className="lbl">Para qué sirve</span>{help.why}</p>
+              {help.example && <p><span className="lbl">Un ejemplo inventado, para que veas la forma</span><em>{help.example}</em></p>}
+              <p className="xs muted">Escríbelo con tus palabras, sin preocuparte de la redacción: luego pulsa «Reescribir con IA» y PROPO lo deja listo.</p>
+            </>
+          )}
         </div>
         {plan.humanOnly && <div className="callout neutral small"><LuShieldCheck /><div>Los precios los decides tú. La IA solo mejora la redacción: no cambia ninguna cifra.</div></div>}
         <div className="field">

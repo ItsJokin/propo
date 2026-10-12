@@ -1192,3 +1192,5 @@ a.comp-award-t:hover { color: var(--accent); }
 .fix-gap mark { background: var(--warn-soft); color: var(--warn-ink); padding: 1px 7px; border-radius: 6px; font-weight: 600; margin: 0 3px; }
 .fix-skip { color: var(--fg-2); }
 @media (max-width: 640px) { .fix-skip { order: 3; width: 100%; justify-content: center; } }
+.fix-wait { display: flex; align-items: center; gap: 9px; min-height: 120px; justify-content: center; color: var(--fg-2); }
+.fix-wait svg { width: 18px; height: 18px; color: var(--accent); }
