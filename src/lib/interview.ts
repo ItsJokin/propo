@@ -25,7 +25,7 @@ const KEY_CATS = ['financial', 'experience', 'certification', 'team'];
 export const CERT_OPTIONS = ['ISO 9001', 'ISO 14001', 'ISO 22000', 'ISO 45001', 'ISO 27001', 'ENS'];
 const MAX_QUESTIONS = 5;
 /** Trámites que no hace falta preguntar: PROPO los prepara o se resuelven al presentar o al adjudicar. */
-const PROCEDURAL = /garant[ií]a (definitiva|provisional)|oferta econ[oó]mica|canon|anormal|temerari|seg[uú]n (el )?modelo|sobre [abc123]\b|archivo «?[abc]»?|firma|plazo de presentaci|declaraci[oó]n responsable|deuc|subsan|registro|plataforma|electr[oó]nic|una sola oferta|aportar documentaci|adjudicatari/i;
+const PROCEDURAL = /garant[ií]a (definitiva|provisional)|oferta econ[oó]mica|precio (unitario|m[aá]ximo|de licitaci)|presupuesto base|importe m[aá]ximo|tipo de licitaci|canon|anormal|temerari|seg[uú]n (el )?modelo|sobre [abc123]\b|archivo «?[abc]»?|firma|plazo de presentaci|declaraci[oó]n responsable|deuc|subsan|registro|plataforma|electr[oó]nic|una sola oferta|aportar documentaci|adjudicatari/i;
 
 function isFicha(p: Project, docId: string) { return !!p.docs.find((d) => d.id === docId)?.name.startsWith('Ficha de la licitación'); }
 function clean(t: string) { return t.replace(/^se exigir[áa]n?:\s*/i, '').replace(/\s+/g, ' ').trim(); }
@@ -56,7 +56,8 @@ function answersFor(r: Requirement, open: boolean): { choices: string[]; placeho
   if (r.category === 'experience') return { choices: ['Sí, tenemos contratos parecidos', 'Parecidos, pero más pequeños', 'No tenemos', LATER], placeholder: 'O cuéntame cuál: cliente, año e importe' };
   if (r.category === 'team') return { choices: ['Sí, ya está en plantilla', 'Lo incorporaríamos para el contrato', 'No', LATER], placeholder: 'O dime quién: nombre y puesto' };
   if (/seguro|p[oó]liza/.test(t)) return { choices: ['Sí, la póliza cubre ese importe', 'Tenemos póliza, pero por menos', 'No tenemos', LATER], placeholder: 'O cuéntalo: «Póliza de 600.000 € hasta 2027»' };
-  return { choices: ['Sí, lo superamos', 'Nos quedamos cerca', 'No llegamos', LATER], placeholder: 'O dime la cifra: «Facturamos 1,2 M€ en 2025»' };
+  if (/volumen|facturaci|cifra de negocio/.test(t)) return { choices: ['Sí, lo superamos', 'Nos quedamos cerca', 'No llegamos', LATER], placeholder: 'O dime la cifra: «Facturamos 1,2 M€ en 2025»' };
+  return { choices: ['Sí, lo cumplimos', 'Nos quedamos cerca', 'No lo cumplimos', LATER], placeholder: 'O cuéntalo con tus palabras' };
 }
 
 const SHORT_ASK: Record<string, string> = {
@@ -122,7 +123,7 @@ export function askNext(projectId: string) {
   if (q && last?.qid !== q.id) push(projectId, [{ role: 'propo', text: q.text, qid: q.id, source: q.source }]);
   if (!q && !p.interview?.msgs.some((m) => m.qid === 'done')) {
     const open = p.requirements.filter((r) => r.status === 'needs_info' || r.status === 'missing').length;
-    push(projectId, [{ role: 'propo', qid: 'done', text: `¡Listo! He guardado tus respuestas en los requisitos y en tu memoria de empresa, así no te las vuelvo a preguntar en otras licitaciones.${open ? ` Quedan ${open} requisitos secundarios del pliego que puedes revisar cuando quieras.` : ''} ¿Redacto ya la propuesta?` }]);
+    push(projectId, [{ role: 'propo', qid: 'done', text: 'Eso es todo. He guardado tus respuestas en tu memoria de empresa para no volver a preguntártelas. Del resto de requisitos me ocupo yo. ¿Genero la propuesta?' Quedan ${open} requisitos secundarios del pliego que puedes revisar cuando quieras.` : ''} ¿Redacto ya la propuesta?` }]);
   }
 }
 
