@@ -825,13 +825,6 @@ input, select, textarea { font: inherit; color: inherit; }
 .asst-act { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; margin-right: 6px; border: 1px solid var(--accent); background: var(--accent); color: #fff; border-radius: 999px; padding: 4px 12px; font: 600 12.5px/1.4 var(--font-body); cursor: pointer; }
 .asst-act svg { width: 13px; height: 13px; }
 .demo-box { border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); background: color-mix(in oklab, var(--accent) 6%, var(--surface)); }
-.analysis.has-side { max-width: 1100px; display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 40px; align-items: start; }
-.an-side { padding: 20px; position: sticky; top: 24px; margin-top: 52px; }
-.an-speed { display: grid; gap: 6px; }
-.an-speed > div { display: flex; justify-content: space-between; gap: 10px; font-size: 12.5px; padding: 7px 10px; border-radius: 8px; color: var(--fg-3); background: var(--bg-subtle); }
-.an-speed > div.on { color: var(--fg); background: var(--accent-soft); }
-.an-speed .mono { white-space: nowrap; }
-@media (max-width: 900px) { .analysis.has-side { grid-template-columns: 1fr; gap: 24px; } .an-side { position: static; margin-top: 0; } }
 .live-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--fg-3); flex: none; margin-top: 5px; }
 .live-dot.on { background: var(--ok); box-shadow: 0 0 0 4px color-mix(in oklab, var(--ok) 22%, transparent); }
 
@@ -1136,3 +1129,26 @@ a.comp-award-t:hover { color: var(--accent); }
 .rt-table td { padding: 9px 12px; vertical-align: top; border-bottom: 1px solid var(--border); }
 .rt-table tr:last-child td { border-bottom: 0; }
 .rt-table td:first-child { font-weight: 600; }
+
+/* ── Análisis en curso: la hoja que se lee y los requisitos que salen ───────────────────────────────────────────── */
+.analysis.reading { max-width: 980px; }
+.an-cols { display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 48px; align-items: center; }
+.an-time { display: flex; align-items: flex-start; gap: 8px; margin-top: 18px; }
+.an-time svg { width: 15px; height: 15px; flex: none; margin-top: 3px; color: var(--accent); }
+.an-scan { position: relative; height: 330px; }
+.an-sheet { position: absolute; left: 0; top: 10px; width: 220px; height: 300px; padding: 26px 24px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); box-shadow: 0 30px 60px -28px rgba(20, 99, 255, .35), var(--shadow-sm); overflow: hidden; }
+.an-sheet i { display: block; height: 7px; border-radius: 4px; background: var(--surface-3); margin-bottom: 11px; }
+.an-sheet i.t { width: 58%; height: 11px; background: var(--border-strong); margin-bottom: 18px; }
+.an-sheet i.hit { animation: an-hit 7s infinite both; }
+.an-sheet i.h0 { animation-delay: .75s; } .an-sheet i.h1 { animation-delay: 1.5s; } .an-sheet i.h2 { animation-delay: 2.25s; } .an-sheet i.h3 { animation-delay: 3s; }
+.an-bar { position: absolute; left: 0; right: 0; top: -44px; height: 44px; background: linear-gradient(180deg, transparent, rgba(20, 99, 255, .16)); border-bottom: 2px solid var(--accent); box-shadow: 0 6px 18px rgba(20, 99, 255, .5); animation: an-bar 7s infinite both; }
+.an-chips { position: absolute; left: 150px; top: 44px; display: grid; gap: 12px; }
+.an-chip { display: inline-flex; align-items: center; gap: 9px; width: max-content; padding: 9px 14px 9px 10px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); box-shadow: 0 12px 26px -12px rgba(11, 23, 48, .3); font-size: 13.5px; font-weight: 600; animation: an-chip 7s infinite both; }
+.an-chip b { width: 18px; height: 18px; border-radius: 50%; background: var(--ok); display: grid; place-items: center; flex: none; }
+.an-chip b::after { content: ''; width: 8px; height: 4px; border-left: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(-45deg) translate(1px, -1px); }
+.an-chip.c0 { animation-delay: 1.05s; } .an-chip.c1 { animation-delay: 1.8s; } .an-chip.c2 { animation-delay: 2.55s; } .an-chip.c3 { animation-delay: 3.3s; }
+@keyframes an-bar { 0% { transform: translateY(0); opacity: 1; } 55% { transform: translateY(344px); opacity: 1; } 60%, 100% { transform: translateY(344px); opacity: 0; } }
+@keyframes an-hit { 0%, 3% { background: var(--surface-3); } 8%, 80% { background: var(--accent); } 90%, 100% { background: var(--surface-3); } }
+@keyframes an-chip { 0%, 2% { opacity: 0; transform: translateX(-18px) scale(.9); } 8%, 78% { opacity: 1; transform: none; } 86%, 100% { opacity: 0; transform: translateX(8px); } }
+@media (max-width: 900px) { .an-cols { grid-template-columns: 1fr; gap: 20px; } .an-scan { height: 250px; transform: scale(.78); transform-origin: 0 0; margin-bottom: -40px; } }
+@media (prefers-reduced-motion: reduce) { .an-bar { display: none; } .an-sheet i.hit { animation: none; background: var(--accent); } .an-chip { animation: none; } }

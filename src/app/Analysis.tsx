@@ -77,11 +77,11 @@ export function AnalysisScreen({ id }: { id: string }) {
   const idx = done ? order.length : order.indexOf(prog.stage as any);
   const a = project.analysis;
   return (
-    <div className={`analysis ${done ? '' : 'has-side'}`}>
+    <div className={`analysis ${done ? '' : 'reading'}`}>
       <div className="an-main">
       <div className="eyebrow">{project.name}</div>
       <h1 className="mt-12" style={{ fontSize: 30, letterSpacing: '-.03em' }}>{done ? 'Análisis completado' : 'PROPO está leyendo tu licitación'}</h1>
-      <p className="muted mt-8">{done ? 'Cada requisito enlaza a la página de la que sale. Ahora PROPO te hará unas pocas preguntas sobre lo que no ha encontrado, como en un chat, y después redactará la propuesta.' : 'Tarda entre unos segundos y unos minutos, según el tamaño de los documentos.'}</p>
+      <p className="muted mt-8">{done ? 'Cada requisito enlaza a la página de la que sale. Ahora PROPO te hará unas pocas preguntas sobre lo que no ha encontrado, como en un chat, y después redactará la propuesta.' : 'No cierres ni recargues esta página mientras PROPO lee.'}</p>
       {!done && (
         <div className="row small muted mt-16">
           <LuCpu style={{ width: 14, height: 14 }} />
@@ -90,7 +90,9 @@ export function AnalysisScreen({ id }: { id: string }) {
           {ai === 'available' && <button className="btn btn-ghost btn-sm" onClick={() => ctl.current?.abort()}><LuCircleStop /> Detener</button>}
         </div>
       )}
-      <div className="mt-24">
+      <div className={done ? 'mt-24' : 'an-cols mt-24'}>
+        {!done && <ScanAnim />}
+        <div>
         {STAGES.map((s, i) => {
           const st = i < idx ? 'done' : i === idx ? 'now' : 'todo';
           return (
@@ -101,6 +103,8 @@ export function AnalysisScreen({ id }: { id: string }) {
             </div>
           );
         })}
+        {!done && <TimeNote ai={ai === 'available'} pages={prog.pages} />}
+        </div>
       </div>
       {done && a && (
         <div className="mt-32">
@@ -132,7 +136,6 @@ export function AnalysisScreen({ id }: { id: string }) {
         </div>
       )}
       </div>
-      {!done && <TimeCard ai={ai === 'available'} pages={prog.pages} />}
     </div>
   );
 }
@@ -144,33 +147,33 @@ const SPEED = { read: 1000, ai: 50, rules: 3000, aiMaxPages: 100 };
 
 const fmtN = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
-function TimeCard({ ai, pages }: { ai: boolean; pages?: number }) {
-  const [t0] = useState(() => Date.now());
-  const [now, setNow] = useState(Date.now());
-  useEffect(() => { const h = setInterval(() => setNow(Date.now()), 1000); return () => clearInterval(h); }, []);
-  const secs = Math.floor((now - t0) / 1000);
-  const elapsed = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}`;
+/** Una línea: cuántas páginas tiene la licitación y cuánto tardará, más o menos. */
+function TimeNote({ ai, pages }: { ai: boolean; pages?: number }) {
   const est = pages ? pages / SPEED.read + (ai ? Math.min(pages, SPEED.aiMaxPages) / SPEED.ai : pages / SPEED.rules) : null; // minutos
   const estLabel = est == null ? null : est < 0.75 ? 'menos de 1 minuto' : est < 1.5 ? 'alrededor de 1 minuto' : `unos ${Math.round(est)} minutos`;
-  const rows: [string, string, boolean][] = [
-    ['Leer el texto de los PDF', `~${fmtN(SPEED.read)} págs/min`, true],
-    ['Análisis con IA', '~40–60 págs/min', ai],
-    ['Extracción básica (sin IA)', `~${fmtN(SPEED.rules)} págs/min`, !ai],
-  ];
   return (
-    <aside className="an-side card" aria-label="Tiempo estimado">
-      <div className="row" style={{ gap: 8 }}><LuClock style={{ width: 16, height: 16, color: 'var(--accent)' }} /><strong>Puede tardar unos minutos</strong></div>
-      <p className="small muted mt-8">Leer los pliegos y extraer cada requisito con su página lleva tiempo, sobre todo si son largos. Puedes cambiar de pestaña, pero no cierres ni recargues esta página mientras PROPO lee.</p>
-      <div className="an-speed mt-16">
-        {rows.map(([l, v, on]) => <div key={l} className={on ? 'on' : ''}><span>{l}</span><span className="mono">{v}</span></div>)}
+    <p className="an-time small muted">
+      <LuClock />
+      {pages ? <span>Tu licitación: <strong>{fmtN(pages)} páginas</strong> · {estLabel}. Es una velocidad aproximada.</span> : <span>Contando las páginas…</span>}
+    </p>
+  );
+}
+
+/** La hoja del pliego que se va leyendo: una línea azul la recorre, marca lo que encuentra y los requisitos van saliendo. */
+function ScanAnim() {
+  const lines = [100, 92, 0, 78, 96, 1, 64, 100, 2, 88, 70, 3, 94, 58];   // 0–3: líneas que PROPO «encuentra»
+  const chips = ['Solvencia económica', 'Experiencia previa', 'Plazos y fechas', 'Criterios de adjudicación'];
+  return (
+    <div className="an-scan" aria-hidden="true">
+      <div className="an-sheet">
+        <i className="t" />
+        {lines.map((w, k) => (w <= 3 ? <i key={k} className={`hit h${w}`} style={{ width: `${[100, 86, 94, 80][w]}%` }} /> : <i key={k} style={{ width: `${w}%` }} />))}
+        <div className="an-bar" />
       </div>
-      <div className="divider mt-16" />
-      <div className="small mt-16">
-        {pages ? <>Tu licitación: <strong>{pages} páginas</strong>{estLabel && <> · {estLabel}</>}</> : 'Calculando el número de páginas…'}
+      <div className="an-chips">
+        {chips.map((c, k) => <span key={c} className={`an-chip c${k}`}><b />{c}</span>)}
       </div>
-      <div className="xs subtle mt-4">Tiempo transcurrido: <span className="mono">{elapsed}</span></div>
-      <p className="xs subtle mt-12">Velocidades aproximadas para PDF con texto; dependen de tu ordenador. La IA lee como máximo las ~{SPEED.aiMaxPages} páginas más relevantes y su ritmo varía según la carga del servicio. Los PDF escaneados (imágenes) no se pueden leer en esta versión.</p>
-    </aside>
+    </div>
   );
 }
 
