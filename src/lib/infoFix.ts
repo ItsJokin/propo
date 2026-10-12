@@ -52,7 +52,13 @@ export function fillInfo(projectId: string, sectionId: string, tag: string, labe
     s.content = s.content.includes(tag) ? s.content.split(tag).join(v) : `${s.content.trimEnd()}\n\n${v}`;
     const before = s.missing.length;
     s.missing = s.missing.filter((m) => m.trim().toLowerCase() !== label.trim().toLowerCase());
-    if (s.missing.length === before) { const k = s.missing.findIndex((m) => planFor(m).kind === plan.kind); if (k >= 0) s.missing.splice(k, 1); }
+    if (s.missing.length === before) {                       // la lista no siempre usa las mismas palabras que la marca: se quita el aviso que más se le parece
+      const words = (t: string) => new Set(t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').match(/[a-z0-9]{4,}/g) ?? []);
+      const mine = words(label);
+      const score = s.missing.map((x) => [...words(x)].filter((w) => mine.has(w)).length + (planFor(x).kind === plan.kind ? 0.5 : 0));
+      const k = score.indexOf(Math.max(...score));
+      if (k >= 0 && score[k] > 0) s.missing.splice(k, 1);
+    }
     if (s.status === 'approved') s.status = 'reviewed';
     s.updatedAt = nowIso();
     pr.activity.unshift({ at: nowIso(), text: `Información añadida en «${s.title}»: ${plan.title}` });
