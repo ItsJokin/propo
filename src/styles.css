@@ -1177,3 +1177,7 @@ a.comp-award-t:hover { color: var(--accent); }
 .qcard-plain p { margin: 0; }
 .qcard-plain strong { font-weight: 700; }
 .qcard-foot { flex-wrap: wrap; row-gap: 6px; }
+
+/* ── Añadir un dato a la propuesta: qué se pide, en una frase ──────────────────────────────────────────────────── */
+.fix-ask { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; background: var(--accent-soft); font-size: 14px; line-height: 1.55; }
+.fix-ask svg { width: 17px; height: 17px; flex: none; margin-top: 3px; color: var(--accent); }

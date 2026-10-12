@@ -42,9 +42,10 @@ export function resolvePath(plan: InfoPlan, projectId?: string) {
 }
 
 /** Sustituye la marca en la sección y, si se pide, guarda el dato en la memoria de empresa. */
-export function fillInfo(projectId: string, sectionId: string, tag: string, label: string, value: string, save: boolean) {
+export function fillInfo(projectId: string, sectionId: string, tag: string, label: string, value: string, save: boolean, memo?: string) {
   const plan = planFor(label);
   const v = value.trim();
+  const m = (memo ?? value).trim();   // lo que se guarda en la memoria de empresa: el dato tal como lo escribió el cliente
   updateProject(projectId, (pr) => {
     const s = pr.sections.find((x) => x.id === sectionId);
     if (!s) return;
@@ -58,11 +59,11 @@ export function fillInfo(projectId: string, sectionId: string, tag: string, labe
   });
   if (!save) return;
   update((st) => {
-    if (plan.field) st.company[plan.field] = v as never;
-    if (plan.kind === 'capability' && !st.company.capabilities.includes(v)) st.company.capabilities.push(v.slice(0, 160));
-    if (plan.kind === 'experience') st.pastProjects.unshift({ id: uid('pp'), title: v.split(',')[0].slice(0, 90), client: '', sector: st.company.industry, years: (v.match(/20\d\d(?:\s*[-–]\s*20\d\d)?/) || [''])[0], value: (v.match(/[\d.,]+\s*(?:€|euros|k€|M€)[^,]*/i) || [''])[0], description: v, hasCertificate: false });
-    if (plan.kind === 'certification') st.certifications.push({ id: uid('c'), name: v.split(',')[0].slice(0, 80), issuer: '', validUntil: '', category: /14001|emas/i.test(v) ? 'environmental' : /45001/.test(v) ? 'safety' : /9001/.test(v) ? 'quality' : 'industry' });
-    if (plan.kind === 'team') { const [name, role, yrs] = v.split(',').map((x) => x.trim()); st.team.push({ id: uid('t'), name: name || v, role: role || '', years: parseInt(yrs || '0', 10) || 0, qualifications: '' }); }
+    if (plan.field) st.company[plan.field] = m as never;
+    if (plan.kind === 'capability' && !st.company.capabilities.includes(m)) st.company.capabilities.push(m.slice(0, 160));
+    if (plan.kind === 'experience') st.pastProjects.unshift({ id: uid('pp'), title: m.split(',')[0].slice(0, 90), client: '', sector: st.company.industry, years: (m.match(/20\d\d(?:\s*[-–]\s*20\d\d)?/) || [''])[0], value: (m.match(/[\d.,]+\s*(?:€|euros|k€|M€)[^,]*/i) || [''])[0], description: m, hasCertificate: false });
+    if (plan.kind === 'certification') st.certifications.push({ id: uid('c'), name: m.split(',')[0].slice(0, 80), issuer: '', validUntil: '', category: /14001|emas/i.test(m) ? 'environmental' : /45001/.test(m) ? 'safety' : /9001/.test(m) ? 'quality' : 'industry' });
+    if (plan.kind === 'team') { const [name, role, yrs] = m.split(',').map((x) => x.trim()); st.team.push({ id: uid('t'), name: name || m, role: role || '', years: parseInt(yrs || '0', 10) || 0, qualifications: '' }); }
   });
 }
 
