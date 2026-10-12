@@ -21,7 +21,7 @@ const result = await esbuild.build({
   write: false,
   jsx: 'automatic',
   loader: { '.css': 'text' },
-  define: { 'process.env.NODE_ENV': dev ? '"development"' : '"production"', 'process.env.PROPO_AI_URL': JSON.stringify(process.env.PROPO_AI_URL || '') },
+  define: { 'process.env.NODE_ENV': dev ? '"development"' : '"production"', 'process.env.PROPO_AI_URL': JSON.stringify(process.env.PROPO_AI_URL || ''), 'process.env.PROPO_PLIEGOS_URL': JSON.stringify(process.env.PROPO_PLIEGOS_URL || '') },
   legalComments: 'none',
   logLevel: 'warning',
   supported: { 'top-level-await': true },

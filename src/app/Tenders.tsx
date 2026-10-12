@@ -12,7 +12,7 @@ import { TENDER_BRIEFS } from '../lib/discovery/tenderDocs';
 import { NewProposal } from './Projects';
 import { UpgradeModal } from './common';
 import { canCreateProposal, createProject, type LimitReason } from '../lib/actions';
-import { hasPliegos, loadPliegoFiles, pliegoUrl } from '../lib/discovery/loadPliegos';
+import { hasPliegos, loadPliegoFiles, pliegoUrl, canFetchDocs, loadLiveDocs } from '../lib/discovery/loadPliegos';
 import { PLIEGO_FILES } from '../lib/discovery/pliegoFiles';
 import { daysUntil, fmtDate, uid, nowIso, normalize, timeAgo } from '../lib/util';
 import { eur, PLANS, GROUP } from '../lib/plans';
@@ -81,7 +81,7 @@ export function Tenders() {
     if (!c.ok) { setPaywall(c.reason); return; }
     track('tender_analyze_clicked', { id: t.id, included: hasPliegos(t.id) });
     setBusy('Preparando los documentos oficiales…');
-    const pdfs = hasPliegos(t.id) ? await loadPliegoFiles(t.id, setBusy) : [];
+    const pdfs = hasPliegos(t.id) ? await loadPliegoFiles(t.id, setBusy) : await loadLiveDocs(t.live?.docs, setBusy);
     const fromFicha = pdfs.length === 0;
     const demoDoc = fromFicha && !!getState().demo;   // demo: pliego simulado con las cláusulas habituales, para ver el recorrido completo
     const files = [fichaFile(t), ...pdfs, ...(demoDoc ? [demoPliegoFile(t)] : [])];   // la ficha aporta los datos oficiales ya verificados (plazos, criterios)
@@ -247,7 +247,7 @@ function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; 
   return (
     <Drawer wide title="Detalle de la licitación" onClose={onClose}
       footer={<>
-        <button className="btn btn-primary grow" onClick={onAnalyze} disabled={d < 0 || !!busy}>{busy ? <><LuLoaderCircle className="spin" /> {busy}</> : <>{PLIEGO_FILES[t.id] ? 'Analizar los pliegos con PROPO' : 'Analizar licitación'} <LuArrowRight /></>}</button>
+        <button className="btn btn-primary grow" onClick={onAnalyze} disabled={d < 0 || !!busy}>{busy ? <><LuLoaderCircle className="spin" /> {busy}</> : <>{PLIEGO_FILES[t.id] || canFetchDocs(t.live?.docs) ? 'Analizar los pliegos con PROPO' : 'Analizar licitación'} <LuArrowRight /></>}</button>
         <button className={`btn btn-secondary bookmark ${saved ? 'on' : ''}`} onClick={onSave}><LuBookmark /> {saved ? 'Guardada' : 'Guardar'}</button>
       </>}>
       <div className="row-wrap"><span className={`score-pill ${scoreTone(m.score)}`}>{m.score}%</span>{!t.deadline ? <span className="badge ok">Abierta</span> : d >= 0 ? <span className="badge ok">Abierta · {d} días</span> : <span className="badge">Cerrada</span>}<span className="badge outline">{nature}</span><span className="badge outline">{sectorLabel(t.sector)}</span></div>
