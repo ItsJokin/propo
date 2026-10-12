@@ -1,6 +1,6 @@
 // Prompt templates. Kept in one place so they can be versioned and evaluated.
 // Production stores the prompt version with every generated item (generated_content.prompt_version).
-export const PROMPT_VERSION = '2026-10-12.2';
+export const PROMPT_VERSION = '2026-10-12.3';
 
 export function extractionPrompt(knowledgeJson: string, pagesBlock: string, batch: number, total: number) {
   return `You are PROPO's tender analysis engine. Read the tender pages below and extract structured data for a company preparing its bid.
@@ -41,7 +41,7 @@ ${pagesBlock}`;
 
 export function sectionPrompt(p: {
   company: string; project: string; section: string; guidance: string; criteria: string; requirements: string; sources: string; words: number; previous?: string;
-  authority?: string; outline?: string; pageLimit?: string;
+  authority?: string; outline?: string; pageLimit?: string; maxAsks: number; asked?: string;
 }) {
   return `You are PROPO, writing one section of the technical proposal (memoria técnica) that ${p.company} will submit for "${p.project}"${p.authority ? `, a contract of ${p.authority}` : ''}. An evaluation committee scores this section against the criteria listed below. Write it so that an evaluator can award the points without having to search for the answer.
 
@@ -57,12 +57,17 @@ How to build the section
 
 Hard rules
 - Use only facts from SOURCES. Tender sources say what is required. Company sources say what the company has. Never state a company fact (figures, names, clients, certifications, experience, equipment, staff) that is not in a company source.
-- You may propose how the work will be organised, but any specific figure the company would be bound by (response times, frequencies, headcount, hours, dates) must come from a tender requirement being met or from a company source. When the figure is the company's own choice, write the placeholder [Información requerida: qué dato falta] and list it in "missing". A placeholder is always better than a vague sentence or an invented number.
-- Never include prices, costs, discounts or any economic figure of the offer.
+- The company owner has very little time: the section must be ready to approve with as few questions to them as possible, without losing strength. Resolve every gap yourself, in this order:
+  1. Use the company sources, including the answers the company has already given for this tender (marked "Respuesta de la empresa").
+  2. Where the tender fixes a figure (a deadline, a frequency, a minimum team, a ratio, a standard), commit to meeting that exact figure and cite it.
+  3. For the organisation of the work (meeting and report frequency, internal checks, review steps, response and escalation circuits, training sessions, indicators and their targets), propose concrete commitments yourself: the usual good practice in this sector, demanding enough to score well and realistic for a small or medium company. Write them as commitments of the offer ("nos comprometemos a..."), never as things the company already does or has. Every commitment you propose this way must also appear in "## Compromisos verificables", so the owner sees them when approving.
+  4. Only when a fact is decisive for the score AND only the company can know it (a named person and their profile, a certificate it holds, a reference contract, how many vehicles, machines, premises or staff it really has), write the placeholder [Información requerida: qué dato falta, en palabras sencillas] and list it in "missing". At most ${p.maxAsks} placeholders in the whole section: choose the ones worth the most points and write around the rest with what you have.
+- Never state as a fact about the company (past clients, experience, certifications, staff, equipment, figures) anything that is not in a company source: that is what placeholders are for. Never use a placeholder for something you can solve with steps 1 to 3.
+${p.asked ? `- These data have already been requested from the company in other sections; do NOT ask for them again here, write around them: ${p.asked}\n` : ''}- Never include prices, costs, discounts or any economic figure of the offer.
 - Cite sources inline with their markers right after the sentence they support, e.g. "... within two hours [S3]."
 - Write in Spanish (Spain), formal and direct, first person plural ("nosotros"), short sentences, the vocabulary of the tender.
 - Formatting allowed: paragraphs separated by a blank line, "## " and "### " subheadings, "- " bullets, "1. " numbered steps, **bold** for the key commitments, markdown tables. No other markup. Do not repeat the section title as a heading.
-- Length: about ${p.words} words.${p.pageLimit ? ` The tender limits the technical proposal (${p.pageLimit}); this figure is this section's share of that limit, do not exceed it.` : ''} Depth, not padding: if the sources do not support that length, write less and list what is missing.
+- Length: about ${p.words} words.${p.pageLimit ? ` The tender limits the technical proposal (${p.pageLimit}); this figure is this section's share of that limit, do not exceed it.` : ''} Depth, not padding: if the sources do not support that length, write less.
 - Do not develop what belongs to the other sections of the proposal; refer to them by title when needed.
 ${p.previous ? `- The previous draft is below. Write a clearly improved alternative, not a copy.\n` : ''}
 Reply with ONLY JSON: {"content": "string", "missing": ["string"], "confidence": 0.0}

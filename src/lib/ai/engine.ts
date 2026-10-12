@@ -10,6 +10,7 @@ import { chunkPages, search, quoteOnPage, type Passage } from '../pipeline/retri
 import { knowledgeForPrompt, knowledgeIndex, toRequirements, type Knowledge } from '../pipeline/matching';
 import { getPages } from '../storage';
 import { uid, nowIso, normalize, tokens, wordCount } from '../util';
+import { lineWithout } from '../lineEdit';
 import { demoSection } from '../demo/demoWriter';
 
 export type StageId = 'read' | 'requirements' | 'deadlines' | 'criteria' | 'documents' | 'structure';
@@ -270,6 +271,9 @@ export function sectionWordTarget(project: Project, section: Section): number {
   return round(900 + pts(section) * 50, 1000, 2400);
 }
 
+/** Cuántos datos puede pedir al cliente una sección, como mucho. */
+const MAX_ASKS = 2;
+
 export async function generateSection(opts: {
   project: Project; section: Section; knowledge: Knowledge; pages: Map<string, string[]>; regenerate?: boolean; signal?: AbortSignal; demo?: boolean;
 }): Promise<GenOutput> {
@@ -280,7 +284,7 @@ export async function generateSection(opts: {
   const linkedReqs = search(reqPass.filter((r) => !['format', 'legal', 'administrative'].includes(project.requirements.find((x) => x.id === r.id)!.category)), query, 10).map((p) => project.requirements.find((r) => r.id === p.id)!).filter(Boolean);
   const passages = search(projectPassages(project, pages), query + ' ' + linkedReqs.map((r) => r.title).join(' '), 10);
   const kIdx = knowledgeIndex(knowledge).filter((k) => k.kind === 'company');
-  const kHits = search(kIdx.map((k) => ({ id: k.id, docId: 'company', docName: 'Company', page: 0, text: k.label + ' ' + k.text })), query, 8)
+  const kHits = search(kIdx.map((k) => ({ id: k.id, docId: 'company', docName: 'Company', page: 0, text: k.label + ' ' + k.text })), query, 12)
     .map((p) => kIdx.find((k) => k.id === p.id)!);
 
   const citations: Citation[] = [];
@@ -289,6 +293,17 @@ export async function generateSection(opts: {
   for (const r of linkedReqs) if (!citations.some((c) => c.docId === r.source.docId && c.page === r.source.page)) citations.push({ marker: `S${++n}`, kind: 'tender', label: `${r.source.docName} — p. ${r.source.page}`, docId: r.source.docId, page: r.source.page, quote: r.text });
   if (knowledge.company.description) citations.push({ marker: `S${++n}`, kind: 'company', label: 'Perfil de empresa — descripción', quote: `${knowledge.company.legalName}: ${knowledge.company.description}` });
   for (const k of kHits) citations.push({ marker: `S${++n}`, kind: 'company', label: `Empresa — ${k.label}`, quote: k.text });
+  // Lo que el cliente ya ha respondido en esta licitación (preguntas de PROPO, «Añadir», comprobación final): no se vuelve a pedir.
+  const said = new Map<string, string>();
+  for (const a of project.answers ?? []) said.set(a.label.toLowerCase(), `${a.label}: ${a.value}`);
+  for (const r of project.requirements) {
+    const m = r.note?.match(/^(?:Respuesta(?: de [^:]+)?|Dato aportado al revisar la propuesta):\s*(.+)$/is);
+    if (m) said.set(r.title.toLowerCase(), `${r.title}: ${m[1].trim()}`);
+    else if (r.humanValidated && r.status === 'fulfilled') said.set(r.title.toLowerCase(), `${r.title}: la empresa confirma que lo cumple${r.evidence.length ? ` (${r.evidence.map((e) => e.label).join('; ')})` : ''}`);
+  }
+  for (const t of [...said.values()].slice(0, 24)) citations.push({ marker: `S${++n}`, kind: 'company', label: 'Respuesta de la empresa', quote: t.slice(0, 500) });
+  const TAGS = /\[(?:Información requerida|Information required):\s*([^\]]+)\]/g;
+  const askedElsewhere = [...new Set(project.sections.filter((x) => x.id !== section.id).flatMap((x) => [...x.content.matchAll(TAGS)].map((m) => m[1].trim())))].slice(0, 30);
 
   const approvedExamples = project.sections.filter((s) => s.status === 'approved' && s.id !== section.id).length;
   const words = sectionWordTarget(project, section);
@@ -303,6 +318,7 @@ export async function generateSection(opts: {
         words, previous: opts.regenerate && section.content ? section.content : undefined,
         authority: project.analysis?.authority || project.organization || undefined, pageLimit: project.analysis?.pageLimit || undefined,
         outline: project.sections.map((s, i) => `${s.id === section.id ? '→' : ' '} ${i + 1}. ${s.title}`).join('\n'),
+        maxAsks: MAX_ASKS, asked: askedElsewhere.length ? askedElsewhere.map((x) => `«${x}»`).join('; ') : undefined,
       }), { tier: 'default', signal: opts.signal });
       let content = String(j?.content ?? '').trim();
       if (!content) throw new AIError('empty_completion', 'empty');
@@ -314,7 +330,18 @@ export async function generateSection(opts: {
       if (dropped) warnings.push(`Se ${dropped > 1 ? 'han eliminado' : 'ha eliminado'} ${dropped} cita${dropped > 1 ? 's' : ''} sin fuente.`);
       if (PRICE_LEAK.test(content)) warnings.push('Esta sección menciona un importe. Comprueba que no revela información de precio (riesgo de exclusión).');
       const used = new Set([...content.matchAll(/\[(S\d+)\]/g)].map((m) => m[1]));
-      const missing = [...new Set([...(Array.isArray(j?.missing) ? j.missing.map(String) : []), ...[...content.matchAll(/\[(?:Información requerida|Information required):\s*([^\]]+)\]/g)].map((m) => m[1].trim())])];
+      // Como mucho MAX_ASKS huecos por sección: si la IA deja más, se quitan los últimos (los que menos pesan) sin tocar el resto.
+      const extra = [...content.matchAll(TAGS)].map((m) => m[0]).slice(MAX_ASKS);
+      for (const tag of extra) {
+        const lines = content.split('\n');
+        const k = lines.findIndex((l) => l.includes(tag));
+        if (k < 0) continue;
+        const next = lineWithout(lines[k], tag);
+        if (next) lines[k] = next; else lines.splice(k, 1);
+        content = lines.join('\n').replace(/\n{3,}/g, '\n\n');
+      }
+      // Solo cuenta como «falta» lo que de verdad tiene un hueco en el texto.
+      const missing = [...new Set([...content.matchAll(TAGS)].map((m) => m[1].trim()))];
       let confidence = Math.max(0, Math.min(1, Number(j?.confidence) || 0.7));
       if (dropped) confidence = Math.min(confidence, 0.6);
       if (!used.size) { confidence = Math.min(confidence, 0.5); warnings.push('El borrador no cita ninguna fuente. Revisa cada afirmación.'); }

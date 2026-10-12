@@ -5,6 +5,8 @@ import type { CompanyInfo, VaultCategory, Project, Evidence } from './types';
 import { getState, update, updateProject, navigate } from './store';
 import { addVaultFiles } from './actions';
 import { uid, nowIso } from './util';
+import { lineWithout } from './lineEdit';
+export { lineWithout };
 
 export type InfoKind = 'capability' | 'revenue' | 'employees' | 'company' | 'experience' | 'certification' | 'team' | 'document' | 'price' | 'other';
 export interface InfoPlan {
@@ -82,17 +84,6 @@ function forget(s: { missing: string[] }, label: string, kind: InfoKind) {
 
 /** La línea de la sección que contiene la marca (un párrafo, un punto de lista o una fila de tabla). */
 export function lineOf(content: string, tag: string) { return content.split('\n').find((l) => l.includes(tag)) ?? ''; }
-
-/** Sin IA: la línea sin la frase que pedía el dato. Devuelve '' si no queda nada que merezca la pena. */
-export function lineWithout(line: string, tag: string) {
-  if (/^\s*([-*•|]|\d+[.)])/.test(line)) return '';                      // punto de lista o fila de tabla: se va entero
-  const i = line.indexOf(tag);
-  const before = line.slice(0, i), after = line.slice(i + tag.length);
-  const from = before.lastIndexOf('. ') + 1;                             // 0 si la marca está en la primera frase
-  const end = after.search(/\.(\s|$)/);
-  const rest = `${before.slice(0, from).trimEnd()} ${end >= 0 ? after.slice(end + 1).trimStart() : ''}`.trim();
-  return rest.replace(/\[S\d+\]/g, '').trim().length < 25 ? '' : rest;
-}
 
 /** El cliente decide que ese dato no hace falta: se quita de la sección (la línea queda como `replacement`, o desaparece). */
 export function dropInfo(projectId: string, sectionId: string, tag: string, label: string, replacement: string) {
