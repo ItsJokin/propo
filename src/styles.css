@@ -1119,3 +1119,7 @@ a.comp-award-t:hover { color: var(--accent); }
 .vmodal-in { position: relative; width: min(100%, 1100px); }
 .vmodal-in video { display: block; width: 100%; max-height: 82vh; border-radius: 14px; background: #000; box-shadow: 0 30px 80px rgba(0, 0, 0, .6); }
 .vmodal-x { position: absolute; right: 0; top: -46px; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .3); background: rgba(255, 255, 255, .1); color: #fff; display: grid; place-items: center; cursor: pointer; }
+
+/* Encabezado principal de las páginas públicas: mismo aspecto que los h2 de sección */
+.section-head .page-h1 { line-height: 1.08; letter-spacing: -0.04em; margin-top: 12px; font-weight: 800; }
+.section-head .page-h1 .blue { color: var(--accent); }

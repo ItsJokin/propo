@@ -1,5 +1,6 @@
 // Bienvenida de una cuenta nueva: asistente de una pregunta por pantalla que rellena la memoria de empresa.
 // Todo se puede omitir; lo que se responde se guarda al pulsar «Continuar».
+import { GROUP } from '../lib/plans';
 import React, { useEffect, useMemo, useState } from 'react';
 import { LuArrowRight, LuChevronLeft, LuCheck, LuSparkles, LuTarget, LuShieldCheck, LuSearch, LuFileText, LuLock } from 'react-icons/lu';
 import { Logo, Ring } from '../components/ui';
@@ -243,8 +244,8 @@ export function Welcome() {
                 <div>
                   <div className="eyebrow">Memoria de empresa</div>
                   {fit.high > 0
-                    ? <p className="wz-result-main"><strong className="num">{fit.high.toLocaleString('es-ES')}</strong> de {fit.open.toLocaleString('es-ES')} licitaciones abiertas encajan muy bien con tu empresa.</p>
-                    : <p className="wz-result-main">Hay <strong className="num">{fit.open.toLocaleString('es-ES')}</strong> licitaciones abiertas esperándote, ordenadas por compatibilidad.</p>}
+                    ? <p className="wz-result-main"><strong className="num">{fit.high.toLocaleString('es-ES', GROUP)}</strong> de {fit.open.toLocaleString('es-ES', GROUP)} licitaciones abiertas encajan muy bien con tu empresa.</p>
+                    : <p className="wz-result-main">Hay <strong className="num">{fit.open.toLocaleString('es-ES', GROUP)}</strong> licitaciones abiertas esperándote, ordenadas por compatibilidad.</p>}
                   <p className="small muted">{skipped > 0 ? `Has omitido ${skipped} ${skipped === 1 ? 'pregunta' : 'preguntas'}. Complétalas cuando quieras en Empresa: cuanto más sepa PROPO, mejor acierta.` : 'Cuanto más añadas en Empresa, mejor acierta PROPO y menos te pregunta en cada propuesta.'}</p>
                 </div>
               </div>

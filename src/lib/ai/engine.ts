@@ -181,7 +181,7 @@ export async function analyzeDocuments(opts: {
     mode = 'rules';
     warnings.unshift(aiError
       ? 'El análisis con IA no estaba disponible, así que PROPO ha usado la extracción básica por reglas. Revisa la lista de requisitos con atención.'
-      : 'Modo de extracción básica: los requisitos se han detectado por la redacción de los documentos. Abre PROPO dentro de claude.ai para usar el análisis con IA.');
+      : 'Modo de extracción básica: los requisitos se han detectado por la redacción de los documentos. El análisis con IA todavía no está activado: revisa los requisitos contra el pliego antes de darlos por buenos.');
   }
 
   opts.onStage('deadlines', ex.deadline ? 'Fecha límite encontrada' : 'No se ha encontrado la fecha límite: añádela');
@@ -380,7 +380,7 @@ function retrievalAnswer(project: Project, q: string, citations: Citation[]): Ch
     text = 'No he encontrado nada sobre esto en los documentos del proyecto.';
   }
   const used = new Set([...text.matchAll(/\[(S\d+)\]/g)].map((m) => m[1]));
-  return { id: uid('m'), role: 'assistant', text: text + '\n\nRespuesta basada en los datos del proyecto, sin IA. Abre PROPO dentro de claude.ai para obtener respuestas completas con IA.', citations: citations.filter((c) => used.has(c.marker)), mode: 'retrieval', at: nowIso() };
+  return { id: uid('m'), role: 'assistant', text: text + '\n\nRespuesta basada en los datos del proyecto, sin IA. Las respuestas con IA todavía no están activadas.', citations: citations.filter((c) => used.has(c.marker)), mode: 'retrieval', at: nowIso() };
 }
 
 export { wordCount };

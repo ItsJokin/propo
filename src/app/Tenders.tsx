@@ -15,7 +15,7 @@ import { canCreateProposal, createProject, type LimitReason } from '../lib/actio
 import { hasPliegos, loadPliegoFiles, pliegoUrl } from '../lib/discovery/loadPliegos';
 import { PLIEGO_FILES } from '../lib/discovery/pliegoFiles';
 import { daysUntil, fmtDate, uid, nowIso, normalize, timeAgo } from '../lib/util';
-import { eur, PLANS } from '../lib/plans';
+import { eur, PLANS, GROUP } from '../lib/plans';
 
 export function scoreTone(s: number) { return s >= 70 ? '' : s >= 45 ? 'mid' : 'low'; }
 
@@ -148,7 +148,7 @@ export function Tenders() {
       ) : (
         <div className="t-list">
           {list.slice(0, shown).map((r) => <TenderRow key={r.t.id} r={r} saved={s.savedTenders.includes(r.t.id)} onOpen={() => setOpen(r)} onSave={() => toggleSave(r.t.id)} />)}
-          {list.length > shown && <button className="btn btn-secondary" style={{ alignSelf: 'center', marginTop: 8 }} onClick={() => setShown(shown + PAGE)}>Mostrar {Math.min(PAGE, list.length - shown)} más · {(list.length - shown).toLocaleString('es-ES')} restantes</button>}
+          {list.length > shown && <button className="btn btn-secondary" style={{ alignSelf: 'center', marginTop: 8 }} onClick={() => setShown(shown + PAGE)}>Mostrar {Math.min(PAGE, list.length - shown)} más · {(list.length - shown).toLocaleString('es-ES', GROUP)} restantes</button>}
         </div>
       )}
       <div className="row mt-16 small muted">
@@ -164,7 +164,7 @@ export function Tenders() {
             const n = hits.length; const fresh = hits.filter(({ t }) => t.pub >= a.createdAt.slice(0, 10)).length;
             return (
               <div key={a.id} className="entity">
-                <div><div style={{ fontWeight: 600 }}>{a.name}</div><div className="small muted">{n.toLocaleString('es-ES')} licitaciones abiertas coinciden{fresh ? ` · ${fresh} publicadas desde que creaste la alerta` : ''}</div></div>
+                <div><div style={{ fontWeight: 600 }}>{a.name}</div><div className="small muted">{n.toLocaleString('es-ES', GROUP)} licitaciones abiertas coinciden{fresh ? ` · ${fresh} publicadas desde que creaste la alerta` : ''}</div></div>
                 <div className="row">
                   <button className="btn btn-ghost btn-sm" onClick={() => { setSector(a.sector); setRegion(a.region); setQ(a.query); setQuery(a.query); window.scrollTo?.(0, 0); document.getElementById('app-main')?.scrollTo(0, 0); }}>Ver</button>
                   <button className="btn btn-ghost btn-sm btn-icon" aria-label="Eliminar alerta" onClick={() => update((st) => { st.alerts = st.alerts.filter((x) => x.id !== a.id); })}><LuTrash2 /></button>
@@ -196,7 +196,7 @@ export function DataStatus({ live }: { live: LiveState }) {
     <div className={`callout ${fresh ? 'neutral' : 'warn'} small data-status`} style={{ marginBottom: 20 }}>
       <span className={`live-dot ${fresh ? 'on' : ''}`} />
       <div className="grow">
-        <strong>{live.tenders.length.toLocaleString('es-ES')} licitaciones abiertas</strong> de fuentes oficiales · {fresh ? `comprobado ${timeAgo(m.checkedAt!)}` : `datos del ${fmtDate(m.checkedAt)}, ${new Date(m.checkedAt!).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}`}
+        <strong>{live.tenders.length.toLocaleString('es-ES', GROUP)} licitaciones abiertas</strong> de fuentes oficiales · {fresh ? `comprobado ${timeAgo(m.checkedAt!)}` : `datos del ${fmtDate(m.checkedAt)}, ${new Date(m.checkedAt!).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}`}
         <div className="xs muted" style={{ marginTop: 2 }}>
           {src.map(([k, x]) => <span key={k} style={{ marginRight: 14 }} title={x.error || ''}>{x.ok ? '✓' : '✗'} {x.label}{x.ok ? '' : ' (sin respuesta en la última lectura)'}</span>)}
           {!fresh && <span>Esta copia no recibe datos nuevos desde entonces.</span>}
@@ -356,7 +356,7 @@ function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; 
               : <>
                 <p className="small muted">Qué ha pasado en contratos como este: cuántas empresas se presentan, con qué rebaja se adjudican y quién los gana. Datos de adjudicaciones publicadas en las fuentes oficiales.</p>
                 {comp.buyer && <CompBlock title={`Este organismo: ${t.buyer}`} sub={`${comp.buyer.n} ${comp.buyer.n === 1 ? 'adjudicación' : 'adjudicaciones'} en este sector`} s={comp.buyer} />}
-                {comp.similar && <CompBlock title="Contratos parecidos en toda España" sub={`${comp.similar.n.toLocaleString('es-ES')} adjudicaciones ${comp.scope}`} s={comp.similar} />}
+                {comp.similar && <CompBlock title="Contratos parecidos en toda España" sub={`${comp.similar.n.toLocaleString('es-ES', GROUP)} adjudicaciones ${comp.scope}`} s={comp.similar} />}
                 <p className="xs subtle">Las medianas son orientativas: resumen adjudicaciones publicadas entre el {fmtDate((comp.similar ?? comp.buyer)!.from)} y el {fmtDate((comp.similar ?? comp.buyer)!.to)}. La rebaja se calcula sobre el presupuesto base cuando el anuncio publica los dos importes.</p>
               </>}
         </div>

@@ -3,7 +3,7 @@ import { useRoute, useStore, navigate } from './lib/store';
 import { Toasts } from './components/ui';
 import { Landing } from './marketing/Landing';
 import { Pricing } from './marketing/Pricing';
-import { Features, Security, Resources, Contact, Privacy, Terms, Cookies } from './marketing/Pages';
+import { Features, Security, Resources, Contact, Privacy, Terms, Cookies, FaqPage } from './marketing/Pages';
 import { Signup, Login, Onboarding } from './auth/Auth';
 import { Welcome } from './auth/Welcome';
 import { AppShell } from './app/Shell';
@@ -29,6 +29,12 @@ const SEO: Record<string, [string, string]> = {
   '/security': ['Seguridad — PROPO', 'Aislamiento por empresa, cifrado, datos en la UE, registro de actividad y controles RGPD para tus pliegos.'],
   '/resources': ['Recursos — PROPO', 'Guías y glosario para equipos que preparan licitaciones y RFP.'],
   '/contact': ['Contacto — PROPO', 'Habla con el equipo de PROPO.'],
+  '/faq': ['Preguntas frecuentes — PROPO', 'Qué hace PROPO, qué decide tu equipo y cómo se tratan tus documentos.'],
+  '/privacy': ['Política de privacidad — PROPO', 'Cómo trata PROPO los datos de tu cuenta y de tu empresa.'],
+  '/terms': ['Condiciones del servicio — PROPO', 'Condiciones de uso de PROPO.'],
+  '/cookies': ['Política de cookies — PROPO', 'Qué cookies usa PROPO y para qué.'],
+  '/login': ['Iniciar sesión — PROPO', 'Entra en tu espacio de PROPO.'],
+  '/signup': ['Crear cuenta — PROPO', 'Crea tu espacio de PROPO y prueba una propuesta completa.'],
 };
 
 export function App() {
@@ -68,6 +74,7 @@ export function App() {
       case '/privacy': page = <Privacy />; break;
       case '/terms': page = <Terms />; break;
       case '/cookies': page = <Cookies />; break;
+      case '/faq': page = <FaqPage />; break;
       case '/signup': page = authed ? <Redirect to="/app" /> : <Signup />; break;
       case '/login': page = authed ? <Redirect to="/app" /> : <Login />; break;
       case '/welcome': page = <Welcome />; break;

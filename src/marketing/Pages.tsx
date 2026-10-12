@@ -9,7 +9,7 @@ function PageHero({ eyebrow, title, sub }: { eyebrow: string; title: React.React
     <section className="section" style={{ paddingBottom: 32 }}>
       <div className="mk-wrap section-head" style={{ marginBottom: 0, maxWidth: 760 }}>
         <div className="eyebrow">{eyebrow}</div>
-        <h2 style={{ fontSize: 'clamp(36px, 4.6vw, 56px)' }}>{title}</h2>
+        <h1 className="page-h1" style={{ fontSize: 'clamp(36px, 4.6vw, 56px)' }}>{title}</h1>
         <p>{sub}</p>
       </div>
     </section>

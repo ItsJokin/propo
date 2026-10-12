@@ -1,3 +1,4 @@
+import { GROUP } from '../lib/plans';
 import React, { useMemo } from 'react';
 import { LuPlus, LuArrowRight, LuChevronRight, LuCircleAlert, LuFolderKanban, LuTriangleAlert, LuSearch, LuSparkles, LuCheck, LuBuilding2, LuFileCheck, LuTarget } from 'react-icons/lu';
 import { useStore, navigate } from '../lib/store';
@@ -77,7 +78,7 @@ export function Dashboard() {
     if (blocked) { const n = pendingOf(blocked); return { icon: <LuCircleAlert />, title: `PROPO necesita ${n} ${n === 1 ? 'dato tuyo' : 'datos tuyos'} para «${blocked.name}»`, body: 'Son requisitos del pliego que no ha podido cubrir con la memoria de tu empresa. Al responderlos, la propuesta avanza sola.', cta: 'Responder ahora', to: `/app/projects/${blocked.id}/requirements`, alt: tendersAlt }; }
     if (review) return { icon: <LuFileCheck />, title: `«${review.name}» está lista para que la revises`, body: 'PROPO ha redactado todas las secciones. Léela, ajusta lo que quieras y apruébala.', cta: 'Revisar la propuesta', to: `/app/projects/${review.id}/proposal`, alt: tendersAlt };
     if (live[0]) return { icon: <LuFileCheck />, title: `Sigue con «${live[0].name}»`, body: `La propuesta está al ${readiness(live[0])} %.`, cta: 'Continuar la propuesta', to: `/app/projects/${live[0].id}`, alt: tendersAlt };
-    return { icon: <LuTarget />, title: highCount ? `Hay ${highCount.toLocaleString('es-ES')} licitaciones abiertas que encajan muy bien con tu empresa` : 'Encuentra tu próxima licitación', body: 'Elige una y pulsa «Analizar»: PROPO lee los pliegos y prepara la propuesta para que tú solo la revises.', cta: 'Ver mis licitaciones', to: '/app/tenders', alt: { label: 'Ya tengo un pliego: subirlo', to: '/app/projects?new=1' } };
+    return { icon: <LuTarget />, title: highCount ? `Hay ${highCount.toLocaleString('es-ES', GROUP)} licitaciones abiertas que encajan muy bien con tu empresa` : 'Encuentra tu próxima licitación', body: 'Elige una y pulsa «Analizar»: PROPO lee los pliegos y prepara la propuesta para que tú solo la revises.', cta: 'Ver mis licitaciones', to: '/app/tenders', alt: { label: 'Ya tengo un pliego: subirlo', to: '/app/projects?new=1' } };
   })();
 
   return (

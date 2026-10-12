@@ -77,4 +77,6 @@ export const COMPARISON: { label: string; values: Record<'trial' | 'pro' | 'busi
 
 export const TRIAL_DAYS = 14;
 
-export const eur = (n: number) => n.toLocaleString('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+/** Agrupa siempre los millares: sin esto, es-ES escribe «3360 €» y «8051» en las cifras de cuatro dígitos. */
+export const GROUP = { useGrouping: 'always' } as unknown as Intl.NumberFormatOptions;
+export const eur = (n: number) => n.toLocaleString('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0, ...GROUP });
