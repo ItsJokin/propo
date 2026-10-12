@@ -1236,3 +1236,7 @@ a.comp-award-t:hover { color: var(--accent); }
 .fin-ok-list > div { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; }
 .fin-ok-list svg { width: 15px; height: 15px; color: var(--ok); flex: none; margin-top: 4px; }
 @media (max-width: 640px) { .fin-card { padding: 20px 16px 14px; } .fin-card-top h3 { font-size: 19px; } .fin-ok-list { grid-template-columns: 1fr; } .fin-dot { width: 18px; } .fin-dot.on { width: 32px; } }
+.fin-work { display: grid; gap: 10px; padding: 14px 16px; border-radius: 12px; background: var(--accent-soft); }
+.fin-work svg { width: 16px; height: 16px; color: var(--accent); flex: none; }
+.fin-bar { height: 6px; border-radius: 99px; background: var(--surface); overflow: hidden; }
+.fin-bar i { display: block; height: 100%; border-radius: 99px; background: var(--accent); transition: width .4s ease; }

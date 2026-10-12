@@ -6,7 +6,9 @@ import { PLANS } from './plans';
 import { parseFile, type ParsedDoc } from './pipeline/parse';
 import { putPages, deletePages, putFile, getFile } from './storage';
 import { analyzeDocuments, generateSection, projectPages, STAGES, type StageId } from './ai/engine';
-import { AIError, friendlyAIError } from './ai/provider';
+import { AIError, friendlyAIError, ai, aiState, getSample } from './ai/provider';
+import { estimatePages, pageLimitNumber } from './derive';
+import { wordCount } from './util';
 import { uid, nowIso, daysUntil } from './util';
 import type { Knowledge } from './pipeline/matching';
 
@@ -232,6 +234,67 @@ export async function runGenerate(projectId: string, sectionId: string, regenera
   } finally {
     running.delete(projectId + sectionId);
   }
+}
+
+/** Resume con IA las secciones para que la propuesta quepa en el límite de páginas del pliego. No cambia el estado de
+ *  las secciones: lo aprobado sigue aprobado. Devuelve si ha quedado dentro del límite. */
+export async function shortenProposal(projectId: string, onProgress: (done: number, total: number, title: string) => void): Promise<{ ok: boolean; pages: number; limit: number | null; error?: string }> {
+  const get = () => getState().projects.find((x) => x.id === projectId)!;
+  let p = get();
+  const limit = pageLimitNumber(p);
+  if (!limit) return { ok: true, pages: estimatePages(p), limit };
+  const sample = await getSample();
+  if (!sample || aiState() === 'declined') return { ok: false, pages: estimatePages(p), limit, error: 'not_available' };
+  const WORDS_PER_PAGE = 480;                                          // la misma cuenta que estimatePages
+  for (let pass = 0; pass < 2; pass++) {
+    p = get();
+    if (estimatePages(p) <= limit) break;
+    const secs = p.sections.filter((x) => wordCount(x.content) > 60);
+    const total = p.sections.reduce((a, x) => a + wordCount(x.content), 0);
+    const allowed = Math.max(secs.length * 80, (limit - p.sections.length * 0.25) * WORDS_PER_PAGE * (pass ? 0.86 : 0.93));
+    const ratio = Math.min(0.95, allowed / total);
+    let i = 0;
+    for (const sec of secs) {
+      onProgress(i++, secs.length, sec.title);
+      const target = Math.max(80, Math.round(wordCount(sec.content) * ratio));
+      const crits = p.criteria.filter((c) => sec.criteria.includes(c.id)).map((c) => `${c.name} (${c.points} pts)`).join('; ');
+      try {
+        const out = await ai.text([
+          `Eres PROPO, redactor de ofertas para licitaciones públicas en España. Esta sección de una memoria técnica es demasiado larga para el límite de páginas del pliego. Reescríbela en unas ${target} palabras como máximo (ahora tiene ${wordCount(sec.content)}).`,
+          'Cómo acortar sin perder puntos:',
+          '- Conserva todo lo que puntúa: los compromisos concretos, las cifras, los nombres, los plazos y la respuesta a cada criterio de valoración. Quita introducciones, repeticiones, explicaciones obvias y frases de relleno.',
+          '- Mantén los subtítulos «## » que responden a criterios y el apartado «## Compromisos verificables» (puedes fundir puntos parecidos). Convierte párrafos largos en listas o tablas breves si ocupan menos.',
+          '- No añadas información nueva ni cambies ningún dato, cifra o compromiso.',
+          '- Conserva las marcas de fuente como [S1] junto a la frase que apoyan, y las marcas [Información requerida: …] tal cual si las hay.',
+          '- Mismo formato (párrafos, «## », «- », «1. », **negrita**, tablas markdown) y mismo tono, en castellano de España.',
+          '- Responde ÚNICAMENTE con el texto final de la sección, sin comentarios.',
+          '',
+          `Sección: ${sec.title}`,
+          crits ? `Criterios que puntúan en esta sección: ${crits}` : '',
+          `Texto actual:\n${sec.content}`,
+        ].filter((x) => x !== '').join('\n'), { tier: 'default' });
+        const text = out.text.trim().replace(/^```\w*\n?|```$/g, '').trim();
+        if (text && wordCount(text) < wordCount(sec.content)) {
+          const valid = new Set(sec.citations.map((c) => c.marker));
+          const clean = text.replace(/\s?\[(S\d+)\]/g, (m, id) => (valid.has(id) ? m : ''));
+          updateProject(projectId, (pr) => {
+            const x = pr.sections.find((y) => y.id === sec.id)!;
+            x.content = clean; x.updatedAt = nowIso();
+            x.missing = [...new Set([...clean.matchAll(/\[(?:Información requerida|Information required):\s*([^\]]+)\]/g)].map((m) => m[1].trim()))];
+            pr.aiActionsUsed += 1;
+          });
+        }
+      } catch (e) {
+        return { ok: false, pages: estimatePages(get()), limit, error: e instanceof AIError ? e.code : 'upstream_error' };
+      }
+    }
+    onProgress(secs.length, secs.length, '');
+  }
+  p = get();
+  const pages = estimatePages(p);
+  updateProject(projectId, (pr) => { pr.activity.unshift({ at: nowIso(), text: `PROPO ha resumido la propuesta para ajustarla al límite de ${limit} páginas (ahora unas ${Math.round(pages)})` }); });
+  track('proposal_shortened', { ok: pages <= limit });
+  return { ok: pages <= limit, pages, limit };
 }
 
 export function stopGenerate(projectId: string, sectionId: string) { running.get(projectId + sectionId)?.abort(); }

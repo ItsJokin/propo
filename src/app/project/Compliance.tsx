@@ -6,7 +6,8 @@ import type { Project, Requirement } from '../../lib/types';
 import { complianceChecks, readiness, type CheckItem } from '../../lib/derive';
 import { Ring, Modal } from '../../components/ui';
 import { navigate, updateProject, update, toast, useStore, getState } from '../../lib/store';
-import { markReady, updateRequirement } from '../../lib/actions';
+import { markReady, updateRequirement, shortenProposal } from '../../lib/actions';
+import { friendlyAIError } from '../../lib/ai/provider';
 import { needsYou, reqQuestion, answer, outcomeOf } from '../../lib/interview';
 import { plainRequirement } from '../../lib/glossary';
 import { ACCEPTED } from '../../lib/pipeline/parse';
@@ -103,6 +104,7 @@ export function Compliance({ p }: { p: Project }) {
               : cur.papers ? <PapersStep p={p} list={cur.papers} />
               : cur.id === 'signature' ? <SignatureStep p={p} />
               : cur.id === 'financial' ? <FinancialStep p={p} />
+              : cur.id === 'pages' ? <PagesStep p={p} detail={cur.check?.detail ?? ''} />
               : <div className="stack gap-12"><div className="well small">{cur.check?.detail}</div><div><button className="btn btn-primary" onClick={() => navigate(`/app/projects/${p.id}/${TAB[cur.id]}`)}>{COPY[cur.id].cta} <LuArrowRight /></button></div></div>}
           </div>
           <div className="fin-nav">
@@ -206,6 +208,39 @@ function PapersStep({ p, list }: { p: Project; list: Requirement[] }) {
         <button className="btn btn-primary" onClick={() => { list.forEach(mark); toast('Papeles marcados como localizados', 'ok'); }}><LuCheck /> Los tengo todos</button>
         <button className="btn btn-ghost btn-sm" onClick={() => navigate(`/app/projects/${p.id}/requirements`)}>Verlos con detalle <LuArrowRight /></button>
       </div>
+    </div>
+  );
+}
+
+/** La propuesta se pasa de páginas: PROPO la resume sola, sin trabajo para el cliente. */
+function PagesStep({ p, detail }: { p: Project; detail: string }) {
+  const [prog, setProg] = useState<{ done: number; total: number; title: string } | null>(null);
+  const run = async () => {
+    setProg({ done: 0, total: p.sections.length, title: '' });
+    const r = await shortenProposal(p.id, (done, total, title) => setProg({ done, total, title }));
+    setProg(null);
+    if (r.ok) toast(`Propuesta resumida: ahora ocupa unas ${Math.round(r.pages)} páginas de ${r.limit}`, 'ok');
+    else if (r.error) toast(r.error === 'not_available' ? 'La IA no está disponible ahora mismo. Inténtalo en unos minutos.' : friendlyAIError(r.error), 'bad');
+    else toast(`La he acortado hasta unas ${Math.round(r.pages)} páginas, pero el límite es ${r.limit}. Pulsa otra vez para resumir un poco más.`, 'warn');
+  };
+  return (
+    <div className="stack gap-12">
+      <div className="well small">{detail}</div>
+      {prog ? (
+        <div className="fin-work">
+          <div className="row small"><LuLoaderCircle className="spin" /> <span>PROPO está resumiendo la propuesta{prog.title ? `: «${prog.title}»` : '…'}</span><span className="spacer" /><span className="muted num">{Math.min(prog.done + 1, prog.total)} de {prog.total}</span></div>
+          <div className="fin-bar"><i style={{ width: `${Math.round((prog.done / Math.max(1, prog.total)) * 100)}%` }} /></div>
+          <p className="xs muted" style={{ margin: 0 }}>Tarda uno o dos minutos. No cierres esta página.</p>
+        </div>
+      ) : (
+        <>
+          <p className="small muted" style={{ margin: 0 }}>PROPO puede acortarla por ti: quita repeticiones y relleno y conserva los compromisos, las cifras y todo lo que puntúa. No tienes que hacer nada más.</p>
+          <div className="row-wrap">
+            <button className="btn btn-primary" onClick={run}><LuSparkles /> Que PROPO la resuma automáticamente</button>
+            <button className="btn btn-ghost btn-sm" onClick={() => navigate(`/app/projects/${p.id}/proposal`)}>Prefiero acortarla yo <LuArrowRight /></button>
+          </div>
+        </>
+      )}
     </div>
   );
 }
