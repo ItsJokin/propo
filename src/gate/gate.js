@@ -15,7 +15,8 @@
     return new Uint8Array(await subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt: bytes(CFG.salt), iterations: CFG.iterations }, base, 256));
   }
 
-  /** Descifra la web con la clave derivada de la contraseña. Lanza 'wrong' si la clave no abre el candado. */
+  /** Descifra la web con la clave derivada de la contraseña. Lanza 'wrong' si la clave no abre el candado y 'stale' si
+   *  esta portada es de una publicación anterior (cada publicación cifra el contenido con una clave nueva). */
   async function unlock(keyBytes) {
     let priv;
     try {
@@ -24,14 +25,25 @@
       priv = await subtle.importKey('pkcs8', pkcs8, { name: 'RSA-OAEP', hash: 'SHA-256' }, false, ['decrypt']);
     } catch { throw new Error('wrong'); }
     const content = await subtle.importKey('raw', await subtle.decrypt({ name: 'RSA-OAEP' }, priv, bytes(CFG.contentKey)), 'AES-GCM', false, ['decrypt']);
-    const res = await fetch(CFG.app);
-    if (!res.ok) throw new Error('net');
+    let res;
+    try { res = await fetch(CFG.app, { cache: 'no-cache' }); } catch { throw new Error('net'); }
+    if (!res.ok) throw new Error(res.status === 404 ? 'stale' : 'net');
     const blob = new Uint8Array(await res.arrayBuffer());
-    const plain = await subtle.decrypt({ name: 'AES-GCM', iv: blob.subarray(0, 12) }, content, blob.subarray(12));
+    let plain;
+    try { plain = await subtle.decrypt({ name: 'AES-GCM', iv: blob.subarray(0, 12) }, content, blob.subarray(12)); } catch { throw new Error('stale'); }
     return JSON.parse(new TextDecoder().decode(plain));
   }
 
+  /** Vuelve a pedir la portada saltándose la caché. Solo una vez por pestaña, para no entrar en bucle. */
+  const RETRY = 'propo.gate.retry';
+  function refresh() {
+    try { if (sessionStorage.getItem(RETRY)) return false; sessionStorage.setItem(RETRY, '1'); } catch { return false; }
+    location.replace(location.pathname + '?r=' + Date.now() + location.hash);
+    return true;
+  }
+
   function start(app) {
+    try { sessionStorage.removeItem(RETRY); } catch { /* nada */ }
     $('gate').remove();
     const style = document.createElement('style'); style.textContent = app.css; document.head.appendChild(style);
     const root = document.createElement('div'); root.id = 'root'; document.body.appendChild(root);
@@ -53,7 +65,10 @@
   if (saved) {
     show(false);
     try { return start(await unlock(bytes(saved))); }
-    catch (e) { if (e.message === 'wrong') { try { localStorage.removeItem(STORE); } catch { /* nada */ } } }
+    catch (e) {
+      if (e.message === 'wrong') { try { localStorage.removeItem(STORE); } catch { /* nada */ } }
+      else if (e.message === 'stale' && refresh()) return;
+    }
   }
   show(true);
 
@@ -63,18 +78,23 @@
     e.preventDefault();
     if (!input.value || btn.disabled) return;
     btn.disabled = true; btn.textContent = 'Comprobando…'; msg.textContent = '';
+    let key = null;
     try {
-      const key = await derive(input.value);
+      key = await derive(input.value);
       const app = await unlock(key);
       try { localStorage.setItem(STORE, text(key)); } catch { /* se pedirá de nuevo */ }
       start(app);
     } catch (err) {
+      if (err.message === 'stale' && key) {            // contraseña correcta, portada antigua: se guarda la clave y se recarga
+        try { localStorage.setItem(STORE, text(key)); } catch { /* nada */ }
+        if (refresh()) { btn.textContent = 'Abriendo…'; return; }
+      }
       btn.textContent = 'Entrar';
       if (err.message === 'wrong') {
         msg.textContent = 'Esa contraseña no es correcta. Inténtalo de nuevo.';
         input.value = ''; input.setAttribute('aria-invalid', 'true'); form.classList.add('is-wrong'); input.focus();
       } else {
-        msg.textContent = 'No se ha podido cargar PROPO. Comprueba la conexión e inténtalo de nuevo.';
+        msg.textContent = err.message === 'stale' ? 'Hay una versión nueva de PROPO. Recarga la página (Ctrl+F5) y vuelve a entrar.' : 'No se ha podido cargar PROPO. Comprueba la conexión e inténtalo de nuevo.';
         btn.disabled = false;
       }
     }
