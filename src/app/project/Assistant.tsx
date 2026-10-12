@@ -6,11 +6,14 @@ import { pendingQuestions, startInterview, askNext, answer, interviewStats, outc
 import { runGenerate } from '../../lib/actions';
 import { openSource } from '../common';
 import { ExplainButton } from './Explain';
+import { plainRequirement } from '../../lib/glossary';
 import { ACCEPTED } from '../../lib/pipeline/parse';
 
 const CATS: Record<string, string> = { administrative: 'Documentación', technical: 'Técnico', financial: 'Económico', experience: 'Experiencia', certification: 'Certificación', format: 'Presentación', legal: 'Legal', team: 'Equipo' };
 const GENERIC = /^(mock|¿pregunta simulada|¿puede tu empresa cumplir)/i;
 const quoteOf = (t: string) => t.replace(/^se exigir[áa]n?:\s*/i, '').replace(/\s+/g, ' ').trim();
+/** Dónde se guarda en Empresa lo que responde a cada tipo de requisito. */
+const SHORTCUT: Record<string, [string, string]> = { certification: ['Mis certificaciones', '/app/company/certifications'], experience: ['Mi experiencia', '/app/company/experience'], team: ['Mi equipo', '/app/company/team'], financial: ['Mis documentos', '/app/documents'] };
 
 // «PROPO te pregunta»: una conversación en la que la pregunta en curso es una tarjeta con todo a la vista
 // (qué pide el pliego, qué ha encontrado PROPO, la pregunta y las respuestas) y lo ya contestado queda arriba, resumido.
@@ -109,8 +112,14 @@ export function Assistant({ p }: { p: Project }) {
               {req ? (
                 <>
                   <h3 className="qcard-title">{req.title.replace(/…$/, '')}</h3>
+                  {(() => { const pl = plainRequirement(req); return (
+                    <div className="qcard-plain">
+                      <p><strong>Qué te piden, en claro.</strong> {pl.what}</p>
+                      <p><strong>Cómo se demuestra.</strong> {pl.how}</p>
+                    </div>
+                  ); })()}
                   <div className="qcard-block">
-                    <div className="qcard-label"><LuFileText /> El pliego pide</div>
+                    <div className="qcard-label"><LuFileText /> Lo que dice el pliego, literal</div>
                     <blockquote>«{quoteOf(req.text)}»</blockquote>
                     <button className="link xs" onClick={() => openSource({ project: p, docId: req.source.docId, page: req.source.page, quote: req.source.quote ?? req.text })}>Ver en {req.source.docName.startsWith('Ficha') ? 'la ficha' : 'el pliego'} · página {req.source.page}</button>
                   </div>
@@ -139,11 +148,12 @@ export function Assistant({ p }: { p: Project }) {
                 })}
               </div>
               <form className="qcard-form" onSubmit={(e) => { e.preventDefault(); if (text.trim()) send({ text: text.trim(), multi: q.multi ? multi : undefined }); }}>
-                <input className="input" aria-label="Tu respuesta" placeholder={q.placeholder} value={text} onChange={(e) => setText(e.target.value)} />
+                <input className="input" aria-label="Tu respuesta" placeholder={q.kind === 'req' ? 'O escríbelo con tus palabras' : q.placeholder} value={text} onChange={(e) => setText(e.target.value)} />
                 <button className="btn btn-primary btn-icon" aria-label="Enviar" disabled={!text.trim()}><LuSend /></button>
               </form>
               <div className="qcard-foot">
                 {q.kind === 'req' && <button type="button" className="btn btn-ghost btn-sm" onClick={() => file.current?.click()}><LuUpload /> Adjuntar un documento (opcional)</button>}
+                {req && SHORTCUT[req.category] && <button type="button" className="btn btn-ghost btn-sm" onClick={() => navigate(SHORTCUT[req.category][1])}><LuBuilding2 /> {SHORTCUT[req.category][0]}</button>}
                 <input ref={file} type="file" hidden accept={ACCEPTED} onChange={(e) => { const f = e.target.files?.[0]; e.target.value = ''; if (f) send({ file: f }); }} />
                 <span className="spacer" />
                 {q.kind === 'req' && q.choices.filter((c) => outcomeOf(c) === 'later').map((c) => <button key={c} type="button" className="btn btn-ghost btn-sm" onClick={() => send({ choice: c })}>{c} <LuArrowRight /></button>)}

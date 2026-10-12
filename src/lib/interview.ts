@@ -49,8 +49,7 @@ export function outcomeOf(choice: string): 'yes' | 'partial' | 'no' | 'later' {
 }
 
 /** Las respuestas posibles dependen de lo que se pregunta: no todo es «sí, lo cumplimos». */
-function answersFor(r: Requirement, open: boolean): { choices: string[]; placeholder: string } {
-  if (open) return { choices: ['Lo decido más tarde'], placeholder: 'Escribe tu respuesta' };
+function answersFor(r: Requirement): { choices: string[]; placeholder: string } {
   const t = (r.title + ' ' + r.text).toLowerCase();
   if (r.category === 'certification') return { choices: ['La tenemos en vigor', 'Está en trámite', 'No la tenemos', LATER], placeholder: 'O cuéntalo: «La tenemos hasta marzo de 2027»' };
   if (r.category === 'experience') return { choices: ['Sí, tenemos contratos parecidos', 'Parecidos, pero más pequeños', 'No tenemos', LATER], placeholder: 'O cuéntame cuál: cliente, año e importe' };
@@ -68,13 +67,12 @@ const SHORT_ASK: Record<string, string> = {
 function reqQuestion(p: Project, r: Requirement): Question {
   const generic = !r.ask || /^(mock|¿pregunta simulada|¿puede tu empresa cumplir)/i.test(r.ask);
   const ask = generic ? SHORT_ASK[r.category] ?? '¿Lo cumple tu empresa?' : r.ask!;
-  const open = !generic && /^¿\s*(qu[eé]|qui[eé]n|cu[aá]l|cu[aá]nt|c[oó]mo|d[oó]nde|cu[aá]ndo)/i.test(ask);
   const base = clean(r.text).replace(/\.$/, '');
   return {
     id: 'req:' + r.id, kind: 'req', reqId: r.id, text: `El pliego pide: «${base.length > 220 ? base.slice(0, 217) + '…' : base}». ${ask}`, critical: r.critical || r.mandatory,
     hint: r.status === 'missing' ? 'No he encontrado nada en tu memoria de empresa que lo acredite.' : 'Necesito que lo confirme alguien de tu equipo.',
     source: { docId: r.source.docId, page: r.source.page, quote: r.source.quote ?? r.text, docName: r.source.docName },
-    ...answersFor(r, open),
+    ...answersFor(r),
   };
 }
 
@@ -84,7 +82,9 @@ export function pendingQuestions(p: Project, s: AppState = getState()): Question
   const seen = new Set<string>();
   const pick = (r: Requirement) => { const k = r.title.replace(/\s*\(\d+\)$/, '').toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; };
   const asked = [...answered].filter((x) => x.startsWith('req:')).length;
-  const ranked = p.requirements.filter((r) => needsYou(r) && !answered.has('req:' + r.id))
+  // Sin IA, los requisitos sacados del pliego por reglas son trozos de frase: no se pregunta por ellos, solo por los de la ficha oficial.
+  const reliable = (r: Requirement) => p.analysis?.mode !== 'rules' || isFicha(p, r.source.docId);
+  const ranked = p.requirements.filter((r) => needsYou(r) && reliable(r) && !answered.has('req:' + r.id))
     .sort((a, b) => Number(!!b.critical) - Number(!!a.critical) || Number(b.status === 'missing') - Number(a.status === 'missing'))
     .filter(pick).slice(0, Math.max(0, MAX_QUESTIONS - asked));
   const qs: Question[] = ranked.map((r) => reqQuestion(p, r));

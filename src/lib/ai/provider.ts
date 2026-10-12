@@ -40,23 +40,34 @@ function remoteSample(base: string): SampleFn {
     } catch (e: any) { throw coded(e?.name === 'AbortError' ? 'cancelled' : 'upstream_error'); }
     if (!res.ok || !res.body) { let code = 'upstream_error'; try { code = (await res.json()).error || code; } catch { /* sin cuerpo */ } throw coded(code); }
     const reader = res.body.getReader(); const dec = new TextDecoder();
+    const sse = (res.headers.get('Content-Type') || '').includes('event-stream');   // el servidor reenvía el flujo de la API tal cual
     let buf = ''; let text = ''; let truncated = false; let done = false;
-    const line = (l: string) => {
+    const line = (l: string) => {                                                   // formato anterior del servidor: una línea JSON por trozo
       if (!l.trim()) return;
       const m = JSON.parse(l);
       if (m.error) throw coded(m.error);
       if (typeof m.t === 'string') { text += m.t; opts.onText?.({ text }); }
       if (m.done) { done = true; truncated = !!m.truncated; if (typeof m.text === 'string') text = m.text; }
     };
+    const event = (raw: string) => {
+      const data = raw.split('\n').filter((l) => l.startsWith('data:')).map((l) => l.slice(5).trim()).join('');
+      if (!data) return;
+      let ev: any; try { ev = JSON.parse(data); } catch { return; }
+      if (ev.type === 'content_block_delta' && ev.delta?.type === 'text_delta') { text += ev.delta.text; opts.onText?.({ text }); }
+      else if (ev.type === 'message_delta' && ev.delta?.stop_reason) {
+        if (ev.delta.stop_reason === 'refusal') throw coded('refused');
+        done = true; truncated = ev.delta.stop_reason === 'max_tokens';
+      } else if (ev.type === 'error') throw coded(/overloaded|rate_limit/.test(ev.error?.type || '') ? 'rate_limited' : 'upstream_error');
+    };
     try {
       for (;;) {
         const r = await reader.read();
         if (r.done) break;
         buf += dec.decode(r.value, { stream: true });
-        let i: number;
-        while ((i = buf.indexOf('\n')) >= 0) { line(buf.slice(0, i)); buf = buf.slice(i + 1); }
+        if (sse) { buf = buf.replace(/\r\n/g, '\n'); let i: number; while ((i = buf.indexOf('\n\n')) >= 0) { event(buf.slice(0, i)); buf = buf.slice(i + 2); } }
+        else { let i: number; while ((i = buf.indexOf('\n')) >= 0) { line(buf.slice(0, i)); buf = buf.slice(i + 1); } }
       }
-      line(buf);
+      if (sse) { if (buf.trim()) event(buf); } else line(buf);
     } catch (e: any) { throw e?.code ? e : coded(e?.name === 'AbortError' ? 'cancelled' : 'upstream_error'); }
     if (!done) throw coded('upstream_error');
     return { text, truncated };

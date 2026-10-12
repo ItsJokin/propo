@@ -161,7 +161,19 @@ export async function analyzeDocuments(opts: {
       const results: ExtractionResult[] = [];
       for (let i = 0; i < parts.length; i++) {
         const block = parts[i].map((p) => `<<<DOC "${p.doc.name}" | PAGE ${p.page}>>>\n${p.text.slice(0, 6000)}`).join('\n\n');
-        const j = await ai.json<any>(extractionPrompt(kjson, block, i + 1, parts.length), { tier: 'default', signal: opts.signal });
+        let j: any;
+        try {
+          try { j = await ai.json<any>(extractionPrompt(kjson, block, i + 1, parts.length), { tier: 'default', signal: opts.signal }); }
+          catch (e) {                                                            // un fallo puntual no debe tirar el análisis: se reintenta una vez
+            if (e instanceof AIError && (e.code === 'cancelled' || e.code === 'not_granted')) throw e;
+            opts.onStage('requirements', `Reintentando el bloque ${i + 1} de ${parts.length}`);
+            j = await ai.json<any>(extractionPrompt(kjson, block, i + 1, parts.length), { tier: 'default', signal: opts.signal });
+          }
+        } catch (e) {
+          if (!results.length || (e instanceof AIError && e.code === 'cancelled')) throw e;
+          warnings.push('PROPO ha leído con IA solo una parte del pliego; el resto no se ha podido procesar. Revisa que no falten requisitos de las últimas páginas.');
+          break;                                                                 // se conserva lo ya leído con IA
+        }
         aiActions++;
         results.push(fromAIJson(j, docPages.map((d) => d.name)));
         opts.onStage('requirements', `Bloque ${i + 1} de ${parts.length} analizado`);

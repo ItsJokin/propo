@@ -105,6 +105,13 @@ export function termFor(text: string): Term | undefined {
 }
 
 /** Explicación de un requisito en lenguaje llano, con su situación actual en esta propuesta. */
+/** Lo esencial de un requisito para alguien que no conoce la jerga: qué es y cómo se demuestra. */
+export function plainRequirement(r: Requirement): { name?: string; what: string; how: string } {
+  const term = termFor(r.title) ?? termFor(r.text);
+  const base = term ?? BY_CATEGORY[r.category] ?? BY_CATEGORY.technical;
+  return { name: term?.name, what: base.what, how: base.how };
+}
+
 export function explainRequirement(r: Requirement): string {
   const term = termFor(r.title) ?? termFor(r.text);
   const base = term ?? BY_CATEGORY[r.category] ?? BY_CATEGORY.technical;

@@ -3,7 +3,7 @@
 // Cloudflare (Settings → Variables and Secrets → ANTHROPIC_API_KEY): la clave nunca llega al navegador.
 //
 //   POST /v1/generate   { input: string | {role, content}[], tier?: 'quick' | 'default' | 'complex' }
-//   → flujo NDJSON: {"t": "trozo de texto"}… y al final {"done": true, "text", "truncated"} o {"error": "código"}
+//   → el flujo de eventos de la API de Claude (SSE), sin modificar; los errores previos llegan como {"error": "código"}
 //   GET  /health        → {"ok": true, "key": true|false}
 //
 // Es la versión de un solo archivo de worker/ (que usa el SDK oficial y se despliega con wrangler): mismo contrato.
@@ -92,39 +92,8 @@ export default {
       return json({ error: code }, code === 'rate_limited' ? 429 : code === 'prompt_too_large' ? 413 : 502, cors);
     }
 
-    // Traduce el flujo de eventos de la API (SSE) al formato de líneas que espera la web.
-    const enc = new TextEncoder(), dec = new TextDecoder();
-    const reader = upstream.body.getReader();
-    const out = new ReadableStream({
-      async start(controller) {
-        const send = (o) => controller.enqueue(enc.encode(JSON.stringify(o) + '\n'));
-        let buf = '', text = '', stop = null, failed = null;
-        const onEvent = (raw) => {
-          const data = raw.split('\n').filter((l) => l.startsWith('data:')).map((l) => l.slice(5).trim()).join('');
-          if (!data) return;
-          let ev; try { ev = JSON.parse(data); } catch { return; }
-          if (ev.type === 'content_block_delta' && ev.delta && ev.delta.type === 'text_delta') { text += ev.delta.text; send({ t: ev.delta.text }); }
-          else if (ev.type === 'message_delta' && ev.delta && ev.delta.stop_reason) stop = ev.delta.stop_reason;
-          else if (ev.type === 'error') failed = errorCode(0, ev.error && ev.error.type, ev.error && ev.error.message);
-        };
-        try {
-          for (;;) {
-            const r = await reader.read();
-            if (r.done) break;
-            buf += dec.decode(r.value, { stream: true }).replace(/\r\n/g, '\n');
-            let i;
-            while ((i = buf.indexOf('\n\n')) >= 0) { onEvent(buf.slice(0, i)); buf = buf.slice(i + 2); }
-          }
-          if (buf.trim()) onEvent(buf);
-          if (failed) send({ error: failed });
-          else if (stop === 'refusal') send({ error: 'refused' });
-          else if (!stop) send({ error: 'upstream_error' });
-          else send({ done: true, text, truncated: stop === 'max_tokens' });
-        } catch { send({ error: 'upstream_error' }); }
-        controller.close();
-      },
-      cancel() { reader.cancel().catch(() => {}); },
-    });
-    return new Response(out, { headers: { ...cors, 'Content-Type': 'application/x-ndjson; charset=utf-8', 'Cache-Control': 'no-store' } });
+    // El flujo de eventos de la API (SSE) se reenvía tal cual: la web lo interpreta. Así el Worker casi no consume tiempo de
+    // cálculo, que en el plan gratuito de Cloudflare es muy corto y cortaba las respuestas largas a medias.
+    return new Response(upstream.body, { headers: { ...cors, 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-store' } });
   },
 };

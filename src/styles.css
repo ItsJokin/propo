@@ -1171,3 +1171,9 @@ a.comp-award-t:hover { color: var(--accent); }
 .req-calm { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; background: var(--accent-soft); font-size: 14px; line-height: 1.5; }
 .req-calm svg { width: 16px; height: 16px; flex: none; margin-top: 3px; color: var(--accent); }
 @media (max-width: 640px) { .req-tiles { grid-template-columns: 1fr; } }
+
+/* ── Pregunta de PROPO: el contexto en lenguaje llano ──────────────────────────────────────────────────────────── */
+.qcard-plain { display: grid; gap: 8px; margin: 4px 0 16px; padding: 14px 16px; border-radius: 14px; background: var(--accent-soft); font-size: 15px; line-height: 1.55; }
+.qcard-plain p { margin: 0; }
+.qcard-plain strong { font-weight: 700; }
+.qcard-foot { flex-wrap: wrap; row-gap: 6px; }
