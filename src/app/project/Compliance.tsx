@@ -169,7 +169,7 @@ function ReqStep({ p, r, onUnresolved }: { p: Project; r: Requirement; onUnresol
         <p><strong>Qué te piden, en claro.</strong> {pl.what}</p>
         <p><strong>Cómo se demuestra.</strong> {pl.how}</p>
       </div>
-      {r.note && <div className="fin-said"><LuSparkles /><div><strong>Lo que ya nos dijiste.</strong> {r.note.replace(/^Respuesta( de [^:]+)?:\s*/i, '')}</div></div>}
+      {r.note && !/pendiente de confirmar/i.test(r.note) && <div className="fin-said"><LuSparkles /><div><strong>Lo que ya nos dijiste.</strong> {r.note.replace(/^Respuesta( de [^:]+)?:\s*/i, '')}</div></div>}
       <button className="link xs" style={{ justifySelf: 'start' }} onClick={() => openSource({ project: p, docId: r.source.docId, page: r.source.page, quote: r.source.quote ?? r.text })}><LuFileText style={{ width: 12, height: 12, verticalAlign: -1, marginRight: 4 }} />Ver lo que dice el pliego · página {r.source.page}</button>
       <p className="qcard-q" style={{ margin: 0 }}>{r.ask && !/^(mock|¿pregunta simulada|¿puede tu empresa cumplir)/i.test(r.ask) ? r.ask : '¿Lo cumple tu empresa?'}</p>
       <div className="qcard-answers">
