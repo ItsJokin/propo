@@ -41,6 +41,49 @@ export function resolvePath(plan: InfoPlan, projectId?: string) {
   return plan.path === 'package' ? (projectId ? `/app/projects/${projectId}/package` : '/app/projects') : plan.path || (projectId ? `/app/projects/${projectId}/proposal` : '/app/projects');
 }
 
+/** Quita de la lista de pendientes el aviso de un dato (la lista no siempre usa las mismas palabras que la marca). */
+function forget(s: { missing: string[] }, label: string, kind: InfoKind) {
+  const before = s.missing.length;
+  s.missing = s.missing.filter((m) => m.trim().toLowerCase() !== label.trim().toLowerCase());
+  if (s.missing.length < before || !s.missing.length) return;
+  const words = (t: string) => new Set(t.toLowerCase().normalize('NFD').match(/[a-z0-9]{4,}/g) ?? []);
+  const mine = words(label);
+  const score = s.missing.map((x) => [...words(x)].filter((w) => mine.has(w)).length + (planFor(x).kind === kind ? 0.5 : 0));
+  const k = score.indexOf(Math.max(...score));
+  if (k >= 0 && score[k] > 0) s.missing.splice(k, 1);
+}
+
+/** La línea de la sección que contiene la marca (un párrafo, un punto de lista o una fila de tabla). */
+export function lineOf(content: string, tag: string) { return content.split('\n').find((l) => l.includes(tag)) ?? ''; }
+
+/** Sin IA: la línea sin la frase que pedía el dato. Devuelve '' si no queda nada que merezca la pena. */
+export function lineWithout(line: string, tag: string) {
+  if (/^\s*([-*•|]|\d+[.)])/.test(line)) return '';                      // punto de lista o fila de tabla: se va entero
+  const i = line.indexOf(tag);
+  const before = line.slice(0, i), after = line.slice(i + tag.length);
+  const from = before.lastIndexOf('. ') + 1;                             // 0 si la marca está en la primera frase
+  const end = after.search(/\.(\s|$)/);
+  const rest = `${before.slice(0, from).trimEnd()} ${end >= 0 ? after.slice(end + 1).trimStart() : ''}`.trim();
+  return rest.replace(/\[S\d+\]/g, '').trim().length < 25 ? '' : rest;
+}
+
+/** El cliente decide que ese dato no hace falta: se quita de la sección (la línea queda como `replacement`, o desaparece). */
+export function dropInfo(projectId: string, sectionId: string, tag: string, label: string, replacement: string) {
+  const plan = planFor(label);
+  updateProject(projectId, (pr) => {
+    const s = pr.sections.find((x) => x.id === sectionId);
+    if (!s) return;
+    const lines = s.content.split('\n');
+    const k = lines.findIndex((l) => l.includes(tag));
+    if (k >= 0) { if (replacement.trim()) lines[k] = replacement.trim(); else lines.splice(k, 1); }
+    s.content = lines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+    forget(s, label, plan.kind);
+    if (s.status === 'approved') s.status = 'reviewed';
+    s.updatedAt = nowIso();
+    pr.activity.unshift({ at: nowIso(), text: `Dato descartado en «${s.title}»: ${plan.title}` });
+  });
+}
+
 /** Sustituye la marca en la sección y, si se pide, guarda el dato en la memoria de empresa. */
 export function fillInfo(projectId: string, sectionId: string, tag: string, label: string, value: string, save: boolean, memo?: string) {
   const plan = planFor(label);
@@ -50,15 +93,7 @@ export function fillInfo(projectId: string, sectionId: string, tag: string, labe
     const s = pr.sections.find((x) => x.id === sectionId);
     if (!s) return;
     s.content = s.content.includes(tag) ? s.content.split(tag).join(v) : `${s.content.trimEnd()}\n\n${v}`;
-    const before = s.missing.length;
-    s.missing = s.missing.filter((m) => m.trim().toLowerCase() !== label.trim().toLowerCase());
-    if (s.missing.length === before) {                       // la lista no siempre usa las mismas palabras que la marca: se quita el aviso que más se le parece
-      const words = (t: string) => new Set(t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').match(/[a-z0-9]{4,}/g) ?? []);
-      const mine = words(label);
-      const score = s.missing.map((x) => [...words(x)].filter((w) => mine.has(w)).length + (planFor(x).kind === plan.kind ? 0.5 : 0));
-      const k = score.indexOf(Math.max(...score));
-      if (k >= 0 && score[k] > 0) s.missing.splice(k, 1);
-    }
+    forget(s, label, plan.kind);
     if (s.status === 'approved') s.status = 'reviewed';
     s.updatedAt = nowIso();
     pr.activity.unshift({ at: nowIso(), text: `Información añadida en «${s.title}»: ${plan.title}` });

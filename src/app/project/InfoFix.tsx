@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { LuArrowRight, LuUpload, LuCheck, LuMapPin, LuShieldCheck, LuLoaderCircle, LuSparkles, LuRotateCcw, LuMessageCircle } from 'react-icons/lu';
+import { LuArrowRight, LuUpload, LuCheck, LuMapPin, LuShieldCheck, LuLoaderCircle, LuSparkles, LuRotateCcw, LuMessageCircle, LuTrash2 } from 'react-icons/lu';
 import type { Project, Section } from '../../lib/types';
 import { Modal } from '../../components/ui';
 import { toast, getState } from '../../lib/store';
-import { planFor, fillInfo, fillWithDocument, goAdd } from '../../lib/infoFix';
+import { planFor, fillInfo, fillWithDocument, goAdd, dropInfo, lineOf, lineWithout } from '../../lib/infoFix';
 import { ACCEPTED } from '../../lib/pipeline/parse';
 import { ai, aiState, getSample } from '../../lib/ai/provider';
 
@@ -138,6 +138,36 @@ export function InfoFixModal({ p, s, tag, label, onClose }: { p: Project; s: Sec
     setBusy(false);
     done(ok ? `«${f.name}» guardado en Documentos y citado en la sección` : `Añadido a la sección. Revisa «${f.name}» en Documentos`);
   };
+  /** «No hace falta»: se quita de la propuesta el trozo que pedía este dato, sin tocar lo demás. */
+  const [dropping, setDropping] = useState(false);
+  const skip = async () => {
+    if (dropping) return;
+    setDropping(true);
+    const line = lineOf(s.content, tag);
+    let next = line ? lineWithout(line, tag) : '';
+    try {
+      const sample = line && !/^\s*\|/.test(line) ? await getSample() : null;
+      if (sample && aiState() !== 'declined') {
+        const out = await ai.text([
+          'Eres PROPO, redactor de ofertas para licitaciones públicas en España. En este fragmento de una propuesta hay una marca entre corchetes «[Información requerida: …]» que pedía un dato. El cliente ha decidido NO incluir ese dato.',
+          'Reescribe el fragmento sin ese dato y sin la marca, quitando solo la parte de la frase que dependía de él.',
+          '- Conserva todo lo demás tal cual: el resto de frases, las cifras, las marcas de fuente como [S1] y el formato (si empieza por guion o número de lista, mantenlo).',
+          '- No añadas información nueva ni otras marcas. No dejes frases cojas.',
+          '- Si al quitar el dato el fragmento ya no dice nada útil, responde solo con la palabra ELIMINAR.',
+          '- Responde ÚNICAMENTE con el fragmento final, sin comillas ni comentarios.',
+          '',
+          `Marca del dato descartado: ${tag}`,
+          `Fragmento:\n${line}`,
+        ].join('\n'), { tier: 'quick' });
+        const t = out.text.trim().replace(/\n+/g, ' ');
+        if (/^ELIMINAR\.?$/i.test(t)) next = '';
+        else if (t && !t.includes(tag) && t.length <= line.length + 40) next = t;
+      }
+    } catch { /* se queda la versión sin IA */ }
+    dropInfo(p.id, s.id, tag, label, next);
+    setDropping(false);
+    done(`Quitado de «${s.title}». Si cambias de idea, pulsa «Regenerar» o «Editar» en la sección.`);
+  };
   const rewrite = async () => {
     const mine = (raw ?? v).trim();
     if (!mine || writing) return;
@@ -177,7 +207,7 @@ export function InfoFixModal({ p, s, tag, label, onClose }: { p: Project; s: Sec
   };
   return (
     <Modal title={`Añadir: ${plan.title}`} sub={`Lo pide la sección «${s.title}». PROPO no se lo inventa: cuéntalo aquí y lo pongo en su sitio.`} onClose={onClose}
-      footer={<><button className="btn btn-ghost" onClick={onClose}>Ahora no</button><button className="btn btn-primary" disabled={!v.trim() || busy || writing} onClick={submit}><LuCheck /> Añadir a la propuesta</button></>}>
+      footer={<><button className="btn btn-ghost fix-skip" disabled={busy || writing || dropping} onClick={skip}>{dropping ? <LuLoaderCircle className="spin" /> : <LuTrash2 />} {dropping ? 'Quitándolo…' : 'No creo que sea necesario incluirlo'}</button><span className="spacer" /><button className="btn btn-ghost" onClick={onClose}>Ahora no</button><button className="btn btn-primary" disabled={!v.trim() || busy || writing || dropping} onClick={submit}><LuCheck /> Añadir a la propuesta</button></>}>
       <div className="stack gap-16">
         <div className="fix-help">
           <div className="fix-help-head"><LuMessageCircle /><strong>Falta este dato: {label.replace(/\.$/, '')}</strong></div>
