@@ -146,6 +146,7 @@ function SectionCard({ p, s, n, total, onApproved, onPrev, onNext }: { p: Projec
         </div>
       ) : (
         <div className="sec-body">
+          {s.form && <div className="callout small" style={{ marginBottom: 14 }}><LuInfo /><div><strong>Esto es el contenido del formulario «{s.form}».</strong> En esta licitación los puntos se dan por lo que escribas dentro de ese formulario del pliego{p.analysis?.formsOnly ? ', y lo que vaya fuera no se valora' : ''}. Revisa la propuesta de PROPO, ajústala a lo que puedes servir y cópiala al archivo oficial{s.formDoc ? ` («${s.formDoc}»)` : ''}.</div></div>}
           {s.generatedBy === 'template' && <div className="callout neutral small" style={{ marginBottom: 14 }}><LuInfo /><div>Borrador de plantilla (sin IA). Sustituye las partes resaltadas por tu contenido.</div></div>}
           <RichText text={s.content} onCite={onCite} citeKinds={citeKinds} onInfo={openFix} />
           {s.missing.length > 0 && (

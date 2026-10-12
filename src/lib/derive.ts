@@ -50,7 +50,10 @@ export function complianceChecks(p: Project): CheckItem[] {
   const uncovered = judgement.filter((c) => criterionCoverage(p, c) === 'weak');
   const limit = pageLimitNumber(p);
   const est = estimatePages(p);
-  const leaks = p.sections.filter((s) => PRICE_LEAK.test(s.content));
+  const amounts = (t: string) => [...t.matchAll(/(\d[\d.,]*)\s?(?:€|eur\b|euros)|€\s?(\d[\d.,]*)/gi)].map((m) => (m[1] || m[2]).replace(/[.,]0+$/, '').replace(/[.,]$/, ''));
+  const fromTender = new Set([...p.requirements.flatMap((r) => amounts(`${r.text} ${r.plain ?? ''} ${r.source.quote ?? ''}`)), ...p.sections.flatMap((s) => s.citations.filter((c) => c.kind === 'tender').flatMap((c) => amounts(c.quote ?? ''))), ...amounts(p.analysis?.budget ?? '')]);
+  // Solo es fuga un importe que no viene del pliego. En los formularios del pliego el precio va donde el pliego lo pide.
+  const leaks = p.sections.filter((s) => !s.form && (/unit price|precio unitario/i.test(s.content) || amounts(s.content).some((a) => !fromTender.has(a))));
   const unreadable = p.docs.filter((d) => d.status === 'unreadable' || d.status === 'unsupported');
   const uncertain = p.requirements.filter((r) => r.uncertain && r.status !== 'skipped');
   const items: CheckItem[] = [

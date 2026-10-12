@@ -103,6 +103,7 @@ function fromAIJson(j: any, docNames: string[]): ExtractionResult {
     deadline: /^\d{4}-\d{2}-\d{2}/.test(j?.submission_deadline ?? '') ? new Date(j.submission_deadline + 'T12:00:00').toISOString() : null,
     deadlines: (Array.isArray(j?.deadlines) ? j.deadlines : []).filter((d: any) => /^\d{4}-\d{2}-\d{2}/.test(d?.date ?? '')).map((d: any) => ({ label: String(d.label || 'Deadline'), date: new Date(d.date + 'T12:00:00').toISOString(), docName: fixDoc(d.doc), page: Number(d.page) || undefined })),
     pageLimit: j?.page_limit ?? undefined,
+    formsOnly: j?.response_format?.forms_only === true || undefined, formNote: typeof j?.response_format?.note === 'string' && j.response_format.note.trim() ? j.response_format.note.trim().slice(0, 300) : undefined,
     requirements: (Array.isArray(j?.requirements) ? j.requirements : []).filter((r: any) => r?.quote && r?.title).map((r: any) => ({
       title: String(r.title).slice(0, 90), category: cats.includes(r.category) ? r.category : 'technical', quote: String(r.quote), docName: fixDoc(r.doc), page: Math.max(1, Number(r.page) || 1),
       clause: r.clause || undefined, mandatory: r.mandatory !== false, critical: !!r.critical,
@@ -112,7 +113,7 @@ function fromAIJson(j: any, docNames: string[]): ExtractionResult {
     criteria: (Array.isArray(j?.criteria) ? j.criteria : []).filter((c: any) => c?.name && Number(c.points) > 0).map((c: any) => ({ group: String(c.group || 'Criteria'), name: String(c.name), points: Number(c.points), kind: c.kind === 'formula' ? 'formula' : 'judgement', description: String(c.description || ''), docName: fixDoc(c.doc), page: Math.max(1, Number(c.page) || 1) })),
     requiredDocuments: (Array.isArray(j?.required_documents) ? j.required_documents : []).map(String),
     exclusionRisks: (Array.isArray(j?.exclusion_risks) ? j.exclusion_risks : []).map((e: any) => ({ text: String(e.text || e), docName: e.doc ? fixDoc(e.doc) : undefined, page: Number(e.page) || undefined })),
-    structure: (Array.isArray(j?.proposal_structure) ? j.proposal_structure : []).filter((s: any) => s?.title).map((s: any) => ({ title: String(s.title), guidance: String(s.guidance || ''), criteria: Array.isArray(s.criteria) ? s.criteria.map(String) : [] })),
+    structure: (Array.isArray(j?.proposal_structure) ? j.proposal_structure : []).filter((s: any) => s?.title).map((s: any) => ({ title: String(s.title), guidance: String(s.guidance || ''), criteria: Array.isArray(s.criteria) ? s.criteria.map(String) : [], form: typeof s.form === 'string' && s.form.trim() ? s.form.trim().slice(0, 120) : undefined, formDoc: typeof s.form_doc === 'string' && s.form_doc.trim() ? fixDoc(s.form_doc) : undefined })),
   };
 }
 
@@ -130,6 +131,16 @@ function mergeExtractions(parts: ExtractionResult[]): ExtractionResult {
     out.exclusionRisks.push(...p.exclusionRisks.filter((e) => !out.exclusionRisks.some((x) => normalize(x.text) === normalize(e.text))));
     out.requiredDocuments.push(...p.requiredDocuments.filter((d) => !out.requiredDocuments.includes(d)));
     if (!out.structure.length) out.structure = p.structure;
+    else {                                                       // los formularios pueden estar en un bloque posterior: se suman sus secciones
+      const forms = p.structure.filter((x) => x.form && !out.structure.some((y) => normalize(y.title) === normalize(x.title) || (y.form && normalize(y.form) === normalize(x.form!))));
+      if (forms.length) out.structure = [...out.structure, ...forms];
+    }
+    if (p.formsOnly) { out.formsOnly = true; out.formNote ??= p.formNote; }
+  }
+  // Si lo técnico se entrega solo en formularios, sobran las secciones de memoria que no responden a ningún criterio.
+  if (out.formsOnly && out.structure.some((x) => x.form)) {
+    const byForms = new Set(out.structure.filter((x) => x.form).flatMap((x) => x.criteria.map(normalize)));
+    out.structure = out.structure.filter((x) => x.form || x.criteria.some((c) => !byForms.has(normalize(c)))).slice(0, 16);
   }
   return out;
 }
@@ -220,7 +231,7 @@ export async function analyzeDocuments(opts: {
   });
   const sections: Section[] = (ex.structure.length ? ex.structure : extractWithRules([]).structure).map((s, i) => {
     const crit = criteria.filter((c) => s.criteria.some((n) => normalize(n) === normalize(c.name) || normalize(c.name).includes(normalize(n))));
-    return { id: `sec_${i + 1}`, title: s.title, guidance: s.guidance, status: 'not_started', content: '', confidence: null, citations: [], criteria: crit.map((c) => c.id), missing: [] };
+    return { id: `sec_${i + 1}`, title: s.title, guidance: s.guidance, status: 'not_started', content: '', confidence: null, citations: [], criteria: crit.map((c) => c.id), missing: [], form: s.form, formDoc: s.formDoc };
   });
   // link criteria to sections (fallback: by token overlap)
   criteria.forEach((c) => {
@@ -240,6 +251,7 @@ export async function analyzeDocuments(opts: {
     documentsAnalyzed: readable.length, pages: totalPages,
     requiredDocuments: ex.requiredDocuments.length || requirements.filter((r) => ['administrative', 'legal', 'certification'].includes(r.category)).length,
     pageLimit: ex.pageLimit,
+    formsOnly: ex.formsOnly, formNote: ex.formNote,
     exclusionRisks: ex.exclusionRisks.map((e) => ({ text: e.text, source: e.docName ? { docId: byName.get(e.docName) ?? '', docName: e.docName, page: e.page ?? 1 } : undefined })),
     warnings,
   };
@@ -282,7 +294,13 @@ export async function generateSection(opts: {
   const query = [section.title, section.guidance, ...crits.map((c) => c.name + ' ' + c.description)].join(' ');
   const reqPass = project.requirements.map((r) => ({ id: r.id, docId: r.source.docId, docName: r.source.docName, page: r.source.page, text: r.title + ' ' + r.text }));
   const linkedReqs = search(reqPass.filter((r) => !['format', 'legal', 'administrative'].includes(project.requirements.find((x) => x.id === r.id)!.category)), query, 10).map((p) => project.requirements.find((r) => r.id === p.id)!).filter(Boolean);
-  const passages = search(projectPassages(project, pages), query + ' ' + linkedReqs.map((r) => r.title).join(' '), 10);
+  const allPassages = projectPassages(project, pages);
+  let passages = search(allPassages, query + ' ' + linkedReqs.map((r) => r.title).join(' '), 10);
+  if (section.form) {                                            // el formulario tiene que estar entero delante de la IA
+    const inDoc = allPassages.filter((x) => section.formDoc && normalize(x.docName) === normalize(section.formDoc));
+    const own = search(inDoc.length ? inDoc : allPassages, `${section.form} ${section.title} ${section.guidance}`, 8);
+    passages = [...own, ...passages.filter((x) => !own.some((o) => o.docId === x.docId && o.page === x.page && o.text === x.text))].slice(0, 16);
+  }
   const kIdx = knowledgeIndex(knowledge).filter((k) => k.kind === 'company');
   const kHits = search(kIdx.map((k) => ({ id: k.id, docId: 'company', docName: 'Company', page: 0, text: k.label + ' ' + k.text })), query, 12)
     .map((p) => kIdx.find((k) => k.id === p.id)!);
@@ -318,6 +336,7 @@ export async function generateSection(opts: {
         words, previous: opts.regenerate && section.content ? section.content : undefined,
         authority: project.analysis?.authority || project.organization || undefined, pageLimit: project.analysis?.pageLimit || undefined,
         outline: project.sections.map((s, i) => `${s.id === section.id ? '→' : ' '} ${i + 1}. ${s.title}`).join('\n'),
+        form: section.form, formsOnly: project.analysis?.formNote,
         maxAsks: MAX_ASKS, asked: askedElsewhere.length ? askedElsewhere.map((x) => `«${x}»`).join('; ') : undefined,
       }), { tier: 'default', signal: opts.signal });
       let content = String(j?.content ?? '').trim();
@@ -328,7 +347,7 @@ export async function generateSection(opts: {
       let dropped = 0;
       content = content.replace(/\s?\[(S\d+)\]/g, (m, id) => (valid.has(id) ? m : (dropped++, '')));
       if (dropped) warnings.push(`Se ${dropped > 1 ? 'han eliminado' : 'ha eliminado'} ${dropped} cita${dropped > 1 ? 's' : ''} sin fuente.`);
-      if (PRICE_LEAK.test(content)) warnings.push('Esta sección menciona un importe. Comprueba que no revela información de precio (riesgo de exclusión).');
+      if (!section.form && PRICE_LEAK.test(content)) warnings.push('Esta sección menciona un importe. Comprueba que no revela información de precio (riesgo de exclusión).');
       const used = new Set([...content.matchAll(/\[(S\d+)\]/g)].map((m) => m[1]));
       // Como mucho MAX_ASKS huecos por sección: si la IA deja más, se quitan los últimos (los que menos pesan) sin tocar el resto.
       const extra = [...content.matchAll(TAGS)].map((m) => m[0]).slice(MAX_ASKS);

@@ -199,6 +199,8 @@ export interface Section {
   citations: Citation[];
   criteria: string[];        // criterion ids
   pageBudget?: number;
+  form?: string;             // formulario del pliego que esta sección rellena (p. ej. «Anexo VIII · Ficha Pausa Café»)
+  formDoc?: string;          // documento del pliego donde está ese formulario
   missing: string[];
   generatedBy?: 'ai' | 'template' | 'sample' | 'human';
   updatedAt?: string;
@@ -218,6 +220,8 @@ export interface ProjectAnalysis {
   pages: number;
   requiredDocuments: number;
   pageLimit?: string;
+  formsOnly?: boolean;       // la parte técnica se entrega en formularios del pliego; lo que vaya fuera no se valora
+  formNote?: string;
   exclusionRisks: { text: string; source?: SourceRef }[];
   warnings: string[];
 }

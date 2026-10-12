@@ -29,12 +29,13 @@ export async function loadPliegoFiles(id: string, onProgress?: (msg: string) => 
 
 /** Dirección del servidor de pliegos (worker-pliegos/). La fija la compilación; vacía = sin descarga automática. */
 const PLIEGOS_URL = String(process.env.PROPO_PLIEGOS_URL || '').replace(/\/+$/, '');
-const MAX_DOCS = 6;
+const MAX_DOCS = 14;
 
 type LiveDoc = [name: string, url: string, kind: string];
 /** Los documentos que merece la pena leer: primero los pliegos (PCAP, PPT) y después el resto, hasta MAX_DOCS. */
 function worthReading(docs: LiveDoc[]): LiveDoc[] {
-  const rank = (d: LiveDoc) => (d[2] === 'pcap' ? 0 : d[2] === 'ppt' ? 1 : 2);
+  // Tras los pliegos, primero lo que trae datos del contrato o formularios que puntúan; al final, los modelos de trámite.
+  const rank = (d: LiveDoc) => (d[2] === 'pcap' ? 0 : d[2] === 'ppt' ? 1 : /anexo i\b|cuadro|caracter[ií]sticas|ficha|t[eé]cnic|memoria|criterios|oferta|modelo de propos/i.test(d[0]) ? 2 : /ute\b|confidencial|protecci[oó]n de datos|deuc|declaraci[oó]n responsable/i.test(d[0]) ? 4 : 3);
   return [...docs].filter((d) => /^https:\/\//.test(d[1])).sort((a, b) => rank(a) - rank(b)).slice(0, MAX_DOCS);
 }
 

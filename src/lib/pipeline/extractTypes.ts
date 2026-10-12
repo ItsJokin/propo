@@ -13,6 +13,8 @@ export interface ExtractionResult {
   deadline: string | null;
   deadlines: { label: string; date: string; docName?: string; page?: number }[];
   pageLimit?: string;
+  formsOnly?: boolean;
+  formNote?: string;
   requirements: {
     title: string; category: ReqCategory; quote: string; docName: string; page: number;
     mandatory: boolean; critical: boolean; clause?: string; plain?: string; how?: string;
@@ -21,5 +23,5 @@ export interface ExtractionResult {
   criteria: { group: string; name: string; points: number; kind: 'judgement' | 'formula'; description: string; docName: string; page: number }[];
   requiredDocuments: string[];
   exclusionRisks: { text: string; docName?: string; page?: number }[];
-  structure: { title: string; guidance: string; criteria: string[] }[];
+  structure: { title: string; guidance: string; criteria: string[]; form?: string; formDoc?: string }[];
 }
