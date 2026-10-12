@@ -85,7 +85,7 @@ export function AnalysisScreen({ id }: { id: string }) {
       {!done && (
         <div className="row small muted mt-16">
           <LuCpu style={{ width: 14, height: 14 }} />
-          {ai === 'available' ? 'Análisis con IA: puede que se te pida permitir que esta página use Claude' : 'Extracción básica: la IA no está disponible en esta vista'}
+          {ai === 'available' ? 'Análisis con IA: PROPO está leyendo los pliegos' : 'Extracción básica: la IA no está disponible en esta vista'}
           <span className="spacer" />
           {ai === 'available' && <button className="btn btn-ghost btn-sm" onClick={() => ctl.current?.abort()}><LuCircleStop /> Detener</button>}
         </div>
