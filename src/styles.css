@@ -1152,3 +1152,22 @@ a.comp-award-t:hover { color: var(--accent); }
 @keyframes an-chip { 0%, 2% { opacity: 0; transform: translateX(-18px) scale(.9); } 8%, 78% { opacity: 1; transform: none; } 86%, 100% { opacity: 0; transform: translateX(8px); } }
 @media (max-width: 900px) { .an-cols { grid-template-columns: 1fr; gap: 20px; } .an-scan { height: 250px; transform: scale(.78); transform-origin: 0 0; margin-bottom: -40px; } }
 @media (prefers-reduced-motion: reduce) { .an-bar { display: none; } .an-sheet i.hit { animation: none; background: var(--accent); } .an-chip { animation: none; } }
+
+/* ── Requisitos: tres grupos, sin alarmas ──────────────────────────────────────────────────────────────────────── */
+.req-intro h3 { font-size: 19px; letter-spacing: -.02em; }
+.req-intro p { margin-top: 6px; max-width: 62ch; }
+.req-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+.req-tile { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; align-items: center; text-align: left; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); cursor: pointer; font: inherit; color: inherit; transition: border-color .15s ease, box-shadow .15s ease; }
+.req-tile .ic { grid-row: span 2; width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; }
+.req-tile .ic svg { width: 19px; height: 19px; }
+.req-tile strong { font-family: var(--font-display); font-size: 24px; font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
+.req-tile > span:last-child { font-size: 13px; color: var(--fg-2); }
+.req-tile.you .ic { background: var(--warn-soft, #FFFAEB); color: #B54708; }
+.req-tile.propo .ic { background: var(--accent-soft); color: var(--accent); }
+.req-tile.ready .ic { background: var(--ok-soft, #ECFDF3); color: #067647; }
+.req-tile:hover { border-color: var(--border-strong); }
+.req-tile.on { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.state-ico.accent { color: var(--accent); }
+.req-calm { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; background: var(--accent-soft); font-size: 14px; line-height: 1.5; }
+.req-calm svg { width: 16px; height: 16px; flex: none; margin-top: 3px; color: var(--accent); }
+@media (max-width: 640px) { .req-tiles { grid-template-columns: 1fr; } }

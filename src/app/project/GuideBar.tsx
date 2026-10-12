@@ -2,7 +2,7 @@ import React from 'react';
 import { LuCheck, LuArrowRight } from 'react-icons/lu';
 import type { Project } from '../../lib/types';
 import { navigate } from '../../lib/store';
-import { pendingQuestions } from '../../lib/interview';
+import { pendingQuestions, needsYou } from '../../lib/interview';
 import { sectionCounts, reqCounts, complianceChecks } from '../../lib/derive';
 
 // La ruta de la propuesta: cuatro pasos que son a la vez la navegación principal del proyecto.
@@ -10,7 +10,7 @@ import { sectionCounts, reqCounts, complianceChecks } from '../../lib/derive';
 export function GuideBar({ p, tab }: { p: Project; tab: string }) {
   const pending = pendingQuestions(p).length;
   const rc = reqCounts(p);
-  const open = rc.needs_info + rc.missing;
+  const open = p.requirements.filter(needsYou).length;
   const sc = sectionCounts(p);
   const drafted = p.sections.filter((s) => s.status !== 'not_started' && s.status !== 'generating').length;
   const checks = complianceChecks(p);
@@ -19,9 +19,9 @@ export function GuideBar({ p, tab }: { p: Project; tab: string }) {
   const approvedAll = !!sc.total && sc.approved === sc.total;
   const steps = [
     {
-      k: 'ask', to: 'assistant', tabs: ['assistant', 'requirements'], title: 'Confirma los requisitos',
-      status: pending ? `${pending} ${pending === 1 ? 'pregunta por responder' : 'preguntas por responder'}` : open ? `${open} por completar` : 'Todo confirmado',
-      done: pending === 0, progress: rc.total ? rc.fulfilled / rc.total : 0,
+      k: 'ask', to: 'assistant', tabs: ['assistant', 'requirements'], title: 'Responde a PROPO',
+      status: pending ? `${pending} ${pending === 1 ? 'pregunta rápida' : 'preguntas rápidas'}` : open ? `${open} ${open === 1 ? 'dato' : 'datos'} para más adelante` : 'Todo respondido',
+      done: pending === 0, progress: pending === 0 ? 1 : rc.total ? rc.fulfilled / rc.total : 0,
     },
     {
       k: 'prop', to: drafted ? 'proposal' : 'assistant', tabs: ['proposal', 'criteria', 'economic'], title: 'Aprueba la propuesta',

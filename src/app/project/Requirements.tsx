@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { LuChevronDown, LuChevronRight, LuSearch, LuBuilding2, LuFileText, LuUser, LuShieldAlert, LuTriangleAlert, LuUpload, LuRotateCcw, LuListChecks } from 'react-icons/lu';
+import { LuChevronDown, LuChevronRight, LuSearch, LuBuilding2, LuFileText, LuUser, LuTriangleAlert, LuUpload, LuRotateCcw, LuListChecks, LuSparkles, LuCircleCheck, LuMessageCircle } from 'react-icons/lu';
 import type { Project, Requirement, VaultCategory } from '../../lib/types';
 import { getState, update, useStore, navigate, toast } from '../../lib/store';
 import { updateRequirement, addVaultFiles } from '../../lib/actions';
@@ -7,6 +7,7 @@ import { ReqIcon, REQ_LABEL, REQ_TONE, SourceChip, Modal, Empty } from '../../co
 import { openSource } from '../common';
 import { ExplainButton } from './Explain';
 import { reqCounts } from '../../lib/derive';
+import { needsYou, propoHandles } from '../../lib/interview';
 import { uid, fmtShort, nowIso } from '../../lib/util';
 import { ACCEPTED } from '../../lib/pipeline/parse';
 
@@ -23,20 +24,26 @@ function vaultCategoryFor(r: Requirement): VaultCategory {
 
 type ActionModal = { kind: string; req: Requirement } | null;
 
+/** Cómo se le cuenta al cliente el estado de un requisito: sin «faltan» ni rojos. */
+const label = (r: Requirement) => (needsYou(r) ? 'Necesito un dato' : propoHandles(r) ? 'Lo lleva PROPO' : r.status === 'skipped' ? 'Omitido' : 'Listo');
+const tone = (r: Requirement) => (needsYou(r) ? 'warn' : propoHandles(r) ? 'accent' : r.status === 'skipped' ? '' : 'ok');
+
 export function Requirements({ p }: { p: Project }) {
   const rc = reqCounts(p);
-  const [filter, setFilter] = useState<'all' | 'open' | 'fulfilled' | 'needs_info' | 'missing'>(rc.needs_info + rc.missing ? 'open' : 'all');
+  const yours = p.requirements.filter(needsYou).length, auto = p.requirements.filter(propoHandles).length, ready = rc.fulfilled + rc.skipped;
+  const [filter, setFilter] = useState<'all' | 'yours' | 'propo' | 'ready'>(yours ? 'yours' : 'all');
   const [cat, setCat] = useState('');
   const [q, setQ] = useState('');
-  const [open, setOpen] = useState<string | null>(p.requirements.find((r) => r.status === 'needs_info' || r.status === 'missing')?.id ?? null);
+  const [open, setOpen] = useState<string | null>(p.requirements.find(needsYou)?.id ?? null);
   const [modal, setModal] = useState<ActionModal>(null);
   const fileInput = useRef<HTMLInputElement>(null);
   const uploadFor = useRef<Requirement | null>(null);
   const user = useStore((s) => s.user);
 
   const list = p.requirements.filter((r) => {
-    if (filter === 'open' && !(r.status === 'needs_info' || r.status === 'missing')) return false;
-    if (filter !== 'all' && filter !== 'open' && r.status !== filter) return false;
+    if (filter === 'yours' && !needsYou(r)) return false;
+    if (filter === 'propo' && !propoHandles(r)) return false;
+    if (filter === 'ready' && !(r.status === 'fulfilled' || r.status === 'skipped')) return false;
     if (cat && r.category !== cat) return false;
     return !q || (r.title + r.text).toLowerCase().includes(q.toLowerCase());
   });
@@ -76,62 +83,51 @@ export function Requirements({ p }: { p: Project }) {
 
   return (
     <div className="stack gap-16">
-      <div className="card card-pad">
-        <div className="row-wrap" style={{ justifyContent: 'space-between' }}>
-          <div className="row"><h3 style={{ fontSize: 17 }}>Requisitos</h3><span className="small subtle">{rc.total} en total</span></div>
-          <div className="row-wrap small">
-            <span className="row"><span className="dot ok" /><strong className="num">{rc.fulfilled}</strong> cumplidos</span>
-            <span className="row"><span className="dot warn" /><strong className="num">{rc.needs_info}</strong> necesitan información</span>
-            <span className="row"><span className="dot bad" /><strong className="num">{rc.missing}</strong> faltan</span>
-            {rc.skipped > 0 && <span className="row"><span className="dot" /><strong className="num">{rc.skipped}</strong> omitidos</span>}
-          </div>
-        </div>
-        <div className="stackbar mt-16" aria-hidden="true">
-          <span style={{ width: `${pct(rc.fulfilled)}%`, background: 'var(--ok)' }} />
-          <span style={{ width: `${pct(rc.needs_info)}%`, background: 'var(--warn)' }} />
-          <span style={{ width: `${pct(rc.missing)}%`, background: 'var(--bad)' }} />
-          <span style={{ width: `${pct(rc.skipped)}%`, background: 'var(--border-strong)' }} />
+      <div className="card card-pad req-intro">
+        <h3>Lo que pide el pliego</h3>
+        <p className="muted">PROPO ha encontrado {rc.total} requisitos y se ocupa de casi todos. {yours ? `Solo necesita ${yours === 1 ? 'un dato tuyo' : `${yours} datos tuyos`}, y puedes darlos cuando te venga bien.` : 'Ahora mismo no necesita nada de ti.'}</p>
+        <div className="req-tiles">
+          <button type="button" className={`req-tile you ${filter === 'yours' ? 'on' : ''}`} onClick={() => setFilter('yours')}><span className="ic"><LuMessageCircle /></span><strong className="num">{yours}</strong><span>Necesito algo de ti</span></button>
+          <button type="button" className={`req-tile propo ${filter === 'propo' ? 'on' : ''}`} onClick={() => setFilter('propo')}><span className="ic"><LuSparkles /></span><strong className="num">{auto}</strong><span>Los lleva PROPO</span></button>
+          <button type="button" className={`req-tile ready ${filter === 'ready' ? 'on' : ''}`} onClick={() => setFilter('ready')}><span className="ic"><LuCircleCheck /></span><strong className="num">{ready}</strong><span>Listos</span></button>
         </div>
       </div>
 
       <div className="req-toolbar">
         <div className="seg">
-          {([['open', 'Requieren atención'], ['all', 'Todos'], ['fulfilled', 'Cumplidos'], ['needs_info', 'Falta información'], ['missing', 'Faltan']] as const).map(([k, l]) => <button key={k} className={filter === k ? 'on' : ''} onClick={() => setFilter(k)}>{l}</button>)}
+          {([['yours', 'Necesito algo de ti'], ['propo', 'Los lleva PROPO'], ['ready', 'Listos'], ['all', 'Todos']] as const).map(([k, l]) => <button key={k} className={filter === k ? 'on' : ''} onClick={() => setFilter(k)}>{l}</button>)}
         </div>
-        <select className="select" style={{ width: 190, height: 34 }} aria-label="Categoría" value={cat} onChange={(e) => setCat(e.target.value)}>
-          <option value="">Todas las categorías</option>
-          {Object.entries(CATS).map(([k, l]) => <option key={k} value={k}>{l}</option>)}
-        </select>
+        <span className="spacer" />
         <label className="search" style={{ width: 240, display: 'flex' }}><LuSearch /><input aria-label="Buscar requisitos" placeholder="Buscar requisitos" value={q} onChange={(e) => setQ(e.target.value)} /></label>
       </div>
 
       <div className="card">
         {list.length === 0 ? (
-          filter === 'open' ? <Empty icon={<LuListChecks />} title="No hay nada pendiente" body="Todos los requisitos están cumplidos u omitidos. El siguiente paso es el control de cumplimiento." action={<button className="btn btn-primary" onClick={() => navigate(`/app/projects/${p.id}/compliance`)}>Abrir control de cumplimiento</button>} />
-            : <Empty icon={<LuSearch />} title="Ningún requisito coincide" body="Prueba con otro filtro." />
+          filter === 'yours' ? <Empty icon={<LuListChecks />} title="No necesito nada más de ti" body="PROPO tiene lo que le hace falta. El siguiente paso es leer la propuesta." action={<button className="btn btn-primary" onClick={() => navigate(`/app/projects/${p.id}/proposal`)}>Ir a la propuesta</button>} />
+            : <Empty icon={<LuSearch />} title="Nada por aquí" body="Prueba con otro grupo o con otra búsqueda." />
         ) : list.map((r) => {
           const isOpen = open === r.id;
           return (
             <React.Fragment key={r.id}>
               <div className={`req-item ${isOpen ? 'open' : ''}`} onClick={() => setOpen(isOpen ? null : r.id)} role="button" tabIndex={0} aria-expanded={isOpen} onKeyDown={(e) => { if (e.key === 'Enter') setOpen(isOpen ? null : r.id); }}>
-                <ReqIcon status={r.status} />
+                {needsYou(r) ? <LuMessageCircle className="state-ico warn" aria-label="Necesito un dato tuyo" /> : propoHandles(r) ? <LuSparkles className="state-ico accent" aria-label="Lo lleva PROPO" /> : <ReqIcon status={r.status} />}
                 <div style={{ minWidth: 0 }}>
                   <div className="req-title">{r.title}</div>
                   <div className="req-sub">
                     <span>{CATS[r.category]}</span>
                     <span>{r.source.docName.replace(/\.(pdf|docx|xlsx)$/i, '')} · p. {r.source.page}</span>
-                    {r.critical && <span className="row" style={{ gap: 4 }}><LuShieldAlert style={{ width: 12, height: 12 }} />Validación humana</span>}
                     {r.uncertain && <span className="row" style={{ gap: 4, color: 'var(--warn)' }}><LuTriangleAlert style={{ width: 12, height: 12 }} />Extracción dudosa</span>}
                   </div>
                 </div>
                 <div className="row">
-                  <span className={`badge ${REQ_TONE[r.status]} hide-sm`}>{REQ_LABEL[r.status]}</span>
+                  <span className={`badge ${tone(r)} hide-sm`}>{label(r)}</span>
                   {isOpen ? <LuChevronDown style={{ width: 16, height: 16, color: 'var(--fg-3)' }} /> : <LuChevronRight style={{ width: 16, height: 16, color: 'var(--fg-3)' }} />}
                 </div>
               </div>
               {isOpen && (
                 <div className="req-detail">
-                  <div className="row-wrap"><span className="small muted">Estado:</span><span className={`badge ${REQ_TONE[r.status]}`}>{REQ_LABEL[r.status]}</span>{r.mandatory ? <span className="badge outline">Obligatorio</span> : <span className="badge outline">Opcional</span>}{r.humanValidated && <span className="badge ok">Validado por tu equipo</span>}</div>
+                  <div className="row-wrap"><span className={`badge ${tone(r)}`}>{label(r)}</span>{!r.mandatory && <span className="badge outline">Opcional</span>}</div>
+                  {propoHandles(r) && <div className="req-calm"><LuSparkles /><div><strong>No tienes que hacer nada ahora.</strong> PROPO lo tiene en cuenta al preparar la documentación y te lo recordará antes de presentar. <button className="link" onClick={() => setModal({ kind: 'Mark as resolved', req: r })}>Ya lo tengo resuelto</button></div></div>}
                   <div>
                     <div className="eyebrow" style={{ marginBottom: 8 }}>Requisito</div>
                     <div className="quote">“{r.text}”</div>
@@ -146,9 +142,9 @@ export function Requirements({ p }: { p: Project }) {
                       <div className="evidence">{r.evidence.map((e, i) => <span key={i} className="ev">{e.kind === 'vault' ? <LuFileText /> : e.kind === 'user' ? <LuUser /> : <LuBuilding2 />}{e.label}</span>)}</div>
                     </div>
                   )}
-                  {(r.status === 'needs_info' || r.status === 'missing') && r.ask && (
+                  {needsYou(r) && r.ask && (
                     <div className="ask-box">
-                      <div className="who">PROPO pregunta<span className="spacer" /><ExplainButton p={p} r={r} /></div>
+                      <div className="who">PROPO te pregunta<span className="spacer" /><ExplainButton p={p} r={r} /></div>
                       <div>{r.ask}</div>
                       <div className="row-wrap">
                         {(r.actions ?? ['Add information', 'Skip']).map((a, i) => <button key={a} className={`btn btn-sm ${i === 0 ? 'btn-primary' : a === 'Skip' ? 'btn-ghost' : 'btn-secondary'}`} onClick={() => act(r, a)}>{a === 'Upload document' && <LuUpload />}{ACTION_LABEL[a] ?? a}</button>)}

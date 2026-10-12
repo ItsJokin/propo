@@ -81,7 +81,7 @@ export function AnalysisScreen({ id }: { id: string }) {
       <div className="an-main">
       <div className="eyebrow">{project.name}</div>
       <h1 className="mt-12" style={{ fontSize: 30, letterSpacing: '-.03em' }}>{done ? 'Análisis completado' : 'PROPO está leyendo tu licitación'}</h1>
-      <p className="muted mt-8">{done ? 'Cada requisito enlaza a la página de la que sale. Ahora PROPO te hará unas pocas preguntas sobre lo que no ha encontrado, como en un chat, y después redactará la propuesta.' : 'No cierres ni recargues esta página mientras PROPO lee.'}</p>
+      <p className="muted mt-8">{done ? 'PROPO ya sabe qué pide el pliego. Sigue un único camino: unas pocas preguntas, la propuesta redactada y tu revisión.' : 'No cierres ni recargues esta página mientras PROPO lee.'}</p>
       {!done && (
         <div className="row small muted mt-16">
           <LuCpu style={{ width: 14, height: 14 }} />
@@ -125,14 +125,14 @@ export function AnalysisScreen({ id }: { id: string }) {
           {!demo && project.docs.length > 0 && project.docs.every((d) => d.name.startsWith('Ficha de la licitación')) && (
             <div className="callout warn mt-16"><LuInfo /><div><strong>Falta el pliego.</strong> PROPO ha creado el proyecto con los datos del anuncio oficial, pero todavía no ha leído los pliegos: los requisitos de abajo salen solo del anuncio. Descarga el PCAP y el PPT desde la ficha de la licitación y súbelos para extraer los requisitos de verdad.<div className="mt-8"><button className="btn btn-primary btn-sm" onClick={() => navigate(`/app/projects/${id}/documents`)}>Subir los pliegos</button></div></div></div>
           )}
-          {demo && <div className="callout neutral small mt-16"><LuInfo /><div><strong>Estás en la demo.</strong> Pulsa «Generar la propuesta» y PROPO redactará todas las secciones con la memoria de la empresa de ejemplo, para que veas cómo continúa el trabajo.</div></div>}
           <div className="row-wrap mt-24">
-            {project.sections.some((s) => s.status === 'not_started') && (
-              <button className={`btn ${demo ? 'btn-primary' : 'btn-secondary'} btn-lg`} onClick={generateAll} disabled={!!writing}>{writing ? <><LuLoaderCircle className="spin" /> Redactando «{writing.length > 34 ? writing.slice(0, 32) + '…' : writing}»</> : <>Generar la propuesta <LuArrowRight /></>}</button>
-            )}
-            <button className={`btn ${demo ? 'btn-secondary' : 'btn-primary'} btn-lg`} onClick={() => navigate(`/app/projects/${id}/assistant`)}>{pendingQuestions(project).length ? `Responder a PROPO (${pendingQuestions(project).length} preguntas)` : 'Continuar con PROPO'} <LuArrowRight /></button>
-            <button className="btn btn-secondary btn-lg" onClick={() => navigate(`/app/projects/${id}/requirements`)}>Revisar requisitos</button>
+            {pendingQuestions(project).length > 0
+              ? <button className="btn btn-primary btn-lg" onClick={() => navigate(`/app/projects/${id}/assistant`)}>Continuar <LuArrowRight /></button>
+              : project.sections.some((s) => s.status === 'not_started')
+                ? <button className="btn btn-primary btn-lg" onClick={generateAll} disabled={!!writing}>{writing ? <><LuLoaderCircle className="spin" /> Redactando «{writing.length > 34 ? writing.slice(0, 32) + '…' : writing}»</> : <>Generar la propuesta <LuArrowRight /></>}</button>
+                : <button className="btn btn-primary btn-lg" onClick={() => navigate(`/app/projects/${id}/proposal`)}>Revisar la propuesta <LuArrowRight /></button>}
           </div>
+          <p className="small muted mt-12">{pendingQuestions(project).length > 0 ? `Antes de redactar, PROPO te hará ${pendingQuestions(project).length === 1 ? 'una pregunta' : `${pendingQuestions(project).length} preguntas`}: solo lo imprescindible.` : 'PROPO tiene lo que necesita para redactar.'} <button className="link" onClick={() => navigate(`/app/projects/${id}/requirements`)}>Ver los {project.requirements.length} requisitos encontrados</button></p>
         </div>
       )}
       </div>

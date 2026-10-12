@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { LuSend, LuUpload, LuSparkles, LuArrowRight, LuCheck, LuX, LuCircleCheck, LuLoaderCircle, LuFileText, LuRotateCcw, LuBuilding2 } from 'react-icons/lu';
 import type { Project, InterviewMsg } from '../../lib/types';
 import { navigate, updateProject, getState } from '../../lib/store';
-import { pendingQuestions, startInterview, askNext, answer, interviewStats, type Question } from '../../lib/interview';
+import { pendingQuestions, startInterview, askNext, answer, interviewStats, outcomeOf, type Question } from '../../lib/interview';
 import { runGenerate } from '../../lib/actions';
 import { openSource } from '../common';
 import { ExplainButton } from './Explain';
@@ -48,6 +48,7 @@ export function Assistant({ p }: { p: Project }) {
     for (const s of todo) { setDrafting(s.title); await runGenerate(p.id, s.id, false, true); }
     const mode = getState().projects.find((x) => x.id === p.id)!.sections.some((s) => s.generatedBy === 'ai') ? 'ai' : 'template';
     setDrafting(null);
+    setTimeout(() => navigate(`/app/projects/${p.id}/proposal`), 0);
     updateProject(p.id, (pr) => {
       pr.interview ??= { msgs: [], answered: [] };
       pr.interview.drafted = true;
@@ -63,8 +64,8 @@ export function Assistant({ p }: { p: Project }) {
       <div className="conv-head">
         <div style={{ minWidth: 0 }}>
           <div className="eyebrow">Paso 1 · Requisitos</div>
-          <h2>{q ? 'PROPO necesita confirmar unas cosas contigo' : 'Preguntas respondidas'}</h2>
-          <p className="muted">Solo te pregunta lo que no ha encontrado en los pliegos ni en tu memoria de empresa. Lo que respondas se guarda y no te lo vuelve a preguntar en otras licitaciones.</p>
+          <h2>{q ? (stats.total === 1 ? 'Solo una pregunta' : `Solo ${stats.total} preguntas`) : 'Ya está todo'}</h2>
+          <p className="muted">PROPO pregunta únicamente lo imprescindible para redactar la propuesta. Si algo no lo tienes a mano, sáltalo: se guarda lo que respondas y no te lo vuelve a preguntar.</p>
         </div>
         <div className="conv-progress">
           <div className="rev-segs" aria-hidden="true">{Array.from({ length: Math.max(1, stats.total) }, (_, i) => <span key={i} className={`rev-seg ${i < stats.answered ? 'ok' : i === stats.answered && q ? 'on draft' : ''}`} />)}</div>
@@ -101,7 +102,6 @@ export function Assistant({ p }: { p: Project }) {
               <div className="qcard-top">
                 <span className="qcard-n">Pregunta {stats.answered + 1} de {stats.total}</span>
                 {req && <span className="badge outline">{CATS[req.category] ?? 'Requisito'}</span>}
-                {req && q.critical && <span className="badge warn">Obligatorio</span>}
                 <span className="spacer" />
                 {req && <ExplainButton r={req} />}
               </div>
@@ -118,7 +118,7 @@ export function Assistant({ p }: { p: Project }) {
                     <div className="qcard-label"><LuBuilding2 /> En tu empresa</div>
                     {req.evidence.length
                       ? <div className="row-wrap">{req.evidence.map((e) => <span key={e.label} className="found-chip">{e.label}</span>)}<span className="xs subtle">Lo he encontrado, pero no puedo comprobar solo que cumple lo exigido.</span></div>
-                      : <div className="small muted">No he encontrado nada en tu memoria de empresa que lo acredite.</div>}
+                      : <div className="small muted">Todavía no lo tengo en tu memoria de empresa; por eso te lo pregunto.</div>}
                   </div>
                   <p className="qcard-q">{!req.ask || GENERIC.test(req.ask) ? '¿Lo cumple tu empresa?' : req.ask}</p>
                 </>
@@ -133,19 +133,20 @@ export function Assistant({ p }: { p: Project }) {
               )}
               <div className="qcard-answers">
                 {q.multi && <button className="ans yes" disabled={!multi.length} onClick={() => send({ multi })}><LuCheck /> Confirmar selección</button>}
-                {q.choices.filter((c) => c !== 'Saltar').map((c) => (
-                  <button key={c} className={`ans ${c.startsWith('Sí') ? 'yes' : c === 'No' ? 'no' : ''}`} onClick={() => send({ choice: c })}>{c.startsWith('Sí') ? <LuCheck /> : c === 'No' ? <LuX /> : null}{c}</button>
-                ))}
+                {q.choices.filter((c) => outcomeOf(c) !== 'later' || q.kind !== 'req').map((c) => {
+                  const o = q.kind === 'req' ? outcomeOf(c) : 'other';
+                  return <button key={c} className={`ans ${o === 'yes' ? 'yes' : ''}`} onClick={() => send({ choice: c })}>{o === 'yes' ? <LuCheck /> : null}{c}</button>;
+                })}
               </div>
               <form className="qcard-form" onSubmit={(e) => { e.preventDefault(); if (text.trim()) send({ text: text.trim(), multi: q.multi ? multi : undefined }); }}>
-                <input className="input" aria-label="Tu respuesta" placeholder={q.kind === 'req' ? 'O cuéntalo con tus palabras: «Tenemos la póliza con Mapfre hasta 2027»' : q.placeholder} value={text} onChange={(e) => setText(e.target.value)} />
+                <input className="input" aria-label="Tu respuesta" placeholder={q.placeholder} value={text} onChange={(e) => setText(e.target.value)} />
                 <button className="btn btn-primary btn-icon" aria-label="Enviar" disabled={!text.trim()}><LuSend /></button>
               </form>
               <div className="qcard-foot">
-                {q.kind === 'req' && <button type="button" className="btn btn-ghost btn-sm" onClick={() => file.current?.click()}><LuUpload /> Subir el documento que lo acredita</button>}
+                {q.kind === 'req' && <button type="button" className="btn btn-ghost btn-sm" onClick={() => file.current?.click()}><LuUpload /> Adjuntar un documento (opcional)</button>}
                 <input ref={file} type="file" hidden accept={ACCEPTED} onChange={(e) => { const f = e.target.files?.[0]; e.target.value = ''; if (f) send({ file: f }); }} />
                 <span className="spacer" />
-                {q.choices.includes('Saltar') && <button type="button" className="btn btn-ghost btn-sm" onClick={() => send({ choice: 'Saltar' })}>Saltar por ahora <LuArrowRight /></button>}
+                {q.kind === 'req' && q.choices.filter((c) => outcomeOf(c) === 'later').map((c) => <button key={c} type="button" className="btn btn-ghost btn-sm" onClick={() => send({ choice: c })}>{c} <LuArrowRight /></button>)}
               </div>
             </div>
           </div>
@@ -159,9 +160,9 @@ export function Assistant({ p }: { p: Project }) {
             <h3>{toDraft > 0 && !p.interview?.drafted ? 'Ya tengo lo que necesito' : 'Preguntas respondidas'}</h3>
             <p className="muted">{toDraft > 0 && !p.interview?.drafted ? 'Con tus respuestas y la memoria de tu empresa puedo redactar la propuesta. Después la revisas sección a sección.' : 'El siguiente paso es leer la propuesta y aprobar cada sección.'}</p>
             <div className="row-wrap" style={{ justifyContent: 'center' }}>
-              {toDraft > 0 && !p.interview?.drafted && <button className="btn btn-primary btn-lg" onClick={draftAll}><LuSparkles /> Redactar la propuesta ({toDraft} secciones)</button>}
-              <button className={`btn ${toDraft > 0 && !p.interview?.drafted ? 'btn-secondary' : 'btn-primary'} btn-lg`} onClick={() => navigate(`/app/projects/${p.id}/proposal`)}>Revisar la propuesta <LuArrowRight /></button>
-              <button className="btn btn-ghost" onClick={() => navigate(`/app/projects/${p.id}/requirements`)}>Ver todos los requisitos</button>
+              {toDraft > 0 && !p.interview?.drafted
+                ? <button className="btn btn-primary btn-lg" onClick={draftAll}><LuSparkles /> Generar la propuesta</button>
+                : <button className="btn btn-primary btn-lg" onClick={() => navigate(`/app/projects/${p.id}/proposal`)}>Revisar la propuesta <LuArrowRight /></button>}
             </div>
           </div>
         )}

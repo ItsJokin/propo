@@ -23,40 +23,77 @@ export interface Question {
 
 const KEY_CATS = ['financial', 'experience', 'certification', 'team'];
 export const CERT_OPTIONS = ['ISO 9001', 'ISO 14001', 'ISO 22000', 'ISO 45001', 'ISO 27001', 'ENS'];
-const MAX_REQ_QUESTIONS = 10;
+const MAX_QUESTIONS = 5;
+/** Trámites que no hace falta preguntar: PROPO los prepara o se resuelven al presentar o al adjudicar. */
+const PROCEDURAL = /garant[ií]a (definitiva|provisional)|oferta econ[oó]mica|canon|anormal|temerari|seg[uú]n (el )?modelo|sobre [abc123]\b|archivo «?[abc]»?|firma|plazo de presentaci|declaraci[oó]n responsable|deuc|subsan|registro|plataforma|electr[oó]nic|una sola oferta|aportar documentaci|adjudicatari/i;
 
 function isFicha(p: Project, docId: string) { return !!p.docs.find((d) => d.id === docId)?.name.startsWith('Ficha de la licitación'); }
 function clean(t: string) { return t.replace(/^se exigir[áa]n?:\s*/i, '').replace(/\s+/g, ' ').trim(); }
+const isOpen = (r: Requirement) => r.status === 'needs_info' || r.status === 'missing';
+
+/** ¿Hace falta que el cliente diga algo? Solo lo que puede dejar fuera la oferta y PROPO no puede saber por su cuenta:
+ *  solvencia, experiencia, certificaciones y equipo obligatorios. El resto lo lleva PROPO. */
+export function needsYou(r: Requirement): boolean {
+  return isOpen(r) && r.mandatory && !r.uncertain && KEY_CATS.includes(r.category) && !PROCEDURAL.test(r.title + ' ' + r.text);
+}
+/** Requisito abierto que no necesita al cliente ahora: PROPO lo prepara o se resuelve al presentar. */
+export function propoHandles(r: Requirement): boolean { return isOpen(r) && !needsYou(r); }
+
+const LATER = 'Lo miro más tarde';
+/** Qué significa una respuesta: sí, a medias, no, o «luego». */
+export function outcomeOf(choice: string): 'yes' | 'partial' | 'no' | 'later' {
+  if (/más tarde|luego|saltar|no lo sé|no estoy segur/i.test(choice)) return 'later';
+  if (/, pero |trámite|incorporar|cerca|más pequeñ/i.test(choice)) return 'partial';
+  if (/^no\b/i.test(choice.trim())) return 'no';
+  return 'yes';
+}
+
+/** Las respuestas posibles dependen de lo que se pregunta: no todo es «sí, lo cumplimos». */
+function answersFor(r: Requirement, open: boolean): { choices: string[]; placeholder: string } {
+  if (open) return { choices: ['Lo decido más tarde'], placeholder: 'Escribe tu respuesta' };
+  const t = (r.title + ' ' + r.text).toLowerCase();
+  if (r.category === 'certification') return { choices: ['La tenemos en vigor', 'Está en trámite', 'No la tenemos', LATER], placeholder: 'O cuéntalo: «La tenemos hasta marzo de 2027»' };
+  if (r.category === 'experience') return { choices: ['Sí, tenemos contratos parecidos', 'Parecidos, pero más pequeños', 'No tenemos', LATER], placeholder: 'O cuéntame cuál: cliente, año e importe' };
+  if (r.category === 'team') return { choices: ['Sí, ya está en plantilla', 'Lo incorporaríamos para el contrato', 'No', LATER], placeholder: 'O dime quién: nombre y puesto' };
+  if (/seguro|p[oó]liza/.test(t)) return { choices: ['Sí, la póliza cubre ese importe', 'Tenemos póliza, pero por menos', 'No tenemos', LATER], placeholder: 'O cuéntalo: «Póliza de 600.000 € hasta 2027»' };
+  return { choices: ['Sí, lo superamos', 'Nos quedamos cerca', 'No llegamos', LATER], placeholder: 'O dime la cifra: «Facturamos 1,2 M€ en 2025»' };
+}
+
+const SHORT_ASK: Record<string, string> = {
+  certification: '¿Tenéis esta certificación en vigor?', experience: '¿Tenéis contratos parecidos en los últimos años?',
+  team: '¿Contáis con este perfil?', financial: '¿Llegáis a lo que pide el pliego?',
+};
 
 function reqQuestion(p: Project, r: Requirement): Question {
-  const base = clean(r.text).replace(/\.$/, '');
   const generic = !r.ask || /^(mock|¿pregunta simulada|¿puede tu empresa cumplir)/i.test(r.ask);
-  const text = `El pliego pide: «${base.length > 220 ? base.slice(0, 217) + '…' : base}». ${generic ? '¿Lo cumplís?' : r.ask}`;
+  const ask = generic ? SHORT_ASK[r.category] ?? '¿Lo cumple tu empresa?' : r.ask!;
+  const open = !generic && /^¿\s*(qu[eé]|qui[eé]n|cu[aá]l|cu[aá]nt|c[oó]mo|d[oó]nde|cu[aá]ndo)/i.test(ask);
+  const base = clean(r.text).replace(/\.$/, '');
   return {
-    id: 'req:' + r.id, kind: 'req', reqId: r.id, text, critical: r.critical || r.mandatory,
+    id: 'req:' + r.id, kind: 'req', reqId: r.id, text: `El pliego pide: «${base.length > 220 ? base.slice(0, 217) + '…' : base}». ${ask}`, critical: r.critical || r.mandatory,
     hint: r.status === 'missing' ? 'No he encontrado nada en tu memoria de empresa que lo acredite.' : 'Necesito que lo confirme alguien de tu equipo.',
     source: { docId: r.source.docId, page: r.source.page, quote: r.source.quote ?? r.text, docName: r.source.docName },
-    choices: ['Sí, lo cumplimos', 'No', 'No lo sé', 'Saltar'],
-    placeholder: 'Escribe cómo lo acreditáis (p. ej. «Tenemos la póliza con Mapfre hasta 2027») o adjunta el documento',
+    ...answersFor(r, open),
   };
 }
 
+/** Las preguntas que quedan. Pocas: lo indispensable para redactar y presentar sin riesgo de exclusión. */
 export function pendingQuestions(p: Project, s: AppState = getState()): Question[] {
   const answered = new Set(p.interview?.answered ?? []);
-  const open = p.requirements.filter((r) => (r.status === 'needs_info' || r.status === 'missing') && !answered.has('req:' + r.id));
   const seen = new Set<string>();
   const pick = (r: Requirement) => { const k = r.title.replace(/\s*\(\d+\)$/, '').toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; };
-  const ranked = [
-    ...open.filter((r) => isFicha(p, r.source.docId)),
-    ...open.filter((r) => !isFicha(p, r.source.docId) && KEY_CATS.includes(r.category) && r.mandatory && !r.uncertain),
-  ].filter(pick).slice(0, Math.max(0, MAX_REQ_QUESTIONS - [...answered].filter((x) => x.startsWith('req:')).length));
+  const asked = [...answered].filter((x) => x.startsWith('req:')).length;
+  const ranked = p.requirements.filter((r) => needsYou(r) && !answered.has('req:' + r.id))
+    .sort((a, b) => Number(!!b.critical) - Number(!!a.critical) || Number(b.status === 'missing') - Number(a.status === 'missing'))
+    .filter(pick).slice(0, Math.max(0, MAX_QUESTIONS - asked));
   const qs: Question[] = ranked.map((r) => reqQuestion(p, r));
+  // Datos de empresa: solo si esta licitación los necesita y todavía no están en la memoria.
+  const openReq = (cat: string, re?: RegExp) => p.requirements.some((r) => isOpen(r) && r.category === cat && (!re || re.test(r.title + ' ' + r.text)));
   const c = s.company;
-  if (!c.revenue && !answered.has('revenue')) qs.push({ id: 'revenue', kind: 'revenue', text: '¿Cuál fue vuestra facturación anual en el último ejercicio cerrado? Casi todos los pliegos piden un volumen de negocio mínimo.', choices: ['Prefiero no decirlo ahora'], placeholder: 'p. ej. 1,8 M€ en 2025' });
-  if (!c.employees && !answered.has('employees')) qs.push({ id: 'employees', kind: 'employees', text: '¿Cuántas personas trabajan en la empresa?', choices: ['1–9', '10–49', '50–249', '250 o más'], placeholder: 'Número aproximado' });
-  if (s.pastProjects.length === 0 && !answered.has('projects')) qs.push({ id: 'projects', kind: 'projects', text: 'Cuéntame un contrato parecido que hayáis hecho en los últimos 3 años: para quién, qué año y por cuánto. Es lo que más pesa en la solvencia técnica.', choices: ['Ahora no'], placeholder: 'p. ej. Comedor del Ayuntamiento de Sitges, 2023-2025, 210.000 €/año' });
-  if (s.certifications.length === 0 && !answered.has('certs')) qs.push({ id: 'certs', kind: 'certs', text: '¿Tenéis alguna de estas certificaciones vigentes?', choices: ['Ninguna'], multi: CERT_OPTIONS, placeholder: 'Otra certificación' });
-  return qs;
+  if (!c.revenue && !answered.has('revenue') && openReq('financial', /volumen|facturaci|cifra de negocio|solvencia econ/i)) qs.push({ id: 'revenue', kind: 'revenue', text: 'El pliego pide un volumen de negocio mínimo. ¿Cuánto facturasteis en el último ejercicio cerrado?', choices: ['Prefiero no decirlo ahora'], placeholder: 'Por ejemplo: 850.000 €' });
+  if (s.pastProjects.length === 0 && !answered.has('projects') && openReq('experience')) qs.push({ id: 'projects', kind: 'projects', text: 'Cuéntame un contrato parecido que hayáis hecho en los últimos 3 años: para quién, qué año y por cuánto. Con uno me basta para empezar.', choices: ['No tenemos ninguno parecido'], placeholder: 'Por ejemplo: Mantenimiento de jardines, Ayuntamiento de Getafe, 2023–2025, 180.000 €/año' });
+  if (s.certifications.length === 0 && !answered.has('certs') && openReq('certification')) qs.push({ id: 'certs', kind: 'certs', text: '¿Tenéis alguna de estas certificaciones vigentes?', choices: ['Ninguna'], multi: CERT_OPTIONS, placeholder: 'Otra certificación' });
+  return qs.slice(0, Math.max(0, MAX_QUESTIONS - asked));
 }
 
 function push(projectId: string, msgs: Omit<InterviewMsg, 'id' | 'at'>[], answeredId?: string) {
@@ -103,19 +140,24 @@ export async function answer(projectId: string, q: Question, a: { choice?: strin
       const r = await addVaultFiles([a.file], 'other');
       updateRequirement(projectId, q.reqId, { status: 'fulfilled', humanValidated: true, evidence: [{ kind: 'vault', label: a.file.name }], note: `Acreditado con ${a.file.name} (añadido a Documentos)` }, `Requisito acreditado en el asistente con ${a.file.name}`);
       reply = r.added ? `${ack()} He guardado «${a.file.name}» en tus documentos de empresa y lo uso como prueba de este requisito.` : `No he podido leer «${a.file.name}», pero lo marco como acreditado. Revísalo en Documentos.`;
-    } else if (a.choice === 'Sí, lo cumplimos' || (a.text && !/^\s*no\b/i.test(a.text))) {
-      updateRequirement(projectId, q.reqId, { status: 'fulfilled', humanValidated: true, evidence: [{ kind: 'user', label: a.text ? a.text.slice(0, 160) : `Confirmado por ${who}` }], note: a.text ? `Respuesta de ${who}: ${a.text}` : `Confirmado por ${who} en el asistente` }, 'Requisito confirmado en el asistente');
-      reply = a.text ? `${ack()} Lo uso al redactar la propuesta.` : `${ack()} Si tienes el documento que lo acredita, súbelo y lo guardo como prueba.`;
-      if (!a.text) actions = [{ label: 'Subir el documento', to: '/app/documents' }];
-    } else if (a.choice === 'No' || (a.text && /^\s*no\b/i.test(a.text))) {
-      updateRequirement(projectId, q.reqId, { status: 'missing', note: a.text ? `Respuesta: ${a.text}` : 'No se cumple (confirmado en el asistente)' }, 'Requisito marcado como no cumplido');
-      reply = q.critical
-        ? 'Ojo: es obligatorio, y sin él la oferta puede quedar excluida. Opciones habituales: apoyarte en la solvencia de otra empresa (art. 75 LCSP), ir en UTE o subcontratar esa parte si el pliego lo permite. Lo marco en rojo para que lo decidáis antes de presentar.'
-        : 'Lo marco como no cumplido. No es excluyente, pero puede restar puntos.';
-    } else if (a.choice === 'No lo sé') {
-      updateRequirement(projectId, q.reqId, { note: 'Pendiente de confirmar (asistente)' });
-      reply = 'Sin problema: lo dejo pendiente y te lo recuerdo en el resumen del proyecto.';
-    } else reply = 'Lo salto por ahora.';
+    } else {
+      const out = a.text ? (/^\s*no\b/i.test(a.text) ? 'no' : 'yes') : outcomeOf(a.choice ?? '');
+      if (out === 'yes') {
+        updateRequirement(projectId, q.reqId, { status: 'fulfilled', humanValidated: true, evidence: [{ kind: 'user', label: a.text ? a.text.slice(0, 160) : `Confirmado por ${who}` }], note: a.text ? `Respuesta de ${who}: ${a.text}` : `Confirmado por ${who} en el asistente` }, 'Requisito confirmado en el asistente');
+        reply = a.text ? `${ack()} Lo uso al redactar la propuesta.` : `${ack()} Si tienes a mano el documento que lo acredita, puedes subirlo cuando quieras; no hace falta ahora.`;
+      } else if (out === 'partial') {
+        updateRequirement(projectId, q.reqId, { status: 'needs_info', note: `Respuesta de ${who}: ${a.choice}` }, 'Requisito con respuesta parcial');
+        reply = 'Lo apunto tal cual. Antes de presentar veremos si basta o si conviene apoyarse en otra empresa; te lo recordaré en la comprobación final, no tienes que hacer nada ahora.';
+      } else if (out === 'no') {
+        updateRequirement(projectId, q.reqId, { status: 'missing', note: a.text ? `Respuesta: ${a.text}` : 'No se cumple (confirmado en el asistente)' }, 'Requisito marcado como no cumplido');
+        reply = q.critical
+          ? 'Gracias por decírmelo: mejor saberlo ahora. Es un requisito obligatorio, pero suele tener salida: apoyarse en la solvencia de otra empresa, ir en UTE o subcontratar esa parte si el pliego lo permite. Lo dejo señalado para decidirlo antes de presentar.'
+          : 'Anotado. No deja fuera la oferta; como mucho resta algún punto.';
+      } else {
+        updateRequirement(projectId, q.reqId, { note: 'Pendiente de confirmar (asistente)' });
+        reply = 'Sin problema, sigo sin eso. Te lo recordaré antes de presentar.';
+      }
+    }
   } else if (q.kind === 'revenue' && a.text) { update((s) => { s.company.revenue = a.text!; }); reply = `${ack()} Lo guardo en tu perfil de empresa.`; }
   else if (q.kind === 'employees' && (a.choice || a.text)) { update((s) => { s.company.employees = (a.text || a.choice)!; }); reply = ack(); }
   else if (q.kind === 'projects' && a.text) {
