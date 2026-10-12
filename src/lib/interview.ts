@@ -64,7 +64,8 @@ const SHORT_ASK: Record<string, string> = {
   team: '¿Contáis con este perfil?', financial: '¿Llegáis a lo que pide el pliego?',
 };
 
-function reqQuestion(p: Project, r: Requirement): Question {
+/** La pregunta de un requisito, con sus respuestas posibles (también la usa la comprobación final). */
+export function reqQuestion(p: Project, r: Requirement): Question {
   const generic = !r.ask || /^(mock|¿pregunta simulada|¿puede tu empresa cumplir)/i.test(r.ask);
   const ask = generic ? SHORT_ASK[r.category] ?? '¿Lo cumple tu empresa?' : r.ask!;
   const base = clean(r.text).replace(/\.$/, '');

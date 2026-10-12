@@ -57,6 +57,7 @@ export interface CompanyInfo {
   website: string;
   description: string;
   capabilities: string[];
+  signer?: string;          // representante legal que firma las ofertas
   sectors: string[];
   cpvs: string[];          // CPV prefixes the company bids for (discovery matching)
   regions: string[];       // NUTS prefixes where the company works, e.g. ES51
@@ -255,8 +256,10 @@ export interface Project {
   activity: ActivityItem[];
   aiActionsUsed: number;
   interview?: Interview;   // conversación guiada «PROPO te pregunta»
+  answers?: GivenAnswer[]; // datos que el cliente ha aportado al revisar la propuesta: se reutilizan en la comprobación final
 }
 
+export interface GivenAnswer { label: string; kind: string; value: string; section: string; at: string }
 export interface InterviewMsg { id: string; role: 'propo' | 'user'; text: string; at: string; qid?: string; source?: { docId: string; page: number; quote?: string; docName?: string }; actions?: { label: string; to: string }[] }
 export interface Interview { msgs: InterviewMsg[]; answered: string[]; drafted?: boolean }
 

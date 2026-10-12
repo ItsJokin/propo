@@ -1,7 +1,7 @@
 // «Información requerida»: averigua dónde se añade cada dato que falta y lo resuelve en un paso.
 // El dato se escribe en la propia sección (sustituye la marca) y, si es un dato de empresa, se guarda
 // también en la memoria de empresa para que no vuelva a faltar en otras propuestas.
-import type { CompanyInfo, VaultCategory } from './types';
+import type { CompanyInfo, VaultCategory, Project, Evidence } from './types';
 import { getState, update, updateProject, navigate } from './store';
 import { addVaultFiles } from './actions';
 import { uid, nowIso } from './util';
@@ -41,12 +41,39 @@ export function resolvePath(plan: InfoPlan, projectId?: string) {
   return plan.path === 'package' ? (projectId ? `/app/projects/${projectId}/package` : '/app/projects') : plan.path || (projectId ? `/app/projects/${projectId}/proposal` : '/app/projects');
 }
 
+const words = (t: string) => new Set(t.toLowerCase().normalize('NFD').replace(/[^\x00-\x7f]/g, '').match(/[a-z0-9]{4,}/g) ?? []);
+/** Palabras que aparecen en casi cualquier requisito: no sirven para saber si dos textos hablan de lo mismo. */
+const COMMON = new Set('empresa empresas licitador licitadora contrato contratos servicio servicios debera deberan acreditar acreditacion presentar documento documentos numero vigencia vigente certificado certificados certificacion experiencia equipo minimo minima anos para como esta este sobre segun tener disponer contar requisito pliego'.split(' '));
+/** Qué requisitos puede resolver cada tipo de dato. */
+const REQ_CATS: Partial<Record<InfoKind, string[]>> = { certification: ['certification'], experience: ['experience'], team: ['team'], revenue: ['financial'], document: ['administrative', 'legal', 'financial', 'certification'] };
+
+/** El dato que el cliente acaba de dar también responde a los requisitos que piden eso mismo: se dan por resueltos,
+ *  para no volver a pedírselo en la comprobación final. Devuelve cuántos requisitos ha resuelto. */
+function resolveRequirements(pr: Project, label: string, kind: InfoKind, value: string, evidence: Evidence) {
+  const cats = REQ_CATS[kind];
+  if (!cats || /^\s*(no|ningun[oa]?)\b/i.test(value)) return 0;
+  const mine = [...words(`${label} ${value}`)].filter((w) => !COMMON.has(w));
+  let n = 0;
+  for (const r of pr.requirements) {
+    if (!(r.status === 'missing' || r.status === 'needs_info') || !cats.includes(r.category)) continue;
+    const theirs = words(`${r.title} ${r.text}`);
+    const shared = mine.filter((w) => theirs.has(w));
+    const same = kind === 'revenue' ? /volumen|facturaci|cifra de negocio/i.test(r.title + ' ' + r.text) : shared.length >= 2 || shared.some((w) => /\d/.test(w));
+    if (!same) continue;
+    r.status = 'fulfilled'; r.humanValidated = true;
+    r.evidence = [...r.evidence, evidence];
+    r.note = `Dato aportado al revisar la propuesta: ${value.slice(0, 200)}`;
+    n++;
+  }
+  if (n) pr.activity.unshift({ at: nowIso(), text: `${n} requisito${n > 1 ? 's' : ''} resuelto${n > 1 ? 's' : ''} con el dato «${label.slice(0, 80)}»` });
+  return n;
+}
+
 /** Quita de la lista de pendientes el aviso de un dato (la lista no siempre usa las mismas palabras que la marca). */
 function forget(s: { missing: string[] }, label: string, kind: InfoKind) {
   const before = s.missing.length;
   s.missing = s.missing.filter((m) => m.trim().toLowerCase() !== label.trim().toLowerCase());
   if (s.missing.length < before || !s.missing.length) return;
-  const words = (t: string) => new Set(t.toLowerCase().normalize('NFD').match(/[a-z0-9]{4,}/g) ?? []);
   const mine = words(label);
   const score = s.missing.map((x) => [...words(x)].filter((w) => mine.has(w)).length + (planFor(x).kind === kind ? 0.5 : 0));
   const k = score.indexOf(Math.max(...score));
@@ -85,7 +112,7 @@ export function dropInfo(projectId: string, sectionId: string, tag: string, labe
 }
 
 /** Sustituye la marca en la sección y, si se pide, guarda el dato en la memoria de empresa. */
-export function fillInfo(projectId: string, sectionId: string, tag: string, label: string, value: string, save: boolean, memo?: string) {
+export function fillInfo(projectId: string, sectionId: string, tag: string, label: string, value: string, save: boolean, memo?: string, evidence?: Evidence) {
   const plan = planFor(label);
   const v = value.trim();
   const m = (memo ?? value).trim();   // lo que se guarda en la memoria de empresa: el dato tal como lo escribió el cliente
@@ -97,6 +124,8 @@ export function fillInfo(projectId: string, sectionId: string, tag: string, labe
     if (s.status === 'approved') s.status = 'reviewed';
     s.updatedAt = nowIso();
     pr.activity.unshift({ at: nowIso(), text: `Información añadida en «${s.title}»: ${plan.title}` });
+    (pr.answers ??= []).push({ label, kind: plan.kind, value: m.slice(0, 600), section: s.title, at: nowIso() });
+    resolveRequirements(pr, label, plan.kind, m, evidence ?? { kind: 'user', label: m.slice(0, 160) });
   });
   if (!save) return;
   update((st) => {
@@ -112,7 +141,7 @@ export function fillInfo(projectId: string, sectionId: string, tag: string, labe
 export async function fillWithDocument(projectId: string, sectionId: string, tag: string, label: string, file: File) {
   const plan = planFor(label);
   const r = await addVaultFiles([file], plan.upload ?? 'other');
-  fillInfo(projectId, sectionId, tag, label, `${plan.title}: se acredita con «${file.name}» (adjunto)`, false);
+  fillInfo(projectId, sectionId, tag, label, `${plan.title}: se acredita con «${file.name}» (adjunto)`, false, undefined, { kind: 'vault', label: file.name });
   return r.added > 0;
 }
 
