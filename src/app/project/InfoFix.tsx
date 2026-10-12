@@ -117,8 +117,7 @@ export function InfoFixModal({ p, s, tag, label, onClose }: { p: Project; s: Sec
           `Dato que falta: ${label}`,
           gap ? `Frase de la propuesta donde irá: «${gap[0]} [AQUÍ VA EL DATO] ${gap[1]}»` : '',
         ].filter(Boolean).join('\n'), { tier: 'quick' });
-        const ok = (x: unknown) => { const t = typeof x === 'string' ? x.trim() : ''; if (t.length <= 520) return t; const c = t.slice(0, 520); return c.slice(0, Math.max(c.lastIndexOf('. '), c.lastIndexOf('.
-')) + 1) || c; };   // nunca se corta a media frase
+        const ok = (x: unknown) => { const t = typeof x === 'string' ? x.trim() : ''; if (t.length <= 520) return t; const c = t.slice(0, 520); return c.slice(0, c.lastIndexOf('. ') + 1) || c; };   // nunca se corta a media frase
         const h = { what: ok(j?.what), why: ok(j?.why), example: ok(j?.example) };
         if (!h.what) return;
         helpCache.set(key, h);
