@@ -142,14 +142,15 @@ export function AnalysisScreen({ id }: { id: string }) {
 
 // Velocidades orientativas con PDF digitales de pliegos reales (no escaneados). Lectura y extracción por reglas
 // medidas en el navegador (~2.000 págs/min juntas en un portátil reciente; se deja margen para equipos más lentos).
-// La IA lee como mucho las ~100 páginas más relevantes (ver pickPages en ai/engine.ts).
-const SPEED = { read: 1000, ai: 50, rules: 3000, aiMaxPages: 100 };
+// Con IA manda lo que tarda en escribir los requisitos y su explicación, no en leer: medido, ~3 min para 66 páginas y hasta
+// ~6 min en pliegos largos (dos bloques como mucho, ver ai/engine.ts).
+const SPEED = { read: 1000, ai: 30, aiBase: 1, rules: 3000, aiMaxPages: 150 };
 
 const fmtN = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
 /** Una línea: cuántas páginas tiene la licitación y cuánto tardará, más o menos. */
 function TimeNote({ ai, pages }: { ai: boolean; pages?: number }) {
-  const est = pages ? pages / SPEED.read + (ai ? Math.min(pages, SPEED.aiMaxPages) / SPEED.ai : pages / SPEED.rules) : null; // minutos
+  const est = pages ? pages / SPEED.read + (ai ? SPEED.aiBase + Math.min(pages, SPEED.aiMaxPages) / SPEED.ai : pages / SPEED.rules) : null; // minutos
   const estLabel = est == null ? null : est < 0.75 ? 'menos de 1 minuto' : est < 1.5 ? 'alrededor de 1 minuto' : `unos ${Math.round(est)} minutos`;
   return (
     <p className="an-time small muted">
