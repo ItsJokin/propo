@@ -254,7 +254,7 @@ export function sectionWordTarget(project: Project, section: Section): number {
     const sum = project.sections.reduce((a, s) => a + 4 + pts(s), 0) || 1;
     return round((total * (4 + pts(section))) / sum, 200, 2400);
   }
-  return round(700 + pts(section) * 45, 800, 2200);
+  return round(900 + pts(section) * 50, 1000, 2400);
 }
 
 export async function generateSection(opts: {

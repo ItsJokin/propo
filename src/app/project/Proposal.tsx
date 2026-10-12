@@ -52,7 +52,7 @@ export function Proposal({ p }: { p: Project }) {
             <div className="small mt-8"><strong className="num">{approved} de {p.sections.length}</strong> <span className="muted">secciones aprobadas</span></div>
           </div>
           <div className="row-wrap">
-            {notStarted.length > 0 && <button className="btn btn-primary" disabled={bulk} onClick={generateAll}><LuSparkles /> {bulk ? 'Redactando…' : `Redactar ${notStarted.length} sección${notStarted.length > 1 ? 'es pendientes' : ' pendiente'}`}</button>}
+            {notStarted.length > 0 && <button className="btn btn-primary" disabled={bulk} onClick={generateAll}><LuSparkles /> {bulk ? 'Redactando…' : `Redactar ${notStarted.length} ${notStarted.length > 1 ? 'secciones pendientes' : 'sección pendiente'}`}</button>}
           </div>
         </div>
         {ai !== 'available' && <div className="callout neutral small mt-16"><LuInfo /><div>{getState().demo ? <>Estás en la demo: las secciones se redactan con la memoria de la empresa de ejemplo para que veas el resultado. Con la IA activada, PROPO las escribe a medida de cada pliego.</> : <>La redacción con IA no está disponible en esta vista. Al generar una sección se crea un <strong>borrador de plantilla</strong>: PROPO ordena los requisitos y las fuentes de empresa y marca lo que tu equipo tiene que escribir.</>}</div></div>}
