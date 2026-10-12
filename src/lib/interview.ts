@@ -122,8 +122,7 @@ export function askNext(projectId: string) {
   const last = p.interview?.msgs[p.interview.msgs.length - 1];
   if (q && last?.qid !== q.id) push(projectId, [{ role: 'propo', text: q.text, qid: q.id, source: q.source }]);
   if (!q && !p.interview?.msgs.some((m) => m.qid === 'done')) {
-    const open = p.requirements.filter((r) => r.status === 'needs_info' || r.status === 'missing').length;
-    push(projectId, [{ role: 'propo', qid: 'done', text: 'Eso es todo. He guardado tus respuestas en tu memoria de empresa para no volver a preguntártelas. Del resto de requisitos me ocupo yo. ¿Genero la propuesta?' Quedan ${open} requisitos secundarios del pliego que puedes revisar cuando quieras.` : ''} ¿Redacto ya la propuesta?` }]);
+    push(projectId, [{ role: 'propo', qid: 'done', text: 'Eso es todo. He guardado tus respuestas en tu memoria de empresa para no volver a preguntártelas. Del resto de requisitos me ocupo yo. ¿Genero la propuesta?' }]);
   }
 }
 
