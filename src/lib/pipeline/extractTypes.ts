@@ -15,7 +15,7 @@ export interface ExtractionResult {
   pageLimit?: string;
   requirements: {
     title: string; category: ReqCategory; quote: string; docName: string; page: number;
-    mandatory: boolean; critical: boolean; clause?: string;
+    mandatory: boolean; critical: boolean; clause?: string; plain?: string; how?: string;
     match?: { status: 'fulfilled' | 'needs_info' | 'missing'; evidenceIds: string[]; ask?: string };
   }[];
   criteria: { group: string; name: string; points: number; kind: 'judgement' | 'formula'; description: string; docName: string; page: number }[];

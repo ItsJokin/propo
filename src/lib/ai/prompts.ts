@@ -1,6 +1,6 @@
 // Prompt templates. Kept in one place so they can be versioned and evaluated.
 // Production stores the prompt version with every generated item (generated_content.prompt_version).
-export const PROMPT_VERSION = '2026-10-12.1';
+export const PROMPT_VERSION = '2026-10-12.2';
 
 export function extractionPrompt(knowledgeJson: string, pagesBlock: string, batch: number, total: number) {
   return `You are PROPO's tender analysis engine. Read the tender pages below and extract structured data for a company preparing its bid.
@@ -13,6 +13,7 @@ Rules:
 - category: one of administrative, technical, financial, experience, certification, format, legal, team.
 - critical=true for price, financial solvency, experience, certifications, legal declarations and anything that causes exclusion.
 - Compare each requirement with COMPANY KNOWLEDGE and set match.status: "fulfilled" only if a listed item clearly covers it (put its ids in evidence_ids); "needs_info" if partially covered or a confirmation is needed; "missing" if a required document, certificate or proof is absent. match.ask: one short, specific question or instruction for the company when not fulfilled. Never assume facts that are not in the knowledge.
+- plain and how: written for the owner of a small company who has never read a tender and does not know legal or procurement jargon. plain: what THIS clause asks for, in everyday Spanish, addressed as "tú", with the concrete figures, names, dates or thresholds the clause states (max 2 short sentences, max 220 characters). how: the specific paper or action that proves it for this clause and where a company normally gets it (max 2 short sentences, max 220 characters). No legal citations, no acronyms without saying what they are, no copying of the quote, no generic definitions. If the pages do not say how it is proven, say what is usually accepted and start with "Normalmente".
 - criteria: only evaluation criteria with stated points or weights. kind "formula" for price or automatic formulas, otherwise "judgement".
 - Dates in ISO format (YYYY-MM-DD). Use null when not stated.
 - proposal_structure: the sections the technical proposal should contain for THIS tender, following any structure the tender imposes and the scored criteria. 6 to 12 sections, titles and guidance in Spanish. Never a generic template when the tender says otherwise.
@@ -25,7 +26,7 @@ Reply with ONLY one JSON object of this shape:
  "submission_deadline": "YYYY-MM-DD or null",
  "deadlines": [{"label": "string", "date": "YYYY-MM-DD", "doc": "string", "page": 1}],
  "page_limit": "string or null",
- "requirements": [{"title": "string", "category": "technical", "quote": "string", "doc": "string", "page": 1, "clause": "string or null", "mandatory": true, "critical": false, "match": {"status": "needs_info", "evidence_ids": ["id"], "ask": "string or null"}}],
+ "requirements": [{"title": "string", "category": "technical", "quote": "string", "doc": "string", "page": 1, "clause": "string or null", "plain": "string", "how": "string", "mandatory": true, "critical": false, "match": {"status": "needs_info", "evidence_ids": ["id"], "ask": "string or null"}}],
  "criteria": [{"group": "string", "name": "string", "points": 10, "kind": "judgement", "description": "string", "doc": "string", "page": 1}],
  "required_documents": ["string"],
  "exclusion_risks": [{"text": "string", "doc": "string", "page": 1}],

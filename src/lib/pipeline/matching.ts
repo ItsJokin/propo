@@ -138,6 +138,8 @@ export function toRequirements(ex: ExtractionResult, docsByName: Map<string, str
       id: `req_${i + 1}`,
       title: r.title,
       text: r.quote,
+      plain: r.plain,
+      how: r.how,
       category: r.category,
       mandatory: r.mandatory,
       critical: r.critical,

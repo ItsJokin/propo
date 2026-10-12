@@ -147,6 +147,8 @@ export interface Requirement {
   id: string;
   title: string;
   text: string;
+  plain?: string;            // what this clause asks for, in everyday language (written by the AI when reading the tender)
+  how?: string;              // how it is proven, for this clause
   category: ReqCategory;
   mandatory: boolean;
   critical: boolean;         // price, experience, certifications, legal, financial -> human validation

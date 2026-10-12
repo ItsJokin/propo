@@ -105,6 +105,7 @@ function fromAIJson(j: any, docNames: string[]): ExtractionResult {
     requirements: (Array.isArray(j?.requirements) ? j.requirements : []).filter((r: any) => r?.quote && r?.title).map((r: any) => ({
       title: String(r.title).slice(0, 90), category: cats.includes(r.category) ? r.category : 'technical', quote: String(r.quote), docName: fixDoc(r.doc), page: Math.max(1, Number(r.page) || 1),
       clause: r.clause || undefined, mandatory: r.mandatory !== false, critical: !!r.critical,
+      plain: typeof r.plain === 'string' && r.plain.trim() ? r.plain.trim().slice(0, 400) : undefined, how: typeof r.how === 'string' && r.how.trim() ? r.how.trim().slice(0, 400) : undefined,
       match: r.match && st.includes(r.match.status) ? { status: r.match.status, evidenceIds: Array.isArray(r.match.evidence_ids) ? r.match.evidence_ids.map(String) : [], ask: r.match.ask || undefined } : undefined,
     })),
     criteria: (Array.isArray(j?.criteria) ? j.criteria : []).filter((c: any) => c?.name && Number(c.points) > 0).map((c: any) => ({ group: String(c.group || 'Criteria'), name: String(c.name), points: Number(c.points), kind: c.kind === 'formula' ? 'formula' : 'judgement', description: String(c.description || ''), docName: fixDoc(c.doc), page: Math.max(1, Number(c.page) || 1) })),

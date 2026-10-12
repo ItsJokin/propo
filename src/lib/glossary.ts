@@ -109,7 +109,7 @@ export function termFor(text: string): Term | undefined {
 export function plainRequirement(r: Requirement): { name?: string; what: string; how: string } {
   const term = termFor(r.title) ?? termFor(r.text);
   const base = term ?? BY_CATEGORY[r.category] ?? BY_CATEGORY.technical;
-  return { name: term?.name, what: base.what, how: base.how };
+  return { name: term?.name, what: r.plain || base.what, how: r.how || base.how };   // a medida si la IA leyó el pliego; si no, el texto general
 }
 
 export function explainRequirement(r: Requirement): string {

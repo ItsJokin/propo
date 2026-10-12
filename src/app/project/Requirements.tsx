@@ -128,8 +128,9 @@ export function Requirements({ p }: { p: Project }) {
                 <div className="req-detail">
                   <div className="row-wrap"><span className={`badge ${tone(r)}`}>{label(r)}</span>{!r.mandatory && <span className="badge outline">Opcional</span>}</div>
                   {propoHandles(r) && <div className="req-calm"><LuSparkles /><div><strong>No tienes que hacer nada ahora.</strong> PROPO lo tiene en cuenta al preparar la documentación y te lo recordará antes de presentar. <button className="link" onClick={() => setModal({ kind: 'Mark as resolved', req: r })}>Ya lo tengo resuelto</button></div></div>}
+                  {r.plain && <div className="qcard-plain" style={{ margin: 0 }}><p><strong>Qué te piden, en claro.</strong> {r.plain}</p>{r.how && <p><strong>Cómo se demuestra.</strong> {r.how}</p>}</div>}
                   <div>
-                    <div className="eyebrow" style={{ marginBottom: 8 }}>Requisito</div>
+                    <div className="eyebrow" style={{ marginBottom: 8 }}>{r.plain ? 'Lo que dice el pliego, literal' : 'Requisito'}</div>
                     <div className="quote">“{r.text}”</div>
                     <div className="row-wrap mt-8">
                       <SourceChip label={`Fuente: ${r.source.docName} — Página ${r.source.page}${r.source.clause ? ` · ${r.source.clause}` : ''}`} onClick={() => openSource({ project: p, docId: r.source.docId, page: r.source.page, quote: r.text })} />
