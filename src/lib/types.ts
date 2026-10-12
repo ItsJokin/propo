@@ -303,7 +303,7 @@ export interface Onboarding {
   dismissed: boolean;
 }
 
-export interface TenderAlert { id: string; name: string; query: string; sector: string; region: string; createdAt: string; }
+export interface TenderAlert { id: string; name: string; query: string; sector: string; region: string; province?: string; createdAt: string; }
 
 export interface AppState {
   version: number;

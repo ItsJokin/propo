@@ -15,7 +15,7 @@ export interface Knowledge {
 
 export function knowledgeIndex(k: Knowledge) {
   const items: { id: string; label: string; text: string; kind: Evidence['kind'] }[] = [];
-  k.pastProjects.forEach((p) => items.push({ id: p.id, kind: 'company', label: `${p.title} — ${p.value}`, text: `${p.title} ${p.client} ${p.sector} ${p.description}` }));
+  k.pastProjects.forEach((p) => items.push({ id: p.id, kind: 'company', label: `${p.title} — ${p.value}`, text: `${p.title}. Cliente: ${p.client || 'no indicado'}. Periodo: ${p.years || 'no indicado'}. Importe: ${p.value || 'no indicado'}. ${p.description}${p.hasCertificate ? ' Dispone de certificado de buena ejecución.' : ''}` }));
   k.certifications.forEach((c) => items.push({ id: c.id, kind: 'company', label: c.name, text: `${c.name} ${c.issuer}` }));
   k.team.forEach((t) => items.push({ id: t.id, kind: 'company', label: `${t.name} — ${t.role}`, text: `${t.role} ${t.qualifications} ${t.years} years` }));
   k.vault.forEach((v) => items.push({ id: v.id, kind: 'vault', label: v.name, text: `${v.name} ${v.category}` }));

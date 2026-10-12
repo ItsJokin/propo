@@ -57,6 +57,24 @@ export const REGIONS: { id: string; label: string }[] = [
   { id: 'ES12', label: 'Asturias' }, { id: 'ES13', label: 'Cantabria' }, { id: 'ES22', label: 'Navarra' },
   { id: 'ES23', label: 'La Rioja' }, { id: 'ES43', label: 'Extremadura' },
 ];
+/** Provincias de cada comunidad, con sus códigos territoriales (NUTS 3). En los archipiélagos una provincia agrupa varias islas. */
+export const PROVINCES: Record<string, { id: string; label: string; codes: string[] }[]> = {
+  ES51: [{ id: 'B', label: 'Barcelona', codes: ['ES511'] }, { id: 'GI', label: 'Girona', codes: ['ES512'] }, { id: 'L', label: 'Lleida', codes: ['ES513'] }, { id: 'T', label: 'Tarragona', codes: ['ES514'] }],
+  ES52: [{ id: 'A', label: 'Alicante', codes: ['ES521'] }, { id: 'CS', label: 'Castellón', codes: ['ES522'] }, { id: 'V', label: 'Valencia', codes: ['ES523'] }],
+  ES61: [{ id: 'AL', label: 'Almería', codes: ['ES611'] }, { id: 'CA', label: 'Cádiz', codes: ['ES612'] }, { id: 'CO', label: 'Córdoba', codes: ['ES613'] }, { id: 'GR', label: 'Granada', codes: ['ES614'] }, { id: 'H', label: 'Huelva', codes: ['ES615'] }, { id: 'J', label: 'Jaén', codes: ['ES616'] }, { id: 'MA', label: 'Málaga', codes: ['ES617'] }, { id: 'SE', label: 'Sevilla', codes: ['ES618'] }],
+  ES21: [{ id: 'VI', label: 'Álava', codes: ['ES211'] }, { id: 'SS', label: 'Gipuzkoa', codes: ['ES212'] }, { id: 'BI', label: 'Bizkaia', codes: ['ES213'] }],
+  ES11: [{ id: 'C', label: 'A Coruña', codes: ['ES111'] }, { id: 'LU', label: 'Lugo', codes: ['ES112'] }, { id: 'OU', label: 'Ourense', codes: ['ES113'] }, { id: 'PO', label: 'Pontevedra', codes: ['ES114'] }],
+  ES41: [{ id: 'AV', label: 'Ávila', codes: ['ES411'] }, { id: 'BU', label: 'Burgos', codes: ['ES412'] }, { id: 'LE', label: 'León', codes: ['ES413'] }, { id: 'P', label: 'Palencia', codes: ['ES414'] }, { id: 'SA', label: 'Salamanca', codes: ['ES415'] }, { id: 'SG', label: 'Segovia', codes: ['ES416'] }, { id: 'SO', label: 'Soria', codes: ['ES417'] }, { id: 'VA', label: 'Valladolid', codes: ['ES418'] }, { id: 'ZA', label: 'Zamora', codes: ['ES419'] }],
+  ES42: [{ id: 'AB', label: 'Albacete', codes: ['ES421'] }, { id: 'CR', label: 'Ciudad Real', codes: ['ES422'] }, { id: 'CU', label: 'Cuenca', codes: ['ES423'] }, { id: 'GU', label: 'Guadalajara', codes: ['ES424'] }, { id: 'TO', label: 'Toledo', codes: ['ES425'] }],
+  ES24: [{ id: 'HU', label: 'Huesca', codes: ['ES241'] }, { id: 'TE', label: 'Teruel', codes: ['ES242'] }, { id: 'Z', label: 'Zaragoza', codes: ['ES243'] }],
+  ES43: [{ id: 'BA', label: 'Badajoz', codes: ['ES431'] }, { id: 'CC', label: 'Cáceres', codes: ['ES432'] }],
+  ES70: [{ id: 'GC', label: 'Las Palmas', codes: ['ES704', 'ES705', 'ES708'] }, { id: 'TF', label: 'Santa Cruz de Tenerife', codes: ['ES703', 'ES706', 'ES707', 'ES709'] }],
+  ES53: [{ id: 'MLL', label: 'Mallorca', codes: ['ES532'] }, { id: 'MEN', label: 'Menorca', codes: ['ES533'] }, { id: 'EIV', label: 'Ibiza y Formentera', codes: ['ES531'] }],
+};
+/** ¿La licitación se ejecuta en esa provincia? */
+export const inProvince = (nuts: string, region: string, prov: string) => !!PROVINCES[region]?.find((p) => p.id === prov)?.codes.some((c) => nuts.startsWith(c));
+/** El anuncio indica la comunidad pero no la provincia. */
+export const noProvince = (nuts: string, region: string) => nuts.startsWith(region) && nuts.length < 5;
 export const regionLabel = (nuts: string) => REGIONS.find((r) => nuts.startsWith(r.id))?.label ?? (nuts.startsWith('ES') ? 'España' : 'UE');
 export const sectorLabel = (id: string) => SECTORS.find((s) => s.id === id)?.label ?? id;
 
@@ -91,8 +109,9 @@ export function matchTender(t: TedNotice, c: CompanyInfo): Match {
   reasons.push(sector >= 40 ? { ok: true, text: 'Encaja con los sectores (CPV) de tu empresa' } : sector > 0 ? { ok: null, text: 'Encaje parcial con tu actividad' } : { ok: false, text: 'Fuera de los sectores de tu empresa' });
   // 2. Region — 15
   const reg = c.regions.some((r) => t.nuts.startsWith(r));
-  score += reg ? 15 : t.nuts.startsWith('ES') ? 6 : 3;
-  reasons.push(reg ? { ok: true, text: `En tu zona de trabajo (${regionLabel(t.nuts)})` } : !c.regions.length ? { ok: null, text: `${regionLabel(t.nuts)}: indica en tu perfil dónde trabajas para valorar la ubicación` } : { ok: null, text: `Fuera de tus regiones habituales: se ejecuta en ${regionLabel(t.nuts)}` });
+  const away = !reg && c.regions.length > 0;                  // la empresa ha dicho dónde trabaja y esto queda fuera
+  score += reg ? 15 : away ? 0 : t.nuts.startsWith('ES') ? 6 : 3;
+  reasons.push(reg ? { ok: true, text: `En tu zona de trabajo (${regionLabel(t.nuts)})` } : !c.regions.length ? { ok: null, text: `${regionLabel(t.nuts)}: indica en tu perfil dónde trabajas para valorar la ubicación` } : { ok: null, text: `Fuera de tu zona de trabajo: se ejecuta en ${regionLabel(t.nuts)}. Valora si puedes prestar el servicio allí` });
   // 3. Size vs turnover — 20 (rule of thumb: solvency asks ~1–1.5× the annual value)
   const rev = parseRevenue(c.revenue || '');
   if (t.value && rev) {
@@ -109,5 +128,5 @@ export function matchTender(t: TedNotice, c: CompanyInfo): Match {
   const tp = d >= 15 ? 15 : d >= 8 ? 10 : d >= 3 ? 5 : 0;
   score += tp;
   reasons.push(d < 0 ? { ok: false, text: 'Plazo cerrado' } : tp >= 10 ? { ok: true, text: `${d} días para preparar la oferta` } : { ok: false, text: `Solo ${d} días para preparar la oferta` });
-  return { score: Math.max(0, Math.min(99, Math.round(score))), reasons };
+  return { score: Math.max(0, Math.min(away ? 59 : 99, Math.round(score))), reasons };   // lejos de tu zona nunca es «alta compatibilidad»
 }

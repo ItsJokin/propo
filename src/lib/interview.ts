@@ -25,7 +25,7 @@ const KEY_CATS = ['financial', 'experience', 'certification', 'team'];
 export const CERT_OPTIONS = ['ISO 9001', 'ISO 14001', 'ISO 22000', 'ISO 45001', 'ISO 27001', 'ENS'];
 const MAX_QUESTIONS = 5;
 /** Trámites que no hace falta preguntar: PROPO los prepara o se resuelven al presentar o al adjudicar. */
-const PROCEDURAL = /garant[ií]a (definitiva|provisional)|oferta econ[oó]mica|precio (unitario|m[aá]ximo|de licitaci)|presupuesto base|importe m[aá]ximo|tipo de licitaci|canon|anormal|temerari|seg[uú]n (el )?modelo|sobre [abc123]\b|archivo «?[abc]»?|firma|plazo de presentaci|declaraci[oó]n responsable|deuc|subsan|registro|plataforma|electr[oó]nic|una sola oferta|aportar documentaci|adjudicatari/i;
+const PROCEDURAL = /garant[ií]a (definitiva|provisional)|oferta econ[oó]mica|precios? (unitarios?|m[aá]ximos?|de licitaci|por persona|de referencia)|presupuestos? (base|de referencia)|propuestas? a presupuesto|importe m[aá]ximo|tipo de licitaci|canon|anormal|temerari|seg[uú]n (el )?modelo|sobre [abc123]\b|archivo «?[abc]»?|firma|plazo de presentaci|declaraci[oó]n responsable|deuc|subsan|registro|plataforma|electr[oó]nic|una sola oferta|aportar documentaci|adjudicatari/i;
 
 function isFicha(p: Project, docId: string) { return !!p.docs.find((d) => d.id === docId)?.name.startsWith('Ficha de la licitación'); }
 function clean(t: string) { return t.replace(/^se exigir[áa]n?:\s*/i, '').replace(/\s+/g, ' ').trim(); }
@@ -64,10 +64,21 @@ const SHORT_ASK: Record<string, string> = {
   team: '¿Contáis con este perfil?', financial: '¿Llegáis a lo que pide el pliego?',
 };
 
+const OPEN_Q = /^¿?\s*(cu[aá]nt|qu[eé]\b|qui[eé]n|cu[aá]l|c[oó]mo|d[oó]nde|cu[aá]ndo|en qu[eé]|con qu[eé])/i;
+/** La pregunta que se le hace al cliente. Los botones son de sí / a medias / no, así que la pregunta tiene que poder
+ *  contestarse así: si la que escribió la IA es abierta («¿cuántas personas…?») o es una instrucción, se pregunta lo
+ *  esencial y lo otro queda como detalle que puede escribir si quiere. */
+export function askFor(r: Requirement): { q: string; detail?: string } {
+  const short = SHORT_ASK[r.category] ?? '¿Lo cumple tu empresa?';
+  const ask = (r.ask ?? '').trim();
+  if (!ask || /^(mock|¿pregunta simulada|¿puede tu empresa cumplir)/i.test(ask)) return { q: short };
+  if (OPEN_Q.test(ask) || !ask.includes('?')) return { q: short, detail: ask };
+  return { q: ask };
+}
+
 /** La pregunta de un requisito, con sus respuestas posibles (también la usa la comprobación final). */
 export function reqQuestion(p: Project, r: Requirement): Question {
-  const generic = !r.ask || /^(mock|¿pregunta simulada|¿puede tu empresa cumplir)/i.test(r.ask);
-  const ask = generic ? SHORT_ASK[r.category] ?? '¿Lo cumple tu empresa?' : r.ask!;
+  const ask = askFor(r).q;
   const base = clean(r.text).replace(/\.$/, '');
   return {
     id: 'req:' + r.id, kind: 'req', reqId: r.id, text: `El pliego pide: «${base.length > 220 ? base.slice(0, 217) + '…' : base}». ${ask}`, critical: r.critical || r.mandatory,

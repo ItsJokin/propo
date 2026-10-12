@@ -315,8 +315,20 @@ export async function generateSection(opts: {
     passages = [...own, ...passages.filter((x) => !own.some((o) => o.docId === x.docId && o.page === x.page && o.text === x.text))].slice(0, 16);
   }
   const kIdx = knowledgeIndex(knowledge).filter((k) => k.kind === 'company');
-  const kHits = search(kIdx.map((k) => ({ id: k.id, docId: 'company', docName: 'Company', page: 0, text: k.label + ' ' + k.text })), query, 12)
+  let kHits = search(kIdx.map((k) => ({ id: k.id, docId: 'company', docName: 'Company', page: 0, text: k.label + ' ' + k.text })), query, 12)
     .map((p) => kIdx.find((k) => k.id === p.id)!);
+
+  // Lo que la empresa tiene guardado sobre el tema de la sección entra entero, no solo lo que la búsqueda acierte.
+  const topic = normalize(`${section.title} ${section.guidance}`);
+  const whole = [
+    ...(/experien|referenc|solvencia tecn|similares|trayectoria/.test(topic) ? knowledge.pastProjects.map((x) => x.id) : []),
+    ...(/equipo|personal|coordinaci|medios humanos|organigrama|perfil/.test(topic) ? knowledge.team.map((x) => x.id) : []),
+    ...(/calidad|certific|sostenib|ambient|seguridad alimentaria|prevenci|iso\b/.test(topic) ? knowledge.certifications.map((x) => x.id) : []),
+  ];
+  for (const id of whole) { const k = kIdx.find((x) => x.id === id); if (k && !kHits.includes(k)) kHits = [...kHits, k]; }
+  kHits = kHits.slice(0, 24);
+  // Datos de empresa que ya se han contado en otras secciones: aquí solo si de verdad apoyan un punto.
+  const usedElsewhere = [...new Set(project.sections.filter((x) => x.id !== section.id && x.content).flatMap((x) => x.citations.filter((c) => c.kind === 'company' && c.label !== 'Respuesta de la empresa').map((c) => c.label.replace(/^Empresa — /, ''))))].slice(0, 14);
 
   const citations: Citation[] = [];
   let n = 0;
@@ -349,7 +361,7 @@ export async function generateSection(opts: {
         words, previous: opts.regenerate && section.content ? section.content : undefined,
         authority: project.analysis?.authority || project.organization || undefined, pageLimit: project.analysis?.pageLimit || undefined,
         outline: project.sections.map((s, i) => `${s.id === section.id ? '→' : ' '} ${i + 1}. ${s.title}`).join('\n'),
-        form: section.form, formsOnly: project.analysis?.formNote,
+        form: section.form, formsOnly: project.analysis?.formNote, usedFacts: usedElsewhere.length ? usedElsewhere.join('; ') : undefined,
         maxAsks: MAX_ASKS, asked: askedElsewhere.length ? askedElsewhere.map((x) => `«${x}»`).join('; ') : undefined,
       }), { tier: 'default', signal: opts.signal });
       let content = String(j?.content ?? '').trim();

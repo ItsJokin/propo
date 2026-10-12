@@ -11,18 +11,21 @@ const reference = (p: Project) => (!isUnknown(p.analysis?.reference) ? p.analysi
 const today = () => fmtDate(nowIso());
 
 /** Memoria técnica: portada, índice, datos de la oferta, correspondencia con criterios, secciones y anexos de empresa. */
+/** El título oficial entero: el nombre del proyecto se acorta para las pantallas. */
+const fullTitle = (p: Project) => (p.name.endsWith('…') && p.tender?.title ? p.tender.title.replace(/\s+/g, ' ').trim() : p.name);
+
 export async function technicalProposalPdf(p: Project, s: AppState) {
   const c = s.company;
   const w = await newDoc(`Memoria técnica — ${p.name}`, c, { cover: true });
   cover(w, {
-    kind: 'Memoria técnica', title: p.name,
+    kind: 'Memoria técnica', title: fullTitle(p),
     lines: [['Órgano de contratación', p.organization], ['Expediente', reference(p)], ['Licitador', `${c.legalName || '[razón social]'}${c.taxId ? ` · NIF ${c.taxId}` : ''}`], ['Domicilio', c.address], ['Fecha', today()]],
   });
   tocPlaceholder(w);
 
   h1(w, 'Datos de la oferta');
   facts(w, [
-    ['Objeto del contrato', p.name], ['Órgano de contratación', p.organization], ['Expediente', reference(p)],
+    ['Objeto del contrato', fullTitle(p)], ['Órgano de contratación', p.organization], ['Expediente', reference(p)],
     ['Fin de presentación de ofertas', p.analysis?.deadline ? fmtDate(p.analysis.deadline) : ''], ['Duración', p.analysis?.duration ?? ''],
     ['Licitador', c.legalName], ['NIF', c.taxId], ['Domicilio', c.address], ['Web', c.website],
   ]);
@@ -84,7 +87,7 @@ export async function declarationPdf(p: Project, s: AppState) {
   h1(w, 'Declaración responsable');
   note(w, 'Borrador preparado por PROPO con tu perfil de empresa. Revísalo, completa los datos del representante y fírmalo con firma electrónica cualificada antes de presentarlo.', { label: 'Antes de firmar' });
   h2(w, 'Datos del procedimiento');
-  facts(w, [['Objeto del contrato', p.name], ['Órgano de contratación', p.organization], ['Expediente', reference(p)]]);
+  facts(w, [['Objeto del contrato', fullTitle(p)], ['Órgano de contratación', p.organization], ['Expediente', reference(p)]]);
   h2(w, 'Datos del licitador');
   facts(w, [['Razón social', c.legalName || '[razón social]'], ['NIF', c.taxId || '[NIF]'], ['Domicilio', c.address || '[domicilio social]'], ['Representante legal', '[nombre y apellidos]'], ['DNI del representante', '[número]'], ['En calidad de', '[administrador / apoderado]']]);
   text(w, `D./D.ª [nombre del representante legal], en nombre y representación de **${c.legalName || '[razón social]'}**, en relación con el procedimiento arriba indicado,`, { gap: 10 });
@@ -110,7 +113,7 @@ export async function declarationPdf(p: Project, s: AppState) {
 export async function experiencePdf(p: Project, s: AppState) {
   const c = s.company;
   const w = await newDoc(`Experiencia relevante — ${c.legalName}`, c, { cover: true });
-  cover(w, { kind: 'Relación de contratos similares', title: p.name, lines: [['Órgano de contratación', p.organization], ['Expediente', reference(p)], ['Licitador', `${c.legalName}${c.taxId ? ` · NIF ${c.taxId}` : ''}`], ['Fecha', today()]] });
+  cover(w, { kind: 'Relación de contratos similares', title: fullTitle(p), lines: [['Órgano de contratación', p.organization], ['Expediente', reference(p)], ['Licitador', `${c.legalName}${c.taxId ? ` · NIF ${c.taxId}` : ''}`], ['Fecha', today()]] });
   h1(w, 'Experiencia en contratos similares');
   text(w, `${c.legalName || 'La empresa'} acredita la siguiente experiencia en contratos de naturaleza análoga a la del objeto de esta licitación.`, { gap: 10 });
   table(w, [{ title: 'Contrato', w: 32, bold: true }, { title: 'Cliente', w: 25 }, { title: 'Periodo', w: 13 }, { title: 'Importe anual', w: 17, align: 'right' }, { title: 'Certificado', w: 13 }],

@@ -8,7 +8,7 @@ import { Ring, Modal } from '../../components/ui';
 import { navigate, updateProject, update, toast, useStore, getState } from '../../lib/store';
 import { markReady, updateRequirement, shortenProposal } from '../../lib/actions';
 import { friendlyAIError } from '../../lib/ai/provider';
-import { needsYou, reqQuestion, answer, outcomeOf } from '../../lib/interview';
+import { needsYou, reqQuestion, answer, outcomeOf, askFor } from '../../lib/interview';
 import { plainRequirement } from '../../lib/glossary';
 import { ACCEPTED } from '../../lib/pipeline/parse';
 import { nowIso, fmtDate } from '../../lib/util';
@@ -173,7 +173,8 @@ function ReqStep({ p, r, onUnresolved }: { p: Project; r: Requirement; onUnresol
       </div>
       {r.note && !/pendiente de confirmar/i.test(r.note) && <div className="fin-said"><LuSparkles /><div><strong>Lo que ya nos dijiste.</strong> {r.note.replace(/^Respuesta( de [^:]+)?:\s*/i, '')}</div></div>}
       <button className="link xs" style={{ justifySelf: 'start' }} onClick={() => openSource({ project: p, docId: r.source.docId, page: r.source.page, quote: r.source.quote ?? r.text })}><LuFileText style={{ width: 12, height: 12, verticalAlign: -1, marginRight: 4 }} />Ver lo que dice el pliego · página {r.source.page}</button>
-      <p className="qcard-q" style={{ margin: 0 }}>{r.ask && !/^(mock|¿pregunta simulada|¿puede tu empresa cumplir)/i.test(r.ask) ? r.ask : '¿Lo cumple tu empresa?'}</p>
+      <p className="qcard-q" style={{ margin: 0 }}>{askFor(r).q}</p>
+      {askFor(r).detail && <p className="small muted" style={{ margin: 0 }}>Si lo sabes, escríbelo abajo: {askFor(r).detail}</p>}
       <div className="qcard-answers">
         {q.choices.filter((c) => outcomeOf(c) !== 'later').map((c) => <button key={c} disabled={busy} className={`ans ${outcomeOf(c) === 'yes' ? 'yes' : ''}`} onClick={() => send({ choice: c })}>{outcomeOf(c) === 'yes' ? <LuCheck /> : null}{c}</button>)}
       </div>

@@ -8,6 +8,7 @@ import { putPages, deletePages, putFile, getFile } from './storage';
 import { analyzeDocuments, generateSection, projectPages, STAGES, type StageId } from './ai/engine';
 import { AIError, friendlyAIError, ai, aiState, getSample } from './ai/provider';
 import { estimatePages, pageLimitNumber } from './derive';
+import { regionLabel } from './discovery/match';
 import { wordCount } from './util';
 import { uid, nowIso, daysUntil } from './util';
 import type { Knowledge } from './pipeline/matching';
@@ -165,6 +166,11 @@ export async function runAnalysis(id: string, onProgress: (p: AnalysisProgress) 
       onStage: (stage, d) => { if (d) detail[stage] = d; onProgress({ stage, detail: { ...detail }, pages: Math.min(totalPages, plan.pagesPerProposal) }); },
     });
     if (detail.limit) out.analysis.warnings.unshift(detail.limit);
+    {                                                            // el contrato se ejecuta fuera de donde trabaja la empresa: mejor saberlo antes de redactar
+      const tender = getState().projects.find((x) => x.id === id)?.tender;
+      const zones = getState().company.regions;
+      if (tender?.nuts?.startsWith('ES') && zones.length && !zones.some((z) => tender.nuts.startsWith(z))) out.analysis.warnings.unshift(`Este contrato se ejecuta en ${regionLabel(tender.nuts)}${tender.city && tender.city !== 'No consta' ? ` (${tender.city})` : ''}, fuera de la zona de trabajo que tienes en tu perfil. Antes de seguir, valora si puedes prestar el servicio allí con tus medios o con un colaborador local.`);
+    }
     updateProject(id, (pr) => {
       pr.docs = docs; pr.analysis = out.analysis; pr.requirements = out.requirements; pr.criteria = out.criteria; pr.sections = out.sections;
       pr.stage = 'active'; pr.aiActionsUsed += out.aiActions;

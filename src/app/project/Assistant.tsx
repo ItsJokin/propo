@@ -7,6 +7,7 @@ import { runGenerate } from '../../lib/actions';
 import { openSource } from '../common';
 import { ExplainButton } from './Explain';
 import { plainRequirement } from '../../lib/glossary';
+import { askFor } from '../../lib/interview';
 import { ACCEPTED } from '../../lib/pipeline/parse';
 
 const CATS: Record<string, string> = { administrative: 'Documentación', technical: 'Técnico', financial: 'Económico', experience: 'Experiencia', certification: 'Certificación', format: 'Presentación', legal: 'Legal', team: 'Equipo' };
@@ -129,7 +130,8 @@ export function Assistant({ p }: { p: Project }) {
                       ? <div className="row-wrap">{req.evidence.map((e) => <span key={e.label} className="found-chip">{e.label}</span>)}<span className="xs subtle">Lo he encontrado, pero no puedo comprobar solo que cumple lo exigido.</span></div>
                       : <div className="small muted">Todavía no lo tengo en tu memoria de empresa; por eso te lo pregunto.</div>}
                   </div>
-                  <p className="qcard-q">{!req.ask || GENERIC.test(req.ask) ? '¿Lo cumple tu empresa?' : req.ask}</p>
+                  <p className="qcard-q">{askFor(req).q}</p>
+                  {askFor(req).detail && <p className="small muted" style={{ margin: '6px 0 0' }}>Si lo sabes, escríbelo abajo: {askFor(req).detail}</p>}
                 </>
               ) : (
                 <p className="qcard-q solo">{q.text}</p>

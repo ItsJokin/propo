@@ -5,7 +5,7 @@ import { type TedNotice } from '../lib/discovery/tedSnapshot';
 import { useLive, dataAgeMinutes, type LiveState } from '../lib/data/live';
 import { competitionFor, goNoGo, type Competition, type CompStats } from '../lib/data/awards';
 import { demoPliegoFile } from '../lib/demo/demoPliego';
-import { matchTender, SECTORS, REGIONS, regionLabel, sectorLabel, type Match } from '../lib/discovery/match';
+import { matchTender, SECTORS, REGIONS, PROVINCES, inProvince, noProvince, regionLabel, sectorLabel, type Match } from '../lib/discovery/match';
 import { Drawer, Empty } from '../components/ui';
 import { tenderView, fichaFile } from '../lib/discovery/brief';
 import { TENDER_BRIEFS } from '../lib/discovery/tenderDocs';
@@ -37,7 +37,10 @@ export function Tenders() {
   const [q, setQ] = useState('');
   const [query, setQuery] = useState('');
   const [sector, setSector] = useState('');
-  const [region, setRegion] = useState('');
+  const [region, setRegionRaw] = useState('');
+  const [prov, setProv] = useState('');                    // provincia dentro de la comunidad elegida ('' = toda la comunidad)
+  const [loose, setLoose] = useState(false);               // incluir las que no indican provincia
+  const setRegion = (r: string) => { setRegionRaw(r); setProv(''); setLoose(false); };
   const [size, setSize] = useState('');
   const [tab, setTab] = useState<'all' | 'high' | 'saved'>('all');
   const [sort, setSort] = useState<'score' | 'deadline' | 'value' | 'new'>('score');
@@ -48,7 +51,7 @@ export function Tenders() {
   const [shown, setShown] = useState(PAGE);
   const [source, setSource] = useState('');
   const live = useLive();
-  useEffect(() => { setShown(PAGE); }, [query, sector, region, size, tab, sort, source]);
+  useEffect(() => { setShown(PAGE); }, [query, sector, region, prov, loose, size, tab, sort, source]);
 
   const words = normalize(query).split(' ').filter(Boolean);
   const filtered = useMemo(() => all.filter(({ t }) => {
@@ -58,12 +61,15 @@ export function Tenders() {
     if (source && (t.live?.src ?? 'ted') !== source) return false;
     if (sector && t.sector !== sector && !(SECTORS.find((x) => x.id === sector)?.cpv.some((p) => t.cpv.some((c) => c.startsWith(p))))) return false;
     if (region && !t.nuts.startsWith(region)) return false;
+    if (region && prov && !inProvince(t.nuts, region, prov) && !(loose && noProvince(t.nuts, region))) return false;
     if (size === 's' && !(t.value && t.value >= 100000 && t.value < 500000)) return false;
     if (size === 'm' && !(t.value && t.value >= 500000 && t.value <= 2000000)) return false;
     if (size === 'l' && !(t.value && t.value > 2000000)) return false;
     if (size === 'xs' && !(t.value && t.value < 100000)) return false;
     return true;
-  }), [all, query, sector, region, size, source, showClosed]);
+  }), [all, query, sector, region, prov, loose, size, source, showClosed]);
+  const provLabel = PROVINCES[region]?.find((x) => x.id === prov)?.label;
+  const unplaced = useMemo(() => (region && prov ? all.filter(({ t }) => noProvince(t.nuts, region) && (showClosed || !t.deadline || (daysUntil(t.deadline) ?? -1) >= 0)).length : 0), [all, region, prov, showClosed]);
   const counts = { all: filtered.length, high: filtered.filter((r) => r.m.score >= 70).length, saved: filtered.filter((r) => s.savedTenders.includes(r.t.id)).length };
   const list = useMemo(() => filtered
     .filter((r) => tab === 'all' || (tab === 'high' ? r.m.score >= 70 : s.savedTenders.includes(r.t.id)))
@@ -94,8 +100,8 @@ export function Tenders() {
   const plan = PLANS[s.subscription.plan];
   const saveAlert = () => {
     if (s.alerts.length >= plan.alerts) { toast(`Tu plan incluye ${plan.alerts} alerta${plan.alerts === 1 ? '' : 's'}. Mejora tu plan para crear más.`, 'warn'); return; }
-    const name = [sector && sectorLabel(sector), region && REGIONS.find((r) => r.id === region)?.label, query && `«${query}»`].filter(Boolean).join(' · ') || 'Todas las licitaciones compatibles';
-    update((st) => { st.alerts.unshift({ id: uid('al'), name, query, sector, region, createdAt: nowIso() }); });
+    const name = [sector && sectorLabel(sector), region && (provLabel ? `${provLabel} (${REGIONS.find((r) => r.id === region)?.label})` : REGIONS.find((r) => r.id === region)?.label), query && `«${query}»`].filter(Boolean).join(' · ') || 'Todas las licitaciones compatibles';
+    update((st) => { st.alerts.unshift({ id: uid('al'), name, query, sector, region, province: prov || undefined, createdAt: nowIso() }); });
     toast('Alerta creada. PROPO la comprueba cada vez que abres la página.', 'ok');
     track('alert_created');
   };
@@ -126,12 +132,15 @@ export function Tenders() {
       <div className="t-filters">
         <select className="select" aria-label="Sector" value={sector} onChange={(e) => setSector(e.target.value)}><option value="">Todos los sectores</option>{SECTORS.map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}</select>
         <select className="select" aria-label="Región" value={region} onChange={(e) => setRegion(e.target.value)}><option value="">Toda España</option>{REGIONS.map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}</select>
+        {PROVINCES[region] && <select className="select" aria-label="Provincia" value={prov} onChange={(e) => { setProv(e.target.value); setLoose(false); }}><option value="">{`Toda ${REGIONS.find((x) => x.id === region)?.label}`}</option>{PROVINCES[region].map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}</select>}
         <select className="select" aria-label="Importe" value={size} onChange={(e) => setSize(e.target.value)}><option value="">Cualquier importe</option><option value="xs">Menos de 100.000 €</option><option value="s">100.000 € – 500.000 €</option><option value="m">500.000 € – 2 M€</option><option value="l">Más de 2 M€</option></select>
         <select className="select" aria-label="Ordenar" value={sort} onChange={(e) => setSort(e.target.value as any)}><option value="score">Más compatibles</option><option value="new">Más recientes</option><option value="deadline">Cierran antes</option><option value="value">Mayor importe</option></select>
         {live.status === 'live' && <select className="select" aria-label="Fuente" value={source} onChange={(e) => setSource(e.target.value)}><option value="">Todas las fuentes</option><option value="placsp">Plataforma del Estado</option><option value="agregadas">Plataformas autonómicas</option><option value="ted">TED (UE)</option></select>}
         <span className="spacer" />
         <button type="button" className="btn btn-secondary" onClick={saveAlert}><LuBell /> Crear alerta con estos filtros</button>
       </div>
+
+      {prov && unplaced > 0 && <p className="small muted" style={{ margin: '12px 0 0' }}>{loose ? `Incluidas ${unplaced} licitaciones de ${REGIONS.find((x) => x.id === region)?.label} que no indican provincia.` : `Hay ${unplaced} licitaciones de ${REGIONS.find((x) => x.id === region)?.label} que no indican provincia y podrían ser de ${provLabel}.`} <button className="link" onClick={() => setLoose(!loose)}>{loose ? 'Quitarlas' : 'Verlas también'}</button></p>}
 
       <div className="tabs" style={{ margin: '22px 0 16px' }}>
         {([['all', 'Todas'], ['high', 'Alta compatibilidad'], ['saved', 'Guardadas']] as const).map(([k, l]) => (
@@ -160,13 +169,13 @@ export function Tenders() {
           <div className="card-head"><LuBell style={{ width: 16, height: 16, color: 'var(--accent)' }} /><h3>Tus alertas</h3><span className="spacer" /><span className="xs subtle">{s.alerts.length} de {plan.alerts >= 999 ? 'ilimitadas' : plan.alerts}</span></div>
           {s.alerts.map((a) => {
             const aw = normalize(a.query || '').split(' ').filter(Boolean);
-            const hits = all.filter(({ t }) => (!t.deadline || (daysUntil(t.deadline) ?? -1) >= 0) && (!a.sector || t.sector === a.sector) && (!a.region || t.nuts.startsWith(a.region)) && aw.every((w) => haystack(t).includes(w)));
+            const hits = all.filter(({ t }) => (!t.deadline || (daysUntil(t.deadline) ?? -1) >= 0) && (!a.sector || t.sector === a.sector) && (!a.region || t.nuts.startsWith(a.region)) && (!a.province || inProvince(t.nuts, a.region, a.province)) && aw.every((w) => haystack(t).includes(w)));
             const n = hits.length; const fresh = hits.filter(({ t }) => t.pub >= a.createdAt.slice(0, 10)).length;
             return (
               <div key={a.id} className="entity">
                 <div><div style={{ fontWeight: 600 }}>{a.name}</div><div className="small muted">{n.toLocaleString('es-ES', GROUP)} licitaciones abiertas coinciden{fresh ? ` · ${fresh} publicadas desde que creaste la alerta` : ''}</div></div>
                 <div className="row">
-                  <button className="btn btn-ghost btn-sm" onClick={() => { setSector(a.sector); setRegion(a.region); setQ(a.query); setQuery(a.query); window.scrollTo?.(0, 0); document.getElementById('app-main')?.scrollTo(0, 0); }}>Ver</button>
+                  <button className="btn btn-ghost btn-sm" onClick={() => { setSector(a.sector); setRegion(a.region); setProv(a.province ?? ''); setQ(a.query); setQuery(a.query); window.scrollTo?.(0, 0); document.getElementById('app-main')?.scrollTo(0, 0); }}>Ver</button>
                   <button className="btn btn-ghost btn-sm btn-icon" aria-label="Eliminar alerta" onClick={() => update((st) => { st.alerts = st.alerts.filter((x) => x.id !== a.id); })}><LuTrash2 /></button>
                 </div>
               </div>

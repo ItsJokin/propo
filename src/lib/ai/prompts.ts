@@ -1,6 +1,6 @@
 // Prompt templates. Kept in one place so they can be versioned and evaluated.
 // Production stores the prompt version with every generated item (generated_content.prompt_version).
-export const PROMPT_VERSION = '2026-10-12.5';
+export const PROMPT_VERSION = '2026-10-12.6';
 
 export function extractionPrompt(knowledgeJson: string, pagesBlock: string, batch: number, total: number) {
   return `You are PROPO's tender analysis engine. Read the tender pages below and extract structured data for a company preparing its bid.
@@ -12,7 +12,7 @@ Rules:
 - Merge duplicates. Title: max 8 words, in Spanish. Keep the quote in the original language.
 - category: one of administrative, technical, financial, experience, certification, format, legal, team.
 - critical=true for price, financial solvency, experience, certifications, legal declarations and anything that causes exclusion.
-- Compare each requirement with COMPANY KNOWLEDGE and set match.status: "fulfilled" only if a listed item clearly covers it (put its ids in evidence_ids); "needs_info" if partially covered or a confirmation is needed; "missing" if a required document, certificate or proof is absent. match.ask: one short, specific question or instruction for the company when not fulfilled. Never assume facts that are not in the knowledge.
+- Compare each requirement with COMPANY KNOWLEDGE and set match.status: "fulfilled" only if a listed item clearly covers it (put its ids in evidence_ids); "needs_info" if partially covered or a confirmation is needed; "missing" if a required document, certificate or proof is absent. match.ask: one short yes/no question for the company owner when not fulfilled (it will be answered with buttons: yes / partly / no), in plain Spanish, about what THEY have or can do. Never ask them to read or send tender documents, and never ask about prices. Never assume facts that are not in the knowledge.
 - plain and how: written for the owner of a small company who has never read a tender and does not know legal or procurement jargon. plain: what THIS clause asks for, in everyday Spanish, addressed as "tú", with the concrete figures, names, dates or thresholds the clause states (max 2 short sentences, max 220 characters). how: the specific paper or action that proves it for this clause and where a company normally gets it (max 2 short sentences, max 220 characters). No legal citations, no acronyms without saying what they are, no copying of the quote, no generic definitions. If the pages do not say how it is proven, say what is usually accepted and start with "Normalmente".
 - criteria: only evaluation criteria with stated points or weights. kind "formula" for price or automatic formulas, otherwise "judgement".
 - Dates in ISO format (YYYY-MM-DD). Use null when not stated.
@@ -44,7 +44,7 @@ ${pagesBlock}`;
 
 export function sectionPrompt(p: {
   company: string; project: string; section: string; guidance: string; criteria: string; requirements: string; sources: string; words: number; previous?: string;
-  authority?: string; outline?: string; pageLimit?: string; maxAsks: number; asked?: string; form?: string; formsOnly?: string;
+  authority?: string; outline?: string; pageLimit?: string; maxAsks: number; asked?: string; form?: string; formsOnly?: string; usedFacts?: string;
 }) {
   if (p.form) return formPrompt(p as Parameters<typeof formPrompt>[0]);
   return `You are PROPO, writing one section of the technical proposal (memoria técnica) that ${p.company} will submit for "${p.project}"${p.authority ? `, a contract of ${p.authority}` : ''}. An evaluation committee scores this section against the criteria listed below. Write it so that an evaluator can award the points without having to search for the answer.
@@ -67,7 +67,9 @@ Hard rules
   3. For the organisation of the work (meeting and report frequency, internal checks, review steps, response and escalation circuits, training sessions, indicators and their targets), propose concrete commitments yourself: the usual good practice in this sector, demanding enough to score well and realistic for a small or medium company. Write them as commitments of the offer ("nos comprometemos a..."), never as things the company already does or has. Every commitment you propose this way must also appear in "## Compromisos verificables", so the owner sees them when approving.
   4. When a fact would win or secure points AND only the company can know it (a named person and their profile, a certificate it holds, a reference contract with client, year and amount, how many vehicles, machines, premises or staff it really has, a result it has achieved), ASK for it: write the placeholder [Información requerida: qué dato falta, en palabras sencillas] exactly where the fact belongs and list it in "missing". The goal is to win the contract: a section that scores less because it lacks a decisive fact is worse than one more question. Up to ${p.maxAsks} placeholders per section, the ones worth the most points first; do not spend them on details that would not change the score.
 - Never state as a fact about the company (past clients, experience, certifications, staff, equipment, figures) anything that is not in a company source: that is what placeholders are for. Never use a placeholder for something you can solve with steps 1 to 3.
-${p.asked ? `- These data have already been requested from the company in other sections; do NOT ask for them again here, write around them: ${p.asked}\n` : ''}- Never include prices, costs, discounts or any economic figure of the offer.
+${p.asked ? `- These data have already been requested from the company in other sections; do NOT ask for them again here, write around them: ${p.asked}\n` : ''}- Sources marked "Respuesta de la empresa" are things the owner has confirmed. Use them to write with confidence, but never write sentences such as "la empresa ha confirmado que cumple..." or "cumplimos esta exigencia": state the fact or the commitment itself, with its detail.
+- Never leave filler rows or cells ("Pendiente", "Segundo cliente", "Por definir"). A table has only rows you can fill with facts from the sources; if one decisive fact is missing, use a placeholder for it and nothing else.
+${p.usedFacts ? `- These company facts already appear in other sections of the proposal: ${p.usedFacts}. Do not repeat them here as background. Use one only where it directly proves a scored point of THIS section, once.\n` : ''}- Never include prices, costs, discounts or any economic figure of the offer.
 - Cite sources inline with their markers right after the sentence they support, e.g. "... within two hours [S3]."
 - Write in Spanish (Spain), formal and direct, first person plural ("nosotros"), short sentences, the vocabulary of the tender.
 - Formatting allowed: paragraphs separated by a blank line, "## " and "### " subheadings, "- " bullets, "1. " numbered steps, **bold** for the key commitments, markdown tables. No other markup. Do not repeat the section title as a heading.
