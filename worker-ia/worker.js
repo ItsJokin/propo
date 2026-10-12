@@ -9,7 +9,10 @@
 // Es la versión de un solo archivo de worker/ (que usa el SDK oficial y se despliega con wrangler): mismo contrato.
 
 const ORIGINS = ['https://propo.es', 'https://www.propo.es'];
-const MODEL = 'claude-opus-5-5';          // más barato: 'claude-sonnet-5-5' (la mitad) — o la variable MODEL del Worker
+// Un modelo por tipo de tarea, para no pagar de más: las explicaciones cortas van al modelo pequeño; leer pliegos y
+// redactar, al intermedio. (El mejor para pliegos difíciles es 'claude-opus-5-5', al doble de precio que Sonnet.)
+const MODELS = { quick: 'claude-haiku-5-5', default: 'claude-sonnet-5-5', complex: 'claude-sonnet-5-5' };
+const MAX_TOKENS = { quick: 4000, default: 32000, complex: 32000 };
 const MAX_INPUT_CHARS = 600000;
 const PER_MINUTE = 20;                    // peticiones por minuto y dirección IP (el tope de gasto real es el saldo de la cuenta)
 const EFFORT = { quick: 'low', default: 'medium', complex: 'high' };
@@ -66,6 +69,8 @@ export default {
     if (messages.reduce((n, m) => n + m.content.length, 0) > MAX_INPUT_CHARS) return json({ error: 'prompt_too_large' }, 413, cors);
     const tier = body.tier === 'quick' || body.tier === 'complex' ? body.tier : 'default';
 
+    const model = env.MODEL || MODELS[tier];
+    const fallback = !/haiku/.test(model);   // el modelo pequeño no admite el reintento automático en otro modelo
     let upstream;
     try {
       upstream = await fetch('https://api.anthropic.com/v1/messages', {
@@ -74,10 +79,10 @@ export default {
           'x-api-key': env.ANTHROPIC_API_KEY,
           'anthropic-version': '2023-06-01',
           // Si el modelo declina una petición por sus filtros de seguridad, la API la reintenta en el modelo alternativo recomendado.
-          'anthropic-beta': 'server-side-fallback-2026-07-01',
+          ...(fallback ? { 'anthropic-beta': 'server-side-fallback-2026-07-01' } : {}),
           'content-type': 'application/json',
         },
-        body: JSON.stringify({ model: env.MODEL || MODEL, max_tokens: 32000, stream: true, output_config: { effort: EFFORT[tier] }, fallbacks: 'default', messages }),
+        body: JSON.stringify({ model, max_tokens: MAX_TOKENS[tier], stream: true, output_config: { effort: EFFORT[tier] }, ...(fallback ? { fallbacks: 'default' } : {}), messages }),
       });
     } catch { return json({ error: 'upstream_error' }, 502, cors); }
     if (!upstream.ok || !upstream.body) {
