@@ -33,6 +33,8 @@ export interface User {
   email: string;
   role: string;
   createdAt: string;
+  /** Huella de la contraseña de la cuenta local (ver services/localAuth). Las cuentas antiguas no la tienen. */
+  pass?: import('./services/localAuth').PassHash;
 }
 
 export interface Member {

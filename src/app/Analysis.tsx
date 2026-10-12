@@ -118,6 +118,9 @@ export function AnalysisScreen({ id }: { id: string }) {
             </div>
           )}
           {!a.deadline && <div className="callout neutral small mt-8"><LuInfo /><div>No se ha encontrado la fecha límite de presentación. Añádela en el resumen del proyecto para que PROPO te avise.</div></div>}
+          {!demo && project.docs.length > 0 && project.docs.every((d) => d.name.startsWith('Ficha de la licitación')) && (
+            <div className="callout warn mt-16"><LuInfo /><div><strong>Falta el pliego.</strong> PROPO ha creado el proyecto con los datos del anuncio oficial, pero todavía no ha leído los pliegos: los requisitos de abajo salen solo del anuncio. Descarga el PCAP y el PPT desde la ficha de la licitación y súbelos para extraer los requisitos de verdad.<div className="mt-8"><button className="btn btn-primary btn-sm" onClick={() => navigate(`/app/projects/${id}/documents`)}>Subir los pliegos</button></div></div></div>
+          )}
           {demo && <div className="callout neutral small mt-16"><LuInfo /><div><strong>Estás en la demo.</strong> Pulsa «Generar la propuesta» y PROPO redactará todas las secciones con la memoria de la empresa de ejemplo, para que veas cómo continúa el trabajo.</div></div>}
           <div className="row-wrap mt-24">
             {project.sections.some((s) => s.status === 'not_started') && (

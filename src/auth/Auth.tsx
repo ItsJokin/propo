@@ -8,6 +8,7 @@ import { uid } from '../lib/util';
 import { startDemo } from '../marketing/Layout';
 import { ACCEPTED } from '../lib/pipeline/parse';
 import { INDUSTRIES } from '../lib/discovery/match';
+import { hashPassword, checkPassword } from '../lib/services/localAuth';
 
 const ROLES = ['Gerencia / Dirección', 'Licitaciones', 'Comercial / Desarrollo de negocio', 'Operaciones', 'Administración y finanzas', 'Consultoría', 'Otro'];
 
@@ -33,13 +34,16 @@ export function Signup() {
   const [err, setErr] = useState<string | null>(null);
   const [google, setGoogle] = useState(false);
   const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => setF({ ...f, [k]: e.target.value });
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!/^\S+@\S+\.\S+$/.test(f.email)) return setErr('Introduce un email de trabajo válido.');
     if (f.password.length < 8) return setErr('Usa al menos 8 caracteres en la contraseña.');
     if (!f.company.trim()) return setErr('Introduce el nombre de tu empresa.');
     if (!f.industry) return setErr('Elige tu sector.');
-    setState(newWorkspace({ name: f.name.trim() || f.email.split('@')[0], email: f.email.trim(), role: f.role, company: f.company.trim(), industry: f.industry }));
+    const ws = newWorkspace({ name: f.name.trim() || f.email.split('@')[0], email: f.email.trim(), role: f.role, company: f.company.trim(), industry: f.industry });
+    const pass = await hashPassword(f.password);
+    if (ws.user && pass) ws.user.pass = pass;
+    setState(ws);
     track('signup', { industry: f.industry, role: f.role });
     navigate('/welcome');
   };
@@ -63,6 +67,7 @@ export function Signup() {
             </div>
             <div className="field"><label htmlFor="su-email">Email de trabajo</label><input id="su-email" className="input" type="email" value={f.email} onChange={set('email')} autoComplete="email" /></div>
             <div className="field"><label htmlFor="su-pass">Contraseña</label><input id="su-pass" className="input" type="password" value={f.password} onChange={set('password')} autoComplete="new-password" /><span className="hint">Al menos 8 caracteres.</span></div>
+            <p className="small muted" style={{ marginTop: -6 }}>Versión de prueba: tu cuenta y tu trabajo se guardan solo en este navegador, no en un servidor. Si borras sus datos o cambias de dispositivo, no estarán.</p>
             <div className="grid-2">
               <div className="field"><label htmlFor="su-role">Cargo</label><select id="su-role" className="select" value={f.role} onChange={set('role')}>{ROLES.map((r) => <option key={r}>{r}</option>)}</select></div>
               <div className="field"><label htmlFor="su-ind">Sector</label><select id="su-ind" className="select" value={f.industry} onChange={set('industry')}><option value="">Elige…</option>{INDUSTRIES.map((r) => <option key={r}>{r}</option>)}</select></div>
@@ -91,11 +96,17 @@ export function Login() {
   const [email, setEmail] = useState('');
   const [pw, setPw] = useState('');
   const [err, setErr] = useState<string | null>(null);
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const s = getState();
     if (s.user && s.user.email.toLowerCase() === email.trim().toLowerCase()) {
       if (pw.length < 8) return setErr('Introduce tu contraseña (al menos 8 caracteres).');
+      if (s.user.pass) {
+        if (!(await checkPassword(pw, s.user.pass))) return setErr('La contraseña no es correcta.');
+      } else {
+        const pass = await hashPassword(pw);   // cuenta creada antes de que se guardara la huella: queda fijada con esta contraseña
+        if (pass) update((st) => { if (st.user) st.user.pass = pass; });
+      }
       update((st) => { st.signedOut = false; });
       track('login');
       navigate('/app');
@@ -111,6 +122,7 @@ export function Login() {
             <div className="field"><label htmlFor="li-email">Email de trabajo</label><input id="li-email" className="input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" /></div>
             <div className="field"><label htmlFor="li-pass">Contraseña</label><input id="li-pass" className="input" type="password" value={pw} onChange={(e) => setPw(e.target.value)} autoComplete="current-password" /></div>
             {err && <div className="error-text" role="alert">{err}</div>}
+            <p className="small muted">En esta versión de prueba tu cuenta se guarda solo en este navegador: entra desde el mismo dispositivo en el que la creaste.</p>
             <button className="btn btn-primary btn-lg">Iniciar sesión</button>
           </form>
           <div className="row mt-24 small muted" style={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>

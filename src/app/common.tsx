@@ -136,6 +136,7 @@ export function UpgradeModal({ reason = 'upgrade', onClose }: { reason?: string;
   const [cycle, setCycle] = useState<'monthly' | 'annual'>('monthly');
   const [notice, setNotice] = useState<PlanId | null>(null);
   const current = useStore((s) => s.subscription);
+  const isDemo = useStore((s) => !!s.demo);
   const [t, sub] = REASON_COPY[reason] ?? REASON_COPY.upgrade;
   const checkout = async (plan: PlanId) => {
     track('checkout_started', { plan, cycle });
@@ -168,7 +169,7 @@ export function UpgradeModal({ reason = 'upgrade', onClose }: { reason?: string;
               {isCurrent ? <button className="btn btn-secondary" disabled>Plan actual</button> : (
                 <div className="stack" style={{ gap: 6 }}>
                   <button className={`btn ${id === 'pro' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => checkout(id)}><LuLock /> Continuar al pago seguro</button>
-                  <button className="link small" onClick={() => preview(id)}>Probar este plan sin pagar (solo demo)</button>
+                  {isDemo && <button className="link small" onClick={() => preview(id)}>Probar este plan sin pagar (solo demo)</button>}
                 </div>
               )}
               {notice === id && (

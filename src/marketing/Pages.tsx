@@ -69,9 +69,10 @@ export function Security() {
   ];
   return (
     <MkLayout>
-      <PageHero eyebrow="Seguridad" title={<>Tus pliegos y documentos son sensibles. <span className="blue">Los tratamos así.</span></>} sub="PROPO guarda documentación de empresa, datos financieros y propuestas. La seguridad y el RGPD forman parte de la arquitectura desde el principio." />
+      <PageHero eyebrow="Seguridad" title={<>Tus pliegos y documentos son sensibles. <span className="blue">Los tratamos así.</span></>} sub="PROPO va a guardar documentación de empresa, datos financieros y propuestas. La seguridad y el RGPD forman parte del diseño desde el principio." />
       <section className="section-tight">
         <div className="mk-wrap">
+          <div className="callout warn" style={{ marginBottom: 24 }}><LuShieldCheck /><div><strong>PROPO está en fase de prueba cerrada.</strong> En esta versión tu espacio de trabajo se guarda solo en tu navegador y no se envía a ningún servidor. Lo que sigue describe cómo protegeremos tus datos cuando el servicio abra con cuentas en la nube.</div></div>
           <div className="grid-2" style={{ gap: 16 }}>
             {items.map(([ic, t, d]) => (
               <div key={t} className="card card-pad row" style={{ alignItems: 'flex-start', gap: 16 }}>
@@ -129,34 +130,54 @@ export function Resources() {
   );
 }
 
+/** Buzón del formulario de contacto (el mismo servicio de envío que la lista de espera). */
+const CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/425c43fd10ad019d95c18d703d32ca8e';
+
 export function Contact() {
-  const [sent, setSent] = useState(false);
-  const email = 'hola@propo.example';
+  const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [f, setF] = useState({ name: '', company: '', email: '', msg: '', honey: '' });
+  const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setF({ ...f, [k]: e.target.value });
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (state === 'sending') return;
+    setState('sending');
+    const slow = setTimeout(() => setState((st) => (st === 'sending' ? 'sent' : st)), 3000);   // el servicio puede tardar; el envío sigue en segundo plano
+    try {
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ Nombre: f.name, Empresa: f.company || 'Sin indicar', Correo: f.email, Mensaje: f.msg, _honey: f.honey, _subject: 'PROPO · mensaje desde Contacto', _template: 'table', _captcha: 'false' }),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || String(out.success) !== 'true') throw new Error('send');
+      clearTimeout(slow); setState('sent');
+    } catch { clearTimeout(slow); setState('error'); }
+  };
   return (
     <MkLayout>
-      <PageHero eyebrow="Contacto" title="Hablemos." sub="Preguntas sobre PROPO, planes Enterprise o revisiones de seguridad. La forma más rápida de conocer PROPO es probarlo con una de tus licitaciones." />
+      <PageHero eyebrow="Contacto" title="Hablemos." sub="Preguntas sobre PROPO, planes para equipos o revisiones de seguridad. Te respondemos por correo." />
       <section className="section-tight">
         <div className="mk-wrap grid-2" style={{ gap: 32, alignItems: 'start' }}>
           <div className="card card-pad">
-            {sent ? (
-              <div className="empty" style={{ padding: 24 }}>
+            {state === 'sent' ? (
+              <div className="empty" style={{ padding: 24 }} role="status">
                 <div className="empty-ico"><LuCheck /></div>
-                <h3>Mensaje preparado</h3>
-                <p>El formulario de contacto no está conectado en esta versión. Escríbenos a la dirección de esta página y te responderemos en un día laborable.</p>
+                <h3>Mensaje enviado</h3>
+                <p>Gracias, {f.name.split(' ')[0] || 'lo hemos recibido'}. Te responderemos a {f.email} lo antes posible.</p>
               </div>
             ) : (
-              <form className="stack" onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
-                <div className="grid-2"><div className="field"><label htmlFor="c-name">Nombre</label><input id="c-name" className="input" required /></div><div className="field"><label htmlFor="c-company">Empresa</label><input id="c-company" className="input" /></div></div>
-                <div className="field"><label htmlFor="c-email">Email de trabajo</label><input id="c-email" className="input" type="email" required /></div>
-                <div className="field"><label htmlFor="c-msg">¿En qué te podemos ayudar?</label><textarea id="c-msg" className="textarea" required /></div>
-                <button className="btn btn-primary">Continuar</button>
+              <form className="stack" onSubmit={submit}>
+                <div className="grid-2"><div className="field"><label htmlFor="c-name">Nombre</label><input id="c-name" className="input" required value={f.name} onChange={set('name')} autoComplete="name" /></div><div className="field"><label htmlFor="c-company">Empresa</label><input id="c-company" className="input" value={f.company} onChange={set('company')} autoComplete="organization" /></div></div>
+                <div className="field"><label htmlFor="c-email">Email de trabajo</label><input id="c-email" className="input" type="email" required value={f.email} onChange={set('email')} autoComplete="email" /></div>
+                <div className="field"><label htmlFor="c-msg">¿En qué te podemos ayudar?</label><textarea id="c-msg" className="textarea" required value={f.msg} onChange={set('msg')} /></div>
+                <input type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" value={f.honey} onChange={set('honey')} style={{ position: 'absolute', left: -9999, width: 1, height: 1, opacity: 0 }} />
+                {state === 'error' && <div className="error-text" role="alert">No se ha podido enviar. Tu mensaje sigue en el formulario: inténtalo de nuevo en un momento.</div>}
+                <button className="btn btn-primary" disabled={state === 'sending'}>{state === 'sending' ? 'Enviando…' : 'Enviar mensaje'}</button>
               </form>
             )}
           </div>
           <div className="stack">
-            <div className="card card-pad"><div className="small muted">Email</div><div className="row mt-4"><span style={{ userSelect: 'all', fontWeight: 600 }}>{email}</span><button className="btn btn-ghost btn-sm btn-icon" aria-label="Copiar email" onClick={() => navigator.clipboard?.writeText(email).then(() => toast('Email copiado', 'ok')).catch(() => toast('Selecciona la dirección para copiarla'))}><LuCopy /></button></div></div>
+            <div className="card card-pad"><div className="small muted">Respuesta</div><div className="mt-4" style={{ fontWeight: 600 }}>Por correo, normalmente en un día laborable</div></div>
             <div className="card card-pad"><div className="small muted">Dónde estamos</div><div className="mt-4" style={{ fontWeight: 600 }}>Barcelona, España</div></div>
-            <button className="btn btn-secondary" onClick={() => navigate('/signup')}>O empieza gratis ahora <LuArrowRight /></button>
           </div>
         </div>
       </section>
