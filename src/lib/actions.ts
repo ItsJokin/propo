@@ -246,12 +246,12 @@ export async function shortenProposal(projectId: string, onProgress: (done: numb
   const sample = await getSample();
   if (!sample || aiState() === 'declined') return { ok: false, pages: estimatePages(p), limit, error: 'not_available' };
   const WORDS_PER_PAGE = 480;                                          // la misma cuenta que estimatePages
-  for (let pass = 0; pass < 2; pass++) {
+  for (let pass = 0; pass < 3; pass++) {
     p = get();
     if (estimatePages(p) <= limit) break;
     const secs = p.sections.filter((x) => wordCount(x.content) > 60);
     const total = p.sections.reduce((a, x) => a + wordCount(x.content), 0);
-    const allowed = Math.max(secs.length * 80, (limit - p.sections.length * 0.25) * WORDS_PER_PAGE * (pass ? 0.86 : 0.93));
+    const allowed = Math.max(secs.length * 80, (limit - p.sections.length * 0.25) * WORDS_PER_PAGE * [0.9, 0.8, 0.7][pass]);
     const ratio = Math.min(0.95, allowed / total);
     let i = 0;
     for (const sec of secs) {
@@ -260,13 +260,14 @@ export async function shortenProposal(projectId: string, onProgress: (done: numb
       const crits = p.criteria.filter((c) => sec.criteria.includes(c.id)).map((c) => `${c.name} (${c.points} pts)`).join('; ');
       try {
         const out = await ai.text([
-          `Eres PROPO, redactor de ofertas para licitaciones públicas en España. Esta sección de una memoria técnica es demasiado larga para el límite de páginas del pliego. Reescríbela en unas ${target} palabras como máximo (ahora tiene ${wordCount(sec.content)}).`,
+          `Eres PROPO, redactor de ofertas para licitaciones públicas en España. Esta sección de una memoria técnica es demasiado larga para el límite de páginas del pliego. Reescríbela en ${target} palabras como máximo: ahora tiene ${wordCount(sec.content)}, así que tienes que quitar alrededor del ${Math.round((1 - ratio) * 100)} % del texto. El límite de palabras manda sobre todo lo demás: si no cabe, la oferta puede quedar excluida.`,
           'Cómo acortar sin perder puntos:',
-          '- Conserva todo lo que puntúa: los compromisos concretos, las cifras, los nombres, los plazos y la respuesta a cada criterio de valoración. Quita introducciones, repeticiones, explicaciones obvias y frases de relleno.',
+          '- Dentro de ese límite, conserva por este orden lo que más puntúa: los compromisos concretos con sus cifras y plazos, los nombres y medios asignados, y una respuesta breve a cada criterio de valoración. Quita primero introducciones, repeticiones, explicaciones obvias y relleno; después funde apartados y deja solo lo esencial de cada uno.',
           '- Mantén los subtítulos «## » que responden a criterios y el apartado «## Compromisos verificables» (puedes fundir puntos parecidos). Convierte párrafos largos en listas o tablas breves si ocupan menos.',
           '- No añadas información nueva ni cambies ningún dato, cifra o compromiso.',
           '- Conserva las marcas de fuente como [S1] junto a la frase que apoyan, y las marcas [Información requerida: …] tal cual si las hay.',
           '- Mismo formato (párrafos, «## », «- », «1. », **negrita**, tablas markdown) y mismo tono, en castellano de España.',
+          '- Antes de responder, cuenta las palabras: si pasas del máximo, recorta más.',
           '- Responde ÚNICAMENTE con el texto final de la sección, sin comentarios.',
           '',
           `Sección: ${sec.title}`,
