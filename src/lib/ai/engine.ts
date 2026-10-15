@@ -159,6 +159,7 @@ function mergeExtractions(parts: ExtractionResult[]): ExtractionResult {
 }
 
 export async function analyzeDocuments(opts: {
+  projectId?: string;
   docs: SourceDoc[]; pages: Map<string, string[]>; knowledge: Knowledge; maxPages: number;
   onStage: (id: StageId, detail?: string) => void; signal?: AbortSignal; forceRules?: boolean;
 }): Promise<AnalysisOutput & { aiError?: string }> {
@@ -189,11 +190,11 @@ export async function analyzeDocuments(opts: {
         const block = parts[i].map((p) => `<<<DOC "${p.doc.name}" | PAGE ${p.page}>>>\n${p.text.slice(0, 6000)}`).join('\n\n');
         let j: any;
         try {
-          try { j = await ai.json<any>(extractionPrompt(kjson, block, i + 1, parts.length), { tier: 'default', signal: opts.signal }); }
+          try { j = await ai.json<any>(extractionPrompt(kjson, block, i + 1, parts.length), { tier: 'default', signal: opts.signal, project: opts.projectId }); }
           catch (e) {                                                            // un fallo puntual no debe tirar el análisis: se reintenta una vez
             if (e instanceof AIError && (e.code === 'cancelled' || e.code === 'not_granted')) throw e;
             opts.onStage('requirements', `Reintentando el bloque ${i + 1} de ${parts.length}`);
-            j = await ai.json<any>(extractionPrompt(kjson, block, i + 1, parts.length), { tier: 'default', signal: opts.signal });
+            j = await ai.json<any>(extractionPrompt(kjson, block, i + 1, parts.length), { tier: 'default', signal: opts.signal, project: opts.projectId });
           }
         } catch (e) {
           if (!results.length || (e instanceof AIError && e.code === 'cancelled')) throw e;
@@ -363,7 +364,7 @@ export async function generateSection(opts: {
         outline: project.sections.map((s, i) => `${s.id === section.id ? '→' : ' '} ${i + 1}. ${s.title}`).join('\n'),
         form: section.form, formsOnly: project.analysis?.formNote, usedFacts: usedElsewhere.length ? usedElsewhere.join('; ') : undefined,
         maxAsks: MAX_ASKS, asked: askedElsewhere.length ? askedElsewhere.map((x) => `«${x}»`).join('; ') : undefined,
-      }), { tier: 'default', signal: opts.signal });
+      }), { tier: 'default', signal: opts.signal, project: (project.isSample ? '' : project.id) });
       let content = String(j?.content ?? '').trim();
       if (!content) throw new AIError('empty_completion', 'empty');
       const warnings: string[] = [];
@@ -450,7 +451,7 @@ export async function askPropo(opts: { project: Project; question: string; histo
     const hist = opts.history.slice(-6).map((m) => ({ role: m.role, content: m.text.slice(0, 2000) }));
     const all = [...turns, ...hist, { role: 'user' as const, content: `CONTEXTO:\n${ctx}\n\nPREGUNTA: ${question}` }];
     try {
-      const { text } = await ai.text(all, { tier: 'default', signal: opts.signal, onText: opts.onText });
+      const { text } = await ai.text(all, { tier: 'default', signal: opts.signal, onText: opts.onText, project: (project.isSample ? '' : project.id) });
       const used = new Set([...text.matchAll(/\[(S\d+)\]/g)].map((m) => m[1]));
       return { id: uid('m'), role: 'assistant', text, citations: citations.filter((c) => used.has(c.marker)), mode: 'ai', at: nowIso() };
     } catch (e) {

@@ -35,16 +35,16 @@ export const PLANS: Record<PlanId, Plan> = {
   },
   pro: {
     id: 'pro', name: 'Pro', tagline: 'Para empresas que licitan cada mes.',
-    monthly: 79, annual: 63, proposalsPerMonth: 4, pagesPerProposal: 400, aiActionsPerProposal: 150,
+    monthly: 79, annual: 63, proposalsPerMonth: 6, pagesPerProposal: 400, aiActionsPerProposal: 100,
     seats: 2, alerts: 10, storageGb: 20, extraProposal: 19,
-    features: ['4 propuestas nuevas al mes', 'Hasta 400 páginas por propuesta', 'Buscador con compatibilidad y 10 alertas', 'Redacción con IA y fuentes', 'Control de cumplimiento y paquete final', '2 usuarios'],
+    features: ['6 propuestas nuevas al mes', 'Hasta 400 páginas por propuesta', 'Buscador con compatibilidad y 10 alertas', 'Redacción con IA y fuentes', 'Control de cumplimiento y paquete final', '2 usuarios'],
     cta: 'Empezar prueba gratis',
   },
   business: {
     id: 'business', name: 'Business', tagline: 'Para equipos con varias licitaciones en marcha.',
-    monthly: 199, annual: 159, proposalsPerMonth: 15, pagesPerProposal: 1000, aiActionsPerProposal: 300,
+    monthly: 199, annual: 159, proposalsPerMonth: 17, pagesPerProposal: 1000, aiActionsPerProposal: 150,
     seats: 8, alerts: 50, storageGb: 100, extraProposal: 12,
-    features: ['15 propuestas nuevas al mes', 'Hasta 1.000 páginas por propuesta', 'Alertas ilimitadas por sector y región', 'Plantillas y respuestas compartidas', 'Revisores y aprobaciones', '8 usuarios · soporte prioritario'],
+    features: ['17 propuestas nuevas al mes', 'Hasta 1.000 páginas por propuesta', 'Alertas ilimitadas por sector y región', 'Plantillas y respuestas compartidas', 'Revisores y aprobaciones', '8 usuarios · soporte prioritario'],
     cta: 'Empezar prueba gratis',
   },
   enterprise: {
@@ -57,7 +57,7 @@ export const PLANS: Record<PlanId, Plan> = {
 };
 
 export const COMPARISON: { label: string; values: Record<'trial' | 'pro' | 'business' | 'enterprise', string | boolean> }[] = [
-  { label: 'Propuestas nuevas', values: { trial: '1 en total', pro: '4 / mes', business: '15 / mes', enterprise: 'A medida' } },
+  { label: 'Propuestas nuevas', values: { trial: '1 en total', pro: '6 / mes', business: '17 / mes', enterprise: 'A medida' } },
   { label: 'Páginas de pliego por propuesta', values: { trial: '200', pro: '400', business: '1.000', enterprise: 'A medida' } },
   { label: 'Buscador de licitaciones', values: { trial: true, pro: true, business: true, enterprise: true } },
   { label: 'Alertas de nuevas licitaciones', values: { trial: '3', pro: '10', business: 'Ilimitadas', enterprise: 'Ilimitadas' } },

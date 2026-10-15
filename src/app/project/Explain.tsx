@@ -58,7 +58,7 @@ function ExplainChat({ p, r, onClose }: { p: Project; r: Requirement; onClose: (
         const rules = 'Eres PROPO, asistente de licitaciones públicas en España. Explicas a una persona que NO es experta en contratación pública. Lenguaje llano, sin jerga; si usas un término técnico, defínelo. Sé concreto y breve (máximo 170 palabras). Estructura con subtítulos en **negrita** seguidos de punto. No inventes datos de la empresa ni del pliego: usa solo el contexto. Si no lo sabes, dilo. Responde en español.';
         const turns = [{ role: 'user' as const, content: `${rules}\n\nCONTEXTO\n${context()}` }, { role: 'assistant' as const, content: 'Entendido.' },
           ...history.map((m) => ({ role: m.role === 'user' ? 'user' as const : 'assistant' as const, content: m.text }))];
-        const out = await ai.text(turns, { tier: 'quick', onText: (t) => { if (alive.current) setTyping(t); } });
+        const out = await ai.text(turns, { tier: 'quick', project: p.isSample ? '' : p.id, onText: (t) => { if (alive.current) setTyping(t); } });
         if (out.text.trim()) text = out.text.trim();
       } else await new Promise((res) => setTimeout(res, 450));
     } catch { /* se queda la explicación del glosario */ }

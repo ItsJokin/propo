@@ -22,6 +22,7 @@ function setState(s: AIState) { state = s; listeners.forEach((l) => l(s)); }
 /** Dirección del servidor intermedio de IA (worker/). La fija la compilación; vacía = sin IA fuera de claude.ai. */
 const AI_URL = String(process.env.PROPO_AI_URL || '').replace(/\/+$/, '');
 const coded = (code: string) => Object.assign(new Error(code), { code });
+import { accessToken } from '../services/cloud';
 
 /** Lee el primer objeto o lista JSON de una respuesta de texto (por si viene envuelta en ``` o con una frase delante). */
 function parseJson<T>(text: string): T {
@@ -36,7 +37,8 @@ function remoteSample(base: string): SampleFn {
   const run = async (input: string | { role: 'user' | 'assistant'; content: string }[], opts: any = {}) => {
     let res: Response;
     try {
-      res = await fetch(`${base}/v1/generate`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ input, tier: opts.modelTier ?? 'default' }), signal: opts.signal });
+      const token = await accessToken();                                          // cuenta de PROPO: el servidor comprueba el plan
+      res = await fetch(`${base}/v1/generate`, { method: 'POST', headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) }, body: JSON.stringify({ input, tier: opts.modelTier ?? 'default', project: opts.project ?? '' }), signal: opts.signal });
     } catch (e: any) { throw coded(e?.name === 'AbortError' ? 'cancelled' : 'upstream_error'); }
     if (!res.ok || !res.body) { let code = 'upstream_error'; try { code = (await res.json()).error || code; } catch { /* sin cuerpo */ } throw coded(code); }
     const reader = res.body.getReader(); const dec = new TextDecoder();
@@ -115,6 +117,12 @@ export function friendlyAIError(code: string): string {
     case 'invalid_json': return 'No se ha podido leer la respuesta de la IA. Inténtalo de nuevo.';
     case 'refused': return 'La IA no ha procesado este contenido. Prueba a reformularlo o a procesar una parte más pequeña.';
     case 'session_expired': return 'Tu sesión ha caducado. Vuelve a iniciar sesión para seguir usando la IA.';
+    case 'not_signed_in': return 'Inicia sesión con tu cuenta de PROPO para usar la IA.';
+    case 'proposal_limit': return 'Has usado todas las propuestas de tu plan este mes. Puedes comprar una propuesta adicional o mejorar tu plan en Ajustes → Plan y facturación.';
+    case 'actions_limit': return 'Esta propuesta ha llegado al límite de uso de IA de tu plan. Puedes seguir editándola a mano.';
+    case 'daily_limit': return 'Has llegado al límite diario de consultas a la IA fuera de una propuesta. Mañana se renueva.';
+    case 'trial_expired': return 'Tu prueba gratuita ha terminado. Elige un plan para seguir usando la IA.';
+    case 'quota_unavailable': return 'No se ha podido comprobar tu plan ahora mismo. Inténtalo de nuevo en unos minutos.';
     case 'cancelled': return 'Detenido.';
     default: return 'El servicio de IA no ha respondido. Tu trabajo está guardado; inténtalo de nuevo.';
   }
@@ -134,10 +142,10 @@ async function call<T>(fn: (s: SampleFn) => Promise<T>): Promise<T> {
 }
 
 export const ai = {
-  json<T>(prompt: string, opts: { tier?: 'quick' | 'default' | 'complex'; signal?: AbortSignal; cache?: boolean } = {}) {
-    return call((s) => s.json<T>(prompt, { modelTier: opts.tier ?? 'default', signal: opts.signal, cache: opts.cache ?? false }));
+  json<T>(prompt: string, opts: { tier?: 'quick' | 'default' | 'complex'; signal?: AbortSignal; cache?: boolean; project?: string } = {}) {
+    return call((s) => s.json<T>(prompt, { modelTier: opts.tier ?? 'default', signal: opts.signal, cache: opts.cache ?? false, project: opts.project }));
   },
-  text(input: string | { role: 'user' | 'assistant'; content: string }[], opts: { tier?: 'quick' | 'default' | 'complex'; signal?: AbortSignal; onText?: (t: string) => void } = {}) {
-    return call((s) => s(input, { modelTier: opts.tier ?? 'default', signal: opts.signal, cache: false, onText: opts.onText ? ({ text }: { text: string }) => opts.onText!(text) : undefined }));
+  text(input: string | { role: 'user' | 'assistant'; content: string }[], opts: { tier?: 'quick' | 'default' | 'complex'; signal?: AbortSignal; onText?: (t: string) => void; project?: string } = {}) {
+    return call((s) => s(input, { modelTier: opts.tier ?? 'default', signal: opts.signal, cache: false, project: opts.project, onText: opts.onText ? ({ text }: { text: string }) => opts.onText!(text) : undefined }));
   },
 };

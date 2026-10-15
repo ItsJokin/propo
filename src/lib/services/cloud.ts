@@ -20,6 +20,8 @@ const writeLS = (k: string, v: unknown) => { try { if (v == null) localStorage.r
 let session: Session | null = readLS<Session>(SESSION);
 function keep(s: Session | null) { session = s; writeLS(SESSION, s); }
 export const currentSession = () => session;
+/** Pase de sesión en vigor (lo renueva si hace falta), para el servidor de IA. */
+export async function accessToken() { return (await fresh())?.access_token ?? null; }
 /** Otra pestaña de este navegador ha abierto sesión (p. ej. el enlace del correo): se recoge aquí también. */
 export function reloadSession() { session = readLS<Session>(SESSION); return session; }
 

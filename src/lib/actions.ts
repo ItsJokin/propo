@@ -162,6 +162,7 @@ export async function runAnalysis(id: string, onProgress: (p: AnalysisProgress) 
     if (totalPages > plan.pagesPerProposal) detail.limit = `Tu plan analiza hasta ${plan.pagesPerProposal} páginas por propuesta. PROPO ha priorizado las ${plan.pagesPerProposal} más relevantes de ${totalPages}.`;
     // 2..6 extraction, matching, structure
     const out = await analyzeDocuments({
+      projectId: getState().projects.find((x) => x.id === id)?.isSample ? '' : id,
       docs, pages, knowledge: knowledgeOf(getState()), maxPages: plan.pagesPerProposal, signal, forceRules,
       onStage: (stage, d) => { if (d) detail[stage] = d; onProgress({ stage, detail: { ...detail }, pages: Math.min(totalPages, plan.pagesPerProposal) }); },
     });
@@ -279,7 +280,7 @@ export async function shortenProposal(projectId: string, onProgress: (done: numb
           `Sección: ${sec.title}`,
           crits ? `Criterios que puntúan en esta sección: ${crits}` : '',
           `Texto actual:\n${sec.content}`,
-        ].filter((x) => x !== '').join('\n'), { tier: 'default' });
+        ].filter((x) => x !== '').join('\n'), { tier: 'default', project: p.isSample ? '' : projectId });
         const text = out.text.trim().replace(/^```\w*\n?|```$/g, '').trim();
         if (text && wordCount(text) < wordCount(sec.content)) {
           const valid = new Set(sec.citations.map((c) => c.marker));
