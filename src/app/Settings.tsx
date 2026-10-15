@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LuUser, LuUsers, LuCreditCard, LuBell, LuShieldCheck, LuPlus, LuDownload, LuTrash2, LuInfo, LuReceipt, LuExternalLink, LuTriangleAlert, LuRotateCcw } from 'react-icons/lu';
 import { useStore, update, navigate, toast, resetAll, getState, track } from '../lib/store';
-import { deleteWorkspace, signOut } from '../lib/services/cloud';
+import { deleteWorkspace, signOut, removeAllObjects } from '../lib/services/cloud';
 import { Modal, Toggle, Bar, Empty } from '../components/ui';
 import { PLANS } from '../lib/plans';
 import { billing } from '../lib/services/billing';
@@ -214,7 +214,7 @@ function Privacy() {
       {del && (
         <Modal title="¿Eliminar tu cuenta de PROPO?" onClose={() => setDel(false)} footer={<><button className="btn btn-ghost" onClick={() => setDel(false)}>Cancelar</button><button className="btn btn-danger" disabled={confirm !== 'ELIMINAR'} onClick={async () => {
             if (getState().user?.cloud) {
-              try { await deleteWorkspace(); } catch { toast('No se han podido borrar tus datos del servidor. Inténtalo de nuevo o escríbenos a hola@propo.es.', 'bad'); return; }
+              try { await removeAllObjects(); await deleteWorkspace(); } catch { toast('No se han podido borrar tus datos del servidor. Inténtalo de nuevo o escríbenos a hola@propo.es.', 'bad'); return; }
               await signOut();
             }
             resetAll(); navigate('/'); toast('Cuenta y datos eliminados');

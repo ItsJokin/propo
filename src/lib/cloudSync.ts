@@ -2,6 +2,17 @@
 import type { AppState } from './types';
 import { getState, setState, setStateFromCloud, newWorkspace, navigate, toast, resetAll } from './store';
 import * as cloud from './services/cloud';
+import { syncFiles, setCloudFiles } from './storage';
+
+/** Todos los documentos del espacio (pliegos de cada proyecto y documentos de empresa). */
+const fileKeys = (s: AppState) => [...s.projects.flatMap((p) => p.docs.map((d) => d.textKey)), ...s.vault.map((v) => v.textKey)].filter((k): k is string => !!k);
+/** Sube al servidor los archivos que falten (de antes de tener cuenta o que fallaron). En segundo plano. */
+function backfill() {
+  const s = getState();
+  if (!s.user?.cloud || s.demo) return;
+  setCloudFiles(true);
+  syncFiles(fileKeys(s)).catch(() => { /* se reintenta la próxima vez */ });
+}
 
 /** Tras iniciar sesión o confirmar el email: se trae el espacio del servidor o, si es la primera vez, se crea. */
 export async function enterCloud(): Promise<'new' | 'existing'> {
@@ -28,6 +39,7 @@ export async function enterCloud(): Promise<'new' | 'existing'> {
   cloud.markSynced(0);
   setState(ws);
   await cloud.flush();
+  backfill();
   return 'new';
 }
 
@@ -55,6 +67,7 @@ export async function bootCloud() {
     return;
   }
   await pull(true);
+  backfill();
   try { document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') pull(false); }); } catch { /* nada */ }
 }
 

@@ -195,3 +195,49 @@ export function cloudMessage(e: unknown): string {
   if (c === 'no_session') return 'Tu sesión ha caducado. Vuelve a iniciar sesión.';
   return 'No se ha podido completar. Inténtalo de nuevo en un momento.';
 }
+
+// ── Archivos (Supabase Storage): textos de los pliegos y documentos originales ─────────────────────────────────────
+// Cubo privado `workspace`; cada usuario solo puede tocar su carpeta (la primera parte de la ruta es su id).
+
+const BUCKET = 'workspace';
+const clean = (p: string) => p.replace(/:/g, '__');
+const enc = (p: string) => clean(p).split('/').map(encodeURIComponent).join('/');
+
+async function storage(method: string, path: string, init: { body?: BodyInit; type?: string; json?: unknown } = {}) {
+  const s = await fresh();
+  if (!s) throw new CloudError('no_session');
+  const headers: Record<string, string> = { apikey: KEY, Authorization: `Bearer ${s.access_token}` };
+  let body = init.body;
+  if (init.json !== undefined) { headers['Content-Type'] = 'application/json'; body = JSON.stringify(init.json); }
+  else if (init.type) { headers['Content-Type'] = init.type; headers['x-upsert'] = 'true'; }
+  try { return await fetch(`${BASE}/storage/v1/${path}`, { method, headers, body }); } catch { throw new CloudError('network'); }
+}
+
+/** Sube (o sustituye) un archivo de la carpeta del usuario. */
+export async function putObject(path: string, body: BodyInit, type: string) {
+  if (!session) throw new CloudError('no_session');
+  const r = await storage('POST', `object/${BUCKET}/${enc(`${session.user.id}/${path}`)}`, { body, type });
+  if (!r.ok) throw new CloudError(`storage_${r.status}`);
+}
+/** Descarga un archivo de la carpeta del usuario; `null` si no está. */
+export async function getObject(path: string): Promise<Response | null> {
+  if (!session) return null;
+  const r = await storage('GET', `object/authenticated/${BUCKET}/${enc(`${session.user.id}/${path}`)}`);
+  return r.ok ? r : null;
+}
+export async function removeObjects(paths: string[]) {
+  if (!session || !paths.length) return;
+  await storage('DELETE', `object/${BUCKET}`, { json: { prefixes: paths.map((p) => clean(`${session!.user.id}/${p}`)) } });
+}
+/** Borra todos los archivos del usuario (al eliminar la cuenta). */
+export async function removeAllObjects() {
+  if (!session) return;
+  for (const folder of ['pages', 'files']) {
+    for (let i = 0; i < 50; i++) {
+      const r = await storage('POST', `object/list/${BUCKET}`, { json: { prefix: `${session.user.id}/${folder}`, limit: 1000, offset: 0 } });
+      const items: { name: string }[] = r.ok ? await r.json() : [];
+      if (!items.length) break;
+      await storage('DELETE', `object/${BUCKET}`, { json: { prefixes: items.map((x) => `${session!.user.id}/${folder}/${x.name}`) } });
+    }
+  }
+}

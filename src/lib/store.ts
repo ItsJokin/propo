@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'react';
 import type { AppState, CompanyInfo, Project, Notification } from './types';
-import { loadState, saveState, clearState } from './storage';
+import { loadState, saveState, clearState, setCloudFiles } from './storage';
 import { buildSampleProjects, sampleNotifications, sampleTemplates, SAMPLE_COMPANY, SAMPLE_PAST_PROJECTS, SAMPLE_CERTS, SAMPLE_TEAM, SAMPLE_VAULT } from './demoData';
 import { addDays, nowIso, uid } from './util';
 import { TRIAL_DAYS } from './plans';
@@ -73,10 +73,13 @@ let state: AppState = (() => {
   return initialState();
 })();
 
+setCloudFiles(!!state.user?.cloud && !state.demo);
+
 const subs = new Set<() => void>();
 let fromCloud = false;
 function emit() {
   subs.forEach((f) => f()); saveState(state);
+  setCloudFiles(!!state.user?.cloud && !state.demo);
   if (!fromCloud && state.user?.cloud && !state.demo) scheduleSave(state);   // cuentas del servidor: se guarda allí también
 }
 
