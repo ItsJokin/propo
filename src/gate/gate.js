@@ -143,4 +143,6 @@
   $('gate-close').addEventListener('click', close);
   modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) close(); });
+  // Los enlaces de los correos llegan con #video: se abre el vídeo directamente.
+  if (/^#video/.test(location.hash)) $('gate-video').click();
 })();
