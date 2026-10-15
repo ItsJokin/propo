@@ -1,5 +1,6 @@
 import React, { useMemo, useRef, useState } from 'react';
-import { LuCircleCheck, LuTriangleAlert, LuCircleX, LuEye, LuUpload, LuExternalLink, LuFileCheck, LuLoaderCircle } from 'react-icons/lu';
+import { LuCircleCheck, LuTriangleAlert, LuCircleX, LuEye, LuUpload, LuExternalLink, LuFileCheck, LuLoaderCircle, LuFileText } from 'react-icons/lu';
+import { FileViewer } from '../FileViewer';
 import type { Project } from '../../lib/types';
 import { openSource } from '../common';
 import { kb } from '../../lib/util';
@@ -14,6 +15,7 @@ export function Documents({ p }: { p: Project }) {
   const [picked, setPicked] = useState<File[] | null>(null);
   const [busy, setBusy] = useState(false);
   const [over, setOver] = useState(false);
+  const [orig, setOrig] = useState<{ name: string; key: string } | null>(null);
   const notice = useMemo(() => p.tender ?? (p.tenderId ? findTender(p.tenderId) : undefined), [p.tenderId, p.tender]);
   const view = useMemo(() => (notice ? tenderView(notice) : null), [notice]);
   const onlyFicha = p.docs.length > 0 && p.docs.every((d) => d.name.startsWith('Ficha de la licitación'));
@@ -54,7 +56,8 @@ export function Documents({ p }: { p: Project }) {
               </div>
               {ok ? <LuCircleCheck className="state-ico ok" /> : d.status === 'partial' ? <LuTriangleAlert className="state-ico warn" /> : <LuCircleX className="state-ico bad" />}
               <span className={`badge ${ok ? 'ok' : d.status === 'partial' ? 'warn' : 'bad'} hide-sm`}>{d.status === 'excerpt' ? 'Extractos de ejemplo' : d.status === 'parsed' ? 'Leído' : d.status === 'partial' ? 'Legible en parte' : d.status === 'unsupported' ? 'No compatible' : 'Ilegible'}</span>
-              <button className="btn btn-ghost btn-sm" disabled={!d.pages} onClick={() => openSource({ project: p, docId: d.id, page: Number(Object.keys(d.excerpts ?? {})[0] ?? 1) })}><LuEye /> Abrir</button>
+              {d.textKey && !p.isSample && !d.name.startsWith('Ficha de la licitación') && <button className="btn btn-ghost btn-sm" onClick={() => setOrig({ name: d.name, key: d.textKey! })}><LuFileText /> Ver original</button>}
+              <button className="btn btn-ghost btn-sm" disabled={!d.pages} onClick={() => openSource({ project: p, docId: d.id, page: Number(Object.keys(d.excerpts ?? {})[0] ?? 1) })}><LuEye /> Texto</button>
             </div>
           );
         })}
@@ -72,6 +75,7 @@ export function Documents({ p }: { p: Project }) {
           <p className="muted">PROPO leerá todos los documentos juntos y volverá a extraer requisitos, criterios y la estructura de la propuesta. Los requisitos que ya hayas revisado se volverán a calcular: revisa de nuevo los que cambien.</p>
         </Modal>
       )}
+      {orig && <FileViewer name={orig.name} fileKey={orig.key} onClose={() => setOrig(null)} />}
     </div>
   );
 }

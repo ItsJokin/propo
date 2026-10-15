@@ -1266,3 +1266,5 @@ a.comp-award-t:hover { color: var(--accent); }
 .tip-head > svg { width: 18px; height: 18px; color: var(--accent); flex: none; }
 .tip-card ol { margin: 12px 0 10px; padding-left: 22px; display: grid; gap: 6px; font-size: 14.5px; line-height: 1.55; color: var(--fg-2); }
 .tip-card ol strong { color: var(--fg); }
+.fv-wait { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 200px; padding: 24px; text-align: center; color: var(--fg-2); border: 1px dashed var(--border-strong); border-radius: 10px; }
+.fv-wait svg { width: 18px; height: 18px; color: var(--accent); }

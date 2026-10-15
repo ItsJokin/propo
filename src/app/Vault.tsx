@@ -7,6 +7,7 @@ import { fmtDate, daysUntil, kb, timeAgo } from '../lib/util';
 import { getPages } from '../lib/storage';
 import { ACCEPTED } from '../lib/pipeline/parse';
 import type { VaultCategory, VaultDoc } from '../lib/types';
+import { FileViewer } from './FileViewer';
 
 const CATS: Record<VaultCategory, string> = { corporate: 'Corporativos', financial: 'Financieros', insurance: 'Seguros', certificate: 'Certificados', experience: 'Proyectos anteriores', team: 'CV del equipo', proposal: 'Propuestas anteriores', other: 'Otros' };
 
@@ -86,7 +87,7 @@ export function Vault() {
           <p className="muted">El archivo y su texto extraído se eliminan de forma permanente. Las propuestas que lo citan lo mostrarán como evidencia que falta.</p>
         </Modal>
       )}
-      {view && <TextDrawer doc={view} onClose={() => setView(null)} />}
+      {view && (view.textKey ? <FileViewer name={view.name} fileKey={view.textKey} onClose={() => setView(null)} /> : <TextDrawer doc={view} onClose={() => setView(null)} />)}
     </div>
   );
 }
