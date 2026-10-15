@@ -35,6 +35,8 @@ export interface User {
   createdAt: string;
   /** Huella de la contraseña de la cuenta local (ver services/localAuth). Las cuentas antiguas no la tienen. */
   pass?: import('./services/localAuth').PassHash;
+  /** Cuenta del servidor (Supabase): el trabajo se guarda allí. */
+  cloud?: boolean;
 }
 
 export interface Member {

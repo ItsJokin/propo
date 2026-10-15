@@ -4,7 +4,8 @@ import { Toasts } from './components/ui';
 import { Landing } from './marketing/Landing';
 import { Pricing } from './marketing/Pricing';
 import { Features, Security, Resources, Contact, Privacy, Terms, Cookies, FaqPage } from './marketing/Pages';
-import { Signup, Login, Onboarding } from './auth/Auth';
+import { Signup, Login, Onboarding, ResetPassword } from './auth/Auth';
+import { bootCloud } from './lib/cloudSync';
 import { Welcome } from './auth/Welcome';
 import { AppShell } from './app/Shell';
 import { Dashboard } from './app/Dashboard';
@@ -45,7 +46,7 @@ export function App() {
   const ob = useStore((s) => s.onboarding);
   const authed = !!user && !signedOut;
 
-  useEffect(() => { getSample(); }, []);
+  useEffect(() => { getSample(); bootCloud(); }, []);
   useEffect(() => {
     const seo = SEO[path];
     try {
@@ -77,6 +78,7 @@ export function App() {
       case '/faq': page = <FaqPage />; break;
       case '/signup': page = authed ? <Redirect to="/app" /> : <Signup />; break;
       case '/login': page = authed ? <Redirect to="/app" /> : <Login />; break;
+      case '/reset-password': page = <ResetPassword />; break;
       case '/welcome': page = <Welcome />; break;
       case '/onboarding': page = <Onboarding />; break;
       default: page = <Landing />;

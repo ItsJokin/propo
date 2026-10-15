@@ -9,6 +9,10 @@ import { startDemo } from '../marketing/Layout';
 import { ACCEPTED } from '../lib/pipeline/parse';
 import { INDUSTRIES } from '../lib/discovery/match';
 import { hashPassword, checkPassword } from '../lib/services/localAuth';
+import * as cloud from '../lib/services/cloud';
+import { enterCloud } from '../lib/cloudSync';
+
+const EMAIL = /^\S+@\S+\.\S+$/;
 
 const ROLES = ['Gerencia / Dirección', 'Licitaciones', 'Comercial / Desarrollo de negocio', 'Operaciones', 'Administración y finanzas', 'Consultoría', 'Otro'];
 
@@ -33,6 +37,8 @@ export function Signup() {
   const [f, setF] = useState({ name: '', email: '', password: '', company: '', role: ROLES[1], industry: '' });
   const [err, setErr] = useState<string | null>(null);
   const [google, setGoogle] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [sent, setSent] = useState<string | null>(null);   // cuenta creada: falta confirmar el email
   const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => setF({ ...f, [k]: e.target.value });
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,6 +46,16 @@ export function Signup() {
     if (f.password.length < 8) return setErr('Usa al menos 8 caracteres en la contraseña.');
     if (!f.company.trim()) return setErr('Introduce el nombre de tu empresa.');
     if (!f.industry) return setErr('Elige tu sector.');
+    if (cloud.cloudEnabled) {
+      setBusy(true); setErr(null);
+      try {
+        const r = await cloud.signUp(f.email.trim(), f.password, { name: f.name.trim() || f.email.split('@')[0], company: f.company.trim(), role: f.role, industry: f.industry });
+        track('signup', { industry: f.industry, role: f.role, cloud: true });
+        if (r.confirmed) { const k = await enterCloud(); navigate(k === 'new' ? '/welcome' : '/app'); }
+        else setSent(f.email.trim());
+      } catch (e) { setErr(cloud.cloudMessage(e)); } finally { setBusy(false); }
+      return;
+    }
     const ws = newWorkspace({ name: f.name.trim() || f.email.split('@')[0], email: f.email.trim(), role: f.role, company: f.company.trim(), industry: f.industry });
     const pass = await hashPassword(f.password);
     if (ws.user && pass) ws.user.pass = pass;
@@ -51,15 +67,17 @@ export function Signup() {
     <div className="auth">
       <AuthSide />
       <main className="auth-main">
-        <div className="auth-card">
+        {sent ? <CheckEmail email={sent} onBack={() => setSent(null)} /> : <div className="auth-card">
           <div className="hide-desktop" style={{ marginBottom: 24 }}><Logo onClick={() => navigate('/')} /></div>
           <h1>Crea tu cuenta de PROPO</h1>
           <p className="muted mt-8">14 días de prueba con una propuesta completa. Sin tarjeta.</p>
+          {!cloud.cloudEnabled && <>
           <button type="button" className="btn btn-secondary btn-lg oauth-btn mt-24" onClick={() => setGoogle(true)}>
             <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.23c0-.68-.06-1.36-.18-2.02H12v3.83h5.4a4.6 4.6 0 0 1-2 3.02v2.5h3.23c1.9-1.75 2.97-4.32 2.97-7.33z" /><path fill="#34A853" d="M12 22c2.7 0 4.97-.9 6.63-2.43l-3.23-2.5c-.9.6-2.05.95-3.4.95-2.6 0-4.82-1.76-5.6-4.12H3.06v2.58A10 10 0 0 0 12 22z" /><path fill="#FBBC05" d="M6.4 13.9a6 6 0 0 1 0-3.8V7.52H3.06a10 10 0 0 0 0 8.96l3.34-2.58z" /><path fill="#EA4335" d="M12 5.98c1.47 0 2.8.5 3.84 1.5l2.86-2.86A9.6 9.6 0 0 0 12 2 10 10 0 0 0 3.06 7.52l3.34 2.58C7.18 7.74 9.4 5.98 12 5.98z" /></svg>
             Continuar con Google
           </button>
           <div className="or mt-20">o</div>
+          </>}
           <form className="stack mt-20" onSubmit={submit} noValidate>
             <div className="grid-2">
               <div className="field"><label htmlFor="su-name">Tu nombre</label><input id="su-name" className="input" value={f.name} onChange={set('name')} autoComplete="name" /></div>
@@ -67,21 +85,21 @@ export function Signup() {
             </div>
             <div className="field"><label htmlFor="su-email">Email de trabajo</label><input id="su-email" className="input" type="email" value={f.email} onChange={set('email')} autoComplete="email" /></div>
             <div className="field"><label htmlFor="su-pass">Contraseña</label><input id="su-pass" className="input" type="password" value={f.password} onChange={set('password')} autoComplete="new-password" /><span className="hint">Al menos 8 caracteres.</span></div>
-            <p className="small muted" style={{ marginTop: -6 }}>Versión de prueba: tu cuenta y tu trabajo se guardan solo en este navegador, no en un servidor. Si borras sus datos o cambias de dispositivo, no estarán.</p>
+            {!cloud.cloudEnabled && <p className="small muted" style={{ marginTop: -6 }}>Versión de prueba: tu cuenta y tu trabajo se guardan solo en este navegador, no en un servidor. Si borras sus datos o cambias de dispositivo, no estarán.</p>}
             <div className="grid-2">
               <div className="field"><label htmlFor="su-role">Cargo</label><select id="su-role" className="select" value={f.role} onChange={set('role')}>{ROLES.map((r) => <option key={r}>{r}</option>)}</select></div>
               <div className="field"><label htmlFor="su-ind">Sector</label><select id="su-ind" className="select" value={f.industry} onChange={set('industry')}><option value="">Elige…</option>{INDUSTRIES.map((r) => <option key={r}>{r}</option>)}</select></div>
             </div>
             {err && <div className="error-text" role="alert">{err}</div>}
-            <button className="btn btn-primary btn-lg">Crear cuenta <LuArrowRight /></button>
+            <button className="btn btn-primary btn-lg" disabled={busy}>{busy ? 'Creando tu cuenta…' : <>Crear cuenta <LuArrowRight /></>}</button>
             <p className="xs subtle">Al crear tu cuenta aceptas las <a onClick={() => navigate('/terms')} style={{ cursor: 'pointer' }}>Condiciones</a> y la <a onClick={() => navigate('/privacy')} style={{ cursor: 'pointer' }}>Política de privacidad</a>.</p>
           </form>
           <div className="row mt-24 small muted" style={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
             <span>¿Ya tienes cuenta? <a style={{ cursor: 'pointer' }} onClick={() => navigate('/login')}>Inicia sesión</a></span>
             <span className="row" style={{ gap: 14 }}><a style={{ cursor: 'pointer' }} onClick={() => startDemo('/app')}>Explorar la demo</a><a style={{ cursor: 'pointer' }} onClick={() => startDemo('/app/projects/p_sample', true)}>Demo completa</a></span>
           </div>
-          <p className="xs subtle mt-16" style={{ borderTop: '1px solid var(--border)', paddingTop: 12 }}>Versión de prueba: tu cuenta y tu espacio se guardan solo en este navegador y la contraseña no se almacena. En producción se usa Supabase Auth.</p>
-        </div>
+          {!cloud.cloudEnabled && <p className="xs subtle mt-16" style={{ borderTop: '1px solid var(--border)', paddingTop: 12 }}>Versión de prueba: tu cuenta y tu espacio se guardan solo en este navegador y la contraseña no se almacena.</p>}
+        </div>}
       </main>
       {google && (
         <Modal title="Acceso con Google" onClose={() => setGoogle(false)} footer={<button className="btn btn-primary" onClick={() => setGoogle(false)}>Usar email</button>}>
@@ -96,8 +114,31 @@ export function Login() {
   const [email, setEmail] = useState('');
   const [pw, setPw] = useState('');
   const [err, setErr] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [unconfirmed, setUnconfirmed] = useState(false);
+  const [mode, setMode] = useState<'login' | 'forgot' | 'forgotSent'>('login');
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (cloud.cloudEnabled) {
+      if (!EMAIL.test(email.trim())) return setErr('Introduce tu email.');
+      if (mode === 'forgot') {
+        setBusy(true); setErr(null);
+        try { await cloud.recover(email.trim()); setMode('forgotSent'); } catch (x) { setErr(cloud.cloudMessage(x)); } finally { setBusy(false); }
+        return;
+      }
+      if (!pw) return setErr('Introduce tu contraseña.');
+      setBusy(true); setErr(null); setUnconfirmed(false);
+      try {
+        await cloud.signIn(email.trim(), pw);
+        const k = await enterCloud();
+        track('login');
+        navigate(k === 'new' ? '/welcome' : '/app');
+      } catch (x) {
+        setErr(cloud.cloudMessage(x));
+        setUnconfirmed(x instanceof cloud.CloudError && x.code === 'email_not_confirmed');
+      } finally { setBusy(false); }
+      return;
+    }
     const s = getState();
     if (s.user && s.user.email.toLowerCase() === email.trim().toLowerCase()) {
       if (pw.length < 8) return setErr('Introduce tu contraseña (al menos 8 caracteres).');
@@ -117,18 +158,93 @@ export function Login() {
       <AuthSide />
       <main className="auth-main">
         <div className="auth-card">
-          <h1>Inicia sesión en PROPO</h1>
+          <h1>{mode === 'login' ? 'Inicia sesión en PROPO' : 'Recupera tu contraseña'}</h1>
+          {mode === 'forgotSent' ? (
+            <div className="stack mt-24">
+              <div className="callout small"><LuCircleCheck /><div>Si hay una cuenta con <strong>{email.trim()}</strong>, te hemos enviado un enlace para elegir una contraseña nueva. Mira también en la carpeta de spam.</div></div>
+              <button className="btn btn-secondary" onClick={() => { setMode('login'); setErr(null); }}>Volver a iniciar sesión</button>
+            </div>
+          ) : (
           <form className="stack mt-24" onSubmit={submit} noValidate>
+            {mode === 'forgot' && <p className="small muted" style={{ margin: 0 }}>Escribe el email de tu cuenta y te enviaremos un enlace para elegir una contraseña nueva.</p>}
             <div className="field"><label htmlFor="li-email">Email de trabajo</label><input id="li-email" className="input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" /></div>
-            <div className="field"><label htmlFor="li-pass">Contraseña</label><input id="li-pass" className="input" type="password" value={pw} onChange={(e) => setPw(e.target.value)} autoComplete="current-password" /></div>
+            {mode === 'login' && <div className="field"><label htmlFor="li-pass">Contraseña</label><input id="li-pass" className="input" type="password" value={pw} onChange={(e) => setPw(e.target.value)} autoComplete="current-password" />
+              {cloud.cloudEnabled && <button type="button" className="link xs" style={{ justifySelf: 'start', marginTop: 4 }} onClick={() => { setMode('forgot'); setErr(null); }}>¿Has olvidado tu contraseña?</button>}</div>}
             {err && <div className="error-text" role="alert">{err}</div>}
-            <p className="small muted">En esta versión de prueba tu cuenta se guarda solo en este navegador: entra desde el mismo dispositivo en el que la creaste.</p>
-            <button className="btn btn-primary btn-lg">Iniciar sesión</button>
+            {unconfirmed && <ResendButton email={email.trim()} />}
+            {!cloud.cloudEnabled && <p className="small muted">En esta versión de prueba tu cuenta se guarda solo en este navegador: entra desde el mismo dispositivo en el que la creaste.</p>}
+            <button className="btn btn-primary btn-lg" disabled={busy}>{busy ? 'Un momento…' : mode === 'forgot' ? 'Enviarme el enlace' : 'Iniciar sesión'}</button>
+            {mode === 'forgot' && <button type="button" className="btn btn-ghost" onClick={() => { setMode('login'); setErr(null); }}>Volver</button>}
           </form>
+          )}
           <div className="row mt-24 small muted" style={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
             <span>¿Nuevo en PROPO? <a style={{ cursor: 'pointer' }} onClick={() => navigate('/signup')}>Crea una cuenta</a></span>
             <span className="row" style={{ gap: 14 }}><a style={{ cursor: 'pointer' }} onClick={() => startDemo('/app')}>Explorar la demo</a><a style={{ cursor: 'pointer' }} onClick={() => startDemo('/app/projects/p_sample', true)}>Demo completa</a></span>
           </div>
+        </div>
+      </main>
+    </div>
+  );
+}
+
+/** Cuenta creada: hay que pulsar el enlace del correo. */
+function CheckEmail({ email, onBack }: { email: string; onBack: () => void }) {
+  return (
+    <div className="auth-card">
+      <div className="rev-done-ic" style={{ marginBottom: 18 }}><LuCheck /></div>
+      <h1>Revisa tu correo</h1>
+      <p className="muted mt-8">Te hemos enviado un enlace a <strong>{email}</strong>. Púlsalo para activar tu cuenta y entrar en PROPO.</p>
+      <p className="small muted mt-12">¿No lo ves? Mira en la carpeta de spam o de promociones. Puede tardar un par de minutos.</p>
+      <div className="row-wrap mt-24"><ResendButton email={email} /><button className="btn btn-ghost" onClick={onBack}>Cambiar el email</button></div>
+    </div>
+  );
+}
+
+function ResendButton({ email }: { email: string }) {
+  const [state, setState] = useState<'idle' | 'busy' | 'done' | 'error'>('idle');
+  const [msg, setMsg] = useState('');
+  const go = async () => {
+    setState('busy');
+    try { await cloud.resendConfirmation(email); setState('done'); } catch (e) { setMsg(cloud.cloudMessage(e)); setState('error'); }
+  };
+  if (state === 'done') return <span className="small" style={{ color: 'var(--ok-ink)' }}>Te lo hemos vuelto a enviar.</span>;
+  return <span className="stack" style={{ gap: 6 }}><button type="button" className="btn btn-secondary" disabled={state === 'busy' || !EMAIL.test(email)} onClick={go}>{state === 'busy' ? 'Enviando…' : 'Reenviar el correo de confirmación'}</button>{state === 'error' && <span className="error-text">{msg}</span>}</span>;
+}
+
+/** Llega desde el enlace de «he olvidado mi contraseña». */
+export function ResetPassword() {
+  const [pw, setPw] = useState('');
+  const [pw2, setPw2] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+  const has = !!cloud.currentSession();
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (pw.length < 8) return setErr('Usa al menos 8 caracteres.');
+    if (pw !== pw2) return setErr('Las dos contraseñas no coinciden.');
+    setBusy(true); setErr(null);
+    try { await cloud.updatePassword(pw); const k = await enterCloud(); toast('Contraseña cambiada', 'ok'); navigate(k === 'new' ? '/welcome' : '/app'); }
+    catch (x) { setErr(cloud.cloudMessage(x)); } finally { setBusy(false); }
+  };
+  return (
+    <div className="auth">
+      <AuthSide />
+      <main className="auth-main">
+        <div className="auth-card">
+          <h1>Elige una contraseña nueva</h1>
+          {has ? (
+            <form className="stack mt-24" onSubmit={submit} noValidate>
+              <div className="field"><label htmlFor="rp-1">Contraseña nueva</label><input id="rp-1" className="input" type="password" value={pw} onChange={(e) => setPw(e.target.value)} autoComplete="new-password" /><span className="hint">Al menos 8 caracteres.</span></div>
+              <div className="field"><label htmlFor="rp-2">Repítela</label><input id="rp-2" className="input" type="password" value={pw2} onChange={(e) => setPw2(e.target.value)} autoComplete="new-password" /></div>
+              {err && <div className="error-text" role="alert">{err}</div>}
+              <button className="btn btn-primary btn-lg" disabled={busy}>{busy ? 'Guardando…' : 'Guardar y entrar'}</button>
+            </form>
+          ) : (
+            <div className="stack mt-24">
+              <p className="muted">El enlace ha caducado o ya se usó. Pide uno nuevo desde la pantalla de inicio de sesión.</p>
+              <button className="btn btn-primary" onClick={() => navigate('/login')}>Ir a iniciar sesión</button>
+            </div>
+          )}
         </div>
       </main>
     </div>

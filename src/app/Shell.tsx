@@ -11,6 +11,8 @@ import { PLANS } from '../lib/plans';
 import { AIBadge } from './common';
 import { getHint, clearHint, onHint } from '../lib/infoFix';
 import { startDemo } from '../marketing/Layout';
+import { leaveCloud } from '../lib/cloudSync';
+import { getState } from '../lib/store';
 import { LuCornerUpLeft } from 'react-icons/lu';
 
 export function AppShell({ children, fullBleed, showSetup }: { children: React.ReactNode; fullBleed?: boolean; showSetup?: boolean }) {
@@ -166,7 +168,7 @@ function AccountMenu() {
           <button className="menu-item" onClick={() => { close(); navigate('/'); }}><LuGlobe />Web de PROPO</button>
           <div className="divider" style={{ margin: '6px 0' }} />
 <div className="divider" style={{ margin: '6px 0' }} />
-          <button className="menu-item" onClick={() => { close(); update((s) => { s.signedOut = true; }); navigate('/'); }}><LuLogOut />Cerrar sesión</button>
+          <button className="menu-item" onClick={() => { close(); if (getState().user?.cloud) { leaveCloud(); return; } update((s) => { s.signedOut = true; }); navigate('/'); }}><LuLogOut />Cerrar sesión</button>
         </>
       )}
     </Menu>

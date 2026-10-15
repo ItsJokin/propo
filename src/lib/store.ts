@@ -5,6 +5,7 @@ import { buildSampleProjects, sampleNotifications, sampleTemplates, SAMPLE_COMPA
 import { addDays, nowIso, uid } from './util';
 import { TRIAL_DAYS } from './plans';
 import { INDUSTRY_TO_SECTORS, cpvsForSectors } from './discovery/match';
+import { scheduleSave } from './services/cloud';
 
 export const STATE_VERSION = 4;
 
@@ -73,11 +74,17 @@ let state: AppState = (() => {
 })();
 
 const subs = new Set<() => void>();
-function emit() { subs.forEach((f) => f()); saveState(state); }
+let fromCloud = false;
+function emit() {
+  subs.forEach((f) => f()); saveState(state);
+  if (!fromCloud && state.user?.cloud && !state.demo) scheduleSave(state);   // cuentas del servidor: se guarda allí también
+}
 
 export function getState() { return state; }
 
 export function setState(next: AppState) { state = next; emit(); }
+/** Lo que llega del servidor no se vuelve a subir. */
+export function setStateFromCloud(next: AppState) { fromCloud = true; try { setState(next); } finally { fromCloud = false; } }
 
 export function update(fn: (draft: AppState) => void) {
   const draft = structuredClone(state);

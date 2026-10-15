@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { LuUser, LuUsers, LuCreditCard, LuBell, LuShieldCheck, LuPlus, LuDownload, LuTrash2, LuInfo, LuReceipt, LuExternalLink, LuTriangleAlert, LuRotateCcw } from 'react-icons/lu';
 import { useStore, update, navigate, toast, resetAll, getState, track } from '../lib/store';
+import { deleteWorkspace, signOut } from '../lib/services/cloud';
 import { Modal, Toggle, Bar, Empty } from '../components/ui';
 import { PLANS } from '../lib/plans';
 import { billing } from '../lib/services/billing';
@@ -211,9 +212,15 @@ function Privacy() {
         </div>
       </div>
       {del && (
-        <Modal title="¿Eliminar tu cuenta de PROPO?" onClose={() => setDel(false)} footer={<><button className="btn btn-ghost" onClick={() => setDel(false)}>Cancelar</button><button className="btn btn-danger" disabled={confirm !== 'ELIMINAR'} onClick={() => { resetAll(); navigate('/'); toast('Cuenta y datos eliminados'); }}>Eliminar todo</button></>}>
+        <Modal title="¿Eliminar tu cuenta de PROPO?" onClose={() => setDel(false)} footer={<><button className="btn btn-ghost" onClick={() => setDel(false)}>Cancelar</button><button className="btn btn-danger" disabled={confirm !== 'ELIMINAR'} onClick={async () => {
+            if (getState().user?.cloud) {
+              try { await deleteWorkspace(); } catch { toast('No se han podido borrar tus datos del servidor. Inténtalo de nuevo o escríbenos a hola@propo.es.', 'bad'); return; }
+              await signOut();
+            }
+            resetAll(); navigate('/'); toast('Cuenta y datos eliminados');
+          }}>Eliminar todo</button></>}>
           <div className="stack">
-            <p className="muted">Todos los datos de {s.company.legalName || 'tu empresa'} se eliminarán de forma permanente de este navegador. En producción, también se borran los archivos del almacenamiento y de las copias de seguridad en un plazo de 30 días.</p>
+            <p className="muted">Todos los datos de {s.company.legalName || 'tu empresa'} se eliminarán de forma permanente{s.user?.cloud ? ' de nuestro servidor y de este navegador' : ' de este navegador'}. Las copias de seguridad del servidor se borran en un plazo de 30 días.</p>
             <div className="field"><label htmlFor="del-c">Escribe ELIMINAR para confirmar</label><input id="del-c" className="input" value={confirm} onChange={(e) => setConfirm(e.target.value)} /></div>
           </div>
         </Modal>
