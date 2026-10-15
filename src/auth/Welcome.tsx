@@ -2,7 +2,8 @@
 // Todo se puede omitir; lo que se responde se guarda al pulsar «Continuar».
 import { GROUP } from '../lib/plans';
 import React, { useEffect, useMemo, useState } from 'react';
-import { LuArrowRight, LuChevronLeft, LuCheck, LuSparkles, LuTarget, LuShieldCheck, LuSearch, LuFileText, LuLock } from 'react-icons/lu';
+import { LuArrowRight, LuChevronLeft, LuCheck, LuSparkles, LuTarget, LuShieldCheck, LuSearch, LuFileText, LuLock, LuPlay } from 'react-icons/lu';
+import { VideoModal } from '../marketing/Landing';
 import { Logo, Ring } from '../components/ui';
 import { navigate, update, track, useStore, getState } from '../lib/store';
 import { knowledgeScore } from '../lib/derive';
@@ -90,6 +91,7 @@ export function Welcome() {
   const go = (n: number) => { setStep(Math.max(0, Math.min(STEPS.length - 1, n))); try { window.scrollTo(0, 0); } catch { /* ignore */ } };
   const next = () => { if (id !== 'intro' && id !== 'done') save(); go(step + 1); };
   const skip = () => { setSkipped((n) => n + 1); track('welcome_question_skipped', { question: id }); go(step + 1); };
+  const [video, setVideo] = useState(false);
   const finish = (to: string) => {
     update((s) => { s.onboarding.dismissed = true; });
     track('welcome_answered', { sectors: sectors.length, regions: regions.length, skipped });
@@ -239,6 +241,7 @@ export function Welcome() {
             <>
               <span className="wz-pill ok"><LuCheck /> Memoria creada</span>
               <h1 className="wz-title">PROPO ya conoce {name}.</h1>
+              <p className="wz-lead">Ahora te contamos cómo vas a trabajar con PROPO. Son cuatro pasos y casi todo el trabajo lo hace PROPO.</p>
               <div className="wz-result">
                 <Ring value={score} size={84} stroke={8} tone="accent" />
                 <div>
@@ -249,10 +252,27 @@ export function Welcome() {
                   <p className="small muted">{skipped > 0 ? `Has omitido ${skipped} ${skipped === 1 ? 'pregunta' : 'preguntas'}. Complétalas cuando quieras en Empresa: cuanto más sepa PROPO, mejor acierta.` : 'Cuanto más añadas en Empresa, mejor acierta PROPO y menos te pregunta en cada propuesta.'}</p>
                 </div>
               </div>
-              <div className="wz-foot">
-                <button className="btn btn-primary btn-lg" onClick={() => finish('/app/tenders')} autoFocus><LuSearch /> Ver mis licitaciones</button>
-                <button className="btn btn-secondary btn-lg" onClick={() => finish('/app/documents')}>Subir documentos de empresa</button>
+              <div className="wz-how">
+                <div className="wz-how-head">
+                  <strong>Así funciona PROPO</strong>
+                  <button type="button" className="wz-video" onClick={() => setVideo(true)}><LuPlay /> Verlo en un vídeo de 1 minuto</button>
+                </div>
+                <ol className="wz-steps">
+                  <li><span className="n">1</span><div><strong>Elige una licitación</strong><p>En «Licitaciones» tienes las que encajan con tu empresa, de más a menos compatibles. Ábrela y verás de qué va, cuánto vale y si te conviene presentarte.</p><span className="who you">Tú eliges</span></div></li>
+                  <li><span className="n">2</span><div><strong>PROPO lee los pliegos</strong><p>Pulsa «Analizar los pliegos con PROPO». En unos minutos lee todos los documentos, encuentra cada requisito y te lo explica en lenguaje claro.</p><span className="who propo">Lo hace PROPO</span></div></li>
+                  <li><span className="n">3</span><div><strong>Responde unas pocas preguntas</strong><p>Solo lo que PROPO no puede saber de tu empresa, con botones. Con eso redacta la propuesta completa.</p><span className="who you">Tú, unos 5 minutos</span></div></li>
+                  <li><span className="n">4</span><div><strong>Revisa, comprueba y presenta</strong><p>Lees y apruebas la propuesta sección a sección. PROPO hace una comprobación final y te prepara el paquete para subirlo a la plataforma de contratación.</p><span className="who both">Tú revisas · PROPO prepara</span></div></li>
+                </ol>
               </div>
+              <div className="wz-next">
+                <div className="eyebrow">Tu primer paso</div>
+                <p>Abre tus licitaciones y elige una que te interese. Si tienes a mano los documentos de tu empresa (escrituras, certificados, seguros, cuentas), súbelos antes: así PROPO te hará menos preguntas en cada propuesta.</p>
+              </div>
+              <div className="wz-foot">
+                <button className="btn btn-primary btn-lg" onClick={() => finish('/app/tenders')} autoFocus><LuSearch /> Empezar: ver mis licitaciones</button>
+                <button className="btn btn-secondary btn-lg" onClick={() => finish('/app/documents')}><LuFileText /> Antes, subir mis documentos</button>
+              </div>
+              {video && <VideoModal onClose={() => setVideo(false)} />}
             </>
           )}
 

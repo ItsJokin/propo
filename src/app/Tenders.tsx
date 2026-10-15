@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { LuSearch, LuLandmark, LuMapPin, LuEuro, LuCalendar, LuBookmark, LuExternalLink, LuArrowRight, LuCheck, LuCircleAlert, LuX, LuBell, LuInfo, LuTrash2, LuSlidersHorizontal, LuFileCheck, LuFileText, LuCircleCheck, LuTriangleAlert, LuLoaderCircle, LuEye } from 'react-icons/lu';
+import { LuSearch, LuLandmark, LuMapPin, LuEuro, LuCalendar, LuBookmark, LuExternalLink, LuArrowRight, LuCheck, LuCircleAlert, LuX, LuBell, LuInfo, LuTrash2, LuSlidersHorizontal, LuFileCheck, LuFileText, LuCircleCheck, LuTriangleAlert, LuLoaderCircle, LuEye , LuSparkles } from 'react-icons/lu';
 import { useStore, update, navigate, toast, track, getState } from '../lib/store';
 import { type TedNotice } from '../lib/discovery/tedSnapshot';
 import { useLive, dataAgeMinutes, type LiveState } from '../lib/data/live';
@@ -109,6 +109,17 @@ export function Tenders() {
 
   return (
     <>
+      {!s.onboarding.completedSteps.includes('tenders-tip') && !s.projects.some((p) => !p.isSample) && !s.demo && (
+        <div className="tip-card">
+          <div className="tip-head"><LuSparkles /><strong>Empieza aquí: así eliges tu primera licitación</strong><span className="spacer" /><button className="btn btn-ghost btn-sm" onClick={() => update((st) => { st.onboarding.completedSteps.push('tenders-tip'); })}>Entendido</button></div>
+          <ol>
+            <li><strong>Mira las de arriba.</strong> Están ordenadas por compatibilidad con tu empresa: el porcentaje dice cuánto encajan.</li>
+            <li><strong>Pulsa «Ver detalles».</strong> Verás de qué va, cuánto vale, cuándo cierra y, en «¿Me presento?», si te conviene.</li>
+            <li><strong>Si te interesa, pulsa «Analizar los pliegos con PROPO».</strong> PROPO lee los documentos y te guía paso a paso hasta la propuesta.</li>
+          </ol>
+          <p className="small muted" style={{ margin: 0 }}>¿Buscas algo concreto? Escríbelo en el buscador o filtra por sector, provincia e importe.</p>
+        </div>
+      )}
       <div className="page-head">
         <div><h1>Licitaciones</h1><p>Licitaciones públicas abiertas, ordenadas por compatibilidad con {(s.company.legalName || 'tu empresa').replace(/\.$/, '')}.</p></div>
         <button className="btn btn-secondary" onClick={() => navigate('/app/company/search')}><LuSlidersHorizontal /> Perfil de búsqueda</button>

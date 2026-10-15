@@ -16,7 +16,7 @@ import { eur } from '../lib/plans';
 
 const VIDEO = 'media/anuncio-propo.mp4';
 
-function VideoModal({ onClose }: { onClose: () => void }) {
+export function VideoModal({ onClose }: { onClose: () => void }) {
   useEffect(() => {
     const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', esc);

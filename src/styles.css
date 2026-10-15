@@ -1240,3 +1240,29 @@ a.comp-award-t:hover { color: var(--accent); }
 .fin-work svg { width: 16px; height: 16px; color: var(--accent); flex: none; }
 .fin-bar { height: 6px; border-radius: 99px; background: var(--surface); overflow: hidden; }
 .fin-bar i { display: block; height: 100%; border-radius: 99px; background: var(--accent); transition: width .4s ease; }
+
+/* ── Bienvenida: cómo funciona PROPO y primer paso ─────────────────────────────────────────────────────────────── */
+.wz-lead { margin: 10px 0 0; font-size: 17px; line-height: 1.55; color: var(--fg-2); max-width: 60ch; }
+.wz-how { margin-top: 22px; padding: 22px 24px; border-radius: 18px; background: var(--surface); border: 1px solid var(--border); }
+.wz-how-head { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; font-size: 17px; }
+.wz-video { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 99px; border: 1px solid var(--accent-line); background: var(--accent-soft); color: var(--accent); font: inherit; font-size: 14px; font-weight: 650; cursor: pointer; }
+.wz-video svg { width: 15px; height: 15px; }
+.wz-video:hover { border-color: var(--accent); }
+.wz-steps { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 16px; }
+.wz-steps li { display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start; }
+.wz-steps .n { width: 34px; height: 34px; border-radius: 11px; background: var(--fg); color: #fff; display: grid; place-items: center; font-weight: 800; }
+.wz-steps strong { font-size: 16px; color: var(--fg); }
+.wz-steps p { margin: 3px 0 6px; font-size: 14.5px; line-height: 1.55; color: var(--fg-2); }
+.wz-steps .who { display: inline-block; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 99px; }
+.wz-steps .who.you { background: var(--warn-soft); color: var(--warn-ink); }
+.wz-steps .who.propo { background: var(--accent-soft); color: var(--accent); }
+.wz-steps .who.both { background: var(--ok-soft); color: var(--ok-ink); }
+.wz-next { margin-top: 16px; padding: 16px 20px; border-radius: 16px; background: var(--accent-soft); border: 1px solid var(--accent-line); }
+.wz-next p { margin: 6px 0 0; font-size: 15px; line-height: 1.55; color: var(--fg); }
+
+/* ── Licitaciones: guía de la primera visita ───────────────────────────────────────────────────────────────────── */
+.tip-card { margin-bottom: 20px; padding: 18px 22px; border-radius: 16px; background: var(--accent-soft); border: 1px solid var(--accent-line); }
+.tip-head { display: flex; align-items: center; gap: 10px; font-size: 16px; }
+.tip-head > svg { width: 18px; height: 18px; color: var(--accent); flex: none; }
+.tip-card ol { margin: 12px 0 10px; padding-left: 22px; display: grid; gap: 6px; font-size: 14.5px; line-height: 1.55; color: var(--fg-2); }
+.tip-card ol strong { color: var(--fg); }
