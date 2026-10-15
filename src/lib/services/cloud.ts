@@ -20,6 +20,8 @@ const writeLS = (k: string, v: unknown) => { try { if (v == null) localStorage.r
 let session: Session | null = readLS<Session>(SESSION);
 function keep(s: Session | null) { session = s; writeLS(SESSION, s); }
 export const currentSession = () => session;
+/** Otra pestaña de este navegador ha abierto sesión (p. ej. el enlace del correo): se recoge aquí también. */
+export function reloadSession() { session = readLS<Session>(SESSION); return session; }
 
 const toSession = (j: any): Session => ({
   access_token: j.access_token, refresh_token: j.refresh_token, expires_at: Math.floor(Date.now() / 1000) + (Number(j.expires_in) || 3600),

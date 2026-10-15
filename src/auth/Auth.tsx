@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { LuArrowRight, LuCheck, LuUpload, LuPlus, LuX, LuCircleCheck, LuTriangleAlert, LuBuilding2, LuFileText, LuBriefcase, LuAward, LuSearch } from 'react-icons/lu';
 import { Logo, Modal, Ring } from '../components/ui';
 import { navigate, setState, newWorkspace, getState, update, track, useStore, toast } from '../lib/store';
@@ -67,7 +67,7 @@ export function Signup() {
     <div className="auth">
       <AuthSide />
       <main className="auth-main">
-        {sent ? <CheckEmail email={sent} onBack={() => setSent(null)} /> : <div className="auth-card">
+        {sent ? <CheckEmail email={sent} password={f.password} onBack={() => setSent(null)} /> : <div className="auth-card">
           <div className="hide-desktop" style={{ marginBottom: 24 }}><Logo onClick={() => navigate('/')} /></div>
           <h1>Crea tu cuenta de PROPO</h1>
           <p className="muted mt-8">14 días de prueba con una propuesta completa. Sin tarjeta.</p>
@@ -187,14 +187,35 @@ export function Login() {
   );
 }
 
-/** Cuenta creada: hay que pulsar el enlace del correo. */
-function CheckEmail({ email, onBack }: { email: string; onBack: () => void }) {
+/** Cuenta creada: hay que pulsar el enlace del correo. En cuanto se confirma (en otra pestaña o en el móvil), esta
+ *  pantalla entra sola: se entera por la otra pestaña o probando a iniciar sesión cada pocos segundos. */
+function CheckEmail({ email, password, onBack }: { email: string; password: string; onBack: () => void }) {
+  useEffect(() => {
+    let stop = false, timer: number | undefined;
+    const t0 = Date.now();
+    const finish = async () => {
+      if (stop) return; stop = true;
+      try { const k = await enterCloud(); toast('Cuenta confirmada. ¡Bienvenido a PROPO!', 'ok'); navigate(k === 'new' ? '/welcome' : '/app'); }
+      catch (e) { stop = false; toast(cloud.cloudMessage(e), 'bad'); }
+    };
+    const onStorage = (e: StorageEvent) => { if (e.key === 'propo:session' && e.newValue && cloud.reloadSession()) window.setTimeout(finish, 2500); };
+    const tick = async () => {
+      if (stop || Date.now() - t0 > 30 * 60 * 1000) return;               // tras media hora deja de comprobar
+      try { await cloud.signIn(email, password); await finish(); return; }
+      catch { /* aún sin confirmar */ }
+      timer = window.setTimeout(tick, 6000);
+    };
+    window.addEventListener('storage', onStorage);
+    timer = window.setTimeout(tick, 6000);
+    return () => { stop = true; window.clearTimeout(timer); window.removeEventListener('storage', onStorage); };
+  }, [email, password]);
   return (
     <div className="auth-card">
       <div className="rev-done-ic" style={{ marginBottom: 18 }}><LuCheck /></div>
       <h1>Revisa tu correo</h1>
       <p className="muted mt-8">Te hemos enviado un enlace a <strong>{email}</strong>. Púlsalo para activar tu cuenta y entrar en PROPO.</p>
       <p className="small muted mt-12">¿No lo ves? Mira en la carpeta de spam o de promociones. Puede tardar un par de minutos.</p>
+      <div className="callout small mt-16"><LuCircleCheck /><div>Deja esta pantalla abierta: en cuanto pulses el enlace del correo (aquí o en el móvil), entrarás solo en PROPO.</div></div>
       <div className="row-wrap mt-24"><ResendButton email={email} /><button className="btn btn-ghost" onClick={onBack}>Cambiar el email</button></div>
     </div>
   );
