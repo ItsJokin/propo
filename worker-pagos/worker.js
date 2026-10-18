@@ -152,7 +152,7 @@ function welcomeEmail(site, name, plan, cycle, renews) {
 </table>
 <div style="color:#98A2B3;font-size:12px;margin-top:16px">PROPO · Licitaciones públicas, preparadas en minutos · <a href="${site}" style="color:#98A2B3">propo.es</a></div>
 </td></tr></table></body></html>`;
-  const text = `¡Gracias${first ? `, ${first}` : ''}! Tu plan ${p.name} ya está activo.\n\nTu suscripción: PROPO ${p.name} · ${p.n} propuestas al mes · facturación ${ciclo}${renews ? ` · próxima renovación el ${renews}` : ''}.\n\nEmpieza en 3 pasos:\n1. Completa tu memoria de empresa.\n2. Elige una licitación y pulsa «Preparar propuesta».\n3. Responde lo imprescindible y descarga el paquete.\n\nEntrar en PROPO: ${site}/#/app\n\nLa factura te llegará en un correo aparte. Gestiona tu suscripción en Ajustes → Facturación.\n¿Dudas? Responde a este correo.\n\nEl equipo de PROPO`;
+  const text = `¡Gracias${first ? `, ${first}` : ''}! Tu plan ${p.name} ya está activo.\n\nTu suscripción: PROPO ${p.name} · ${p.n} propuestas al mes · facturación ${ciclo}${renews ? ` · próxima renovación el ${renews}` : ''}.\n\nEntrar en PROPO: ${site}/#/app\n\nLa factura te llegará en un correo aparte. Gestiona tu suscripción en Ajustes → Facturación.\n¿Dudas? Responde a este correo.\n\nEl equipo de PROPO`;
   return { subject: `¡Bienvenido a PROPO ${p.name}! Tu suscripción está activa`, html, text };
 }
 
