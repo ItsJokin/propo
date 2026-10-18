@@ -23,7 +23,7 @@ async function post(path: string, body?: unknown): Promise<{ url: string } | { e
   try {
     const r = await fetch(PAY + path, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify(body || {}) });
     const j = await r.json().catch(() => ({}));
-    return j?.url ? { url: j.url } : { error: j?.error || `http_${r.status}` };
+    return j?.url ? { url: j.url } : { error: [j?.error || `http_${r.status}`, j?.detail].filter(Boolean).join(' · ') };
   } catch { return { error: 'network' }; }
 }
 
@@ -39,5 +39,5 @@ export function billingMessage(code: string): string {
   if (code === 'not_signed_in') return 'Vuelve a iniciar sesión para continuar con el pago.';
   if (code === 'no_customer') return 'Todavía no tienes ninguna suscripción. Elige un plan para empezar.';
   if (code === 'network') return 'No hay conexión con el servidor de pagos. Comprueba tu conexión e inténtalo de nuevo.';
-  return 'No se ha podido abrir el pago. Inténtalo de nuevo en unos minutos o escríbenos a hola@propo.es.';
+  return `No se ha podido abrir el pago. Inténtalo de nuevo en unos minutos o escríbenos a hola@propo.es. (Detalle: ${code})`;
 }
