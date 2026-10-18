@@ -147,7 +147,7 @@ export default {
     if (url.pathname === '/health') {
       const pr = PRICES(env);
       return json({
-        ok: true, stripe: !!env.STRIPE_SECRET_KEY, mode: String(env.STRIPE_SECRET_KEY || '').startsWith('sk_live_') ? 'live' : 'test',
+        ok: true, stripe: !!env.STRIPE_SECRET_KEY, mode: /_live_/.test(String(env.STRIPE_SECRET_KEY || '')) ? 'live' : 'test',
         webhook: !!env.STRIPE_WEBHOOK_SECRET, accounts: !!env.SUPABASE_URL && !!env.SUPABASE_SECRET_KEY,
         prices: { pro: !!(pr.pro.monthly && pr.pro.annual), business: !!(pr.business.monthly && pr.business.annual) }, tax: !!env.TAX_RATE,
       }, 200, cors);
