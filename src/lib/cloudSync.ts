@@ -1,6 +1,6 @@
 // Une las cuentas del servidor (services/cloud) con el estado de la app: entrar, salir, arrancar y traer cambios.
 import type { AppState } from './types';
-import { getState, setState, setStateFromCloud, newWorkspace, navigate, toast, resetAll } from './store';
+import { getState, setState, setStateFromCloud, newWorkspace, navigate, toast, resetAll, update } from './store';
 import * as cloud from './services/cloud';
 import { syncFiles, setCloudFiles } from './storage';
 
@@ -22,6 +22,7 @@ export async function enterCloud(): Promise<'new' | 'existing'> {
   if (remote?.data?.user) {
     cloud.markSynced(remote.version);
     setStateFromCloud({ ...(remote.data as AppState), signedOut: false });
+    await refreshPlan();
     return 'existing';
   }
   // Primera vez en el servidor. Si este navegador ya tenía un espacio de esa misma persona (de antes de las cuentas), se sube ese.
@@ -40,7 +41,49 @@ export async function enterCloud(): Promise<'new' | 'existing'> {
   setState(ws);
   await cloud.flush();
   backfill();
+  await refreshPlan();
   return 'new';
+}
+
+/** El plan lo decide el servidor (Stripe → Supabase), nunca el navegador: se copia al estado de la app. */
+export async function refreshPlan(): Promise<string | null> {
+  if (!cloud.currentSession() || getState().demo) return null;
+  try {
+    const [p, u] = await Promise.all([cloud.loadPlan(), cloud.loadUsage().catch(() => null)]);
+    if (!p) return null;
+    update((s) => {
+      const sub = s.subscription;
+      if (p.is_admin) { sub.plan = 'enterprise'; sub.status = 'active'; }
+      else {
+        sub.plan = (['trial', 'free', 'pro', 'business', 'enterprise'].includes(p.plan) ? p.plan : 'free') as AppState['subscription']['plan'];
+        sub.status = p.plan === 'trial' ? 'trialing' : p.status === 'past_due' ? 'past_due' : p.status === 'canceled' || p.plan === 'free' ? 'canceled' : 'active';
+      }
+      sub.billingCycle = p.billing_cycle === 'annual' ? 'annual' : 'monthly';
+      sub.trialEndsAt = p.trial_ends_at;
+      sub.currentPeriodEnd = p.plan === 'trial' ? p.trial_ends_at : p.current_period_end;
+      sub.cancelAtPeriodEnd = !!p.cancel_at_period_end;
+      sub.simulated = false;
+      if (u) { s.usage.proposalsCreated = Number(u.used) || 0; if (u.since) s.usage.periodStart = u.since; }
+    });
+    return p.plan;
+  } catch { return null; }   // sin la tabla nueva o sin conexión: se queda lo que había
+}
+
+/** Al volver de la página de pago de Stripe (?pago=ok): se espera a que llegue el aviso de Stripe y se activa el plan. */
+async function afterCheckout() {
+  let q: URLSearchParams;
+  try { q = new URLSearchParams(location.search); } catch { return; }
+  const r = q.get('pago');
+  if (!r) return;
+  try { history.replaceState(null, '', location.pathname + location.hash); } catch { /* nada */ }
+  if (r !== 'ok') { await refreshPlan(); return; }
+  toast('Pago recibido. Activando tu plan…', 'neutral');
+  for (let i = 0; i < 10; i++) {
+    const plan = await refreshPlan();
+    if (plan === 'pro' || plan === 'business' || plan === 'enterprise') { toast('¡Listo! Tu plan ya está activo.', 'ok'); return; }
+    await new Promise((res) => setTimeout(res, 2000));
+  }
+  toast('El pago se ha hecho, pero el plan tarda en activarse. Recarga la página en un minuto; si no aparece, escríbenos a hola@propo.es.', 'warn');
 }
 
 /** Cerrar sesión: se guarda lo pendiente y se borra todo de este navegador (puede ser un ordenador compartido). */
@@ -68,7 +111,9 @@ export async function bootCloud() {
   }
   await pull(true);
   backfill();
-  try { document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') pull(false); }); } catch { /* nada */ }
+  await refreshPlan();
+  afterCheckout();
+  try { document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') { pull(false).then(() => refreshPlan()); } }); } catch { /* nada */ }
 }
 
 /** Trae el espacio del servidor si es más nuevo que el de este navegador (cambios hechos en otro dispositivo). */

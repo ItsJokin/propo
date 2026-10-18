@@ -45,7 +45,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: dist
-          key: site-${{ hashFiles('src/**', 'shared/**', 'build.mjs', 'package.json', 'gate.json', 'waitlist.json') }}-${{ vars.PROPO_AI_URL }}-${{ vars.PROPO_PLIEGOS_URL }}-${{ vars.PROPO_SUPABASE_URL }}-${{ vars.PROPO_SUPABASE_KEY }}
+          key: site-${{ hashFiles('src/**', 'shared/**', 'build.mjs', 'package.json', 'gate.json', 'waitlist.json') }}-${{ vars.PROPO_AI_URL }}-${{ vars.PROPO_PLIEGOS_URL }}-${{ vars.PROPO_SUPABASE_URL }}-${{ vars.PROPO_SUPABASE_KEY }}-${{ vars.PROPO_PAY_URL }}
       - name: Compilar la web
         if: steps.site.outputs.cache-hit != 'true'
         run: |
@@ -55,6 +55,7 @@ jobs:
           PROPO_AI_URL: ${{ vars.PROPO_AI_URL }}   # servidor intermedio de IA (worker/); vacío = sin IA
           PROPO_SUPABASE_URL: ${{ vars.PROPO_SUPABASE_URL }}   # cuentas y datos (Supabase); vacío = todo en el navegador
           PROPO_SUPABASE_KEY: ${{ vars.PROPO_SUPABASE_KEY }}   # clave «publishable» de Supabase (pública por diseño)
+          PROPO_PAY_URL: ${{ vars.PROPO_PAY_URL }}   # servidor de pagos (worker-pagos/, Stripe); vacío = sin cobro
           PROPO_PLIEGOS_URL: ${{ vars.PROPO_PLIEGOS_URL }}   # servidor de pliegos (worker-pliegos/); vacío = sin descarga automática
 
       # Datos de la ejecución anterior.

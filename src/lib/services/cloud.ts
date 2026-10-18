@@ -123,6 +123,19 @@ async function saveWorkspace(data: unknown, version: number) {
     body: JSON.stringify({ user_id: session.user.id, data, version, updated_at: new Date().toISOString() }),
   });
 }
+// ── Plan y uso (los escribe el servidor de pagos con los avisos de Stripe; aquí solo se leen) ─────────────────────
+export interface PlanRow { plan: string; status: string; billing_cycle: string | null; trial_ends_at: string | null; current_period_end: string | null; cancel_at_period_end: boolean; is_admin: boolean }
+export async function loadPlan(): Promise<PlanRow | null> {
+  if (!session) return null;
+  const rows = await call(`/rest/v1/subscriptions?select=plan,status,billing_cycle,trial_ends_at,current_period_end,cancel_at_period_end,is_admin&user_id=eq.${session.user.id}`, { auth: true });
+  return rows?.[0] ?? null;
+}
+/** Propuestas usadas en el periodo en curso (función my_usage de supabase/pagos.sql). */
+export async function loadUsage(): Promise<{ used: number; since: string | null } | null> {
+  if (!session) return null;
+  return call('/rest/v1/rpc/my_usage', { method: 'POST', auth: true, body: '{}' });
+}
+
 export async function deleteWorkspace() {
   if (!session) return;
   await call(`/rest/v1/workspaces?user_id=eq.${session.user.id}`, { method: 'DELETE', auth: true });

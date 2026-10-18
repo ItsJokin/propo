@@ -4,7 +4,7 @@ import { useStore, update, navigate, toast, resetAll, getState, track } from '..
 import { deleteWorkspace, signOut, removeAllObjects } from '../lib/services/cloud';
 import { Modal, Toggle, Bar, Empty } from '../components/ui';
 import { PLANS } from '../lib/plans';
-import { billing } from '../lib/services/billing';
+import { billing, billingMessage } from '../lib/services/billing';
 import { UpgradeModal } from './common';
 import { fmtDate, daysUntil, uid, timeAgo } from '../lib/util';
 import { offerDownload } from '../lib/services/download';
@@ -109,7 +109,7 @@ function Billing() {
   const trialLeft = daysUntil(sub.trialEndsAt);
   const price = sub.plan === 'trial' || sub.plan === 'free' ? 0 : sub.billingCycle === 'annual' ? plan.annual : plan.monthly;
   const statusLabel = sub.status === 'trialing' ? (trialLeft != null && trialLeft >= 0 ? 'Prueba' : 'Prueba terminada') : sub.cancelAtPeriodEnd ? 'Se cancela al final del periodo' : sub.status === 'active' ? 'Activa' : sub.status === 'past_due' ? 'Pago fallido' : sub.status === 'canceled' ? 'Cancelada' : 'Caducada';
-  const openPortal = async () => { const r = await billing.openPortal(); if ('url' in r) window.open(r.url, '_blank'); else setPortal(true); };
+  const openPortal = async () => { const r = await billing.openPortal(); if ('url' in r) location.assign(r.url); else if ('error' in r) toast(billingMessage(r.error), r.error === 'no_customer' ? 'neutral' : 'bad'); else setPortal(true); };
   const limit = sub.plan === 'trial' ? 1 : plan.proposalsPerMonth;
   return (
     <div className="stack gap-20">
@@ -126,8 +126,8 @@ function Billing() {
             <div className="row-wrap">
               <button className="btn btn-secondary" onClick={openPortal}><LuExternalLink /> Gestionar suscripción</button>
               <button className="btn btn-primary" onClick={() => setUpgrade(true)}>{sub.plan === 'business' ? 'Cambiar de plan' : 'Mejorar plan'}</button>
-              {sub.status === 'active' && !sub.cancelAtPeriodEnd && <button className="btn btn-ghost" onClick={() => setCancel(true)}>Cancelar</button>}
-              {sub.cancelAtPeriodEnd && <button className="btn btn-ghost" onClick={() => { update((x) => { x.subscription.cancelAtPeriodEnd = false; }); toast('Cancelación anulada', 'ok'); }}><LuRotateCcw /> Mantener plan</button>}
+              {sub.status === 'active' && !sub.cancelAtPeriodEnd && sub.plan !== 'enterprise' && <button className="btn btn-ghost" onClick={() => (billing.connected ? openPortal() : setCancel(true))}>Cancelar</button>}
+              {sub.cancelAtPeriodEnd && <button className="btn btn-ghost" onClick={() => { if (billing.connected) { openPortal(); return; } update((x) => { x.subscription.cancelAtPeriodEnd = false; }); toast('Cancelación anulada', 'ok'); }}><LuRotateCcw /> Mantener plan</button>}
             </div>
           </div>
         </div>
@@ -143,14 +143,14 @@ function Billing() {
       <div className="grid-2">
         <div className="card">
           <div className="card-head"><h3>Método de pago</h3></div>
-          <div className="card-body small muted">No hay ningún método de pago guardado. Los datos de pago los recoge y guarda Stripe, nunca PROPO.</div>
+          <div className="card-body small muted">{billing.connected ? 'Tu tarjeta la guarda Stripe, nunca PROPO. Para cambiarla, pulsa «Gestionar suscripción».' : 'No hay ningún método de pago guardado. Los datos de pago los recoge y guarda Stripe, nunca PROPO.'}</div>
         </div>
         <div className="card">
           <div className="card-head"><h3>Facturas</h3></div>
-          <Empty icon={<LuReceipt />} title="Todavía no hay facturas" body="Las facturas aparecerán aquí después del primer pago." />
+          <Empty icon={<LuReceipt />} title={billing.connected ? 'Tus facturas, en Stripe' : 'Todavía no hay facturas'} body={billing.connected ? 'Después de cada pago te llega la factura por correo. También puedes descargarlas en «Gestionar suscripción».' : 'Las facturas aparecerán aquí después del primer pago.'} />
         </div>
       </div>
-      <div className="callout neutral small"><LuInfo /><div>Los pagos no están conectados en esta versión de prueba: no hay formulario de tarjeta ni cobros. La versión de producción usa Stripe Checkout, el portal de cliente de Stripe (método de pago, facturas, cambios de plan y cancelación con prorrateo) y webhooks que actualizan la suscripción. Consulta <span className="mono">server/billing</span> en el código.</div></div>
+      {!billing.connected && <div className="callout neutral small"><LuInfo /><div>Los pagos no están conectados en esta versión de prueba: no hay formulario de tarjeta ni cobros. La versión de producción usa Stripe Checkout, el portal de cliente de Stripe (método de pago, facturas, cambios de plan y cancelación con prorrateo) y webhooks que actualizan la suscripción. Consulta <span className="mono">server/billing</span> en el código.</div></div>}
       {upgrade && <UpgradeModal onClose={() => setUpgrade(false)} />}
       {portal && <Modal title="Gestionar suscripción" onClose={() => setPortal(false)} footer={<button className="btn btn-primary" onClick={() => setPortal(false)}>Entendido</button>}><p className="muted">En producción, aquí se abre el portal de cliente de Stripe, donde puedes cambiar el método de pago, descargar facturas, cambiar de plan y cancelar. Stripe no está conectado en esta versión de prueba.</p></Modal>}
       {cancel && (

@@ -6,7 +6,7 @@ import { projectPages } from '../lib/ai/engine';
 import type { Project, PlanId } from '../lib/types';
 import { normalize } from '../lib/util';
 import { PLANS } from '../lib/plans';
-import { billing } from '../lib/services/billing';
+import { billing, billingMessage } from '../lib/services/billing';
 import { update, toast, track, useStore } from '../lib/store';
 import { addDays } from '../lib/util';
 import { projectStatus, statusTone, type ProjectStatus } from '../lib/derive';
@@ -141,7 +141,8 @@ export function UpgradeModal({ reason = 'upgrade', onClose }: { reason?: string;
   const checkout = async (plan: PlanId) => {
     track('checkout_started', { plan, cycle });
     const r = await billing.startCheckout(plan, cycle);
-    if ('url' in r) { window.open(r.url, '_blank'); return; }
+    if ('url' in r) { location.assign(r.url); return; }
+    if ('error' in r) { toast(billingMessage(r.error), 'bad'); return; }
     setNotice(plan);
   };
   const preview = (plan: PlanId) => {
@@ -173,7 +174,7 @@ export function UpgradeModal({ reason = 'upgrade', onClose }: { reason?: string;
                 </div>
               )}
               {notice === id && (
-                <div className="callout neutral mt-12 small"><LuInfo /><div>Los pagos no están conectados en esta versión de prueba: no se abre ningún pago y no se cobra nada. En producción este botón abre Stripe Checkout para {p.name} ({cycle === 'annual' ? 'anual' : 'mensual'}) y la suscripción se activa cuando Stripe confirma el pago.</div></div>
+                <div className="callout neutral mt-12 small"><LuInfo /><div>El pago con tarjeta todavía no está disponible aquí. Escríbenos a <a href="mailto:hola@propo.es">hola@propo.es</a> y te activamos {p.name} ({cycle === 'annual' ? 'anual' : 'mensual'}) nosotros. No se ha cobrado nada.</div></div>
               )}
             </div>
           );
