@@ -13,7 +13,7 @@
 //              SUPABASE_SECRET_KEY (la misma clave «secret» que usa el servidor de IA)
 //   Variables: SUPABASE_URL · PRICE_PRO_MONTHLY · PRICE_PRO_ANNUAL · PRICE_BUSINESS_MONTHLY · PRICE_BUSINESS_ANNUAL
 //              TAX_RATE (opcional, txr_… del IVA 21 %) · SITE (opcional, por defecto https://propo.es)
-//   Correo de bienvenida (opcional): secreto RESEND_API_KEY (re_…) · variable MAIL_FROM (por defecto «PROPO <hola@propo.es>»)
+//   Correos de bienvenida y de despedida (opcional): secreto RESEND_API_KEY (re_…) · variable MAIL_FROM (por defecto «PROPO <hola@propo.es>»)
 
 const ORIGINS = ['https://propo.es', 'https://www.propo.es'];
 const json = (body, status, headers) => new Response(JSON.stringify(body), { status, headers: { ...headers, 'Content-Type': 'application/json' } });
@@ -175,6 +175,55 @@ async function sendWelcome(env, site, eventId, session, sub) {
   } catch { /* el correo no es imprescindible */ }
 }
 
+function goodbyeEmail(site, name, plan, until) {
+  const p = PLAN_INFO[plan] || PLAN_INFO.pro;
+  const first = esc(String(name || '').trim().split(/\s+/)[0]);
+  const html = `<!doctype html><html lang="es"><body style="margin:0;padding:0;background:#F4F6FA;font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F4F6FA;padding:32px 12px"><tr><td align="center">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden">
+<tr><td style="background:#0B1730;padding:24px 32px"><table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="vertical-align:middle"><img src="${site}/media/propo-logo-email.png" alt="" width="34" height="34" style="display:block;width:34px;height:34px"></td><td style="vertical-align:middle;padding-left:10px;color:#ffffff;font-weight:800;font-size:20px;letter-spacing:1px">PROPO</td></tr></table></td></tr>
+<tr><td style="padding:34px 32px 6px 32px">
+<div style="font-size:26px;font-weight:800;color:#0B1730;letter-spacing:-0.5px;line-height:1.2">Gracias por todo${first ? `, ${first}` : ''}.</div>
+<p style="color:#475467;font-size:15px;line-height:1.6;margin:14px 0 0 0">Hemos recibido la cancelación de tu suscripción a PROPO ${p.name}. Queremos darte las gracias de corazón por habernos confiado tus licitaciones: para un proyecto que empieza, cada empresa que nos elige cuenta muchísimo.</p>
+</td></tr>
+<tr><td style="padding:22px 32px 6px 32px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EAF1FF;border-radius:12px"><tr><td style="padding:18px 20px">
+<div style="font-size:12px;font-weight:800;letter-spacing:1.5px;color:#1463FF">QUÉ PASA AHORA</div>
+<div style="font-size:15px;color:#0B1730;line-height:1.6;margin-top:8px">${until ? `Sigues teniendo PROPO ${p.name} <b>hasta el ${until}</b>.` : `Tu plan PROPO ${p.name} sigue activo hasta el final del periodo pagado.`} No se te cobrará nada más.</div>
+<div style="font-size:15px;color:#0B1730;line-height:1.6;margin-top:6px">Tus propuestas, documentos y memoria de empresa se quedan guardados. Si vuelves, lo encontrarás todo tal y como lo dejaste.</div>
+</td></tr></table></td></tr>
+<tr><td style="padding:24px 32px 4px 32px"><p style="color:#475467;font-size:15px;line-height:1.6;margin:0">Si te lo piensas mejor, te esperaremos con los brazos abiertos. Puedes reactivar tu plan con un clic${until ? ` antes del ${until}` : ''}, o volver cuando quieras más adelante.</p></td></tr>
+<tr><td style="padding:20px 32px 30px 32px"><a href="${site}/#/app/settings/billing" style="display:inline-block;background:#1463FF;color:#ffffff;text-decoration:none;font-weight:700;font-size:15px;padding:14px 26px;border-radius:10px">Reactivar mi plan →</a></td></tr>
+<tr><td style="padding:0 32px 30px 32px;border-top:1px solid #E4E7EC"><p style="color:#475467;font-size:13px;line-height:1.6;margin:20px 0 0 0">¿Nos cuentas por qué te vas? Responde a este correo con una línea: lo leemos todo y nos ayuda muchísimo a mejorar PROPO.</p>
+<p style="color:#0B1730;font-size:14px;font-weight:700;margin:18px 0 0 0">Un abrazo,<br>El equipo de PROPO</p></td></tr>
+</table>
+<div style="color:#98A2B3;font-size:12px;margin-top:16px">PROPO · Licitaciones públicas, preparadas en minutos · <a href="${site}" style="color:#98A2B3">propo.es</a></div>
+</td></tr></table></body></html>`;
+  const text = `Gracias por todo${first ? `, ${first}` : ''}.\n\nHemos recibido la cancelación de tu suscripción a PROPO ${p.name}. Gracias de corazón por habernos confiado tus licitaciones.\n\n${until ? `Sigues teniendo PROPO ${p.name} hasta el ${until}.` : 'Tu plan sigue activo hasta el final del periodo pagado.'} No se te cobrará nada más. Tus propuestas, documentos y memoria de empresa se quedan guardados.\n\nSi te lo piensas mejor, te esperaremos con los brazos abiertos. Reactivar tu plan: ${site}/#/app/settings/billing\n\n¿Nos cuentas por qué te vas? Responde a este correo: nos ayuda muchísimo a mejorar.\n\nUn abrazo,\nEl equipo de PROPO`;
+  return { subject: 'Gracias por haber confiado en PROPO', html, text };
+}
+
+/** Correo de despedida cuando el cliente programa la baja (solo en el momento en que la pide, no en cada aviso). */
+async function sendGoodbye(env, site, ev, sub) {
+  if (!env.RESEND_API_KEY) return;
+  const prev = ev.data?.previous_attributes || {};
+  const nowEnding = !!sub.cancel_at || !!sub.cancel_at_period_end;
+  const wasEnding = ('cancel_at' in prev ? !!prev.cancel_at : !!sub.cancel_at) || ('cancel_at_period_end' in prev ? !!prev.cancel_at_period_end : !!sub.cancel_at_period_end);
+  if (!nowEnding || wasEnding || !('cancel_at' in prev || 'cancel_at_period_end' in prev)) return;
+  const item = sub.items?.data?.[0];
+  const p = planOf(env, item?.price?.id);
+  if (!p) return;
+  try {
+    const c = await stripe(env, 'GET', `customers/${sub.customer}`);
+    if (!c.email) return;
+    const mail = goodbyeEmail(site, c.name, p.plan, fecha(sub.cancel_at || sub.current_period_end || item?.current_period_end));
+    await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json', 'Idempotency-Key': `goodbye-${ev.id}` },
+      body: JSON.stringify({ from: env.MAIL_FROM || 'PROPO <hola@propo.es>', to: [c.email], reply_to: 'hola@propo.es', subject: mail.subject, html: mail.html, text: mail.text }),
+    });
+  } catch { /* el correo no es imprescindible */ }
+}
+
 // ── Firma de los avisos de Stripe (cabecera Stripe-Signature: t=…,v1=…) ─────────────────────────────────────────────
 async function verifySignature(raw, header, secret) {
   const parts = Object.fromEntries((header || '').split(',').map((x) => x.split('=')).filter((x) => x.length === 2).map(([k, v]) => [k.trim(), v.trim()]));
@@ -219,6 +268,7 @@ export default {
           await sendWelcome(env, site, ev.id, o, sub);
         } else if (ev.type === 'customer.subscription.created' || ev.type === 'customer.subscription.updated' || ev.type === 'customer.subscription.deleted') {
           await applySubscription(env, o, null);
+          if (ev.type === 'customer.subscription.updated') await sendGoodbye(env, site, ev, o);
         }
       } catch (e) { return json({ error: String(e.message || e) }, 500); }   // Stripe lo reintentará
       return json({ received: true }, 200);
