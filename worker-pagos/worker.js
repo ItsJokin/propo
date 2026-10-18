@@ -132,7 +132,6 @@ function welcomeEmail(site, name, plan, cycle, renews) {
   const p = PLAN_INFO[plan] || PLAN_INFO.pro;
   const first = esc(String(name || '').trim().split(/\s+/)[0]);
   const ciclo = cycle === 'annual' ? 'anual' : 'mensual';
-  const step = (n, t, d) => `<tr><td style="padding:0 0 18px 0;vertical-align:top;width:42px"><div style="width:30px;height:30px;border-radius:50%;background:#1463FF;color:#ffffff;font-weight:800;font-size:14px;line-height:30px;text-align:center">${n}</div></td><td style="padding:0 0 18px 0;vertical-align:top"><div style="font-weight:700;color:#0B1730;font-size:15px">${t}</div><div style="color:#475467;font-size:14px;line-height:1.5;margin-top:2px">${d}</div></td></tr>`;
   const html = `<!doctype html><html lang="es"><body style="margin:0;padding:0;background:#F4F6FA;font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F4F6FA;padding:32px 12px"><tr><td align="center">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden">
@@ -146,9 +145,7 @@ function welcomeEmail(site, name, plan, cycle, renews) {
 <div style="font-size:18px;font-weight:800;color:#0B1730;margin-top:6px">PROPO ${p.name} · ${p.n} propuestas al mes</div>
 <div style="font-size:14px;color:#475467;margin-top:4px">Facturación ${ciclo}${renews ? ` · próxima renovación el ${renews}` : ''}</div>
 </td></tr></table></td></tr>
-<tr><td style="padding:26px 32px 4px 32px"><div style="font-size:17px;font-weight:800;color:#0B1730;margin-bottom:16px">Empieza en 3 pasos</div>
-<table role="presentation" cellpadding="0" cellspacing="0">${step(1, 'Completa tu memoria de empresa', 'Experiencia, equipo y certificados. Se guarda una vez y PROPO lo usa en todas tus propuestas.')}${step(2, 'Elige una licitación', 'En «Licitaciones» verás las que encajan contigo. Pulsa «Preparar propuesta».')}${step(3, 'Responde y descarga', 'PROPO solo te pregunta lo imprescindible, redacta la oferta y te entrega el paquete listo para firmar.')}</table></td></tr>
-<tr><td style="padding:6px 32px 30px 32px"><a href="${site}/#/app" style="display:inline-block;background:#1463FF;color:#ffffff;text-decoration:none;font-weight:700;font-size:15px;padding:14px 26px;border-radius:10px">Entrar en PROPO →</a></td></tr>
+<tr><td style="padding:26px 32px 30px 32px"><a href="${site}/#/app" style="display:inline-block;background:#1463FF;color:#ffffff;text-decoration:none;font-weight:700;font-size:15px;padding:14px 26px;border-radius:10px">Entrar en PROPO →</a></td></tr>
 <tr><td style="padding:0 32px 30px 32px;border-top:1px solid #E4E7EC"><p style="color:#475467;font-size:13px;line-height:1.6;margin:20px 0 0 0">La factura te llegará en un correo aparte. Puedes descargar tus facturas, cambiar de plan o cancelar cuando quieras desde <b>Ajustes → Facturación</b>.</p>
 <p style="color:#475467;font-size:13px;line-height:1.6;margin:10px 0 0 0">¿Alguna duda? Responde a este correo y te ayudamos personalmente.</p>
 <p style="color:#0B1730;font-size:14px;font-weight:700;margin:18px 0 0 0">El equipo de PROPO</p></td></tr>
