@@ -111,13 +111,15 @@ async function applySubscription(env, sub, userHint) {
   const start = sub.current_period_start ?? item?.current_period_start;   // según la versión de la API de Stripe
   const end = sub.current_period_end ?? item?.current_period_end;
   const live = ['active', 'trialing', 'past_due'].includes(sub.status);
+  // Baja programada: según la versión de la API llega como cancel_at_period_end o como cancel_at (fecha de la baja).
+  const ending = live && (!!sub.cancel_at_period_end || !!sub.cancel_at);
   await saveRow(env, userId, {
     plan: live && p ? p.plan : 'free',
     status: sub.status === 'trialing' ? 'active' : live ? sub.status : 'canceled',
     billing_cycle: p?.cycle || null,
     period_start: iso(start) || new Date().toISOString(),
-    current_period_end: iso(end),
-    cancel_at_period_end: !!sub.cancel_at_period_end,
+    current_period_end: iso(ending && sub.cancel_at ? sub.cancel_at : end),
+    cancel_at_period_end: ending,
     stripe_customer_id: sub.customer,
     stripe_subscription_id: live ? sub.id : null,
   });

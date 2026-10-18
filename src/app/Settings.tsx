@@ -108,12 +108,15 @@ function Billing() {
   const [cancel, setCancel] = useState(false);
   const trialLeft = daysUntil(sub.trialEndsAt);
   const price = sub.plan === 'trial' || sub.plan === 'free' ? 0 : sub.billingCycle === 'annual' ? plan.annual : plan.monthly;
-  const statusLabel = sub.status === 'trialing' ? (trialLeft != null && trialLeft >= 0 ? 'Prueba' : 'Prueba terminada') : sub.cancelAtPeriodEnd ? 'Se cancela al final del periodo' : sub.status === 'active' ? 'Activa' : sub.status === 'past_due' ? 'Pago fallido' : sub.status === 'canceled' ? 'Cancelada' : 'Caducada';
+  const statusLabel = sub.status === 'trialing' ? (trialLeft != null && trialLeft >= 0 ? 'Prueba' : 'Prueba terminada') : sub.cancelAtPeriodEnd ? `Cancelada · activa hasta el ${fmtDate(sub.currentPeriodEnd, { day: 'numeric', month: 'short' })}` : sub.status === 'active' ? 'Activa' : sub.status === 'past_due' ? 'Pago fallido' : sub.status === 'canceled' ? 'Cancelada' : 'Caducada';
   const openPortal = async () => { const r = await billing.openPortal(); if ('url' in r) location.assign(r.url); else if ('error' in r) toast(billingMessage(r.error), r.error === 'no_customer' ? 'neutral' : 'bad'); else setPortal(true); };
   const limit = sub.plan === 'trial' ? 1 : plan.proposalsPerMonth;
   return (
     <div className="stack gap-20">
       {!subscriptionActive(s) && <div className="callout warn"><LuTriangleAlert /><div className="grow"><strong>Suscripción caducada.</strong> Tu espacio de trabajo es de solo lectura hasta que elijas un plan. No se ha borrado nada.</div></div>}
+      {sub.cancelAtPeriodEnd && sub.status === 'active' && (
+        <div className="callout warn"><LuTriangleAlert /><div className="grow"><strong>Has cancelado tu suscripción.</strong> Seguirás teniendo {plan.name} hasta el {fmtDate(sub.currentPeriodEnd)} y no se te cobrará nada más. Después, tus propuestas, documentos y memoria de empresa se conservan en modo lectura. ¿Has cambiado de idea? Pulsa «Reactivar plan».</div></div>
+      )}
       <div className="card">
         <div className="card-head"><h3>Plan actual</h3><span className="spacer" /><span className={`badge ${sub.status === 'active' && !sub.cancelAtPeriodEnd ? 'ok' : 'warn'}`}>{statusLabel}</span>{sub.simulated && <span className="badge sample">Vista previa · sin pago</span>}</div>
         <div className="card-body">
@@ -121,13 +124,13 @@ function Billing() {
             <div>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 700, letterSpacing: '-.03em' }}>{plan.name}</div>
               <div className="muted">{price ? `${price} €/mes${sub.billingCycle === 'annual' ? ', facturación anual' : ''}` : '0 €'}</div>
-              <div className="small mt-8">{sub.status === 'trialing' ? `La prueba termina el ${fmtDate(sub.trialEndsAt)}${trialLeft != null && trialLeft >= 0 ? ` (${trialLeft} días)` : ''}` : sub.cancelAtPeriodEnd ? `Acceso hasta el ${fmtDate(sub.currentPeriodEnd)}` : `Próxima factura: ${fmtDate(sub.currentPeriodEnd)}`}</div>
+              <div className="small mt-8">{sub.status === 'trialing' ? `La prueba termina el ${fmtDate(sub.trialEndsAt)}${trialLeft != null && trialLeft >= 0 ? ` (${trialLeft} días)` : ''}` : sub.cancelAtPeriodEnd ? `Sin más cobros. Puedes seguir usándolo hasta el ${fmtDate(sub.currentPeriodEnd)}.` : `Próxima factura: ${fmtDate(sub.currentPeriodEnd)}`}</div>
             </div>
             <div className="row-wrap">
               <button className="btn btn-secondary" onClick={openPortal}><LuExternalLink /> Gestionar suscripción</button>
               <button className="btn btn-primary" onClick={() => setUpgrade(true)}>{sub.plan === 'business' ? 'Cambiar de plan' : 'Mejorar plan'}</button>
               {sub.status === 'active' && !sub.cancelAtPeriodEnd && sub.plan !== 'enterprise' && <button className="btn btn-ghost" onClick={() => (billing.connected ? openPortal() : setCancel(true))}>Cancelar</button>}
-              {sub.cancelAtPeriodEnd && <button className="btn btn-ghost" onClick={() => { if (billing.connected) { openPortal(); return; } update((x) => { x.subscription.cancelAtPeriodEnd = false; }); toast('Cancelación anulada', 'ok'); }}><LuRotateCcw /> Mantener plan</button>}
+              {sub.cancelAtPeriodEnd && <button className="btn btn-ghost" onClick={() => { if (billing.connected) { openPortal(); return; } update((x) => { x.subscription.cancelAtPeriodEnd = false; }); toast('Cancelación anulada', 'ok'); }}><LuRotateCcw /> Reactivar plan</button>}
             </div>
           </div>
         </div>
