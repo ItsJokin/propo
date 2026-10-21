@@ -16,23 +16,6 @@ import { eur } from '../lib/plans';
 
 const VIDEO = 'media/anuncio-propo.mp4';
 
-/** Vídeo de la portada: se ve en la propia página, sin abrir ventanas. */
-function HeroVideo() {
-  const [on, setOn] = useState(false);
-  return (
-    <div className="hero-vid">
-      {on ? <video src={VIDEO} controls autoPlay playsInline /> : (
-        <button className="hero-vid-cover" onClick={() => { setOn(true); track('video_play', { where: 'hero' }); }} aria-label="Ver el vídeo: cómo funciona PROPO">
-          <span className="hero-vid-logo"><LogoMark size={34} /> PROPO</span>
-          <span className="hero-vid-play"><LuPlay /></span>
-          <span className="hero-vid-t">Así funciona PROPO</span>
-          <span className="hero-vid-s">De la licitación a la propuesta lista para firmar · con sonido</span>
-        </button>
-      )}
-    </div>
-  );
-}
-
 export function VideoModal({ onClose }: { onClose: () => void }) {
   useEffect(() => {
     const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
@@ -304,28 +287,6 @@ export function Landing() {
             <p className="hero-sub">PROPO encuentra los concursos públicos que encajan con tu empresa, lee los pliegos, redacta la propuesta, calcula contigo el mejor precio y lo revisa todo antes de presentar. <strong>Tú solo firmas.</strong></p>
             <div className="hero-cta"><button className="btn btn-primary btn-lg" onClick={() => start('hero_start_free')}>Empieza gratis <LuArrowRight /></button></div>
             <div className="hero-note"><span><LuCheck /> 14 días gratis</span><span><LuCheck /> Sin tarjeta</span><span><LuCheck /> Una propuesta completa incluida</span></div>
-          </div>
-          <div className="hero-show">
-            <HeroVideo />
-            <div className="trial-card">
-              <div className="eyebrow">Así es la prueba gratis</div>
-              <h3>Pruébalo con una licitación real, no con un ejemplo.</h3>
-              <ul className="trial-points">
-                <li><LuCheck /><span><strong>14 días</strong> con todo PROPO: buscador, análisis de pliegos, redacción, precio y comprobación final.</span></li>
-                <li><LuCheck /><span><strong>Una propuesta completa</strong> de principio a fin, lista para firmar y presentar.</span></li>
-                <li><LuCheck /><span><strong>Sin tarjeta y sin compromiso.</strong> Si no te convence, no pagas nada.</span></li>
-              </ul>
-              <div className="trial-steps">
-                <div className="small" style={{ fontWeight: 700 }}>Crear tu cuenta lleva un minuto:</div>
-                <ol>
-                  <li>Escribe tu correo y una contraseña.</li>
-                  <li>Confirma el correo que te enviamos.</li>
-                  <li>Cuéntanos a qué se dedica tu empresa y elige tu primera licitación.</li>
-                </ol>
-              </div>
-              <button className="btn btn-primary btn-lg" style={{ width: '100%' }} onClick={() => start('trial_card_signup')}>Crear mi cuenta gratis <LuArrowRight /></button>
-              <div className="xs muted mt-8" style={{ textAlign: 'center' }}>¿Ya tienes cuenta? <a style={{ cursor: 'pointer' }} onClick={() => navigate('/login')}>Inicia sesión</a></div>
-            </div>
           </div>
         </div>
         <div className="mk-wrap">

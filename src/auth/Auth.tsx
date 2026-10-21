@@ -10,10 +10,42 @@ import { INDUSTRIES } from '../lib/discovery/match';
 import { hashPassword, checkPassword } from '../lib/services/localAuth';
 import * as cloud from '../lib/services/cloud';
 import { enterCloud } from '../lib/cloudSync';
+import { HeroVideo } from '../marketing/HeroVideo';
 
 const EMAIL = /^\S+@\S+\.\S+$/;
 
 const ROLES = ['Gerencia / Dirección', 'Licitaciones', 'Comercial / Desarrollo de negocio', 'Operaciones', 'Administración y finanzas', 'Consultoría', 'Otro'];
+
+const TRIAL = [
+  ['14 días con todo PROPO', 'Buscador, análisis de pliegos, redacción, precio y comprobación final.'],
+  ['Una propuesta completa', 'Con una licitación real, de principio a fin, lista para firmar y presentar.'],
+  ['Sin tarjeta y sin compromiso', 'Si no te convence, no pagas nada. Tus datos son solo tuyos.'],
+];
+
+/** Lado izquierdo del registro: qué es PROPO (vídeo) y en qué consiste la prueba gratis. */
+function SignupSide() {
+  return (
+    <aside className="auth-side signup-side">
+      <Logo onClick={() => navigate('/')} />
+      <div>
+        <h2 className="signup-h">Pruébalo gratis con una licitación real.</h2>
+        <div className="mt-20"><HeroVideo where="signup" /></div>
+        <ul className="trial-points mt-24">
+          {TRIAL.map(([t, d]) => <li key={t}><LuCheck /><span><strong>{t}.</strong> {d}</span></li>)}
+        </ul>
+        <div className="trial-steps">
+          <div className="small" style={{ fontWeight: 700 }}>Crear tu cuenta lleva un minuto:</div>
+          <ol>
+            <li>Rellena el formulario de la derecha.</li>
+            <li>Confirma el correo que te enviamos.</li>
+            <li>Elige tu primera licitación y PROPO se pone a trabajar.</li>
+          </ol>
+        </div>
+      </div>
+      <p className="small subtle">Tus documentos son privados de tu empresa. PROPO nunca los usa para entrenar modelos de IA.</p>
+    </aside>
+  );
+}
 
 function AuthSide() {
   return (
@@ -22,7 +54,7 @@ function AuthSide() {
       <div>
         <h2 style={{ fontSize: 34, lineHeight: 1.1, letterSpacing: '-.04em', fontWeight: 800 }}>Encuentra las licitaciones.<br /><span className="blue">PROPO prepara el resto.</span></h2>
         <div className="pipeline mt-32">
-          {['Encuentra licitaciones que encajan con tu empresa', 'Sube el pliego y PROPO extrae cada requisito', 'Tus datos de empresa cubren lo que pueden', 'Revisa la propuesta redactada y apruébala'].map((t, i) => (
+          {['Encuentra licitaciones que encajan con tu empresa', 'PROPO lee el pliego y saca cada requisito', 'Redacta la propuesta y calcula contigo el precio', 'Lo revisa todo: tú solo firmas'].map((t, i) => (
             <div key={t} className="pipe-step done" style={{ alignItems: 'flex-start' }}><span className="ic"><span style={{ fontSize: 10, fontWeight: 700 }}>{i + 1}</span></span><span>{t}</span></div>
           ))}
         </div>
@@ -63,13 +95,14 @@ export function Signup() {
     navigate('/welcome');
   };
   return (
-    <div className="auth">
-      <AuthSide />
+    <div className="auth auth-signup">
+      <SignupSide />
       <main className="auth-main">
         {sent ? <CheckEmail email={sent} password={f.password} onBack={() => setSent(null)} /> : <div className="auth-card">
           <div className="hide-desktop" style={{ marginBottom: 24 }}><Logo onClick={() => navigate('/')} /></div>
           <h1>Crea tu cuenta de PROPO</h1>
           <p className="muted mt-8">14 días de prueba con una propuesta completa. Sin tarjeta.</p>
+          <ul className="trial-points trial-mobile mt-16">{TRIAL.map(([t]) => <li key={t}><LuCheck /><span>{t}</span></li>)}</ul>
           {!cloud.cloudEnabled && <>
           <button type="button" className="btn btn-secondary btn-lg oauth-btn mt-24" onClick={() => setGoogle(true)}>
             <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.23c0-.68-.06-1.36-.18-2.02H12v3.83h5.4a4.6 4.6 0 0 1-2 3.02v2.5h3.23c1.9-1.75 2.97-4.32 2.97-7.33z" /><path fill="#34A853" d="M12 22c2.7 0 4.97-.9 6.63-2.43l-3.23-2.5c-.9.6-2.05.95-3.4.95-2.6 0-4.82-1.76-5.6-4.12H3.06v2.58A10 10 0 0 0 12 22z" /><path fill="#FBBC05" d="M6.4 13.9a6 6 0 0 1 0-3.8V7.52H3.06a10 10 0 0 0 0 8.96l3.34-2.58z" /><path fill="#EA4335" d="M12 5.98c1.47 0 2.8.5 3.84 1.5l2.86-2.86A9.6 9.6 0 0 0 12 2 10 10 0 0 0 3.06 7.52l3.34 2.58C7.18 7.74 9.4 5.98 12 5.98z" /></svg>
