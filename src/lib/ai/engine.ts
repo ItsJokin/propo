@@ -408,7 +408,8 @@ function templateSection(section: Section, reqs: Requirement[], citations: Citat
   paras.push(`En esta sección, ${name} explica cómo abordará «${section.title}» en este contrato.`);
   const reqLines = reqs.slice(0, 4).map((r) => {
     const m = cite(r.source.docId, r.source.page);
-    return `- ${r.title}${m ? ` [${m}]` : ''}: [Información requerida: describe cómo cumplirá ${name} este requisito]`;
+    // Una marca distinta por requisito: así cada respuesta va a su línea y el cliente sabe qué se le pide.
+    return `- ${r.title}${m ? ` [${m}]` : ''}: [Información requerida: cómo cumplirá ${name} «${r.title.replace(/[[\]]/g, '')}»]`;
   });
   if (reqLines.length) paras.push(`El pliego establece estos requisitos para este apartado:\n${reqLines.join('\n')}`);
   const comp = citations.filter((c) => c.kind === 'company').slice(0, 3);

@@ -110,7 +110,9 @@ export function fillInfo(projectId: string, sectionId: string, tag: string, labe
   updateProject(projectId, (pr) => {
     const s = pr.sections.find((x) => x.id === sectionId);
     if (!s) return;
-    s.content = s.content.includes(tag) ? s.content.split(tag).join(v) : `${s.content.trimEnd()}\n\n${v}`;
+    // Solo el hueco que ha rellenado el cliente: si la misma marca aparece en otras líneas, esas siguen pendientes.
+    const at = s.content.indexOf(tag);
+    s.content = at >= 0 ? s.content.slice(0, at) + v + s.content.slice(at + tag.length) : `${s.content.trimEnd()}\n\n${v}`;
     forget(s, label, plan.kind);
     if (s.status === 'approved') s.status = 'reviewed';
     s.updatedAt = nowIso();
