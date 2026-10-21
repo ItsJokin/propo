@@ -8,7 +8,7 @@ import { fillOfficialModel } from '../../lib/offerModel';
 import { getFile } from '../../lib/storage';
 import { offerDownload } from '../../lib/services/download';
 import {
-  emptyPricing, readPriceRule, marketFor, priceOptions, choose, readOwnPrices, formalCommitment, priceWarnings, eurosInWords, eur2, pct1, num,
+  emptyPricing, readPriceRule, marketFor, priceOptions, choose, readOwnPrices, formalCommitment, priceWarnings, eurosInWords, eur2, pct1, num, pointsFor,
   type Pricing as PricingState, type Market, type Option,
 } from '../../lib/pricing';
 import { Economic } from './Economic';
@@ -19,6 +19,23 @@ const MODE: Record<Option['mode'], { t: string; d: string }> = {
   aggressive: { t: 'Agresiva', d: 'Máximos puntos, muy cerca de la baja temeraria.' },
 };
 const pts = (x: number | null) => (x == null ? '—' : String(Math.round(x * 10) / 10).replace('.', ','));
+
+/** Cuánto pesa el precio en la nota, en una frase. */
+function weight(points: number | null, total: number | null) {
+  if (!points || !total) return 'El precio es uno de los criterios que más decide una licitación.';
+  const share = points / total;
+  if (share >= 0.5) return `Es más de la mitad de la nota: aquí el precio pesa más que la memoria técnica.`;
+  if (share >= 0.3) return `Es una parte muy importante de la nota: un buen precio puede darte el contrato aunque otra empresa tenga una memoria parecida.`;
+  return `Pesa menos que la memoria técnica: aquí no merece la pena arriesgar mucho con el precio, porque los puntos se ganan sobre todo con la propuesta.`;
+}
+/** La fórmula del pliego, explicada sin jerga. */
+function formulaPlain(r: { formula: string; points: number | null; satiation: number | null }) {
+  const P = r.points ? `${pts(r.points)} puntos` : 'todos los puntos del precio';
+  if (r.formula === 'linear') return `Los puntos van en proporción a la rebaja: quien más rebaja se lleva los ${P}, y si tú rebajas la mitad que esa empresa, te llevas la mitad.`;
+  if (r.formula === 'threshold') return `Los puntos van en proporción a la rebaja, pero con un tope: a partir de una rebaja del ${r.satiation != null ? pts(r.satiation) + ' %' : 'umbral que fija el pliego'} ya no se dan más puntos, así que bajar más solo te quita dinero.`;
+  if (r.formula === 'other') return `Este pliego usa una fórmula propia (la tienes debajo, en «Ver la fórmula»). Para estimar los puntos usamos la regla más parecida, así que tómalos como una orientación.`;
+  return `La oferta más barata se lleva los ${P}. Las demás reciben puntos en proporción: cuanto más cerca estés del precio más bajo, más puntos te llevas, aunque no seas el más barato.`;
+}
 
 export function Pricing({ p }: { p: Project }) {
   const pr: PricingState = p.pricing ?? emptyPricing();
@@ -105,11 +122,25 @@ export function Pricing({ p }: { p: Project }) {
         <div className="eyebrow">Paso 3 · El precio</div>
         <h2 className="mt-8" style={{ fontSize: 22 }}>Cómo se puntúa el precio en esta licitación</h2>
         <p className="mt-8" style={{ fontSize: 15, lineHeight: 1.6 }}>{rule.plain}</p>
+        <p className="mt-8 muted" style={{ lineHeight: 1.6 }}>{weight(rule.points, rule.totalPoints)} El objetivo no es ser el más barato, sino <strong>bajar lo justo</strong>: cada euro de rebaja es dinero que dejas de ganar durante todo el contrato, y si te pasas, te pueden excluir.</p>
         <div className="pr-kpis mt-16">
           <div><div className="xs subtle">El precio vale</div><div className="pr-k num">{rule.points ? `${pts(rule.points)} puntos` : '—'}</div><div className="xs muted">{rule.totalPoints ? `de ${pts(rule.totalPoints)} en total` : ''}</div></div>
           <div><div className="xs subtle">Precio máximo (sin IVA)</div><div className="pr-k num">{rule.budget ? eur2(rule.budget) : '—'}</div><div className="xs muted">Por encima, te excluyen</div></div>
           <div><div className="xs subtle">Lo habitual</div><div className="pr-k num">{market ? `−${pct1(m.mean)}` : '…'}</div><div className="xs muted">{m.n ? `Rebaja media en ${m.n} contratos ${m.scope}` : 'Rebaja típica estimada'}</div></div>
           <div><div className="xs subtle">Zona de riesgo</div><div className="pr-k num">{calc ? `más de −${pct1(calc.abnormal)}` : '—'}</div><div className="xs muted">Baja temeraria: habría que justificarla</div></div>
+        </div>
+        <div className="pr-explain mt-16">
+          <div>
+            <h4>Cómo se reparten los puntos</h4>
+            <p>{formulaPlain(rule)}</p>
+            {!!rule.points && <p className="mt-8">Por ejemplo: si la oferta más barata rebaja un {pct1(m.best)} y tú un {pct1(m.mean)}, te llevarías unos <strong>{pts(pointsFor(rule, m.mean, m.best))} puntos</strong>; si igualas su rebaja, los {pts(rule.points)}.</p>}
+            <p className="mt-8 xs muted">«Lo habitual» es lo que rebajaron de media las empresas que ganaron contratos parecidos, según los datos públicos de adjudicación.</p>
+          </div>
+          <div>
+            <h4>Qué es la baja temeraria</h4>
+            <p>Si tu precio queda muy por debajo del de los demás, la Administración sospecha que no podrás cumplir el contrato. Te pedirá que lo justifiques en pocos días (salarios, costes, proveedores) y, si no le convence, <strong>te excluye</strong> aunque tuvieras la mejor nota.</p>
+            <p className="mt-8">Por eso PROPO te avisa siempre que una opción entra en esa zona y, si la eliges, te deja preparada la justificación.</p>
+          </div>
         </div>
         {!rule.budget && (
           <div className="callout warn mt-16"><LuTriangleAlert /><div className="grow"><strong>No hemos encontrado el presupuesto máximo.</strong> Escríbelo (sin IVA) para poder calcular el precio.
@@ -131,7 +162,18 @@ export function Pricing({ p }: { p: Project }) {
       {!!rule.budget && !ch && (
         <div className="card card-pad">
           <h3 style={{ fontSize: 18 }}>¿Por debajo de qué precio no te compensa hacerlo?</h3>
-          <p className="muted mt-4">Suma lo que te cuesta prestar el servicio (personal, materiales, desplazamientos…) y el beneficio mínimo que quieres ganar. Con ese número PROPO calcula el precio que más puntos te da <strong>sin que pierdas dinero</strong>. Solo lo usamos para el cálculo: no va en la oferta.</p>
+          <p className="muted mt-4">Con ese número PROPO calcula el precio que más puntos te da <strong>sin que pierdas dinero</strong>. Es tu dato interno: solo lo usamos para el cálculo y no aparece en ningún documento de la oferta.</p>
+          <div className="pr-floor-help mt-12">
+            <div className="small" style={{ fontWeight: 600 }}>Para calcularlo, suma{p.analysis?.duration ? ` para toda la duración del contrato (${p.analysis.duration})` : ' para toda la duración del contrato'}:</div>
+            <ul className="small">
+              <li><strong>Personal:</strong> los salarios según el convenio de tu sector, más la Seguridad Social de la empresa (suele ser alrededor de un tercio más del sueldo bruto).</li>
+              <li><strong>Materiales y suministros:</strong> productos, comida, piezas, combustible…</li>
+              <li><strong>Medios:</strong> vehículos, maquinaria, uniformes, seguros y licencias que necesites para este contrato.</li>
+              <li><strong>Gastos generales:</strong> la parte de oficina, gestión y administración que le toca a este contrato.</li>
+              <li><strong>Tu beneficio mínimo:</strong> lo que quieres ganar como poco para que merezca la pena.</li>
+            </ul>
+            <div className="xs muted">Todo sin IVA. Si dudas, pon una cifra aproximada: siempre puedes cambiarla y volver a calcular.</div>
+          </div>
           <div className="row mt-12" style={{ gap: 8, flexWrap: 'wrap' }}>
             <div className="pr-money"><input className="input" inputMode="decimal" placeholder={`p. ej. ${Math.round(rule.budget * 0.82).toLocaleString('es-ES')}`} value={floorTxt} onChange={(e) => setFloorTxt(e.target.value)} aria-label="Precio mínimo sin IVA" /><span>€ sin IVA, en total</span></div>
             <button className="btn btn-primary" disabled={!num(floorTxt)} onClick={() => compute(true)}><LuSparkles /> Que PROPO calcule el mejor precio</button>
@@ -142,6 +184,7 @@ export function Pricing({ p }: { p: Project }) {
             <>
               {!pr.floor && <div className="callout warn small mt-16"><LuTriangleAlert /><div>Sin tu precio mínimo no podemos saber si estas opciones te dejan beneficio. Revísalas con tus números antes de elegir.</div></div>}
               {calc.limit === 'floor' && <div className="callout neutral small mt-16"><LuInfo /><div>Tu precio mínimo limita la rebaja: ninguna opción baja de {eur2(pr.floor!)}. Puede que otros ofrezcan menos; compensa con una buena memoria técnica.</div></div>}
+              <p className="mt-16" style={{ lineHeight: 1.6 }}>Hemos calculado tres precios con {pr.floor ? 'tu mínimo, ' : ''}la fórmula de este pliego y lo que rebajaron los ganadores de contratos parecidos. Se diferencian en <strong>cuánto arriesgas</strong>: más rebaja te da más opciones de llevarte todos los puntos del precio, pero te deja menos margen y te acerca a la baja temeraria.</p>
               <div className="pr-opts mt-16">
                 {calc.options.map((o) => (
                   <div key={o.mode} className={`pr-opt ${o.mode === 'recommended' ? 'rec' : ''}`}>
@@ -165,7 +208,7 @@ export function Pricing({ p }: { p: Project }) {
 
           <div className="pr-own mt-24">
             <h3 style={{ fontSize: 16 }}><LuPencil style={{ verticalAlign: -2 }} /> ¿Prefieres poner tus precios?</h3>
-            <p className="small muted mt-4">Escríbelos con tus palabras, como se los dirías a un compañero. PROPO los ordena y los pasa al formato oficial de la oferta, <strong>sin cambiar ningún importe</strong>.</p>
+            <p className="small muted mt-4">Escríbelos con tus palabras, como se los dirías a un compañero: el total del contrato, el precio por unidad o ambos. PROPO los ordena y los pasa al formato oficial de la oferta, <strong>sin cambiar ningún importe</strong>. Después verás los puntos que te darían y si algo supera el máximo del pliego. Si los escribes con IVA incluido, te avisaremos.</p>
             <textarea className="textarea mt-8" rows={3} value={own} onChange={(e) => setOwn(e.target.value)} placeholder={rule.units.length ? `Por ejemplo: ${rule.units.slice(0, 2).map((u) => `${u.label.toLowerCase()} a ${u.max ? (Math.round(u.max * 0.9 * 100) / 100).toString().replace('.', ',') : '…'} €`).join(', ')}…` : 'Por ejemplo: 198.500 euros sin IVA por todo el contrato'} />
             <button className="btn btn-secondary mt-8" disabled={!own.trim() || ordering} onClick={order}>{ordering ? 'Ordenando…' : 'Que PROPO lo ordene'}</button>
           </div>
@@ -191,6 +234,17 @@ export function Pricing({ p }: { p: Project }) {
           )}
           {!!rule.budget && <p className="small mt-12">Rebaja sobre el precio máximo: <strong>{pct1(ch.baja)}</strong>{ch.points != null && <> · Puntos del precio estimados: <strong>{pts(ch.points)} de {pts(rule.points)}</strong></>}</p>}
           {warns.map((w, i) => <div key={i} className={`callout ${w.level} small mt-8`}><LuTriangleAlert /><div>{w.text}</div></div>)}
+          {!pr.approved && (
+            <div className="pr-next mt-12 small">
+              <strong>Revisa los importes. Al confirmar, PROPO:</strong>
+              <ol>
+                <li>rellena con ellos el modelo oficial de oferta del pliego, si lo tiene;</li>
+                <li>prepara tu oferta económica, lista para firmar, en el sobre de precio del paquete;</li>
+                <li>vuelve a comprobar en la comprobación final que nada supera los máximos y que el precio no aparece en la memoria técnica.</li>
+              </ol>
+              <span className="muted">Podrás cambiarlo cuando quieras hasta que presentes la oferta.</span>
+            </div>
+          )}
           {pr.approved && filling && <div className="callout small mt-12"><LuLoaderCircle className="spin" /><div>PROPO está rellenando el modelo oficial de oferta del pliego con tus importes…</div></div>}
           {pr.approved && !filling && pr.filled && (
             <div className="callout small mt-12"><LuCircleCheck /><div className="grow"><strong>Modelo oficial rellenado.</strong> Hemos completado {pr.filled.fields} {pr.filled.fields === 1 ? 'dato' : 'datos'} de «{pr.filled.source}» con tus importes. Va en el paquete, en el sobre de la oferta económica. Revísalo y fírmalo antes de presentarlo.

@@ -1300,3 +1300,12 @@ a.comp-award-t:hover { color: var(--accent); }
 .pr-other { border: 1px solid var(--border); border-radius: var(--r); padding: 14px; }
 @media (max-width: 860px) { .pr-kpis, .pr-opts, .pr-sum { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .pr-kpis, .pr-opts, .pr-sum { grid-template-columns: 1fr; } .pr-money { flex-wrap: wrap; } }
+
+.pr-explain { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.pr-explain > div { border: 1px solid var(--border); border-radius: var(--r); padding: 14px 16px; font-size: 14px; line-height: 1.6; }
+.pr-explain h4 { font-size: 14.5px; margin: 0 0 6px; }
+.pr-floor-help { background: var(--bg-subtle); border: 1px solid var(--border); border-radius: var(--r); padding: 12px 16px; }
+.pr-floor-help ul { margin: 8px 0; padding-left: 18px; display: grid; gap: 4px; line-height: 1.5; }
+.pr-next { background: var(--accent-soft); border-radius: var(--r); padding: 12px 16px; line-height: 1.6; }
+.pr-next ol { margin: 6px 0; padding-left: 20px; }
+@media (max-width: 760px) { .pr-explain { grid-template-columns: 1fr; } }
