@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { LuLock, LuShieldCheck, LuServer, LuKeyRound, LuHistory, LuTrash2, LuUsers, LuDatabase, LuCheck, LuArrowRight, LuCopy, LuBookOpen } from 'react-icons/lu';
-import { MkLayout, startDemo } from './Layout';
+import { MkLayout } from './Layout';
 import { navigate, toast } from '../lib/store';
 import { Faq } from './Landing';
 
@@ -48,7 +48,7 @@ export function Features() {
           </div>
           <div className="row-wrap mt-32">
             <button className="btn btn-primary btn-lg" onClick={() => navigate('/signup')}>Empezar gratis <LuArrowRight /></button>
-            <button className="btn btn-secondary btn-lg" onClick={() => startDemo('/app')}>Ver PROPO en acción</button>
+            
           </div>
         </div>
       </section>

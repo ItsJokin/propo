@@ -1309,3 +1309,29 @@ a.comp-award-t:hover { color: var(--accent); }
 .pr-next { background: var(--accent-soft); border-radius: var(--r); padding: 12px 16px; line-height: 1.6; }
 .pr-next ol { margin: 6px 0; padding-left: 20px; }
 @media (max-width: 760px) { .pr-explain { grid-template-columns: 1fr; } }
+
+/* ── Portada v2: un solo botón, vídeo y la prueba gratis al lado ───────────────────────── */
+.hero-v2 .hero-top { max-width: 820px; margin: 0 auto; text-align: center; }
+.hero-v2 .hero-top .hero-sub { margin-left: auto; margin-right: auto; }
+.hero-v2 .hero-cta, .hero-v2 .hero-note { justify-content: center; }
+.hero-show { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 22px; margin-top: 44px; align-items: stretch; }
+.hero-vid { border-radius: 20px; overflow: hidden; background: #0B1730; box-shadow: var(--shadow-lg, 0 30px 80px rgba(11,23,48,.25)); aspect-ratio: 16 / 9; align-self: center; width: 100%; }
+.hero-vid video { width: 100%; height: 100%; display: block; background: #000; }
+.hero-vid-cover { all: unset; cursor: pointer; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #fff; position: relative;
+  background: radial-gradient(circle at 80% 10%, rgba(20,99,255,.45), transparent 55%), radial-gradient(circle at 0% 100%, rgba(20,99,255,.25), transparent 50%), #0B1730; }
+.hero-vid-cover::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 40px 40px; }
+.hero-vid-cover > * { position: relative; }
+.hero-vid-logo { position: absolute !important; top: 20px; left: 22px; display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .04em; }
+.hero-vid-play { width: 76px; height: 76px; border-radius: 50%; background: #1463FF; display: grid; place-items: center; box-shadow: 0 0 0 10px rgba(20,99,255,.22); transition: transform .15s; }
+.hero-vid-play svg { width: 30px; height: 30px; margin-left: 4px; }
+.hero-vid-cover:hover .hero-vid-play { transform: scale(1.06); }
+.hero-vid-t { font: 800 26px/1.2 var(--font-display); letter-spacing: -.02em; margin-top: 8px; }
+.hero-vid-s { font-size: 14px; color: #C9D6F2; }
+.trial-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; text-align: left; }
+.trial-card h3 { font-size: 20px; margin: 8px 0 12px; letter-spacing: -.02em; }
+.trial-points { list-style: none; padding: 0; margin: 0 0 14px; display: grid; gap: 10px; font-size: 14.5px; line-height: 1.5; }
+.trial-points li { display: flex; gap: 10px; }
+.trial-points svg { flex: none; color: var(--ok); width: 18px; height: 18px; margin-top: 2px; }
+.trial-steps { background: var(--bg-subtle); border-radius: 12px; padding: 12px 14px; margin-bottom: 16px; flex: 1; }
+.trial-steps ol { margin: 6px 0 0; padding-left: 20px; font-size: 14px; line-height: 1.6; }
+@media (max-width: 900px) { .hero-show { grid-template-columns: 1fr; } }

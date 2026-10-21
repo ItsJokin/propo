@@ -4,7 +4,7 @@ import {
   LuShieldCheck, LuBuilding2, LuFileCheck, LuLoaderCircle, LuHouse, LuFolderKanban, LuLibrary, LuBell, LuMapPin,
   LuCalendar, LuEuro, LuLandmark, LuSparkles, LuBookmark, LuChevronRight, LuPlay, LuX,
 } from 'react-icons/lu';
-import { MkLayout, startDemo, startCompleteDemo } from './Layout';
+import { MkLayout } from './Layout';
 import { navigate, track } from '../lib/store';
 import { Ring, Bar, LogoMark } from '../components/ui';
 import { PricingCards } from './Pricing';
@@ -15,6 +15,23 @@ import { daysUntil, fmtDate } from '../lib/util';
 import { eur } from '../lib/plans';
 
 const VIDEO = 'media/anuncio-propo.mp4';
+
+/** Vídeo de la portada: se ve en la propia página, sin abrir ventanas. */
+function HeroVideo() {
+  const [on, setOn] = useState(false);
+  return (
+    <div className="hero-vid">
+      {on ? <video src={VIDEO} controls autoPlay playsInline /> : (
+        <button className="hero-vid-cover" onClick={() => { setOn(true); track('video_play', { where: 'hero' }); }} aria-label="Ver el vídeo: cómo funciona PROPO">
+          <span className="hero-vid-logo"><LogoMark size={34} /> PROPO</span>
+          <span className="hero-vid-play"><LuPlay /></span>
+          <span className="hero-vid-t">Así funciona PROPO</span>
+          <span className="hero-vid-s">De la licitación a la propuesta lista para firmar · con sonido</span>
+        </button>
+      )}
+    </div>
+  );
+}
 
 export function VideoModal({ onClose }: { onClose: () => void }) {
   useEffect(() => {
@@ -277,30 +294,43 @@ const MARQUEE_SECTORS = ['Construcción', 'Catering y restauración', 'Limpieza'
 
 export function Landing() {
   const start = (cta: string) => { track('cta_click', { cta }); navigate('/signup'); };
-  const [video, setVideo] = useState(false);
   return (
     <MkLayout>
-      {video && <VideoModal onClose={() => setVideo(false)} />}
-      <section className="hero">
-        <div className="mk-wrap hero-grid">
-          <div>
-            <span className="hero-kicker"><span className="new">Nuevo</span>La forma más inteligente de trabajar con licitaciones</span>
+      <section className="hero hero-v2">
+        <div className="mk-wrap">
+          <div className="hero-top">
+            <span className="hero-kicker"><span className="new">Nuevo</span>Software de licitaciones con IA para pymes</span>
             <h1>Encuentra las licitaciones.<br /><span className="blue">PROPO prepara el resto.</span></h1>
-            <p className="hero-sub">PROPO encuentra las licitaciones que encajan con tu empresa, lee los pliegos, detecta cada requisito y prepara la propuesta para que tu equipo solo tenga que revisarla.</p>
-            <div className="hero-cta">
-              <button className="btn btn-primary btn-lg" onClick={() => start('hero_start_free')}>Empezar gratis <LuArrowRight /></button>
-              <button className="btn btn-secondary btn-lg" onClick={startCompleteDemo}>Ver una propuesta terminada</button>
-            </div>
-            <div className="hero-note">
-              <span><LuCheck /> 14 días de prueba</span><span><LuCheck /> Sin tarjeta</span><span><LuCheck /> Tu equipo aprueba todo</span>
-            </div>
-            <button className="hero-video" onClick={() => setVideo(true)}><span><LuPlay /></span><div>Ver PROPO en un minuto<small>Vídeo con sonido</small></div></button>
+            <p className="hero-sub">PROPO encuentra los concursos públicos que encajan con tu empresa, lee los pliegos, redacta la propuesta, calcula contigo el mejor precio y lo revisa todo antes de presentar. <strong>Tú solo firmas.</strong></p>
+            <div className="hero-cta"><button className="btn btn-primary btn-lg" onClick={() => start('hero_start_free')}>Empieza gratis <LuArrowRight /></button></div>
+            <div className="hero-note"><span><LuCheck /> 14 días gratis</span><span><LuCheck /> Sin tarjeta</span><span><LuCheck /> Una propuesta completa incluida</span></div>
           </div>
-          <HeroMock />
+          <div className="hero-show">
+            <HeroVideo />
+            <div className="trial-card">
+              <div className="eyebrow">Así es la prueba gratis</div>
+              <h3>Pruébalo con una licitación real, no con un ejemplo.</h3>
+              <ul className="trial-points">
+                <li><LuCheck /><span><strong>14 días</strong> con todo PROPO: buscador, análisis de pliegos, redacción, precio y comprobación final.</span></li>
+                <li><LuCheck /><span><strong>Una propuesta completa</strong> de principio a fin, lista para firmar y presentar.</span></li>
+                <li><LuCheck /><span><strong>Sin tarjeta y sin compromiso.</strong> Si no te convence, no pagas nada.</span></li>
+              </ul>
+              <div className="trial-steps">
+                <div className="small" style={{ fontWeight: 700 }}>Crear tu cuenta lleva un minuto:</div>
+                <ol>
+                  <li>Escribe tu correo y una contraseña.</li>
+                  <li>Confirma el correo que te enviamos.</li>
+                  <li>Cuéntanos a qué se dedica tu empresa y elige tu primera licitación.</li>
+                </ol>
+              </div>
+              <button className="btn btn-primary btn-lg" style={{ width: '100%' }} onClick={() => start('trial_card_signup')}>Crear mi cuenta gratis <LuArrowRight /></button>
+              <div className="xs muted mt-8" style={{ textAlign: 'center' }}>¿Ya tienes cuenta? <a style={{ cursor: 'pointer' }} onClick={() => navigate('/login')}>Inicia sesión</a></div>
+            </div>
+          </div>
         </div>
         <div className="mk-wrap">
           <div className="hero-strip">
-            {[[<LuSearch />, 'Encuentra oportunidades', 'Licitaciones que encajan contigo'], [<LuFileText />, 'Analiza pliegos', 'Requisitos con su página'], [<LuFileCheck />, 'Prepara propuestas', 'Borradores con fuentes'], [<LuShieldCheck />, 'Todo bajo control', 'Tú revisas y apruebas']].map(([ic, t, d]) => (
+            {[[<LuSearch />, 'Encuentra oportunidades', 'Licitaciones que encajan contigo'], [<LuFileText />, 'Analiza pliegos', 'Requisitos con su página'], [<LuFileCheck />, 'Prepara propuestas', 'Borradores con fuentes'], [<LuShieldCheck />, 'Todo bajo control', 'Tú solo firmas']].map(([ic, t, d]) => (
               <div key={t as string} className="hs-item"><span className="hs-ico">{ic}</span><div><div className="hs-t">{t}</div><div className="xs subtle">{d}</div></div></div>
             ))}
           </div>
@@ -351,7 +381,7 @@ export function Landing() {
         <div className="mk-wrap">
           <div className="section-head">
             <div className="eyebrow">Cómo funciona</div>
-            <h2>Encuentra la licitación. <span className="blue">PROPO hace el trabajo.</span> Tú apruebas.</h2>
+            <h2>Encuentra la licitación. <span className="blue">PROPO hace el trabajo.</span> Tú solo firmas.</h2>
           </div>
           <HowItWorks />
         </div>
@@ -436,13 +466,13 @@ export function Landing() {
         <div className="mk-wrap">
           <div className="section-head">
             <div className="eyebrow">Con supervisión humana</div>
-            <h2>PROPO prepara. <span className="blue">Tu empresa aprueba.</span></h2>
-            <p>La IA lee y hace el primer borrador. Las decisiones con peso legal y comercial las toman personas.</p>
+            <h2>PROPO lo prepara todo. <span className="blue">Tú tienes la última palabra.</span></h2>
+            <p>PROPO hace el trabajo pesado y te lo deja listo. Nada se presenta sin ti: tú confirmas el precio y firmas.</p>
           </div>
           <div className="principle">
             <div><div className="big">Prepara</div><p className="muted mt-8">Extrae requisitos, cruza los datos de tu empresa, redacta secciones y declaraciones y monta el paquete.</p></div>
             <div><div className="big">Avisa</div><p className="muted mt-8">Marca lo que no tiene claro, lo que falta y lo que podría excluirte. Nunca rellena huecos con datos inventados.</p></div>
-            <div><div className="big">Tú apruebas</div><p className="muted mt-8">Cada sección pasa de Borrador a Generada por IA, Revisada y Aprobada. Precios, experiencia y datos legales los valida una persona.</p></div>
+            <div><div className="big">Tú firmas</div><p className="muted mt-8">Te lo entrega comprobado y listo. Puedes cambiar cualquier cosa, confirmas el precio y firmas. PROPO nunca presenta nada en tu nombre.</p></div>
           </div>
         </div>
       </section>
@@ -470,13 +500,11 @@ export function Landing() {
         <div className="mk-wrap">
           <div className="cta-band">
             <div>
-              <h2>Encuentra la licitación. PROPO hace el trabajo. Tú apruebas.</h2>
-              <p>Crea tu primera propuesta en minutos. Sin tarjeta.</p>
+              <h2>Tu próxima licitación, preparada en minutos.</h2>
+              <p>14 días gratis con una licitación real. Sin tarjeta y sin compromiso.</p>
             </div>
             <div className="row-wrap">
-              <button className="btn btn-primary btn-lg" onClick={() => start('footer_create_first')}>Crear mi primera propuesta</button>
-              <button className="btn btn-secondary btn-lg" onClick={() => startDemo('/app')}>Ver PROPO en acción</button>
-              <button className="btn btn-ghost btn-lg" onClick={startCompleteDemo}>Demo completa</button>
+              <button className="btn btn-primary btn-lg" onClick={() => start('footer_start_free')}>Empieza gratis <LuArrowRight /></button>
             </div>
           </div>
         </div>

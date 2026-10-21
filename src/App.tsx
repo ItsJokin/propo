@@ -1,3 +1,4 @@
+import { cloudEnabled, currentSession } from './lib/services/cloud';
 import React, { useEffect } from 'react';
 import { useRoute, useStore, navigate } from './lib/store';
 import { Toasts } from './components/ui';
@@ -44,7 +45,8 @@ export function App() {
   const user = useStore((s) => s.user);
   const signedOut = useStore((s) => s.signedOut);
   const ob = useStore((s) => s.onboarding);
-  const authed = !!user && !signedOut;
+  // Con cuentas en la nube, nadie ve el panel (ni la demo) sin haber iniciado sesión.
+  const authed = !!user && !signedOut && (!cloudEnabled || !!currentSession());
 
   useEffect(() => { getSample(); bootCloud(); }, []);
   useEffect(() => {

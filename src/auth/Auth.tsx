@@ -5,7 +5,6 @@ import { navigate, setState, newWorkspace, getState, update, track, useStore, to
 import { addVaultFiles } from '../lib/actions';
 import { knowledgeScore } from '../lib/derive';
 import { uid } from '../lib/util';
-import { startDemo } from '../marketing/Layout';
 import { ACCEPTED } from '../lib/pipeline/parse';
 import { INDUSTRIES } from '../lib/discovery/match';
 import { hashPassword, checkPassword } from '../lib/services/localAuth';
@@ -96,7 +95,6 @@ export function Signup() {
           </form>
           <div className="row mt-24 small muted" style={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
             <span>¿Ya tienes cuenta? <a style={{ cursor: 'pointer' }} onClick={() => navigate('/login')}>Inicia sesión</a></span>
-            <span className="row" style={{ gap: 14 }}><a style={{ cursor: 'pointer' }} onClick={() => startDemo('/app')}>Explorar la demo</a><a style={{ cursor: 'pointer' }} onClick={() => startDemo('/app/projects/p_sample', true)}>Demo completa</a></span>
           </div>
           {!cloud.cloudEnabled && <p className="xs subtle mt-16" style={{ borderTop: '1px solid var(--border)', paddingTop: 12 }}>Versión de prueba: tu cuenta y tu espacio se guardan solo en este navegador y la contraseña no se almacena.</p>}
         </div>}
@@ -151,7 +149,7 @@ export function Login() {
       update((st) => { st.signedOut = false; });
       track('login');
       navigate('/app');
-    } else setErr('No hay ninguna cuenta de PROPO con este email en este navegador. Crea una cuenta o explora la demo.');
+    } else setErr('No hay ninguna cuenta de PROPO con este email en este navegador. Crea una cuenta gratis para empezar.');
   };
   return (
     <div className="auth">
@@ -179,7 +177,6 @@ export function Login() {
           )}
           <div className="row mt-24 small muted" style={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
             <span>¿Nuevo en PROPO? <a style={{ cursor: 'pointer' }} onClick={() => navigate('/signup')}>Crea una cuenta</a></span>
-            <span className="row" style={{ gap: 14 }}><a style={{ cursor: 'pointer' }} onClick={() => startDemo('/app')}>Explorar la demo</a><a style={{ cursor: 'pointer' }} onClick={() => startDemo('/app/projects/p_sample', true)}>Demo completa</a></span>
           </div>
         </div>
       </main>
