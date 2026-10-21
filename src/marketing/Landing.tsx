@@ -279,15 +279,16 @@ export function Landing() {
   const start = (cta: string) => { track('cta_click', { cta }); navigate('/signup'); };
   return (
     <MkLayout>
-      <section className="hero hero-v2">
-        <div className="mk-wrap">
-          <div className="hero-top">
+      <section className="hero">
+        <div className="mk-wrap hero-grid">
+          <div>
             <span className="hero-kicker"><span className="new">Nuevo</span>Software de licitaciones con IA para pymes</span>
             <h1>Encuentra las licitaciones.<br /><span className="blue">PROPO prepara el resto.</span></h1>
             <p className="hero-sub">PROPO encuentra los concursos públicos que encajan con tu empresa, lee los pliegos, redacta la propuesta, calcula contigo el mejor precio y lo revisa todo antes de presentar. <strong>Tú solo firmas.</strong></p>
             <div className="hero-cta"><button className="btn btn-primary btn-lg" onClick={() => start('hero_start_free')}>Empieza gratis <LuArrowRight /></button></div>
             <div className="hero-note"><span><LuCheck /> 14 días gratis</span><span><LuCheck /> Sin tarjeta</span><span><LuCheck /> Una propuesta completa incluida</span></div>
           </div>
+          <HeroMock />
         </div>
         <div className="mk-wrap">
           <div className="hero-strip">
