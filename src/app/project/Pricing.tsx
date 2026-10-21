@@ -3,7 +3,10 @@
 import React, { useEffect, useState } from 'react';
 import { LuInfo, LuTriangleAlert, LuCircleCheck, LuSparkles, LuPencil, LuRotateCcw, LuArrowRight, LuShieldCheck, LuLoaderCircle } from 'react-icons/lu';
 import type { Project } from '../../lib/types';
-import { updateProject, navigate, toast } from '../../lib/store';
+import { updateProject, navigate, toast, getState } from '../../lib/store';
+import { fillOfficialModel } from '../../lib/offerModel';
+import { getFile } from '../../lib/storage';
+import { offerDownload } from '../../lib/services/download';
 import {
   emptyPricing, readPriceRule, marketFor, priceOptions, choose, readOwnPrices, formalCommitment, priceWarnings, eurosInWords, eur2, pct1, num,
   type Pricing as PricingState, type Market, type Option,
@@ -27,6 +30,7 @@ export function Pricing({ p }: { p: Project }) {
   const [showOpts, setShowOpts] = useState(!!pr.floor && !pr.choice);
   const [own, setOwn] = useState(pr.ownText ?? '');
   const [ordering, setOrdering] = useState(false);
+  const [filling, setFilling] = useState(false);
   const save = (fn: (x: PricingState) => void) => updateProject(p.id, (x) => { const cur = x.pricing ?? emptyPricing(); fn(cur); x.pricing = cur; });
 
   useEffect(() => {
@@ -69,11 +73,30 @@ export function Pricing({ p }: { p: Project }) {
     save((x) => { x.ownText = own; x.choice = c; x.approved = null; });
     setShowOpts(false);
   };
-  const confirm = () => {
-    updateProject(p.id, (x) => { x.pricing = { ...(x.pricing ?? emptyPricing()), approved: new Date().toISOString() }; x.manualChecks.financialApproved = true; x.activity.unshift({ at: new Date().toISOString(), text: 'Precio de la oferta confirmado' }); });
-    toast('Precio confirmado. Va en la oferta económica del paquete.', 'ok');
+  // Al confirmar, PROPO rellena él solo el modelo oficial del pliego con estos importes (si el pliego tiene uno rellenable).
+  const fillModel = async () => {
+    setFilling(true);
+    try {
+      const cur = getState().projects.find((x) => x.id === p.id);
+      const f = cur ? await fillOfficialModel(cur, getState()) : null;
+      save((x) => { x.filled = f; x.fillNote = f ? '' : 'none'; });
+      if (f) toast(`Hemos rellenado el modelo oficial del pliego (${f.fields} ${f.fields === 1 ? 'dato' : 'datos'}).`, 'ok');
+    } catch { save((x) => { x.filled = null; x.fillNote = 'error'; }); }
+    finally { setFilling(false); }
   };
-  const reset = () => { updateProject(p.id, (x) => { x.pricing = { ...(x.pricing ?? emptyPricing()), choice: null, approved: null, ownText: '' }; x.manualChecks.financialApproved = false; }); setOwn(''); setShowOpts(false); };
+  const confirm = () => {
+    updateProject(p.id, (x) => { x.pricing = { ...(x.pricing ?? emptyPricing()), approved: new Date().toISOString(), filled: null, fillNote: '' }; x.manualChecks.financialApproved = true; x.activity.unshift({ at: new Date().toISOString(), text: 'Precio de la oferta confirmado' }); });
+    toast('Precio confirmado. Va en la oferta económica del paquete.', 'ok');
+    fillModel();
+  };
+  const downloadFilled = async () => {
+    const f = pr.filled; if (!f) return;
+    const b = await getFile(f.key);
+    if (!b) { toast('No encontramos el archivo. Pulsa «Volver a rellenar».', 'warn'); return; }
+    const r = await offerDownload(f.name, new Uint8Array(b));
+    if (r === 'unavailable') toast('Las descargas no están disponibles en esta vista.', 'warn');
+  };
+  const reset = () => { updateProject(p.id, (x) => { x.pricing = { ...(x.pricing ?? emptyPricing()), choice: null, approved: null, ownText: '', filled: null, fillNote: '' }; x.manualChecks.financialApproved = false; }); setOwn(''); setShowOpts(false); };
 
   return (
     <div className="stack gap-16">
@@ -168,7 +191,16 @@ export function Pricing({ p }: { p: Project }) {
           )}
           {!!rule.budget && <p className="small mt-12">Rebaja sobre el precio máximo: <strong>{pct1(ch.baja)}</strong>{ch.points != null && <> · Puntos del precio estimados: <strong>{pts(ch.points)} de {pts(rule.points)}</strong></>}</p>}
           {warns.map((w, i) => <div key={i} className={`callout ${w.level} small mt-8`}><LuTriangleAlert /><div>{w.text}</div></div>)}
-          {rule.model && <div className="callout neutral small mt-12"><LuInfo /><div>El pliego tiene su propio modelo: <strong>{rule.model.name}</strong>{rule.model.doc ? ` (${rule.model.doc}${rule.model.page ? `, p. ${rule.model.page}` : ''})` : ''}. En el paquete va tu oferta preparada y el modelo del pliego con estos mismos importes para que lo firmes.</div></div>}
+          {pr.approved && filling && <div className="callout small mt-12"><LuLoaderCircle className="spin" /><div>PROPO está rellenando el modelo oficial de oferta del pliego con tus importes…</div></div>}
+          {pr.approved && !filling && pr.filled && (
+            <div className="callout small mt-12"><LuCircleCheck /><div className="grow"><strong>Modelo oficial rellenado.</strong> Hemos completado {pr.filled.fields} {pr.filled.fields === 1 ? 'dato' : 'datos'} de «{pr.filled.source}» con tus importes. Va en el paquete, en el sobre de la oferta económica. Revísalo y fírmalo antes de presentarlo.
+              <div className="row mt-8" style={{ gap: 8 }}><button className="btn btn-secondary btn-sm" onClick={downloadFilled}>Descargar el modelo rellenado</button><button className="btn btn-ghost btn-sm" onClick={fillModel}>Volver a rellenar</button></div></div></div>
+          )}
+          {pr.approved && !filling && !pr.filled && pr.fillNote && (
+            <div className="callout neutral small mt-12"><LuInfo /><div className="grow">{pr.fillNote === 'error' ? 'No hemos podido rellenar el modelo oficial ahora mismo.' : rule.model ? <>El modelo del pliego (<strong>{rule.model.name}</strong>) no tiene huecos que podamos rellenar automáticamente (suele pasar con los PDF escaneados o sin campos).</> : 'No hemos encontrado un modelo oficial de oferta que se pueda rellenar en los documentos del pliego.'} En el paquete va tu oferta económica preparada por PROPO con todos los importes; si la plataforma exige el modelo del pliego, copia en él esos mismos datos.
+              <div className="mt-8"><button className="btn btn-ghost btn-sm" onClick={fillModel}>Intentarlo de nuevo</button></div></div></div>
+          )}
+          {!pr.approved && rule.model && <div className="callout neutral small mt-12"><LuInfo /><div>El pliego tiene su propio modelo: <strong>{rule.model.name}</strong>{rule.model.doc ? ` (${rule.model.doc}${rule.model.page ? `, p. ${rule.model.page}` : ''})` : ''}. Cuando confirmes el precio, PROPO lo rellenará con estos importes.</div></div>}
           <div className="row mt-16" style={{ gap: 8, flexWrap: 'wrap' }}>
             {!pr.approved && <button className="btn btn-primary" disabled={warns.some((w) => w.level === 'bad')} onClick={confirm}><LuShieldCheck /> Confirmar el precio</button>}
             {pr.approved && <button className="btn btn-primary" onClick={() => navigate(`/app/projects/${p.id}/compliance`)}>Seguir a la comprobación final <LuArrowRight /></button>}

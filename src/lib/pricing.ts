@@ -38,6 +38,8 @@ export interface Pricing {
   choice: PriceChoice | null;
   others: Record<string, { text: string; formal?: string }>;
   approved: string | null;        // fecha de confirmación
+  filled?: import('./offerModel').FilledModel | null;   // el modelo oficial del pliego, ya rellenado
+  fillNote?: string;              // por qué no se ha podido rellenar (p. ej. PDF sin campos)
 }
 
 export const emptyPricing = (): Pricing => ({ rule: null, floor: null, choice: null, others: {}, approved: null });

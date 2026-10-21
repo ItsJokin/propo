@@ -40,10 +40,11 @@ export function packageItems(p: Project, s: AppState): PkgItem[] {
   }
   const pr = p.pricing;
   if (pr?.choice) {
-    items.push({ id: 'fin', name: 'Oferta económica.pdf', ext: 'pdf', status: pr.approved ? 'ready' : 'draft', include: true, note: pr.approved ? `Con el precio que has confirmado${pr.rule?.model ? ` · cópialo también en ${pr.rule.model.name}` : ''} · solo en el sobre de precio, firmada` : 'Precio elegido pero sin confirmar: confírmalo en «Fija el precio»' });
+    if (pr.approved && pr.filled) items.push({ id: 'model', name: pr.filled.name, ext: pr.filled.ext, status: 'ready', include: true, note: `Modelo oficial del pliego rellenado con tu precio · revísalo y fírmalo · solo en el sobre de precio`, vaultKey: undefined });
+    items.push({ id: 'fin', name: 'Oferta económica.pdf', ext: 'pdf', status: pr.approved ? 'ready' : 'draft', include: true, note: pr.approved ? (pr.filled ? 'Resumen de tu oferta con los mismos importes · útil si la plataforma pide un PDF propio' : `Con el precio que has confirmado${pr.rule?.model ? ` · si la plataforma exige ${pr.rule.model.name}, copia en él estos importes` : ''} · solo en el sobre de precio, firmada`) : 'Precio elegido pero sin confirmar: confírmalo en «Fija el precio»' });
     if (pr.rule?.budget && pr.choice.baja >= abnormalBaja(pr.rule, { mean: 0.08, best: 0.15, n: 0, scope: '' }) - 0.02) items.push({ id: 'justif', name: 'Justificación de la oferta (borrador).pdf', ext: 'pdf', status: 'internal', include: true, note: 'Tu precio está cerca de la baja temeraria: tenlo preparado por si te piden justificarlo' });
   } else items.push({ id: 'fin', name: 'Oferta económica', ext: 'pdf', status: p.manualChecks.financialApproved ? 'manual' : 'pending', include: false, note: p.manualChecks.financialApproved ? 'Preparada fuera de PROPO por tu equipo · va en el sobre de precio' : 'Fija el precio en el paso «Fija el precio» y PROPO prepara la oferta' });
-  p.docs.filter((d) => /annex|anexo|annexe|model|form|declaration|declaraci/i.test(d.name) && !/criteria|specification|criterios|prescripciones|contrato/i.test(d.name)).forEach((d) => {
+  p.docs.filter((d) => /annex|anexo|annexe|model|form|declaration|declaraci/i.test(d.name) && !/criteria|specification|criterios|prescripciones|contrato/i.test(d.name) && !(pr?.approved && pr.filled?.source === d.name)).forEach((d) => {
     items.push({ id: `t-${d.id}`, name: d.name, ext: extOf(d.name), status: 'manual', include: !!d.textKey, note: d.textKey ? 'Formulario del pliego · complétalo y fírmalo' : 'Formulario del pliego (ejemplo) · complétalo y fírmalo', tenderKey: d.textKey });
   });
   items.push({ id: 'report', name: 'Informe de cumplimiento.pdf', ext: 'pdf', status: 'internal', include: true, note: 'Para tu equipo · no lo presentes' });
@@ -61,6 +62,7 @@ export async function buildPackageZip(p: Project, s: AppState): Promise<Uint8Arr
   if (s.pastProjects.length) put('Experiencia.pdf', await experiencePdf(p, s));
   if (items.some((i) => i.id === 'company')) put('Documentación de empresa.pdf', await companyIndexPdf(p, s));
   if (p.pricing?.choice) put('Sobre de la oferta económica/Oferta económica.pdf', await economicOfferPdf(p, s));
+  if (p.pricing?.approved && p.pricing.filled) { const b = await getFile(p.pricing.filled.key); if (b) put(`Sobre de la oferta económica/${p.pricing.filled.name}`, new Uint8Array(b)); }
   if (items.some((i) => i.id === 'justif')) put('_Interno — Justificación de la oferta (borrador, solo si la piden).pdf', await abnormalJustificationPdf(p, s));
   for (const it of items) {
     if (it.vaultKey) { const b = await getFile(it.vaultKey); if (b) put(`Documentos de empresa/${it.name}`, new Uint8Array(b)); }
