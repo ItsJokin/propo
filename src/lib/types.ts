@@ -263,6 +263,7 @@ export interface Project {
   aiActionsUsed: number;
   interview?: Interview;   // conversación guiada «PROPO te pregunta»
   answers?: GivenAnswer[]; // datos que el cliente ha aportado al revisar la propuesta: se reutilizan en la comprobación final
+  pricing?: import('./pricing').Pricing; // paso «Precio»: cómo puntúa el pliego, el precio elegido y los criterios con fórmula
 }
 
 export interface GivenAnswer { label: string; kind: string; value: string; section: string; at: string }

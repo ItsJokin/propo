@@ -24,9 +24,14 @@ export function GuideBar({ p, tab }: { p: Project; tab: string }) {
       done: pending === 0, progress: pending === 0 ? 1 : rc.total ? rc.fulfilled / rc.total : 0,
     },
     {
-      k: 'prop', to: drafted ? 'proposal' : 'assistant', tabs: ['proposal', 'criteria', 'economic'], title: 'Aprueba la propuesta',
+      k: 'prop', to: drafted ? 'proposal' : 'assistant', tabs: ['proposal', 'criteria'], title: 'Aprueba la propuesta',
       status: !drafted ? 'Todavía sin redactar' : approvedAll ? 'Todas las secciones aprobadas' : `${sc.approved} de ${sc.total} secciones aprobadas`,
       done: approvedAll, progress: sc.total ? sc.approved / sc.total : 0,
+    },
+    {
+      k: 'price', to: 'economic', tabs: ['economic'], title: 'Fija el precio',
+      status: p.pricing?.approved ? 'Precio confirmado' : p.pricing?.choice ? 'Pendiente de confirmar' : 'PROPO te ayuda a calcularlo',
+      done: !!p.pricing?.approved, progress: p.pricing?.approved ? 1 : p.pricing?.choice ? 0.6 : p.pricing?.rule ? 0.2 : 0,
     },
     {
       k: 'check', to: 'compliance', tabs: ['compliance'], title: 'Comprobación final',
@@ -41,7 +46,7 @@ export function GuideBar({ p, tab }: { p: Project; tab: string }) {
   ];
   const cur = steps.find((s) => !s.done);
   const go = (to: string) => navigate(`/app/projects/${p.id}${to === 'overview' ? '' : '/' + to}`);
-  const more: [string, string, number?][] = [['overview', 'Resumen'], ['requirements', 'Todos los requisitos', rc.total || undefined], ['criteria', 'Criterios'], ['economic', 'Oferta económica'], ['documents', 'Documentos del pliego', p.docs.length || undefined]];
+  const more: [string, string, number?][] = [['overview', 'Resumen'], ['requirements', 'Todos los requisitos', rc.total || undefined], ['criteria', 'Criterios'], ['documents', 'Documentos del pliego', p.docs.length || undefined]];
   return (
     <div className="journey-wrap">
       <nav className="journey" aria-label="Pasos de la propuesta">

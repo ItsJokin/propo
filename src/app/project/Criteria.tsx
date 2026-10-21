@@ -51,7 +51,7 @@ export function Criteria({ p }: { p: Project }) {
                   <div style={{ minWidth: 0 }}>
                     <div className="eyebrow" style={{ marginBottom: 6 }}>Cómo lo cubre PROPO</div>
                     {c.kind === 'formula' ? (
-                      <p className="small muted">Se valora por fórmula a partir de tu oferta económica. Los precios los fija y aprueba tu equipo; PROPO los mantiene fuera de la memoria técnica.</p>
+                      <p className="small muted">Se valora por fórmula a partir de tu oferta económica. Lo calculas con PROPO en el paso «Fija el precio» y va en su propio sobre, nunca en la memoria técnica.</p>
                     ) : (
                       <>
                         {c.howAddressed.length > 0 && <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none', display: 'grid', gap: 4 }}>{c.howAddressed.map((h) => <li key={h} className="row small" style={{ alignItems: 'flex-start' }}><LuCheck style={{ width: 14, height: 14, marginTop: 3, color: 'var(--ok)', flex: 'none' }} />{h}</li>)}</ul>}

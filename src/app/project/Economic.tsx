@@ -1,5 +1,5 @@
 // Simulador de oferta económica: cuántos puntos da cada rebaja y dónde empieza el riesgo de baja anormal.
-// Es una calculadora para el licitador: PROPO no fija precios ni los incluye en el paquete.
+// Calculadora avanzada dentro del paso «Fija el precio»: solo para probar; el precio de la oferta es el que se confirma arriba.
 import React, { useEffect, useMemo, useState } from 'react';
 import { LuInfo, LuTriangleAlert, LuCircleCheck } from 'react-icons/lu';
 import type { Project } from '../../lib/types';
@@ -61,7 +61,7 @@ export function Economic({ p }: { p: Project }) {
       <div className="card card-pad">
         <div className="eyebrow">Oferta económica</div>
         <h2 className="mt-8" style={{ fontSize: 22 }}>¿Qué rebaja te conviene ofrecer?</h2>
-        <p className="muted mt-4">Mueve tu rebaja y mira cuántos puntos ganas y cuánto dejas de ingresar. El precio lo decides tú: PROPO no lo incluye en el paquete.</p>
+        <p className="muted mt-4">Mueve tu rebaja y mira cuántos puntos ganas y cuánto dejas de ingresar. Es solo para probar: el precio que va en la oferta es el que confirmes arriba.</p>
 
         <div className="eco-grid mt-24">
           <div className="stack" style={{ gap: 16 }}>

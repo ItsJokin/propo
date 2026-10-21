@@ -46,7 +46,7 @@ function buildCards(p: Project, checks: CheckItem[]): Card[] {
     if (c && c.state !== 'pass') cards.push({ id, tone: c.state, kicker: 'Revisión', title: COPY[id].title, why: COPY[id].why, icon: id === 'technical' ? <LuPencil /> : <LuTriangleAlert />, check: c });
   }
   // 4 · Lo que siempre decide una persona.
-  if (!p.manualChecks.financialApproved) cards.push({ id: 'financial', tone: 'fail', kicker: 'Tu decisión', title: 'Da el visto bueno a los precios', why: 'PROPO nunca pone ni sugiere precios. Solo necesita que confirmes que los habéis fijado vosotros y que van en su sitio.', icon: <LuShieldCheck />, check: by('financial') });
+  if (!p.manualChecks.financialApproved && !p.pricing?.approved) cards.push({ id: 'financial', tone: 'fail', kicker: 'Tu decisión', title: 'Fija y confirma el precio', why: 'El precio suele dar muchos puntos. En el paso «Fija el precio» PROPO te explica cómo se puntúa en este pliego y calcula contigo el mejor precio sin que pierdas dinero.', icon: <LuShieldCheck />, check: by('financial') });
   if (!p.manualChecks.signature) cards.push({ id: 'signature', tone: 'warn', kicker: 'Último paso', title: '¿Quién firma la oferta?', why: 'La oferta la firma el representante legal de la empresa con su firma electrónica (el certificado digital con el que se firman documentos por internet).', icon: <LuPencil />, check: by('signature') });
   return cards;
 }
@@ -273,6 +273,8 @@ function FinancialStep({ p }: { p: Project }) {
   const given = (p.answers ?? []).filter((a) => a.kind === 'price');
   return (
     <div className="stack gap-12">
+      <div className="row-wrap"><button className="btn btn-primary" onClick={() => navigate(`/app/projects/${p.id}/economic`)}>Ir a fijar el precio con PROPO <LuArrowRight /></button></div>
+      <p className="small muted">¿Ya tienes el precio preparado por tu cuenta? Confírmalo aquí:</p>
       {given.length > 0 && <div className="fin-said"><LuSparkles /><div><strong>Los precios que ya nos diste al revisar la propuesta.</strong>{given.map((a) => <div key={a.at} className="mt-4">· {a.value}</div>)}</div></div>}
       {rules.length > 0 && (
         <div className="well small stack" style={{ gap: 6 }}>
@@ -283,8 +285,7 @@ function FinancialStep({ p }: { p: Project }) {
       <label className="choice"><input type="checkbox" checked={ok} onChange={(e) => setOk(e.target.checked)} /> Los precios los hemos fijado y revisado nosotros, en el modelo que pide el pliego.</label>
       <label className="choice"><input type="checkbox" checked={ok2} onChange={(e) => setOk2(e.target.checked)} /> No superan el máximo permitido y van solo en el sobre de la oferta económica.</label>
       <div className="row-wrap">
-        <button className="btn btn-primary" disabled={!ok || !ok2} onClick={() => { updateProject(p.id, (x) => { x.manualChecks.financialApproved = true; x.activity.unshift({ at: nowIso(), text: `Oferta económica aprobada por ${user?.name ?? 'tu equipo'}` }); }); toast('Oferta económica aprobada', 'ok'); }}><LuCheck /> Dar el visto bueno</button>
-        <button className="btn btn-ghost btn-sm" onClick={() => navigate(`/app/projects/${p.id}/economic`)}>Ver la oferta económica <LuArrowRight /></button>
+        <button className="btn btn-secondary" disabled={!ok || !ok2} onClick={() => { updateProject(p.id, (x) => { x.manualChecks.financialApproved = true; x.activity.unshift({ at: nowIso(), text: `Oferta económica aprobada por ${user?.name ?? 'tu equipo'}` }); }); toast('Oferta económica aprobada', 'ok'); }}><LuCheck /> Dar el visto bueno</button>
       </div>
     </div>
   );

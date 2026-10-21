@@ -3,6 +3,7 @@ import type { AppState, Project } from '../types';
 import { complianceChecks, readiness } from '../derive';
 import { fmtDate, nowIso, isUnknown } from '../util';
 import { newDoc, cover, tocPlaceholder, finish, h1, h2, text, bullet, body, note, table, facts, space, addPage } from './kit';
+import { eur2, eurosInWords } from '../pricing';
 
 function plainSection(content: string) {
   return content.replace(/\s?\[S\d+\]/g, '').replace(/\[(?:Información requerida|Information required):\s*([^\]]+)\]/g, '[INFORMACIÓN REQUERIDA: $1]');
@@ -159,6 +160,65 @@ export async function complianceReportPdf(p: Project, s?: AppState) {
     h2(w, 'Riesgos de exclusión detectados en el pliego');
     p.analysis.exclusionRisks.forEach((e) => bullet(w, e.text));
   }
+  return finish(w);
+}
+
+/** Oferta económica (proposición económica) con el precio que el cliente ha confirmado en el paso «Fija el precio». */
+export async function economicOfferPdf(p: Project, s: AppState) {
+  const c = s.company; const pr = p.pricing; const ch = pr?.choice; const rule = pr?.rule;
+  const w = await newDoc(`Oferta económica — ${p.name}`, c);
+  h1(w, 'Proposición económica');
+  note(w, rule?.model
+    ? `Preparada por PROPO con el precio que has confirmado. El pliego tiene su propio modelo (${rule.model.name}): si la plataforma exige ese modelo, copia en él estos mismos importes. Firma con firma electrónica cualificada y preséntala solo en el sobre de la oferta económica.`
+    : 'Preparada por PROPO con el precio que has confirmado. Revísala, fírmala con firma electrónica cualificada y preséntala solo en el sobre de la oferta económica, nunca en el técnico.', { label: 'Antes de firmar' });
+  h2(w, 'Datos del procedimiento');
+  facts(w, [['Objeto del contrato', fullTitle(p)], ['Órgano de contratación', p.organization], ['Expediente', reference(p)]]);
+  h2(w, 'Datos del licitador');
+  facts(w, [['Razón social', c.legalName || '[razón social]'], ['NIF', c.taxId || '[NIF]'], ['Domicilio', c.address || '[domicilio social]'], ['Representante legal', '[nombre y apellidos]'], ['DNI del representante', '[número]']]);
+  if (!ch) { text(w, 'Todavía no se ha fijado el precio de la oferta.', { gap: 10 }); return finish(w); }
+  const vat = rule?.vat ?? 21;
+  const iva = Math.round(ch.total * vat) / 100;
+  const tot = Math.round((ch.total + iva) * 100) / 100;
+  text(w, `D./D.ª [nombre del representante legal], en nombre y representación de **${c.legalName || '[razón social]'}**, enterado/a del anuncio y de los pliegos que rigen la contratación arriba indicada, cuyo contenido acepta íntegramente, se compromete a ejecutar el contrato con estricta sujeción a ellos por el siguiente precio:`, { gap: 10 });
+  table(w, [{ title: 'Concepto', w: 52, bold: true }, { title: 'Importe', w: 48, align: 'right' }], [
+    ['Precio sin IVA', eur2(ch.total)],
+    [`IVA (${vat} %)`, eur2(iva)],
+    ['Precio total, IVA incluido', eur2(tot)],
+  ]);
+  text(w, `Precio sin IVA, en letra: **${eurosInWords(Math.round(ch.total * 100) / 100)}**.`, { gap: 4 });
+  text(w, `Precio total con IVA, en letra: **${eurosInWords(tot)}**.`, { gap: 10 });
+  if (ch.units.length) {
+    h2(w, 'Precios unitarios');
+    table(w, [{ title: 'Concepto', w: 64 }, { title: 'Precio sin IVA', w: 36, align: 'right' }], ch.units.map((u) => [u.label, eur2(u.price)]));
+  }
+  const others = (rule?.others ?? []).filter((o) => pr?.others?.[o.id]?.formal);
+  if (others.length) {
+    h2(w, 'Otros criterios evaluables mediante fórmula');
+    others.forEach((o) => text(w, `**${o.label}.** ${pr!.others[o.id].formal}`, { gap: 6 }));
+  }
+  space(w, 10);
+  text(w, 'El precio ofertado incluye todos los gastos necesarios para la ejecución del contrato conforme a los pliegos, incluidos los costes salariales derivados del convenio colectivo de aplicación.', { gap: 18 });
+  table(w, [{ title: 'Lugar y fecha', w: 40 }, { title: 'Firma del representante legal', w: 60 }], [['\n\n\n', '\n\n\n']]);
+  return finish(w);
+}
+
+/** Borrador de justificación de la oferta, por si la Administración la considera anormalmente baja y la pide. */
+export async function abnormalJustificationPdf(p: Project, s: AppState) {
+  const c = s.company; const ch = p.pricing?.choice;
+  const w = await newDoc(`Justificación de la oferta — ${p.name}`, c);
+  h1(w, 'Justificación de la viabilidad de la oferta');
+  note(w, 'Borrador para tener preparado. Solo se presenta si el órgano de contratación te pide justificar tu oferta por considerarla anormalmente baja (suelen dar entre 5 y 10 días). Completa los datos entre corchetes con tus números reales.', { label: 'Uso interno hasta que te lo pidan' });
+  facts(w, [['Contrato', fullTitle(p)], ['Expediente', reference(p)], ['Licitador', `${c.legalName || '[razón social]'}${c.taxId ? ` · NIF ${c.taxId}` : ''}`], ['Precio ofertado sin IVA', ch ? eur2(ch.total) : '[importe]']]);
+  text(w, `En respuesta al requerimiento recibido, ${c.legalName || 'la empresa'} justifica que su oferta es viable y que permite ejecutar el contrato con plena calidad y cumpliendo todas las obligaciones legales, por los siguientes motivos (art. 149 de la Ley 9/2017):`, { gap: 10 });
+  [
+    ['Ahorro en el método de ejecución', 'Explica cómo organizáis el servicio para que os cueste menos: experiencia previa en contratos iguales, medios propios ya amortizados, rutas o turnos optimizados. [completa con vuestro caso]'],
+    ['Condiciones favorables de la empresa', 'Proveedores con precios negociados, cercanía al lugar de ejecución, compras agrupadas o economías de escala. [completa]'],
+    ['Cumplimiento de las obligaciones laborales y sociales', 'El precio cubre los costes salariales del convenio colectivo de aplicación y la subrogación del personal, si la hay. Adjunta el desglose: [n.º de personas × horas × coste/hora según convenio = importe].'],
+    ['Cumplimiento ambiental y de seguridad', 'Indica que el precio incluye prevención de riesgos laborales, seguros y obligaciones ambientales. [completa]'],
+    ['Desglose de costes', 'Personal: [importe] · Materiales y suministros: [importe] · Medios y equipos: [importe] · Gastos generales: [importe] · Beneficio industrial: [importe] · Total: ' + (ch ? eur2(ch.total) : '[importe]')],
+  ].forEach(([t, d]) => { h2(w, t); text(w, d, { gap: 8 }); });
+  space(w, 10);
+  table(w, [{ title: 'Lugar y fecha', w: 40 }, { title: 'Firma del representante legal', w: 60 }], [['\n\n\n', '\n\n\n']]);
   return finish(w);
 }
 

@@ -1,7 +1,8 @@
 // Submission package: generated PDFs + stored company documents + tender forms.
-// PROPO never includes prices it produced (it produces none) and never submits.
-import { technicalProposalPdf, declarationPdf, experiencePdf, companyIndexPdf, complianceReportPdf } from './pdf/docs';
-export { technicalProposalPdf, declarationPdf, experiencePdf, companyIndexPdf, complianceReportPdf };
+// El precio lo confirma siempre el cliente en el paso «Fija el precio»; PROPO nunca presenta nada.
+import { technicalProposalPdf, declarationPdf, experiencePdf, companyIndexPdf, complianceReportPdf, economicOfferPdf, abnormalJustificationPdf } from './pdf/docs';
+export { technicalProposalPdf, declarationPdf, experiencePdf, companyIndexPdf, complianceReportPdf, economicOfferPdf, abnormalJustificationPdf };
+import { abnormalBaja } from './pricing';
 import type { AppState, Project } from './types';
 import { writeZip, type ZipEntry } from './pipeline/zip';
 import { getFile } from './storage';
@@ -37,7 +38,11 @@ export function packageItems(p: Project, s: AppState): PkgItem[] {
       note: `Índice de ${vaultDocs.length} documentos de tu biblioteca${withFile.length < vaultDocs.length ? ` · ${vaultDocs.length - withFile.length} registros de ejemplo que debes adjuntar de tus archivos` : ''}` });
     withFile.forEach((v) => items.push({ id: `v-${v.id}`, name: v.name, ext: extOf(v.name), status: 'ready', include: true, note: 'De tu biblioteca de documentos', vaultKey: v.textKey }));
   }
-  items.push({ id: 'fin', name: 'Oferta económica.xlsx', ext: 'xlsx', status: p.manualChecks.financialApproved ? 'ready' : 'manual', include: false, note: p.manualChecks.financialApproved ? 'Aprobada por tu equipo · preparada fuera de PROPO, va en el sobre de precio' : 'Los precios los fija tu equipo. PROPO no prepara precios.' });
+  const pr = p.pricing;
+  if (pr?.choice) {
+    items.push({ id: 'fin', name: 'Oferta económica.pdf', ext: 'pdf', status: pr.approved ? 'ready' : 'draft', include: true, note: pr.approved ? `Con el precio que has confirmado${pr.rule?.model ? ` · cópialo también en ${pr.rule.model.name}` : ''} · solo en el sobre de precio, firmada` : 'Precio elegido pero sin confirmar: confírmalo en «Fija el precio»' });
+    if (pr.rule?.budget && pr.choice.baja >= abnormalBaja(pr.rule, { mean: 0.08, best: 0.15, n: 0, scope: '' }) - 0.02) items.push({ id: 'justif', name: 'Justificación de la oferta (borrador).pdf', ext: 'pdf', status: 'internal', include: true, note: 'Tu precio está cerca de la baja temeraria: tenlo preparado por si te piden justificarlo' });
+  } else items.push({ id: 'fin', name: 'Oferta económica', ext: 'pdf', status: p.manualChecks.financialApproved ? 'manual' : 'pending', include: false, note: p.manualChecks.financialApproved ? 'Preparada fuera de PROPO por tu equipo · va en el sobre de precio' : 'Fija el precio en el paso «Fija el precio» y PROPO prepara la oferta' });
   p.docs.filter((d) => /annex|anexo|annexe|model|form|declaration|declaraci/i.test(d.name) && !/criteria|specification|criterios|prescripciones|contrato/i.test(d.name)).forEach((d) => {
     items.push({ id: `t-${d.id}`, name: d.name, ext: extOf(d.name), status: 'manual', include: !!d.textKey, note: d.textKey ? 'Formulario del pliego · complétalo y fírmalo' : 'Formulario del pliego (ejemplo) · complétalo y fírmalo', tenderKey: d.textKey });
   });
@@ -55,6 +60,8 @@ export async function buildPackageZip(p: Project, s: AppState): Promise<Uint8Arr
   put('Declaración responsable.pdf', await declarationPdf(p, s));
   if (s.pastProjects.length) put('Experiencia.pdf', await experiencePdf(p, s));
   if (items.some((i) => i.id === 'company')) put('Documentación de empresa.pdf', await companyIndexPdf(p, s));
+  if (p.pricing?.choice) put('Sobre de la oferta económica/Oferta económica.pdf', await economicOfferPdf(p, s));
+  if (items.some((i) => i.id === 'justif')) put('_Interno — Justificación de la oferta (borrador, solo si la piden).pdf', await abnormalJustificationPdf(p, s));
   for (const it of items) {
     if (it.vaultKey) { const b = await getFile(it.vaultKey); if (b) put(`Documentos de empresa/${it.name}`, new Uint8Array(b)); }
     if (it.tenderKey) { const b = await getFile(it.tenderKey); if (b) put(`Formularios del pliego por completar/${it.name}`, new Uint8Array(b)); }
@@ -70,7 +77,7 @@ export async function buildPackageZip(p: Project, s: AppState): Promise<Uint8Arr
     'Antes de presentar:',
     ...manual.map((i) => `- ${i.name}: ${i.note}`),
     '- Firma todos los documentos con la firma electrónica cualificada del representante legal.',
-    '- Pon la oferta económica solo en el sobre de precio. Nunca incluyas precios en el sobre técnico.',
+    '- Pon la oferta económica (carpeta "Sobre de la oferta económica") solo en el sobre de precio. Nunca incluyas precios en el sobre técnico.',
     '',
     'El archivo que empieza por "_Interno" es para tu equipo y no debe presentarse.',
   ].join('\r\n');

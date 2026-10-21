@@ -94,7 +94,7 @@ export function matchRequirement(r: ExtractionResult['requirements'][number], k:
       const pol = k.vault.find((v) => v.category === 'insurance');
       return { status: 'needs_info', evidence: pol ? [{ kind: 'vault', label: pol.name, ref: pol.id }] : [], ask: pol ? 'Confirma que la cobertura de tu póliza cumple el importe que exige el pliego.' : 'Sube tu póliza o certificado de seguro.', actions: pol ? ['Confirm', 'Upload document'] : ['Upload document'] };
     }
-    if (/price|precio|economic offer|oferta econ/i.test(text)) return { status: 'needs_info', evidence: [], ask: 'Los precios los fija y aprueba siempre tu equipo. PROPO no propone precios.', actions: ['Confirm', 'Skip'] };
+    if (/price|precio|economic offer|oferta econ/i.test(text)) return { status: 'needs_info', evidence: [], ask: 'El precio se fija en el paso «Fija el precio»: PROPO te explica cómo puntúa y calcula contigo el mejor precio.', actions: ['Confirm', 'Skip'] };
   }
   if (r.category === 'team') {
     const ts = tokens(text);
