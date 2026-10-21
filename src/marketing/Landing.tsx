@@ -5,6 +5,7 @@ import {
   LuCalendar, LuEuro, LuLandmark, LuSparkles, LuBookmark, LuChevronRight, LuPlay, LuX,
 } from 'react-icons/lu';
 import { MkLayout } from './Layout';
+import { SectorFinder, LiveCounter, useOpenTenders } from './SectorFinder';
 import { navigate, track } from '../lib/store';
 import { Ring, Bar, LogoMark } from '../components/ui';
 import { PricingCards } from './Pricing';
@@ -45,11 +46,12 @@ function useCountUp(target: number, ms = 1400) {
 }
 
 export function useTopMatches(n = 3) {
-  return useMemo(() => TED_NOTICES
-    .filter((t) => (daysUntil(t.deadline) ?? -1) >= 0)
+  const open = useOpenTenders();
+  return useMemo(() => (open.length ? open : TED_NOTICES)
+    .filter((t) => t.sector === 'catering' || t.sector === 'eventos')
     .map((t) => ({ t, m: matchTender(t, SAMPLE_COMPANY) }))
     .sort((a, b) => b.m.score - a.m.score)
-    .slice(0, n), [n]);
+    .slice(0, n), [n, open]);
 }
 
 function short(s: string, n: number) { return s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s; }
@@ -299,18 +301,16 @@ export function Landing() {
         </div>
       </section>
 
-      <section className="section-tight">
-        <div className="mk-wrap sector-band">
-          <p className="muted sector-band-label">Pensado para equipos que preparan propuestas.</p>
-          <div className="marquee" aria-label={`Sectores: ${MARQUEE_SECTORS.join(', ')}`}>
-            <div className="marquee-track" aria-hidden="true">
-              {[0, 1].map((k) => (
-                <div className="marquee-group" key={k}>
-                  {MARQUEE_SECTORS.map((s) => <span className="marquee-item" key={s}><span className="marquee-dot" />{s}</span>)}
-                </div>
-              ))}
-            </div>
+
+      <section className="section finder-section" id="buscar">
+        <div className="mk-wrap">
+          <LiveCounter />
+          <div className="section-head mt-24" style={{ marginBottom: 28 }}>
+            <div className="eyebrow">Compruébalo ahora</div>
+            <h2>¿Cuántos concursos hay hoy <span className="blue">para tu empresa?</span></h2>
+            <p>Elige tu sector y tu zona. Son licitaciones reales, abiertas ahora mismo y publicadas por la Administración.</p>
           </div>
+          <SectorFinder />
         </div>
       </section>
 
@@ -326,16 +326,6 @@ export function Landing() {
               <div key={t}><LuCheck style={{ width: 16, height: 16, color: 'var(--accent)', flex: 'none', marginTop: 3 }} /><div><div style={{ fontWeight: 600 }}>{t}</div><div className="small muted">{d}</div></div></div>
             ))}
           </div>
-          <div className="section-head mt-48" style={{ marginBottom: 24 }}>
-            <div className="eyebrow">El cambio</div>
-            <h2>Menos tiempo preparando. <span className="blue">Más tiempo creciendo.</span></h2>
-          </div>
-          <div className="value-line">
-            <div><strong>Menos búsqueda</strong><p className="muted mt-8">Las licitaciones que encajan contigo llegan solas, con su nivel de compatibilidad.</p></div>
-            <div><strong>Menos lectura</strong><p className="muted mt-8">PROPO lee cada página y te entrega los requisitos con la página de la que salen.</p></div>
-            <div><strong>Menos olvidos</strong><p className="muted mt-8">Cada requisito se sigue hasta estar cumplido y hay un control final antes de presentar.</p></div>
-            <div><strong>Más ofertas</strong><p className="muted mt-8">El mismo equipo puede presentar más propuestas porque la base ya está hecha.</p></div>
-          </div>
         </div>
       </section>
 
@@ -346,6 +336,31 @@ export function Landing() {
             <h2>Encuentra la licitación. <span className="blue">PROPO hace el trabajo.</span> Tú solo firmas.</h2>
           </div>
           <HowItWorks />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="mk-wrap price-feature">
+          <div>
+            <div className="eyebrow">El precio</div>
+            <h2 className="mt-8">El precio que más puntos te da <span className="blue">sin perder dinero.</span></h2>
+            <p className="lead mt-12">En muchos concursos el precio decide casi la mitad de la nota, y se gana o se pierde por unos pocos euros. PROPO lee la fórmula del pliego, mira cuánto rebajaron los que ganaron contratos parecidos y te propone tres precios a partir del mínimo que te compensa.</p>
+            <ul className="price-feature-list">
+              <li><LuCheck /><span><strong>La fórmula del pliego, en claro:</strong> cuántos puntos da cada euro de rebaja.</span></li>
+              <li><LuCheck /><span><strong>Nunca por debajo de tu mínimo:</strong> tú dices cuánto te cuesta y PROPO calcula a partir de ahí.</span></li>
+              <li><LuCheck /><span><strong>Aviso de baja temeraria:</strong> te dice dónde empieza el riesgo de exclusión y te deja la justificación preparada.</span></li>
+              <li><LuCheck /><span><strong>El modelo oficial, relleno:</strong> la oferta económica del pliego, completada con tus importes y lista para firmar.</span></li>
+            </ul>
+          </div>
+          <div className="price-demo" aria-label="Ejemplo de las tres opciones de precio">
+            <div className="xs subtle">Ejemplo · comedor escolar · precio máximo 240.000 € · el precio vale 40 puntos</div>
+            {[['Prudente', '213.600 €', '−11 %', '36,9', 'Fuera de riesgo', ''], ['Recomendada', '196.800 €', '−18 %', '40', 'Fuera de riesgo', 'rec'], ['Agresiva', '190.800 €', '−20,5 %', '40', 'Cerca de la baja temeraria', 'risk']].map(([t, p, b, pts, r, k]) => (
+              <div key={t} className={`pd-row ${k}`}>
+                <div><div className="pd-t">{t}{k === 'rec' && <span className="pd-flag">Recomendada por PROPO</span>}</div><div className="xs muted">{b} · {r}</div></div>
+                <div className="pd-r"><div className="pd-p num">{p}</div><div className="xs muted">{pts} de 40 puntos</div></div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -384,19 +399,6 @@ export function Landing() {
           </div>
           <div className="feature">
             <div>
-              <div className="eyebrow">Memoria de empresa</div>
-              <h3>Cuanto más usas PROPO, menos trabajo te da cada propuesta.</h3>
-              <p className="lead">Sube una vez certificados, seguros, proyectos y CV. PROPO los reutiliza y cada respuesta aprobada pasa a tu biblioteca.</p>
-              <ul>
-                <li><LuCheck />Biblioteca de documentos con avisos de caducidad</li>
-                <li><LuCheck />Proyectos previos listos para acreditar experiencia</li>
-                <li><LuCheck />Secciones aprobadas guardadas como plantillas</li>
-              </ul>
-            </div>
-            <MemoryDemo />
-          </div>
-          <div className="feature flip">
-            <div>
               <div className="eyebrow">Redacción de propuestas</div>
               <h3>Borradores con tus datos y fuentes que puedes comprobar.</h3>
               <p className="lead">PROPO adapta la estructura de la propuesta al pliego y a sus criterios, y redacta cada sección con el pliego y los datos de tu empresa.</p>
@@ -408,7 +410,7 @@ export function Landing() {
             </div>
             <DraftDemo />
           </div>
-          <div className="feature">
+          <div className="feature flip">
             <div>
               <div className="eyebrow">Control de cumplimiento</div>
               <h3>Revisa todo antes de presentar.</h3>
@@ -424,20 +426,6 @@ export function Landing() {
         </div>
       </section>
 
-      <section className="section band">
-        <div className="mk-wrap">
-          <div className="section-head">
-            <div className="eyebrow">Con supervisión humana</div>
-            <h2>PROPO lo prepara todo. <span className="blue">Tú tienes la última palabra.</span></h2>
-            <p>PROPO hace el trabajo pesado y te lo deja listo. Nada se presenta sin ti: tú confirmas el precio y firmas.</p>
-          </div>
-          <div className="principle">
-            <div><div className="big">Prepara</div><p className="muted mt-8">Extrae requisitos, cruza los datos de tu empresa, redacta secciones y declaraciones y monta el paquete.</p></div>
-            <div><div className="big">Avisa</div><p className="muted mt-8">Marca lo que no tiene claro, lo que falta y lo que podría excluirte. Nunca rellena huecos con datos inventados.</p></div>
-            <div><div className="big">Tú firmas</div><p className="muted mt-8">Te lo entrega comprobado y listo. Puedes cambiar cualquier cosa, confirmas el precio y firmas. PROPO nunca presenta nada en tu nombre.</p></div>
-          </div>
-        </div>
-      </section>
 
       <section className="section">
         <div className="mk-wrap">
