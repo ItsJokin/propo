@@ -1343,3 +1343,6 @@ a.comp-award-t:hover { color: var(--accent); }
 .signup-side .trial-steps { flex: none; }
 .trial-mobile { display: none; }
 @media (max-width: 900px) { .trial-mobile { display: grid; gap: 6px; } }
+
+.signup-side .trial-points { margin-top: 28px; }
+.signup-side .hero-vid { box-shadow: 0 18px 40px rgba(11,23,48,.18); }
