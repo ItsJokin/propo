@@ -5,7 +5,7 @@ import {
   LuCalendar, LuEuro, LuLandmark, LuSparkles, LuBookmark, LuChevronRight, LuPlay, LuX,
 } from 'react-icons/lu';
 import { MkLayout } from './Layout';
-import { SectorFinder, LiveCounter, useOpenTenders } from './SectorFinder';
+import { SectorFinder, useOpenTenders } from './SectorFinder';
 import { navigate, track } from '../lib/store';
 import { Ring, Bar, LogoMark } from '../components/ui';
 import { PricingCards } from './Pricing';
@@ -302,16 +302,8 @@ export function Landing() {
       </section>
 
 
-      <section className="section finder-section" id="buscar">
-        <div className="mk-wrap">
-          <LiveCounter />
-          <div className="section-head mt-24" style={{ marginBottom: 28 }}>
-            <div className="eyebrow">Compruébalo ahora</div>
-            <h2>¿Cuántos concursos hay hoy <span className="blue">para tu empresa?</span></h2>
-            <p>Elige tu sector y tu zona. Son licitaciones reales, abiertas ahora mismo y publicadas por la Administración.</p>
-          </div>
-          <SectorFinder />
-        </div>
+      <section className="finder-band" id="buscar">
+        <div className="mk-wrap"><SectorFinder /></div>
       </section>
 
       <section className="section">

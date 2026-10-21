@@ -1386,3 +1386,18 @@ a.comp-award-t:hover { color: var(--accent); }
 .finder-flow { display: grid; gap: 8px; background: var(--bg-subtle); border-radius: 12px; padding: 12px 14px; font-size: 14px; line-height: 1.45; }
 .finder-flow > div { display: flex; gap: 10px; align-items: flex-start; }
 .finder-flow svg { flex: none; width: 16px; height: 16px; color: var(--accent); margin-top: 2px; }
+/* Franja discreta: licitaciones de hoy y «¿y para tu empresa?» */
+.finder-band { padding: 8px 0 28px; }
+.finder-slim { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 12px 16px; box-shadow: var(--shadow-sm); }
+.fs-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 14.5px; }
+.fs-live { display: inline-flex; align-items: center; gap: 8px; }
+.fs-live strong { color: var(--accent); font-size: 16px; }
+.fs-sep { width: 1px; height: 22px; background: var(--border); margin: 0 4px; }
+.fs-ask { font-weight: 600; margin-left: auto; }
+.fs-sel { height: 36px; width: auto; min-width: 150px; font-size: 14px; padding: 0 10px; }
+.fs-res { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+.fs-chip { font-size: 13.5px; padding: 4px 10px; border-radius: 999px; background: var(--accent-soft); }
+.fs-chip strong { color: var(--accent); }
+.fs-chip.soft { background: var(--bg-subtle); }
+.fs-go { margin-left: auto; font-size: 14px; }
+@media (max-width: 760px) { .fs-sep { display: none; } .fs-ask { margin-left: 0; width: 100%; } .fs-sel { flex: 1; } .fs-go { margin-left: 0; } }
