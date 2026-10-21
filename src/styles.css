@@ -1378,3 +1378,11 @@ a.comp-award-t:hover { color: var(--accent); }
 .pd-r { text-align: right; }
 .pd-p { font: 800 20px/1.1 var(--font-display); }
 @media (max-width: 900px) { .finder, .price-feature { grid-template-columns: 1fr; } }
+.finder-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+.finder-tile { border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
+.finder-tile .num { font: 800 30px/1 var(--font-display); color: var(--accent); letter-spacing: -.02em; }
+.finder-tile span:last-child { font-size: 13px; color: var(--fg-2); }
+.finder-tile.zero .num { color: var(--fg-3); }
+.finder-flow { display: grid; gap: 8px; background: var(--bg-subtle); border-radius: 12px; padding: 12px 14px; font-size: 14px; line-height: 1.45; }
+.finder-flow > div { display: flex; gap: 10px; align-items: flex-start; }
+.finder-flow svg { flex: none; width: 16px; height: 16px; color: var(--accent); margin-top: 2px; }

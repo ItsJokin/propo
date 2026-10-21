@@ -122,3 +122,11 @@ export function goNoGo(score: number, daysLeft: number | null, c: Competition | 
   return { verdict, reasons, title: verdict === 'yes' ? 'Merece la pena presentarse' : verdict === 'maybe' ? 'Valóralo antes de decidir' : 'Probablemente no compensa' };
 }
 const fmt = (n: number) => String(Math.round(n * 10) / 10).replace('.', ',');
+
+/** Contratos adjudicados de un sector (prefijos CPV) en una zona, para la portada: cuántos, por cuánto y desde cuándo. */
+export async function sectorAwards(prefixes: string[], inZone: (nuts: string) => boolean): Promise<{ n: number; amount: number; from: string }> {
+  const divs = [...new Set(prefixes.map((c) => c.slice(0, 2)))];
+  const rows = (await Promise.all(divs.map(division))).flat().filter((r) => prefixes.some((c) => r.cpv.startsWith(c)) && inZone(r.nuts || ''));
+  const dates = rows.map((r) => r.date).filter(Boolean).sort();
+  return { n: rows.length, amount: rows.reduce((a, r) => a + (r.amount || 0), 0), from: dates[0] ?? '' };
+}
