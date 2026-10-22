@@ -20,6 +20,16 @@ export function coherenceHash(p: Project): string {
 }
 export const coherenceStale = (p: Project) => !p.coherence || p.coherence.hash !== coherenceHash(p);
 
+const norm = (t: string) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/).filter((w) => w.length > 2 || /\d/.test(w));
+/** ¿La frase repite algo que el cliente ha confirmado? Entonces no se toca, diga lo que diga la IA. */
+function confirmedIn(p: Project, text: string) {
+  const have = new Set(norm(text));
+  return p.requirements.some((r) => {
+    if (r.status !== 'fulfilled' || !r.humanValidated) return false;
+    const t = norm(r.title).filter((w) => !['para', 'con', 'del', 'los', 'las', 'una', 'cada'].includes(w));
+    return t.length >= 2 && t.filter((w) => have.has(w)).length / t.length >= 0.6;
+  });
+}
 const nums = (t: string) => (t.match(/\d+(?:[.,]\d+)?/g) || []).map((n) => n.replace(/\.(?=\d{3}\b)/g, '').replace(',', '.'));
 
 /** Comprobaciones sin IA: plazo del plan de obra y cifras del sobre de fórmula dentro de la memoria. */
@@ -64,7 +74,8 @@ Datos de la empresa:
 - Equipo: ${team.map((t) => `${t.name} (${t.role}, ${t.years} años${t.qualifications ? `, ${t.qualifications}` : ''})`).join('; ') || 'no consta'}
 - Clasificación: ${(c.clasificaciones ?? []).map((x) => `${x.grupo}-${x.subgrupo}-${x.categoria}`).join(', ') || 'no consta'}
 - Facturación: ${c.revenue || 'no consta'} · Plantilla: ${c.employees || 'no consta'}
-- Experiencia: ${f.pastProjects.map((x) => `${x.title} (${x.client || 'cliente sin indicar'}, ${x.years || ''}, ${x.value || ''}${x.hasCertificate ? ', con certificado' : ''})`).join('; ') || 'no consta'}
+- Experiencia:
+${f.pastProjects.map((x) => `  · ${x.title} (${x.client || 'cliente sin indicar'}, ${x.years || ''}, ${x.value || ''}${x.hasCertificate ? ', con certificado' : ''}): ${(x.description || '').replace(/\s+/g, ' ').slice(0, 400)}`).join('\n') || 'no consta'}
 - Certificaciones: ${f.certifications.map((x) => x.name).join(', ') || 'no consta'}
 - Descripción: ${(c.description || '').slice(0, 400)}
 Confirmado por la empresa para esta licitación (cuenta como dato cierto aunque no esté en la ficha):
@@ -122,6 +133,7 @@ export async function reviewCoherence(p: Project, f: Facts): Promise<{ coherence
       const cur = contents[fx.section]; if (cur == null) continue;
       const at = cur.indexOf(fx.before);
       if (at < 0 || cur.indexOf(fx.before, at + 1) >= 0 || fx.before.length < 12) continue;   // tiene que estar una sola vez
+      if (confirmedIn(p, fx.before)) continue;   // lo confirmado por el cliente manda
       // Lo que cita el pliego no se toca: la IA solo ve un extracto; se queda como pregunta.
       const ctx = cur.slice(Math.max(0, at - 40), at + fx.before.length + 40);
       if (/\[S\d+\]/.test(ctx) && p.sections.find((x) => x.id === fx.section)?.citations.some((ci) => ci.kind === 'tender' && ctx.includes(`[${ci.marker}]`))) continue;
