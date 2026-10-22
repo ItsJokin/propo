@@ -1,6 +1,6 @@
 {
  "cpv2": "79",
- "generated": "2026-10-22T14:39:58.991Z",
+ "generated": "2026-10-22T18:50:13.979Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -131,6 +131,987 @@
    "doc": "2026-21756bbc-c88b-4179-8988-4dea036b896a"
   },
   {
+   "crit": "Cuestiones contractuales referidas a la Autoridad Portuaria de Tarragona",
+   "max": 10,
+   "exp": "p:19938955",
+   "ref": "2026_040SE",
+   "title": "Soporte técnico y jurídico especializado en la mejora, innovación y eficiencia de los procedimientos de contratación pública tramitados por ",
+   "buyer": "Presidencia de la Autoridad Portuaria de Tarragona",
+   "nuts": "ES514",
+   "date": "2026-09-02",
+   "offers": 3,
+   "top": {
+    "pts": 7.72,
+    "winner": true
+   },
+   "low": {
+    "pts": 3.93
+   },
+   "best": [
+    "Detalla toda la normativa aplicable vigente.",
+    "Competencias descritas de forma correcta.",
+    "Desarrollo correcto de la normativa contractual aplicable.",
+    "Régimen jurídico general descrito de forma adecuada."
+   ],
+   "weak": [
+    "Ninguna mención a la aplicación del RD Ley 3/2020.",
+    "Recursos y tribunales descritos de forma genérica, sin concreción para la APT.",
+    "Contenido no específico para la APT.",
+    "Organización de la APT descrita de forma genérica.",
+    "Régimen de impugnación sin organismos de resolución."
+   ],
+   "hypothesis": {
+    "premia": "Detallar la normativa aplicable vigente, incluido el RD Ley 3/2020, y describir competencias y organización de la APT.",
+    "penaliza": "Omitir normativa clave, describir de forma genérica los recursos y no identificar los órganos de resolución."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=CSvsH8G6NJ%2BLAncw3qdZkA%3D%3D",
+   "doc": "2026-7d8f005d-b6d4-4a04-96af-0744186a19db"
+  },
+  {
+   "crit": "Calidad de la propuesta de asesoramiento en la implantación de sistemas dinámicos de adquisición",
+   "max": 39,
+   "exp": "p:19938955",
+   "ref": "2026_040SE",
+   "title": "Soporte técnico y jurídico especializado en la mejora, innovación y eficiencia de los procedimientos de contratación pública tramitados por ",
+   "buyer": "Presidencia de la Autoridad Portuaria de Tarragona",
+   "nuts": "ES514",
+   "date": "2026-09-02",
+   "offers": 3,
+   "top": {
+    "pts": 39,
+    "winner": true
+   },
+   "low": {
+    "pts": 23
+   },
+   "best": [
+    "Desarrolla asesoramiento jurídico y diseño documental de SDA conforme a la LCSP.",
+    "Protocolos internos, esquemas de gestión y adaptación a cambios normativos.",
+    "Catálogo con herramienta preconfigurada y formación remota y presencial.",
+    "Correcta definición legal de SDA y catálogos, con revisión documental.",
+    "Protocolo para gestión de operadores económicos y material de apoyo."
+   ],
+   "weak": [
+    "Incluye apartados no solicitados que reducen la claridad.",
+    "Diseño de la documentación para la implantación muy escaso.",
+    "No incluye propuesta de diseño de catálogo ni modalidad de formación.",
+    "Menor desarrollo operativo de diseño y configuración del catálogo."
+   ],
+   "hypothesis": {
+    "premia": "Diseño documental de SDA, protocolos internos, adaptación normativa, catálogo con funcionalidades detalladas y formación multimodal.",
+    "penaliza": "No proponer diseño de catálogo, no especificar la formación, incluir apartados no solicitados y tener un diseño documental escaso."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=CSvsH8G6NJ%2BLAncw3qdZkA%3D%3D",
+   "doc": "2026-7d8f005d-b6d4-4a04-96af-0744186a19db"
+  },
+  {
+   "crit": "DISEÑO CONCEPTUAL",
+   "max": 20,
+   "exp": "p:19663585",
+   "ref": "Servicio L2_2026",
+   "title": "Servicio de diseño, producción, montaje, mantenimiento y desmontaje de stands y espacios expositivos de EMASAGRA para ferias, eventos y acti",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-08-27",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Propuesta rompedora, impactante y luminosa que llama la atención.",
+    "Propuesta funcional y abierta."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=PLu9IVB3YjC5HQrHoP3G5A%3D%3D",
+   "doc": "2026-22572d26-1e1e-4016-bb3b-d4c76b157912"
+  },
+  {
+   "crit": "FUNCIONALIDAD",
+   "max": 5,
+   "exp": "p:19663585",
+   "ref": "Servicio L2_2026",
+   "title": "Servicio de diseño, producción, montaje, mantenimiento y desmontaje de stands y espacios expositivos de EMASAGRA para ferias, eventos y acti",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-08-27",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Zonas específicas para reuniones y encuentros institucionales.",
+    "Segunda pantalla de 3x2 m y televisión en zona de reuniones.",
+    "Sentido corporativo con zonas de reuniones, dos pantallas de 50 pulgadas y espacio para vinilos.",
+    "Accesibilidad universal auditiva, comunicativa y audiovisual; mostrador, taburetes y papeleras."
+   ],
+   "weak": [
+    "Número de mesas excesivo; sería necesario descargar el espacio.",
+    "No hace referencia a vinilos, sustituidos por pantalla LED."
+   ],
+   "hypothesis": {
+    "premia": "Zonas de reuniones, pantallas y elementos de accesibilidad universal bien integrados.",
+    "penaliza": "Exceso de mesas que obliga a descargar el espacio y ausencia de vinilos sustituidos por otros elementos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=PLu9IVB3YjC5HQrHoP3G5A%3D%3D",
+   "doc": "2026-22572d26-1e1e-4016-bb3b-d4c76b157912"
+  },
+  {
+   "crit": "SOLUCIÓN TÉCNICA",
+   "max": 7,
+   "exp": "p:19663585",
+   "ref": "Servicio L2_2026",
+   "title": "Servicio de diseño, producción, montaje, mantenimiento y desmontaje de stands y espacios expositivos de EMASAGRA para ferias, eventos y acti",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-08-27",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Tarima técnica modular completamente reutilizable.",
+    "Luz perimetral azul coherente con el color corporativo.",
+    "Accesibilidad física con pasillos interiores e iluminación homogénea.",
+    "Diseño flexible adaptable a distintos espacios y formatos sin estructuras nuevas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=PLu9IVB3YjC5HQrHoP3G5A%3D%3D",
+   "doc": "2026-22572d26-1e1e-4016-bb3b-d4c76b157912"
+  },
+  {
+   "crit": "INNOVACIÓN/SOST",
+   "max": 8,
+   "exp": "p:19663585",
+   "ref": "Servicio L2_2026",
+   "title": "Servicio de diseño, producción, montaje, mantenimiento y desmontaje de stands y espacios expositivos de EMASAGRA para ferias, eventos y acti",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-08-27",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Materiales duraderos, reciclables y de larga vida útil.",
+    "Propuesta alineada con sostenibilidad y economía circular.",
+    "Sistemas modulares desmontables y reutilizables.",
+    "Garantiza la custodia del material de un año a otro."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Sistemas modulares, materiales duraderos y reciclables, reutilización y custodia entre eventos.",
+    "penaliza": "No consta en los comentarios un elemento penalizado específico."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=PLu9IVB3YjC5HQrHoP3G5A%3D%3D",
+   "doc": "2026-22572d26-1e1e-4016-bb3b-d4c76b157912"
+  },
+  {
+   "crit": "Criterio 1. Propuesta creativa",
+   "max": 20,
+   "exp": "p:19994495",
+   "ref": "CNMY26/CACVSA/30",
+   "title": "Servicio de desarrollo creativo de la campaña de publicidad de otoño 2026 para la Corporació Audiovisual de la Comunitat Valenciana (CACVSA)",
+   "buyer": "Dirección General de la Corporación Audiovisual de la Comunitat Valenciana, S.A.",
+   "nuts": "ESZZZ",
+   "date": "2026-08-24",
+   "offers": 7,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Insight relevante y planteamiento estratégico plenamente alineado con los objetivos",
+    "Concepto original, diferencial y fácilmente memorable",
+    "Claim con elevada capacidad de recuerdo que articula toda la campaña",
+    "Planteamiento estratégico sólido y coherente con los objetivos de la campaña",
+    "Identidad visual consistente con el recurso gráfico del reflejo"
+   ],
+   "weak": [
+    "Capacidad limitada para generar notoriedad e identificación con la marca",
+    "Recurso visual y conceptual poco diferencial"
+   ],
+   "hypothesis": {
+    "premia": "Originalidad, diferenciación y alta capacidad de recuerdo y notoriedad del concepto y del claim, con insight estratégico sólido (Sapristi)",
+    "penaliza": "Ejecución visual poco diferencial, menor impacto o notoriedad, enfoque descriptivo o apoyo principal en el mensaje verbal"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=lx%2FMMmrNDMmsNfRW6APEDw%3D%3D",
+   "doc": "2026-3bd93240-b0a7-4cfd-9d33-655f9d6fe619"
+  },
+  {
+   "crit": "Criterio 2. Adaptaciones",
+   "max": 5,
+   "exp": "p:19994495",
+   "ref": "CNMY26/CACVSA/30",
+   "title": "Servicio de desarrollo creativo de la campaña de publicidad de otoño 2026 para la Corporació Audiovisual de la Comunitat Valenciana (CACVSA)",
+   "buyer": "Dirección General de la Corporación Audiovisual de la Comunitat Valenciana, S.A.",
+   "nuts": "ESZZZ",
+   "date": "2026-08-24",
+   "offers": 7,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Adaptaciones trasladan correctamente el concepto a los soportes previstos",
+    "Piezas técnicamente viables",
+    "Mantiene la identidad visual de À Punt en todos los formatos",
+    "Adaptaciones mantienen plenamente la coherencia visual, estratégica y conceptual",
+    "Adecuación a las particularidades de cada formato"
+   ],
+   "weak": [
+    "Desarrollo limitado con escasa adaptación a las particularidades de cada formato",
+    "Aplicación muy similar en todas las piezas"
+   ],
+   "hypothesis": {
+    "premia": "Adaptación específica a cada formato, con eficacia comunicativa e impacto y viabilidad de ejecución demostrada",
+    "penaliza": "Aplicación uniforme o repetitiva del mismo esquema en todos los soportes, con escaso aprovechamiento de cada medio"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=lx%2FMMmrNDMmsNfRW6APEDw%3D%3D",
+   "doc": "2026-3bd93240-b0a7-4cfd-9d33-655f9d6fe619"
+  },
+  {
+   "crit": "Propuesta de innovación y valor añadido",
+   "max": 12,
+   "exp": "p:19872420",
+   "ref": "GPEXCGPD26004",
+   "title": "Servicios de edición, traducción, diseño y maquetación de material promocional turístico de Extremadura para mercados internacionales.",
+   "buyer": "Dirección General de la Sociedad de Gestión Pública de Extremadura, S.A.U.",
+   "nuts": "ES431",
+   "date": "2026-08-21",
+   "offers": 4,
+   "top": {
+    "pts": 12,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Tres mejoras claramente detalladas que aportan valor añadido",
+    "Listado de referencias de trabajos previos en edición, diseño y redacción",
+    "Herramientas tecnológicas con aplicabilidad directa al proyecto",
+    "Tres mejoras detalladas que aportan valor añadido",
+    "Uso de herramientas tecnológicas con aplicabilidad directa al proyecto"
+   ],
+   "weak": [
+    "Cinco mejoras consideradas inherentes al contrato, no valorables",
+    "No aporta ejemplos de trabajos previamente realizados",
+    "Dos mejoras consideradas inherentes al objeto del contrato, no valorables"
+   ],
+   "hypothesis": {
+    "premia": "Aportar referencias o muestras de trabajos previos y mejoras diferenciales no inherentes al contrato",
+    "penaliza": "Mejoras inherentes a las obligaciones básicas y ausencia de trabajos previos o muestras"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tC2%2FPgalrgeFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-ff470a3e-a846-4aaf-8843-3d54aa232eff"
+  },
+  {
+   "crit": "Plan de trabajo, equipo y coordinación operativa",
+   "max": 12,
+   "exp": "p:19872420",
+   "ref": "GPEXCGPD26004",
+   "title": "Servicios de edición, traducción, diseño y maquetación de material promocional turístico de Extremadura para mercados internacionales.",
+   "buyer": "Dirección General de la Sociedad de Gestión Pública de Extremadura, S.A.U.",
+   "nuts": "ES431",
+   "date": "2026-08-21",
+   "offers": 4,
+   "top": {
+    "pts": 12,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Plan de coordinación detallado con herramientas de gestión de proyectos",
+    "Equipo con roles completos, incluido redactor y revisores",
+    "Cronograma ajustado a fases de trabajo reales y coherentes",
+    "Coordinación con GPEX con seguimiento quincenal, informes mensuales e informe final",
+    "Equipo completo con editora, redactora y cronograma por fases"
+   ],
+   "weak": [
+    "Ausencia de figura de redactor o editor de contenidos",
+    "Planificación sin fase específica de edición y redacción de contenidos"
+   ],
+   "hypothesis": {
+    "premia": "Coordinación detallada, equipo con redactor o editor de contenidos y cronograma completo por fases",
+    "penaliza": "Ausencia de redactor o editor de contenidos, falta de cronograma exigido o de fase de edición"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tC2%2FPgalrgeFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-ff470a3e-a846-4aaf-8843-3d54aa232eff"
+  },
+  {
+   "crit": "Número de revisiones incluidas sin coste adicional",
+   "max": 11,
+   "exp": "p:19872420",
+   "ref": "GPEXCGPD26004",
+   "title": "Servicios de edición, traducción, diseño y maquetación de material promocional turístico de Extremadura para mercados internacionales.",
+   "buyer": "Dirección General de la Sociedad de Gestión Pública de Extremadura, S.A.U.",
+   "nuts": "ES431",
+   "date": "2026-08-21",
+   "offers": 4,
+   "top": {
+    "pts": 11,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Sistema de rondas de revisión profesional orientado a correcciones de GPEX",
+    "No fija número máximo de revisiones en validación",
+    "Compromiso concreto de cinco rondas de revisión por entregable sin coste"
+   ],
+   "weak": [
+    "No concreta el número de revisiones comprometidas",
+    "Remite la información al sobre 3, por lo que no es valorable"
+   ],
+   "hypothesis": {
+    "premia": "Concretar un número de rondas de revisión sin coste por entregable",
+    "penaliza": "No concretar el número de revisiones, remitiéndolo a otro sobre"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tC2%2FPgalrgeFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-ff470a3e-a846-4aaf-8843-3d54aa232eff"
+  },
+  {
+   "crit": "LIBRO DE REGISTRO DE INCIDENCIAS",
+   "max": 12.5,
+   "exp": "p:19763116",
+   "ref": "039/26-S",
+   "title": "Servicio de control de accesos, seguridad y vigilancia en horario de mañana en edificios de oficinas centrales de La Confederación Hidrográf",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Ebro",
+   "nuts": "ES243",
+   "date": "2026-08-20",
+   "offers": 2,
+   "top": {
+    "pts": 8.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Óptimo en claridad, limpieza y registro cronológico de fecha, turno y personal"
+   ],
+   "weak": [
+    "No se aporta el modelo de libro de registro de incidencias",
+    "Carece de clasificación de incidencias por categorías",
+    "No contempla el apartado de medidas adoptadas"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=EPQftEWmclzs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-4a02f26e-d878-4192-9385-4b7d08a4d902"
+  },
+  {
+   "crit": "INFORME SEMANAL DEL CENTRO",
+   "max": 12.5,
+   "exp": "p:19763116",
+   "ref": "039/26-S",
+   "title": "Servicio de control de accesos, seguridad y vigilancia en horario de mañana en edificios de oficinas centrales de La Confederación Hidrográf",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Ebro",
+   "nuts": "ES243",
+   "date": "2026-08-20",
+   "offers": 2,
+   "top": {
+    "pts": 12.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Transforma datos de accesos y rondas en información útil",
+    "Incluye plan de acción y recomendaciones"
+   ],
+   "weak": [
+    "No se aporta el modelo de informe semanal del centro"
+   ],
+   "hypothesis": {
+    "premia": "Transformar los registros en información útil e incluir plan de acción y recomendaciones",
+    "penaliza": "Sin penalización señalada en los comentarios"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=EPQftEWmclzs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-4a02f26e-d878-4192-9385-4b7d08a4d902"
+  },
+  {
+   "crit": "INFORME DE INSPECCIÓN DEL SERVICIO",
+   "max": 12.5,
+   "exp": "p:19763116",
+   "ref": "039/26-S",
+   "title": "Servicio de control de accesos, seguridad y vigilancia en horario de mañana en edificios de oficinas centrales de La Confederación Hidrográf",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Ebro",
+   "nuts": "ES243",
+   "date": "2026-08-20",
+   "offers": 2,
+   "top": {
+    "pts": 11.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Diseño funcional y estructura completa con acciones correctivas"
+   ],
+   "weak": [
+    "No se aporta el modelo de informe de inspección del servicio",
+    "Falta subcategoría de 'Consignas específicas' en el apartado 3"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=EPQftEWmclzs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-4a02f26e-d878-4192-9385-4b7d08a4d902"
+  },
+  {
+   "crit": "MODELO DE PROTOCOLO DE ACTUACIÓN",
+   "max": 12.5,
+   "exp": "p:19763116",
+   "ref": "039/26-S",
+   "title": "Servicio de control de accesos, seguridad y vigilancia en horario de mañana en edificios de oficinas centrales de La Confederación Hidrográf",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Ebro",
+   "nuts": "ES243",
+   "date": "2026-08-20",
+   "offers": 2,
+   "top": {
+    "pts": 12.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Describe detalladamente numerosos protocolos de actuación",
+    "Incluye control de visitas a las dependencias"
+   ],
+   "weak": [
+    "No se aporta el modelo de protocolo de actuación"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=EPQftEWmclzs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-4a02f26e-d878-4192-9385-4b7d08a4d902"
+  },
+  {
+   "crit": "VALORACIÓN DE RIESGOS",
+   "max": 30,
+   "exp": "p:19763116",
+   "ref": "039/26-S",
+   "title": "Servicio de control de accesos, seguridad y vigilancia en horario de mañana en edificios de oficinas centrales de La Confederación Hidrográf",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Ebro",
+   "nuts": "ES243",
+   "date": "2026-08-20",
+   "offers": 2,
+   "top": {
+    "pts": 29,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Descripción precisa de edificios y entorno",
+    "Funciones del vigilante adaptadas a los usos",
+    "Análisis de vulnerabilidades con niveles de riesgo por tipo"
+   ],
+   "weak": [
+    "No se aporta valoración de riesgos"
+   ],
+   "hypothesis": {
+    "premia": "Descripción precisa del edificio y entorno, funciones adaptadas a los usos y análisis de vulnerabilidades",
+    "penaliza": "Sin penalización señalada en los comentarios"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=EPQftEWmclzs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-4a02f26e-d878-4192-9385-4b7d08a4d902"
+  },
+  {
+   "crit": "RECOMENDACIONES INDIVIDUALIZADAS",
+   "max": 20,
+   "exp": "p:19763116",
+   "ref": "039/26-S",
+   "title": "Servicio de control de accesos, seguridad y vigilancia en horario de mañana en edificios de oficinas centrales de La Confederación Hidrográf",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Ebro",
+   "nuts": "ES243",
+   "date": "2026-08-20",
+   "offers": 2,
+   "top": {
+    "pts": 14,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Medidas correctas y personalizadas: libro de control, recursos y coordinación"
+   ],
+   "weak": [
+    "No se aportan recomendaciones al no existir valoración de riesgos",
+    "Omite la descripción del protocolo de alerta ante terrorismo"
+   ],
+   "hypothesis": {
+    "premia": "Medidas personalizadas (libro de control, recursos, coordinación del personal)",
+    "penaliza": "Omitir la descripción del protocolo de alerta ante terrorismo"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=EPQftEWmclzs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-4a02f26e-d878-4192-9385-4b7d08a4d902"
+  },
+  {
+   "crit": "Memoria, Organización y Alcance del servicio",
+   "max": 22.5,
+   "exp": "p:19846701",
+   "ref": "2026-2921",
+   "title": "Servicio de vigilancia seguridad, de los distintos eventos, competiciones, edificios y fiestas.",
+   "buyer": "Alcaldía del Ayuntamiento de Armilla",
+   "nuts": "ES614",
+   "date": "2026-08-19",
+   "offers": 1,
+   "top": {
+    "pts": 20,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Cumple fielmente los términos reflejados en el PPT.",
+    "Memoria organizativa bien definida y muy ajustada a las necesidades descritas en el PPT.",
+    "Gran operatividad al disponer de más personal del necesario y definición clara de los servicios."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Cumplimiento fiel del PPT, memoria bien estructurada y ajustada a necesidades, y disponibilidad de personal superior a la necesaria (única oferta valorada).",
+    "penaliza": "No constan aspectos penalizados en el informe."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=0xB1Hs74NUowYTJJ03sHog%3D%3D",
+   "doc": "2026-bfb97e86-f043-4866-bff4-ea43e82e9d69"
+  },
+  {
+   "crit": "Mejoras Ofertadas",
+   "max": 2.5,
+   "exp": "p:19846701",
+   "ref": "2026-2921",
+   "title": "Servicio de vigilancia seguridad, de los distintos eventos, competiciones, edificios y fiestas.",
+   "buyer": "Alcaldía del Ayuntamiento de Armilla",
+   "nuts": "ES614",
+   "date": "2026-08-19",
+   "offers": 1,
+   "top": {
+    "pts": 2.4,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Mejoras consideradas muy acertadas y bien definidas.",
+    "Mejoras aceptadas por considerarse muy oportunas."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Mejoras consideradas acertadas, bien definidas y oportunas (única oferta valorada).",
+    "penaliza": "No constan aspectos penalizados en el informe."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=0xB1Hs74NUowYTJJ03sHog%3D%3D",
+   "doc": "2026-bfb97e86-f043-4866-bff4-ea43e82e9d69"
+  },
+  {
+   "crit": "2.1. Organització tècnica i operativa del servei",
+   "max": 12,
+   "exp": "p:19806650",
+   "ref": "1504574M",
+   "title": "Servicio para la organización y desarrollo de la marcha a Lluc a pie de la Part Forana 2026",
+   "buyer": "Departamentos del Consell Insular de Mallorca",
+   "nuts": "ES53",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 12,
+    "winner": false
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Detalle horario, infraestructura y planos de rutas correctos.",
+    "Minimiza el corte de la MA-2130 al tramo estrictamente crítico.",
+    "Cronograma en cuatro fases con hitos medibles.",
+    "Cronograma horario con acción, responsable y canal de comunicación."
+   ],
+   "weak": [
+    "Cierre de la MA-2130 hasta las 14:00 perjudica el transporte.",
+    "Desvío de autobuses por carreteras secundarias con riesgo de saturación."
+   ],
+   "hypothesis": {
+    "premia": "Cronogramas detallados y minimizar cortes de la carretera crítica",
+    "penaliza": "Cortes prolongados de la carretera principal que desvían tráfico a vías secundarias"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=7VxtFcDrHrnL1rX3q%2FMAPA%3D%3D",
+   "doc": "2026-266266d0-b013-4b59-b7f2-213683a6f666"
+  },
+  {
+   "crit": "2.2. Pla de seguretat, emergències i coordinació sanitària",
+   "max": 8,
+   "exp": "p:19806650",
+   "ref": "1504574M",
+   "title": "Servicio para la organización y desarrollo de la marcha a Lluc a pie de la Part Forana 2026",
+   "buyer": "Departamentos del Consell Insular de Mallorca",
+   "nuts": "ES53",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Punto Médico Avanzado en Lluc con personal y equipamiento.",
+    "Protocolo meteorológico por niveles con respuesta en 30 minutos.",
+    "Prueba de coordinación previa al evento.",
+    "Cumple los mínimos exigidos en servicios sanitarios."
+   ],
+   "weak": [
+    "Protocolos de evacuación y contingencia meteorológica genéricos.",
+    "Falta especificación para la Serra de Tramuntana.",
+    "Ambulancias en tramo Inca-Lluc desplegadas más tarde."
+   ],
+   "hypothesis": {
+    "premia": "Protocolos específicos para la sierra, coordinación previa y punto médico avanzado",
+    "penaliza": "Protocolos genéricos y cobertura sanitaria tardía en tramos críticos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=7VxtFcDrHrnL1rX3q%2FMAPA%3D%3D",
+   "doc": "2026-266266d0-b013-4b59-b7f2-213683a6f666"
+  },
+  {
+   "crit": "2.3. Proposta gràfica, comunicativa i participativa",
+   "max": 5,
+   "exp": "p:19806650",
+   "ref": "1504574M",
+   "title": "Servicio para la organización y desarrollo de la marcha a Lluc a pie de la Part Forana 2026",
+   "buyer": "Departamentos del Consell Insular de Mallorca",
+   "nuts": "ES53",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Conecta con la devoción, la historia y la dimensión humana de la marcha.",
+    "Estética de grabado con carácter clásico y tradicional.",
+    "Destaca el entorno natural de la Serra de Tramuntana."
+   ],
+   "weak": [
+    "Transmite imagen de carrera deportiva.",
+    "Deja en segundo plano la dimensión devota y tradicional.",
+    "El mar no es visible en ningún momento."
+   ],
+   "hypothesis": {
+    "premia": "Conexión con la identidad devocional, histórica y humana de la marcha",
+    "penaliza": "Imagen deportiva que resta protagonismo a la dimensión tradicional"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=7VxtFcDrHrnL1rX3q%2FMAPA%3D%3D",
+   "doc": "2026-266266d0-b013-4b59-b7f2-213683a6f666"
+  },
+  {
+   "crit": "2.4. Pla de coordinació institucional i participativa",
+   "max": 3,
+   "exp": "p:19806650",
+   "ref": "1504574M",
+   "title": "Servicio para la organización y desarrollo de la marcha a Lluc a pie de la Part Forana 2026",
+   "buyer": "Departamentos del Consell Insular de Mallorca",
+   "nuts": "ES53",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Calendariza autorizaciones administrativas (DGT, ABDT).",
+    "Gestión activa del voluntariado con plan de captación y formación.",
+    "Clasifica los municipios en de paso/logísticos y de origen."
+   ],
+   "weak": [
+    "Renuncia a captación propia de voluntariado.",
+    "Voluntariado dependiente de Protección Civil municipal.",
+    "Delega cruces de carretera en seguridad privada."
+   ],
+   "hypothesis": {
+    "premia": "Gestión proactiva del voluntariado y calendarización de autorizaciones",
+    "penaliza": "Renuncia a captación propia y dependencia de voluntarios municipales"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=7VxtFcDrHrnL1rX3q%2FMAPA%3D%3D",
+   "doc": "2026-266266d0-b013-4b59-b7f2-213683a6f666"
+  },
+  {
+   "crit": "2.5. Proposta de sostenibilitat ambiental i responsabilitat social",
+   "max": 3,
+   "exp": "p:19806650",
+   "ref": "1504574M",
+   "title": "Servicio para la organización y desarrollo de la marcha a Lluc a pie de la Part Forana 2026",
+   "buyer": "Departamentos del Consell Insular de Mallorca",
+   "nuts": "ES53",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Sustitución de generadores contaminantes por baterías.",
+    "Gestión solidaria de excedentes alimentarios.",
+    "Accesibilidad universal e higiene menstrual en avituallamientos.",
+    "Contenedores de reciclaje en avituallamientos y acuerdo con el Punt Verd de Selva."
+   ],
+   "weak": [
+    "Sin medidas de mitigación de ruido.",
+    "Sin medidas de accesibilidad ni inclusión."
+   ],
+   "hypothesis": {
+    "premia": "Medidas ambientales y sociales concretas (energía, excedentes, accesibilidad)",
+    "penaliza": "Ausencia de medidas de mitigación de ruido y de accesibilidad"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=7VxtFcDrHrnL1rX3q%2FMAPA%3D%3D",
+   "doc": "2026-266266d0-b013-4b59-b7f2-213683a6f666"
+  },
+  {
+   "crit": "Programa de trabajo",
+   "max": 20,
+   "exp": "p:19542419",
+   "ref": "SER/2026/0000006024",
+   "title": "Auditoría de cuentas anuales y de subvenciones, ayudas, aportaciones dinerarias y avales concedidas por la Comunidad Autónoma deCanarias, a ",
+   "buyer": "Secretaría General Técnica de Hacienda y Relaciones con la Unión Europea de la Comunidad Autónoma de Canarias",
+   "nuts": "ES70",
+   "date": "2026-08-10",
+   "offers": 1,
+   "top": {
+    "pts": 20,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Dos programas diferenciados (cuentas anuales y subvenciones) con alto detalle por área, transacción y prueba",
+    "Demuestra conocimiento del régimen contable y financiero de las universidades canarias",
+    "Matriz de riesgos prioritarios para orientar los programas hacia áreas de atención reforzada"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=1KjkeSqs9FKcTfjQf3USOg%3D%3D",
+   "doc": "2026-a1b59070-473f-4e62-8acc-12e04f05b939"
+  },
+  {
+   "crit": "Memorándum de planificación y ejecución del trabajo",
+   "max": 5,
+   "exp": "p:19542419",
+   "ref": "SER/2026/0000006024",
+   "title": "Auditoría de cuentas anuales y de subvenciones, ayudas, aportaciones dinerarias y avales concedidas por la Comunidad Autónoma deCanarias, a ",
+   "buyer": "Secretaría General Técnica de Hacienda y Relaciones con la Unión Europea de la Comunidad Autónoma de Canarias",
+   "nuts": "ES70",
+   "date": "2026-08-10",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Cronograma por fase con plazos ajustados a los pliegos y dedicación horaria por tipo de auditoría",
+    "Referencia expresa a las Normas de auditoría del Sector Público y conocimiento de la normativa aplicable",
+    "Protocolo de colaboración con la Intervención General para reforzar la calidad técnica"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=1KjkeSqs9FKcTfjQf3USOg%3D%3D",
+   "doc": "2026-a1b59070-473f-4e62-8acc-12e04f05b939"
+  },
+  {
+   "crit": "2.1.1 Programa de actividades y metodología",
+   "max": 5,
+   "exp": "p:19542658",
+   "ref": "33/2026",
+   "title": "Servicio integral de asistencia técnica para la organización y desarrollo del evento Feria del legado Británico 2026-",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Huelva",
+   "nuts": "ES615",
+   "date": "2026-08-04",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Detalle notable por actividad: alcance, medios, servicios complementarios y proveedores concretos.",
+    "Nivel de concreción por actividad considerado un valor apreciable.",
+    "Programa día a día con bloque temático, espacio y contenido por jornada.",
+    "Metodología en seis fases con entregables, herramientas de coordinación y control."
+   ],
+   "weak": [
+    "Metodología de ejecución resuelta en términos estratégicos y descriptivos, con conceptos genéricos."
+   ],
+   "hypothesis": {
+    "premia": "Detalle concreto por actividad y metodología operativa con fases, entregables y herramientas de control",
+    "penaliza": "Metodología descrita en términos estratégicos o genéricos sin desarrollo operativo"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=CsofaREvmBxq1DdmE7eaXg%3D%3D",
+   "doc": "2026-bef7ddff-c56d-4949-a949-5a14414519a4"
+  },
+  {
+   "crit": "2.1.2 Plan de comunicación y difusión",
+   "max": 5,
+   "exp": "p:19542658",
+   "ref": "33/2026",
+   "title": "Servicio integral de asistencia técnica para la organización y desarrollo del evento Feria del legado Británico 2026-",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Huelva",
+   "nuts": "ES615",
+   "date": "2026-08-04",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Soportes de difusión nominales por canal y estrategia digital con segmentación.",
+    "Monitorización con indicadores concretos y coherencia entre ejes y acciones.",
+    "Concepto creativo propio e identidad visual definida.",
+    "Matriz de indicadores de seguimiento del impacto por ámbitos."
+   ],
+   "weak": [
+    "Desarrollo centrado en identidad gráfica y redes sociales; otros canales menos desarrollados."
+   ],
+   "hypothesis": {
+    "premia": "Soportes nominales por canal, estrategia digital y matriz de indicadores de impacto",
+    "penaliza": "Desarrollo concentrado en identidad gráfica y redes sociales, con otros canales menos trabajados"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=CsofaREvmBxq1DdmE7eaXg%3D%3D",
+   "doc": "2026-bef7ddff-c56d-4949-a949-5a14414519a4"
+  },
+  {
+   "crit": "2.1.3 Compromiso con la accesibilidad",
+   "max": 5,
+   "exp": "p:19542658",
+   "ref": "33/2026",
+   "title": "Servicio integral de asistencia técnica para la organización y desarrollo del evento Feria del legado Británico 2026-",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Huelva",
+   "nuts": "ES615",
+   "date": "2026-08-04",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Cobertura normativa explícita: RDL 1/2013, DB SUA, UNE 170001 y RD 1112/2018.",
+    "Desarrollo pormenorizado por actividad, con Responsable de Accesibilidad y formación obligatoria.",
+    "Medidas generales y tabla de medidas específicas para cada actividad.",
+    "Protocolo de actuación en tres momentos: antes, durante y después."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Cobertura normativa explícita y medidas específicas por actividad, con protocolo temporal",
+    "penaliza": ""
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=CsofaREvmBxq1DdmE7eaXg%3D%3D",
+   "doc": "2026-bef7ddff-c56d-4949-a949-5a14414519a4"
+  },
+  {
+   "crit": "2.1.4 Diseño de elementos escénicos",
+   "max": 5,
+   "exp": "p:19542658",
+   "ref": "33/2026",
+   "title": "Servicio integral de asistencia técnica para la organización y desarrollo del evento Feria del legado Británico 2026-",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Huelva",
+   "nuts": "ES615",
+   "date": "2026-08-04",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Descripción completa con dimensiones, materiales y elementos escenográficos concretos.",
+    "Incluye ambientación musical, presentador y jurado especializado."
+   ],
+   "weak": [
+    "Imagen de mockup con pasarela genérica, rótulo de campaña y figuras ilustradas de fondo."
+   ],
+   "hypothesis": {
+    "premia": "Descripción con dimensiones, materiales y elementos escenográficos concretos",
+    "penaliza": "Imagen genérica tipo mockup sin detalle escenográfico propio"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=CsofaREvmBxq1DdmE7eaXg%3D%3D",
+   "doc": "2026-bef7ddff-c56d-4949-a949-5a14414519a4"
+  },
+  {
+   "crit": "2.1.5 Plan de riesgos",
+   "max": 5,
+   "exp": "p:19542658",
+   "ref": "33/2026",
+   "title": "Servicio integral de asistencia técnica para la organización y desarrollo del evento Feria del legado Británico 2026-",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Huelva",
+   "nuts": "ES615",
+   "date": "2026-08-04",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Riesgos específicos del emplazamiento con probabilidad, impacto y medidas diferenciadas.",
+    "Anclaje normativo (RD 393/2007, Ley 17/2015) y coordinación con servicios municipales.",
+    "Matriz de diez supuestos con probabilidad, impacto y medidas de prevención y respuesta.",
+    "Responsables definidos y secuenciación temporal de medidas."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Riesgos específicos del emplazamiento, responsables definidos y anclaje normativo",
+    "penaliza": ""
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=CsofaREvmBxq1DdmE7eaXg%3D%3D",
+   "doc": "2026-bef7ddff-c56d-4949-a949-5a14414519a4"
+  },
+  {
    "crit": "PLAN DE ORGANIZACIÓN DE RECURSOS HUMANOS Y MATERIALES",
    "max": 10,
    "exp": "p:19386080",
@@ -186,6 +1167,445 @@
    "hypothesis": null,
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=DAEJ0vnZP7jCfVQHDepjGQ%3D%3D",
    "doc": "2026-7a8103ab-ee79-4d37-bbab-89306c5cb2cb"
+  },
+  {
+   "crit": "1. Presentación de la empresa",
+   "max": 6,
+   "exp": "p:18359411",
+   "ref": "61/2025",
+   "title": "Prestación del servicio de organización y producción de actuaciones artísticas y del servicio de programación de actividades y eventos públi",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Chiclana de la Frontera",
+   "nuts": "ES612",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 5.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Estructura que responde a los apartados; experiencia desde 2017 en eventos similares y en otras administraciones",
+    "Empresa de Chiclana con compromiso con los ODS y la Agenda 2030",
+    "Acumula experiencia en poblaciones de gran densidad, incluida Chiclana"
+   ],
+   "weak": [
+    "No especifica la antigüedad de la empresa; faltan datos sobre su conocimiento",
+    "Presentación no desarrollada en algunos aspectos",
+    "Redacción ambigua: indica que no desarrolla las actuaciones artísticas contratadas"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vHpZeCy2FYuFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-6c615f01-98a8-4c35-8507-5971efacf180"
+  },
+  {
+   "crit": "2. Propuesta de coordinador y Coordinador adjunto",
+   "max": 4,
+   "exp": "p:18359411",
+   "ref": "61/2025",
+   "title": "Prestación del servicio de organización y producción de actuaciones artísticas y del servicio de programación de actividades y eventos públi",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Chiclana de la Frontera",
+   "nuts": "ES612",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Estructura adecuada, desarrollada en dos páginas",
+    "Aporta datos de contacto de ambos perfiles",
+    "Coordinador adjunto con formación universitaria declarada"
+   ],
+   "weak": [
+    "Nivel académico y experiencia del coordinador no acreditados",
+    "No aporta currículum ni documentación justificativa"
+   ],
+   "hypothesis": {
+    "premia": "Acreditar documentalmente titulación y experiencia de los perfiles (currículum y justificantes)",
+    "penaliza": "Declarar titulaciones y experiencia sin acreditarlas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vHpZeCy2FYuFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-6c615f01-98a8-4c35-8507-5971efacf180"
+  },
+  {
+   "crit": "3. Propuestas para hacer partícipe a la ciudadanía y colectivos locales",
+   "max": 6,
+   "exp": "p:18359411",
+   "ref": "61/2025",
+   "title": "Prestación del servicio de organización y producción de actuaciones artísticas y del servicio de programación de actividades y eventos públi",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Chiclana de la Frontera",
+   "nuts": "ES612",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Vinculación con el tejido asociativo local (70% de plantilla de Chiclana)",
+    "Medidas concretas por cada fiesta con colectivos identificados",
+    "Propuesta muy buena con herramientas válidas"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vHpZeCy2FYuFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-6c615f01-98a8-4c35-8507-5971efacf180"
+  },
+  {
+   "crit": "4. Propuestas de artistas, características técnicas y artísticas, cronograma y escaletaje",
+   "max": 6,
+   "exp": "p:18359411",
+   "ref": "61/2025",
+   "title": "Prestación del servicio de organización y producción de actuaciones artísticas y del servicio de programación de actividades y eventos públi",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Chiclana de la Frontera",
+   "nuts": "ES612",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 4.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Desglose de artistas y espectáculos por fiesta",
+    "Gran detalle del conocimiento de las fiestas mayores"
+   ],
+   "weak": [
+    "No aporta cronograma ni escaletaje"
+   ],
+   "hypothesis": {
+    "premia": "Aportar cronograma y escaletaje detallados junto a los artistas",
+    "penaliza": "No aportar cronograma ni escaletaje"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vHpZeCy2FYuFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-6c615f01-98a8-4c35-8507-5971efacf180"
+  },
+  {
+   "crit": "5. Materiales reciclados y reciclables en elementos decorativos",
+   "max": 3,
+   "exp": "p:18359411",
+   "ref": "61/2025",
+   "title": "Prestación del servicio de organización y producción de actuaciones artísticas y del servicio de programación de actividades y eventos públi",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Chiclana de la Frontera",
+   "nuts": "ES612",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Estructuras modulares reutilizables en distintos montajes",
+    "Reutilización de PVC y profesionales experimentados en su manipulación"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vHpZeCy2FYuFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-6c615f01-98a8-4c35-8507-5971efacf180"
+  },
+  {
+   "crit": "6. Calidad y eficiencia energética en el sistema de iluminación de los eventos",
+   "max": 3,
+   "exp": "p:18359411",
+   "ref": "61/2025",
+   "title": "Prestación del servicio de organización y producción de actuaciones artísticas y del servicio de programación de actividades y eventos públi",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Chiclana de la Frontera",
+   "nuts": "ES612",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Herramientas y maquinaria eficientes; tecnología LED en instalaciones",
+    "Monitoreo de consumo en tiempo real y software de ajuste de demanda"
+   ],
+   "weak": [
+    "Vehículo de grandes dimensiones aún no incorporado (proyectado)"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vHpZeCy2FYuFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-6c615f01-98a8-4c35-8507-5971efacf180"
+  },
+  {
+   "crit": "7. Personajes y actores en los eventos",
+   "max": 2,
+   "exp": "p:18359411",
+   "ref": "61/2025",
+   "title": "Prestación del servicio de organización y producción de actuaciones artísticas y del servicio de programación de actividades y eventos públi",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Chiclana de la Frontera",
+   "nuts": "ES612",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Profesionales con experiencia y vestuario de buen nivel",
+    "Actores propios con años de colaboración"
+   ],
+   "weak": [
+    "Varios intérpretes se contratarían a terceros sin concretar"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vHpZeCy2FYuFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-6c615f01-98a8-4c35-8507-5971efacf180"
+  },
+  {
+   "crit": "8. Simulaciones mediante diseño gráfico 360º de escenografía",
+   "max": 4,
+   "exp": "p:18359411",
+   "ref": "61/2025",
+   "title": "Prestación del servicio de organización y producción de actuaciones artísticas y del servicio de programación de actividades y eventos públi",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Chiclana de la Frontera",
+   "nuts": "ES612",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Simulaciones 360º de espacios reales (Carnaval, Navidad, Feria)",
+    "Enlaces accesibles a las simulaciones"
+   ],
+   "weak": [
+    "Cubre solo los eventos más importantes"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vHpZeCy2FYuFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-6c615f01-98a8-4c35-8507-5971efacf180"
+  },
+  {
+   "crit": "9. Evento opcional: Insignia del Carnaval (pin dorado)",
+   "max": 4,
+   "exp": "p:18359411",
+   "ref": "61/2025",
+   "title": "Prestación del servicio de organización y producción de actuaciones artísticas y del servicio de programación de actividades y eventos públi",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Chiclana de la Frontera",
+   "nuts": "ES612",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Diseño de pin con prototipo y rótulo 'Carnaval de Chiclana'",
+    "Propone hasta tres pines para reconocimientos grupales"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vHpZeCy2FYuFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-6c615f01-98a8-4c35-8507-5971efacf180"
+  },
+  {
+   "crit": "10. Evento opcional: acto de convivencia con los Reyes Magos y Corte Real",
+   "max": 10,
+   "exp": "p:18359411",
+   "ref": "61/2025",
+   "title": "Prestación del servicio de organización y producción de actuaciones artísticas y del servicio de programación de actividades y eventos públi",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Chiclana de la Frontera",
+   "nuts": "ES612",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Acto organizado con la Asociación de Reyes Magos para al menos 25 personas",
+    "Obsequios personalizados con nombre y año"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vHpZeCy2FYuFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-6c615f01-98a8-4c35-8507-5971efacf180"
+  },
+  {
+   "crit": "11. Evento opcional: ruta de Belenes",
+   "max": 1,
+   "exp": "p:18359411",
+   "ref": "61/2025",
+   "title": "Prestación del servicio de organización y producción de actuaciones artísticas y del servicio de programación de actividades y eventos públi",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Chiclana de la Frontera",
+   "nuts": "ES612",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 1,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Díptico A5 de 1.000 unidades con imagen del belén municipal, direcciones y horarios"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vHpZeCy2FYuFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-6c615f01-98a8-4c35-8507-5971efacf180"
+  },
+  {
+   "crit": "12. Propuestas para atender emergencias",
+   "max": 2,
+   "exp": "p:18359411",
+   "ref": "61/2025",
+   "title": "Prestación del servicio de organización y producción de actuaciones artísticas y del servicio de programación de actividades y eventos públi",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Chiclana de la Frontera",
+   "nuts": "ES612",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 1.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Sede y recursos en Chiclana; coordinador presente in situ",
+    "Equipo de guardias e instalaciones en polígonos industriales"
+   ],
+   "weak": [
+    "Faltan comunicaciones y enlaces con Policía Local y servicios médicos"
+   ],
+   "hypothesis": {
+    "premia": "Incluir comunicaciones y enlaces con Policía Local y servicios médicos",
+    "penaliza": "No prever enlaces con los servicios de emergencia"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vHpZeCy2FYuFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-6c615f01-98a8-4c35-8507-5971efacf180"
+  },
+  {
+   "crit": "Descripción del desarrollo de los trabajos que se va a realizar",
+   "max": 15,
+   "exp": "p:18802784",
+   "ref": "SGES.PLG.25.002-1.0",
+   "title": "Contratación de la delegación de funciones de la Unidad de Control Interno de SEPIDES GESTION, S.G.E.I.C.",
+   "buyer": "SEPIDES Gestión, S.G.E.C.R., S.A., S.M.E.",
+   "nuts": "ES300",
+   "date": "2026-06-25",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": false
+   },
+   "low": {
+    "pts": 15
+   },
+   "best": [
+    "Trabajos presentados detalladamente para Plan Anual, examen, evaluación e Informe Anual.",
+    "Descripción detallada de los trabajos para las dos funciones."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Descripción detallada de los trabajos; ambas ofertas obtienen la puntuación máxima.",
+    "penaliza": "No se reseñan penalizaciones en los comentarios."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=cAkJE6ehJjkaF6cS8TCh%2FA%3D%3D",
+   "doc": "2026-ed305f65-5e95-4dd2-8a9d-e4bb149c77c5"
+  },
+  {
+   "crit": "Cronograma de las actuaciones",
+   "max": 6,
+   "exp": "p:18802784",
+   "ref": "SGES.PLG.25.002-1.0",
+   "title": "Contratación de la delegación de funciones de la Unidad de Control Interno de SEPIDES GESTION, S.G.E.I.C.",
+   "buyer": "SEPIDES Gestión, S.G.E.C.R., S.A., S.M.E.",
+   "nuts": "ES300",
+   "date": "2026-06-25",
+   "offers": 2,
+   "top": {
+    "pts": 3.6,
+    "winner": false
+   },
+   "low": {
+    "pts": 2.4
+   },
+   "best": [
+    "Informe anual cumple el plazo del informe de auditoría.",
+    "Actuaciones indicadas dentro de las fechas establecidas en el pliego."
+   ],
+   "weak": [
+    "Plan anual de enero no concretado; indica primer trimestre.",
+    "No cumple el plazo del informe de auditoría 2025.",
+    "Planes anuales 2026 y 2027 entre segundo y tercer mes, no en el primero.",
+    "No todas las actuaciones entran dentro de las fechas del pliego."
+   ],
+   "hypothesis": {
+    "premia": "Actuaciones en las fechas del pliego, con el mes concreto del plan anual y cumplimiento del plazo del informe.",
+    "penaliza": "Plan anual sin mes concreto o fuera del plazo del pliego, e incumplimiento del plazo del informe de auditoría."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=cAkJE6ehJjkaF6cS8TCh%2FA%3D%3D",
+   "doc": "2026-ed305f65-5e95-4dd2-8a9d-e4bb149c77c5"
+  },
+  {
+   "crit": "Composición, organigrama del equipo humano y formación",
+   "max": 6,
+   "exp": "p:18802784",
+   "ref": "SGES.PLG.25.002-1.0",
+   "title": "Contratación de la delegación de funciones de la Unidad de Control Interno de SEPIDES GESTION, S.G.E.I.C.",
+   "buyer": "SEPIDES Gestión, S.G.E.C.R., S.A., S.M.E.",
+   "nuts": "ES300",
+   "date": "2026-06-25",
+   "offers": 2,
+   "top": {
+    "pts": 6,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Equipo de 6 miembros con formación detallada y extensa para el servicio.",
+    "Alta cualificación para el servicio solicitado (socio y dos auditores)."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Equipo con formación detallada y extensa, con más miembros.",
+    "penaliza": "No se reseñan penalizaciones en los comentarios."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=cAkJE6ehJjkaF6cS8TCh%2FA%3D%3D",
+   "doc": "2026-ed305f65-5e95-4dd2-8a9d-e4bb149c77c5"
+  },
+  {
+   "crit": "Tareas asumidas por cada miembro del equipo y tiempo previsto",
+   "max": 8,
+   "exp": "p:18802784",
+   "ref": "SGES.PLG.25.002-1.0",
+   "title": "Contratación de la delegación de funciones de la Unidad de Control Interno de SEPIDES GESTION, S.G.E.I.C.",
+   "buyer": "SEPIDES Gestión, S.G.E.C.R., S.A., S.M.E.",
+   "nuts": "ES300",
+   "date": "2026-06-25",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": {
+    "pts": 4.8
+   },
+   "best": [
+    "Se especifican las tareas asumidas y el tiempo previsto.",
+    "Se especifican las tareas asumidas por cada miembro del equipo."
+   ],
+   "weak": [
+    "Tiempo previsto expresado en porcentajes, sin número de horas."
+   ],
+   "hypothesis": {
+    "premia": "Tareas por miembro y tiempo previsto especificados.",
+    "penaliza": "Tiempo expresado en porcentajes sin número de horas de dedicación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=cAkJE6ehJjkaF6cS8TCh%2FA%3D%3D",
+   "doc": "2026-ed305f65-5e95-4dd2-8a9d-e4bb149c77c5"
   },
   {
    "crit": "a) Propuesta de plan de medios según brief",

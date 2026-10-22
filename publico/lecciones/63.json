@@ -1,6 +1,6 @@
 {
  "cpv2": "63",
- "generated": "2026-10-22T14:39:58.992Z",
+ "generated": "2026-10-22T18:50:13.983Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -256,6 +256,108 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIfqkzofB2cS7pcxhTeWOg%3D%3D",
    "doc": "2026-76b888ab-b380-4743-adf2-7b07c5759604"
+  },
+  {
+   "crit": "Evaluación de medios técnicos",
+   "max": null,
+   "exp": "p:19900541",
+   "ref": "2026/04",
+   "title": "Prestación del servicio de gestión completa de agencia de viajes para el alumnado y profesorado vinculado a la FLA-UV, y el personal de la e",
+   "buyer": "Dirección General de la Fundació Lluís Alcanyís de la Universitat de València de la Comunitat Valenciana",
+   "nuts": "ES523",
+   "date": "2026-07-15",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Equipamiento informático completo en oficina local próxima a la sede de la FLA-UV.",
+    "Sistemas propios de reserva hotelera con cupos y conexión Low Cost.",
+    "Facturación avanzada por centros de coste.",
+    "Emplea el sistema Amadeus y una plataforma web opcional de consultas.",
+    "Soporte técnico correcto."
+   ],
+   "weak": [
+    "Infraestructura física general y centralizada en su sede de Mallorca.",
+    "No dispone de oficina local con equipamiento específico."
+   ],
+   "hypothesis": {
+    "premia": "Oficina física local próxima a la FLA-UV con equipamiento propio, software optimizado y facturación por centros de coste.",
+    "penaliza": "Infraestructura general y centralizada fuera de la zona, sin equipamiento específico local."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KwVNeXKaqPBt5r0ngvMetA%3D%3D",
+   "doc": "2026-a1aa16ce-622e-47dd-a41a-5ff6d760627a"
+  },
+  {
+   "crit": "Evaluación de medios personales",
+   "max": null,
+   "exp": "p:19900541",
+   "ref": "2026/04",
+   "title": "Prestación del servicio de gestión completa de agencia de viajes para el alumnado y profesorado vinculado a la FLA-UV, y el personal de la e",
+   "buyer": "Dirección General de la Fundació Lluís Alcanyís de la Universitat de València de la Comunitat Valenciana",
+   "nuts": "ES523",
+   "date": "2026-07-15",
+   "offers": 2,
+   "top": {
+    "pts": 3.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Equipo específico de 3 personas en oficina próxima con experiencia en sector público.",
+    "Responsable directo y técnico de gestión tutorizados por un gestor de cuentas.",
+    "Designación formal de una responsable única para el contrato."
+   ],
+   "weak": [
+    "No consta experiencia profesional de la responsable en el sector público.",
+    "Apoyo basado en un sistema de atención rotatoria interna."
+   ],
+   "hypothesis": {
+    "premia": "Equipo específico de proximidad con experiencia acreditada en el sector público.",
+    "penaliza": "Responsable sin experiencia pública acreditada y apoyo genérico por atención rotatoria."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KwVNeXKaqPBt5r0ngvMetA%3D%3D",
+   "doc": "2026-a1aa16ce-622e-47dd-a41a-5ff6d760627a"
+  },
+  {
+   "crit": "Evaluación del proyecto global",
+   "max": null,
+   "exp": "p:19900541",
+   "ref": "2026/04",
+   "title": "Prestación del servicio de gestión completa de agencia de viajes para el alumnado y profesorado vinculado a la FLA-UV, y el personal de la e",
+   "buyer": "Dirección General de la Fundació Lluís Alcanyís de la Universitat de València de la Comunitat Valenciana",
+   "nuts": "ES523",
+   "date": "2026-07-15",
+   "offers": 2,
+   "top": {
+    "pts": 3.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Servicio de emergencias bilingüe 24h/365 días y alertas gratuitas ante huelgas o cancelaciones.",
+    "Red de más de 654 oficinas.",
+    "Flujo operativo correcto estructurado en fases.",
+    "Metodología detallada de distribución de tareas."
+   ],
+   "weak": [
+    "Modelo operativo de carácter general.",
+    "No incluye servicios diferenciales destacados."
+   ],
+   "hypothesis": {
+    "premia": "Servicios diferenciales como emergencias bilingües 24h y alertas automáticas ante huelgas o cancelaciones.",
+    "penaliza": "Modelo operativo general, sin servicios de valor añadido específicos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KwVNeXKaqPBt5r0ngvMetA%3D%3D",
+   "doc": "2026-a1aa16ce-622e-47dd-a41a-5ff6d760627a"
   }
  ]
 }

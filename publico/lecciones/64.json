@@ -1,8 +1,89 @@
 {
  "cpv2": "64",
- "generated": "2026-10-22T14:39:58.992Z",
+ "generated": "2026-10-22T18:50:13.983Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Sub-criterio B.1: Organización y Planificación Operativa",
+   "max": 15,
+   "exp": "p:19918522",
+   "ref": "94/2026",
+   "title": "Servicios postales de correo ordinario, certificado y notificaciones administrativas del ayuntamiento de Huércal de Almería.",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Huércal de Almería",
+   "nuts": "ES611",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 8.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Integración de la operativa municipal con los flujos de clasificación del operador, con protocolo de recogida apoyado en SICER.",
+    "Segundos intentos de entrega de notificaciones dentro de 3 días hábiles y en hora distinta, con identificación del receptor en PDA."
+   ],
+   "weak": [
+    "Falta de personalización para Huércal de Almería; medios humanos no específicos.",
+    "Plan de contingencia sin compromiso expreso de resolución o asistencia inferior a 2 horas."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=z1ift7cTGtHs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-89a2ffb2-da62-49dd-9299-b3e7856bfd45"
+  },
+  {
+   "crit": "Sub-criterio B.2: Funcionalidad de la Plataforma Informática",
+   "max": 15,
+   "exp": "p:19918522",
+   "ref": "94/2026",
+   "title": "Servicios postales de correo ordinario, certificado y notificaciones administrativas del ayuntamiento de Huércal de Almería.",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Huércal de Almería",
+   "nuts": "ES611",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 12,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Descarga masiva y custodia de Pruebas de Entrega Electrónicas durante 5 años, con retorno diario automatizado por SFTP/SSH.",
+    "Servicio Web para consulta individualizada en tiempo real, con soporte técnico para la integración."
+   ],
+   "weak": [
+    "La consulta web está limitada a 10 códigos concurrentes.",
+    "La gestión de permisos para perfiles multi-departamento no se desglosa con claridad."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=z1ift7cTGtHs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-89a2ffb2-da62-49dd-9299-b3e7856bfd45"
+  },
+  {
+   "crit": "Sub-criterio B.3: Plan de Formación y Soporte al Personal",
+   "max": 10,
+   "exp": "p:19918522",
+   "ref": "94/2026",
+   "title": "Servicios postales de correo ordinario, certificado y notificaciones administrativas del ayuntamiento de Huércal de Almería.",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Huércal de Almería",
+   "nuts": "ES611",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 7.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Dos sesiones prácticas diferenciadas (operativa y tecnológico-administrativa), con manuales interactivos y guías rápidas.",
+    "Soporte post-implantación con canal SITCE, IVR 24x7 y gestor de incidencias exclusivo."
+   ],
+   "weak": [
+    "Formación exclusivamente telemática, sin talleres presenciales.",
+    "No fija un acuerdo de nivel de servicio que garantice resolver dudas en menos de 1 hora."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=z1ift7cTGtHs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-89a2ffb2-da62-49dd-9299-b3e7856bfd45"
+  },
   {
    "crit": "Accesos a Internet",
    "max": 20,
@@ -252,6 +333,422 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SupdYa37LhmcCF8sV%2BqtYA%3D%3D",
    "doc": "2026-873a3b5c-ead2-4326-ae63-e58a5493341b"
+  },
+  {
+   "crit": "Calidad y coherencia de la arquitectura SD-WAN propuesta",
+   "max": 8,
+   "exp": "p:19588358",
+   "ref": "9937/2026",
+   "title": "Servicios de comunicaciones de voz (fija y móvil), red de acceso a datos e internet del Ayuntamiento de Torremolinos.",
+   "buyer": "Concejalía Delegada en Materia de Contratación del Ayuntamiento de Torremolinos",
+   "nuts": "ES617",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Arquitectura técnicamente sólida y adecuada, con HUB, sedes, seguridad, selección de rutas y salida centralizada o local breakout."
+   ],
+   "weak": [
+    "Falta detalle de flujos por sede, segmento, VLAN, aplicación o servicio.",
+    "No desarrolla escenarios de fallo ni criterios concretos de priorización y selección de ruta.",
+    "Más orientada a descripción general que a definición operativa granular."
+   ],
+   "hypothesis": {
+    "premia": "Granularidad en flujos por sede, segmento, VLAN y aplicación, escenarios de fallo y criterios de priorización y selección de ruta.",
+    "penaliza": "Descripción general de la solución sin nivel operativo detallado, lo que limita la puntuación a Buena (4 puntos)."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=W8tPQMGUgsl9PLkba5eRog%3D%3D",
+   "doc": "2026-6ecc0041-1ce6-4b80-b266-44190f0db443"
+  },
+  {
+   "crit": "Calidad de la arquitectura de seguridad, doble nivel de firewall, local breakout y EDR/XDR",
+   "max": 8,
+   "exp": "p:19588358",
+   "ref": "9937/2026",
+   "title": "Servicios de comunicaciones de voz (fija y móvil), red de acceso a datos e internet del Ayuntamiento de Torremolinos.",
+   "buyer": "Concejalía Delegada en Materia de Contratación del Ayuntamiento de Torremolinos",
+   "nuts": "ES617",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Arquitectura clara con representación gráfica y flujos documentados.",
+    "HUB principal en alta disponibilidad, doble nivel de firewall y relación de modelos con sedes y perfiles.",
+    "Granularidad que permite entender la protección distribuida y el local breakout."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Representación gráfica, flujos documentados y relación de modelos concretos con sedes y perfiles.",
+    "penaliza": "No consta en el informe."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=W8tPQMGUgsl9PLkba5eRog%3D%3D",
+   "doc": "2026-6ecc0041-1ce6-4b80-b266-44190f0db443"
+  },
+  {
+   "crit": "Integración operativa, gestión centralizada y autogestión por el Ayuntamiento",
+   "max": 6,
+   "exp": "p:19588358",
+   "ref": "9937/2026",
+   "title": "Servicios de comunicaciones de voz (fija y móvil), red de acceso a datos e internet del Ayuntamiento de Torremolinos.",
+   "buyer": "Concejalía Delegada en Materia de Contratación del Ayuntamiento de Torremolinos",
+   "nuts": "ES617",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Modelo de gestión centralizada muy alineado con el pliego y la autogestión municipal.",
+    "Coadministración sobre plataformas de análisis, WiFi y switches, con formación por dominios."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=W8tPQMGUgsl9PLkba5eRog%3D%3D",
+   "doc": "2026-6ecc0041-1ce6-4b80-b266-44190f0db443"
+  },
+  {
+   "crit": "Calidad de la solución de switching, WiFi e integración LAN con SD-WAN/seguridad",
+   "max": 6,
+   "exp": "p:19588358",
+   "ref": "9937/2026",
+   "title": "Servicios de comunicaciones de voz (fija y móvil), red de acceso a datos e internet del Ayuntamiento de Torremolinos.",
+   "buyer": "Concejalía Delegada en Materia de Contratación del Ayuntamiento de Torremolinos",
+   "nuts": "ES617",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Diseño LAN/WiFi completo e integrado con SD-WAN y seguridad.",
+    "Relación de equipamiento, esquemas, estrategia de migración y gestión centralizada.",
+    "Modelos y cantidades de switches y puntos de acceso identificados."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=W8tPQMGUgsl9PLkba5eRog%3D%3D",
+   "doc": "2026-6ecc0041-1ce6-4b80-b266-44190f0db443"
+  },
+  {
+   "crit": "Plan de implantación, migración, pruebas, continuidad y reversibilidad",
+   "max": 6,
+   "exp": "p:19588358",
+   "ref": "9937/2026",
+   "title": "Servicios de comunicaciones de voz (fija y móvil), red de acceso a datos e internet del Ayuntamiento de Torremolinos.",
+   "buyer": "Concejalía Delegada en Materia de Contratación del Ayuntamiento de Torremolinos",
+   "nuts": "ES617",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Metodología, equipo, fases, cronograma, gestión de riesgos y despliegue en paralelo.",
+    "Matriz de pruebas detallada con criterios de aceptación y activación de rollback."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=W8tPQMGUgsl9PLkba5eRog%3D%3D",
+   "doc": "2026-6ecc0041-1ce6-4b80-b266-44190f0db443"
+  },
+  {
+   "crit": "Calidad de la solución UCaaS, voz fija, numeración y continuidad de servicios críticos",
+   "max": 4,
+   "exp": "p:19588358",
+   "ref": "9937/2026",
+   "title": "Servicios de comunicaciones de voz (fija y móvil), red de acceso a datos e internet del Ayuntamiento de Torremolinos.",
+   "buyer": "Concejalía Delegada en Materia de Contratación del Ayuntamiento de Torremolinos",
+   "nuts": "ES617",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Solución UCaaS sólida y continuista, con plan de numeración y tratamiento de 010, 092 y 112.",
+    "Tratamiento específico de QoS y coherencia con la aclaración publicada."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=W8tPQMGUgsl9PLkba5eRog%3D%3D",
+   "doc": "2026-6ecc0041-1ce6-4b80-b266-44190f0db443"
+  },
+  {
+   "crit": "Modelo de soporte, operación, reporting, formación y transferencia de conocimiento",
+   "max": 2,
+   "exp": "p:19588358",
+   "ref": "9937/2026",
+   "title": "Servicios de comunicaciones de voz (fija y móvil), red de acceso a datos e internet del Ayuntamiento de Torremolinos.",
+   "buyer": "Concejalía Delegada en Materia de Contratación del Ayuntamiento de Torremolinos",
+   "nuts": "ES617",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Modelo completo con Centro de Gestión, SOC, soporte 24x7 y gestión de incidencias y cambios.",
+    "Formación estructurada por dominios técnicos y orientada a la autogestión."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=W8tPQMGUgsl9PLkba5eRog%3D%3D",
+   "doc": "2026-6ecc0041-1ce6-4b80-b266-44190f0db443"
+  },
+  {
+   "crit": "L6. 1.1.1. Servicios de atención y call center",
+   "max": 11,
+   "exp": "p:8715388",
+   "ref": "2021000608",
+   "title": "Servicios de telecomunicaciones del Sector Público del Principado de Asturias",
+   "buyer": "Consejería de Presidencia, Reto Demográfico, Igualdad y Turismo del Principado de Asturias",
+   "nuts": "ES120",
+   "date": "2022-10-11",
+   "offers": 2,
+   "top": {
+    "pts": 9.79,
+    "winner": false
+   },
+   "low": {
+    "pts": 9.57
+   },
+   "best": [
+    "Plataforma de mercado con roadmap definido y actualizaciones incluidas en contrato",
+    "Integración con redes sociales y agente integrado en la suite",
+    "Garantías de disponibilidad en CPD redundados",
+    "Orientación total al modelo en que el L9 explota los servicios, con herramientas y documentación",
+    "Plataforma abierta con actualizaciones y soporte del proveedor"
+   ],
+   "weak": [
+    "Garantía de no obsolescencia valorada en 8 puntos ponderados, por debajo de la alternativa",
+    "Mejoras funcionales menos destacadas que las de la otra oferta",
+    "Optimización del licenciamiento inferior a otras alternativas",
+    "Mejoras funcionales por debajo de otras soluciones en algún aspecto"
+   ],
+   "hypothesis": {
+    "premia": "Garantías de evolución (roadmap y actualizaciones incluidas en contrato) y licenciamiento optimizado",
+    "penaliza": "Plataforma abierta sin roadmap contractual ni optimización de licenciamiento"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=h5C9HuefOwtvYnTkQN0%2FZA%3D%3D",
+   "doc": "8bbb95e3-ea2c-44f5-a005-e81fad8ad550"
+  },
+  {
+   "crit": "L6. 1.1.2. Sistema de grabación de llamadas",
+   "max": 7,
+   "exp": "p:8715388",
+   "ref": "2021000608",
+   "title": "Servicios de telecomunicaciones del Sector Público del Principado de Asturias",
+   "buyer": "Consejería de Presidencia, Reto Demográfico, Igualdad y Turismo del Principado de Asturias",
+   "nuts": "ES120",
+   "date": "2022-10-11",
+   "offers": 2,
+   "top": {
+    "pts": 6.23,
+    "winner": false
+   },
+   "low": {
+    "pts": 6.09
+   },
+   "best": [
+    "Grabación integrada en la misma plataforma",
+    "Ampliación de extensiones grabadas de 100 a 1000 y capacidad de almacenamiento muy superior",
+    "Licenciamiento sin coste adicional por crecimiento",
+    "Orientación a la explotación por el L9 con herramientas y documentación",
+    "Plataforma de mercado con roadmap y actualizaciones contractuales"
+   ],
+   "weak": [
+    "Capacidades por debajo de otras soluciones alternativas",
+    "Licenciamiento con alternativas que optimizan en mayor medida",
+    "Garantía de no obsolescencia solo con crecimiento suficiente, sin destacar"
+   ],
+   "hypothesis": {
+    "premia": "Capacidades de grabación muy por encima del mínimo (extensiones y almacenamiento)",
+    "penaliza": "Mejoras notables pero por debajo de otras soluciones alternativas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=h5C9HuefOwtvYnTkQN0%2FZA%3D%3D",
+   "doc": "8bbb95e3-ea2c-44f5-a005-e81fad8ad550"
+  },
+  {
+   "crit": "L6. 1.1.3. Sistema IVR",
+   "max": 11,
+   "exp": "p:8715388",
+   "ref": "2021000608",
+   "title": "Servicios de telecomunicaciones del Sector Público del Principado de Asturias",
+   "buyer": "Consejería de Presidencia, Reto Demográfico, Igualdad y Turismo del Principado de Asturias",
+   "nuts": "ES120",
+   "date": "2022-10-11",
+   "offers": 2,
+   "top": {
+    "pts": 9.68,
+    "winner": false
+   },
+   "low": {
+    "pts": 9.68
+   },
+   "best": [
+    "Mejoras en ASR, TTS y volumen de usuarios simultáneos",
+    "Desarrollo de 5 IVR adicionales de dificultad media",
+    "Arquitectura on-premise totalmente redundada",
+    "Plataforma de mercado con roadmap y actualizaciones incluidas en contrato",
+    "Garantías técnicas de disponibilidad optimizadas"
+   ],
+   "weak": [
+    "Hay alternativas que destacan por encima de la propuesta",
+    "Optimización del licenciamiento inferior a otras alternativas",
+    "Garantía de no obsolescencia valorada en 8 puntos ponderados, por debajo de la alternativa"
+   ],
+   "hypothesis": {
+    "premia": "Mejoras en ASR/TTS, usuarios simultáneos e IVR adicionales",
+    "penaliza": "Mejoras destacables pero por debajo de alternativas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=h5C9HuefOwtvYnTkQN0%2FZA%3D%3D",
+   "doc": "8bbb95e3-ea2c-44f5-a005-e81fad8ad550"
+  },
+  {
+   "crit": "L6. 1.1.4. Formación",
+   "max": 1,
+   "exp": "p:8715388",
+   "ref": "2021000608",
+   "title": "Servicios de telecomunicaciones del Sector Público del Principado de Asturias",
+   "buyer": "Consejería de Presidencia, Reto Demográfico, Igualdad y Turismo del Principado de Asturias",
+   "nuts": "ES120",
+   "date": "2022-10-11",
+   "offers": 2,
+   "top": {
+    "pts": 1,
+    "winner": false
+   },
+   "low": {
+    "pts": 0.86
+   },
+   "best": [
+    "Incluye entorno de preproducción y entorno de documentación para las formaciones",
+    "Cursos detallados que cubren y superan los requisitos",
+    "Contenido personalizado con horas estimadas y modalidad",
+    "Cursos detallados que cubren y superan ampliamente los requisitos",
+    "Contenido personalizado muy detallado con horas y modalidad"
+   ],
+   "weak": [
+    "No se citan propuestas de mejora adicionales como las de la otra oferta"
+   ],
+   "hypothesis": {
+    "premia": "Entornos de preproducción y documentación, junto con detalle de contenido y horas",
+    "penaliza": "No incluir propuestas de mejora más allá del cumplimiento"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=h5C9HuefOwtvYnTkQN0%2FZA%3D%3D",
+   "doc": "8bbb95e3-ea2c-44f5-a005-e81fad8ad550"
+  },
+  {
+   "crit": "L6. 1.2.1. Plan de Implantación",
+   "max": 4,
+   "exp": "p:8715388",
+   "ref": "2021000608",
+   "title": "Servicios de telecomunicaciones del Sector Público del Principado de Asturias",
+   "buyer": "Consejería de Presidencia, Reto Demográfico, Igualdad y Turismo del Principado de Asturias",
+   "nuts": "ES120",
+   "date": "2022-10-11",
+   "offers": 2,
+   "top": {
+    "pts": 2.4,
+    "winner": false
+   },
+   "low": {
+    "pts": 2.4
+   },
+   "best": [
+    "Descripción de fases, recursos, certificaciones y volúmenes",
+    "Uso de la metodología propia del SPPA",
+    "Incluye todas las fases y tareas necesarias"
+   ],
+   "weak": [
+    "Sin detalle exhaustivo del proceso",
+    "No destaca por encima de otras alternativas",
+    "Sin detalle exhaustivo del calendario ni del proceso",
+    "Equivalente a otras alternativas, sin destacar"
+   ],
+   "hypothesis": {
+    "premia": "Metodología propia del SPPA y todas las fases y tareas",
+    "penaliza": "Falta de detalle exhaustivo y no destacar sobre alternativas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=h5C9HuefOwtvYnTkQN0%2FZA%3D%3D",
+   "doc": "8bbb95e3-ea2c-44f5-a005-e81fad8ad550"
+  },
+  {
+   "crit": "L6. 1.2.2. Planes de Explotación",
+   "max": 4,
+   "exp": "p:8715388",
+   "ref": "2021000608",
+   "title": "Servicios de telecomunicaciones del Sector Público del Principado de Asturias",
+   "buyer": "Consejería de Presidencia, Reto Demográfico, Igualdad y Turismo del Principado de Asturias",
+   "nuts": "ES120",
+   "date": "2022-10-11",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 3.2
+   },
+   "best": [
+    "Service Manager y Gestor del servicio asignados",
+    "Soporte 24x7 a través del centro de gestión especializada",
+    "Modelo y herramientas detallados con orientación al soporte del L9",
+    "Modelo, capas y recursos descritos",
+    "Service Manager como figura de explotación principal"
+   ],
+   "weak": [
+    "Sin destacar por encima de otras propuestas"
+   ],
+   "hypothesis": {
+    "premia": "Service Manager y gestor asignados, soporte 24x7 y detalle exhaustivo del modelo",
+    "penaliza": "Modelo bien descrito pero sin destacar frente a otras propuestas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=h5C9HuefOwtvYnTkQN0%2FZA%3D%3D",
+   "doc": "8bbb95e3-ea2c-44f5-a005-e81fad8ad550"
+  },
+  {
+   "crit": "L6. 1.3.1. Catálogo de productos y servicios ofertado",
+   "max": 1,
+   "exp": "p:8715388",
+   "ref": "2021000608",
+   "title": "Servicios de telecomunicaciones del Sector Público del Principado de Asturias",
+   "buyer": "Consejería de Presidencia, Reto Demográfico, Igualdad y Turismo del Principado de Asturias",
+   "nuts": "ES120",
+   "date": "2022-10-11",
+   "offers": 2,
+   "top": {
+    "pts": 1,
+    "winner": false
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Catálogo mínimo más funcionalidades adicionales de la plataforma y agentes"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=h5C9HuefOwtvYnTkQN0%2FZA%3D%3D",
+   "doc": "8bbb95e3-ea2c-44f5-a005-e81fad8ad550"
   }
  ]
 }

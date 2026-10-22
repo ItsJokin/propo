@@ -1,8 +1,345 @@
 {
  "cpv2": "39",
- "generated": "2026-10-22T14:39:58.991Z",
+ "generated": "2026-10-22T18:50:13.981Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Trayectoria y especialización en la realización los trabajos",
+   "max": 5,
+   "exp": "p:19979531",
+   "ref": "CONT26.MIXTO.12",
+   "title": "Contratación del suministro e instalación del equipamiento necesario para disponer de una oficina de información turísitca (OIT) en Les Arts",
+   "buyer": "Gerencia de la Fundació Visit València de la Comunitat Valenciana",
+   "nuts": "ES523",
+   "date": "2026-09-03",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Empresa especializada en este tipo de proyectos, con suficiente trayectoria.",
+    "Aporta ejemplos de otros clientes para los que ha trabajado."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=D2VbvAR3z1%2BP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-e98f6ee8-e3ee-4a65-82fc-ce3ae6b8833c"
+  },
+  {
+   "crit": "Descripción de los servicios a realizar",
+   "max": 20,
+   "exp": "p:19979531",
+   "ref": "CONT26.MIXTO.12",
+   "title": "Contratación del suministro e instalación del equipamiento necesario para disponer de una oficina de información turísitca (OIT) en Les Arts",
+   "buyer": "Gerencia de la Fundació Visit València de la Comunitat Valenciana",
+   "nuts": "ES523",
+   "date": "2026-09-03",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "Descripción muy genérica y conceptual.",
+    "No se aprecia un desarrollo específico de los elementos que la componen."
+   ],
+   "hypothesis": {
+    "premia": "Propuesta de diseño singular y descripción pormenorizada de los elementos (no consta en la única oferta valorada)",
+    "penaliza": "Descripción genérica y conceptual, sin desarrollo específico de los elementos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=D2VbvAR3z1%2BP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-e98f6ee8-e3ee-4a65-82fc-ce3ae6b8833c"
+  },
+  {
+   "crit": "Mejora de la calidad del mobiliario, equipamientos y dispositivos descritos en el PPT que supongan un valor añadido al proyecto sin coste para la Fundación",
+   "max": 5,
+   "exp": "p:19979531",
+   "ref": "CONT26.MIXTO.12",
+   "title": "Contratación del suministro e instalación del equipamiento necesario para disponer de una oficina de información turísitca (OIT) en Les Arts",
+   "buyer": "Gerencia de la Fundació Visit València de la Comunitat Valenciana",
+   "nuts": "ES523",
+   "date": "2026-09-03",
+   "offers": 1,
+   "top": {
+    "pts": 0,
+    "winner": false
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "No se ha localizado un apartado específico de mejoras en la documentación."
+   ],
+   "hypothesis": {
+    "premia": "Propuesta de mejoras con valor añadido sin coste para la Fundación (no consta en la única oferta valorada)",
+    "penaliza": "No localizar apartado específico de mejoras"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=D2VbvAR3z1%2BP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-e98f6ee8-e3ee-4a65-82fc-ce3ae6b8833c"
+  },
+  {
+   "crit": "Metodología de trabajo a emplear, valorándose la propuesta de organización de ejecución de los trabajos",
+   "max": 5,
+   "exp": "p:19979531",
+   "ref": "CONT26.MIXTO.12",
+   "title": "Contratación del suministro e instalación del equipamiento necesario para disponer de una oficina de información turísitca (OIT) en Les Arts",
+   "buyer": "Gerencia de la Fundació Visit València de la Comunitat Valenciana",
+   "nuts": "ES523",
+   "date": "2026-09-03",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Metodología adecuada.",
+    "Director de proyecto como interlocutor único, con sus cometidos especificados."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=D2VbvAR3z1%2BP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-e98f6ee8-e3ee-4a65-82fc-ce3ae6b8833c"
+  },
+  {
+   "crit": "Plan de seguimiento de los trabajos y propuesta de comunicación y coordinación con el responsable del contrato designado por la Fundación",
+   "max": 5,
+   "exp": "p:19979531",
+   "ref": "CONT26.MIXTO.12",
+   "title": "Contratación del suministro e instalación del equipamiento necesario para disponer de una oficina de información turísitca (OIT) en Les Arts",
+   "buyer": "Gerencia de la Fundació Visit València de la Comunitat Valenciana",
+   "nuts": "ES523",
+   "date": "2026-09-03",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Identifica claramente cinco fases para organizar y estructurar los trabajos.",
+    "Señala los aspectos en los que intervendrá específicamente el director de proyecto."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=D2VbvAR3z1%2BP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-e98f6ee8-e3ee-4a65-82fc-ce3ae6b8833c"
+  },
+  {
+   "crit": "Equipo de trabajo propuesto",
+   "max": 5,
+   "exp": "p:19979531",
+   "ref": "CONT26.MIXTO.12",
+   "title": "Contratación del suministro e instalación del equipamiento necesario para disponer de una oficina de información turísitca (OIT) en Les Arts",
+   "buyer": "Gerencia de la Fundació Visit València de la Comunitat Valenciana",
+   "nuts": "ES523",
+   "date": "2026-09-03",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Equipo completo con distribución de cometidos acorde a los trabajos requeridos."
+   ],
+   "weak": [
+    "No incluye referencias específicas de la experiencia previa de cada miembro."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=D2VbvAR3z1%2BP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-e98f6ee8-e3ee-4a65-82fc-ce3ae6b8833c"
+  },
+  {
+   "crit": "Descripción de los trabajos",
+   "max": 15,
+   "exp": "p:19870469",
+   "ref": "CN 104/2026",
+   "title": "Adecuación salas de descanso nueva sala de control",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Aporta información suficiente para verificar que conoce el alcance de los trabajos"
+   ],
+   "weak": [
+    "No amplía la descripción más allá de listar los trabajos"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ztBiORzbks4eIBJRHQiPkQ%3D%3D",
+   "doc": "2026-0f2ac68d-39e8-4afc-ae15-005d2ea6983a"
+  },
+  {
+   "crit": "Organización y planificación del suministro",
+   "max": 15,
+   "exp": "p:19870469",
+   "ref": "CN 104/2026",
+   "title": "Adecuación salas de descanso nueva sala de control",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 14,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Buena descripción de organización y planificación con contactos y tareas",
+    "Pone en valor la cercanía al centro para facilitar la operativa",
+    "Responsable con dedicación al contrato"
+   ],
+   "weak": [
+    "Proveedores nacionales sin carta de acuerdo o compromiso"
+   ],
+   "hypothesis": {
+    "premia": "Descripción de contactos y tareas, responsable dedicado y cercanía al centro",
+    "penaliza": "Falta de cartas de acuerdo o compromiso de proveedores"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ztBiORzbks4eIBJRHQiPkQ%3D%3D",
+   "doc": "2026-0f2ac68d-39e8-4afc-ae15-005d2ea6983a"
+  },
+  {
+   "crit": "Planificación los trabajos",
+   "max": 15,
+   "exp": "p:19870469",
+   "ref": "CN 104/2026",
+   "title": "Adecuación salas de descanso nueva sala de control",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Indica que realizará el cronograma y reconoce su importancia"
+   ],
+   "weak": [
+    "No presenta cronograma de trabajos",
+    "No presenta cronograma aproximado de los trabajos del expediente"
+   ],
+   "hypothesis": {
+    "premia": "Presentar un cronograma de los trabajos del expediente",
+    "penaliza": "No presentar cronograma, aunque se mencione su importancia"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ztBiORzbks4eIBJRHQiPkQ%3D%3D",
+   "doc": "2026-0f2ac68d-39e8-4afc-ae15-005d2ea6983a"
+  },
+  {
+   "crit": "Calidad a obtener",
+   "max": 15,
+   "exp": "p:19870469",
+   "ref": "CN 104/2026",
+   "title": "Adecuación salas de descanso nueva sala de control",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Buena descripción del control de calidad del suministro"
+   ],
+   "weak": [
+    "No indica nada sobre los trabajos de instalación",
+    "No aporta PPIs ni organización de la empresa dedicada a la calidad"
+   ],
+   "hypothesis": {
+    "premia": "Describir el control de calidad también para los trabajos de instalación, con PPIs y organización de calidad",
+    "penaliza": "Limitarse al control del suministro, sin PPIs ni organización de calidad"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ztBiORzbks4eIBJRHQiPkQ%3D%3D",
+   "doc": "2026-0f2ac68d-39e8-4afc-ae15-005d2ea6983a"
+  },
+  {
+   "crit": "Programa de actuaciones medioambientales",
+   "max": 15,
+   "exp": "p:19870469",
+   "ref": "CN 104/2026",
+   "title": "Adecuación salas de descanso nueva sala de control",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Indica la forma de realizar la gestión de residuos del expediente"
+   ],
+   "weak": [
+    "No aporta información detallada del proceso"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ztBiORzbks4eIBJRHQiPkQ%3D%3D",
+   "doc": "2026-0f2ac68d-39e8-4afc-ae15-005d2ea6983a"
+  },
+  {
+   "crit": "Memoria de Seguridad y Salud",
+   "max": 15,
+   "exp": "p:19870469",
+   "ref": "CN 104/2026",
+   "title": "Adecuación salas de descanso nueva sala de control",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Indica que la seguridad y salud la realizará una empresa externa"
+   ],
+   "weak": [
+    "No analiza situaciones de emergencia"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ztBiORzbks4eIBJRHQiPkQ%3D%3D",
+   "doc": "2026-0f2ac68d-39e8-4afc-ae15-005d2ea6983a"
+  },
+  {
+   "crit": "Mejoras sin coste adicional",
+   "max": 10,
+   "exp": "p:19870469",
+   "ref": "CN 104/2026",
+   "title": "Adecuación salas de descanso nueva sala de control",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Ofrece ampliación de la garantía",
+    "Ofrece disponibilidad por proximidad"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ztBiORzbks4eIBJRHQiPkQ%3D%3D",
+   "doc": "2026-0f2ac68d-39e8-4afc-ae15-005d2ea6983a"
+  },
   {
    "crit": "Calidad de los acabados",
    "max": 25,
@@ -285,6 +622,68 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zRFXX%2FbDY2mIzo3LHNPGcQ%3D%3D",
    "doc": "2026-e7d62332-14f6-42a7-a12c-6cf74a309413"
+  },
+  {
+   "crit": "Ergonomía y Adaptabilidad al Usuario en la silla de trabajo para puestos de oficina",
+   "max": 20,
+   "exp": "p:19723876",
+   "ref": "26/196",
+   "title": "Suministro, entrega e instalación de sillas de trabajo para puestos de oficina y sillas de cortesía para los distintos centros de trabajo de",
+   "buyer": "Comisión de Contratación de la Sociedad Estatal Loterías y Apuestas del Estado, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-01",
+   "offers": 2,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": {
+    "pts": 15
+   },
+   "best": [
+    "Sistemas completos de regulación: altura del asiento, respaldo, soporte lumbar, reposabrazos y reposacabezas",
+    "Dimensiones y configuración del asiento favorecen el confort postural de un amplio rango de usuarios",
+    "Dimensiones del asiento con condiciones satisfactorias para una amplia tipología de usuarios"
+   ],
+   "weak": [
+    "Profundidad del asiento más reducida, con menor superficie de apoyo",
+    "Puede limitar parcialmente la adaptación a distintos perfiles antropométricos y el confort ergonómico"
+   ],
+   "hypothesis": {
+    "premia": "Sistemas completos de regulación y dimensiones de asiento que se adaptan a un amplio rango de usuarios",
+    "penaliza": "Profundidad de asiento reducida, con menor superficie de apoyo y adaptación antropométrica limitada"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tMIGO6bZb5aS81gZFETWmA%3D%3D",
+   "doc": "2026-1917e4b8-1f18-4b70-abab-2cee338dfe8d"
+  },
+  {
+   "crit": "Confort y Experiencia de Uso en la silla de trabajo para puestos de oficina",
+   "max": 20,
+   "exp": "p:19723876",
+   "ref": "26/196",
+   "title": "Suministro, entrega e instalación de sillas de trabajo para puestos de oficina y sillas de cortesía para los distintos centros de trabajo de",
+   "buyer": "Comisión de Contratación de la Sociedad Estatal Loterías y Apuestas del Estado, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-01",
+   "offers": 2,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": {
+    "pts": 20
+   },
+   "best": [
+    "Elevado confort por calidad del acolchado y adecuada transpirabilidad de los materiales",
+    "Libertad de movimiento, estabilidad del conjunto y suavidad y precisión de los mecanismos de ajuste"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Calidad del acolchado, transpirabilidad, libertad de movimiento, estabilidad y suavidad de mecanismos",
+    "penaliza": "No se señala ningún factor penalizador; ambas ofertas obtienen la puntuación máxima"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tMIGO6bZb5aS81gZFETWmA%3D%3D",
+   "doc": "2026-1917e4b8-1f18-4b70-abab-2cee338dfe8d"
   }
  ]
 }

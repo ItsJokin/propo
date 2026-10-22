@@ -1,8 +1,1157 @@
 {
  "cpv2": "85",
- "generated": "2026-10-22T14:39:58.991Z",
+ "generated": "2026-10-22T18:50:13.980Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "9.1.1 Procedimientos de captura y transporte",
+   "max": null,
+   "exp": "p:19207403",
+   "ref": "2026000004",
+   "title": "Servicio de recogida, traslado y manutención de animales de compañía abandonados y extraviados.",
+   "buyer": "Alcaldía del Ayuntamiento de Alhama de Murcia",
+   "nuts": "ES620",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Describe adecuadamente medios de vehículos y equipos de captura según situaciones",
+    "Describe medios de vehículos y equipos de captura",
+    "Indica el número exacto de batidas anuales"
+   ],
+   "weak": [
+    "No menciona el número de batidas anuales"
+   ],
+   "hypothesis": {
+    "premia": "Indicar el número exacto de batidas anuales",
+    "penaliza": "No concretar el número de batidas anuales"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Jc7eU2auIIxVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-67e1ee20-f17d-4f8d-9699-798a8f6cf5eb"
+  },
+  {
+   "crit": "9.1.2 Procedimientos de recepción, registro y evaluación del estado sanitario",
+   "max": null,
+   "exp": "p:19207403",
+   "ref": "2026000004",
+   "title": "Servicio de recogida, traslado y manutención de animales de compañía abandonados y extraviados.",
+   "buyer": "Alcaldía del Ayuntamiento de Alhama de Murcia",
+   "nuts": "ES620",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": {
+    "pts": 1.5
+   },
+   "best": [
+    "Describe adecuadamente controles y primera y demás evaluaciones sanitarias",
+    "Detalla correctamente el procedimiento a seguir"
+   ],
+   "weak": [
+    "No detalla controles específicos para detectar enfermedades"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Jc7eU2auIIxVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-67e1ee20-f17d-4f8d-9699-798a8f6cf5eb"
+  },
+  {
+   "crit": "9.1.3 Instalaciones destinadas a alojamiento, manutención y custodia",
+   "max": null,
+   "exp": "p:19207403",
+   "ref": "2026000004",
+   "title": "Servicio de recogida, traslado y manutención de animales de compañía abandonados y extraviados.",
+   "buyer": "Alcaldía del Ayuntamiento de Alhama de Murcia",
+   "nuts": "ES620",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 4.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Descripción detallada de alojamientos y medios de limpieza y desinfección",
+    "Indica frecuencia de las tareas de mantenimiento y limpieza",
+    "Indica número de plazas para gatos y perros",
+    "Detalla espacios de recreo, ejercitación y socialización con imágenes"
+   ],
+   "weak": [
+    "No describe protección ante agentes meteorológicos ni disponibilidad de agua",
+    "No describe medidas ante estrés, malos tratos o robo",
+    "No detalla medidas ante estrés, robo o malos tratos"
+   ],
+   "hypothesis": {
+    "premia": "Detallar medios de limpieza, desinfección y frecuencias, además de espacios de recreo",
+    "penaliza": "Omitir medidas ante estrés, robo, malos tratos, meteorología y disponibilidad de agua"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Jc7eU2auIIxVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-67e1ee20-f17d-4f8d-9699-798a8f6cf5eb"
+  },
+  {
+   "crit": "9.1.4 Instalaciones destinadas a intervenciones y seguimientos sanitarios",
+   "max": null,
+   "exp": "p:19207403",
+   "ref": "2026000004",
+   "title": "Servicio de recogida, traslado y manutención de animales de compañía abandonados y extraviados.",
+   "buyer": "Alcaldía del Ayuntamiento de Alhama de Murcia",
+   "nuts": "ES620",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Clínica propia con 2 quirófanos, RX, ecógrafo y analíticas",
+    "Clínica propia con quirófano, RX, ecógrafo y monitorización continua",
+    "Aporta fotografías de las instalaciones"
+   ],
+   "weak": [
+    "Un solo quirófano frente a dos de la otra oferta"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Jc7eU2auIIxVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-67e1ee20-f17d-4f8d-9699-798a8f6cf5eb"
+  },
+  {
+   "crit": "9.1.5 Servicios veterinarios a prestar",
+   "max": null,
+   "exp": "p:19207403",
+   "ref": "2026000004",
+   "title": "Servicio de recogida, traslado y manutención de animales de compañía abandonados y extraviados.",
+   "buyer": "Alcaldía del Ayuntamiento de Alhama de Murcia",
+   "nuts": "ES620",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Plantilla de 4 veterinarios colegiados con especialidades",
+    "Colaboración con clínicas concertadas para cirugías especiales"
+   ],
+   "weak": [
+    "Habla del programa sanitario y no de la plantilla ni su formación"
+   ],
+   "hypothesis": {
+    "premia": "Describir la plantilla veterinaria, sus especialidades y colaboraciones externas",
+    "penaliza": "Centrarse en el programa sanitario en lugar de la plantilla y su formación"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Jc7eU2auIIxVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-67e1ee20-f17d-4f8d-9699-798a8f6cf5eb"
+  },
+  {
+   "crit": "9.1.6 Campañas de sensibilización y formación",
+   "max": null,
+   "exp": "p:19207403",
+   "ref": "2026000004",
+   "title": "Servicio de recogida, traslado y manutención de animales de compañía abandonados y extraviados.",
+   "buyer": "Alcaldía del Ayuntamiento de Alhama de Murcia",
+   "nuts": "ES620",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "5 campañas anuales con charlas en centros educativos y redes sociales",
+    "Incluye 3 ferias de adopciones",
+    "Dedica el apartado al trabajo de voluntarios en difusión"
+   ],
+   "weak": [
+    "No especifica contenidos de sensibilización ni formación",
+    "Campañas sin detalle suficiente de contenidos específicos"
+   ],
+   "hypothesis": {
+    "premia": "Concretar campañas anuales con contenidos, centros educativos y ferias",
+    "penaliza": "Atribuir la acción a voluntarios sin contenidos específicos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Jc7eU2auIIxVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-67e1ee20-f17d-4f8d-9699-798a8f6cf5eb"
+  },
+  {
+   "crit": "9.1.7 Programa de promoción de adopciones",
+   "max": null,
+   "exp": "p:19207403",
+   "ref": "2026000004",
+   "title": "Servicio de recogida, traslado y manutención de animales de compañía abandonados y extraviados.",
+   "buyer": "Alcaldía del Ayuntamiento de Alhama de Murcia",
+   "nuts": "ES620",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 8.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 6.5
+   },
+   "best": [
+    "Varios métodos de publicidad: correo, WhatsApp, Facebook e Instagram",
+    "Tres ferias de adopciones en instalaciones y municipio",
+    "Pasos del proceso de adopción hasta la postadopción",
+    "Indica varios canales: web, Facebook e Instagram",
+    "Describe pasos del proceso de adopción"
+   ],
+   "weak": [
+    "No indica horario de atención presencial",
+    "No indica actividades de promoción con presentación de animales",
+    "No indica horario de atención presencial a adoptantes"
+   ],
+   "hypothesis": {
+    "premia": "Varios canales de difusión y ferias de adopción",
+    "penaliza": "No indicar horario presencial ni actividades con presentación de animales"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Jc7eU2auIIxVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-67e1ee20-f17d-4f8d-9699-798a8f6cf5eb"
+  },
+  {
+   "crit": "9.1.8 Medios humanos y materiales a emplear",
+   "max": null,
+   "exp": "p:19207403",
+   "ref": "2026000004",
+   "title": "Servicio de recogida, traslado y manutención de animales de compañía abandonados y extraviados.",
+   "buyer": "Alcaldía del Ayuntamiento de Alhama de Murcia",
+   "nuts": "ES620",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Refiere formaciones y horas de duración del personal",
+    "Indica miembros de la plantilla y su formación"
+   ],
+   "weak": [
+    "No indica las horas de formación recibidas"
+   ],
+   "hypothesis": {
+    "premia": "Indicar formaciones con horas de duración",
+    "penaliza": "Describir la plantilla sin horas de formación"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Jc7eU2auIIxVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-67e1ee20-f17d-4f8d-9699-798a8f6cf5eb"
+  },
+  {
+   "crit": "9.1.9 Modelización de la documentación de recogida, transporte y seguimiento, de los informes periódicos y de la memoria final",
+   "max": null,
+   "exp": "p:19207403",
+   "ref": "2026000004",
+   "title": "Servicio de recogida, traslado y manutención de animales de compañía abandonados y extraviados.",
+   "buyer": "Alcaldía del Ayuntamiento de Alhama de Murcia",
+   "nuts": "ES620",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 1.75,
+    "winner": true
+   },
+   "low": {
+    "pts": 0.5
+   },
+   "best": [
+    "Aporta modelización de memoria anual, contrato de adopción y ficha de seguimiento",
+    "Indica los puntos del modelo de gestión documental"
+   ],
+   "weak": [
+    "No aporta modelización documental",
+    "No aporta modelización de las fichas de recogida"
+   ],
+   "hypothesis": {
+    "premia": "Aportar modelización documental concreta",
+    "penaliza": "Enunciar puntos del modelo sin aportar documentos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Jc7eU2auIIxVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-67e1ee20-f17d-4f8d-9699-798a8f6cf5eb"
+  },
+  {
+   "crit": "9.1.10 Soporte online accesible por el Ayuntamiento",
+   "max": null,
+   "exp": "p:19207403",
+   "ref": "2026000004",
+   "title": "Servicio de recogida, traslado y manutención de animales de compañía abandonados y extraviados.",
+   "buyer": "Alcaldía del Ayuntamiento de Alhama de Murcia",
+   "nuts": "ES620",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Registro de acceso restringido con usuario y contraseña"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Jc7eU2auIIxVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-67e1ee20-f17d-4f8d-9699-798a8f6cf5eb"
+  },
+  {
+   "crit": "A.- Memoria explicativa y programación",
+   "max": 15,
+   "exp": "p:19798915",
+   "ref": "772/2026",
+   "title": "Servicio de conciliación del Ayuntamiento de Lalín",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Lalín",
+   "nuts": "ES114",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 14,
+    "winner": true
+   },
+   "low": {
+    "pts": 11
+   },
+   "best": [
+    "Programación por proyectos temáticos que integra distintas tipologías de actividades",
+    "Modelo de intervención coherente, innovador y centrado en la infancia",
+    "Memoria realista, con detalles que denotan experiencia en el ámbito",
+    "Programación vacacional organizada por semanas temáticas",
+    "Memoria correcta con actividades variadas e interconectadas"
+   ],
+   "weak": [
+    "Memoria descrita como correcta, sin el carácter innovador destacado en la otra oferta"
+   ],
+   "hypothesis": {
+    "premia": "Proyectos temáticos integrados, coherencia y detalles propios de experiencia práctica",
+    "penaliza": "Memoria correcta pero sin detalle ni propuestas innovadoras destacadas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=JaCrsChppDKExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4cf23610-17f1-4383-9d47-3b1fe2f9b493"
+  },
+  {
+   "crit": "B.- Organización del servicio",
+   "max": 10,
+   "exp": "p:19798915",
+   "ref": "772/2026",
+   "title": "Servicio de conciliación del Ayuntamiento de Lalín",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Lalín",
+   "nuts": "ES114",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Estructura organizativa detallada con personal y recursos materiales",
+    "Bolsa activa de personal de sustitución y estructura de apoyo multidisciplinar",
+    "Protocolos completos de actuación ante incidencias y emergencias",
+    "Protocolos de acogida, entrega, emergencias y protección de datos",
+    "Sistema de cobertura de ausencias"
+   ],
+   "weak": [
+    "Descripción de medios humanos y materiales más genérica",
+    "Organización basada en principios generales con menos concreción"
+   ],
+   "hypothesis": {
+    "premia": "Estructura detallada, bolsa de sustitución y protocolos completos",
+    "penaliza": "Descripción más genérica de medios y protocolos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=JaCrsChppDKExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4cf23610-17f1-4383-9d47-3b1fe2f9b493"
+  },
+  {
+   "crit": "C.- Propuesta de acciones en períodos vacacionales",
+   "max": 5,
+   "exp": "p:19798915",
+   "ref": "772/2026",
+   "title": "Servicio de conciliación del Ayuntamiento de Lalín",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Lalín",
+   "nuts": "ES114",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 3.5
+   },
+   "best": [
+    "Programas transversales y programación específica por períodos vacacionales",
+    "Integración de recursos locales como Fraga de Catasós, Pazo de Liñares y Museo Municipal",
+    "Programación por períodos con criterios generales y líneas de actividad"
+   ],
+   "weak": [
+    "Vinculación con el municipio menos concretada que en la otra oferta"
+   ],
+   "hypothesis": {
+    "premia": "Programas transversales y referencias concretas al patrimonio local",
+    "penaliza": "Vinculación con el municipio menos concreta"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=JaCrsChppDKExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4cf23610-17f1-4383-9d47-3b1fe2f9b493"
+  },
+  {
+   "crit": "D.- Diseño de menús",
+   "max": 5,
+   "exp": "p:19798915",
+   "ref": "772/2026",
+   "title": "Servicio de conciliación del Ayuntamiento de Lalín",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Lalín",
+   "nuts": "ES114",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Menús basados en AESAN, Estrategia NAOS y recomendaciones de la Xunta",
+    "Adaptaciones para celiaquía, intolerancia a la lactosa, vegetarianos y motivos culturales",
+    "Propuesta de menús con rotación de cuatro semanas"
+   ],
+   "weak": [
+    "Menús orientativos, pendientes de validación posterior con el Concello y el catering"
+   ],
+   "hypothesis": {
+    "premia": "Menús con adaptaciones específicas y base nutricional explícita",
+    "penaliza": "Propuesta orientativa pendiente de validación"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=JaCrsChppDKExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4cf23610-17f1-4383-9d47-3b1fe2f9b493"
+  },
+  {
+   "crit": "E.-Actividades con enfoque de género y promoción de la igualdad y la convivencia",
+   "max": 2.5,
+   "exp": "p:19798915",
+   "ref": "772/2026",
+   "title": "Servicio de conciliación del Ayuntamiento de Lalín",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Lalín",
+   "nuts": "ES114",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 2.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Perspectiva de género transversal con actividades y compromisos concretos",
+    "Programa anual específico Concilia en igualdade",
+    "Perspectiva de género permanente y actividades específicas"
+   ],
+   "weak": [
+    "Compromisos de igualdad menos desarrollados que en la otra oferta"
+   ],
+   "hypothesis": {
+    "premia": "Programa anual específico de igualdad",
+    "penaliza": "Compromisos de igualdad menos desarrollados"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=JaCrsChppDKExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4cf23610-17f1-4383-9d47-3b1fe2f9b493"
+  },
+  {
+   "crit": "F.- Promoción de la lengua y la cultura gallega",
+   "max": 2.5,
+   "exp": "p:19798915",
+   "ref": "772/2026",
+   "title": "Servicio de conciliación del Ayuntamiento de Lalín",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Lalín",
+   "nuts": "ES114",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 2.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Galego como lengua habitual, con recuncho do Deza en cada centro",
+    "Programa permanente Lalín en galego integrado en la actividad ordinaria",
+    "Galego como lengua vehicular y cultura gallega transversal"
+   ],
+   "weak": [
+    "Propuestas enumeradas sin programa permanente específico"
+   ],
+   "hypothesis": {
+    "premia": "Programa permanente en galego integrado en la actividad diaria",
+    "penaliza": "Propuestas menos sistemáticas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=JaCrsChppDKExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4cf23610-17f1-4383-9d47-3b1fe2f9b493"
+  },
+  {
+   "crit": "G.- Uso de lenguas extranjeras",
+   "max": 2.5,
+   "exp": "p:19798915",
+   "ref": "772/2026",
+   "title": "Servicio de conciliación del Ayuntamiento de Lalín",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Lalín",
+   "nuts": "ES114",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 2.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 1.5
+   },
+   "best": [
+    "Mínimo una actividad semanal en inglés por grupo",
+    "Metodología AICLE y programa English Around Us",
+    "Actividades lúdicas en inglés integradas en la rutina diaria"
+   ],
+   "weak": [
+    "Objetivo de familiarización sin programa estructurado ni aprendizaje formal"
+   ],
+   "hypothesis": {
+    "premia": "Actividades regulares en inglés con metodología AICLE",
+    "penaliza": "Enfoque lúdico sin estructura regular"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=JaCrsChppDKExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4cf23610-17f1-4383-9d47-3b1fe2f9b493"
+  },
+  {
+   "crit": "H.- Seguimiento del Servicio",
+   "max": 2.5,
+   "exp": "p:19798915",
+   "ref": "772/2026",
+   "title": "Servicio de conciliación del Ayuntamiento de Lalín",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Lalín",
+   "nuts": "ES114",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 2.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Sistema de seguimiento continuo con indicadores y niveles de evaluación",
+    "Combinación de instrumentos cuantitativos y cualitativos",
+    "Seguimiento sistemático con principios y ámbitos definidos"
+   ],
+   "weak": [
+    "Indicadores descritos de forma general"
+   ],
+   "hypothesis": {
+    "premia": "Sistema de seguimiento con indicadores y niveles de evaluación",
+    "penaliza": "Indicadores descritos de forma general"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=JaCrsChppDKExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4cf23610-17f1-4383-9d47-3b1fe2f9b493"
+  },
+  {
+   "crit": "a.1) Fase de acogida",
+   "max": 5,
+   "exp": "p:19588244",
+   "ref": "300/2026/00263",
+   "title": "contrato de servicios que conlleva prestaciones directas a favor de la ciudadanía para la Gestión de plazas en alojamiento protegido Casa Pa",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Valoración previa y protocolo de evaluación inicial de detección de trata con indicadores.",
+    "Protocolo de seguridad y acogida segura con criterios de urgencia y derivación."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=WIxSuev%2BshE7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-15683e2a-4a47-4acf-81c2-fcf39aabe1e0"
+  },
+  {
+   "crit": "a.2) Fase de activación y movilización de los recursos humanos y materiales para la atención integral en el marco de un plan de atención individualizado",
+   "max": 5,
+   "exp": "p:19588244",
+   "ref": "300/2026/00263",
+   "title": "contrato de servicios que conlleva prestaciones directas a favor de la ciudadanía para la Gestión de plazas en alojamiento protegido Casa Pa",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Plan de atención individualizado consensuado, con cinco áreas de trabajo y seguimiento detallado.",
+    "Atención psicológica infantil y materna desarrollada con detalle."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=WIxSuev%2BshE7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-15683e2a-4a47-4acf-81c2-fcf39aabe1e0"
+  },
+  {
+   "crit": "a.5) Propuestas para la autonomía y continuidad del proceso",
+   "max": 5,
+   "exp": "p:19588244",
+   "ref": "300/2026/00263",
+   "title": "contrato de servicios que conlleva prestaciones directas a favor de la ciudadanía para la Gestión de plazas en alojamiento protegido Casa Pa",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Planes personalizados de empleo, formación, regularización y salida a otros recursos."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=WIxSuev%2BshE7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-15683e2a-4a47-4acf-81c2-fcf39aabe1e0"
+  },
+  {
+   "crit": "b) Grado de conocimiento de la trata y la explotación sexual y del abordaje de esta problemática con perspectiva de género y con un enfoque de interseccionalidad, interculturalidad y Derechos Humanos",
+   "max": 5,
+   "exp": "p:19588244",
+   "ref": "300/2026/00263",
+   "title": "contrato de servicios que conlleva prestaciones directas a favor de la ciudadanía para la Gestión de plazas en alojamiento protegido Casa Pa",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Principios rectores de la Red incorporados y aplicados en el modelo de intervención y el diseño del servicio."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=WIxSuev%2BshE7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-15683e2a-4a47-4acf-81c2-fcf39aabe1e0"
+  },
+  {
+   "crit": "c.1) Conocimiento de las Redes de atención a mujeres víctimas de violencia de género",
+   "max": 5,
+   "exp": "p:19588244",
+   "ref": "300/2026/00263",
+   "title": "contrato de servicios que conlleva prestaciones directas a favor de la ciudadanía para la Gestión de plazas en alojamiento protegido Casa Pa",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Conocimiento de redes de violencia de género y coordinación con la Red contra la trata y la violencia sexual."
+   ],
+   "weak": [
+    "Coordinación con el resto de recursos descrita de forma general ('reuniones', 'protocolos establecidos').",
+    "No aporta un sistema ágil y operativo de coordinación con herramientas, indicadores y procedimientos."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=WIxSuev%2BshE7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-15683e2a-4a47-4acf-81c2-fcf39aabe1e0"
+  },
+  {
+   "crit": "c.2) Conocimiento de otros recursos del Ayuntamiento de Madrid y de otras Administraciones Públicas",
+   "max": 5,
+   "exp": "p:19588244",
+   "ref": "300/2026/00263",
+   "title": "contrato de servicios que conlleva prestaciones directas a favor de la ciudadanía para la Gestión de plazas en alojamiento protegido Casa Pa",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Amplio listado de recursos y espacios de participación con Fuerzas y Cuerpos de Seguridad, SAMUR Social y otros."
+   ],
+   "weak": [
+    "Conocimiento descriptivo y genérico, sin papel específico de cada Administración.",
+    "Sin circuitos de derivación, periodicidad de reuniones ni procedimientos de intercambio de información."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=WIxSuev%2BshE7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-15683e2a-4a47-4acf-81c2-fcf39aabe1e0"
+  },
+  {
+   "crit": "d.1) Grado de desarrollo del sistema de gestión de calidad del servicio, su pertinencia y viabilidad",
+   "max": 5,
+   "exp": "p:19588244",
+   "ref": "300/2026/00263",
+   "title": "contrato de servicios que conlleva prestaciones directas a favor de la ciudadanía para la Gestión de plazas en alojamiento protegido Casa Pa",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Sistema de calidad ISO 9001 con objetivos definidos, evaluación de satisfacción y de desempeño cada seis meses.",
+    "Sistema de seguimiento y sistematización de datos considerado pertinente y viable."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=WIxSuev%2BshE7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-15683e2a-4a47-4acf-81c2-fcf39aabe1e0"
+  },
+  {
+   "crit": "d.2) Propuesta de planificación de la evaluación",
+   "max": 2.5,
+   "exp": "p:19588244",
+   "ref": "300/2026/00263",
+   "title": "contrato de servicios que conlleva prestaciones directas a favor de la ciudadanía para la Gestión de plazas en alojamiento protegido Casa Pa",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 1.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Evaluación mixta cuantitativa y cualitativa con línea base, indicadores y matriz de evaluación."
+   ],
+   "weak": [
+    "Planificación poco estructurada y desarrollada.",
+    "Falta referencia al estudio del grado de satisfacción de las usuarias en este apartado."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=WIxSuev%2BshE7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-15683e2a-4a47-4acf-81c2-fcf39aabe1e0"
+  },
+  {
+   "crit": "d.3) Adecuación de la propuesta de sistematización de la información",
+   "max": 2.5,
+   "exp": "p:19588244",
+   "ref": "300/2026/00263",
+   "title": "contrato de servicios que conlleva prestaciones directas a favor de la ciudadanía para la Gestión de plazas en alojamiento protegido Casa Pa",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Herramienta informática multiusuario para gestión, seguimiento y explotación de la información."
+   ],
+   "weak": [
+    "Información parcial: el ejemplo de interfaz no incluye todas las funcionalidades, lo que impide valorar su capacidad analítica."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=WIxSuev%2BshE7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-15683e2a-4a47-4acf-81c2-fcf39aabe1e0"
+  },
+  {
+   "crit": "1.- Descripción detallada de los procedimientos de toma de muestras",
+   "max": 5,
+   "exp": "p:19886240",
+   "ref": "26523/2025",
+   "title": "Análisis de piedras de lavapiés (legionela, mohos y levaduras) y análisis de arena en las playas de Orihuela.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Orihuela",
+   "nuts": "ES521",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Planificación del muestreo y plataforma digital de consulta para el Ayuntamiento",
+    "Medios materiales, EPI y preparación específica detallados",
+    "Plan de seguridad que minimiza riesgos laborales en las tomas"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Desglose de planificación, medios materiales, EPI y plan de seguridad para cada tipo de muestra",
+    "penaliza": "No se identifican penalizaciones; única oferta presentada"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=pnW7iRTMvSlPpzdqOdhuWg%3D%3D",
+   "doc": "2026-1af42390-7dd0-4652-b3f8-d42d01d31f99"
+  },
+  {
+   "crit": "2.- Descripción de la metodología analítica",
+   "max": 5,
+   "exp": "p:19886240",
+   "ref": "26523/2025",
+   "title": "Análisis de piedras de lavapiés (legionela, mohos y levaduras) y análisis de arena en las playas de Orihuela.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Orihuela",
+   "nuts": "ES521",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Métodos acreditados ENAC con referencias normativas por análisis",
+    "Fases obligatorias de confirmación analítica bioquímica y serológica",
+    "Medios selectivos e inhibidores para minimizar falsos positivos"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Referencias normativas por análisis, confirmación analítica y control de falsos positivos",
+    "penaliza": "No se identifican penalizaciones; única oferta presentada"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=pnW7iRTMvSlPpzdqOdhuWg%3D%3D",
+   "doc": "2026-1af42390-7dd0-4652-b3f8-d42d01d31f99"
+  },
+  {
+   "crit": "3.- Descripción de los protocolos de conservación, transporte y trazabilidad",
+   "max": 5,
+   "exp": "p:19886240",
+   "ref": "26523/2025",
+   "title": "Análisis de piedras de lavapiés (legionela, mohos y levaduras) y análisis de arena en las playas de Orihuela.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Orihuela",
+   "nuts": "ES521",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Trazabilidad LIMS con etiquetas impermeables con código de barras",
+    "Cadena de frío con neveras isotermas y data-loggers calibrados",
+    "Compromiso de procesar muestras en 8 horas, sustentado logísticamente"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Trazabilidad digital LIMS, control de cadena de frío y compromiso de plazo de procesado",
+    "penaliza": "No se identifican penalizaciones; única oferta presentada"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=pnW7iRTMvSlPpzdqOdhuWg%3D%3D",
+   "doc": "2026-1af42390-7dd0-4652-b3f8-d42d01d31f99"
+  },
+  {
+   "crit": "4.- Justificación de la adecuación a la normativa vigente y estándares técnicos",
+   "max": 5,
+   "exp": "p:19886240",
+   "ref": "26523/2025",
+   "title": "Análisis de piedras de lavapiés (legionela, mohos y levaduras) y análisis de arena en las playas de Orihuela.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Orihuela",
+   "nuts": "ES521",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Normas ISO 11731, ISO 21527, ISO 9308-1 e ISO 7899-2 detalladas por análisis",
+    "Acreditaciones ENAC ISO/IEC 17025 e ISO/IEC 17020 tipo C",
+    "Equipo técnico con organigrama, funciones y modelo de interrelación"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Normas ISO específicas por análisis, acreditaciones ENAC y estructura del equipo técnico",
+    "penaliza": "No se identifican penalizaciones; única oferta presentada"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=pnW7iRTMvSlPpzdqOdhuWg%3D%3D",
+   "doc": "2026-1af42390-7dd0-4652-b3f8-d42d01d31f99"
+  },
+  {
+   "crit": "Protocolos de funcionamiento",
+   "max": 10,
+   "exp": "p:19542842",
+   "ref": "514/2026",
+   "title": "Servicio de Ayuda a Domicilio en el Municipio de Cenes de la Vega",
+   "buyer": "Alcaldía del Ayuntamiento de Cenes de la Vega",
+   "nuts": "ES614",
+   "date": "2026-08-07",
+   "offers": 6,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Protocolos claros, útiles y con alto nivel de detalle",
+    "Mejor conocimiento del funcionamiento del servicio en el municipio",
+    "Detalla recursos y coordinación con el Ayuntamiento desde la formalización",
+    "Protocolos claros, útiles, con diagramas y alto nivel de detalle",
+    "Explica coordinación con el Ayuntamiento desde la formalización"
+   ],
+   "weak": [
+    "Explicación somera y general, apenas diagramas",
+    "No explica coordinación con el Ayuntamiento ni adaptación al servicio anterior",
+    "Propuesta de coordinación poco operativa por la carga de trabajo para el Ayuntamiento",
+    "Apenas incluye diagramas ni flujogramas"
+   ],
+   "hypothesis": {
+    "premia": "Protocolos claros, con alto detalle y diagramas o flujogramas, que explican la coordinación con el Ayuntamiento desde la formalización y la adaptación al servicio anterior.",
+    "penaliza": "Explicaciones genéricas o someras, sin diagramas, sin detallar coordinación con el Ayuntamiento ni adaptación al servicio previo, o con recursos ajenos al municipio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=v8VckeGxgtjN3k3tjedSGw%3D%3D",
+   "doc": "2026-70027511-1793-49b0-85dd-973481a37849"
+  },
+  {
+   "crit": "Protocolos de carácter asistencial",
+   "max": 10,
+   "exp": "p:19542842",
+   "ref": "514/2026",
+   "title": "Servicio de Ayuda a Domicilio en el Municipio de Cenes de la Vega",
+   "buyer": "Alcaldía del Ayuntamiento de Cenes de la Vega",
+   "nuts": "ES614",
+   "date": "2026-08-07",
+   "offers": 6,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Alto detalle; define más protocolos según casuística, adaptando medidas",
+    "Protocolo de cambios de auxiliar con recursos para minimizar perjuicios al usuario",
+    "Seguimiento muy desglosado; protocolo frente al burnout y riesgos psicosociales",
+    "Alto grado de detalle y actuaciones claramente especificadas",
+    "Detallada diferenciación de protocolos de prevención de riesgos laborales"
+   ],
+   "weak": [
+    "Un único protocolo para incidencias del usuario, del personal, cambios de auxiliar y continuidad",
+    "Sin plazos en cambios de auxiliar ni en resolución de quejas",
+    "Seguimiento sin agentes intervinientes, como coordinador/a"
+   ],
+   "hypothesis": {
+    "premia": "Protocolos diferenciados por casuística con medidas adaptadas a cada incidencia, procedimiento de cambio de auxiliar, seguimiento desglosado con periodicidad y agentes, y prevención de riesgos psicosociales.",
+    "penaliza": "Protocolo único para varias incidencias, ausencia de plazos en cambios de auxiliar y quejas, falta de agentes en el seguimiento, falta de medidas ante incumplimientos y prevención genérica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=v8VckeGxgtjN3k3tjedSGw%3D%3D",
+   "doc": "2026-70027511-1793-49b0-85dd-973481a37849"
+  },
+  {
+   "crit": "Objetivos",
+   "max": 5,
+   "exp": "p:19900154",
+   "ref": "2657158Y",
+   "title": "Servicio \"Escola Matinera\" para los cursos escolares 2026/2027 y 2027/2028",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Silla",
+   "nuts": "ES523",
+   "date": "2026-08-07",
+   "offers": 5,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Objetivos muy bien explicados con aplicación práctica y ejemplos",
+    "Proyecto global 'Creixem cada matí' como hilo conductor",
+    "Visión preventiva del proyecto como recurso socioeducativo",
+    "Objetivos generales y específicos muy bien detallados",
+    "Énfasis en autonomía, colaboración y necesidades emocionales"
+   ],
+   "weak": [
+    "Contenido de objetivos muy escueto",
+    "No nombra objetivos de autonomía personal"
+   ],
+   "hypothesis": {
+    "premia": "Objetivos generales y específicos detallados, con ejemplos prácticos e indicadores de seguimiento.",
+    "penaliza": "Contenido escueto y ausencia de objetivos relevantes como la autonomía personal."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=HfJSUiH1gZg36J9Lctlsuw%3D%3D",
+   "doc": "2026-a8bcd19a-d3da-446b-a6a7-40cee492623e"
+  },
+  {
+   "crit": "Programación de actividades",
+   "max": 10,
+   "exp": "p:19900154",
+   "ref": "2657158Y",
+   "title": "Servicio \"Escola Matinera\" para los cursos escolares 2026/2027 y 2027/2028",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Silla",
+   "nuts": "ES523",
+   "date": "2026-08-07",
+   "offers": 5,
+   "top": {
+    "pts": 9.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Actividades muy bien estructuradas por etapa y NESE",
+    "Programación semanal y anual muy detallada",
+    "Organización del alumnado con criterios pedagógicos, evolutivos y organizativos",
+    "Adaptación de actividades a la etapa y respuesta educativa",
+    "Propuestas innovadoras: english morning, retos cooperativos, espacios inteligentes"
+   ],
+   "weak": [
+    "Actividades presentadas en dos apartados diferentes",
+    "Punto 2 sin clasificación de actividades por edad o etapa"
+   ],
+   "hypothesis": {
+    "premia": "Actividades estructuradas por etapa y NESE, programación semanal y anual detallada y propuestas innovadoras.",
+    "penaliza": "Actividades dispersas en varios apartados, falta de clasificación por edad y desarrollo insuficiente de rincones y alumnado NEE."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=HfJSUiH1gZg36J9Lctlsuw%3D%3D",
+   "doc": "2026-a8bcd19a-d3da-446b-a6a7-40cee492623e"
+  },
+  {
+   "crit": "Metodología de trabajo",
+   "max": 10,
+   "exp": "p:19900154",
+   "ref": "2657158Y",
+   "title": "Servicio \"Escola Matinera\" para los cursos escolares 2026/2027 y 2027/2028",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Silla",
+   "nuts": "ES523",
+   "date": "2026-08-07",
+   "offers": 5,
+   "top": {
+    "pts": 9.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Niveles de intervención muy bien explicados",
+    "Principios metodológicos coherentes con el PEC del centro",
+    "Metodología adaptada al alumnado NEE en apartado específico",
+    "Enumera distintos principios metodológicos",
+    "Adaptación de recursos para la accesibilidad de todo el alumnado"
+   ],
+   "weak": [
+    "Apartado correcto pero muy escueto"
+   ],
+   "hypothesis": {
+    "premia": "Niveles de intervención y principios metodológicos bien explicados, coherentes con el PEC y con adaptación al alumnado NEE.",
+    "penaliza": "Exposición escueta o breve de la metodología."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=HfJSUiH1gZg36J9Lctlsuw%3D%3D",
+   "doc": "2026-a8bcd19a-d3da-446b-a6a7-40cee492623e"
+  },
+  {
+   "crit": "Recursos humanos previstos",
+   "max": 5,
+   "exp": "p:19900154",
+   "ref": "2657158Y",
+   "title": "Servicio \"Escola Matinera\" para los cursos escolares 2026/2027 y 2027/2028",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Silla",
+   "nuts": "ES523",
+   "date": "2026-08-07",
+   "offers": 5,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Figura externa de supervisión y apoyo",
+    "Formación inicial y continua muy completas",
+    "Monitores identificados con uniforme",
+    "Aportación de botiquines de emergencia"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Figura de supervisión externa, formación inicial y continua completas, funciones bien descritas y monitores uniformados.",
+    "penaliza": "Descripciones breves o confusas de funciones y personal, y solapamiento de funciones entre coordinadores."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=HfJSUiH1gZg36J9Lctlsuw%3D%3D",
+   "doc": "2026-a8bcd19a-d3da-446b-a6a7-40cee492623e"
+  },
+  {
+   "crit": "Evaluación a desarrollar",
+   "max": 10,
+   "exp": "p:19900154",
+   "ref": "2657158Y",
+   "title": "Servicio \"Escola Matinera\" para los cursos escolares 2026/2027 y 2027/2028",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Silla",
+   "nuts": "ES523",
+   "date": "2026-08-07",
+   "offers": 5,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Procedimiento y finalidad de la evaluación muy bien explicados",
+    "Plan de coordinación externa y rendición de cuentas",
+    "Protocolos de actuación para numerosas situaciones",
+    "Estructura y contenido muy bien",
+    "Registros de asistencia, diario de aula, hoja de incidencias y cuestionario para familias"
+   ],
+   "weak": [
+    "Protocolo de recogida de escolares no se entiende",
+    "Coordinación con el ayuntamiento muy escueta, sin calendario ni memorias"
+   ],
+   "hypothesis": {
+    "premia": "Evaluación desde varias perspectivas, plan de coordinación externa, protocolos extensos y registros completos.",
+    "penaliza": "Falta de claridad en el alcance de la evaluación, información repetida, coordinación con el ayuntamiento escueta y protocolos poco comprensibles."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=HfJSUiH1gZg36J9Lctlsuw%3D%3D",
+   "doc": "2026-a8bcd19a-d3da-446b-a6a7-40cee492623e"
+  },
   {
    "crit": "Criterio 1: Fundamentación y adecuación del proyecto a las características de las personas atendidas",
    "max": 15,
@@ -581,6 +1730,199 @@
    "doc": "2026-55b56cad-7e2c-4caf-b9b8-84e894285008"
   },
   {
+   "crit": "1. Grado de idoneidad del proyecto",
+   "max": 12,
+   "exp": "p:19188002",
+   "ref": "300/2026/00423",
+   "title": "Contrato de servicios, que conlleva prestaciones directas a la ciudadanía, para la gestión de las campañas municipales contra el f´rio y otr",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-07-20",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Identifica claramente el objeto del contrato y define completamente la Campaña de Frío.",
+    "Proceso de atención integral en fases: admisión, acogida, intervención, seguimiento y derivación."
+   ],
+   "weak": [
+    "Inexactitud: 120 plazas diarias en hostelería frente a 150 según pliego.",
+    "Interpreta mal las funciones del Equipo de Coordinación de Acceso, configurándolo como mero gestor de derivaciones.",
+    "Campaña de Calor abordada de forma menos exhaustiva."
+   ],
+   "hypothesis": {
+    "premia": "Descripción completa y exacta del objeto, dispositivos y proceso de atención por fases.",
+    "penaliza": "Datos inexactos (plazas) e interpretación incorrecta de las funciones del Equipo de Coordinación de Acceso."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=myH47j%2BUQEkIYE3ZiZ%2BxmQ%3D%3D",
+   "doc": "2026-79c9c128-22de-4e8b-8d05-6c62867c6d5b"
+  },
+  {
+   "crit": "2. Innovaciones metodológicas y tecnológicas",
+   "max": 8,
+   "exp": "p:19188002",
+   "ref": "300/2026/00423",
+   "title": "Contrato de servicios, que conlleva prestaciones directas a la ciudadanía, para la gestión de las campañas municipales contra el f´rio y otr",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-07-20",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Modelo centrado en la persona, gestión de casos y PIA con objetivos evaluables.",
+    "Activación anticipada del ECAC, reserva previa de plazas y escalas de vulnerabilidad.",
+    "Refuerzo sanitario con SPD y consultas ágiles con centro de salud."
+   ],
+   "weak": [
+    "CIVIS, APLISEM 2.0 y Teams ya existían en campañas anteriores.",
+    "Control de accesos en tiempo real parte de lo previsto en el pliego."
+   ],
+   "hypothesis": {
+    "premia": "Propuestas metodológicas nuevas (modelo centrado en la persona, gestión de casos, PIA, ECAC anticipado).",
+    "penaliza": "Presentar como innovación herramientas ya existentes o previstas en el pliego."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=myH47j%2BUQEkIYE3ZiZ%2BxmQ%3D%3D",
+   "doc": "2026-79c9c128-22de-4e8b-8d05-6c62867c6d5b"
+  },
+  {
+   "crit": "3. Adecuación al modelo de atención de la Red pública municipal y de Personas sin hogar",
+   "max": 6,
+   "exp": "p:19188002",
+   "ref": "300/2026/00423",
+   "title": "Contrato de servicios, que conlleva prestaciones directas a la ciudadanía, para la gestión de las campañas municipales contra el f´rio y otr",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-07-20",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Ajuste claro al Sistema Público de Servicios Sociales y a las redes de emergencia y sin hogar.",
+    "Coherencia con el Plan Estratégico de Servicios Sociales 2023–2027."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=myH47j%2BUQEkIYE3ZiZ%2BxmQ%3D%3D",
+   "doc": "2026-79c9c128-22de-4e8b-8d05-6c62867c6d5b"
+  },
+  {
+   "crit": "4. Protocolos y sistemas de coordinación",
+   "max": 6,
+   "exp": "p:19188002",
+   "ref": "300/2026/00423",
+   "title": "Contrato de servicios, que conlleva prestaciones directas a la ciudadanía, para la gestión de las campañas municipales contra el f´rio y otr",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-07-20",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Coordinación interna, externa e institucional bien estructurada en niveles.",
+    "Comisión técnica mixta e informes periódicos de seguimiento."
+   ],
+   "weak": [
+    "Imprecisión en la coordinación con el Departamento de Convivencia e Integración.",
+    "Falta referencia al Departamento de Gestión y Prestaciones en Atención Social Primaria (ATAAS)."
+   ],
+   "hypothesis": {
+    "premia": "Coordinación en niveles y comisión técnica mixta con seguimiento periódico.",
+    "penaliza": "Imprecisión con departamentos concretos y omisión de la coordinación con ATAAS."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=myH47j%2BUQEkIYE3ZiZ%2BxmQ%3D%3D",
+   "doc": "2026-79c9c128-22de-4e8b-8d05-6c62867c6d5b"
+  },
+  {
+   "crit": "5. Sistemas de mejora en la recogida de información de usuarios",
+   "max": 3,
+   "exp": "p:19188002",
+   "ref": "300/2026/00423",
+   "title": "Contrato de servicios, que conlleva prestaciones directas a la ciudadanía, para la gestión de las campañas municipales contra el f´rio y otr",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-07-20",
+   "offers": 1,
+   "top": {
+    "pts": 2.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Uso sistemático de CIVIS y APLISEM 2.0 con trazabilidad y análisis de perfiles.",
+    "Tablets en el equipo de parada como elemento nuevo."
+   ],
+   "weak": [
+    "Varias herramientas ya forman parte de la operativa habitual."
+   ],
+   "hypothesis": {
+    "premia": "Uso sistemático y orientado al análisis de perfiles y a la evaluación, con elementos nuevos.",
+    "penaliza": "Basarse en herramientas ya habituales sin aportar novedad sustancial."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=myH47j%2BUQEkIYE3ZiZ%2BxmQ%3D%3D",
+   "doc": "2026-79c9c128-22de-4e8b-8d05-6c62867c6d5b"
+  },
+  {
+   "crit": "6. Mecanismos de participación activa de usuarios",
+   "max": 3,
+   "exp": "p:19188002",
+   "ref": "300/2026/00423",
+   "title": "Contrato de servicios, que conlleva prestaciones directas a la ciudadanía, para la gestión de las campañas municipales contra el f´rio y otr",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-07-20",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Asambleas, canales de sugerencias, encuestas y participación en normas de convivencia integradas en el modelo.",
+    "Programa de voluntariado estructurado."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=myH47j%2BUQEkIYE3ZiZ%2BxmQ%3D%3D",
+   "doc": "2026-79c9c128-22de-4e8b-8d05-6c62867c6d5b"
+  },
+  {
+   "crit": "7. Abordaje de impacto vecinal",
+   "max": 2,
+   "exp": "p:19188002",
+   "ref": "300/2026/00423",
+   "title": "Contrato de servicios, que conlleva prestaciones directas a la ciudadanía, para la gestión de las campañas municipales contra el f´rio y otr",
+   "buyer": "Área de Gobierno de Políticas Sociales, Familia e Igualdad del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-07-20",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Programa específico con medidas preventivas y de mediación en paradas y centros.",
+    "Coordinación con Policía, servicios municipales y agentes sociales."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=myH47j%2BUQEkIYE3ZiZ%2BxmQ%3D%3D",
+   "doc": "2026-79c9c128-22de-4e8b-8d05-6c62867c6d5b"
+  },
+  {
    "crit": "Fundamentación y Metodología",
    "max": 2,
    "exp": "p:19357576",
@@ -772,6 +2114,290 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=6LnTLodWEwp4zIRvjBVCSw%3D%3D",
    "doc": "2026-6a72e068-1310-466e-8fce-5caff37828f4"
+  },
+  {
+   "crit": "ESCENARIOS INNOVADORES, PLAN DE ATENCIÓN CENTRADO EN LA PERSONA Y PARTICIPACIÓN DE LA FAMILIA Y ENTORNO",
+   "max": null,
+   "exp": "p:19371413",
+   "ref": "SE2026/18",
+   "title": "Servicio de Respiro Familiar de Apoyo a los Cuidadores Familiares de Personas Dependientes del (ANEXO IV) de la LCSP",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Cartagena",
+   "nuts": "ES620",
+   "date": "2026-07-02",
+   "offers": 2,
+   "top": {
+    "pts": 16,
+    "winner": true
+   },
+   "low": {
+    "pts": 15
+   },
+   "best": [
+    "Propuesta altamente innovadora que institucionaliza metodologías comunitarias estables.",
+    "Instrumentos de diagnóstico como fragilidad, Historia de Vida y mapa relacional.",
+    "AICP plenamente desarrollada con PAV, Profesional de Referencia y Gestor de Casos.",
+    "Propuesta correcta y funcional con itinerarios de apoyo de intensidad variable.",
+    "Doble valoración inicial de persona dependiente y cuidador principal."
+   ],
+   "weak": [
+    "Alcance transformador y preventivo significativamente menor al competidor.",
+    "Dimensión comunitaria limitada, con enfoque clínico-asistencial.",
+    "Menor densidad metodológica y concreción en instrumentos de autonomía."
+   ],
+   "hypothesis": {
+    "premia": "Mayor alcance comunitario, instrumentos diagnósticos validados y AICP desarrollada con herramientas evaluables.",
+    "penaliza": "Enfoque clínico-asistencial, dimensión comunitaria limitada y menor densidad metodológica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2B9JqiGeo1mRJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-8fb8e6db-a26e-4b95-8b62-c1c958db60d2"
+  },
+  {
+   "crit": "EQUIPOS DE TRABAJO, PROTOCOLOS DE INTERÉS Y SUSTITUCIONES DE PERSONAL",
+   "max": null,
+   "exp": "p:19371413",
+   "ref": "SE2026/18",
+   "title": "Servicio de Respiro Familiar de Apoyo a los Cuidadores Familiares de Personas Dependientes del (ANEXO IV) de la LCSP",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Cartagena",
+   "nuts": "ES620",
+   "date": "2026-07-02",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 11
+   },
+   "best": [
+    "Estructura organizativa multinivel que supera los umbrales mínimos del pliego.",
+    "Coordinador como Gestor de Casos y soporte corporativo especializado.",
+    "Participación en comités de ética y grupos de mejora continua del equipo.",
+    "Organigrama funcional correcto y ajustado a las exigencias contractuales.",
+    "Auxiliares con cualificación requerida y soporte administrativo documental."
+   ],
+   "weak": [
+    "Menor diversificación funcional y densidad de la estructura de apoyo.",
+    "Menor proyección preventiva, ética y de gestión de la calidad en protocolos.",
+    "Menor desarrollo de la figura de referencia personalizada en sustituciones."
+   ],
+   "hypothesis": {
+    "premia": "Estructura multinivel, soporte corporativo, figura de Gestor de Casos y protocolos éticos y preventivos.",
+    "penaliza": "Organigrama funcional básico y menor densidad de apoyo organizativo y preventivo."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2B9JqiGeo1mRJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-8fb8e6db-a26e-4b95-8b62-c1c958db60d2"
+  },
+  {
+   "crit": "RESOLUCIÓN DE INCIDENCIAS, ACTUACIONES EN SITUACIÓN DE EMERGENCIAS Y MODELOS DE SEGUIMIENTO Y EVALUACIÓN",
+   "max": null,
+   "exp": "p:19371413",
+   "ref": "SE2026/18",
+   "title": "Servicio de Respiro Familiar de Apoyo a los Cuidadores Familiares de Personas Dependientes del (ANEXO IV) de la LCSP",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Cartagena",
+   "nuts": "ES620",
+   "date": "2026-07-02",
+   "offers": 2,
+   "top": {
+    "pts": 12,
+    "winner": true
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Seguimiento AICP con Historia de Vida, PAV y mapas relacionales actualizados.",
+    "Modelo de evaluación avanzado vinculado al Comité de Ética y auditoría interna.",
+    "Enfoque preventivo con cribado de fragilidad y vulnerabilidad residencial.",
+    "Flujogramas detallados para cada tipología de incidencia en el domicilio.",
+    "Protocolos de emergencia pormenorizados con activación del 112 y cascada de comunicación."
+   ],
+   "weak": [
+    "Seguimiento funcional y correcto, con menor sofisticación e innovación técnica.",
+    "Modelo de seguimiento orientado al servicio ordinario de atención domiciliaria.",
+    "Menor desglose descriptivo en la secuencia ante incidencias rutinarias.",
+    "Abordaje inmediato de emergencias presentado de forma abreviada."
+   ],
+   "hypothesis": {
+    "premia": "Sofisticación de herramientas de seguimiento AICP y evaluación integrada en la calidad y en el Comité de Ética; en incidencias, flujos detallados.",
+    "penaliza": "Desglose procedimental abreviado en incidencias rutinarias y en actuación inmediata ante emergencias."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2B9JqiGeo1mRJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-8fb8e6db-a26e-4b95-8b62-c1c958db60d2"
+  },
+  {
+   "crit": "Mejoras propuestas en el desarrollo del proyecto",
+   "max": 4,
+   "exp": "p:7635774",
+   "ref": "8018Y/2021",
+   "title": "Servicio de acompañamiento socioeducativo a personas sin hogar a través de un proceso de intervención, bajo la metodología “Housing First” p",
+   "buyer": "Junta Rectora de la Fundación Municipal de Servicios Sociales del Ayuntamiento de Gijón",
+   "nuts": "ES120",
+   "date": "2021-08-30",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Jornada sobre Housing First desde visión global y problemas específicos de participantes, valorada positivamente",
+    "Medidas dirigidas a la autonomía de participantes (gestión de llaves, alfabetización digital) valoradas positivamente",
+    "Ocho talleres valorados por tratar habilidades y destrezas para el uso óptimo de las viviendas",
+    "Medidas de respuesta inmediata valoradas por mejorar la respuesta de participantes y profesionales ante incidencias",
+    "Cinco talleres valorados por corresponder a adquisición de habilidades para el uso óptimo de las viviendas"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Medidas y talleres orientados a la autonomía de participantes y al uso óptimo de la vivienda, y sesiones de difusión del modelo Housing First",
+    "penaliza": "No consta en los comentarios; ambas ofertas obtuvieron la puntuación máxima de 4 puntos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ENCWqDI5U1USugstABGr5A%3D%3D",
+   "doc": "cde44463-f1c2-459d-b9fd-1b577de62e0c"
+  },
+  {
+   "crit": "EXPERIENCIA LABORAL del personal técnico y/o coordinador en el método \"Housing First\"",
+   "max": 8,
+   "exp": "p:7635774",
+   "ref": "8018Y/2021",
+   "title": "Servicio de acompañamiento socioeducativo a personas sin hogar a través de un proceso de intervención, bajo la metodología “Housing First” p",
+   "buyer": "Junta Rectora de la Fundación Municipal de Servicios Sociales del Ayuntamiento de Gijón",
+   "nuts": "ES120",
+   "date": "2021-08-30",
+   "offers": 2,
+   "top": {
+    "pts": 5.6,
+    "winner": true
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Experiencia de dos trabajadores acreditada con certificados de la Fundación Municipal de Servicios Sociales y certificación de vida laboral"
+   ],
+   "weak": [
+    "Solo se computa un año de experiencia por falta de vida laboral y certificado administrativo de la experiencia en Avilés",
+    "Puntuación limitada a 5,6 sobre 8 por los años acreditados de los dos trabajadores"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ENCWqDI5U1USugstABGr5A%3D%3D",
+   "doc": "48992aaa-665f-48e9-9185-f9694c9e22d0"
+  },
+  {
+   "crit": "EXPERIENCIA LABORAL del personal técnico y/o coordinador en mediación comunitaria",
+   "max": 8,
+   "exp": "p:7635774",
+   "ref": "8018Y/2021",
+   "title": "Servicio de acompañamiento socioeducativo a personas sin hogar a través de un proceso de intervención, bajo la metodología “Housing First” p",
+   "buyer": "Junta Rectora de la Fundación Municipal de Servicios Sociales del Ayuntamiento de Gijón",
+   "nuts": "ES120",
+   "date": "2021-08-30",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Experiencia en proyectos Mil Soles y Prometeo-Salud Mental acreditada con certificados y vida laboral, sin solapamiento con Housing First"
+   ],
+   "weak": [
+    "Puntuación 0 por no aportar certificación oficial de vida laboral de la empresa"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ENCWqDI5U1USugstABGr5A%3D%3D",
+   "doc": "48992aaa-665f-48e9-9185-f9694c9e22d0"
+  },
+  {
+   "crit": "EXPERIENCIA LABORAL del personal técnico y/o coordinador en centros que apliquen la metodología \"Baja Exigencia\"",
+   "max": 8,
+   "exp": "p:7635774",
+   "ref": "8018Y/2021",
+   "title": "Servicio de acompañamiento socioeducativo a personas sin hogar a través de un proceso de intervención, bajo la metodología “Housing First” p",
+   "buyer": "Junta Rectora de la Fundación Municipal de Servicios Sociales del Ayuntamiento de Gijón",
+   "nuts": "ES120",
+   "date": "2021-08-30",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Experiencia en el centro de baja exigencia Mil Soles acreditada por certificados y vida laboral"
+   ],
+   "weak": [
+    "Puntuación 0 por no aportar certificación oficial de vida laboral de la empresa"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ENCWqDI5U1USugstABGr5A%3D%3D",
+   "doc": "48992aaa-665f-48e9-9185-f9694c9e22d0"
+  },
+  {
+   "crit": "EXPERIENCIA LABORAL del personal técnico y/o coordinador en proyectos sociales que incluyan protocolos de coordinación con los servicios públicos de salud mental",
+   "max": 8,
+   "exp": "p:7635774",
+   "ref": "8018Y/2021",
+   "title": "Servicio de acompañamiento socioeducativo a personas sin hogar a través de un proceso de intervención, bajo la metodología “Housing First” p",
+   "buyer": "Junta Rectora de la Fundación Municipal de Servicios Sociales del Ayuntamiento de Gijón",
+   "nuts": "ES120",
+   "date": "2021-08-30",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Protocolos de coordinación con salud mental acreditados con copia de protocolos, certificados y vida laboral"
+   ],
+   "weak": [
+    "Puntuación 0 por no aportar vida laboral ni copia de los protocolos de coordinación"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ENCWqDI5U1USugstABGr5A%3D%3D",
+   "doc": "48992aaa-665f-48e9-9185-f9694c9e22d0"
+  },
+  {
+   "crit": "Mejoras propuestas en el desarrollo del proyecto",
+   "max": 4,
+   "exp": "p:7635774",
+   "ref": "8018Y/2021",
+   "title": "Servicio de acompañamiento socioeducativo a personas sin hogar a través de un proceso de intervención, bajo la metodología “Housing First” p",
+   "buyer": "Junta Rectora de la Fundación Municipal de Servicios Sociales del Ayuntamiento de Gijón",
+   "nuts": "ES120",
+   "date": "2021-08-30",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Medidas de personal formado para emergencias, mediación vecinal y protocolos con agentes comunitarios",
+    "Talleres de cocina, consumo, mantenimiento y autocuidado con objetivo de uso óptimo de la vivienda",
+    "Sesiones dirigidas a profesionales y a la población general",
+    "Medidas orientadas a destrezas para resolver incidencias de forma autónoma, como gestión de llaves y alfabetización digital",
+    "Talleres valorados por facilitar el uso óptimo de las viviendas"
+   ],
+   "weak": [
+    "Medidas, talleres y sesiones superan el número necesario para el máximo puntuable"
+   ],
+   "hypothesis": {
+    "premia": "Medidas que dotan de autonomía al participante y talleres orientados al uso de la vivienda",
+    "penaliza": "Ofertas que superan el número necesario para alcanzar el máximo puntuable"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ENCWqDI5U1USugstABGr5A%3D%3D",
+   "doc": "48992aaa-665f-48e9-9185-f9694c9e22d0"
   }
  ]
 }

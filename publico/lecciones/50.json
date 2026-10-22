@@ -1,8 +1,254 @@
 {
  "cpv2": "50",
- "generated": "2026-10-22T14:39:58.993Z",
+ "generated": "2026-10-22T18:50:13.984Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Descripción del procedimiento constructivo",
+   "max": 17,
+   "exp": "p:19763346",
+   "ref": "DT-26-05",
+   "title": "Conservación, reparación y mantenimiento de las infraestructuras de agua y alcantarillado gestionadas por Emalcsa",
+   "buyer": "Dirección General de Emalcsa",
+   "nuts": "ES111",
+   "date": "2026-09-07",
+   "offers": 1,
+   "top": {
+    "pts": 15.8,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Menciona la mayoría de aspectos del procedimiento constructivo y describe detalladamente la reparación de tubería de gran diámetro.",
+    "Propone equipo de refuerzo y garantiza continuidad en actuaciones de más de 24 horas.",
+    "Mejora sustancialmente todos los tiempos de respuesta fijados en Pliego."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Cobertura de todos los aspectos del procedimiento, detalle técnico concreto y mejora de tiempos de respuesta",
+    "penaliza": "No consta en el informe"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=M48%2BHjPpqKeExvMJXBMHHQ%3D%3D",
+   "doc": "2026-d1efb2bb-05e6-4236-91b9-1dac04085302"
+  },
+  {
+   "crit": "Trabajos con fibrocemento",
+   "max": 4,
+   "exp": "p:19763346",
+   "ref": "DT-26-05",
+   "title": "Conservación, reparación y mantenimiento de las infraestructuras de agua y alcantarillado gestionadas por Emalcsa",
+   "buyer": "Dirección General de Emalcsa",
+   "nuts": "ES111",
+   "date": "2026-09-07",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Planteamiento y descripción correctos de los trabajos con fibrocemento."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=M48%2BHjPpqKeExvMJXBMHHQ%3D%3D",
+   "doc": "2026-d1efb2bb-05e6-4236-91b9-1dac04085302"
+  },
+  {
+   "crit": "Entibaciones",
+   "max": 6,
+   "exp": "p:19763346",
+   "ref": "DT-26-05",
+   "title": "Conservación, reparación y mantenimiento de las infraestructuras de agua y alcantarillado gestionadas por Emalcsa",
+   "buyer": "Dirección General de Emalcsa",
+   "nuts": "ES111",
+   "date": "2026-09-07",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Estudio completo que contempla entibaciones homologadas y cálculo ad-hoc."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=M48%2BHjPpqKeExvMJXBMHHQ%3D%3D",
+   "doc": "2026-d1efb2bb-05e6-4236-91b9-1dac04085302"
+  },
+  {
+   "crit": "Plan de utilización, organización y optimización de la maquinaria y demás medios materiales",
+   "max": 12,
+   "exp": "p:19763346",
+   "ref": "DT-26-05",
+   "title": "Conservación, reparación y mantenimiento de las infraestructuras de agua y alcantarillado gestionadas por Emalcsa",
+   "buyer": "Dirección General de Emalcsa",
+   "nuts": "ES111",
+   "date": "2026-09-07",
+   "offers": 1,
+   "top": {
+    "pts": 12,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Listado de maquinaria adecuado en cantidad y tipología, toda en propiedad.",
+    "Propuesta que garantiza la continuidad ante fallos o averías de maquinaria.",
+    "Garantías de reposición de los distintos tipos de pavimento."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Maquinaria en propiedad, adecuada en cantidad y tipología, con garantías de continuidad y reposición",
+    "penaliza": "No consta en el informe"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=M48%2BHjPpqKeExvMJXBMHHQ%3D%3D",
+   "doc": "2026-d1efb2bb-05e6-4236-91b9-1dac04085302"
+  },
+  {
+   "crit": "Aspectos medioambientales",
+   "max": 1,
+   "exp": "p:19763346",
+   "ref": "DT-26-05",
+   "title": "Conservación, reparación y mantenimiento de las infraestructuras de agua y alcantarillado gestionadas por Emalcsa",
+   "buyer": "Dirección General de Emalcsa",
+   "nuts": "ES111",
+   "date": "2026-09-07",
+   "offers": 1,
+   "top": {
+    "pts": 0.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "Indica unos principios generales a contemplar, con calificación media."
+   ],
+   "hypothesis": {
+    "premia": "Medidas concretas más allá de principios generales",
+    "penaliza": "Limitarse a indicar principios generales sin concretar medidas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=M48%2BHjPpqKeExvMJXBMHHQ%3D%3D",
+   "doc": "2026-d1efb2bb-05e6-4236-91b9-1dac04085302"
+  },
+  {
+   "crit": "Aspectos sociales",
+   "max": 1,
+   "exp": "p:19763346",
+   "ref": "DT-26-05",
+   "title": "Conservación, reparación y mantenimiento de las infraestructuras de agua y alcantarillado gestionadas por Emalcsa",
+   "buyer": "Dirección General de Emalcsa",
+   "nuts": "ES111",
+   "date": "2026-09-07",
+   "offers": 1,
+   "top": {
+    "pts": 0.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "Indica unos principios generales a contemplar, con calificación media."
+   ],
+   "hypothesis": {
+    "premia": "Medidas concretas más allá de principios generales",
+    "penaliza": "Limitarse a indicar principios generales sin concretar medidas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=M48%2BHjPpqKeExvMJXBMHHQ%3D%3D",
+   "doc": "2026-d1efb2bb-05e6-4236-91b9-1dac04085302"
+  },
+  {
+   "crit": "Aspectos de gestión de riesgos",
+   "max": 1,
+   "exp": "p:19763346",
+   "ref": "DT-26-05",
+   "title": "Conservación, reparación y mantenimiento de las infraestructuras de agua y alcantarillado gestionadas por Emalcsa",
+   "buyer": "Dirección General de Emalcsa",
+   "nuts": "ES111",
+   "date": "2026-09-07",
+   "offers": 1,
+   "top": {
+    "pts": 0.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "Indica unos principios generales de cada aspecto del Pliego, con calificación media."
+   ],
+   "hypothesis": {
+    "premia": "Medidas concretas para cada aspecto del Pliego",
+    "penaliza": "Limitarse a indicar principios generales sin concretar medidas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=M48%2BHjPpqKeExvMJXBMHHQ%3D%3D",
+   "doc": "2026-d1efb2bb-05e6-4236-91b9-1dac04085302"
+  },
+  {
+   "crit": "CS1. Plan de mantenimiento",
+   "max": 7,
+   "exp": "p:19000768",
+   "ref": "2026PL009",
+   "title": "Servicio de mantenimiento preventivo y correctivo de las instalaciones eléctricas (baja tensión) y los centros de transformación y líneas (m",
+   "buyer": "Presidencia de Limpieza de Málaga Sociedad Anónima Municipal",
+   "nuts": "ES617",
+   "date": "2026-09-03",
+   "offers": 4,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 1.5
+   },
+   "best": [
+    "Canales de comunicación correctos",
+    "Plan de mantenimiento acorde a las necesidades de LIMASAM"
+   ],
+   "weak": [
+    "Plan de centros de transformación no alineado con la realidad del servicio, especialmente en mantenimiento diario",
+    "No propone ampliación de garantía"
+   ],
+   "hypothesis": {
+    "premia": "Plan adaptado a las necesidades de LIMASAM, que cubre baja y media tensión y con canales de comunicación correctos",
+    "penaliza": "Plan centrado solo en media tensión o desalineado de la realidad del servicio, y falta de ampliación de garantía (común a todas)"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nFjPg518UmfN3k3tjedSGw%3D%3D",
+   "doc": "2026-8b529894-c089-4f08-9a31-d332572a7c54"
+  },
+  {
+   "crit": "CS2. Equipo técnico",
+   "max": 7,
+   "exp": "p:19000768",
+   "ref": "2026PL009",
+   "title": "Servicio de mantenimiento preventivo y correctivo de las instalaciones eléctricas (baja tensión) y los centros de transformación y líneas (m",
+   "buyer": "Presidencia de Limpieza de Málaga Sociedad Anónima Municipal",
+   "nuts": "ES617",
+   "date": "2026-09-03",
+   "offers": 4,
+   "top": {
+    "pts": 7,
+    "winner": false
+   },
+   "low": {
+    "pts": 1.75
+   },
+   "best": [
+    "Funciones bien descritas",
+    "Organigrama correcto",
+    "CV del responsable se adapta a las especificaciones del contrato",
+    "Equipo técnico bien descrito"
+   ],
+   "weak": [
+    "No aparece el CV del responsable técnico",
+    "No consta experiencia en gestión de instalaciones industriales"
+   ],
+   "hypothesis": {
+    "premia": "Funciones bien descritas, organigrama correcto y CV del responsable técnico adaptado a las especificaciones",
+    "penaliza": "CV no adaptado a las necesidades, ausencia de CV o de experiencia del responsable técnico, o no identificar al responsable técnico"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nFjPg518UmfN3k3tjedSGw%3D%3D",
+   "doc": "2026-8b529894-c089-4f08-9a31-d332572a7c54"
+  },
   {
    "crit": "1.- Plan de mantenimiento correctivo - a) Procedimientos de actuación",
    "max": 8,
@@ -221,6 +467,221 @@
    "doc": "2026-6302450b-3a23-4415-a5c5-6808dd121a6a"
   },
   {
+   "crit": "Organización y programación de las actuaciones de mantenimiento preventivo, conductivo, correctivo y técnico-legal",
+   "max": 20,
+   "exp": "p:20232800",
+   "ref": "1.3-2026-67",
+   "title": "Prestación del servicio de mantenimiento integral del edificio sede del Instituto IMDEA Nutrición, con especial atención a la relación calid",
+   "buyer": "Dirección y Gerencia de la Fundación IMDEA Alimentación",
+   "nuts": "ES300",
+   "date": "2026-08-29",
+   "offers": 1,
+   "top": {
+    "pts": 16,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Cumple con todo lo requerido y aporta una Memoria con planteamiento completo y detallado.",
+    "Se valoran muy positivamente las actuaciones propuestas en caso de averías graves y urgentes."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Planteamiento completo y detallado, cumplimiento de todo lo requerido y respuesta prevista para averías graves y urgentes (única oferta; no hay comparación).",
+    "penaliza": "No consta en el informe ningún aspecto que reste puntos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=77Vwoa3D6XprhBlEHQFSKA%3D%3D",
+   "doc": "2026-f149a633-626d-42ed-8072-c092d54076f2"
+  },
+  {
+   "crit": "Plan de eficiencia energética, metodología de seguimiento de consumos y propuestas de optimización",
+   "max": 10,
+   "exp": "p:20232800",
+   "ref": "1.3-2026-67",
+   "title": "Prestación del servicio de mantenimiento integral del edificio sede del Instituto IMDEA Nutrición, con especial atención a la relación calid",
+   "buyer": "Dirección y Gerencia de la Fundación IMDEA Alimentación",
+   "nuts": "ES300",
+   "date": "2026-08-29",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Medidas precisas, ajustadas a la realidad, viables, coherentes, justificadas, bien definidas e innovadoras.",
+    "Modelo de medición y gestión que mejorará la eficiencia global de las instalaciones y el ahorro."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Medidas concretas, viables, justificadas e innovadoras, con modelo de medición y gestión (única oferta; no hay comparación).",
+    "penaliza": "No consta en el informe ningún aspecto que reste puntos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=77Vwoa3D6XprhBlEHQFSKA%3D%3D",
+   "doc": "2026-f149a633-626d-42ed-8072-c092d54076f2"
+  },
+  {
+   "crit": "Calendario de actuaciones, planificación de recursos y adaptación a las instalaciones objeto del contrato",
+   "max": 10,
+   "exp": "p:20232800",
+   "ref": "1.3-2026-67",
+   "title": "Prestación del servicio de mantenimiento integral del edificio sede del Instituto IMDEA Nutrición, con especial atención a la relación calid",
+   "buyer": "Dirección y Gerencia de la Fundación IMDEA Alimentación",
+   "nuts": "ES300",
+   "date": "2026-08-29",
+   "offers": 1,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Plan de trabajo con cronograma adecuado y claro, acorde con las necesidades de IMDEA.",
+    "Certificados que acreditan la solvencia técnica del personal adscrito y garantizan el buen desarrollo del Plan."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Cronograma claro y adaptado a las necesidades del cliente, con certificados de solvencia técnica del personal (única oferta; no hay comparación).",
+    "penaliza": "El informe no detalla qué elemento concreto limitó la puntuación (7,5 sobre 10)."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=77Vwoa3D6XprhBlEHQFSKA%3D%3D",
+   "doc": "2026-f149a633-626d-42ed-8072-c092d54076f2"
+  },
+  {
+   "crit": "Sistema de coordinación, comunicación e interlocución con la Fundación",
+   "max": 10,
+   "exp": "p:20232800",
+   "ref": "1.3-2026-67",
+   "title": "Prestación del servicio de mantenimiento integral del edificio sede del Instituto IMDEA Nutrición, con especial atención a la relación calid",
+   "buyer": "Dirección y Gerencia de la Fundación IMDEA Alimentación",
+   "nuts": "ES300",
+   "date": "2026-08-29",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Propuesta de organización adecuada, con cuatro niveles ordenados (gestor técnico, gestión y control, preventivo, correctivo y emergencias).",
+    "Sistema de comunicación claro y exhaustivo, sin redundancias innecesarias."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Organización clara en niveles y comunicación sin redundancias (única oferta; no hay comparación).",
+    "penaliza": "No consta en el informe ningún aspecto que reste puntos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=77Vwoa3D6XprhBlEHQFSKA%3D%3D",
+   "doc": "2026-f149a633-626d-42ed-8072-c092d54076f2"
+  },
+  {
+   "crit": "Criterios Subjetivos",
+   "max": 40,
+   "exp": "p:19798815",
+   "ref": "2026/0033",
+   "title": "Servicio de mantenimiento, reparación, limpieza de vehículos y maquinaria del parque móvil del Ayuntamiento de Ponferrada.",
+   "buyer": "Alcaldia del Ayuntamiento de Ponferrada",
+   "nuts": "ES413",
+   "date": "2026-08-18",
+   "offers": 1,
+   "top": {
+    "pts": 40,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Oferta excelente que encaja en los requerimientos",
+    "Presentación detallada con gran nivel de calidad previsible en la ejecución",
+    "Detalla los trabajos a realizar indicando los procesos que se realizarán"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Memoria detallada que describe los trabajos y los procesos de ejecución, con calidad previsible alta",
+    "penaliza": "No consta en el informe"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Sk77A9hG%2F61xseVhcqrkhw%3D%3D",
+   "doc": "2026-18aaf6b5-001a-45dc-839d-c8df3ee3bbfb"
+  },
+  {
+   "crit": "Memoria descriptiva",
+   "max": 40,
+   "exp": "p:19798815",
+   "ref": "2026/0033",
+   "title": "Servicio de mantenimiento, reparación, limpieza de vehículos y maquinaria del parque móvil del Ayuntamiento de Ponferrada.",
+   "buyer": "Alcaldia del Ayuntamiento de Ponferrada",
+   "nuts": "ES413",
+   "date": "2026-08-18",
+   "offers": 1,
+   "top": {
+    "pts": 40,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Oferta excelente que encaja en los requerimientos",
+    "Presentación detallada que permite prever un gran nivel de calidad",
+    "Detalla los trabajos a realizar indicando los procesos que se realizarán"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Sk77A9hG%2F61xseVhcqrkhw%3D%3D",
+   "doc": "2026-a910bf98-eaa0-4fe7-a8d5-5419bd7f7c18"
+  },
+  {
+   "crit": "Memoria descriptiva",
+   "max": 40,
+   "exp": "p:19798815",
+   "ref": "2026/0033",
+   "title": "Servicio de mantenimiento, reparación, limpieza de vehículos y maquinaria del parque móvil del Ayuntamiento de Ponferrada.",
+   "buyer": "Alcaldia del Ayuntamiento de Ponferrada",
+   "nuts": "ES413",
+   "date": "2026-08-18",
+   "offers": 1,
+   "top": {
+    "pts": 0,
+    "winner": true
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "El planteamiento presentado está fuera de los objetivos propuestos según la tabla de valoración de la memoria técnica."
+   ],
+   "hypothesis": {
+    "premia": "No consta en el documento, al ser la única oferta presentada para el lote.",
+    "penaliza": "Plantear una memoria fuera de los objetivos propuestos según la tabla de valoración técnica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Sk77A9hG%2F61xseVhcqrkhw%3D%3D",
+   "doc": "2026-5ccd6233-781e-4847-ae39-fc8b76246dcb"
+  },
+  {
+   "crit": "Memoria descriptiva",
+   "max": 40,
+   "exp": "p:19798815",
+   "ref": "2026/0033",
+   "title": "Servicio de mantenimiento, reparación, limpieza de vehículos y maquinaria del parque móvil del Ayuntamiento de Ponferrada.",
+   "buyer": "Alcaldia del Ayuntamiento de Ponferrada",
+   "nuts": "ES413",
+   "date": "2026-08-18",
+   "offers": 1,
+   "top": {
+    "pts": 40,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Oferta excelente que encaja en los requerimientos",
+    "Presentación detallada con gran nivel de calidad previsible en la ejecución",
+    "Detalla los trabajos a realizar indicando los procesos que se realizarán"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Memoria detallada que describe los trabajos a realizar y los procesos de ejecución, con calidad previsible alta",
+    "penaliza": ""
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Sk77A9hG%2F61xseVhcqrkhw%3D%3D",
+   "doc": "2026-1b0ff936-c943-4621-a555-c756b048e614"
+  },
+  {
    "crit": "CS1: Plan de gestión medioambiental del servicio",
    "max": 15,
    "exp": "p:19910653",
@@ -286,6 +747,209 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=jfh28KAUjsL%2Fa9DgO%2BoYKQ%3D%3D",
    "doc": "2026-9694857e-7170-47f4-99e8-4618c55b1340"
+  },
+  {
+   "crit": "Programa de trabajo",
+   "max": 10,
+   "exp": "p:19846977",
+   "ref": "CAN 85/2026",
+   "title": "Servicio de mantenimiento de los sistemas de seguridad y megafonía de las instalaciones de Enaire en la Región Canaria",
+   "buyer": "ENAIRE - Dirección Regional DRNA Región Canaria",
+   "nuts": "ES705",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Desarrolla exhaustivamente todas las fases del servicio con procedimientos y responsabilidades detallados.",
+    "Desarrolla correctamente todas las fases del mantenimiento con metodología completa."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SNdkgRwOyJh6nTs9LZ9RhQ%3D%3D",
+   "doc": "2026-aeb1ff70-cbf5-4e11-873c-1c7cdf0e7216"
+  },
+  {
+   "crit": "Planificación del servicio: diagrama de Gantt",
+   "max": 10,
+   "exp": "p:19846977",
+   "ref": "CAN 85/2026",
+   "title": "Servicio de mantenimiento de los sistemas de seguridad y megafonía de las instalaciones de Enaire en la Región Canaria",
+   "buyer": "ENAIRE - Dirección Regional DRNA Región Canaria",
+   "nuts": "ES705",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Planificación anual con Gantt, distribución de actividades y desplazamientos entre instalaciones e islas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SNdkgRwOyJh6nTs9LZ9RhQ%3D%3D",
+   "doc": "2026-aeb1ff70-cbf5-4e11-873c-1c7cdf0e7216"
+  },
+  {
+   "crit": "Conocimiento del emplazamiento",
+   "max": 10,
+   "exp": "p:19846977",
+   "ref": "CAN 85/2026",
+   "title": "Servicio de mantenimiento de los sistemas de seguridad y megafonía de las instalaciones de Enaire en la Región Canaria",
+   "buyer": "ENAIRE - Dirección Regional DRNA Región Canaria",
+   "nuts": "ES705",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 7.5
+   },
+   "best": [
+    "Aporta certificado de visita y acredita ejecución del contrato desde 2020.",
+    "Demuestra conocimiento profundo de instalaciones, fabricantes y problemática de ENAIRE Canarias.",
+    "Aporta certificado de visita y describe correctamente instalaciones y sistemas."
+   ],
+   "weak": [
+    "No acredita experiencia previa en la prestación del servicio."
+   ],
+   "hypothesis": {
+    "premia": "Acreditar experiencia previa ejecutando el contrato y conocer en detalle instalaciones y problemática.",
+    "penaliza": "Aportar solo certificado de visita sin experiencia previa demostrada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SNdkgRwOyJh6nTs9LZ9RhQ%3D%3D",
+   "doc": "2026-aeb1ff70-cbf5-4e11-873c-1c7cdf0e7216"
+  },
+  {
+   "crit": "Consultoría técnica y formación",
+   "max": 10,
+   "exp": "p:19846977",
+   "ref": "CAN 85/2026",
+   "title": "Servicio de mantenimiento de los sistemas de seguridad y megafonía de las instalaciones de Enaire en la Región Canaria",
+   "buyer": "ENAIRE - Dirección Regional DRNA Región Canaria",
+   "nuts": "ES705",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 7.5
+   },
+   "best": [
+    "Ofrece asesoramiento técnico y legal, soporte desde oficina central, asistencia remota por VPN y formación específica.",
+    "Ofrece soporte técnico especializado y asistencia durante la ejecución."
+   ],
+   "weak": [
+    "No profundiza en el desarrollo del apartado ni en la oferta formativa."
+   ],
+   "hypothesis": {
+    "premia": "Detallar asesoramiento, soporte remoto y formación específica con desarrollo amplio.",
+    "penaliza": "Desarrollo superficial de consultoría y oferta formativa."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SNdkgRwOyJh6nTs9LZ9RhQ%3D%3D",
+   "doc": "2026-aeb1ff70-cbf5-4e11-873c-1c7cdf0e7216"
+  },
+  {
+   "crit": "Planes y medidas específicas para el control de Calidad del servicio y la supervisión de los trabajos",
+   "max": 15,
+   "exp": "p:19846977",
+   "ref": "CAN 85/2026",
+   "title": "Servicio de mantenimiento de los sistemas de seguridad y megafonía de las instalaciones de Enaire en la Región Canaria",
+   "buyer": "ENAIRE - Dirección Regional DRNA Región Canaria",
+   "nuts": "ES705",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 11.25
+   },
+   "best": [
+    "Plan de Calidad completo con inspecciones, PPIs, responsables e indicadores bien definidos.",
+    "Presenta procedimientos de supervisión, seguimiento y planes de contingencia."
+   ],
+   "weak": [
+    "No desarrolla un Plan de Calidad completo.",
+    "No entra en los mecanismos de supervisión del mantenimiento preventivo."
+   ],
+   "hypothesis": {
+    "premia": "Plan de Calidad completo con PPIs, responsables, control documental e indicadores, incluyendo supervisión del preventivo.",
+    "penaliza": "Procedimientos genéricos sin Plan de Calidad completo ni supervisión del preventivo."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SNdkgRwOyJh6nTs9LZ9RhQ%3D%3D",
+   "doc": "2026-aeb1ff70-cbf5-4e11-873c-1c7cdf0e7216"
+  },
+  {
+   "crit": "Capacidad de respuesta ofertada y comprometida ante cualquier eventualidad en el servicio. En este subcriterio no se valorará el tiempo de respuesta.",
+   "max": 15,
+   "exp": "p:19846977",
+   "ref": "CAN 85/2026",
+   "title": "Servicio de mantenimiento de los sistemas de seguridad y megafonía de las instalaciones de Enaire en la Región Canaria",
+   "buyer": "ENAIRE - Dirección Regional DRNA Región Canaria",
+   "nuts": "ES705",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 15
+   },
+   "best": [
+    "Tiempos de respuesta diferenciados por criticidad e isla, servicio 24x365 y soporte remoto.",
+    "Tiempos de respuesta muy competitivos, disponibilidad 24x365 y stock de repuestos."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SNdkgRwOyJh6nTs9LZ9RhQ%3D%3D",
+   "doc": "2026-aeb1ff70-cbf5-4e11-873c-1c7cdf0e7216"
+  },
+  {
+   "crit": "MEJORAS OFERTADAS",
+   "max": 10,
+   "exp": "p:19846977",
+   "ref": "CAN 85/2026",
+   "title": "Servicio de mantenimiento de los sistemas de seguridad y megafonía de las instalaciones de Enaire en la Región Canaria",
+   "buyer": "ENAIRE - Dirección Regional DRNA Región Canaria",
+   "nuts": "ES705",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 7.5
+   },
+   "best": [
+    "Dos técnicos, reducción de tiempos de respuesta, soporte remoto y formación adicional sin coste.",
+    "Reducción de tiempos de respuesta, soporte remoto y formación adicional sin coste para ENAIRE."
+   ],
+   "weak": [
+    "No propone mejoras para la continuidad del servicio in situ."
+   ],
+   "hypothesis": {
+    "premia": "Mejoras que incluyen continuidad del servicio in situ además de respuesta, soporte remoto y formación.",
+    "penaliza": "No proponer mejoras para la continuidad del servicio in situ."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SNdkgRwOyJh6nTs9LZ9RhQ%3D%3D",
+   "doc": "2026-aeb1ff70-cbf5-4e11-873c-1c7cdf0e7216"
   },
   {
    "crit": "Programación y organización de los trabajos",
@@ -410,6 +1074,137 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kJEaEeeAUAlq1DdmE7eaXg%3D%3D",
    "doc": "2026-2498c062-330a-4d23-9006-95326c6dcd41"
+  },
+  {
+   "crit": "Organización y estructura del servicio",
+   "max": 3,
+   "exp": "p:19607430",
+   "ref": "SER/2026/0000005990",
+   "title": "Servicio de mantenimiento y asistencia técnica de las insfraestructuras de los de CPDs.",
+   "buyer": "Dirección Gerencia Hospital Universitario de Gran Canaria Doctor Negrín",
+   "nuts": "ES705",
+   "date": "2026-07-26",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 2.8
+   },
+   "best": [
+    "Centro de Atención de Incidencias 24x7 y procedimientos de escalado definidos",
+    "Pool transversal de más de 40 técnicos especializados y certificados para contingencias",
+    "Coordinador Técnico integrado en el proyecto para coordinación y escalado especializado",
+    "Conocimiento específico de las tecnologías implantadas en el Hospital"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Pool transversal de técnicos certificados y CAU 24x7 (la mejor puntuación); coordinación técnica integrada y conocimiento del entorno del Hospital",
+    "penaliza": "Diferencias poco marcadas en escalado y soporte especializado; la diferencia fue de 0,2 puntos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2BY%2Bm9AveK9Z%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-acb7c046-b084-4349-9dc5-10382ef878c8"
+  },
+  {
+   "crit": "Metodología de prestación del servicio",
+   "max": 3,
+   "exp": "p:19607430",
+   "ref": "SER/2026/0000005990",
+   "title": "Servicio de mantenimiento y asistencia técnica de las insfraestructuras de los de CPDs.",
+   "buyer": "Dirección Gerencia Hospital Universitario de Gran Canaria Doctor Negrín",
+   "nuts": "ES705",
+   "date": "2026-07-26",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.9
+   },
+   "best": [
+    "Metodología ITIL con runbooks y protocolos por escenario de operación",
+    "Planificación preventiva detallada sobre hardware, almacenamiento, virtualización y copias de seguridad",
+    "Especialización acreditada en almacenamiento Huawei",
+    "Metodología ITIL 4 formalizada en incidencias, problemas, continuidad, configuración y seguridad",
+    "Elevado grado de formalización y alineación con buenas prácticas del sector"
+   ],
+   "weak": [
+    "Menor especialización en el entorno tecnológico concreto del Hospital"
+   ],
+   "hypothesis": {
+    "premia": "Especialización en el entorno tecnológico del Hospital, runbooks y planificación preventiva detallada",
+    "penaliza": "Metodología ITIL formalizada pero genérica, sin especialización en la tecnología del Hospital"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2BY%2Bm9AveK9Z%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-acb7c046-b084-4349-9dc5-10382ef878c8"
+  },
+  {
+   "crit": "Mejoras en la prestación del servicio",
+   "max": 2,
+   "exp": "p:19607430",
+   "ref": "SER/2026/0000005990",
+   "title": "Servicio de mantenimiento y asistencia técnica de las insfraestructuras de los de CPDs.",
+   "buyer": "Dirección Gerencia Hospital Universitario de Gran Canaria Doctor Negrín",
+   "nuts": "ES705",
+   "date": "2026-07-26",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Sustitución del personal adscrito en periodos vacacionales sin reducir capacidad",
+    "400 horas de Director Técnico para actuaciones críticas y seguimiento",
+    "Laboratorio de pruebas para validar actuaciones antes de producción"
+   ],
+   "weak": [
+    "No presenta mejoras aplicables a la prestación efectiva del servicio"
+   ],
+   "hypothesis": {
+    "premia": "Mejoras concretas aplicables a la prestación efectiva del servicio",
+    "penaliza": "No ofrecer mejoras sobre los mínimos del Pliego"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2BY%2Bm9AveK9Z%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-acb7c046-b084-4349-9dc5-10382ef878c8"
+  },
+  {
+   "crit": "Seguimiento y control del servicio",
+   "max": 2,
+   "exp": "p:19607430",
+   "ref": "SER/2026/0000005990",
+   "title": "Servicio de mantenimiento y asistencia técnica de las insfraestructuras de los de CPDs.",
+   "buyer": "Dirección Gerencia Hospital Universitario de Gran Canaria Doctor Negrín",
+   "nuts": "ES705",
+   "date": "2026-07-26",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": {
+    "pts": 1.9
+   },
+   "best": [
+    "Indicadores adicionales, auditorías periódicas y cuadros de mando orientados a la operación",
+    "Control de reincidencia de incidencias",
+    "Seguimiento documentado mediante procedimientos normalizados de trabajo",
+    "Indicadores de servicio, gestión documental y seguimiento de SLA",
+    "Procesos de mejora continua"
+   ],
+   "weak": [
+    "Sin indicadores adicionales, auditorías periódicas ni cuadros de mando orientados a la operación"
+   ],
+   "hypothesis": {
+    "premia": "Auditorías periódicas, cuadros de mando y control de reincidencia de incidencias",
+    "penaliza": "Mecanismos básicos de SLA e indicadores sin auditorías ni cuadros de mando"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2BY%2Bm9AveK9Z%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-acb7c046-b084-4349-9dc5-10382ef878c8"
   },
   {
    "crit": "Descripción completa, detallada y justificada de los servicios a realizar (estudio de los trabajos y organización)",
@@ -751,6 +1546,300 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=g6j4jhwtofzpxJFXpLZ%2B2A%3D%3D",
    "doc": "2026-172f04d3-a8e7-461e-9f48-816205627455"
+  },
+  {
+   "crit": "Medios materiales y humanos de las instalaciones de PCI y detección de CO",
+   "max": 7,
+   "exp": "p:19687844",
+   "ref": "2026000014",
+   "title": "Contratación del servicio de mantenimiento preventivo y correctivo de las instalaciones, equipos de protección contra incendios (detección y",
+   "buyer": "Concejalía Delegada de Hacienda del Ayuntamiento de la Pobla de Vallbona",
+   "nuts": "ES523",
+   "date": "2026-07-10",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Medios materiales justificados con grado de detalle alto",
+    "Personal nominal con titulaciones y experiencia del responsable detallados"
+   ],
+   "weak": [
+    "No indica años de experiencia del oficial de primera mantenedor",
+    "No hay apartado específico para este punto"
+   ],
+   "hypothesis": {
+    "premia": "Detalle de medios materiales y personal nominal con titulaciones y experiencia",
+    "penaliza": "No indicar años de experiencia de algún perfil ni disponer de apartado específico"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=euj%2F4jldhCSExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4e88f8ad-9ca0-4446-8480-6af23f9c9bf1"
+  },
+  {
+   "crit": "Medios materiales y humanos de las instalaciones para los sistemas antirrobo",
+   "max": 3,
+   "exp": "p:19687844",
+   "ref": "2026000014",
+   "title": "Contratación del servicio de mantenimiento preventivo y correctivo de las instalaciones, equipos de protección contra incendios (detección y",
+   "buyer": "Concejalía Delegada de Hacienda del Ayuntamiento de la Pobla de Vallbona",
+   "nuts": "ES523",
+   "date": "2026-07-10",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Medios materiales justificados con grado de detalle alto",
+    "Personal identificado con titulaciones y experiencia en cada área"
+   ],
+   "weak": [
+    "No hay apartado específico para este punto"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=euj%2F4jldhCSExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4e88f8ad-9ca0-4446-8480-6af23f9c9bf1"
+  },
+  {
+   "crit": "Propuesta de funcionamiento y comunicación permanente con el Ayuntamiento",
+   "max": 3,
+   "exp": "p:19687844",
+   "ref": "2026000014",
+   "title": "Contratación del servicio de mantenimiento preventivo y correctivo de las instalaciones, equipos de protección contra incendios (detección y",
+   "buyer": "Concejalía Delegada de Hacienda del Ayuntamiento de la Pobla de Vallbona",
+   "nuts": "ES523",
+   "date": "2026-07-10",
+   "offers": 1,
+   "top": {
+    "pts": 1,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Se describe el funcionamiento y la comunicación con el Ayuntamiento",
+    "Aporta un planning de trabajo de visitas y revisiones"
+   ],
+   "weak": [
+    "Supera el límite de páginas; lo excedente no se valora",
+    "Medios de comunicación replican las indicaciones del PPT",
+    "Las fechas del planning no son correctas"
+   ],
+   "hypothesis": {
+    "premia": "Planning concreto de visitas y revisiones dentro del límite de páginas",
+    "penaliza": "Exceder el límite de páginas, replicar el PPT y presentar fechas erróneas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=euj%2F4jldhCSExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4e88f8ad-9ca0-4446-8480-6af23f9c9bf1"
+  },
+  {
+   "crit": "Justificación fehaciente del cumplimiento de los plazos de órdenes de trabajo",
+   "max": 3,
+   "exp": "p:19687844",
+   "ref": "2026000014",
+   "title": "Contratación del servicio de mantenimiento preventivo y correctivo de las instalaciones, equipos de protección contra incendios (detección y",
+   "buyer": "Concejalía Delegada de Hacienda del Ayuntamiento de la Pobla de Vallbona",
+   "nuts": "ES523",
+   "date": "2026-07-10",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Delegación cercana en municipio colindante",
+    "Técnico de guardia para incidencias urgentes en 30 minutos",
+    "Plataforma de gestión con trazabilidad en tiempo real"
+   ],
+   "weak": [
+    "No hay apartado específico para este punto"
+   ],
+   "hypothesis": {
+    "premia": "Medios concretos de respuesta: delegación cercana, guardia y trazabilidad",
+    "penaliza": "No disponer de apartado específico para el criterio"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=euj%2F4jldhCSExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4e88f8ad-9ca0-4446-8480-6af23f9c9bf1"
+  },
+  {
+   "crit": "Propuesta servicio técnico de ingeniería y documentación",
+   "max": 3,
+   "exp": "p:19687844",
+   "ref": "2026000014",
+   "title": "Contratación del servicio de mantenimiento preventivo y correctivo de las instalaciones, equipos de protección contra incendios (detección y",
+   "buyer": "Concejalía Delegada de Hacienda del Ayuntamiento de la Pobla de Vallbona",
+   "nuts": "ES523",
+   "date": "2026-07-10",
+   "offers": 1,
+   "top": {
+    "pts": 0,
+    "winner": true
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "No se justifica este apartado"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=euj%2F4jldhCSExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4e88f8ad-9ca0-4446-8480-6af23f9c9bf1"
+  },
+  {
+   "crit": "Propuesta de ficha y operaciones rellenable en los partes de trabajo",
+   "max": 1,
+   "exp": "p:19687844",
+   "ref": "2026000014",
+   "title": "Contratación del servicio de mantenimiento preventivo y correctivo de las instalaciones, equipos de protección contra incendios (detección y",
+   "buyer": "Concejalía Delegada de Hacienda del Ayuntamiento de la Pobla de Vallbona",
+   "nuts": "ES523",
+   "date": "2026-07-10",
+   "offers": 1,
+   "top": {
+    "pts": 1,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Ficha y operaciones rellenables consideradas suficientes"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=euj%2F4jldhCSExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4e88f8ad-9ca0-4446-8480-6af23f9c9bf1"
+  },
+  {
+   "crit": "Propuesta de modelo de Libro de registro",
+   "max": 1,
+   "exp": "p:19687844",
+   "ref": "2026000014",
+   "title": "Contratación del servicio de mantenimiento preventivo y correctivo de las instalaciones, equipos de protección contra incendios (detección y",
+   "buyer": "Concejalía Delegada de Hacienda del Ayuntamiento de la Pobla de Vallbona",
+   "nuts": "ES523",
+   "date": "2026-07-10",
+   "offers": 1,
+   "top": {
+    "pts": 0,
+    "winner": true
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "No se justifica este apartado"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=euj%2F4jldhCSExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4e88f8ad-9ca0-4446-8480-6af23f9c9bf1"
+  },
+  {
+   "crit": "Propuestas de mejora del contrato",
+   "max": 4,
+   "exp": "p:19687844",
+   "ref": "2026000014",
+   "title": "Contratación del servicio de mantenimiento preventivo y correctivo de las instalaciones, equipos de protección contra incendios (detección y",
+   "buyer": "Concejalía Delegada de Hacienda del Ayuntamiento de la Pobla de Vallbona",
+   "nuts": "ES523",
+   "date": "2026-07-10",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Sesiones formativas presenciales para personal municipal",
+    "Contenido sobre extintores, señales de alarma y actuación ante activaciones"
+   ],
+   "weak": [
+    "No consta el motivo de la puntuación parcial (2 de 4)"
+   ],
+   "hypothesis": {
+    "premia": "Mejoras formativas concretas y aplicables al personal municipal",
+    "penaliza": "Mejoras no evaluadas en su totalidad, sin motivo consignado"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=euj%2F4jldhCSExvMJXBMHHQ%3D%3D",
+   "doc": "2026-4e88f8ad-9ca0-4446-8480-6af23f9c9bf1"
+  },
+  {
+   "crit": "Disponibilidad de medios materiales y personales para llevar a cabo la prestación del servicio y adscripción de los mismos (sin hacer referencia a los vehículos grúa)",
+   "max": 5,
+   "exp": "p:19187542",
+   "ref": "2186604A",
+   "title": "El objeto de este contrato es la realización del servicio de retirada de vehículos de la vía pública, mediante vehículos aptos para dicho se",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Albal",
+   "nuts": "ES523",
+   "date": "2026-06-08",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Más de 25 años de experiencia ininterrumpida y presencia en varios municipios de la comarca.",
+    "Plan de formación continua y compromiso de uniformidad e imagen corporativa.",
+    "Profundo conocimiento del calendario festivo y la orografía local."
+   ],
+   "weak": [
+    "No detalla la adscripción concreta de los medios a cada servicio."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KNBGbjt%2FK6eP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-b1f7e50a-5ea3-4aef-abb5-092ca4bdaf00"
+  },
+  {
+   "crit": "Operativa del servicio, forma de ejecución del contrato y tiempos máximos de atención a los requerimientos del servicio",
+   "max": 10,
+   "exp": "p:19187542",
+   "ref": "2186604A",
+   "title": "El objeto de este contrato es la realización del servicio de retirada de vehículos de la vía pública, mediante vehículos aptos para dicho se",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Albal",
+   "nuts": "ES523",
+   "date": "2026-06-08",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Sistema Integral de Transporte Electrónico con PDAs y gestión online de avisos.",
+    "Portal web exclusivo para la Policía Local con estadísticas en tiempo real y control de plazas.",
+    "Tiempo de respuesta máximo de 15 minutos desde el aviso, según UNE 93200."
+   ],
+   "weak": [
+    "Los tiempos de ejecución se describen como 'ajustados' sin concretarlos."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KNBGbjt%2FK6eP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-b1f7e50a-5ea3-4aef-abb5-092ca4bdaf00"
+  },
+  {
+   "crit": "Características del depósito que se pone a disposición del Ayuntamiento para aquellos supuestos en que el depósito municipal se encuentre lleno o que por las características del vehículo retirado no sea posible su depósito en aquel",
+   "max": 5,
+   "exp": "p:19187542",
+   "ref": "2186604A",
+   "title": "El objeto de este contrato es la realización del servicio de retirada de vehículos de la vía pública, mediante vehículos aptos para dicho se",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Albal",
+   "nuts": "ES523",
+   "date": "2026-06-08",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Tres instalaciones: depósito principal de 1.400 m² en casco urbano, de apoyo de 3.500 m² y de emergencia para vehículos abandonados."
+   ],
+   "weak": [
+    "La capacidad se expresa en m², no en número de vehículos."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KNBGbjt%2FK6eP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-b1f7e50a-5ea3-4aef-abb5-092ca4bdaf00"
   },
   {
    "crit": "Aspecto formal y capacidad de explicación",

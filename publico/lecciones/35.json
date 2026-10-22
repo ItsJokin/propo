@@ -1,0 +1,309 @@
+{
+ "cpv2": "35",
+ "generated": "2026-10-22T18:50:13.987Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Calidad y Acabados",
+   "max": 15,
+   "exp": "p:18182617",
+   "ref": "CS2025/85",
+   "title": "Acuerdo Marco de Suministro de vestuario y complementos dela Policía Local del Ayto. de Oviedo.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Oviedo",
+   "nuts": "ES120",
+   "date": "2026-05-14",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Cumple el PPT y las calidades solicitadas, con mejoras en polos y pantalones",
+    "Polos con cuatro botones engomados en el cuello y elastómero de alta resiliencia"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Ofertas que cumplen certificaciones y especificaciones técnicas del PPT (EN 20347:2022, cierres rápidos, pantalla doble, cordones y materiales exigidos) y mejoran seguridad (botones engomados, elastómeros de alta resiliencia)",
+    "penaliza": "Falta de certificaciones exigidas, sistemas de cierre no conformes, carencia de componentes técnicos del PPT y elementos sin la configuración exigida"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zhlirIGJnCCFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9093af11-a11a-4a1f-9c9f-5486ed44a6a8"
+  },
+  {
+   "crit": "Comodidad y Ergonomía",
+   "max": 20,
+   "exp": "p:18182617",
+   "ref": "CS2025/85",
+   "title": "Acuerdo Marco de Suministro de vestuario y complementos dela Policía Local del Ayto. de Oviedo.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Oviedo",
+   "nuts": "ES120",
+   "date": "2026-05-14",
+   "offers": 1,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Doble cara hidrofílica/repelente y tratamiento antibacteriano para gestión del sudor",
+    "Cazadora e impermeable con capucha con paneles de visión periférica",
+    "Guantes con puntas compatibles con pantallas táctiles"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Mejoras sobre el PPT en ergonomía y protección (suela antideslizante, aislamiento térmico, refuerzos, peso y espesor inferiores, protectores, amortiguación)",
+    "penaliza": "Diseños no conformes con el PPT (p. ej. falta de patrón Skinny), ausencia de protectores y refuerzos exigidos, o carencia de sistemas de protección contra impactos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zhlirIGJnCCFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9093af11-a11a-4a1f-9c9f-5486ed44a6a8"
+  },
+  {
+   "crit": "Calidad y Acabados",
+   "max": 15,
+   "exp": "p:18182617",
+   "ref": "CS2025/85",
+   "title": "Acuerdo Marco de Suministro de vestuario y complementos dela Policía Local del Ayto. de Oviedo.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Oviedo",
+   "nuts": "ES120",
+   "date": "2026-05-14",
+   "offers": 3,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Suela con mayor resistencia al deslizamiento, sobre baldosa con detergente y cerámica con glicerina",
+    "Insertos de poliuretano reforzado en tibia, maléolo y protector de palanca"
+   ],
+   "weak": [
+    "No presenta la certificación EN 20347:2022",
+    "Sin suela anti perforación en el modelo presentado",
+    "Cordones de atar, no sistema rápido"
+   ],
+   "hypothesis": {
+    "premia": "Ofertas que cumplen certificaciones y especificaciones técnicas del PPT (EN 20347:2022, cierres rápidos, pantalla doble, cordones y materiales exigidos) y mejoran seguridad (botones engomados, elastómeros de alta resiliencia)",
+    "penaliza": "Falta de certificaciones exigidas, sistemas de cierre no conformes, carencia de componentes técnicos del PPT y elementos sin la configuración exigida"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zhlirIGJnCCFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9093af11-a11a-4a1f-9c9f-5486ed44a6a8"
+  },
+  {
+   "crit": "Comodidad y Ergonomía",
+   "max": 20,
+   "exp": "p:18182617",
+   "ref": "CS2025/85",
+   "title": "Acuerdo Marco de Suministro de vestuario y complementos dela Policía Local del Ayto. de Oviedo.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Oviedo",
+   "nuts": "ES120",
+   "date": "2026-05-14",
+   "offers": 3,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Aislamiento térmico hasta -10ºC",
+    "Calcetines de alta amortiguación y estructura de tres capas que mantiene los pies secos"
+   ],
+   "weak": [
+    "Sin protector de empeine, tibia y metatarsianos en calcetines",
+    "Sin protector del tendón de Aquiles ni de la tibia en calcetines de invierno",
+    "Bota de motorista verano sin empeine transpirable ni refuerzos en espinilla"
+   ],
+   "hypothesis": {
+    "premia": "Mejoras sobre el PPT en ergonomía y protección (suela antideslizante, aislamiento térmico, refuerzos, peso y espesor inferiores, protectores, amortiguación)",
+    "penaliza": "Diseños no conformes con el PPT (p. ej. falta de patrón Skinny), ausencia de protectores y refuerzos exigidos, o carencia de sistemas de protección contra impactos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zhlirIGJnCCFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9093af11-a11a-4a1f-9c9f-5486ed44a6a8"
+  },
+  {
+   "crit": "Calidad y Acabados",
+   "max": 15,
+   "exp": "p:18182617",
+   "ref": "CS2025/85",
+   "title": "Acuerdo Marco de Suministro de vestuario y complementos dela Policía Local del Ayto. de Oviedo.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Oviedo",
+   "nuts": "ES120",
+   "date": "2026-05-14",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [],
+   "weak": [
+    "No tiene conversión rápida y sin herramientas",
+    "No trae pantalla doble",
+    "No figura el intercomunicador",
+    "No incorpora conversión rápida y sin herramientas"
+   ],
+   "hypothesis": {
+    "premia": "Ofertas que cumplen certificaciones y especificaciones técnicas del PPT (EN 20347:2022, cierres rápidos, pantalla doble, cordones y materiales exigidos) y mejoran seguridad (botones engomados, elastómeros de alta resiliencia)",
+    "penaliza": "Falta de certificaciones exigidas, sistemas de cierre no conformes, carencia de componentes técnicos del PPT y elementos sin la configuración exigida"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zhlirIGJnCCFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9093af11-a11a-4a1f-9c9f-5486ed44a6a8"
+  },
+  {
+   "crit": "Comodidad y Ergonomía",
+   "max": 20,
+   "exp": "p:18182617",
+   "ref": "CS2025/85",
+   "title": "Acuerdo Marco de Suministro de vestuario y complementos dela Policía Local del Ayto. de Oviedo.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Oviedo",
+   "nuts": "ES120",
+   "date": "2026-05-14",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [],
+   "weak": [
+    "No incorpora sistema Mips o similar contra la rotación de la cabeza"
+   ],
+   "hypothesis": {
+    "premia": "Mejoras sobre el PPT en ergonomía y protección (suela antideslizante, aislamiento térmico, refuerzos, peso y espesor inferiores, protectores, amortiguación)",
+    "penaliza": "Diseños no conformes con el PPT (p. ej. falta de patrón Skinny), ausencia de protectores y refuerzos exigidos, o carencia de sistemas de protección contra impactos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zhlirIGJnCCFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9093af11-a11a-4a1f-9c9f-5486ed44a6a8"
+  },
+  {
+   "crit": "Calidad y Acabados",
+   "max": 15,
+   "exp": "p:18182617",
+   "ref": "CS2025/85",
+   "title": "Acuerdo Marco de Suministro de vestuario y complementos dela Policía Local del Ayto. de Oviedo.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Oviedo",
+   "nuts": "ES120",
+   "date": "2026-05-14",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 15
+   },
+   "best": [
+    "Espesor mínimo inferior al exigido en el PPT"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Ofertas que cumplen certificaciones y especificaciones técnicas del PPT (EN 20347:2022, cierres rápidos, pantalla doble, cordones y materiales exigidos) y mejoran seguridad (botones engomados, elastómeros de alta resiliencia)",
+    "penaliza": "Falta de certificaciones exigidas, sistemas de cierre no conformes, carencia de componentes técnicos del PPT y elementos sin la configuración exigida"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zhlirIGJnCCFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9093af11-a11a-4a1f-9c9f-5486ed44a6a8"
+  },
+  {
+   "crit": "Comodidad y Ergonomía",
+   "max": 20,
+   "exp": "p:18182617",
+   "ref": "CS2025/85",
+   "title": "Acuerdo Marco de Suministro de vestuario y complementos dela Policía Local del Ayto. de Oviedo.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Oviedo",
+   "nuts": "ES120",
+   "date": "2026-05-14",
+   "offers": 2,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": {
+    "pts": 20
+   },
+   "best": [
+    "Peso máximo inferior al exigido, mejora ergonomía y comodidad",
+    "Cobertura de seguro RC superior a 9.000.000 €"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Mejoras sobre el PPT en ergonomía y protección (suela antideslizante, aislamiento térmico, refuerzos, peso y espesor inferiores, protectores, amortiguación)",
+    "penaliza": "Diseños no conformes con el PPT (p. ej. falta de patrón Skinny), ausencia de protectores y refuerzos exigidos, o carencia de sistemas de protección contra impactos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zhlirIGJnCCFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9093af11-a11a-4a1f-9c9f-5486ed44a6a8"
+  },
+  {
+   "crit": "Calidad y Acabados",
+   "max": 15,
+   "exp": "p:18182617",
+   "ref": "CS2025/85",
+   "title": "Acuerdo Marco de Suministro de vestuario y complementos dela Policía Local del Ayto. de Oviedo.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Oviedo",
+   "nuts": "ES120",
+   "date": "2026-05-14",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Zapatillas con media suela de biomasa de caña de azúcar, ligeras y estables",
+    "Suela de caucho con buen agarre en seco y mojado",
+    "Upper de malla elástica sin costuras con refuerzos"
+   ],
+   "weak": [
+    "Color de camiseta no conforme al PPT (azul Royal y azul marino)"
+   ],
+   "hypothesis": {
+    "premia": "Ofertas que cumplen certificaciones y especificaciones técnicas del PPT (EN 20347:2022, cierres rápidos, pantalla doble, cordones y materiales exigidos) y mejoran seguridad (botones engomados, elastómeros de alta resiliencia)",
+    "penaliza": "Falta de certificaciones exigidas, sistemas de cierre no conformes, carencia de componentes técnicos del PPT y elementos sin la configuración exigida"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zhlirIGJnCCFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9093af11-a11a-4a1f-9c9f-5486ed44a6a8"
+  },
+  {
+   "crit": "Comodidad y Ergonomía",
+   "max": 20,
+   "exp": "p:18182617",
+   "ref": "CS2025/85",
+   "title": "Acuerdo Marco de Suministro de vestuario y complementos dela Policía Local del Ayto. de Oviedo.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Oviedo",
+   "nuts": "ES120",
+   "date": "2026-05-14",
+   "offers": 2,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Camiseta con cuello elástico, ligereza y evacuación del sudor",
+    "Chándal polivalente de tejido cálido",
+    "Calcetines con compresión gradual que mejora la circulación"
+   ],
+   "weak": [
+    "Camiseta sin diseño Skinny exigido en el PPT",
+    "No cumple en el código 504 (chándal)"
+   ],
+   "hypothesis": {
+    "premia": "Mejoras sobre el PPT en ergonomía y protección (suela antideslizante, aislamiento térmico, refuerzos, peso y espesor inferiores, protectores, amortiguación)",
+    "penaliza": "Diseños no conformes con el PPT (p. ej. falta de patrón Skinny), ausencia de protectores y refuerzos exigidos, o carencia de sistemas de protección contra impactos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zhlirIGJnCCFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9093af11-a11a-4a1f-9c9f-5486ed44a6a8"
+  }
+ ]
+}

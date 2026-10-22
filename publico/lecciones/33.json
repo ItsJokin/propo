@@ -1,0 +1,389 @@
+{
+ "cpv2": "33",
+ "generated": "2026-10-22T18:50:13.987Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Buena visibilidad de la escala",
+   "max": 10,
+   "exp": "p:19265369",
+   "ref": "SUM/2026/0000004523",
+   "title": "agujas hipodérmicas y jeringas dedos piezas",
+   "buyer": "Gerencia de Atención Primaria del Área de Salud de Gran Canaria",
+   "nuts": "ES70",
+   "date": "2026-09-06",
+   "offers": 5,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Color verde que mejora la lectura y la visibilidad en distintos ambientes.",
+    "Buena visibilidad."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Escala de color verde con lectura clara en distintos ambientes.",
+    "penaliza": "Colores de escala o de émbolo (azul, émbolo coloreado) que reducen la visibilidad."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xbRZ40FwPIWsNfRW6APEDw%3D%3D",
+   "doc": "2026-4cf080e9-5ea0-4919-97a6-8d674dd85b7d"
+  },
+  {
+   "crit": "Deslizamiento suave del émbolo y avance uniforme",
+   "max": 20,
+   "exp": "p:19265369",
+   "ref": "SUM/2026/0000004523",
+   "title": "agujas hipodérmicas y jeringas dedos piezas",
+   "buyer": "Gerencia de Atención Primaria del Área de Salud de Gran Canaria",
+   "nuts": "ES70",
+   "date": "2026-09-06",
+   "offers": 5,
+   "top": {
+    "pts": 18.75,
+    "winner": false
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Sensación de pleno control al administrar fluidos, sin saltos ni sustos.",
+    "Muy suave, con buen deslizamiento."
+   ],
+   "weak": [
+    "Se nota más inestable al administrar medicamentos.",
+    "Resistencia al inicio del llenado y salto al final.",
+    "En seco se percibe más pesada."
+   ],
+   "hypothesis": {
+    "premia": "Sensación de pleno control y deslizamiento sin saltos ni resistencia.",
+    "penaliza": "Resistencia al inicio del llenado, saltos al final o inestabilidad al administrar."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xbRZ40FwPIWsNfRW6APEDw%3D%3D",
+   "doc": "2026-4cf080e9-5ea0-4919-97a6-8d674dd85b7d"
+  },
+  {
+   "crit": "Calidad técnica del producto y su colocación",
+   "max": 20,
+   "exp": "p:19979870",
+   "ref": "CG-2026/9998/0008",
+   "title": "Suministro de diverso material protésico de ayudas técnicas para IBERMUTUA",
+   "buyer": "Dirección General de IBERMUTUA, Mutua Colaboradora con la Seguridad Social nº 274",
+   "nuts": "ES",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 20,
+    "winner": false
+   },
+   "low": {
+    "pts": 15
+   },
+   "best": [
+    "Planes de trabajo específicos para selección de ayudas técnicas bajo criterios de usabilidad y herramientas de medición de satisfacción.",
+    "Tres centrales de fabricación, fresadoras de 3 ejes, robot XL e impresión 3D para personalización.",
+    "Web con información detallada de productos y apartado para profesionales con catálogo.",
+    "Planes de trabajo para selección de ayudas técnicas bajo criterios de usabilidad y herramientas de medición de satisfacción.",
+    "Web con catálogo de productos y guía de prescripción para profesionales."
+   ],
+   "weak": [
+    "No acredita medios productivos para fabricación propia de dispositivos de ayudas técnicas.",
+    "Sin mejoras de valor añadido equivalentes a las de la otra oferta en fabricación."
+   ],
+   "hypothesis": {
+    "premia": "Medios de fabricación propia (centrales, fresadoras, robot, impresión 3D) y planes de usabilidad con catálogo para profesionales.",
+    "penaliza": "Ausencia de medios productivos propios y menor detalle de valor añadido más allá de planes de usabilidad y web."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=CMUPfYnuuud%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-5fd5c67a-1a3c-4d00-8092-aa0f5c8e34a9"
+  },
+  {
+   "crit": "Cualificación y cuantificación de los medios adscritos",
+   "max": 10,
+   "exp": "p:19979870",
+   "ref": "CG-2026/9998/0008",
+   "title": "Suministro de diverso material protésico de ayudas técnicas para IBERMUTUA",
+   "buyer": "Dirección General de IBERMUTUA, Mutua Colaboradora con la Seguridad Social nº 274",
+   "nuts": "ES",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 7.5
+   },
+   "best": [
+    "39 centros de ortopedia con presencia directa en 7 comunidades autónomas y red de colaboradores.",
+    "103 técnicos ortoprotésicos, 8 terapeutas ocupacionales y 13 profesionales con doble titulación con capacidad de desplazamiento.",
+    "Acreditada como servicio técnico de principales fabricantes y certificaciones ISO 9001, ISO 14001, EFR y huella de carbono.",
+    "Acreditada como partner de principales fabricantes de sillas y productos de apoyo.",
+    "Más de 50 técnicos ortoprotésicos, con 2 terapeutas ocupacionales y 2 fisioterapeutas."
+   ],
+   "weak": [
+    "28 centros de ortopedia con presencia solo en 2 comunidades autónomas.",
+    "Menor número de profesionales con perfil terapéutico y certificaciones limitadas a ISO 9001 y 14001."
+   ],
+   "hypothesis": {
+    "premia": "Amplia red de centros en varias comunidades autónomas, perfiles multidisciplinares y certificaciones de calidad y medioambientales.",
+    "penaliza": "Concentración geográfica en pocas comunidades y menor número de perfiles terapéuticos con capacidad de desplazamiento."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=CMUPfYnuuud%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-5fd5c67a-1a3c-4d00-8092-aa0f5c8e34a9"
+  },
+  {
+   "crit": "Servicio Post-Venta",
+   "max": 10,
+   "exp": "p:19979870",
+   "ref": "CG-2026/9998/0008",
+   "title": "Suministro de diverso material protésico de ayudas técnicas para IBERMUTUA",
+   "buyer": "Dirección General de IBERMUTUA, Mutua Colaboradora con la Seguridad Social nº 274",
+   "nuts": "ES",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Plan de formación con 2 cursos a usuario final y 8 al personal sanitario de la mutua.",
+    "Servicio de asistencia de urgencias en 24 horas.",
+    "Sistema de formación práctica para el paciente.",
+    "Propuesta de formación al personal sanitario."
+   ],
+   "weak": [
+    "Solo 1 curso de ayudas técnicas para el personal sanitario.",
+    "Servicio de atención de urgencias en 48 horas, frente a 24 horas de la otra oferta."
+   ],
+   "hypothesis": {
+    "premia": "Plan de formación amplio para usuarios y personal sanitario y urgencias en 24 horas.",
+    "penaliza": "Formación limitada a un curso para sanitarios y plazo de urgencias de 48 horas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=CMUPfYnuuud%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-5fd5c67a-1a3c-4d00-8092-aa0f5c8e34a9"
+  },
+  {
+   "crit": "B1. Diseño y ergonomía",
+   "max": 15,
+   "exp": "p:20363280",
+   "ref": "SDA000/2026/HPC00/1623/CES",
+   "title": "SDA000/2025/HPC00/1623/CES, suministro, instalación, puesta en marcha y formación de una torre móvil de videoendoscopia digestiva y respirat",
+   "buyer": "Dirección Económica del Consorcio Hospitalario Provincial de Castellón",
+   "nuts": "ES522",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 14,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "La memoria describe prestaciones superiores al PPT en ergonomía, facilidad de uso, limpieza y mantenimiento.",
+    "Propuesta completa y adecuada en calidad de acabados, diseño de equipos y conectividad."
+   ],
+   "weak": [
+    "Determinados aspectos podrían haberse desarrollado con mayor detalle o concreción técnica."
+   ],
+   "hypothesis": {
+    "premia": "Prestaciones superiores al PPT en ergonomía, facilidad de uso, limpieza, mantenimiento y conectividad, con descripción detallada",
+    "penaliza": "Falta de detalle o concreción técnica en algunos aspectos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=CYlY6%2B4jWgH%2B3JAijKO%2Bkg%3D%3D",
+   "doc": "2026-42aa36e0-ca28-43f4-a68b-5ea597ca6b36"
+  },
+  {
+   "crit": "B2. Calidad de imagen y prestaciones clínicas",
+   "max": 10,
+   "exp": "p:20363280",
+   "ref": "SDA000/2026/HPC00/1623/CES",
+   "title": "SDA000/2025/HPC00/1623/CES, suministro, instalación, puesta en marcha y formación de una torre móvil de videoendoscopia digestiva y respirat",
+   "buyer": "Dirección Económica del Consorcio Hospitalario Provincial de Castellón",
+   "nuts": "ES522",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Obtiene la puntuación máxima en calidad de imagen y prestaciones clínicas.",
+    "Mejoras cualitativas superiores o adicionales al PPT, vinculadas al uso clínico previsto."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Mejoras cualitativas superiores al PPT vinculadas al uso clínico previsto",
+    "penaliza": "No consta en el documento"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=CYlY6%2B4jWgH%2B3JAijKO%2Bkg%3D%3D",
+   "doc": "2026-42aa36e0-ca28-43f4-a68b-5ea597ca6b36"
+  },
+  {
+   "crit": "B3. Posibilidades de ampliación e integración futura",
+   "max": 5,
+   "exp": "p:20363280",
+   "ref": "SDA000/2026/HPC00/1623/CES",
+   "title": "SDA000/2025/HPC00/1623/CES, suministro, instalación, puesta en marcha y formación de una torre móvil de videoendoscopia digestiva y respirat",
+   "buyer": "Dirección Económica del Consorcio Hospitalario Provincial de Castellón",
+   "nuts": "ES522",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Obtiene la puntuación máxima en ampliación e integración futura.",
+    "Valorada la conectividad e integración clínica de la propuesta."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Integración clínica y conectividad descritas en la memoria",
+    "penaliza": "No consta en el documento"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=CYlY6%2B4jWgH%2B3JAijKO%2Bkg%3D%3D",
+   "doc": "2026-42aa36e0-ca28-43f4-a68b-5ea597ca6b36"
+  },
+  {
+   "crit": "MEMORIA TÉCNICA",
+   "max": 45,
+   "exp": "p:19910431",
+   "ref": "2026043",
+   "title": "Contrato del suministro, instalación y puesta en marcha de tres cabinas de seguridad biológica Clase II para citotóxicos.",
+   "buyer": "Gerencia Fundación para la Investigación de Málaga en Biomedicina y Salud (FIMABIS)",
+   "nuts": "ES617",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 45,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Equipo cumple todas las especificaciones obligatorias en configuración de serie, sin modificaciones.",
+    "Acredita simultáneamente las normas UNE-EN ISO 12469 y DIN 12980 mediante certificación.",
+    "Ventana frontal con accionamiento eléctrico, aspecto expresamente valorable en el pliego."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Según el único comentario disponible: equipo que cumple las especificaciones obligatorias sin modificaciones, acredita normas mediante certificación y ofrece características valorables como la ventana con accionamiento eléctrico.",
+    "penaliza": "No consta; solo se valora una oferta y el documento no recoge incidencias."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=1wSOSGKb0dO7JOCXkOhcDg%3D%3D",
+   "doc": "2026-88f45f16-d656-4999-a2ea-6fbd7f97c33f"
+  },
+  {
+   "crit": "Calidad de los acabados",
+   "max": 7.5,
+   "exp": "p:20287709",
+   "ref": "1495/2026",
+   "title": "Suministro de 5 grúas para pacientes con obesidad mórbida y 10 grúas con báscula para el equipamiento de varios Servicios en la Fase I de la",
+   "buyer": "Departamento de Salud de Valencia Clínico. Dirección Económica-Gerencia",
+   "nuts": "ES523",
+   "date": "2026-08-10",
+   "offers": 2,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Bastidor de aluminio con pintura impermeabilizante de alta resistencia; soporta pesos superiores al Pliego.",
+    "Grúa para obesidad mórbida soporta 320 kg frente al mínimo de 300 kg.",
+    "Indica explícitamente batería de alta capacidad con duración superior a 100 h.",
+    "Bastidor de acero recubierto en polvo; ruedas de 100/125 mm de alta durabilidad.",
+    "Grúa para obesidad mórbida soporta 310 kg, algo superior al mínimo de 300 kg."
+   ],
+   "weak": [
+    "Protección IPX4; el mando IPX6 no mejora a la competencia.",
+    "Indica baterías de alta capacidad pero no la duración en horas."
+   ],
+   "hypothesis": {
+    "premia": "Materiales de bastidor más resistentes, capacidad de carga superior a 300 kg y duración de batería indicada explícitamente.",
+    "penaliza": "Grado de protección IPX4 sin mejora y batería sin duración en horas indicada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=pnyZZNuG6cjpxJFXpLZ%2B2A%3D%3D",
+   "doc": "2026-33013984-bf85-48b9-86cd-40c7c9c854d1"
+  },
+  {
+   "crit": "Calidad funcional: Limpieza y mantenimiento",
+   "max": 15,
+   "exp": "p:20287709",
+   "ref": "1495/2026",
+   "title": "Suministro de 5 grúas para pacientes con obesidad mórbida y 10 grúas con báscula para el equipamiento de varios Servicios en la Fase I de la",
+   "buyer": "Departamento de Salud de Valencia Clínico. Dirección Económica-Gerencia",
+   "nuts": "ES523",
+   "date": "2026-08-10",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Altura máxima de levantamiento de 2025 mm frente a los 1900 mm del Pliego.",
+    "Botones de parada de emergencia y levantar/bajar en el bastidor, fácilmente identificables y accesibles.",
+    "Botoneras con grafismos sencillos y claros, además de un manual muy estructurado.",
+    "Asidero para transporte y botón de parada de emergencia fácilmente identificable y accesible.",
+    "Led de aviso de mantenimiento cada 12 meses u 8000 ciclos."
+   ],
+   "weak": [
+    "Dimensiones y algunas capacidades del modelo PLUS no están bien identificadas.",
+    "Altura máxima que cumple el PPT, pero de forma muy ajustada.",
+    "Falta indicar si hay botones para manipular la grúa sin mando."
+   ],
+   "hypothesis": {
+    "premia": "Altura de levantamiento holgada, controles de emergencia accesibles, botoneras claras y cumplimiento de normas de seguridad.",
+    "penaliza": "Información incompleta del modelo, altura ajustada al PPT y falta de claridad en los botones."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=pnyZZNuG6cjpxJFXpLZ%2B2A%3D%3D",
+   "doc": "2026-33013984-bf85-48b9-86cd-40c7c9c854d1"
+  },
+  {
+   "crit": "Diseño de los productos",
+   "max": 7.5,
+   "exp": "p:20287709",
+   "ref": "1495/2026",
+   "title": "Suministro de 5 grúas para pacientes con obesidad mórbida y 10 grúas con báscula para el equipamiento de varios Servicios en la Fase I de la",
+   "buyer": "Departamento de Salud de Valencia Clínico. Dirección Económica-Gerencia",
+   "nuts": "ES523",
+   "date": "2026-08-10",
+   "offers": 2,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Slings en amplia variedad de tallas, identificables por código de colores, con arneses de clips y bucles.",
+    "Patas de chasis motorizadas de ancho ajustable que se abren para evitar obstrucciones.",
+    "Dimensiones optimizadas inferiores a los máximos del PPT y grúas plegadas compactas.",
+    "Slings en amplia variedad de tallas identificables por código de colores."
+   ],
+   "weak": [
+    "Solo arneses de clip.",
+    "Dimensiones no optimizadas frente a otros modelos licitados."
+   ],
+   "hypothesis": {
+    "premia": "Variedad de tallas con código de colores, arneses versátiles, patas abribles y dimensiones compactas.",
+    "penaliza": "Disponer solo de arneses de clip y dimensiones no optimizadas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=pnyZZNuG6cjpxJFXpLZ%2B2A%3D%3D",
+   "doc": "2026-33013984-bf85-48b9-86cd-40c7c9c854d1"
+  }
+ ]
+}

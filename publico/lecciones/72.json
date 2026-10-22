@@ -1,6 +1,6 @@
 {
  "cpv2": "72",
- "generated": "2026-10-22T14:39:58.991Z",
+ "generated": "2026-10-22T18:50:13.979Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -190,6 +190,37 @@
    "doc": "2026-130d2251-c4bf-4c04-aa59-15aa09fc63d7"
   },
   {
+   "crit": "Calidad de la formación",
+   "max": 51,
+   "exp": "p:15770213",
+   "ref": "40/2024",
+   "title": "Asesoramiento especializado digital para las Pymes del destino, actuación enmarcada plan de sostenibilidad turística en destino “Pst eje urb",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Jerez",
+   "nuts": "ES612",
+   "date": "2026-09-07",
+   "offers": 1,
+   "top": {
+    "pts": 0,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Cumple todos los aspectos a valorar salvo el número mínimo de vídeos.",
+    "Ofrece 8 tutores especializados en TICs y turismo disponibles durante todo el proceso.",
+    "Propone 300 horas formativas, 20 horas de clases virtuales y dos jornadas presenciales."
+   ],
+   "weak": [
+    "Ofrece 7 vídeos formativos (aprox. 58 minutos), sin alcanzar el mínimo de 25 vídeos que el informe atribuye al PPT.",
+    "Por no llegar a los mínimos exigidos no obtiene puntuación."
+   ],
+   "hypothesis": {
+    "premia": "No es posible identificar qué distingue a las mejor puntuadas: el documento solo valora una oferta.",
+    "penaliza": "Número de vídeos formativos inferior al mínimo exigido (25 según el informe), lo que supone 0 puntos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=hMssU4fPN7k7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2024-836395c8-129b-4819-ae22-7a6784d2fb32"
+  },
+  {
    "crit": "2.1 Metodología técnica para la ejecución del proyecto",
    "max": 15,
    "exp": "p:20287544",
@@ -321,6 +352,62 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=pK9PTHuO6QG5HQrHoP3G5A%3D%3D",
    "doc": "2026-34ff15d6-288b-4239-b79c-277e8f7c1092"
+  },
+  {
+   "crit": "Solución técnica ofertada",
+   "max": 40,
+   "exp": "p:20367756",
+   "ref": "092026SDA_SAM",
+   "title": "El objeto del presente contrato es el análisis de datos e implantación de estrategias para la reducción de tiempos de respuesta a los avisos",
+   "buyer": "Área de Gobierno de Vicealcaldía, Portavoz, Seguridad y Emergencias del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 40,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Excelente comprensión de requisitos y estructura coherente de la oferta",
+    "Catálogo de datos con técnica mixta y metodología basada en estándares internacionales",
+    "Simulador con arquitectura en tres bloques y diagrama de arquitectura muy completo"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Comprensión excelente de requisitos, metodología basada en estándares, técnicas mixtas y estadísticas concretas, simulador con arquitectura detallada y diagrama de arquitectura completo",
+    "penaliza": "Arquitectura funcional incoherente, procesos de evaluación de datos sin metodologías ni herramientas, diseño de estrategias poco detallado y simulador sin arquitectura descrita"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Zl7v%2FNH7djWcCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-400b570b-a52e-4725-880d-a22dd6334291"
+  },
+  {
+   "crit": "Equipo de trabajo y planificación del servicio",
+   "max": 9,
+   "exp": "p:20367756",
+   "ref": "092026SDA_SAM",
+   "title": "El objeto del presente contrato es el análisis de datos e implantación de estrategias para la reducción de tiempos de respuesta a los avisos",
+   "buyer": "Área de Gobierno de Vicealcaldía, Portavoz, Seguridad y Emergencias del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Plan iterativo con realimentación de resultados y tareas definidas por iteración",
+    "Refuerzo del Jefe de Proyecto y apoyo de asesores expertos en fases concretas",
+    "Requisitos mínimos de titulación y experiencia para cada rol"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Planificación iterativa con realimentación de resultados, refuerzo del Jefe de Proyecto, apoyo de expertos y requisitos de titulación y experiencia por rol",
+    "penaliza": "Planificación lineal con poca iteración, equipo orientativo del pliego sin mejoras y falta de coherencia entre bloques"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Zl7v%2FNH7djWcCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-400b570b-a52e-4725-880d-a22dd6334291"
   },
   {
    "crit": "Venta de Entradas",
@@ -478,6 +565,75 @@
    "doc": "2026-a78ce900-8a81-4c3a-b36e-edaeba14d2a6"
   },
   {
+   "crit": "Calidad y creatividad del diseño propuesto",
+   "max": 24,
+   "exp": "p:18309204",
+   "ref": "GE. 38/2025",
+   "title": "Servicios profesionales para el diseño, desarrollo y puesta en marcha de un nuevo portal web institucional de LIPASAM.",
+   "buyer": "Gerencia de Limpieza Pública y Protección Ambiental Sociedad Anónima Municipal (LIPASAM)",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 4,
+   "top": {
+    "pts": 24,
+    "winner": false
+   },
+   "low": {
+    "pts": 11
+   },
+   "best": [
+    "Propuesta muy completa que atiende todas las necesidades destacadas.",
+    "Soluciones creativas centradas en información y comunicación digital.",
+    "Propone cada uno de los ítems solicitados.",
+    "Avanza sobre la herramienta actual sin ruptura total con los usuarios."
+   ],
+   "weak": [
+    "Paleta similar a la de otra institución autonómica con presencia en Sevilla.",
+    "Apenas emplea imagen, fotografía o iconografía que facilite el acceso a la información.",
+    "No existe interacción con redes sociales ni se tienen en cuenta los buzones de sugerencias."
+   ],
+   "hypothesis": {
+    "premia": "Propuestas completas que describen todos los elementos solicitados, aportan soluciones creativas y mantienen coherencia con la identidad y sostenibilidad de la marca.",
+    "penaliza": "Diseño continuista o convencional, falta de singularidades medioambientales, descripciones insuficientes, colorido incoherente con la marca y errores de revisión."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=y1zalAOFGvR%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-2c051d6c-695a-4572-9029-adb24089645e"
+  },
+  {
+   "crit": "Rediseño de contenidos",
+   "max": 16,
+   "exp": "p:18309204",
+   "ref": "GE. 38/2025",
+   "title": "Servicios profesionales para el diseño, desarrollo y puesta en marcha de un nuevo portal web institucional de LIPASAM.",
+   "buyer": "Gerencia de Limpieza Pública y Protección Ambiental Sociedad Anónima Municipal (LIPASAM)",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 4,
+   "top": {
+    "pts": 16,
+    "winner": false
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Propuesta relevante en torno a los grandes eventos de la ciudad.",
+    "Reorganización de contenidos de ciudadanía y herramientas de participación con nuevo enfoque.",
+    "Propuesta de contenidos diferenciados muy acorde con lo solicitado."
+   ],
+   "weak": [
+    "Rediseño convencional y continuista.",
+    "Desplaza la sostenibilidad al último lugar y subdivide el programa educativo.",
+    "No explica el espacio 'Proyectos Colaborativos'."
+   ],
+   "hypothesis": {
+    "premia": "Contenidos vinculados al perfil del usuario, reorganización coherente con la sostenibilidad y propuestas que explican estrategia y nuevos espacios.",
+    "penaliza": "Contenidos standard o complementarios, estructuras tradicionales, falta de estrategia definida, desplazar la sostenibilidad y no tener en cuenta el pliego."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=y1zalAOFGvR%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-2c051d6c-695a-4572-9029-adb24089645e"
+  },
+  {
    "crit": "Plan de Mantenimiento y Continuidad Digital",
    "max": 20,
    "exp": "p:19697637",
@@ -532,6 +688,122 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=54h58xb6rAFLAIVZdUs8KA%3D%3D",
    "doc": "2026-7919717a-d858-4c01-9cba-6652e0665f21"
+  },
+  {
+   "crit": "Solución técnica ofertada",
+   "max": 40,
+   "exp": "p:20305209",
+   "ref": "B2026_01SDA",
+   "title": "El objeto del presente contrato es la prestación del servicio de desarrollo del Sistema Integral de Integración, Planificación y Asignación ",
+   "buyer": "Área de Gobierno de Vicealcaldía, Portavoz, Seguridad y Emergencias del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-08-13",
+   "offers": 5,
+   "top": {
+    "pts": 40,
+    "winner": false
+   },
+   "low": {
+    "pts": 20
+   },
+   "best": [
+    "Conocimiento excelente del enfoque y alcance, centrado en módulos pendientes",
+    "Detalle funcional de R9 y R10: reglas, trazabilidad, conflictos y calendarización progresiva",
+    "Mejoras interesantes, razonablemente vinculadas al pliego",
+    "Conocimiento bueno con elevado detalle arquitectónico y patrones avanzados",
+    "Comprende el contexto SIPA y la relevancia de asignación y calendarización"
+   ],
+   "weak": [
+    "Menor concreción algorítmica y de detalle de implantación que las mejores ofertas",
+    "Memoria en parte descriptiva y general en los módulos más críticos"
+   ],
+   "hypothesis": {
+    "premia": "Concreción funcional sobre asignación y calendarización (R9 y R10) junto con detalle técnico verificable y proporcionado al plazo",
+    "penaliza": "Descripción conceptual o genérica, poca concreción de implantación y casuística funcional, o sobrediseño y mejoras accesorias"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=wcJ9ukzcpvmqb7rCcv76BA%3D%3D",
+   "doc": "2026-ffa35728-0437-43fa-a617-0595359fc849"
+  },
+  {
+   "crit": "Planificación del servicio",
+   "max": 9,
+   "exp": "p:20305209",
+   "ref": "B2026_01SDA",
+   "title": "El objeto del presente contrato es la prestación del servicio de desarrollo del Sistema Integral de Integración, Planificación y Asignación ",
+   "buyer": "Área de Gobierno de Vicealcaldía, Portavoz, Seguridad y Emergencias del Ayuntamiento de Madrid",
+   "nuts": "ES300",
+   "date": "2026-08-13",
+   "offers": 5,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Conexión entre planificación, pruebas, calidad y aceptación de entregables",
+    "Matrices de trazabilidad, informes de pruebas y actas de validación",
+    "Fases, tareas, entregables, responsables, riesgos y plan de contingencias",
+    "Conexión con requisitos funcionales principales y entregables del hito contractual"
+   ],
+   "weak": [
+    "Menor detalle de tareas, granularidad de hitos y mecanismos de control",
+    "No aporta hitos adicionales diferenciales",
+    "Menor profundidad funcional en los módulos de asignación y calendarización que otras propuestas"
+   ],
+   "hypothesis": {
+    "premia": "Fases con hitos, riesgos, plan de contingencia y entregables conectados con requisitos y validaciones de aceptación",
+    "penaliza": "Planificación esquemática, incertidumbres temporales, granularidad insuficiente o carga de compromisos poco realista"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=wcJ9ukzcpvmqb7rCcv76BA%3D%3D",
+   "doc": "2026-ffa35728-0437-43fa-a617-0595359fc849"
+  },
+  {
+   "crit": "Comprensión del entorno tecnológico del Ayuntamiento de Vila-real y descripción de proyectos propuestos como mejora",
+   "max": 25,
+   "exp": "p:19498933",
+   "ref": "2025/00020623B",
+   "title": "Servicio de Consultoría de nivel 2 de Citrix para el sistema informático del Ayuntamiento de Vila-real",
+   "buyer": "Alcaldia del Ayuntamiento de Vila-real",
+   "nuts": "ES522",
+   "date": "2026-08-10",
+   "offers": 1,
+   "top": {
+    "pts": 18.75,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "La memoria escrita especifica de forma correcta lo requerido en el PCAP"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=0DHiFlg6SotLAIVZdUs8KA%3D%3D",
+   "doc": "2026-900ab3fd-267d-4c71-89b7-9900596d033c"
+  },
+  {
+   "crit": "Descripción del servicio de soporte propuesto",
+   "max": 20,
+   "exp": "p:19498933",
+   "ref": "2025/00020623B",
+   "title": "Servicio de Consultoría de nivel 2 de Citrix para el sistema informático del Ayuntamiento de Vila-real",
+   "buyer": "Alcaldia del Ayuntamiento de Vila-real",
+   "nuts": "ES522",
+   "date": "2026-08-10",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "La memoria escrita especifica de forma correcta lo requerido en el PCAP"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=0DHiFlg6SotLAIVZdUs8KA%3D%3D",
+   "doc": "2026-900ab3fd-267d-4c71-89b7-9900596d033c"
   },
   {
    "crit": "MET a) Controles de calidad",
@@ -733,6 +1005,310 @@
    "doc": "2026-0c1e1f28-6e9d-4413-888f-42191424eb6f"
   },
   {
+   "crit": "Plan de acción y demo",
+   "max": 5,
+   "exp": "p:19646116",
+   "ref": "FFIS/2026/5",
+   "title": "Suministro e implantación de software para la unidad de investigación clínica (UIC) de los hospitales Morales Meseguer y Reina Sofía de Murc",
+   "buyer": "Fundación para la Formación e Investigación Sanitarias de la Región de Murcia (FFIS)",
+   "nuts": "ES620",
+   "date": "2026-08-03",
+   "offers": 4,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Demo totalmente alineada con lo requerido",
+    "Demo muy bien preparada y adaptada al escenario previsto"
+   ],
+   "weak": [
+    "Pocas características funcionales de un escenario real de estudio clínico",
+    "Muestra software ya disponible y explica cómo podría adaptarse"
+   ],
+   "hypothesis": {
+    "premia": "Demo totalmente alineada con el pliego, con escenario real, producto maduro validado y opciones para reducir dependencia de fabricantes.",
+    "penaliza": "Demo basada en software preexistente sin escenario real, flujo poco definido, caótica o insuficiente para valorar la entrega."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=W0%2FFOTVmYj04NavIWzMcHA%3D%3D",
+   "doc": "2026-eab47ee2-341d-4354-af65-5477ac77471b"
+  },
+  {
+   "crit": "Arquitectura propuesta",
+   "max": 5,
+   "exp": "p:19646116",
+   "ref": "FFIS/2026/5",
+   "title": "Suministro e implantación de software para la unidad de investigación clínica (UIC) de los hospitales Morales Meseguer y Reina Sofía de Murc",
+   "buyer": "Fundación para la Formación e Investigación Sanitarias de la Región de Murcia (FFIS)",
+   "nuts": "ES620",
+   "date": "2026-08-03",
+   "offers": 4,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Se ajusta perfectamente a lo previsto",
+    "Presenta la arquitectura y realiza pruebas de sus APIs",
+    "Se adapta perfectamente a lo requerido"
+   ],
+   "weak": [
+    "Gran parte basada en software propio, con incertidumbre de mantenimiento futuro",
+    "Las APIs no siguen los estándares actuales de peticiones HTTP"
+   ],
+   "hypothesis": {
+    "premia": "Arquitectura adaptada a los requisitos del lote, con pruebas reales de sus APIs y API completa o bien definida.",
+    "penaliza": "Dependencia de software propio o de terceros, APIs no estándar, falta de integración con estándares clínicos o de automatismos del pliego, y arquitecturas abstractas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=W0%2FFOTVmYj04NavIWzMcHA%3D%3D",
+   "doc": "2026-eab47ee2-341d-4354-af65-5477ac77471b"
+  },
+  {
+   "crit": "Plan de acción y demo",
+   "max": 5,
+   "exp": "p:19646116",
+   "ref": "FFIS/2026/5",
+   "title": "Suministro e implantación de software para la unidad de investigación clínica (UIC) de los hospitales Morales Meseguer y Reina Sofía de Murc",
+   "buyer": "Fundación para la Formación e Investigación Sanitarias de la Región de Murcia (FFIS)",
+   "nuts": "ES620",
+   "date": "2026-08-03",
+   "offers": 4,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Demo totalmente alineada con lo requerido"
+   ],
+   "weak": [
+    "Basada en software ya disponible, no ajustada al PPT"
+   ],
+   "hypothesis": {
+    "premia": "Demo totalmente alineada con el pliego, con escenario real, producto maduro validado y opciones para reducir dependencia de fabricantes.",
+    "penaliza": "Demo basada en software preexistente sin escenario real, flujo poco definido, caótica o insuficiente para valorar la entrega."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=W0%2FFOTVmYj04NavIWzMcHA%3D%3D",
+   "doc": "2026-eab47ee2-341d-4354-af65-5477ac77471b"
+  },
+  {
+   "crit": "Arquitectura propuesta",
+   "max": 5,
+   "exp": "p:19646116",
+   "ref": "FFIS/2026/5",
+   "title": "Suministro e implantación de software para la unidad de investigación clínica (UIC) de los hospitales Morales Meseguer y Reina Sofía de Murc",
+   "buyer": "Fundación para la Formación e Investigación Sanitarias de la Región de Murcia (FFIS)",
+   "nuts": "ES620",
+   "date": "2026-08-03",
+   "offers": 4,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Muy alineada con los requerimientos del lote",
+    "Presenta la arquitectura y realiza pruebas de sus APIs",
+    "Se adapta perfectamente a lo requerido"
+   ],
+   "weak": [
+    "No refleja la comprensión del contexto del lote",
+    "Solución no adaptada a lo requerido"
+   ],
+   "hypothesis": {
+    "premia": "Arquitectura adaptada a los requisitos del lote, con pruebas reales de sus APIs y API completa o bien definida.",
+    "penaliza": "Dependencia de software propio o de terceros, APIs no estándar, falta de integración con estándares clínicos o de automatismos del pliego, y arquitecturas abstractas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=W0%2FFOTVmYj04NavIWzMcHA%3D%3D",
+   "doc": "2026-eab47ee2-341d-4354-af65-5477ac77471b"
+  },
+  {
+   "crit": "Plan de acción y demo",
+   "max": 5,
+   "exp": "p:19646116",
+   "ref": "FFIS/2026/5",
+   "title": "Suministro e implantación de software para la unidad de investigación clínica (UIC) de los hospitales Morales Meseguer y Reina Sofía de Murc",
+   "buyer": "Fundación para la Formación e Investigación Sanitarias de la Región de Murcia (FFIS)",
+   "nuts": "ES620",
+   "date": "2026-08-03",
+   "offers": 5,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Producto muy maduro que se adapta a lo requerido",
+    "Usado y validado en estudios similares",
+    "Demo totalmente alineada con lo requerido",
+    "Plantea opciones para minimizar la dependencia de fabricantes de dispositivos"
+   ],
+   "weak": [
+    "Demo caótica que genera inseguridad sobre su operatividad",
+    "Sensación de poca preparación para la demostración"
+   ],
+   "hypothesis": {
+    "premia": "Demo totalmente alineada con el pliego, con escenario real, producto maduro validado y opciones para reducir dependencia de fabricantes.",
+    "penaliza": "Demo basada en software preexistente sin escenario real, flujo poco definido, caótica o insuficiente para valorar la entrega."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=W0%2FFOTVmYj04NavIWzMcHA%3D%3D",
+   "doc": "2026-eab47ee2-341d-4354-af65-5477ac77471b"
+  },
+  {
+   "crit": "Arquitectura propuesta",
+   "max": 5,
+   "exp": "p:19646116",
+   "ref": "FFIS/2026/5",
+   "title": "Suministro e implantación de software para la unidad de investigación clínica (UIC) de los hospitales Morales Meseguer y Reina Sofía de Murc",
+   "buyer": "Fundación para la Formación e Investigación Sanitarias de la Región de Murcia (FFIS)",
+   "nuts": "ES620",
+   "date": "2026-08-03",
+   "offers": 5,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Presenta la arquitectura y realiza pruebas de sus APIs",
+    "Se adapta perfectamente a lo requerido",
+    "Arquitectura madura y adaptable a los requisitos del pliego"
+   ],
+   "weak": [
+    "Arquitectura demasiado abstracta",
+    "Sin acceso a datos sin pasar por plataformas privativas de terceros no controladas"
+   ],
+   "hypothesis": {
+    "premia": "Arquitectura adaptada a los requisitos del lote, con pruebas reales de sus APIs y API completa o bien definida.",
+    "penaliza": "Dependencia de software propio o de terceros, APIs no estándar, falta de integración con estándares clínicos o de automatismos del pliego, y arquitecturas abstractas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=W0%2FFOTVmYj04NavIWzMcHA%3D%3D",
+   "doc": "2026-eab47ee2-341d-4354-af65-5477ac77471b"
+  },
+  {
+   "crit": "CS1: Enfoque y metodología",
+   "max": 30,
+   "exp": "p:19379765",
+   "ref": "SEGE-2026-006",
+   "title": "Elaboración del Marco de Resultados de FIAP, asistencia técnica a proyectos y desarrollo de capacidades",
+   "buyer": "Dirección de la Fundación para la Internacionalización de las Administraciones Públicas",
+   "nuts": "ES300",
+   "date": "2026-07-31",
+   "offers": 6,
+   "top": {
+    "pts": 28.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Clara alineación entre enfoque y objetivos en los tres ejes",
+    "Enfoque holístico y articulado entre ejes, no segmentado",
+    "Propuesta clara y aterrizada a la realidad de FIAP",
+    "Teoría de cambio y Plan de Monitoreo con detalle",
+    "Asistencia a proyectos con ficha estandarizada y estándares de calidad"
+   ],
+   "weak": [
+    "Ausencia de enfoque metodológico para el MdR",
+    "Eje 3 sin diseño de la CdA ni detección de necesidades",
+    "Nivel de detalle bajo, basado en listados sin articulación",
+    "Menor grado de detalle en algunos recursos metodológicos"
+   ],
+   "hypothesis": {
+    "premia": "Enfoque articulado entre ejes, coherente con la CdA, adaptado a FIAP y con indicadores, agregación y monitoreo detallados",
+    "penaliza": "Cadenas de resultados temáticas, poco detalle en indicadores y agregación, y falta de articulación entre componentes"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=q9jBuza3%2B1d9Zh%2FyRJgM8w%3D%3D",
+   "doc": "2026-c6e1135e-b71d-4cd5-aee7-908453532e0e"
+  },
+  {
+   "crit": "CS2: Plan de trabajo y modelo de coordinación",
+   "max": 15,
+   "exp": "p:19379765",
+   "ref": "SEGE-2026-006",
+   "title": "Elaboración del Marco de Resultados de FIAP, asistencia técnica a proyectos y desarrollo de capacidades",
+   "buyer": "Dirección de la Fundación para la Internacionalización de las Administraciones Públicas",
+   "nuts": "ES300",
+   "date": "2026-07-31",
+   "offers": 6,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 4.5
+   },
+   "best": [
+    "Coordinación en varios niveles con objetivos, participantes y periodicidad",
+    "Equipo con perfiles y roles diferenciados y responsabilidades claras",
+    "Abordaje pormenorizado de ejes, fases, cronograma y equipo",
+    "Fases, productos, cronograma y equipo coherentes con el contrato",
+    "Modelo de coordinación detallado en niveles estratégico, técnico y operativo"
+   ],
+   "weak": [
+    "Fases de trabajo y cronograma confusos y poco detallados",
+    "Modelo de coordinación meramente descriptivo, sin mecanismos eficaces"
+   ],
+   "hypothesis": {
+    "premia": "Modelo de coordinación multinivel ajustado a la estructura de FIAP, con equipo y roles definidos y cronograma claro",
+    "penaliza": "Sinergias entre ejes poco concretadas, cronogramas confusos y ausencia de herramientas de seguimiento"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=q9jBuza3%2B1d9Zh%2FyRJgM8w%3D%3D",
+   "doc": "2026-c6e1135e-b71d-4cd5-aee7-908453532e0e"
+  },
+  {
+   "crit": "CS3: Plan para asegurar la transferencia y continuidad del servicio",
+   "max": 15,
+   "exp": "p:19379765",
+   "ref": "SEGE-2026-006",
+   "title": "Elaboración del Marco de Resultados de FIAP, asistencia técnica a proyectos y desarrollo de capacidades",
+   "buyer": "Dirección de la Fundación para la Internacionalización de las Administraciones Públicas",
+   "nuts": "ES300",
+   "date": "2026-07-31",
+   "offers": 6,
+   "top": {
+    "pts": 12.75,
+    "winner": true
+   },
+   "low": {
+    "pts": 4.5
+   },
+   "best": [
+    "Incorporación de equipos desde el inicio y transferencia integral",
+    "Sistema de seguimiento con indicadores de apropiación y capitalización",
+    "Acciones de transferencia bien definidas y vinculadas a la autonomía",
+    "Estrategia de seguimiento post-consultoría"
+   ],
+   "weak": [
+    "Sin detalle sobre cómo FIAP participará en el co-diseño",
+    "No considera la capacidad real de aplicación en FIAP",
+    "Acciones enumeradas sin explicar ni integrar",
+    "No menciona la apropiación por niveles de dirección",
+    "Falta detalle sobre conexión de la capitalización con la toma de decisiones"
+   ],
+   "hypothesis": {
+    "premia": "Transferencia con apropiación institucional, campeones internos, shadowing y seguimiento de indicadores",
+    "penaliza": "Falta de apropiación a nivel directivo y escasa concreción sobre la continuidad de la CdA"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=q9jBuza3%2B1d9Zh%2FyRJgM8w%3D%3D",
+   "doc": "2026-c6e1135e-b71d-4cd5-aee7-908453532e0e"
+  },
+  {
    "crit": "COBERTURA DE LA RED MÓVIL EN LA ZONA DE VALENCIA Y ALREDEDORES DONDE OPERE EMT VALENCIA",
    "max": 5,
    "exp": "p:19569142",
@@ -830,6 +1406,218 @@
    "hypothesis": null,
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ffU4PfmCnVGFQ%2FlhRK79lA%3D%3D",
    "doc": "2026-a3508a47-b94e-4101-ac0b-6e95e80df67b"
+  },
+  {
+   "crit": "Composición y organización del equipo de trabajo",
+   "max": 12,
+   "exp": "p:19403712",
+   "ref": "260086",
+   "title": "Servicio de gestión continua de la liquidación de la producción eléctrica a partir de renovables, cogeneración y residuos, facturación en no",
+   "buyer": "Presidencia de la Comisión Nacional de los Mercados y la Competencia",
+   "nuts": "ES300",
+   "date": "2026-07-28",
+   "offers": 1,
+   "top": {
+    "pts": 9.6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Perfiles que superan ampliamente la experiencia exigida",
+    "Plan de Gestión del Conocimiento y plan de cobertura de suplencias",
+    "Se valora la escalabilidad horizontal y vertical"
+   ],
+   "weak": [
+    "No detalla las asignaciones precisas de cometidos entre los miembros del equipo",
+    "Reconfiguración dinámica descrita sin concreción operativa"
+   ],
+   "hypothesis": {
+    "premia": "Concretar asignaciones de cometidos entre miembros del equipo, además de perfiles y experiencia",
+    "penaliza": "Describir modelos de flexibilidad o reconfiguración sin detallar asignaciones precisas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=do7wgSR0L5cwYTJJ03sHog%3D%3D",
+   "doc": "2026-8403a941-8961-4960-94fb-d2c30b9c73a5"
+  },
+  {
+   "crit": "Procedimientos para la adaptación a los cambios normativos",
+   "max": 8,
+   "exp": "p:19403712",
+   "ref": "260086",
+   "title": "Servicio de gestión continua de la liquidación de la producción eléctrica a partir de renovables, cogeneración y residuos, facturación en no",
+   "buyer": "Presidencia de la Comisión Nacional de los Mercados y la Competencia",
+   "nuts": "ES300",
+   "date": "2026-07-28",
+   "offers": 1,
+   "top": {
+    "pts": 4.8,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Metodología iterativa con TDD y Shift to Left",
+    "Distingue adaptaciones ordinarias y extraordinarias"
+   ],
+   "weak": [
+    "Descripción de carácter general sin adaptarse a las particularidades del proyecto",
+    "Sin procedimientos separados para régimen retributivo y garantías de origen"
+   ],
+   "hypothesis": {
+    "premia": "Metodologías adaptadas a las particularidades del proyecto y procedimientos separados según tipo de cambio normativo",
+    "penaliza": "Metodologías de carácter general y tratamiento unificado de los distintos cambios normativos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=do7wgSR0L5cwYTJJ03sHog%3D%3D",
+   "doc": "2026-8403a941-8961-4960-94fb-d2c30b9c73a5"
+  },
+  {
+   "crit": "Condiciones de recepción y entrega del servicio",
+   "max": 8,
+   "exp": "p:19403712",
+   "ref": "260086",
+   "title": "Servicio de gestión continua de la liquidación de la producción eléctrica a partir de renovables, cogeneración y residuos, facturación en no",
+   "buyer": "Presidencia de la Comisión Nacional de los Mercados y la Competencia",
+   "nuts": "ES300",
+   "date": "2026-07-28",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Ciclo completo de liquidación sin paralelos previos",
+    "Listado de riesgos con categoría, responsable y medidas"
+   ],
+   "weak": [
+    "Descripción general de tareas sin suficiente detalle",
+    "Planificación de arranque y devolución poco detallada"
+   ],
+   "hypothesis": {
+    "premia": "Planificación detallada de tareas y responsables de arranque y devolución, con riesgos identificados y mitigados",
+    "penaliza": "Descripciones generales de tareas sin detalle suficiente"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=do7wgSR0L5cwYTJJ03sHog%3D%3D",
+   "doc": "2026-8403a941-8961-4960-94fb-d2c30b9c73a5"
+  },
+  {
+   "crit": "Condiciones de ejecución y aseguramiento de la calidad",
+   "max": 16,
+   "exp": "p:19403712",
+   "ref": "260086",
+   "title": "Servicio de gestión continua de la liquidación de la producción eléctrica a partir de renovables, cogeneración y residuos, facturación en no",
+   "buyer": "Presidencia de la Comisión Nacional de los Mercados y la Competencia",
+   "nuts": "ES300",
+   "date": "2026-07-28",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Modelo predictivo basado en datos históricos para estimar esfuerzos",
+    "Marco de control alineado con ISO/IEC 25000 y automatización con integración continua"
+   ],
+   "weak": [
+    "No se detallan los KPIs para este proyecto concreto",
+    "Mejora continua descrita de forma amplia pero sin concreción"
+   ],
+   "hypothesis": {
+    "premia": "Indicadores clave (KPIs) concretos para el proyecto y herramientas de calidad aplicadas al caso",
+    "penaliza": "Metodologías genéricas de calidad y mejora continua sin indicadores específicos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=do7wgSR0L5cwYTJJ03sHog%3D%3D",
+   "doc": "2026-8403a941-8961-4960-94fb-d2c30b9c73a5"
+  },
+  {
+   "crit": "Plataforma de facturación",
+   "max": 5,
+   "exp": "p:19403712",
+   "ref": "260086",
+   "title": "Servicio de gestión continua de la liquidación de la producción eléctrica a partir de renovables, cogeneración y residuos, facturación en no",
+   "buyer": "Presidencia de la Comisión Nacional de los Mercados y la Competencia",
+   "nuts": "ES300",
+   "date": "2026-07-28",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Uso del servicio e-Factura de SERES con capacidad de más de un millón de facturas anuales",
+    "Desarrollos para adaptarse a la normativa Crea y Crece"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Plataforma con capacidad dimensionada y cumplimiento de la normativa aplicable",
+    "penaliza": "No consta en el informe un aspecto concreto que penalice"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=do7wgSR0L5cwYTJJ03sHog%3D%3D",
+   "doc": "2026-8403a941-8961-4960-94fb-d2c30b9c73a5"
+  },
+  {
+   "crit": "Calidad de la solución técnica",
+   "max": 49,
+   "exp": "p:18721870",
+   "ref": "202505PAO023",
+   "title": "Servicios de desarrollo en el ámbito de los casos de uso de analítica avanzada del Ministerio de Sanidad",
+   "buyer": "Junta de Contratación del Ministerio de Sanidad",
+   "nuts": "ES300",
+   "date": "2026-06-24",
+   "offers": 6,
+   "top": {
+    "pts": 49,
+    "winner": true
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Análisis detallado con contexto normativo, EHDS, rol OAD y arquitectura.",
+    "Estimador específico y KPIs detallados basados en CRISP-DM.",
+    "Productividad y despliegue minuciosos, con apoyo a microservicios.",
+    "Análisis detallado de contexto, normativa, EHDS y rol OAD.",
+    "Gran variedad de casos de uso con agentes automatizados."
+   ],
+   "weak": [
+    "Propone SAS Viya, que no es objeto de este lote, sin coherencia.",
+    "No aporta información sobre productividad ni mecanismos de despliegue.",
+    "Modelo organizativo muy limitado y gestión de la calidad muy genérica."
+   ],
+   "hypothesis": {
+    "premia": "Análisis detallado del contexto (normativa, EHDS, rol OAD, arquitectura), líneas de trabajo y nuevas propuestas, junto con detalle en gestión de entregas, productividad, despliegue y transferencia.",
+    "penaliza": "Análisis superficial del contexto, falta de adaptación al contrato, ausencia o incoherencia de herramientas específicas del lote, y carencias en modelo organizativo, productividad o transferencia."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iHvDAp4RpCOP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-261aec81-46f2-4235-8d55-1d1a1431f151"
+  },
+  {
+   "crit": "Calidad de la solución técnica",
+   "max": 49,
+   "exp": "p:18721870",
+   "ref": "202505PAO023",
+   "title": "Servicios de desarrollo en el ámbito de los casos de uso de analítica avanzada del Ministerio de Sanidad",
+   "buyer": "Junta de Contratación del Ministerio de Sanidad",
+   "nuts": "ES300",
+   "date": "2026-06-24",
+   "offers": 1,
+   "top": {
+    "pts": 48,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Análisis detallado del ámbito, contexto normativo, arquitectura SAS Viya y estándares OMOP y MLOps.",
+    "Gestión de entregas con KPIs basados en PMBOK y estimador específico de tareas y plazos.",
+    "Escalabilidad en picos de demanda y plan de transferencia de servicio tratado con precisión."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Profundidad del análisis, detalle metodológico y de arquitectura, diagramas explicativos y alternativas para nuevas líneas de trabajo.",
+    "penaliza": "No consta en el documento; la única oferta valorada obtuvo la banda de trato en detalle."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iHvDAp4RpCOP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-aae25042-a0cd-40dd-8e31-2242fdd5fcee"
   },
   {
    "crit": "SUBCRITERIO 1.1.- MODELO DE PLANIFICACIÓN Y APLICACIÓN DE ESTÁNDARES",
@@ -974,6 +1762,244 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kwP%2B87%2BAxEqTylGzYmBF9Q%3D%3D",
    "doc": "2026-334b104f-56f5-46a0-a59a-e556cc03764d"
+  },
+  {
+   "crit": "2.1. Descripción de los servicios ofertados",
+   "max": 5,
+   "exp": "p:18701872",
+   "ref": "SC 61/2025",
+   "title": "Servicios gestionados de asistencia técnica informática, sistemas, comunicaciones y seguridad de la infraestructura informática municipal, a",
+   "buyer": "Alcaldia del Ayuntamiento de San Fernando",
+   "nuts": "ES612",
+   "date": "2026-06-04",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Desarrollo muy detallado de alcance, metodología, ITIL, ANS y catálogo de servicios.",
+    "Incluye modelo SPOC, ServiceNow, monitorización avanzada, IA y enfoque de mejora continua."
+   ],
+   "weak": [
+    "No se citan carencias explícitas en el informe."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=wqZ37OaURWCHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-622b7f12-71e1-44ab-b4dd-55ac7b92909b"
+  },
+  {
+   "crit": "2.2. Medios Materiales",
+   "max": 5,
+   "exp": "p:18701872",
+   "ref": "SC 61/2025",
+   "title": "Servicios gestionados de asistencia técnica informática, sistemas, comunicaciones y seguridad de la infraestructura informática municipal, a",
+   "buyer": "Alcaldia del Ayuntamiento de San Fernando",
+   "nuts": "ES612",
+   "date": "2026-06-04",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Equipamiento propio, herramientas de monitorización, control remoto y contact center cloud.",
+    "Medios calificados como suficientes y técnicamente adecuados para la operativa municipal."
+   ],
+   "weak": [
+    "El informe no justifica la diferencia de un punto respecto al máximo."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=wqZ37OaURWCHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-622b7f12-71e1-44ab-b4dd-55ac7b92909b"
+  },
+  {
+   "crit": "2.3. Organización y equipo de trabajo",
+   "max": 5,
+   "exp": "p:18701872",
+   "ref": "SC 61/2025",
+   "title": "Servicios gestionados de asistencia técnica informática, sistemas, comunicaciones y seguridad de la infraestructura informática municipal, a",
+   "buyer": "Alcaldia del Ayuntamiento de San Fernando",
+   "nuts": "ES612",
+   "date": "2026-06-04",
+   "offers": 1,
+   "top": {
+    "pts": 4.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Organigrama completo, equipo de plantilla sin subcontratación y modelo FTE.",
+    "Plan de refuerzos y sustituciones y certificaciones relevantes como ITIL o Microsoft."
+   ],
+   "weak": [
+    "El informe no detalla el cálculo de las 225 jornadas anuales ni la dedicación individual."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=wqZ37OaURWCHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-622b7f12-71e1-44ab-b4dd-55ac7b92909b"
+  },
+  {
+   "crit": "2.4. Descripción de la implementación de las fases del servicio",
+   "max": 10,
+   "exp": "p:18701872",
+   "ref": "SC 61/2025",
+   "title": "Servicios gestionados de asistencia técnica informática, sistemas, comunicaciones y seguridad de la infraestructura informática municipal, a",
+   "buyer": "Alcaldia del Ayuntamiento de San Fernando",
+   "nuts": "ES612",
+   "date": "2026-06-04",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Plan de transición de 2 meses con hitos, Service Manager y reuniones semanales.",
+    "Fase de devolución estructurada con test de madurez y transferencia de activos."
+   ],
+   "weak": [
+    "Las medidas de arranque y plazos hasta operatividad del 100% no se detallan de forma explícita."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=wqZ37OaURWCHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-622b7f12-71e1-44ab-b4dd-55ac7b92909b"
+  },
+  {
+   "crit": "2.5. Gestión del servicio",
+   "max": 15,
+   "exp": "p:18701872",
+   "ref": "SC 61/2025",
+   "title": "Servicios gestionados de asistencia técnica informática, sistemas, comunicaciones y seguridad de la infraestructura informática municipal, a",
+   "buyer": "Alcaldia del Ayuntamiento de San Fernando",
+   "nuts": "ES612",
+   "date": "2026-06-04",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Comités estratégico, ejecutivo y de seguimiento con periodicidad y funciones definidas.",
+    "Reporting, ciclo Deming y cuadro de mandos en tiempo real con ServiceNow."
+   ],
+   "weak": [
+    "El apoyo a nuevos servicios se limita a una PMO de rol metodológico sin responsabilidad operativa."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=wqZ37OaURWCHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-622b7f12-71e1-44ab-b4dd-55ac7b92909b"
+  },
+  {
+   "crit": "1. Plan de trabajo",
+   "max": 15,
+   "exp": "p:18972600",
+   "ref": "25/107/3",
+   "title": "Servicios de desarrollo y suministro de la plataforma para la implantación de la nueva generación de portales web de EMT de Madrid (2 Lotes)",
+   "buyer": "Empresa Municipal de Transportes de Madrid, S.A.",
+   "nuts": "ES300",
+   "date": "2026-06-04",
+   "offers": 12,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Diseño centrado en las personas con metodología definida por fases.",
+    "Arquitectura basada en mecanismos estándar de Liferay (Client Extensions) sin dependencias obsoletas.",
+    "Descripción exhaustiva de componentes, integraciones, autenticación y roles por portal.",
+    "Arquitectura por sites con contenidos reutilizables y Client Extensions para integración.",
+    "Tablas de componentes nativos por portal y por funcionalidad."
+   ],
+   "weak": [
+    "Descripción genérica de Liferay sin correspondencia con los portales actuales.",
+    "No responde técnica ni funcionalmente a cómo desarrollar cada portal.",
+    "Objetivos de estandarización sin explicar cómo se alcanzan en cada portal."
+   ],
+   "hypothesis": {
+    "premia": "Personalización al pliego con referencias concretas a cada portal, tablas de componentes Liferay por funcionalidad y arquitectura detallada, frente a descripciones genéricas del producto.",
+    "penaliza": "Descripciones teóricas o genéricas de Liferay, falta de correspondencia con los portales, y migración de contenidos sin detalle sobre quién, cómo y cuándo."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KBkKpcbhySE%2Bk2oCbDosIw%3D%3D",
+   "doc": "2026-210771c7-2046-4674-8799-7fb5206a4f6e"
+  },
+  {
+   "crit": "2. Plan de ejecución",
+   "max": 10,
+   "exp": "p:18972600",
+   "ref": "25/107/3",
+   "title": "Servicios de desarrollo y suministro de la plataforma para la implantación de la nueva generación de portales web de EMT de Madrid (2 Lotes)",
+   "buyer": "Empresa Municipal de Transportes de Madrid, S.A.",
+   "nuts": "ES300",
+   "date": "2026-06-04",
+   "offers": 12,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Cinco fases, incluyendo trabajos preliminares y transferencia de conocimiento.",
+    "Puesta en producción y posible vuelta atrás descritas con detalle.",
+    "Cronograma con todas las fases y actividades.",
+    "Plan orientado a construir y poner en marcha los tres portales en un año.",
+    "Tres fases claras con sprints de dos semanas y despliegue separado por portal."
+   ],
+   "weak": [
+    "Escala mensual que resta precisión y no presenta soporte único para el arranque."
+   ],
+   "hypothesis": {
+    "premia": "Cronogramas y tiempos diferenciados por portal, con detalle de tareas, participación de equipos de EMT y del adjudicatario, y puesta en producción y vuelta atrás descritas.",
+    "penaliza": "Cronogramas en escala mensual o idénticos para los tres portales, evolutivos bloqueados durante la garantía y falta de detalle en la puesta en producción."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KBkKpcbhySE%2Bk2oCbDosIw%3D%3D",
+   "doc": "2026-210771c7-2046-4674-8799-7fb5206a4f6e"
+  },
+  {
+   "crit": "Organización del equipo de trabajo",
+   "max": 5,
+   "exp": "p:9837752",
+   "ref": "SER-02-2022-TF",
+   "title": "Servicio integral de mantenimiento del Sistema de Información del Servicio Público de Empleo de Canarias (SISPECAN) y mantenimiento de la in",
+   "buyer": "Servicio Canario de Empleo",
+   "nuts": "ES70",
+   "date": "2022-08-19",
+   "offers": 3,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2.97
+   },
+   "best": [
+    "Modelo de relación entre equipos de plataforma y de negocio que facilita la transición de cambios",
+    "Catálogo de servicios detallado y plan de mejora de empleabilidad multiárea",
+    "Comité de seguimiento cuatrimestral, reuniones one-to-one y Responsable de Calidad ajeno al equipo",
+    "Configuración de equipos basada en DevOps, con equipos de negocio y de plataforma",
+    "Modelo de reporte a varios niveles con tendencias, time-to-market, calidad, seguridad y testing"
+   ],
+   "weak": [
+    "Distribución de equipos continuista, sin valor añadido e inconsistente con el equipo del pliego",
+    "Sin método ni criterios para la selección del equipo de trabajo",
+    "Seguimiento del ANS basado en Jira Service Desk, sin licenciamiento actual, y calidad descrita de forma general",
+    "Distribución de equipos continuista respecto a la situación actual",
+    "Equipo transversal sin componente de negocio definida"
+   ],
+   "hypothesis": {
+    "premia": "Propuestas concretas de relación entre equipos de plataforma y de negocio, catálogo de servicios, plan de empleabilidad y comités de seguimiento con perfil de calidad, frente a propuestas continuistas o genéricas.",
+    "penaliza": "Distribuciones de equipos continuistas, falta de detalle en la ejecución de la propuesta, periodicidades o planificaciones poco adecuadas y ausencia de método para las decisiones clave."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=w7M8zLsxoVyrz3GQd5r6SQ%3D%3D",
+   "doc": "fc66cef2-2577-4365-a233-affbfce6e0b7"
   }
  ]
 }

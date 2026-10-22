@@ -1,8 +1,58 @@
 {
  "cpv2": "30",
- "generated": "2026-10-22T14:39:58.992Z",
+ "generated": "2026-10-22T18:50:13.982Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "2.1 Propuesta técnica",
+   "max": 15,
+   "exp": "p:20014889",
+   "ref": "442/2026",
+   "title": "Contrato de suministro informático y soporte tecnológico para la organización de la 71ª edición de la SEMINCI (Festival Internacional de Cin",
+   "buyer": "Presidencia de la Fundación Municipal de Cultura",
+   "nuts": "ES418",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 14,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Ejecución en 6 fases con actuaciones preparatorias y tabla de hitos con evidencias de control verificables.",
+    "Línea Base de configuraciones e imágenes homogéneas; borrado seguro con certificados al cierre.",
+    "Enlaces oficiales a fichas técnicas y de soporte de cada equipo ofertado."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=LhY9kUsXEFWkU02jNGj1Fw%3D%3D",
+   "doc": "2026-d407954f-40b4-441e-915a-50e3831f8869"
+  },
+  {
+   "crit": "2.2. Organización operativa interna. Seguimiento y control. Relación con las áreas del Festival",
+   "max": 15,
+   "exp": "p:20014889",
+   "ref": "442/2026",
+   "title": "Contrato de suministro informático y soporte tecnológico para la organización de la 71ª edición de la SEMINCI (Festival Internacional de Cin",
+   "buyer": "Presidencia de la Fundación Municipal de Cultura",
+   "nuts": "ES418",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 14,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Interlocutor único y dos técnicos con liderazgo funcional diferenciado y apoyo cruzado.",
+    "Experiencia previa en SEMINCI del coordinador (7 años) y de los técnicos (3 y 5 años).",
+    "Parte diario de 8 bloques, indicadores objetivos y procedimiento formal de resolución de conflictos."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=LhY9kUsXEFWkU02jNGj1Fw%3D%3D",
+   "doc": "2026-d407954f-40b4-441e-915a-50e3831f8869"
+  },
   {
    "crit": "1.a. Capacidad",
    "max": 7.5,
@@ -176,6 +226,77 @@
    "hypothesis": null,
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2BPR1A34fgiZ%2BF6L2uCfUWg%3D%3D",
    "doc": "2026-1f478eb7-3c23-4dd2-9aea-5789e7f30bea"
+  },
+  {
+   "crit": "Subcriterio A1. Claridad y coherencia visual",
+   "max": 15,
+   "exp": "p:19714836",
+   "ref": "2025/0304",
+   "title": "Suministro en arrendamiento sin opción de compra, instalación, puesta en marcha y mantenimiento integral de un sistema unificado de gestión ",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Leganés",
+   "nuts": "ES300",
+   "date": "2026-09-01",
+   "offers": 4,
+   "top": {
+    "pts": 13,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Estructura visual ordenada y coherente en portal, app, tótem, pantallas, videowall y terminal de gestor.",
+    "Posibilidad de adaptación a imagen institucional (logotipos, colores, tipografías).",
+    "Estructura visual limpia, moderna y homogénea en portal web, app y pantallas multimedia.",
+    "Tótem de autoservicio con botonera parametrizable en colores e iconos."
+   ],
+   "weak": [
+    "Documentación descriptiva y comercial con afirmaciones genéricas no contrastadas.",
+    "No acredita navegación práctica ni experiencia real homogénea entre dispositivos.",
+    "Descripción parcialmente genérica.",
+    "No acredita implantación visual específica sobre todos los flujos reales del Ayuntamiento."
+   ],
+   "hypothesis": {
+    "premia": "Estructura visual coherente y homogénea en todos los canales (web, app, tótem, pantallas) y personalización con la imagen institucional, con concreción frente a afirmaciones genéricas.",
+    "penaliza": "Descripciones genéricas o comerciales sin acreditar implantación real, incoherencia visual entre canales y una interfaz de gestor desactualizada o poco uniforme."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iwmKAjTMrwceC9GJQOEBkQ%3D%3D",
+   "doc": "2026-76feb144-b209-41a6-aaf6-fc7e0f679ce4"
+  },
+  {
+   "crit": "Subcriterio A2. Facilidad de uso y comprensión",
+   "max": 15,
+   "exp": "p:19714836",
+   "ref": "2025/0304",
+   "title": "Suministro en arrendamiento sin opción de compra, instalación, puesta en marcha y mantenimiento integral de un sistema unificado de gestión ",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Leganés",
+   "nuts": "ES300",
+   "date": "2026-09-01",
+   "offers": 4,
+   "top": {
+    "pts": 13,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Navegación guiada, reducción de pasos y validación mediante QR, DNI o localizador.",
+    "Mensajes claros, avisos visuales y sonoros, adaptación a móvil y criterios de accesibilidad.",
+    "Alta fluidez de navegación y lenguaje claro con mensajes comprensibles.",
+    "Ayudas visuales, confirmaciones inmediatas y reducción de pasos innecesarios."
+   ],
+   "weak": [
+    "El vídeo supera 10 MB y no puede abrirse ni reproducirse en los sistemas municipales.",
+    "Sin vídeo no se puede comprobar usabilidad; puntuado con 0 (sin valorar).",
+    "No demuestra con detalle una interfaz excepcionalmente intuitiva en el terminal de gestor."
+   ],
+   "hypothesis": {
+    "premia": "Navegación guiada, reducción de pasos, mensajes claros, confirmaciones visuales y sonoras y variedad de canales accesibles.",
+    "penaliza": "Falta de demostración de la navegación (CR TECNO con vídeo no reproducible, puntuado con 0), y consola de gestor poco intuitiva."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iwmKAjTMrwceC9GJQOEBkQ%3D%3D",
+   "doc": "2026-76feb144-b209-41a6-aaf6-fc7e0f679ce4"
   },
   {
    "crit": "Funcionalidades técnicas del sistema",

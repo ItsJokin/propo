@@ -1,0 +1,222 @@
+{
+ "cpv2": "66",
+ "generated": "2026-10-22T18:50:13.987Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Modelo de atención inmediata",
+   "max": 20,
+   "exp": "p:19972062",
+   "ref": "CM 43/26",
+   "title": "Servicio de mediación, asistencia y asesoramiento profesional en los seguros privados que concierte la Sociedad Pública de Gestión y Promoci",
+   "buyer": "Sociedad Pública de Gestión y Promoción Turística y Cultural del Principado de Asturias S.A.U.",
+   "nuts": "ES120",
+   "date": "2026-08-28",
+   "offers": 4,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Diez oficinas propias exclusivas de correduría y cobertura zonal amplia",
+    "Más de treinta profesionales y protocolos para siniestros complejos",
+    "Medios acreditados mediante contratos y escrituras en el anexo",
+    "Dos oficinas propias y exclusivas en Oviedo y Gijón, solo de correduría",
+    "Atención presencial comprometida, con apoyo telefónico y por videoconferencia"
+   ],
+   "weak": [
+    "La oficina en Oviedo se refiere pero no se acredita",
+    "No se aporta la documentación ni el anexo de acreditación de medios"
+   ],
+   "hypothesis": {
+    "premia": "Implantación territorial propia y exclusiva de correduría, con medios acreditados documentalmente y protocolos presenciales para la entidad y perjudicados.",
+    "penaliza": "Medios referidos pero no acreditados, uso de enlaces externos o falta de documentación exigida en el anexo de medios materiales."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=mWzH1PkVtkaFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-49f89547-fe1e-4321-bbdd-6a0a002d72b0"
+  },
+  {
+   "crit": "Servicio de asesoría y gestión de pólizas",
+   "max": 10,
+   "exp": "p:19972062",
+   "ref": "CM 43/26",
+   "title": "Servicio de mediación, asistencia y asesoramiento profesional en los seguros privados que concierte la Sociedad Pública de Gestión y Promoci",
+   "buyer": "Sociedad Pública de Gestión y Promoción Turística y Cultural del Principado de Asturias S.A.U.",
+   "nuts": "ES120",
+   "date": "2026-08-28",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Análisis específico de los mapas de riesgos de cada equipamiento",
+    "Apoyo en contratación que abarca todo el ciclo del expediente",
+    "Seguimiento mediante Dossier Técnico y propuestas de mejora continua",
+    "Auditoría inicial y Plan Integral de Seguros con hoja de ruta",
+    "Compromisos de servicio con tiempos de respuesta e informes trimestrales"
+   ],
+   "weak": [
+    "El nivel de definición de procesos y herramientas añade poco al mínimo del PPT"
+   ],
+   "hypothesis": {
+    "premia": "Metodología completa y personalizada a los equipamientos de la entidad, con apoyo a la contratación que cubre todo el ciclo y seguimiento estructurado.",
+    "penaliza": "Descripción con poco detalle sobre procesos y herramientas, que se limita a añadir poco al mínimo del pliego."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=mWzH1PkVtkaFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-49f89547-fe1e-4321-bbdd-6a0a002d72b0"
+  },
+  {
+   "crit": "CS1. Procedimientos ante propuestas de aseguramiento y asistencia en su contratación y posterior seguimiento",
+   "max": 15,
+   "exp": "p:19806474",
+   "ref": "63/2026",
+   "title": "Servicios de mediacion y asesoramiento preparatorios de la formalizacion de los contratos de seguros privados de esta entidad, asI como la p",
+   "buyer": "Consejo de Administración de la Empresa Municipal de la Vivienda de Rivas Vaciamadrid, S.A.",
+   "nuts": "ES300",
+   "date": "2026-08-10",
+   "offers": 1,
+   "top": {
+    "pts": 14,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Procedimiento estructurado: identificación de riesgos, mapas, análisis de pólizas y acompañamiento técnico.",
+    "Metodología completa, coherente y adaptada a una entidad del sector público."
+   ],
+   "weak": [
+    "Ausencia de indicadores objetivos de calidad o compromisos de nivel de servicio (SLA).",
+    "Falta definición de tiempos máximos de respuesta por fase."
+   ],
+   "hypothesis": {
+    "premia": "Procedimiento secuenciado y estructurado, que va más allá de la descripción genérica de funciones y se adapta al sector público.",
+    "penaliza": "Falta de SLA, indicadores objetivos y tiempos máximos de respuesta por fase."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=jFYbN3l5m4aGCFcHcNGIlQ%3D%3D",
+   "doc": "2026-3f7f6e6d-a605-4bf9-bc22-34f8980d17f2"
+  },
+  {
+   "crit": "CS2. Seguimiento de la siniestralidad: tareas y flujos",
+   "max": 15,
+   "exp": "p:19806474",
+   "ref": "63/2026",
+   "title": "Servicios de mediacion y asesoramiento preparatorios de la formalizacion de los contratos de seguros privados de esta entidad, asI como la p",
+   "buyer": "Consejo de Administración de la Empresa Municipal de la Vivienda de Rivas Vaciamadrid, S.A.",
+   "nuts": "ES300",
+   "date": "2026-08-10",
+   "offers": 1,
+   "top": {
+    "pts": 14,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Procedimiento integral de gestión del siniestro con protocolos según el tipo de riesgo.",
+    "Diagrama gráfico del flujo de tramitación y referencias normativas expresas.",
+    "Enfoque preventivo con análisis periódico de siniestralidad."
+   ],
+   "weak": [
+    "No incorpora indicadores cuantificables de eficacia (plazos medios, porcentajes, satisfacción)."
+   ],
+   "hypothesis": {
+    "premia": "Protocolos diferenciados por tipo de riesgo, diagramas de flujo y enfoque preventivo.",
+    "penaliza": "Ausencia de indicadores cuantificables que midan la eficacia del servicio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=jFYbN3l5m4aGCFcHcNGIlQ%3D%3D",
+   "doc": "2026-3f7f6e6d-a605-4bf9-bc22-34f8980d17f2"
+  },
+  {
+   "crit": "CS3. Gestión de pólizas y recibos. Altas, bajas, suplementos y modificaciones",
+   "max": 15,
+   "exp": "p:19806474",
+   "ref": "63/2026",
+   "title": "Servicios de mediacion y asesoramiento preparatorios de la formalizacion de los contratos de seguros privados de esta entidad, asI como la p",
+   "buyer": "Consejo de Administración de la Empresa Municipal de la Vivienda de Rivas Vaciamadrid, S.A.",
+   "nuts": "ES300",
+   "date": "2026-08-10",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Procedimientos sistemáticos de altas, bajas, suplementos y recibos con formularios tipo.",
+    "Integración entre gestión administrativa y control técnico del aseguramiento."
+   ],
+   "weak": [
+    "Contenido más convencional, centrado en la descripción procedimental.",
+    "Sin indicadores de gestión ni cuadros de mando para seguimiento continuo."
+   ],
+   "hypothesis": {
+    "premia": "Formularios tipo, validación previa y coordinación con responsables y aseguradoras.",
+    "penaliza": "Descripción procedimental convencional sin cuadros de mando ni indicadores de gestión."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=jFYbN3l5m4aGCFcHcNGIlQ%3D%3D",
+   "doc": "2026-3f7f6e6d-a605-4bf9-bc22-34f8980d17f2"
+  },
+  {
+   "crit": "Calidad y amplitud asistencial de facultativos de las distintas especialidades",
+   "max": 30,
+   "exp": "p:19931078",
+   "ref": "2026-049",
+   "title": "Póliza médica de seguro colectivo de asistencia sanitaria para los empleados de la Autoridad Portuaria de la Bahía de Algeciras",
+   "buyer": "Presidencia de la Autoridad Portuaria de la Bahía de Algeciras",
+   "nuts": "ES612",
+   "date": "2026-08-06",
+   "offers": 1,
+   "top": {
+    "pts": 26,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Amplio directorio de cuadro médico",
+    "Adecuada amplitud en especialidades y número de profesionales por especialidad",
+    "Acorde con las coberturas de la póliza y el PPT"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Amplio directorio de cuadro médico, adecuada amplitud en especialidades y número de profesionales por especialidad, acorde con la póliza y el PPT",
+    "penaliza": "No consta en el documento"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kbeECaSG0b8wYTJJ03sHog%3D%3D",
+   "doc": "2026-92a4ceb5-16be-4e26-88c4-7af76ac83746"
+  },
+  {
+   "crit": "Calidad y amplitud en la propuesta de centros hospitalarios y clínicas",
+   "max": 19,
+   "exp": "p:19931078",
+   "ref": "2026-049",
+   "title": "Póliza médica de seguro colectivo de asistencia sanitaria para los empleados de la Autoridad Portuaria de la Bahía de Algeciras",
+   "buyer": "Presidencia de la Autoridad Portuaria de la Bahía de Algeciras",
+   "nuts": "ES612",
+   "date": "2026-08-06",
+   "offers": 1,
+   "top": {
+    "pts": 17,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Amplia oferta de centros hospitalarios y clínicas",
+    "Buena cobertura en Campo de Gibraltar, Cádiz, Sevilla y Málaga",
+    "Diversidad de especialidades en cada centro; valoración positiva de centros en el resto de España"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Amplia oferta de centros, buena cobertura en Campo de Gibraltar, Cádiz, Sevilla y Málaga, y diversidad de especialidades por centro",
+    "penaliza": "No consta en el documento"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kbeECaSG0b8wYTJJ03sHog%3D%3D",
+   "doc": "2026-92a4ceb5-16be-4e26-88c4-7af76ac83746"
+  }
+ ]
+}

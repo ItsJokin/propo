@@ -1,8 +1,40 @@
 {
  "cpv2": "65",
- "generated": "2026-10-22T14:39:58.993Z",
+ "generated": "2026-10-22T18:50:13.985Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Memoria Técnica descriptiva",
+   "max": 20,
+   "exp": "p:19918076",
+   "ref": "2026/70",
+   "title": "Servicio de mantenimiento y supervisión de depósitos de agua, ETAPS e instalaciones accesorios de la red municipal de agua de Valle de Villa",
+   "buyer": "Pleno del Ayuntamiento de Valle de Villaverde",
+   "nuts": "ES130",
+   "date": "2026-08-19",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Describe bien a nivel generalista el funcionamiento y marco del desarrollo del servicio.",
+    "Se concreta la disposición de personal conforme al pliego.",
+    "Puntos estructurados del pliego atendidos; memoria admitida con mínimo aprobable."
+   ],
+   "weak": [
+    "No asigna tareas concretas a los operarios para resolver averías.",
+    "Maquinaria descrita de forma genérica, sin asignación concreta.",
+    "Sin cuadros de salarios ni resolución inmediata de bajas laborales; falta plan de inversiones y mantenimiento."
+   ],
+   "hypothesis": {
+    "premia": "Concreción a la realidad de las instalaciones y compromiso aplicado, frente al contenido generalista.",
+    "penaliza": "Descripción genérica de maquinaria, falta de asignación de tareas, ausencia de cuadros salariales y de solución a bajas, y carencia de plan de inversiones."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=7gFhud7P0siGCFcHcNGIlQ%3D%3D",
+   "doc": "2026-ea5f325e-8b7a-4540-8465-cfe4ec008d5e"
+  },
   {
    "crit": "Propuesta de mantenimiento",
    "max": 15,

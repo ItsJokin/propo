@@ -1,0 +1,105 @@
+{
+ "cpv2": "22",
+ "generated": "2026-10-22T18:50:13.987Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Aspectos organizativos orientados a la calidad y rapidez en el servicio a los usuarios",
+   "max": 25,
+   "exp": "p:3640677",
+   "ref": "E-CON-2019-28",
+   "title": "Servicio de Reprografía del Aulario General Campus de la Merced",
+   "buyer": "Rectorado de la Universidad de Murcia",
+   "nuts": "ES620",
+   "date": "2019-09-05",
+   "offers": 2,
+   "top": {
+    "pts": 21,
+    "winner": false
+   },
+   "low": {
+    "pts": 16
+   },
+   "best": [
+    "Horario de mañana y tarde ajustado al calendario oficial del curso académico.",
+    "Dos empleados en ambas franjas, uno técnico reparador que evita depender de servicios externos.",
+    "Servicio de pedidos de impresión por internet con pago seguro online.",
+    "Amplio horario de mañana (8:15-14:00) y tarde (15:30-20:00).",
+    "Dos empleados por la mañana y uno por la tarde."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Horario amplio ajustado al calendario académico, personal en ambas franjas, técnico reparador propio y pedidos online con pago seguro.",
+    "penaliza": "Menos personal por la tarde y no se menciona técnico reparador propio ni pago seguro online."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=cdjQ1UT6Zbimq21uxhbaVQ%3D%3D",
+   "doc": "d063e16e-8b25-456d-84b4-3add57031ee6"
+  },
+  {
+   "crit": "Calidad del servicio en función del mobiliario y equipamiento aportado",
+   "max": 15,
+   "exp": "p:3640677",
+   "ref": "E-CON-2019-28",
+   "title": "Servicio de Reprografía del Aulario General Campus de la Merced",
+   "buyer": "Rectorado de la Universidad de Murcia",
+   "nuts": "ES620",
+   "date": "2019-09-05",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": false
+   },
+   "low": {
+    "pts": 15
+   },
+   "best": [
+    "Distribución del mobiliario adaptada al local, detallada en plano.",
+    "Especifica marca y modelo; incluye una fotocopiadora adicional.",
+    "Dispone de 3 ordenadores para docentes y alumnos y hasta 4 para operadores.",
+    "Cada empleado dispone de una máquina en blanco y negro y otra en color.",
+    "Dos ordenadores para aula virtual y otros dos para impresión por USB y pedidos."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Distribución detallada en plano, especificación de marca y modelo y dotación adicional de equipos (copiadora y ordenadores para docentes, alumnos y operadores).",
+    "penaliza": "Dotación adicional de equipos más limitada y sin plano ni marca y modelo en el informe."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=cdjQ1UT6Zbimq21uxhbaVQ%3D%3D",
+   "doc": "d063e16e-8b25-456d-84b4-3add57031ee6"
+  },
+  {
+   "crit": "Defensa del medio ambiente",
+   "max": 10,
+   "exp": "p:3640677",
+   "ref": "E-CON-2019-28",
+   "title": "Servicio de Reprografía del Aulario General Campus de la Merced",
+   "buyer": "Rectorado de la Universidad de Murcia",
+   "nuts": "ES620",
+   "date": "2019-09-05",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Medidas concretas: Energy Star, desconexión de equipos, reciclaje de tóner, filtros y papel libre de cloro.",
+    "Incluye recogida y gestión de residuos.",
+    "Medidas ajustadas al programa Campus Sostenible.",
+    "Retirada y reciclaje de tóner usados.",
+    "Punto limpio de equipos."
+   ],
+   "weak": [
+    "Solo tres medidas, menos amplias que las propuestas por la oferta mejor puntuada."
+   ],
+   "hypothesis": {
+    "premia": "Amplitud de medidas concretas (Energy Star, desconexión, filtros, residuos, papel sin cloro) alineadas con Campus Sostenible.",
+    "penaliza": "Menor número de medidas, centradas en reciclaje de tóner, punto limpio y contenedor azul."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=cdjQ1UT6Zbimq21uxhbaVQ%3D%3D",
+   "doc": "d063e16e-8b25-456d-84b4-3add57031ee6"
+  }
+ ]
+}

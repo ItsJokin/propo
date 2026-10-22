@@ -1,8 +1,108 @@
 {
  "cpv2": "32",
- "generated": "2026-10-22T14:39:58.993Z",
+ "generated": "2026-10-22T18:50:13.985Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "CRITERIO A.1.a.- Características y Funcionalidades",
+   "max": 15,
+   "exp": "p:19288472",
+   "ref": "2026/208T",
+   "title": "Instalación de un sistema de seguridad ciudadana y de tráfico en el municipio de San Pedro del Pinatar (Murcia), dividido en dos lotes.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de San Pedro del Pinatar",
+   "nuts": "ES620",
+   "date": "2026-07-30",
+   "offers": 3,
+   "top": {
+    "pts": 14.75,
+    "winner": true
+   },
+   "low": {
+    "pts": 13.5
+   },
+   "best": [
+    "Máximo nivel de detalle y referencias exactas de modelos",
+    "Marcas de primer nivel",
+    "Dimensionamiento impecable de almacenamiento y hardware",
+    "Excelente propuesta de software y automatizaciones de cámaras",
+    "Diseño de arquitectura robusto"
+   ],
+   "weak": [
+    "Desglose de hardware de la sala de control algo conceptual"
+   ],
+   "hypothesis": {
+    "premia": "Detalle preciso de modelos, marcas y dimensionamiento de almacenamiento y hardware, junto con la integración de software ya existente en el municipio",
+    "penaliza": "Descripción conceptual o poco detallada del hardware de la sala de control y del videowall"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=G8BLpi537A%2FCfVQHDepjGQ%3D%3D",
+   "doc": "2026-8007d760-b449-4df1-ba97-08c66231e4c5"
+  },
+  {
+   "crit": "CRITERIO A.1.b.- Suministro Eléctrico y Conectividad",
+   "max": 10,
+   "exp": "p:19288472",
+   "ref": "2026/208T",
+   "title": "Instalación de un sistema de seguridad ciudadana y de tráfico en el municipio de San Pedro del Pinatar (Murcia), dividido en dos lotes.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de San Pedro del Pinatar",
+   "nuts": "ES620",
+   "date": "2026-07-30",
+   "offers": 3,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Propuesta insuperable",
+    "Desglose pormenorizado punto por punto",
+    "Acuerdo con operador local que elimina incertidumbre de ejecución",
+    "Brillante en la parte técnica y de ciberseguridad ENS Alto",
+    "Incluye precios y metodologías de ingeniería de gran valor"
+   ],
+   "weak": [
+    "Trazado eléctrico genérico"
+   ],
+   "hypothesis": {
+    "premia": "Desglose pormenorizado, acuerdos con operador local, metodologías de ingeniería y precios de referencia",
+    "penaliza": "Trazado eléctrico genérico, aunque exista redundancia"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=G8BLpi537A%2FCfVQHDepjGQ%3D%3D",
+   "doc": "2026-8007d760-b449-4df1-ba97-08c66231e4c5"
+  },
+  {
+   "crit": "CRITERIO A.1.c.- Plan de Obra, Formación, Mantenimiento y Gestión de Incidencias",
+   "max": 10,
+   "exp": "p:19288472",
+   "ref": "2026/208T",
+   "title": "Instalación de un sistema de seguridad ciudadana y de tráfico en el municipio de San Pedro del Pinatar (Murcia), dividido en dos lotes.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de San Pedro del Pinatar",
+   "nuts": "ES620",
+   "date": "2026-07-30",
+   "offers": 3,
+   "top": {
+    "pts": 9.75,
+    "winner": true
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Formador con CAP/Máster en formación",
+    "Cercanía de la oficina técnica regional",
+    "Transparencia del software GMAO abierto al Ayuntamiento",
+    "Impecable integración de la normativa ambiental de las Salinas",
+    "Stock físico de repuestos en la propia comisaría"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Formación con titulación pedagógica, cercanía de la oficina técnica, transparencia de herramientas y adaptación normativa y logística local",
+    "penaliza": "Los comentarios no señalan penalizaciones específicas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=G8BLpi537A%2FCfVQHDepjGQ%3D%3D",
+   "doc": "2026-8007d760-b449-4df1-ba97-08c66231e4c5"
+  },
   {
    "crit": "Calidad de la solución aportada descrita en la oferta técnica",
    "max": 8,

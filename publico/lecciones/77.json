@@ -1,8 +1,380 @@
 {
  "cpv2": "77",
- "generated": "2026-10-22T14:39:58.994Z",
+ "generated": "2026-10-22T18:50:13.986Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "CR3.1",
+   "max": 14,
+   "exp": "p:19724230",
+   "ref": "230/2025/322",
+   "title": "Servicio de mantenimiento biológico del Aquarium Finisterrae",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 14,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Descripción exhaustiva, ordenada y coherente de tareas, periodicidad, protocolos y distribución de recursos humanos.",
+    "Incorpora cuadrante-tipo y planificación operativa que permiten conocer la ejecución práctica."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Descripción detallada de tareas, periodicidad, protocolos, cuadrante-tipo y planificación operativa.",
+    "penaliza": "Sin penalizaciones señaladas en el informe."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iu%2FWoa8lMZSS81gZFETWmA%3D%3D",
+   "doc": "2026-0f05a818-ee9d-4d4b-bb4a-0a46290ddf5c"
+  },
+  {
+   "crit": "CR3.2",
+   "max": 8,
+   "exp": "p:19724230",
+   "ref": "230/2025/322",
+   "title": "Servicio de mantenimiento biológico del Aquarium Finisterrae",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 5.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Programa formativo estructurado y amplio para personal operativo y veterinario.",
+    "Incluye participación en eventos especializados del sector, como el congreso anual de AIZA."
+   ],
+   "weak": [
+    "No diferencia formación presencial y telemática en la formación general, exigido expresamente por el PCAP.",
+    "Modalidad de algunas acciones solo deducible, no identificada con claridad."
+   ],
+   "hypothesis": {
+    "premia": "Programa formativo amplio con formación específica y participación en eventos del sector.",
+    "penaliza": "No diferenciar formación presencial y telemática, requisito expreso del PCAP."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iu%2FWoa8lMZSS81gZFETWmA%3D%3D",
+   "doc": "2026-0f05a818-ee9d-4d4b-bb4a-0a46290ddf5c"
+  },
+  {
+   "crit": "CR4",
+   "max": 12,
+   "exp": "p:19724230",
+   "ref": "230/2025/322",
+   "title": "Servicio de mantenimiento biológico del Aquarium Finisterrae",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 11.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Amplia oferta de medios adicionales (vehículos, grúa, equipación subacuática, nave, aula) con valor añadido.",
+    "Medios adecuados al objeto del contrato y beneficiosos para la prestación."
+   ],
+   "weak": [
+    "Descripción de los remolques sin el grado de precisión necesario para conocer el alcance de la oferta.",
+    "Falta de claridad en la descripción de uno de los medios ofertados."
+   ],
+   "hypothesis": {
+    "premia": "Medios adicionales amplios y bien descritos en su alcance.",
+    "penaliza": "Descripciones imprecisas sobre el alcance de algún medio ofertado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iu%2FWoa8lMZSS81gZFETWmA%3D%3D",
+   "doc": "2026-0f05a818-ee9d-4d4b-bb4a-0a46290ddf5c"
+  },
+  {
+   "crit": "CR5",
+   "max": 8,
+   "exp": "p:19724230",
+   "ref": "230/2025/322",
+   "title": "Servicio de mantenimiento biológico del Aquarium Finisterrae",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Código ético concreto con compromisos de revisión frecuente, atención inmediata y manejo adecuado de animales.",
+    "Asigna responsabilidades por perfil (veterinario, responsable de equipo, acuaristas) y seguimiento continuado."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Código ético concreto con responsabilidades asignadas por perfil y seguimiento continuado.",
+    "penaliza": "Sin penalizaciones señaladas en el informe."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iu%2FWoa8lMZSS81gZFETWmA%3D%3D",
+   "doc": "2026-0f05a818-ee9d-4d4b-bb4a-0a46290ddf5c"
+  },
+  {
+   "crit": "CR6",
+   "max": 4,
+   "exp": "p:19724230",
+   "ref": "230/2025/322",
+   "title": "Servicio de mantenimiento biológico del Aquarium Finisterrae",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 3.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Solución de fichaje cloud accesible desde ordenador o móvil, sin necesidad de instalar app.",
+    "Garantiza registro diario de inicio y fin de jornada."
+   ],
+   "weak": [
+    "No desarrolla con suficiente detalle los mecanismos de comprobación de la presencia efectiva en el centro de trabajo."
+   ],
+   "hypothesis": {
+    "premia": "Solución de fichaje accesible desde varios dispositivos y registro de jornada.",
+    "penaliza": "Falta de detalle en los mecanismos de comprobación de presencia efectiva."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iu%2FWoa8lMZSS81gZFETWmA%3D%3D",
+   "doc": "2026-0f05a818-ee9d-4d4b-bb4a-0a46290ddf5c"
+  },
+  {
+   "crit": "1.1.1. Planteamiento de la prestación del servicio y forma como se ejecutará",
+   "max": 13,
+   "exp": "p:19655775",
+   "ref": "C4301/2026/000008",
+   "title": "Contrato reservado del servicio de mantenimiento y conservación de jardinería para los centros de Trepucó, el centro de día Bintaufa, el Cen",
+   "buyer": "Consejo Ejecutivo del Consell Insular de Menorca (CIM)",
+   "nuts": "ES533",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 11,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Desarrollo extenso y detallado de cada actuación prevista",
+    "Metodología, frecuencia mínima y medios o maquinaria para cada actuación",
+    "Concreción alta y coherente con el PPT, sin reproducir solo los mínimos"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Desarrollo detallado de cada actuación con metodología, frecuencia y medios o maquinaria",
+    "penaliza": "No consta en el documento"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ZQQPdhlRV2GdkQsA7ROvsg%3D%3D",
+   "doc": "2026-c289ef81-81b3-4783-be97-5b97edef2aa6"
+  },
+  {
+   "crit": "1.1.2. Propuesta de planificación general de las tareas de jardinería a realizar y su periodicidad",
+   "max": 12,
+   "exp": "p:19655775",
+   "ref": "C4301/2026/000008",
+   "title": "Contrato reservado del servicio de mantenimiento y conservación de jardinería para los centros de Trepucó, el centro de día Bintaufa, el Cen",
+   "buyer": "Consejo Ejecutivo del Consell Insular de Menorca (CIM)",
+   "nuts": "ES533",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Planificación completa y coherente con equipo humano definido",
+    "Horas anuales por centro y cuadro de frecuencias con cronograma en Anexo I",
+    "Previsión de brigada de sustitución para vacaciones y bajas"
+   ],
+   "weak": [
+    "Distribución semanal por centro más allá de la referencia general a lunes y martes podría concretarse con más precisión"
+   ],
+   "hypothesis": {
+    "premia": "Planificación completa con equipo, horas por centro, cuadro de frecuencias y cronograma",
+    "penaliza": "Falta de precisión en la distribución semanal por centro"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ZQQPdhlRV2GdkQsA7ROvsg%3D%3D",
+   "doc": "2026-c289ef81-81b3-4783-be97-5b97edef2aa6"
+  },
+  {
+   "crit": "1.2.1. Sistema de coordinación del equipo vinculado a la ejecución del servicio y propuesta de coordinación entre la empresa adjudicataria y los responsables del servicio por parte de la Administración",
+   "max": 9,
+   "exp": "p:19655775",
+   "ref": "C4301/2026/000008",
+   "title": "Contrato reservado del servicio de mantenimiento y conservación de jardinería para los centros de Trepucó, el centro de día Bintaufa, el Cen",
+   "buyer": "Consejo Ejecutivo del Consell Insular de Menorca (CIM)",
+   "nuts": "ES533",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Organigrama completo con funciones de cada agente",
+    "Supervisión presencial quincenal del coordinador y reuniones mensuales de seguimiento",
+    "Dos modelos de fichas de control con documentación fotográfica"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Organigrama completo, periodicidad de supervisión y reuniones, y fichas de control",
+    "penaliza": "No consta en el documento"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ZQQPdhlRV2GdkQsA7ROvsg%3D%3D",
+   "doc": "2026-c289ef81-81b3-4783-be97-5b97edef2aa6"
+  },
+  {
+   "crit": "1.2.2. Protocolo de comunicación que se establecerá entre las partes para ejecutar la prestación que permita obtener una comunicación ágil y activa",
+   "max": 9,
+   "exp": "p:19655775",
+   "ref": "C4301/2026/000008",
+   "title": "Contrato reservado del servicio de mantenimiento y conservación de jardinería para los centros de Trepucó, el centro de día Bintaufa, el Cen",
+   "buyer": "Consejo Ejecutivo del Consell Insular de Menorca (CIM)",
+   "nuts": "ES533",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Comunicación estructurada en cinco niveles claramente diferenciados",
+    "Vía telefónica permanente y plazos de respuesta según urgencia",
+    "Registro técnico de intervenciones con datos de tiempos y resolución"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Niveles de comunicación diferenciados, vía telefónica permanente y plazos según urgencia",
+    "penaliza": "No consta en el documento"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ZQQPdhlRV2GdkQsA7ROvsg%3D%3D",
+   "doc": "2026-c289ef81-81b3-4783-be97-5b97edef2aa6"
+  },
+  {
+   "crit": "1.2.3. Detalle de la propuesta de actuación, de comunicación y de coordinación entre los diferentes centros donde se ejecutará el servicio",
+   "max": 7,
+   "exp": "p:19655775",
+   "ref": "C4301/2026/000008",
+   "title": "Contrato reservado del servicio de mantenimiento y conservación de jardinería para los centros de Trepucó, el centro de día Bintaufa, el Cen",
+   "buyer": "Consejo Ejecutivo del Consell Insular de Menorca (CIM)",
+   "nuts": "ES533",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Distingue dos ámbitos funcionales de coordinación entre centros",
+    "Pacto de horarios y franjas de maquinaria con cada responsable antes del inicio"
+   ],
+   "weak": [
+    "Sin mecanismos específicos para resolver conflictos de planificación entre centros",
+    "Referencia general a la comunicación entre centros, con menor concreción que el resto"
+   ],
+   "hypothesis": {
+    "premia": "Distinción de ámbitos de coordinación y pacto de horarios con responsables de centro",
+    "penaliza": "Ausencia de mecanismos específicos para resolver conflictos de planificación entre centros"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ZQQPdhlRV2GdkQsA7ROvsg%3D%3D",
+   "doc": "2026-c289ef81-81b3-4783-be97-5b97edef2aa6"
+  },
+  {
+   "crit": "Plan de trabajo",
+   "max": 15,
+   "exp": "p:11689293",
+   "ref": "2022/UE/11",
+   "title": "Servicio integral de cría y suministro de los modelos porcinos",
+   "buyer": "Centro Nacional de Investigaciones Cardiovasculares Carlos III (F.S.P.)",
+   "nuts": "ES300",
+   "date": "2023-04-14",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Sistema de producción por bandas dimensionado para garantizar niveles de producción y suministro",
+    "Medidas de bioseguridad, profilaxis vacunal y protocolo de vaciado sanitario correctas",
+    "Trazabilidad y programa informático de gestión adecuados a las necesidades del CNIC"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Dimensionamiento del sistema productivo a las necesidades del CNIC y medidas de bioseguridad, profilaxis y trazabilidad bien definidas",
+    "penaliza": "No se recogen aspectos negativos en los comentarios"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rKfyo0rkFxcSugstABGr5A%3D%3D",
+   "doc": "c818da92-3a08-4e55-adb3-559009d451dd"
+  },
+  {
+   "crit": "Programa de enriquecimiento ambiental y socialización",
+   "max": 8,
+   "exp": "p:11689293",
+   "ref": "2022/UE/11",
+   "title": "Servicio integral de cría y suministro de los modelos porcinos",
+   "buyer": "Centro Nacional de Investigaciones Cardiovasculares Carlos III (F.S.P.)",
+   "nuts": "ES300",
+   "date": "2023-04-14",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Descripción del programa de socialización muy pormenorizada y correcta",
+    "Animales tranquilos y bien adaptados al contacto humano"
+   ],
+   "weak": [
+    "No describe qué equipos, aparatos y procesos se usarán como enriquecimiento ambiental"
+   ],
+   "hypothesis": {
+    "premia": "Socialización detallada y animales tranquilos y adaptados al contacto humano",
+    "penaliza": "Falta de descripción concreta de los equipos, aparatos y procesos de enriquecimiento ambiental"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rKfyo0rkFxcSugstABGr5A%3D%3D",
+   "doc": "c818da92-3a08-4e55-adb3-559009d451dd"
+  },
+  {
+   "crit": "Control sanitario de los animales",
+   "max": 7,
+   "exp": "p:11689293",
+   "ref": "2022/UE/11",
+   "title": "Servicio integral de cría y suministro de los modelos porcinos",
+   "buyer": "Centro Nacional de Investigaciones Cardiovasculares Carlos III (F.S.P.)",
+   "nuts": "ES300",
+   "date": "2023-04-14",
+   "offers": 1,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Análisis de agentes adicionales a los de control obligatorio",
+    "Dos test extra al año",
+    "Vacunación adicional frente a parvovirosis y mal rojo, además de Aujeszky"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Análisis y test sanitarios adicionales y vacunaciones complementarias",
+    "penaliza": "No se recogen aspectos negativos en los comentarios"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rKfyo0rkFxcSugstABGr5A%3D%3D",
+   "doc": "c818da92-3a08-4e55-adb3-559009d451dd"
+  },
   {
    "crit": "Memoria",
    "max": 20,

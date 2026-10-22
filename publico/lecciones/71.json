@@ -1,8 +1,72 @@
 {
  "cpv2": "71",
- "generated": "2026-10-22T14:39:58.992Z",
+ "generated": "2026-10-22T18:50:13.982Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Adscripción de medios personales",
+   "max": 17,
+   "exp": "p:20139814",
+   "ref": "SV-2026-002",
+   "title": "Servicio de Coordinación y Asistencia Técnica en materia de Seguridad y Salud para obras y actividades de mantenimiento gestionadas por la E",
+   "buyer": "Gerencia de Aguas de Huelva, S.A.",
+   "nuts": "ES615",
+   "date": "2026-09-07",
+   "offers": 3,
+   "top": {
+    "pts": 17,
+    "winner": false
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Descripción completa de los medios personales adscritos",
+    "Perfiles adaptados a las necesidades de los pliegos y experiencias superiores a las solicitadas",
+    "Carácter multidisciplinar del equipo aporta valor añadido",
+    "Descripción correcta de los medios",
+    "Experiencia suficiente del personal"
+   ],
+   "weak": [
+    "No definición completa de las disponibilidades del delegado",
+    "Multidisciplinariedad limitada"
+   ],
+   "hypothesis": {
+    "premia": "Descripción completa del personal, perfiles adaptados a los pliegos, experiencia superior a la solicitada y equipo multidisciplinar",
+    "penaliza": "Multidisciplinariedad limitada, personal de apoyo poco detallado y disponibilidades del delegado no definidas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kzjGsilSh2o36J9Lctlsuw%3D%3D",
+   "doc": "2026-3dd0d82b-6035-4551-854b-c8832e82947b"
+  },
+  {
+   "crit": "Adscripción de medios técnicos y materiales",
+   "max": 8,
+   "exp": "p:20139814",
+   "ref": "SV-2026-002",
+   "title": "Servicio de Coordinación y Asistencia Técnica en materia de Seguridad y Salud para obras y actividades de mantenimiento gestionadas por la E",
+   "buyer": "Gerencia de Aguas de Huelva, S.A.",
+   "nuts": "ES615",
+   "date": "2026-09-07",
+   "offers": 3,
+   "top": {
+    "pts": 7.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Adaptabilidad de los medios a las metodologías y procedimientos de EMAHSA",
+    "Cumple lo mínimo exigido en pliegos"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Adaptación de los medios a las metodologías y procedimientos de EMAHSA",
+    "penaliza": "Limitarse a cumplir lo mínimo exigido en pliegos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kzjGsilSh2o36J9Lctlsuw%3D%3D",
+   "doc": "2026-3dd0d82b-6035-4551-854b-c8832e82947b"
+  },
   {
    "crit": "Bloque I: Aspectos técnicos",
    "max": 15,
@@ -234,6 +298,124 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=MthJgFoWyX87u6%2B%2FR7DUoA%3D%3D",
    "doc": "2026-135350b6-e77e-4e81-b4c3-074def83fa43"
+  },
+  {
+   "crit": "PLAN DE COMUNICACIÓN Y COORDINACIÓN CON LOS AGENTES INTERVINIENTES",
+   "max": 26,
+   "exp": "p:18723788",
+   "ref": "1480/2025",
+   "title": "Coordinación de seguridad y salud, coordinación de actividades empresariales, asistencia técnica en materia de seguridad y salud y gestión d",
+   "buyer": "Presidencia de la Autoridad Portuaria de Pasaia",
+   "nuts": "ES212",
+   "date": "2026-08-06",
+   "offers": 4,
+   "top": {
+    "pts": 22.1,
+    "winner": false
+   },
+   "low": {
+    "pts": 10.4
+   },
+   "best": [
+    "Describe las tareas con mucho detalle y la metodología de coordinación.",
+    "Define tareas para cada trabajo del contrato y marca plazos de ejecución.",
+    "Propone la plataforma e-coordina para el control documental.",
+    "Describe correctamente las periodicidades de las comunicaciones.",
+    "Describe el procedimiento para las reuniones y los canales por situaciones."
+   ],
+   "weak": [
+    "No menciona el procedimiento para convocar y documentar reuniones de coordinación.",
+    "No menciona la periodicidad en las comunicaciones.",
+    "No se comprende cómo se garantiza la eficacia y trazabilidad del flujo.",
+    "La relación de personal a adscribir no suma valor."
+   ],
+   "hypothesis": {
+    "premia": "Detalle de tareas, plazos, metodología, plataformas y canales por situación, con periodicidades y procedimiento de reuniones descritos.",
+    "penaliza": "Omitir la periodicidad de comunicaciones, el procedimiento de convocatoria y documentación de reuniones, o explicar poco la garantía de eficacia y trazabilidad."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I2QMb55pczCcTfjQf3USOg%3D%3D",
+   "doc": "2026-ecca6290-4b11-4457-bb47-080ac712f5aa"
+  },
+  {
+   "crit": "Propuesta de organización y prestación de los servicios de asesoramiento y protocolos previstos para el intercambio de información con la entidad",
+   "max": 25,
+   "exp": "p:19900675",
+   "ref": "2869941E",
+   "title": "Contrato de servicios de asesoramiento urbanístico de cobertura a las actuaciones de la reconstrucción tras la DANA del 29 de octubre de 202",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Picanya",
+   "nuts": "ES523",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 22.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Metodología completa, con fases de trabajo, trazabilidad documental y control de versiones bien desarrollados.",
+    "Modelo de coordinación en tres niveles y protocolo de control de calidad documental valorados muy positivamente.",
+    "Procedimiento de puesta en marcha y respuesta a actuaciones urbanas urgentes adaptado al contexto de la DANA."
+   ],
+   "weak": [
+    "Inconsistencia en el subapartado b): el texto cita 4,50 como máxima frente al máximo de 5 de la tabla."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kXXuqc%2FZyKaHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-ec9b4eb7-5c9b-41d2-b096-92d07c445560"
+  },
+  {
+   "crit": "Conocimiento especializado en urbanismo y experiencia específica en urbanismo municipal integral",
+   "max": 15,
+   "exp": "p:19900675",
+   "ref": "2869941E",
+   "title": "Contrato de servicios de asesoramiento urbanístico de cobertura a las actuaciones de la reconstrucción tras la DANA del 29 de octubre de 202",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Picanya",
+   "nuts": "ES523",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Formación jurídica y urbanística especializada y experiencia previa como técnico municipal de urbanismo.",
+    "Experiencia en todos los ámbitos del Pliego y en proyectos estratégicos de elevada complejidad.",
+    "Trabajos en municipios afectados por la DANA y actividad docente y doctrinal relevante."
+   ],
+   "weak": [
+    "El informe no recoge aspectos a mejorar ni carencias respecto al Pliego."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kXXuqc%2FZyKaHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-ec9b4eb7-5c9b-41d2-b096-92d07c445560"
+  },
+  {
+   "crit": "Especialización en economía urbana/viabilidad y gestión empresarial aplicada al urbanismo",
+   "max": 5,
+   "exp": "p:19900675",
+   "ref": "2869941E",
+   "title": "Contrato de servicios de asesoramiento urbanístico de cobertura a las actuaciones de la reconstrucción tras la DANA del 29 de octubre de 202",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Picanya",
+   "nuts": "ES523",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Trayectoria superior a treinta años en análisis económico del urbanismo.",
+    "Participación en guías metodológicas de referencia nacional sobre sostenibilidad económica del planeamiento.",
+    "Experiencia práctica continuada en memorias de viabilidad para administraciones públicas."
+   ],
+   "weak": [
+    "El informe no recoge aspectos a mejorar ni carencias respecto al Pliego."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kXXuqc%2FZyKaHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-ec9b4eb7-5c9b-41d2-b096-92d07c445560"
   },
   {
    "crit": "METODOLOGÍA GENERAL DE EJECUCIÓN Y RESPONSABILIDADES DE LA ADJUDICATARIA",
@@ -585,6 +767,335 @@
    "doc": "2026-0c1c9230-b3b5-4da0-8f9a-8db2a8db3a7d"
   },
   {
+   "crit": "Memoria técnica: grado de detalle del estado actual del Parador",
+   "max": 15,
+   "exp": "p:19746391",
+   "ref": "2026-0330",
+   "title": "Asistencia técnica para la redacción de proyecto y la dirección y coordinación de las obras de instalación de aerotermia para la producción ",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 3.75
+   },
+   "best": [
+    "Descripción muy detallada de la instalación existente: funcionamiento, calderas, distribución, electricidad y saneamiento.",
+    "Caracteriza edificio, zona climática y categoría de sala de máquinas según RITE.",
+    "Identifica los principales equipos de generación térmica y la existencia de acumulación para ACS."
+   ],
+   "weak": [
+    "No analiza de forma específica las instalaciones eléctricas e hidráulicas afectadas.",
+    "Descripción genérica del edificio y del funcionamiento detallado de los sistemas.",
+    "Discrepancia puntual en la identificación de la ubicación del edificio.",
+    "Referencia puntual al cambio a gas natural no coherente con el objeto de la licitación."
+   ],
+   "hypothesis": {
+    "premia": "Descripción detallada de la instalación existente, incluyendo funcionamiento, distribución y las instalaciones eléctricas e hidráulicas afectadas.",
+    "penaliza": "Descripción genérica de equipos, sin analizar instalaciones afectadas ni funcionamiento detallado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=QdzI7agg3Nbs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-10b6a4fb-2e3d-4df5-a1af-c7aed7fac70b"
+  },
+  {
+   "crit": "Memoria técnica: grado de detalle de la solución técnica",
+   "max": 15,
+   "exp": "p:19746391",
+   "ref": "2026-0330",
+   "title": "Asistencia técnica para la redacción de proyecto y la dirección y coordinación de las obras de instalación de aerotermia para la producción ",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 7.5
+   },
+   "best": [
+    "Comparación entre situación actual y propuesta, con estrategia de funcionamiento en tres escenarios.",
+    "Dos alternativas de ubicación de equipos y esquemas de principio de la instalación existente y propuesta.",
+    "Dos alternativas de ubicación de equipos exteriores y garantía de impulsión superior a 60 ºC por legionelosis.",
+    "Contempla adaptación de sala de calderas y actuaciones de obra civil y eléctrica."
+   ],
+   "weak": [
+    "Estrategia de funcionamiento híbrida descrita de forma general.",
+    "Desarrollo limitado de las actuaciones asociadas a la sala de calderas."
+   ],
+   "hypothesis": {
+    "premia": "Comparación explícita entre situación actual y propuesta, estrategia de funcionamiento desarrollada y alternativas de ubicación.",
+    "penaliza": "Estrategia de funcionamiento descrita solo de forma general y actuaciones asociadas poco desarrolladas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=QdzI7agg3Nbs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-10b6a4fb-2e3d-4df5-a1af-c7aed7fac70b"
+  },
+  {
+   "crit": "Cálculo de la reducción del consumo energético y de las emisiones",
+   "max": 12,
+   "exp": "p:19746391",
+   "ref": "2026-0330",
+   "title": "Asistencia técnica para la redacción de proyecto y la dirección y coordinación de las obras de instalación de aerotermia para la producción ",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 2,
+   "top": {
+    "pts": 12,
+    "winner": true
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Dos escenarios (ACS y climatización) con COP, reducción en kWh/año y tCO₂/año, absolutos y porcentuales.",
+    "Parte del consumo de gasóleo del Pliego y analiza el perfil estacional de la demanda de ACS.",
+    "Estima la reducción de consumo de energía primaria con un COP estacional."
+   ],
+   "weak": [
+    "No detalla los cálculos empleados ni los valores de los factores de emisión.",
+    "No considera el rendimiento de las calderas existentes."
+   ],
+   "hypothesis": {
+    "premia": "Cálculos explícitos en varios escenarios, con COP, kWh/año y tCO₂ absolutos y porcentuales.",
+    "penaliza": "No detallar cálculos, factores de emisión ni consideraciones como el rendimiento de las calderas existentes."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=QdzI7agg3Nbs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-10b6a4fb-2e3d-4df5-a1af-c7aed7fac70b"
+  },
+  {
+   "crit": "Cronograma y planificación de los trabajos de asistencia técnica",
+   "max": 7,
+   "exp": "p:19746391",
+   "ref": "2026-0330",
+   "title": "Asistencia técnica para la redacción de proyecto y la dirección y coordinación de las obras de instalación de aerotermia para la producción ",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 2,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": {
+    "pts": 1.75
+   },
+   "best": [
+    "Cronograma por fases con tareas, programación temporal e hitos principales.",
+    "Compatibiliza la ejecución con la actividad del Parador y garantiza el servicio de ACS y climatización.",
+    "Recoge hitos principales como inicio, entrega del Proyecto Básico y visitas semanales en obra."
+   ],
+   "weak": [
+    "No aporta cronograma estructurado ni descomposición detallada de tareas.",
+    "Planificación de carácter descriptivo y con poco detalle."
+   ],
+   "hypothesis": {
+    "premia": "Cronograma por fases con tareas, programación temporal, hitos y compatibilidad con la explotación del Parador.",
+    "penaliza": "Planificación meramente descriptiva, sin descomposición de tareas ni cronograma estructurado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=QdzI7agg3Nbs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-10b6a4fb-2e3d-4df5-a1af-c7aed7fac70b"
+  },
+  {
+   "crit": "Metodología de trabajo",
+   "max": 15,
+   "exp": "p:19596679",
+   "ref": "22706.26.002",
+   "title": "Estudio sobre la población de peces y la eutrofización en embalses de la Demarcación y propuestas de medidas de actuación, como la eliminaci",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Segura",
+   "nuts": "ES620",
+   "date": "2026-07-21",
+   "offers": 1,
+   "top": {
+    "pts": 12.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Oferta expresada en términos claros y concretos.",
+    "Muestra comprensión de la problemática planteada."
+   ],
+   "weak": [
+    "No establece una metodología específica para cada embalse según su uso y tipología."
+   ],
+   "hypothesis": {
+    "premia": "Expresión clara y concreta y comprensión de la problemática planteada",
+    "penaliza": "No establecer metodología específica por embalse según uso y tipología"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uCe%2FV0gmFxI36J9Lctlsuw%3D%3D",
+   "doc": "2026-5e43d663-8318-4325-aab0-52d36fbf2632"
+  },
+  {
+   "crit": "Procedimiento de actuación y detalle de la secuencia de las actividades",
+   "max": 15,
+   "exp": "p:19596679",
+   "ref": "22706.26.002",
+   "title": "Estudio sobre la población de peces y la eutrofización en embalses de la Demarcación y propuestas de medidas de actuación, como la eliminaci",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Segura",
+   "nuts": "ES620",
+   "date": "2026-07-21",
+   "offers": 1,
+   "top": {
+    "pts": 13.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Tareas descritas de manera detallada y clara.",
+    "Procedimientos y propuestas técnicas ajustados a la normativa y metodología vigente."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Descripción detallada y clara de tareas, ajustada a normativa y metodología vigente",
+    "penaliza": "No consta"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uCe%2FV0gmFxI36J9Lctlsuw%3D%3D",
+   "doc": "2026-5e43d663-8318-4325-aab0-52d36fbf2632"
+  },
+  {
+   "crit": "Plan de explotación",
+   "max": 10,
+   "exp": "p:19596679",
+   "ref": "22706.26.002",
+   "title": "Estudio sobre la población de peces y la eutrofización en embalses de la Demarcación y propuestas de medidas de actuación, como la eliminaci",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Segura",
+   "nuts": "ES620",
+   "date": "2026-07-21",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Identifica y detalla los medios y equipos necesarios."
+   ],
+   "weak": [
+    "No especifica en profundidad la dedicación de cada equipo."
+   ],
+   "hypothesis": {
+    "premia": "Identificación y detalle de medios y equipos necesarios",
+    "penaliza": "Falta de detalle en la dedicación de cada equipo"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uCe%2FV0gmFxI36J9Lctlsuw%3D%3D",
+   "doc": "2026-5e43d663-8318-4325-aab0-52d36fbf2632"
+  },
+  {
+   "crit": "Cronograma de los trabajos",
+   "max": 10,
+   "exp": "p:19596679",
+   "ref": "22706.26.002",
+   "title": "Estudio sobre la población de peces y la eutrofización en embalses de la Demarcación y propuestas de medidas de actuación, como la eliminaci",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Segura",
+   "nuts": "ES620",
+   "date": "2026-07-21",
+   "offers": 1,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Recoge las tareas a realizar durante el periodo del contrato."
+   ],
+   "weak": [
+    "Presentación genérica.",
+    "No calcula ni justifica el plazo dedicado a cada trabajo."
+   ],
+   "hypothesis": {
+    "premia": "Recogida de las tareas durante el periodo del contrato",
+    "penaliza": "Presentación genérica sin cálculo ni justificación de plazos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uCe%2FV0gmFxI36J9Lctlsuw%3D%3D",
+   "doc": "2026-5e43d663-8318-4325-aab0-52d36fbf2632"
+  },
+  {
+   "crit": "Organización de las unidades técnicas de los diferentes muestreos a llevar a cabo",
+   "max": 10,
+   "exp": "p:19596679",
+   "ref": "22706.26.002",
+   "title": "Estudio sobre la población de peces y la eutrofización en embalses de la Demarcación y propuestas de medidas de actuación, como la eliminaci",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Segura",
+   "nuts": "ES620",
+   "date": "2026-07-21",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Organización y distribución de unidades clara y adecuada para cada tipo de muestreo."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Organización y distribución de unidades clara y adecuada por tipo de muestreo",
+    "penaliza": "No consta"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uCe%2FV0gmFxI36J9Lctlsuw%3D%3D",
+   "doc": "2026-5e43d663-8318-4325-aab0-52d36fbf2632"
+  },
+  {
+   "crit": "Estudio y elaboración de informes",
+   "max": 25,
+   "exp": "p:19596679",
+   "ref": "22706.26.002",
+   "title": "Estudio sobre la población de peces y la eutrofización en embalses de la Demarcación y propuestas de medidas de actuación, como la eliminaci",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Segura",
+   "nuts": "ES620",
+   "date": "2026-07-21",
+   "offers": 1,
+   "top": {
+    "pts": 25,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Información recopilada en los informes por embalse clara.",
+    "Contenido y presentación de las fichas de campo bien planteados."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Información de informes por embalse y fichas de campo claras",
+    "penaliza": "No consta"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uCe%2FV0gmFxI36J9Lctlsuw%3D%3D",
+   "doc": "2026-5e43d663-8318-4325-aab0-52d36fbf2632"
+  },
+  {
+   "crit": "Gestión de datos",
+   "max": 15,
+   "exp": "p:19596679",
+   "ref": "22706.26.002",
+   "title": "Estudio sobre la población de peces y la eutrofización en embalses de la Demarcación y propuestas de medidas de actuación, como la eliminaci",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Segura",
+   "nuts": "ES620",
+   "date": "2026-07-21",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Los datos se corresponden con los entregables descritos en el pliego."
+   ],
+   "weak": [
+    "No especifica formato ni forma de integrar la base de datos compatible con NABIA y la base del Área de Calidad."
+   ],
+   "hypothesis": {
+    "premia": "Datos correspondientes con los entregables del pliego",
+    "penaliza": "Falta de formato e integración de base de datos compatible con NABIA y el Área de Calidad"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uCe%2FV0gmFxI36J9Lctlsuw%3D%3D",
+   "doc": "2026-5e43d663-8318-4325-aab0-52d36fbf2632"
+  },
+  {
    "crit": "Descripción particularizada del servicio",
    "max": 15,
    "exp": "p:19558634",
@@ -806,6 +1317,393 @@
    "doc": "2026-1f1ce83d-e048-4a32-82f3-7efb37aff8d4"
   },
   {
+   "crit": "Personal",
+   "max": 5,
+   "exp": "p:19588269",
+   "ref": "SE012/2026",
+   "title": "Servicio destinado a la realización de ciertos análisis de laboratorio de Aguas Municipalizadas de Alicante, EM",
+   "buyer": "Comité de Contratación de Aguas Municipalizadas de Alicante, Empresa Mixta",
+   "nuts": "ES521",
+   "date": "2026-07-14",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 3.5
+   },
+   "best": [
+    "Organigrama completo y equipo técnico muy cualificado",
+    "Acreditación ENAC ISO/IEC 17025 y experiencia de la dirección técnica",
+    "Equipo técnico con buena cualificación y acreditación ENAC",
+    "CV del asesor técnico y visitas mensuales propuestas"
+   ],
+   "weak": [
+    "Descripción escasa, sin organigramas ni funciones detalladas"
+   ],
+   "hypothesis": {
+    "premia": "Organigrama completo, funciones definidas y experiencia acreditada de la dirección técnica",
+    "penaliza": "Falta de organigramas, descripción escasa y ausencia de funciones y responsabilidades"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qBMBsS6d3zht5r0ngvMetA%3D%3D",
+   "doc": "2026-89303c9b-b4dc-4fa3-9fb9-169cedceb10d"
+  },
+  {
+   "crit": "Instalaciones",
+   "max": 5,
+   "exp": "p:19588269",
+   "ref": "SE012/2026",
+   "title": "Servicio destinado a la realización de ciertos análisis de laboratorio de Aguas Municipalizadas de Alicante, EM",
+   "buyer": "Comité de Contratación de Aguas Municipalizadas de Alicante, Empresa Mixta",
+   "nuts": "ES521",
+   "date": "2026-07-14",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 3.75
+   },
+   "best": [
+    "Extensa red de laboratorios en la península ibérica a disposición del contrato",
+    "Medios que cumplen con creces las necesidades del servicio",
+    "Descripción de medios e instalaciones para el planning",
+    "Equipos con tecnología avanzada indicada en la oferta"
+   ],
+   "weak": [
+    "Falta detalle; tabla de equipamiento y fotos insuficientes"
+   ],
+   "hypothesis": {
+    "premia": "Descripción exhaustiva de medios, red de laboratorios y equipamiento",
+    "penaliza": "Detalle escaso, con tabla y fotos sin desarrollo suficiente"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qBMBsS6d3zht5r0ngvMetA%3D%3D",
+   "doc": "2026-89303c9b-b4dc-4fa3-9fb9-169cedceb10d"
+  },
+  {
+   "crit": "Metodología de trabajo",
+   "max": 5,
+   "exp": "p:19588269",
+   "ref": "SE012/2026",
+   "title": "Servicio destinado a la realización de ciertos análisis de laboratorio de Aguas Municipalizadas de Alicante, EM",
+   "buyer": "Comité de Contratación de Aguas Municipalizadas de Alicante, Empresa Mixta",
+   "nuts": "ES521",
+   "date": "2026-07-14",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Planificación de muestreo, envases y transporte muy bien descrita",
+    "Disponibilidad 365 días y 24h con plazos de informes concretos",
+    "Programa de muestreo, protocolo y control interno adecuados",
+    "Calendario anual de análisis presentado con detalle"
+   ],
+   "weak": [
+    "Metodología muy general, poco personalizada al servicio",
+    "Planning básico que requiere más exhaustividad"
+   ],
+   "hypothesis": {
+    "premia": "Planificación detallada del muestreo y disponibilidad 24h con plazos concretos",
+    "penaliza": "Metodología general sin personalizar y planning básico"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qBMBsS6d3zht5r0ngvMetA%3D%3D",
+   "doc": "2026-89303c9b-b4dc-4fa3-9fb9-169cedceb10d"
+  },
+  {
+   "crit": "Digitalización y Sistemas Informáticos",
+   "max": 5,
+   "exp": "p:19588269",
+   "ref": "SE012/2026",
+   "title": "Servicio destinado a la realización de ciertos análisis de laboratorio de Aguas Municipalizadas de Alicante, EM",
+   "buyer": "Comité de Contratación de Aguas Municipalizadas de Alicante, Empresa Mixta",
+   "nuts": "ES521",
+   "date": "2026-07-14",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 3.75
+   },
+   "best": [
+    "Sistema LIMS potente y consulta web de resultados",
+    "Herramientas robustas para el control del servicio",
+    "LIMS y registro informático completo de análisis",
+    "Sistema de alarmas online visible para AMAEM"
+   ],
+   "weak": [
+    "Falta más detalle y concreción"
+   ],
+   "hypothesis": {
+    "premia": "LIMS potente, consulta web y cuadro de mando en tiempo real",
+    "penaliza": "Falta de detalle y concreción de las herramientas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qBMBsS6d3zht5r0ngvMetA%3D%3D",
+   "doc": "2026-89303c9b-b4dc-4fa3-9fb9-169cedceb10d"
+  },
+  {
+   "crit": "Comunicación y Coordinación con el cliente",
+   "max": 5,
+   "exp": "p:19588269",
+   "ref": "SE012/2026",
+   "title": "Servicio destinado a la realización de ciertos análisis de laboratorio de Aguas Municipalizadas de Alicante, EM",
+   "buyer": "Comité de Contratación de Aguas Municipalizadas de Alicante, Empresa Mixta",
+   "nuts": "ES521",
+   "date": "2026-07-14",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 3.25
+   },
+   "best": [
+    "Flujo de información claro con AMAEM",
+    "Cuadro de mando tipo BI para seguimiento en tiempo real",
+    "Informes mensuales y niveles de información en tiempo real",
+    "Asesoramiento e interpretación de resultados con reuniones"
+   ],
+   "weak": [
+    "Descripción del servicio poco personalizada a la oferta"
+   ],
+   "hypothesis": {
+    "premia": "Flujo de información claro y cuadro de mando interactivo",
+    "penaliza": "Descripción poco personalizada a la oferta"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qBMBsS6d3zht5r0ngvMetA%3D%3D",
+   "doc": "2026-89303c9b-b4dc-4fa3-9fb9-169cedceb10d"
+  },
+  {
+   "crit": "Compromisos Medioambientales",
+   "max": 8,
+   "exp": "p:19588269",
+   "ref": "SE012/2026",
+   "title": "Servicio destinado a la realización de ciertos análisis de laboratorio de Aguas Municipalizadas de Alicante, EM",
+   "buyer": "Comité de Contratación de Aguas Municipalizadas de Alicante, Empresa Mixta",
+   "nuts": "ES521",
+   "date": "2026-07-14",
+   "offers": 2,
+   "top": {
+    "pts": 6.25,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Ejecución en Alicante reduce huella de carbono y optimiza logística",
+    "ISO 14064-1 e ISO 14001 y gestión de residuos detallada",
+    "ISO 14001, gestión de residuos y logística de bajas emisiones",
+    "Consolidación de muestras y cadena de custodia electrónica"
+   ],
+   "weak": [
+    "Falta concreción y adaptación de las propuestas al servicio",
+    "Algunas propuestas con repercusión relativa",
+    "Algunas propuestas podrían tener impacto relativo en el servicio"
+   ],
+   "hypothesis": {
+    "premia": "Medidas concretas vinculadas al contrato, como la ubicación en Alicante y la huella de carbono",
+    "penaliza": "Propuestas genéricas o de impacto poco relevante para el servicio"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qBMBsS6d3zht5r0ngvMetA%3D%3D",
+   "doc": "2026-89303c9b-b4dc-4fa3-9fb9-169cedceb10d"
+  },
+  {
+   "crit": "Mejoras",
+   "max": 2,
+   "exp": "p:19588269",
+   "ref": "SE012/2026",
+   "title": "Servicio destinado a la realización de ciertos análisis de laboratorio de Aguas Municipalizadas de Alicante, EM",
+   "buyer": "Comité de Contratación de Aguas Municipalizadas de Alicante, Empresa Mixta",
+   "nuts": "ES521",
+   "date": "2026-07-14",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": {
+    "pts": 1.25
+   },
+   "best": [
+    "Kits de muestreo y stock de seguridad para emergencias",
+    "Disponibilidad 24/7 y campaña de PFAS y THM",
+    "Asistencia para acreditación de nuevas técnicas HPLC/MS",
+    "Colaboración propuesta en proyectos de I+D+i"
+   ],
+   "weak": [
+    "Mejoras poco concretas o sin valor añadido para AMAEM",
+    "Algunas ya consolidadas en la empresa"
+   ],
+   "hypothesis": {
+    "premia": "Mejoras concretas con valor añadido para AMAEM",
+    "penaliza": "Mejoras sin concreción o ya consolidadas que no aportan valor"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qBMBsS6d3zht5r0ngvMetA%3D%3D",
+   "doc": "2026-89303c9b-b4dc-4fa3-9fb9-169cedceb10d"
+  },
+  {
+   "crit": "Método de Trabajo",
+   "max": 25,
+   "exp": "p:19360793",
+   "ref": "04101/2025/294-SEROB",
+   "title": "Servicio de Asistencia Técnica de las instalaciones electromecánicas y estaciones depuradoras de aguas residuales (EDARS) pertenecientes al ",
+   "buyer": "Concejalía Delegada de Contratación del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-29",
+   "offers": 2,
+   "top": {
+    "pts": 25,
+    "winner": false
+   },
+   "low": {
+    "pts": 25
+   },
+   "best": [
+    "Visitas semanales optimizadas por tipología y priorización por criticidad (depósitos de tormentas 3 vueltas, pasos inferiores 2).",
+    "Control de horas, mediciones eléctricas, ambientales y termografía, con seguimiento comparado de anomalías para trazabilidad.",
+    "Metodología energética completa, desde captación de datos hasta priorización de medidas de mejora.",
+    "Desglose temporal detallado de 4 vueltas anuales, con protocolos para días de lluvia y vacaciones.",
+    "Procedimiento de 6 pasos con termografía de cuadros, pruebas de bombas y medición de niveles sonoros."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Priorización por criticidad, control comparado de anomalías y metodología energética completa de captación a priorización.",
+    "penaliza": "Sin diferencia de puntuación entre ofertas (25 cada una); no constan críticas explícitas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5VJtWTANpJK9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-dc36f4da-f87d-444f-bfc5-298aebf01249"
+  },
+  {
+   "crit": "Medios Técnicos Propios",
+   "max": 5,
+   "exp": "p:19360793",
+   "ref": "04101/2025/294-SEROB",
+   "title": "Servicio de Asistencia Técnica de las instalaciones electromecánicas y estaciones depuradoras de aguas residuales (EDARS) pertenecientes al ",
+   "buyer": "Concejalía Delegada de Contratación del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-29",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Equipo base con Técnico Superior Especialista y Técnico Medio, con equipo de apoyo especializado y departamentos transversales.",
+    "Instrumentación para control eléctrico, electromecánico, hidráulico y ambiental, con capacidad superior a la del pliego.",
+    "Dispone de ingeniero industrial con formación y experiencia necesaria."
+   ],
+   "weak": [
+    "Medios materiales básicos (cámara fotográfica, termográfica, sonómetro, luxómetro, EPI), sin equipo especializado adicional descrito."
+   ],
+   "hypothesis": {
+    "premia": "Equipo de apoyo especializado, departamentos transversales e instrumentación ampliada respecto al pliego.",
+    "penaliza": "Medios limitados a un ingeniero industrial y equipos básicos de medida."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5VJtWTANpJK9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-dc36f4da-f87d-444f-bfc5-298aebf01249"
+  },
+  {
+   "crit": "Recursos Incidencias Electrónica / automática",
+   "max": 5,
+   "exp": "p:19360793",
+   "ref": "04101/2025/294-SEROB",
+   "title": "Servicio de Asistencia Técnica de las instalaciones electromecánicas y estaciones depuradoras de aguas residuales (EDARS) pertenecientes al ",
+   "buyer": "Concejalía Delegada de Contratación del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-29",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Identifica deficiencias comunes (variadores, contactores, programación, integración) y propone soluciones basadas en experiencia previa.",
+    "Identifica fallos en cuadros, control, comunicaciones, sensores y grupos electrógenos, con procedimiento de detección a subsanación."
+   ],
+   "weak": [
+    "Menor especificidad en soluciones que la oferta mejor valorada (4 puntos frente a 5)."
+   ],
+   "hypothesis": {
+    "premia": "Identificación de deficiencias comunes y soluciones basadas en experiencia previa adaptadas a cada instalación.",
+    "penaliza": "Procedimiento menos específico en soluciones, con un punto menos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5VJtWTANpJK9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-dc36f4da-f87d-444f-bfc5-298aebf01249"
+  },
+  {
+   "crit": "Recursos Incidencias Electrotecnia",
+   "max": 5,
+   "exp": "p:19360793",
+   "ref": "04101/2025/294-SEROB",
+   "title": "Servicio de Asistencia Técnica de las instalaciones electromecánicas y estaciones depuradoras de aguas residuales (EDARS) pertenecientes al ",
+   "buyer": "Concejalía Delegada de Contratación del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-29",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Metodología de detección, diagnosis y comprobación posterior del correcto funcionamiento, con medios indicados.",
+    "Análisis detallado de posibles deficiencias de las instalaciones, indicando medios de detección."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5VJtWTANpJK9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-dc36f4da-f87d-444f-bfc5-298aebf01249"
+  },
+  {
+   "crit": "Recursos Análisis FísicoQuímico",
+   "max": 5,
+   "exp": "p:19360793",
+   "ref": "04101/2025/294-SEROB",
+   "title": "Servicio de Asistencia Técnica de las instalaciones electromecánicas y estaciones depuradoras de aguas residuales (EDARS) pertenecientes al ",
+   "buyer": "Concejalía Delegada de Contratación del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-29",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Equipo especializado en proceso físico-químico y explotación de EDAR, con control del estado de las instalaciones.",
+    "Prevé ensayos en laboratorio homologado para verificar cualidades de productos y materiales."
+   ],
+   "weak": [
+    "Se apoya en laboratorio externo y en el equipamiento del contratista, sin medios propios detallados."
+   ],
+   "hypothesis": {
+    "premia": "Equipo especializado propio en proceso físico-químico y explotación de EDAR.",
+    "penaliza": "Dependencia de laboratorio externo y del equipamiento del contratista."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5VJtWTANpJK9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-dc36f4da-f87d-444f-bfc5-298aebf01249"
+  },
+  {
    "crit": "PROPUESTA METODOLÓGICA PARA LA REALIZACIÓN DE LOS TRABAJOS",
    "max": 35,
    "exp": "p:19100432",
@@ -836,6 +1734,566 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K55KFjg9Kw59Zh%2FyRJgM8w%3D%3D",
    "doc": "2026-c3309e8e-7ac1-46b5-9cc4-368c123d741d"
+  },
+  {
+   "crit": "CALIDAD CONSTRUCTIVA",
+   "max": 8,
+   "exp": "p:19337914",
+   "ref": "61/2026",
+   "title": "Contrato de servicios de redacción del proyecto básico y de ejecución, estudio de seguridad y salud, dirección de obra, dirección de ejecuci",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-08",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Análisis constructivo riguroso de la piscina y su estado actual, con fotografías",
+    "Propuestas concretas para el vaso grande y conocimiento de depuración y funcionamiento"
+   ],
+   "weak": [
+    "Zonas distintas del vaso poco pormenorizadas, limitadas a citar normativa",
+    "No menciona la piscina infantil ni la cafetería y su entorno"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uHcQFyG4mcg7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-f6a65678-3895-4a0d-822a-89d3750cd0ce"
+  },
+  {
+   "crit": "DISEÑO Y SOSTENIBILIDAD",
+   "max": 7,
+   "exp": "p:19337914",
+   "ref": "61/2026",
+   "title": "Contrato de servicios de redacción del proyecto básico y de ejecución, estudio de seguridad y salud, dirección de obra, dirección de ejecuci",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-08",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Desglose pormenorizado de criterios de eficiencia, sostenibilidad y reutilización",
+    "Propuestas particulares para cada zona del ámbito de actuación"
+   ],
+   "weak": [
+    "No analiza el entorno para la integración climática",
+    "Sin medidas para eliminar barreras arquitectónicas ni funcionalidad de recorridos"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uHcQFyG4mcg7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-f6a65678-3895-4a0d-822a-89d3750cd0ce"
+  },
+  {
+   "crit": "ASISTENCIA TÉCNICA",
+   "max": 7,
+   "exp": "p:19337914",
+   "ref": "61/2026",
+   "title": "Contrato de servicios de redacción del proyecto básico y de ejecución, estudio de seguridad y salud, dirección de obra, dirección de ejecuci",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-08",
+   "offers": 1,
+   "top": {
+    "pts": 5.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Organización y cualificación del personal a adscribir clarificadas",
+    "Compromiso de asistencia técnica semanal durante toda la obra"
+   ],
+   "weak": [
+    "No menciona la experiencia del personal incluido en la oferta"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uHcQFyG4mcg7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-f6a65678-3895-4a0d-822a-89d3750cd0ce"
+  },
+  {
+   "crit": "JUSTIFICACIÓN DEL CUMPLIMIENTO DEL PROGRAMA DE NECESIDADES",
+   "max": 7,
+   "exp": "p:19337914",
+   "ref": "61/2026",
+   "title": "Contrato de servicios de redacción del proyecto básico y de ejecución, estudio de seguridad y salud, dirección de obra, dirección de ejecuci",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-08",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Ajuste de inversión justificado con partidas adicionales y módulos por m²",
+    "Medidas para garantizar la estanqueidad del vaso de la piscina"
+   ],
+   "weak": [
+    "No justifica el programa, la zona de baño ni las relaciones interespaciales"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uHcQFyG4mcg7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-f6a65678-3895-4a0d-822a-89d3750cd0ce"
+  },
+  {
+   "crit": "MEDIDAS ESPECÍFICAS DE AHORRO ENERGÉTICO QUE SE APLICARÁN EN LA EJECUCIÓN DE LA OBRA",
+   "max": 2,
+   "exp": "p:19337914",
+   "ref": "61/2026",
+   "title": "Contrato de servicios de redacción del proyecto básico y de ejecución, estudio de seguridad y salud, dirección de obra, dirección de ejecuci",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-08",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Medidas de ahorro energético en ejecución plenamente ajustadas al pliego",
+    "Inclusión valorada positivamente de medidas adicionales en fase de proyecto"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uHcQFyG4mcg7%2B9FIQYNjeQ%3D%3D",
+   "doc": "2026-f6a65678-3895-4a0d-822a-89d3750cd0ce"
+  },
+  {
+   "crit": "A.1 Memoria metodológica",
+   "max": 15,
+   "exp": "p:16304063",
+   "ref": "PEA/299/2024",
+   "title": "Servicio de asistencias técnicas para la redacción de proyectos de infraestructuras e instalaciones hidráulicas (8 lotes)",
+   "buyer": "Consejo de Administración de la Empresa Mancomunada del Aljarafe, S.A. (ALJARAFESA)",
+   "nuts": "ES618",
+   "date": "2025-11-25",
+   "offers": 3,
+   "top": {
+    "pts": 12.6,
+    "winner": false
+   },
+   "low": {
+    "pts": 7.9
+   },
+   "best": [
+    "Memoria detallada y específica de la ETAP Pajanosas, con visita al entorno",
+    "Matriz multicriterio con puntos de parada para la intervención de Aljarafesa",
+    "Obras auxiliares: análisis de caudales de entrada, potencias y previsión de control",
+    "Memoria enfocada a la ETAP Pajanosas con soluciones del PPTP",
+    "Análisis de eficiencia energética y huella de carbono de las propuestas"
+   ],
+   "weak": [
+    "Soluciones planteadas sin suficiente especificación",
+    "Considera normativa derogada (RD 140/2003) en lugar del RD 3/2023",
+    "No indica puntos de parada de Aljarafesa ni ponderaciones de la matriz",
+    "No menciona cartografía, topografía ni estudio geotécnico por estar en el alcance del proyecto",
+    "No menciona de manera específica el equirreparto del caudal en el dimensionamiento"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=RMEwz72fX6Zq1DdmE7eaXg%3D%3D",
+   "doc": "2025-2653c122-5fa9-4b5f-8835-0803950a8712"
+  },
+  {
+   "crit": "A.2 Programa de desarrollo de los trabajos de Redacción del Estudio de Alternativas",
+   "max": 5,
+   "exp": "p:16304063",
+   "ref": "PEA/299/2024",
+   "title": "Servicio de asistencias técnicas para la redacción de proyectos de infraestructuras e instalaciones hidráulicas (8 lotes)",
+   "buyer": "Consejo de Administración de la Empresa Mancomunada del Aljarafe, S.A. (ALJARAFESA)",
+   "nuts": "ES618",
+   "date": "2025-11-25",
+   "offers": 3,
+   "top": {
+    "pts": 3.8,
+    "winner": false
+   },
+   "low": {
+    "pts": 2.8
+   },
+   "best": [
+    "Actividades descritas de forma extensa, completa y detallada",
+    "Camino crítico coherente con tareas predecesoras y sucesoras",
+    "Establece hitos con entregables a Aljarafesa en cada fase",
+    "Identifica predecesoras, sucesoras y camino crítico"
+   ],
+   "weak": [
+    "Plazo de 4 meses para el estudio de alternativas",
+    "Vuelve a mencionar normativa sanitaria derogada",
+    "No muestra actividades ni hitos propios de Aljarafesa",
+    "No establece hitos principales con entregables a Aljarafesa",
+    "Holguras existentes pero no contabilizadas"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=RMEwz72fX6Zq1DdmE7eaXg%3D%3D",
+   "doc": "2025-2653c122-5fa9-4b5f-8835-0803950a8712"
+  },
+  {
+   "crit": "Proyecto de obra: elementos y tajos fundamentales, patologías y soluciones",
+   "max": 10,
+   "exp": "p:16722839",
+   "ref": "76/2024",
+   "title": "Redacción del informe de evaluación de edificios y como consecuencia del mismo la redacción del proyecto de obra, que incluirá los subproyec",
+   "buyer": "Consejería Delegada de Viviendas, Proyectos y Obras Municipales de Santa Cruz de Tenerife, S.A.",
+   "nuts": "ES709",
+   "date": "2025-04-23",
+   "offers": 2,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Buen desarrollo de los elementos fundamentales a tratar",
+    "Incide en temas concretos",
+    "Propone soluciones para la redacción del proyecto"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Desarrollo concreto de los elementos fundamentales, incidencia en temas específicos y propuesta de soluciones para el proyecto",
+    "penaliza": "Descripción escasa de patologías o ausencia total de información"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=lrDITEhfYuCFlFRHfEzEaw%3D%3D",
+   "doc": "2025-ac1a1f06-4f3c-44e1-a801-c356541ce38f"
+  },
+  {
+   "crit": "Proyecto de obra: plazos de ejecución y elementos temporales",
+   "max": 5,
+   "exp": "p:16722839",
+   "ref": "76/2024",
+   "title": "Redacción del informe de evaluación de edificios y como consecuencia del mismo la redacción del proyecto de obra, que incluirá los subproyec",
+   "buyer": "Consejería Delegada de Viviendas, Proyectos y Obras Municipales de Santa Cruz de Tenerife, S.A.",
+   "nuts": "ES709",
+   "date": "2025-04-23",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Determina plazos de obra",
+    "Identifica elementos a tener en cuenta en la ejecución"
+   ],
+   "weak": [
+    "El informe no explica la diferencia respecto a la puntuación máxima"
+   ],
+   "hypothesis": {
+    "premia": "Determinación de plazos de obra y de elementos a considerar en la ejecución",
+    "penaliza": "Información general y poco desarrollada, o ausencia de información"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=lrDITEhfYuCFlFRHfEzEaw%3D%3D",
+   "doc": "2025-ac1a1f06-4f3c-44e1-a801-c356541ce38f"
+  },
+  {
+   "crit": "Dirección de obra: metodología y comunicación",
+   "max": 5,
+   "exp": "p:16722839",
+   "ref": "76/2024",
+   "title": "Redacción del informe de evaluación de edificios y como consecuencia del mismo la redacción del proyecto de obra, que incluirá los subproyec",
+   "buyer": "Consejería Delegada de Viviendas, Proyectos y Obras Municipales de Santa Cruz de Tenerife, S.A.",
+   "nuts": "ES709",
+   "date": "2025-04-23",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Detalla y desarrolla de forma adecuada la metodología"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Detalle y desarrollo adecuado de la metodología de dirección de obra",
+    "penaliza": "Ausencia de información sobre el punto"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=lrDITEhfYuCFlFRHfEzEaw%3D%3D",
+   "doc": "2025-ac1a1f06-4f3c-44e1-a801-c356541ce38f"
+  },
+  {
+   "crit": "Dirección de obra: problemática y soluciones",
+   "max": 5,
+   "exp": "p:16722839",
+   "ref": "76/2024",
+   "title": "Redacción del informe de evaluación de edificios y como consecuencia del mismo la redacción del proyecto de obra, que incluirá los subproyec",
+   "buyer": "Consejería Delegada de Viviendas, Proyectos y Obras Municipales de Santa Cruz de Tenerife, S.A.",
+   "nuts": "ES709",
+   "date": "2025-04-23",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Buen desarrollo de los puntos más importantes a tratar",
+    "Conoce la problemática",
+    "Propone soluciones a adoptar en cada caso"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Conocimiento de la problemática y propuesta de soluciones para cada caso",
+    "penaliza": "Ausencia de información sobre el punto"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=lrDITEhfYuCFlFRHfEzEaw%3D%3D",
+   "doc": "2025-ac1a1f06-4f3c-44e1-a801-c356541ce38f"
+  },
+  {
+   "crit": "Proyecto de obra: elementos y tajos fundamentales",
+   "max": 10,
+   "exp": "p:16702044",
+   "ref": "73/2024",
+   "title": "Realización del informe de evaluación de edificios y como consecuencia del mismo la redacción del proyecto de obra, que incluirá los subproy",
+   "buyer": "Consejería Delegada de Viviendas, Proyectos y Obras Municipales de Santa Cruz de Tenerife, S.A.",
+   "nuts": "ES709",
+   "date": "2025-04-23",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Buen desarrollo de los elementos fundamentales a tratar",
+    "Incide en temas concretos",
+    "Propone soluciones para la redacción del proyecto"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Desarrollo de los elementos fundamentales con temas concretos y soluciones propuestas",
+    "penaliza": "Descripción escasa de patologías o ausencia de información"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=BeMaLJ44HIqP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2025-759e8c9f-3379-4506-883f-8a04e54f8f4e"
+  },
+  {
+   "crit": "Proyecto de obra: plazos de ejecución",
+   "max": 5,
+   "exp": "p:16702044",
+   "ref": "73/2024",
+   "title": "Realización del informe de evaluación de edificios y como consecuencia del mismo la redacción del proyecto de obra, que incluirá los subproy",
+   "buyer": "Consejería Delegada de Viviendas, Proyectos y Obras Municipales de Santa Cruz de Tenerife, S.A.",
+   "nuts": "ES709",
+   "date": "2025-04-23",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Determina plazos de obra",
+    "Identifica elementos a tener en cuenta en la ejecución"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Determinación de plazos y de elementos a tener en cuenta en la ejecución",
+    "penaliza": "Información general y poco desarrollada o ausencia de información"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=BeMaLJ44HIqP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2025-759e8c9f-3379-4506-883f-8a04e54f8f4e"
+  },
+  {
+   "crit": "Dirección de obra: metodología y comunicación",
+   "max": 5,
+   "exp": "p:16702044",
+   "ref": "73/2024",
+   "title": "Realización del informe de evaluación de edificios y como consecuencia del mismo la redacción del proyecto de obra, que incluirá los subproy",
+   "buyer": "Consejería Delegada de Viviendas, Proyectos y Obras Municipales de Santa Cruz de Tenerife, S.A.",
+   "nuts": "ES709",
+   "date": "2025-04-23",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Detalla y desarrolla de forma adecuada la metodología"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Metodología detallada y adecuada para la dirección de obra",
+    "penaliza": "Ausencia de información sobre el punto a tratar"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=BeMaLJ44HIqP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2025-759e8c9f-3379-4506-883f-8a04e54f8f4e"
+  },
+  {
+   "crit": "Dirección de obra: problemática y soluciones",
+   "max": 5,
+   "exp": "p:16702044",
+   "ref": "73/2024",
+   "title": "Realización del informe de evaluación de edificios y como consecuencia del mismo la redacción del proyecto de obra, que incluirá los subproy",
+   "buyer": "Consejería Delegada de Viviendas, Proyectos y Obras Municipales de Santa Cruz de Tenerife, S.A.",
+   "nuts": "ES709",
+   "date": "2025-04-23",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Buen desarrollo de los puntos más importantes",
+    "Conoce la problemática",
+    "Propone soluciones en cada caso"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Conocimiento de la problemática y propuestas de solución en cada caso",
+    "penaliza": "Ausencia de información sobre el punto a tratar"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=BeMaLJ44HIqP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2025-759e8c9f-3379-4506-883f-8a04e54f8f4e"
+  },
+  {
+   "crit": "Sub-criterio 1.1. Estructura, detalle y claridad de la exposición de los aspectos esenciales del servicio",
+   "max": 20,
+   "exp": "p:14287349",
+   "ref": "22706.23.010",
+   "title": "Toma de muestras y análisis de agua, sedimento y biota en el laboratorio de análisis de aguas de la Confederación Hidrográfica del Segura, O",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Segura",
+   "nuts": "ES",
+   "date": "2024-05-10",
+   "offers": 2,
+   "top": {
+    "pts": 19.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 8.5
+   },
+   "best": [
+    "Detalla organización y planificación de la toma de muestras",
+    "Normativa y normas UNE actualizadas y correctas",
+    "Listado exhaustivo de normas de control metrológico y verificación",
+    "Detalla la introducción de datos al LIMS",
+    "Hace referencia a la norma UNE EN ISO/IEC 17025"
+   ],
+   "weak": [
+    "Metodología de análisis muy general, sin planificación",
+    "Normativa obsoleta: Orden MMA/85/2008 y normas UNE EN 25667 anuladas",
+    "Actas de toma de muestra incorrectas",
+    "No detalla el pretratamiento de muestras para metales y plaguicidas",
+    "No especifica organización ni planificación en el manejo de equipos"
+   ],
+   "hypothesis": {
+    "premia": "Planificación detallada de la toma y análisis de muestras con normativa vigente y actualizada",
+    "penaliza": "Metodología general sin planificación, normativa obsoleta o anulada y pretratamiento no detallado"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2GJd7q%2BVXIbpxJFXpLZ%2B2A%3D%3D",
+   "doc": "4274d80c-c761-4136-bb0b-8c5d700bc5d4"
+  },
+  {
+   "crit": "Sub-criterio 1.2. Grado de conocimiento y adecuación de la propuesta técnica con la instrumentación y equipos disponibles en el laboratorio",
+   "max": 20,
+   "exp": "p:14287349",
+   "ref": "22706.23.010",
+   "title": "Toma de muestras y análisis de agua, sedimento y biota en el laboratorio de análisis de aguas de la Confederación Hidrográfica del Segura, O",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Segura",
+   "nuts": "ES",
+   "date": "2024-05-10",
+   "offers": 2,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": {
+    "pts": 15
+   },
+   "best": [
+    "Perfiles del personal adecuados al equipamiento del laboratorio",
+    "Técnicas que conocen detalladas para cada área analítica",
+    "Medios técnicos compatibles con los equipos de toma de muestra",
+    "Medios técnicos adecuados a las necesidades del laboratorio"
+   ],
+   "weak": [
+    "Analistas sin detalle de las técnicas analíticas en las que han trabajado"
+   ],
+   "hypothesis": {
+    "premia": "Detallar técnicas conocidas por el personal y su adecuación a los equipos del laboratorio",
+    "penaliza": "No concretar el conocimiento de los analistas sobre las técnicas e instrumentación"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2GJd7q%2BVXIbpxJFXpLZ%2B2A%3D%3D",
+   "doc": "4274d80c-c761-4136-bb0b-8c5d700bc5d4"
+  },
+  {
+   "crit": "Criterio 2. Adecuación de la propuesta técnica con las características propias de la cuenca",
+   "max": 30,
+   "exp": "p:14287349",
+   "ref": "22706.23.010",
+   "title": "Toma de muestras y análisis de agua, sedimento y biota en el laboratorio de análisis de aguas de la Confederación Hidrográfica del Segura, O",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Segura",
+   "nuts": "ES",
+   "date": "2024-05-10",
+   "offers": 2,
+   "top": {
+    "pts": 30,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Describe características de la cuenca y presiones con el Plan Hidrológico 2022/27",
+    "Detalla las redes de control existentes de la Confederación"
+   ],
+   "weak": [
+    "Sin mención a las características de la cuenca ni a sus presiones"
+   ],
+   "hypothesis": {
+    "premia": "Describir la cuenca, sus presiones y redes de control con fuentes oficiales",
+    "penaliza": "Ausencia total de referencias a la cuenca y sus presiones"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2GJd7q%2BVXIbpxJFXpLZ%2B2A%3D%3D",
+   "doc": "4274d80c-c761-4136-bb0b-8c5d700bc5d4"
+  },
+  {
+   "crit": "Criterio 3. Adecuación de la propuesta técnica con la normativa vigente en materia de aguas que sea de aplicación",
+   "max": 30,
+   "exp": "p:14287349",
+   "ref": "22706.23.010",
+   "title": "Toma de muestras y análisis de agua, sedimento y biota en el laboratorio de análisis de aguas de la Confederación Hidrográfica del Segura, O",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Segura",
+   "nuts": "ES",
+   "date": "2024-05-10",
+   "offers": 2,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Detalla 14 Reales Decretos con sus últimas actualizaciones"
+   ],
+   "weak": [
+    "Sin mención a la normativa de aguas ni de control de vertidos",
+    "No relaciona la normativa con las redes de control del laboratorio"
+   ],
+   "hypothesis": {
+    "premia": "Relacionar la normativa aplicable con las redes de control del laboratorio",
+    "penaliza": "Ausencia de mención normativa o listado sin vincularlo al servicio"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2GJd7q%2BVXIbpxJFXpLZ%2B2A%3D%3D",
+   "doc": "4274d80c-c761-4136-bb0b-8c5d700bc5d4"
   }
  ]
 }

@@ -1,6 +1,6 @@
 {
  "cpv2": "03",
- "generated": "2026-10-22T14:39:58.993Z",
+ "generated": "2026-10-22T18:50:13.986Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -638,6 +638,94 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ndh0E72yPtRSYrkJkLlFdw%3D%3D",
    "doc": "2026-04bf3420-4ccf-4eba-999b-056276851f52"
+  },
+  {
+   "crit": "Uso de envases y embalajes sostenibles",
+   "max": 7,
+   "exp": "p:19617011",
+   "ref": "04101/2026/63-SU",
+   "title": "Suministros agrícolas para la Red de Huertos Escolares de la ciudad de València dependiente de la Concejalía de Educación del Ayuntamiento d",
+   "buyer": "Concejalía Delegada de Contratación del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-21",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Prioriza envases retornables o reciclables",
+    "Ejemplos de reducción y reutilización de materiales",
+    "Prevención de generación de residuos"
+   ],
+   "weak": [
+    "No sustituye envases plásticos por biodegradables",
+    "Sin descripción detallada de los materiales a utilizar"
+   ],
+   "hypothesis": {
+    "premia": "Priorizar envases retornables o reciclables, con ejemplos de reducción y reutilización de materiales",
+    "penaliza": "No sustituir plásticos por biodegradables y no detallar los materiales ni las certificaciones"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tDHF7eMAZvmdkQsA7ROvsg%3D%3D",
+   "doc": "2026-f691b366-dc64-4b14-96be-719018c28757"
+  },
+  {
+   "crit": "Optimización del transporte y reducción de emisiones",
+   "max": 6,
+   "exp": "p:19617011",
+   "ref": "04101/2026/63-SU",
+   "title": "Suministros agrícolas para la Red de Huertos Escolares de la ciudad de València dependiente de la Concejalía de Educación del Ayuntamiento d",
+   "buyer": "Concejalía Delegada de Contratación del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-21",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Describe uso de vehículos de bajas emisiones",
+    "Señala optimización del transporte y coordinación logística"
+   ],
+   "weak": [
+    "Impacto del transporte por no tener sede en Valencia"
+   ],
+   "hypothesis": {
+    "premia": "Uso de vehículos de bajas emisiones y coordinación logística para minimizar desplazamientos",
+    "penaliza": "Impacto del transporte por no tener sede en Valencia; no consta comparación con otros licitadores"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tDHF7eMAZvmdkQsA7ROvsg%3D%3D",
+   "doc": "2026-f691b366-dc64-4b14-96be-719018c28757"
+  },
+  {
+   "crit": "Viabilidad, seguimiento y control",
+   "max": 2,
+   "exp": "p:19617011",
+   "ref": "04101/2026/63-SU",
+   "title": "Suministros agrícolas para la Red de Huertos Escolares de la ciudad de València dependiente de la Concejalía de Educación del Ayuntamiento d",
+   "buyer": "Concejalía Delegada de Contratación del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-21",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Recopilación de albaranes para verificar entregas",
+    "Revisión periódica de medidas e indicadores ambientales específicos",
+    "Incorporación de mejoras según reporte de la comunidad educativa"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Verificación de entregas mediante albaranes e indicadores ambientales específicos con revisión periódica",
+    "penaliza": "No constan penalizaciones en el informe; único licitador valorado"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tDHF7eMAZvmdkQsA7ROvsg%3D%3D",
+   "doc": "2026-f691b366-dc64-4b14-96be-719018c28757"
   }
  ]
 }

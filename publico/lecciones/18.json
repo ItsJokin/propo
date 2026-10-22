@@ -1,0 +1,37 @@
+{
+ "cpv2": "18",
+ "generated": "2026-10-22T18:50:13.987Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Características de los artículos (6 y 7 del PPTP)",
+   "max": 40,
+   "exp": "p:18065617",
+   "ref": "G-2025/22",
+   "title": "Suministro de uniforme de trabajo para personal de Policía Portuaria y de vestuario para el resto del personal de Operaciones Terrestres.",
+   "buyer": "Consejo de Administración de la Autoridad Portuaria de Las Palmas",
+   "nuts": "ES70",
+   "date": "2026-07-07",
+   "offers": 1,
+   "top": {
+    "pts": 39.74,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Cumplimiento del 100% en la mayoría de artículos, incluidos pantalones, chaquetas y prendas de representación.",
+    "Documentación técnica y certificados aportados en numerosos artículos."
+   ],
+   "weak": [
+    "P-07 y P-08: botones no ocultos en los picos según PPTP (95%).",
+    "P-16, P-20, P-27: incumplimientos de velcros, medidas de bandera o cremallera lateral (90-95%)."
+   ],
+   "hypothesis": {
+    "premia": "Cumplimiento íntegro del PPTP por artículo (100%) y aportación completa de muestras, certificados y etiquetado.",
+    "penaliza": "Muestras que no corresponden al artículo exigido o no coinciden con el diseño del PPTP (0% en P-03 y P-05, 50% en P-02) y pequeños incumplimientos de diseño (botones, velcros, medidas, cremalleras)."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=sjDKCzm6tQ%2B7JOCXkOhcDg%3D%3D",
+   "doc": "2026-0fb9aee4-6f7d-4bb8-ba2c-fa0bdc709b12"
+  }
+ ]
+}

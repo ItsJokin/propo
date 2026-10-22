@@ -1,6 +1,6 @@
 {
  "cpv2": "98",
- "generated": "2026-10-22T14:39:58.993Z",
+ "generated": "2026-10-22T18:50:13.984Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -38,6 +38,227 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=52GPp8%2F3hLl70UvEyYJSGw%3D%3D",
    "doc": "2026-3664a693-3626-4242-9097-3f38cb0a75ad"
+  },
+  {
+   "crit": "OFT1: Calidad de la propuesta técnica",
+   "max": 12,
+   "exp": "p:18981282",
+   "ref": "CMAYOR/2026/SPTD0/0002",
+   "title": "Concesión del servicio de explotación del aparcamiento subterráneo sito en el Muelle 5 del Puerto de Alicante, perteneciente al edificio DD5",
+   "buyer": "Dirección General de la Sociedad de Proyectos para la Transformación Digital, SAU",
+   "nuts": "ES521",
+   "date": "2026-05-12",
+   "offers": 2,
+   "top": {
+    "pts": 12,
+    "winner": false
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Mejoras en la gestión muy interesantes para SPTD y usuarios.",
+    "Compromiso firme de continuidad con Bymar Park.",
+    "Planteamiento correcto con reparto equitativo entre rotación y abonos.",
+    "Propone mejoras en maquinaria y vehículos eléctricos."
+   ],
+   "weak": [
+    "El personal propuesto se considera muy ajustado.",
+    "Mejoras en equipos no especificadas."
+   ],
+   "hypothesis": {
+    "premia": "Mejoras concretas en gestión y tecnología, y compromisos firmes de continuidad y actualización.",
+    "penaliza": "Mejoras no especificadas y personal propuesto considerado ajustado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2B3any2DHlx4kJPJS%2BPS9vg%3D%3D",
+   "doc": "2026-da82dfcd-7f7d-4fef-8895-1ee6449aa8dd"
+  },
+  {
+   "crit": "OFT2: Garita de Control",
+   "max": 8,
+   "exp": "p:18981282",
+   "ref": "CMAYOR/2026/SPTD0/0002",
+   "title": "Concesión del servicio de explotación del aparcamiento subterráneo sito en el Muelle 5 del Puerto de Alicante, perteneciente al edificio DD5",
+   "buyer": "Dirección General de la Sociedad de Proyectos para la Transformación Digital, SAU",
+   "nuts": "ES521",
+   "date": "2026-05-12",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "La garita y las cámaras suponen una mejora considerable para la operatividad.",
+    "Propuesta muy completa y coherente con mejoras sustanciales.",
+    "Aporta planos de posibles ubicaciones y CCTV de última generación."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Propuesta completa con planos, cámaras avanzadas y mejoras sustanciales.",
+    "penaliza": "No se señalan penalizaciones concretas; la diferencia depende de la completitud."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2B3any2DHlx4kJPJS%2BPS9vg%3D%3D",
+   "doc": "2026-da82dfcd-7f7d-4fef-8895-1ee6449aa8dd"
+  },
+  {
+   "crit": "OFT3: Plan de ocupación y cronograma",
+   "max": 6,
+   "exp": "p:18981282",
+   "ref": "CMAYOR/2026/SPTD0/0002",
+   "title": "Concesión del servicio de explotación del aparcamiento subterráneo sito en el Muelle 5 del Puerto de Alicante, perteneciente al edificio DD5",
+   "buyer": "Dirección General de la Sociedad de Proyectos para la Transformación Digital, SAU",
+   "nuts": "ES521",
+   "date": "2026-05-12",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Planteamiento basado en experiencia en el sector y conocimiento de la zona.",
+    "Estructura el plan en tres fases con seguimiento e indicadores."
+   ],
+   "weak": [
+    "Se echa en falta un plan concreto o cronograma de ocupación o venta de abonos.",
+    "El planteamiento de ocupación es simple."
+   ],
+   "hypothesis": {
+    "premia": "Planificación de ocupación con datos y cronograma concreto, basada en experiencia y conocimiento de la zona.",
+    "penaliza": "Ausencia de cronograma o planes concretos, limitándose a seguimientos futuros o planteamientos simples."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2B3any2DHlx4kJPJS%2BPS9vg%3D%3D",
+   "doc": "2026-da82dfcd-7f7d-4fef-8895-1ee6449aa8dd"
+  },
+  {
+   "crit": "OFT4: Mantenimiento y Telegestión",
+   "max": 6,
+   "exp": "p:18981282",
+   "ref": "CMAYOR/2026/SPTD0/0002",
+   "title": "Concesión del servicio de explotación del aparcamiento subterráneo sito en el Muelle 5 del Puerto de Alicante, perteneciente al edificio DD5",
+   "buyer": "Dirección General de la Sociedad de Proyectos para la Transformación Digital, SAU",
+   "nuts": "ES521",
+   "date": "2026-05-12",
+   "offers": 2,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Se compromete a gestionar y mantener lo previsto en el pliego.",
+    "Incluye monitorización de plazas disponibles como mejora.",
+    "Bolsa anual de horas presenciales sin coste adicional para SPTD."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Mejoras concretas como monitorización de plazas o bolsa de horas presenciales.",
+    "penaliza": "Gestión limitada a lo exigido en el pliego, sin valor añadido claro."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2B3any2DHlx4kJPJS%2BPS9vg%3D%3D",
+   "doc": "2026-da82dfcd-7f7d-4fef-8895-1ee6449aa8dd"
+  },
+  {
+   "crit": "OFT5: Experiencia del equipo y casos similares",
+   "max": 4,
+   "exp": "p:18981282",
+   "ref": "CMAYOR/2026/SPTD0/0002",
+   "title": "Concesión del servicio de explotación del aparcamiento subterráneo sito en el Muelle 5 del Puerto de Alicante, perteneciente al edificio DD5",
+   "buyer": "Dirección General de la Sociedad de Proyectos para la Transformación Digital, SAU",
+   "nuts": "ES521",
+   "date": "2026-05-12",
+   "offers": 2,
+   "top": {
+    "pts": 2.6,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.6
+   },
+   "best": [
+    "Amplio equipo con experiencia en aparcamientos de Alicante.",
+    "Concesionario de aparcamientos similares con experiencia en todo el ciclo.",
+    "Se acompañan currículum del personal."
+   ],
+   "weak": [
+    "No se aprecian bien los nombres ni se acompaña currículum."
+   ],
+   "hypothesis": {
+    "premia": "Experiencia acreditada en aparcamientos similares y currículum del personal aportado.",
+    "penaliza": "Falta de identificación de nombres y de currículum del personal."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2B3any2DHlx4kJPJS%2BPS9vg%3D%3D",
+   "doc": "2026-da82dfcd-7f7d-4fef-8895-1ee6449aa8dd"
+  },
+  {
+   "crit": "OFT6: Formación y documentación",
+   "max": 2,
+   "exp": "p:18981282",
+   "ref": "CMAYOR/2026/SPTD0/0002",
+   "title": "Concesión del servicio de explotación del aparcamiento subterráneo sito en el Muelle 5 del Puerto de Alicante, perteneciente al edificio DD5",
+   "buyer": "Dirección General de la Sociedad de Proyectos para la Transformación Digital, SAU",
+   "nuts": "ES521",
+   "date": "2026-05-12",
+   "offers": 2,
+   "top": {
+    "pts": 0.6,
+    "winner": true
+   },
+   "low": {
+    "pts": 0.6
+   },
+   "best": [
+    "Programa de formación específico para personal operativo y Propiedad.",
+    "Conjunto coherente de documentación específica para el DD5."
+   ],
+   "weak": [
+    "Cumple estrictamente con lo requerido, sin aportar mejoras.",
+    "No se especifica la cantidad de horas ni el tipo de cursos."
+   ],
+   "hypothesis": {
+    "premia": "Programa de formación y documentación detallado y adaptado a la operativa.",
+    "penaliza": "Falta de concreción en horas y tipos de cursos; cumplimiento estricto sin mejoras."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2B3any2DHlx4kJPJS%2BPS9vg%3D%3D",
+   "doc": "2026-da82dfcd-7f7d-4fef-8895-1ee6449aa8dd"
+  },
+  {
+   "crit": "OFT7: Sostenibilidad",
+   "max": 2,
+   "exp": "p:18981282",
+   "ref": "CMAYOR/2026/SPTD0/0002",
+   "title": "Concesión del servicio de explotación del aparcamiento subterráneo sito en el Muelle 5 del Puerto de Alicante, perteneciente al edificio DD5",
+   "buyer": "Dirección General de la Sociedad de Proyectos para la Transformación Digital, SAU",
+   "nuts": "ES521",
+   "date": "2026-05-12",
+   "offers": 2,
+   "top": {
+    "pts": 1.3,
+    "winner": true
+   },
+   "low": {
+    "pts": 0.6
+   },
+   "best": [
+    "Compromiso de puntos de recarga para vehículos eléctricos y otras medidas interesantes.",
+    "Medidas activas de eficiencia energética y coordinación para recarga eléctrica."
+   ],
+   "weak": [
+    "Medidas de sostenibilidad bastante genéricas."
+   ],
+   "hypothesis": {
+    "premia": "Medidas concretas y verificables, como recarga eléctrica, KPIs ambientales y certificaciones.",
+    "penaliza": "Medidas genéricas sin concreción."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2B3any2DHlx4kJPJS%2BPS9vg%3D%3D",
+   "doc": "2026-da82dfcd-7f7d-4fef-8895-1ee6449aa8dd"
   },
   {
    "crit": "Criterio 1. Experiencia del director técnico y responsable del servicio",
@@ -134,6 +355,104 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=s%2FWaNcqE%2Fg%2F10HRJw8TEnQ%3D%3D",
    "doc": "d58a76d2-065b-44c5-afd7-4bab12653ccf"
+  },
+  {
+   "crit": "Programa Higiénico-sanitario del centro y animales",
+   "max": 3,
+   "exp": "p:6059715",
+   "ref": "SE2020/7",
+   "title": "Gestión del Centro de Acogida de Animales Domésticos (CATAD)",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Cartagena",
+   "nuts": "ES620",
+   "date": "2022-04-07",
+   "offers": 4,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 1.5
+   },
+   "best": [
+    "Programa detallado de limpieza y desinfección con productos y frecuencias.",
+    "Protocolos sanitarios en entrada, permanencia y salida de la instalación.",
+    "Cronogramas y descripción de tareas diarias y periódicas.",
+    "Productos y frecuencias adecuados.",
+    "Cronograma detallado de tratamientos profilácticos, dosis y productos."
+   ],
+   "weak": [
+    "Programa sanitario de los animales escasamente detallado, sin pautas ni frecuencias."
+   ],
+   "hypothesis": {
+    "premia": "Programas con detalle de productos, frecuencias, cronogramas y protocolos sanitarios de los animales.",
+    "penaliza": "Programa sanitario de animales escasamente detallado, sin pautas ni frecuencias."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2LwcFolQQyOrz3GQd5r6SQ%3D%3D",
+   "doc": "00ba494b-1239-4d38-83d3-82f0e64d0199"
+  },
+  {
+   "crit": "Programas de colaboración debidamente documentados con otras entidades tendentes a garantizar la adopción de los animales presentes en el centro",
+   "max": 3,
+   "exp": "p:6059715",
+   "ref": "SE2020/7",
+   "title": "Gestión del Centro de Acogida de Animales Domésticos (CATAD)",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Cartagena",
+   "nuts": "ES620",
+   "date": "2022-04-07",
+   "offers": 4,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 0.5
+   },
+   "best": [
+    "Relaciona y demuestra documentalmente la colaboración con colectivos animalistas.",
+    "Colaboración orientada a potenciar la adopción.",
+    "Abundante documentación de colaboración con otras entidades.",
+    "Detalle de animales beneficiados."
+   ],
+   "weak": [
+    "No adjunta acuerdos que acrediten la colaboración."
+   ],
+   "hypothesis": {
+    "premia": "Acreditar documentalmente la colaboración con entidades animalistas mediante acuerdos o convenios.",
+    "penaliza": "Enumerar entidades sin documentación ni descripción de la colaboración."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2LwcFolQQyOrz3GQd5r6SQ%3D%3D",
+   "doc": "00ba494b-1239-4d38-83d3-82f0e64d0199"
+  },
+  {
+   "crit": "Programas de colaboración con otras entidades cuyos beneficiarios sean animales de raza potencialmente peligrosa",
+   "max": 3,
+   "exp": "p:6059715",
+   "ref": "SE2020/7",
+   "title": "Gestión del Centro de Acogida de Animales Domésticos (CATAD)",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Cartagena",
+   "nuts": "ES620",
+   "date": "2022-04-07",
+   "offers": 4,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Presenta convenio con entidad dedicada a la adopción de estos animales.",
+    "Acuerdos con varias entidades de adiestramiento, recuperación y rehabilitación."
+   ],
+   "weak": [
+    "No menciona nada sobre adopción de animales de raza potencialmente peligrosa."
+   ],
+   "hypothesis": {
+    "premia": "Convenios o acuerdos vigentes con entidades de adopción o rehabilitación de estos animales.",
+    "penaliza": "No mencionar esta tipología de animales o presentar acuerdos solo futuros."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2LwcFolQQyOrz3GQd5r6SQ%3D%3D",
+   "doc": "00ba494b-1239-4d38-83d3-82f0e64d0199"
   }
  ]
 }

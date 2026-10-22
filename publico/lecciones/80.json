@@ -1,8 +1,107 @@
 {
  "cpv2": "80",
- "generated": "2026-10-22T14:39:58.992Z",
+ "generated": "2026-10-22T18:50:13.984Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Estructura y coherencia de la propuesta",
+   "max": 22,
+   "exp": "p:20593394",
+   "ref": "420/26",
+   "title": "Organización, soporte técnico, gestión de plataforma e impartición de 2 ediciones del curso online de \"Aplicación práctica de Herramientas d",
+   "buyer": "Presidencia de la Diputación de Badajoz",
+   "nuts": "ES431",
+   "date": "2026-09-30",
+   "offers": 3,
+   "top": {
+    "pts": 22,
+    "winner": true
+   },
+   "low": {
+    "pts": 15
+   },
+   "best": [
+    "Ajuste a un mes natural, cronograma detallado por módulos y sesiones e itinerarios diferenciados",
+    "Factor diferencial en el Kit de IA Profesional y seguimiento individualizado, tutorización y acompañamiento",
+    "Evaluación final, memoria y adecuación a DigComp 2.2",
+    "Ajuste de la formación a un mes natural y cronograma por módulos y sesiones",
+    "Metodología Learning by doing en 10 pasos y diferenciación correcta de itinerarios"
+   ],
+   "weak": [
+    "No presenta el cronograma con módulos y sesiones exigido en el Formulario III",
+    "No refiere seguimiento, tutorización ni evaluación"
+   ],
+   "hypothesis": {
+    "premia": "Cronograma detallado por módulos y sesiones, junto con seguimiento, tutorización y evaluación (deducción a partir de los comentarios)",
+    "penaliza": "Omitir el cronograma exigido o no referir seguimiento, tutorización ni evaluación"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I2NwqIrtt5mdkQsA7ROvsg%3D%3D",
+   "doc": "2026-f1a0aaf5-9242-48e3-90a4-84ec6575d4c7"
+  },
+  {
+   "crit": "Equipo de trabajo",
+   "max": 20,
+   "exp": "p:20593394",
+   "ref": "420/26",
+   "title": "Organización, soporte técnico, gestión de plataforma e impartición de 2 ediciones del curso online de \"Aplicación práctica de Herramientas d",
+   "buyer": "Presidencia de la Diputación de Badajoz",
+   "nuts": "ES431",
+   "date": "2026-09-30",
+   "offers": 3,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Propone dos docentes con sus CV",
+    "Figura docente con muy buena cualificación"
+   ],
+   "weak": [
+    "Condiciona la adscripción definitiva de los perfiles a la adjudicación",
+    "No aporta la documentación exigida para acreditar formación y experiencia",
+    "Solo aporta documentación fehaciente de la formación y experiencia de uno de ellos"
+   ],
+   "hypothesis": {
+    "premia": "Aportar la documentación acreditativa de formación y experiencia de todo el equipo docente y de coordinación (deducción a partir de los comentarios)",
+    "penaliza": "No aportar documentación o condicionar la adscripción del equipo a la adjudicación"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I2NwqIrtt5mdkQsA7ROvsg%3D%3D",
+   "doc": "2026-f1a0aaf5-9242-48e3-90a4-84ec6575d4c7"
+  },
+  {
+   "crit": "Medios técnicos y materiales para el desarrollo de los trabajos",
+   "max": 7,
+   "exp": "p:20593394",
+   "ref": "420/26",
+   "title": "Organización, soporte técnico, gestión de plataforma e impartición de 2 ediciones del curso online de \"Aplicación práctica de Herramientas d",
+   "buyer": "Presidencia de la Diputación de Badajoz",
+   "nuts": "ES431",
+   "date": "2026-09-30",
+   "offers": 3,
+   "top": {
+    "pts": 7,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Moodle propio, plan anti-abandono y asunción integral de la maquetación y difusión del díptico",
+    "Disposición de guías en propiedad sobre el entorno EvolCampus"
+   ],
+   "weak": [
+    "Solución en la nube estandarizada, sin desarrollos propios"
+   ],
+   "hypothesis": {
+    "premia": "Plataforma propia o control de infraestructura, con guías en propiedad y medidas de seguimiento (deducción a partir de los comentarios)",
+    "penaliza": "Depender de un LMS comercial alquilado o de una solución en la nube estandarizada"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I2NwqIrtt5mdkQsA7ROvsg%3D%3D",
+   "doc": "2026-f1a0aaf5-9242-48e3-90a4-84ec6575d4c7"
+  },
   {
    "crit": "Oferta educativa (gestión educativa)",
    "max": 20,
@@ -211,6 +310,619 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=8zxvW%2FDCBpzua%2Fi14w%2FPLA%3D%3D",
    "doc": "2026-c6a59742-d1a1-4087-b861-ac72fbb1b5e0"
+  },
+  {
+   "crit": "O alumnado",
+   "max": 8,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-08-07",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Caracterización detallada de las áreas de desarrollo del alumnado.",
+    "Protocolo de adaptación muy completo y con temporalización concreta.",
+    "Proyecto de Integración con objetivos, fases y dinámicas de intervención.",
+    "Plan de acollida con tres fases, quendas y horarios concretos.",
+    "Programa de integración desarrollado dentro del Plan de Atención a la Diversidad."
+   ],
+   "weak": [
+    "Aspectos psicoevolutivos presentados de forma esquematizada."
+   ],
+   "hypothesis": {
+    "premia": "Protocolo de adaptación pormenorizado y temporalizado, con Proyecto de Integración desarrollado por fases.",
+    "penaliza": "Tratamiento esquemático de los aspectos psicoevolutivos del alumnado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "A Escola Infantil Municipal de Bembrive",
+   "max": 7,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-08-07",
+   "offers": 2,
+   "top": {
+    "pts": 7,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Descripción pormenorizada de instalaciones y espacios por aulas.",
+    "Contextualización socioeconómica del barrio y de las familias muy exhaustiva.",
+    "Identifica servicios del barrio y relaciones con otros centros.",
+    "Ubicación socioeconómica, tejido asociativo y equipamientos comunitarios enumerados."
+   ],
+   "weak": [
+    "Cita la biblioteca municipal, que se corresponde con una biblioteca escolar.",
+    "Algunas actividades no parecen factibles por emplear recursos de centros ajenos."
+   ],
+   "hypothesis": {
+    "premia": "Descripción exhaustiva de instalaciones, aulas y contexto socioeconómico con recursos reales del entorno.",
+    "penaliza": "Errores en la tipología de recursos citados (biblioteca escolar como municipal) y actividades poco factibles."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Estrutura do centro e do persoal",
+   "max": 5,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-08-07",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Titulaciones y funciones desglosadas por categoría laboral.",
+    "Plan de formación continua con cuadro resumen temporalizado y cómputo horario.",
+    "Organigrama, funciones por categoría y programa de formación con cuadro gráfico.",
+    "Descripción pormenorizada de aulas, espacios y control de materiales."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Participación das familias",
+   "max": 5,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-08-07",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Aspectos singulares de la relación escuela-familias, con canales concretos.",
+    "Procedimientos y medidas viables para fomentar la participación y la ANPA.",
+    "Procedimientos de participación activa y medidas para dinamizar la ANPA.",
+    "Cuadro resumen temporalizado de actividades complementarias por mensualidades."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Descrición da organización dos servizos de comedor e orientación",
+   "max": 7,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-08-07",
+   "offers": 2,
+   "top": {
+    "pts": 7,
+    "winner": false
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Servicio de comedor muy completo, con ejemplos de menús y dietas.",
+    "APPCC supervisado por empresa acreditada y trazabilidad de proveedores.",
+    "Plan de actuación temporalizado del Equipo de Atención Temperá.",
+    "Programa de alimentación saludable detallado y extenso.",
+    "Funciones y medidas concretas del Equipo de Atención Temperá."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Obxectivos e programación",
+   "max": 7,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-08-07",
+   "offers": 2,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Cuadro de actividades con responsables, temporalización, recursos y evaluación.",
+    "Programación basada en 11 unidades didácticas y cronograma adaptado.",
+    "Objetivos relacionados con las Normas de funcionamento, por ámbitos.",
+    "Unidades didácticas temporalizadas y cronograma general y por aulas."
+   ],
+   "weak": [
+    "Cuadro resumen de programación de compleja lectura.",
+    "Solo desarrolla en detalle el contenido de una unidad didáctica."
+   ],
+   "hypothesis": {
+    "premia": "Cuadros de actividades con responsables, temporalización, recursos y evaluación asociados.",
+    "penaliza": "Cuadros resumen de compleja lectura y desarrollo detallado de una sola unidad didáctica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Principios básicos e sinais de identidade",
+   "max": 5,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-08-07",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Metodología pormenorizada con premisas, principios y procedimientos.",
+    "Referencia a la normativa del gallego y proyecto de multiculturalidad.",
+    "Valores de coeducación e igualdad de género concretados en actividades.",
+    "Estrategias contra la discriminación incluidas en PEC y PAD."
+   ],
+   "weak": [
+    "Principios metodológicos y pedagógicos bastante teóricos."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Outras actividades",
+   "max": 3,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-08-07",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Obradoiros mensuales identificados y actividades extraescolares temporalizadas.",
+    "Logística organizativa de las salidas escolares explicitada con claridad.",
+    "Ejemplos de actividades complementarias, inglés, horto escolar y salidas."
+   ],
+   "weak": [
+    "No prevé colaboración con otros servicios municipales en las actividades.",
+    "Propone recursos tecnológicos sin considerar recomendaciones de limitar pantallas."
+   ],
+   "hypothesis": {
+    "premia": "Obradoiros mensuales identificados y logística de salidas escolares explicitada.",
+    "penaliza": "Falta de colaboración con otros servicios municipales y uso de recursos tecnológicos poco acordes a recomendaciones."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Seguimento e avaliación",
+   "max": 3,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-08-07",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Plan de acción tutorial en cuadro temporalizado con objetivos y actividades.",
+    "Evaluación del PAT en tres niveles y control de asistencia.",
+    "Objetivos, ámbitos y mecanismos de evaluación y seguimento detallados."
+   ],
+   "weak": [
+    "Reflexiones genéricas sobre el papel de la tutora en el PAT."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Memoria Descriptiva",
+   "max": 30,
+   "exp": "p:19910296",
+   "ref": "2657161C",
+   "title": "Servicio de actividades formativas para el Centro de Formación de Personas Adultas de Silla",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Silla",
+   "nuts": "ES523",
+   "date": "2026-08-07",
+   "offers": 1,
+   "top": {
+    "pts": 18,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Finalidad inclusiva, adaptada a las necesidades de las personas y orientada a la integración social y cultural.",
+    "Planificación del curso bien estructurada en fases, con unidades didácticas y situaciones de aprendizaje vinculadas a la vida cotidiana.",
+    "Evaluación continua y participativa, con enumeración de indicadores de seguimiento."
+   ],
+   "weak": [
+    "Presentación breve y sin información de la empresa (contacto, trayectoria, experiencia).",
+    "No aporta ejemplos de registros o instrumentos de seguimiento.",
+    "Estructura no uniforme entre apartados, lo que dificulta la lectura global."
+   ],
+   "hypothesis": {
+    "premia": "Diseño curricular y metodológico bien fundamentado, con finalidad inclusiva, planificación por fases y situaciones de aprendizaje cotidianas.",
+    "penaliza": "Presentación breve, falta de información de la empresa, ausencia de instrumentos de seguimiento y estructura poco uniforme."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Gbz8WS2Z90PI8aL3PRS10Q%3D%3D",
+   "doc": "2026-50328b7c-f74c-4846-8531-0e9d4d7980b6"
+  },
+  {
+   "crit": "Actividades complementarias",
+   "max": 5,
+   "exp": "p:19910296",
+   "ref": "2657161C",
+   "title": "Servicio de actividades formativas para el Centro de Formación de Personas Adultas de Silla",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Silla",
+   "nuts": "ES523",
+   "date": "2026-08-07",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Apartado bien planteado en general.",
+    "Traslado del aprendizaje a contextos reales para favorecer la participación activa y el aprendizaje experiencial."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Gbz8WS2Z90PI8aL3PRS10Q%3D%3D",
+   "doc": "2026-50328b7c-f74c-4846-8531-0e9d4d7980b6"
+  },
+  {
+   "crit": "Propuestas de mejora",
+   "max": 5,
+   "exp": "p:19910296",
+   "ref": "2657161C",
+   "title": "Servicio de actividades formativas para el Centro de Formación de Personas Adultas de Silla",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Silla",
+   "nuts": "ES523",
+   "date": "2026-08-07",
+   "offers": 1,
+   "top": {
+    "pts": 0,
+    "winner": true
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "No existe apartado de propuestas de mejora del servicio."
+   ],
+   "hypothesis": {
+    "premia": "No consta en el documento (única oferta valorada, sin comparación).",
+    "penaliza": "No incluir apartado de propuestas de mejora del servicio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Gbz8WS2Z90PI8aL3PRS10Q%3D%3D",
+   "doc": "2026-50328b7c-f74c-4846-8531-0e9d4d7980b6"
+  },
+  {
+   "crit": "A. Análisis del contexto y fundamentación",
+   "max": 6,
+   "exp": "p:19558549",
+   "ref": "28/2026",
+   "title": "Servicio educativo en la escuela municipal de educacion infantil de la hoya",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Lorca",
+   "nuts": "ES620",
+   "date": "2026-07-03",
+   "offers": 2,
+   "top": {
+    "pts": 6,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Adecuada descripción de la realidad social y educativa del entorno",
+    "Incorpora necesidades de conciliación familiar y laboral",
+    "Contextualización integrada del entorno específico de La Hoya",
+    "Vinculación entre contexto y actuaciones pedagógicas"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=09o87YtbWF7XOjazN1Dw9Q%3D%3D",
+   "doc": "2026-164a7431-ec12-41a8-ad45-719b19da6bed"
+  },
+  {
+   "crit": "C. Programación, planificación y calendarización",
+   "max": 8,
+   "exp": "p:19558549",
+   "ref": "28/2026",
+   "title": "Servicio educativo en la escuela municipal de educacion infantil de la hoya",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Lorca",
+   "nuts": "ES620",
+   "date": "2026-07-03",
+   "offers": 2,
+   "top": {
+    "pts": 7.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Programación especialmente desarrollada y sistematizada",
+    "Planificación detallada de contenidos, actividades y jornada",
+    "Alto nivel de concreción curricular",
+    "Programación coherente, funcional y con organización temporal adecuada"
+   ],
+   "weak": [
+    "Desarrollo curricular y concreción de contenidos menos exhaustivos"
+   ],
+   "hypothesis": {
+    "premia": "Planificación detallada, sistematizada y con alto nivel de concreción curricular",
+    "penaliza": "Desarrollo curricular y contenidos poco exhaustivos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=09o87YtbWF7XOjazN1Dw9Q%3D%3D",
+   "doc": "2026-164a7431-ec12-41a8-ad45-719b19da6bed"
+  },
+  {
+   "crit": "D. Unidades didácticas",
+   "max": 8,
+   "exp": "p:19558549",
+   "ref": "28/2026",
+   "title": "Servicio educativo en la escuela municipal de educacion infantil de la hoya",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Lorca",
+   "nuts": "ES620",
+   "date": "2026-07-03",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Carácter vivencial, contextualizado y adaptado al alumnado",
+    "Actividades basadas en experiencias cercanas y exploración",
+    "Unidades correctamente estructuradas con objetivos, contenidos y criterios de evaluación"
+   ],
+   "weak": [
+    "Menor conexión con el contexto social y territorial del centro"
+   ],
+   "hypothesis": {
+    "premia": "Unidades vivenciales, contextualizadas y conectadas con el entorno territorial",
+    "penaliza": "Estructura correcta pero sin conexión con el contexto del centro"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=09o87YtbWF7XOjazN1Dw9Q%3D%3D",
+   "doc": "2026-164a7431-ec12-41a8-ad45-719b19da6bed"
+  },
+  {
+   "crit": "E. Metodología y recursos",
+   "max": 6,
+   "exp": "p:19558549",
+   "ref": "28/2026",
+   "title": "Servicio educativo en la escuela municipal de educacion infantil de la hoya",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Lorca",
+   "nuts": "ES620",
+   "date": "2026-07-03",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 4.5
+   },
+   "best": [
+    "Metodología coherente con las características evolutivas de 0 a 3 años",
+    "Prioriza vínculo afectivo, movimiento libre y ritmos individuales",
+    "Metodología activa y globalizada basada en el juego y la experimentación"
+   ],
+   "weak": [
+    "Fundamentación menos desarrollada que la otra propuesta"
+   ],
+   "hypothesis": {
+    "premia": "Metodología específica para la etapa 0-3 años, con vínculo afectivo y ritmos individuales",
+    "penaliza": "Fundamentación pedagógica menos desarrollada"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=09o87YtbWF7XOjazN1Dw9Q%3D%3D",
+   "doc": "2026-164a7431-ec12-41a8-ad45-719b19da6bed"
+  },
+  {
+   "crit": "F. Evaluación",
+   "max": 6,
+   "exp": "p:19558549",
+   "ref": "28/2026",
+   "title": "Servicio educativo en la escuela municipal de educacion infantil de la hoya",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Lorca",
+   "nuts": "ES620",
+   "date": "2026-07-03",
+   "offers": 2,
+   "top": {
+    "pts": 6,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Criterios, procedimientos e instrumentos variados",
+    "Registros de observación y seguimiento sistemático",
+    "Evaluación integrada en el proceso educativo"
+   ],
+   "weak": [
+    "Menor concreción en indicadores, instrumentos y procedimientos"
+   ],
+   "hypothesis": {
+    "premia": "Variedad de instrumentos y seguimiento sistemático (registros de observación)",
+    "penaliza": "Menor concreción en indicadores y procedimientos de medición"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=09o87YtbWF7XOjazN1Dw9Q%3D%3D",
+   "doc": "2026-164a7431-ec12-41a8-ad45-719b19da6bed"
+  },
+  {
+   "crit": "G. Gestión y coordinación",
+   "max": 3,
+   "exp": "p:19558549",
+   "ref": "28/2026",
+   "title": "Servicio educativo en la escuela municipal de educacion infantil de la hoya",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Lorca",
+   "nuts": "ES620",
+   "date": "2026-07-03",
+   "offers": 2,
+   "top": {
+    "pts": 2.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Coordinación pedagógica y organización del equipo detalladas",
+    "Mecanismos de coordinación interna desarrollados"
+   ],
+   "weak": [
+    "Coordinación y organización interna recogidas de forma general"
+   ],
+   "hypothesis": {
+    "premia": "Mecanismos de coordinación pedagógica y organización del equipo detallados",
+    "penaliza": "Referencias generales a la coordinación y organización interna"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=09o87YtbWF7XOjazN1Dw9Q%3D%3D",
+   "doc": "2026-164a7431-ec12-41a8-ad45-719b19da6bed"
+  },
+  {
+   "crit": "H. Atención a la diversidad",
+   "max": 3,
+   "exp": "p:19558549",
+   "ref": "28/2026",
+   "title": "Servicio educativo en la escuela municipal de educacion infantil de la hoya",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Lorca",
+   "nuts": "ES620",
+   "date": "2026-07-03",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Recoge principios de inclusión y atención individualizada",
+    "Incluye principios inclusivos y respeto a los ritmos individuales"
+   ],
+   "weak": [
+    "Carece de medidas específicas, protocolos o procedimientos concretos"
+   ],
+   "hypothesis": {
+    "premia": "Medidas específicas, protocolos o procedimientos concretos (ninguna oferta los presenta)",
+    "penaliza": "Principios inclusivos sin medidas concretas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=09o87YtbWF7XOjazN1Dw9Q%3D%3D",
+   "doc": "2026-164a7431-ec12-41a8-ad45-719b19da6bed"
+  },
+  {
+   "crit": "J. Difusión y publicidad",
+   "max": 2,
+   "exp": "p:19558549",
+   "ref": "28/2026",
+   "title": "Servicio educativo en la escuela municipal de educacion infantil de la hoya",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Lorca",
+   "nuts": "ES620",
+   "date": "2026-07-03",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": {
+    "pts": 1.5
+   },
+   "best": [
+    "Enumera acciones y medios de difusión",
+    "Referencia a protección de datos y autorización de imagen de menores",
+    "Referencias a actuaciones de difusión",
+    "Incluye jornadas de puertas abiertas"
+   ],
+   "weak": [
+    "Menor detalle en acciones y medios que la otra propuesta"
+   ],
+   "hypothesis": {
+    "premia": "Acciones y medios enumerados, con protección de datos y de imagen de menores",
+    "penaliza": "Menor detalle en acciones y medios de difusión"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=09o87YtbWF7XOjazN1Dw9Q%3D%3D",
+   "doc": "2026-164a7431-ec12-41a8-ad45-719b19da6bed"
   },
   {
    "crit": "CRITERIO JV1 – PROYECTO EDUCATIVO",

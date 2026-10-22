@@ -181,7 +181,7 @@
  },
  "2025-fe4c111d-6d02-42a6-8d0c-2a248c247561": {
   "s": "error",
-  "e": "Expected ',' or ']' after array element in JSON at position 13964 (line 207 column 14)",
+  "e": "Expected ',' or ']' after array element in JSON at position 1513 (line 1 column 1514)",
   "at": "2026-10-22"
  },
  "2026-04bf3420-4ccf-4eba-999b-056276851f52": {
@@ -211,7 +211,7 @@
  },
  "2026-ce0a1796-1cd6-4e4f-81ef-5a1efb7aaaa5": {
   "s": "error",
-  "e": "Expected ',' or ']' after array element in JSON at position 1067 (line 25 column 14)",
+  "e": "Unexpected end of JSON input",
   "at": "2026-10-22"
  },
  "2026-683f9403-9021-4494-b91f-ed42e6ceabbe": {
@@ -290,18 +290,18 @@
   "at": "2026-10-22"
  },
  "2026-8ea03535-2caf-4c73-9497-e27eb3195d57": {
-  "s": "error",
-  "e": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-wor",
+  "s": "no_valoracion",
+  "q": "baja",
   "at": "2026-10-22"
  },
  "2026-1917e4b8-1f18-4b70-abab-2cee338dfe8d": {
-  "s": "error",
-  "e": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-wor",
+  "s": "ok",
+  "q": "alta",
   "at": "2026-10-22"
  },
  "2026-e95ad412-2591-435e-bbee-e0bf5093e56d": {
-  "s": "error",
-  "e": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-wor",
+  "s": "ok",
+  "q": null,
   "at": "2026-10-22"
  },
  "2026-defcc5a7-46b0-4148-908c-93a9ef4d9b45": {
@@ -315,18 +315,18 @@
   "at": "2026-10-22"
  },
  "2026-80165977-bb47-4e6a-85ba-de97729a0dde": {
-  "s": "error",
-  "e": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-wor",
+  "s": "ok",
+  "q": "alta",
   "at": "2026-10-22"
  },
  "2026-3500ddd4-e829-449e-bf23-36507bdcde4f": {
-  "s": "error",
-  "e": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-wor",
+  "s": "ok",
+  "q": "baja",
   "at": "2026-10-22"
  },
  "2026-4e0e233f-d673-41e7-9811-353b2be5e05d": {
-  "s": "error",
-  "e": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-wor",
+  "s": "ok",
+  "q": "media",
   "at": "2026-10-22"
  },
  "2025-a4e825ff-0234-4503-81b5-17569cee524d": {
@@ -335,8 +335,8 @@
   "at": "2026-10-22"
  },
  "dbc760bb-a7e2-4fa3-9fff-1781765b705a": {
-  "s": "error",
-  "e": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-wor",
+  "s": "ok",
+  "q": "media",
   "at": "2026-10-22"
  },
  "2026-fb5962ec-7b12-478c-bb4c-34519866aa59": {
@@ -375,8 +375,8 @@
   "at": "2026-10-22"
  },
  "2026-09d50db4-1730-422b-bab6-8bdeae475e3e": {
-  "s": "error",
-  "e": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-wor",
+  "s": "ok",
+  "q": "alta",
   "at": "2026-10-22"
  },
  "2026-d2e515c8-bfe1-4a34-a724-93530692c23e": {
@@ -405,8 +405,8 @@
   "at": "2026-10-22"
  },
  "2026-0f05a818-ee9d-4d4b-bb4a-0a46290ddf5c": {
-  "s": "error",
-  "e": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-wor",
+  "s": "ok",
+  "q": "alta",
   "at": "2026-10-22"
  },
  "2026-60359893-f1da-4130-85ec-d28f8ee00fae": {
@@ -415,18 +415,18 @@
   "at": "2026-10-22"
  },
  "2026-181ddc01-92b0-4fb7-aaf5-c2b881b26320": {
-  "s": "error",
-  "e": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-wor",
+  "s": "ok",
+  "q": "media",
   "at": "2026-10-22"
  },
  "2026-a1aa16ce-622e-47dd-a41a-5ff6d760627a": {
-  "s": "error",
-  "e": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-wor",
+  "s": "ok",
+  "q": "alta",
   "at": "2026-10-22"
  },
  "2026-14a5b406-d175-45e8-8bb1-33597bc96caf": {
-  "s": "error",
-  "e": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-wor",
+  "s": "no_valoracion",
+  "q": "baja",
   "at": "2026-10-22"
  },
  "2026-e072bf30-b600-4cc5-9812-f7d666862ee7": {
@@ -586,7 +586,7 @@
  },
  "2026-3224c5a5-c6c6-4dcd-8cdf-07086d854128": {
   "s": "error",
-  "e": "Expected ',' or ']' after array element in JSON at position 6592 (line 142 column 87)",
+  "e": "Unexpected end of JSON input",
   "at": "2026-10-22"
  },
  "2026-95c0b862-c09e-44a3-9b37-336c4cd586e3": {
@@ -616,7 +616,7 @@
  },
  "2026-fd5609a8-60ae-4d64-a9a1-b2dea452fcc6": {
   "s": "error",
-  "e": "Expected ',' or ']' after array element in JSON at position 5412 (line 85 column 10)",
+  "e": "Unexpected end of JSON input",
   "at": "2026-10-22"
  },
  "2026-21756bbc-c88b-4179-8988-4dea036b896a": {
@@ -715,6 +715,1231 @@
   "at": "2026-10-22"
  },
  "2026-dff094dc-5c96-43f8-8a04-a2b15fed487c": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-450e7f48-2038-4e95-a0a2-8053a1caf786": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-336dea73-4691-44bb-bc86-bf860ec46e10": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 6573 (line 1 column 6574)",
+  "at": "2026-10-22"
+ },
+ "2026-2a549eda-b2ab-483a-88ad-426d5ee29be4": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 3262 (line 1 column 3263)",
+  "at": "2026-10-22"
+ },
+ "2026-18aaf6b5-001a-45dc-839d-c8df3ee3bbfb": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-80c21e57-1d9c-41b7-8f4f-d45c3e7b9981": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-89303c9b-b4dc-4fa3-9fb9-169cedceb10d": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-f691b366-dc64-4b14-96be-719018c28757": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-8007d760-b449-4df1-ba97-08c66231e4c5": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-444f1c72-33f5-45d2-9f54-89ea6aab3d06": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 6261 (line 1 column 6262)",
+  "at": "2026-10-22"
+ },
+ "2025-6105f0f2-f010-4d0c-8be4-bc3b070f2783": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 6536 (line 1 column 6537)",
+  "at": "2026-10-22"
+ },
+ "2026-7078284b-26dc-4ddd-bc4a-66a09b78df70": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-ee3548ae-59d1-4349-832b-4804fe9dc5c9": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-ea5f325e-8b7a-4540-8465-cfe4ec008d5e": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-0f2ac68d-39e8-4afc-ae15-005d2ea6983a": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-b4591be0-cabc-4e2b-9188-a86b83d8796f": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 6159 (line 1 column 6160)",
+  "at": "2026-10-22"
+ },
+ "9d767619-17a6-4b25-90bd-95e256b998d4": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 7444 (line 1 column 7445)",
+  "at": "2026-10-22"
+ },
+ "2026-9af0635b-9748-4672-8329-e73a98ef496d": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-76288747-c54d-4f0a-ba75-1503ac2638da": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 394 (line 1 column 395)",
+  "at": "2026-10-22"
+ },
+ "2025-ebf0b0aa-b044-4309-8b67-5871bee6429e": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2200b37b-4e97-4a2c-8258-eaf19fb477ae": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 4059 (line 1 column 4060)",
+  "at": "2026-10-22"
+ },
+ "2026-e4aa128e-d097-412c-ada5-ef448ec86d73": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 5991 (line 1 column 5992)",
+  "at": "2026-10-22"
+ },
+ "2026-13295085-2f97-4537-b80a-e2b8442329b7": {
+  "s": "no_valoracion",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-0d82cb72-9dc1-4e18-a8e9-8f9b2f6f70a2": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-3f6b3224-11b6-445f-ab5c-72d3858cbce4": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-d7260326-d242-49c2-b39d-d900c4b1aa91": {
+  "s": "ok",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-92a4ceb5-16be-4e26-88c4-7af76ac83746": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-50807ce4-abc7-4a06-8c99-36745b681ebe": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "c818da92-3a08-4e55-adb3-559009d451dd": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-9093af11-a11a-4a1f-9c9f-5486ed44a6a8": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-3c3e8027-3934-4ca1-b168-47d0323bb5de": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-69480086-4027-42db-ab6d-f7e884b75690": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-0fb9aee4-6f7d-4bb8-ba2c-fa0bdc709b12": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-dac251f7-9233-4698-83b2-b38996cfeac3": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-c0165558-64ff-4fb3-ac09-72a66c2e1069": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-5bddd0ea-9a7e-4ff7-a548-b84d0abe7d8d": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-c6e1135e-b71d-4cd5-aee7-908453532e0e": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-56e31f70-7a72-4158-a1ed-9b2e422636e6": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 2203 (line 1 column 2204)",
+  "at": "2026-10-22"
+ },
+ "2026-4dd24e93-8d2c-4d59-b41d-966a7f6d8433": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-6c615f01-98a8-4c35-8507-5971efacf180": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-723f0bfa-9142-44cd-8688-f23149d494b1": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-401546c3-5026-437b-894d-ff3da64c0bf0": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-a910bf98-eaa0-4fe7-a8d5-5419bd7f7c18": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "4274d80c-c761-4136-bb0b-8c5d700bc5d4": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-275c4b75-24aa-439f-8058-e636f06ff8ad": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-549b536c-db65-441c-af70-8ce11c3208d1": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-e98f6ee8-e3ee-4a65-82fc-ce3ae6b8833c": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2024-cd7de126-f644-4561-b434-b173dafbe2a3": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-ddf6a10c-908d-40ee-8e82-556370fdf408": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 2915 (line 1 column 2916)",
+  "at": "2026-10-22"
+ },
+ "2026-da82dfcd-7f7d-4fef-8895-1ee6449aa8dd": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "243985c6-4394-4e84-ba7f-94e7bb6a98c0": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 1122 (line 1 column 1123)",
+  "at": "2026-10-22"
+ },
+ "2026-825d7727-29c5-46b8-8faf-325886ab6801": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-6d1c22c0-ce5f-4a4f-baa2-e03d74f7ffa2": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 432 (line 1 column 433)",
+  "at": "2026-10-22"
+ },
+ "2025-c4774665-7edb-424f-a241-d116db417c6d": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 2717 (line 1 column 2718)",
+  "at": "2026-10-22"
+ },
+ "2026-f8ea0450-a2dd-46c4-87cf-5b399fab752d": {
+  "s": "ok",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-09851732-96f3-46b2-9f3b-decbeab9e807": {
+  "s": "error",
+  "e": "Unexpected non-whitespace character after JSON at position 1544 (line 1 column 1545)",
+  "at": "2026-10-22"
+ },
+ "2026-34b07f55-d9a5-4654-922e-d9edd3e45ea2": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-49f89547-fe1e-4321-bbdd-6a0a002d72b0": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-c289ef81-81b3-4783-be97-5b97edef2aa6": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "d063e16e-8b25-456d-84b4-3add57031ee6": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-49fb8299-f0ba-4ce3-af3d-7b6aa9103e64": {
+  "s": "no_valoracion",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-bd20301c-bf2d-4a1c-a62d-4f46504906d1": {
+  "s": "ok",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-38351fa8-216e-4db2-9cdc-0d401d11ff98": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-ae9bc815-3430-48b6-8dc3-d6cb78194252": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-22572d26-1e1e-4016-bb3b-d4c76b157912": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-2c051d6c-695a-4572-9029-adb24089645e": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-5ccd6233-781e-4847-ae39-fc8b76246dcb": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-721cd778-f765-4402-8830-9b5c9a336fdb": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-ecca6290-4b11-4457-bb47-080ac712f5aa": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-70027511-1793-49b0-85dd-973481a37849": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-54c21934-9dbb-4cc4-a345-793c536845fc": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-4cf080e9-5ea0-4919-97a6-8d674dd85b7d": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-d407954f-40b4-441e-915a-50e3831f8869": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-e74f18d3-6913-48ee-8097-adf804dbbee7": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 8432 (line 1 column 8433)",
+  "at": "2026-10-22"
+ },
+ "2026-66a03709-1b24-4940-b3bf-94ba993d2b5a": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 2941 (line 1 column 2942)",
+  "at": "2026-10-22"
+ },
+ "2025-ff86d2a8-3f3a-4aa4-a232-09c7f870d0d2": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 7409 (line 1 column 7410)",
+  "at": "2026-10-22"
+ },
+ "5b4f0dcd-3e6b-4072-a007-a4539848603f": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 6084 (line 1 column 6085)",
+  "at": "2026-10-22"
+ },
+ "2026-20338cc6-1eea-4295-ac9b-7dcd8f5dc154": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-147704b6-e950-4048-959b-bc6fd9f56647": {
+  "s": "ok",
+  "q": null,
+  "at": "2026-10-22"
+ },
+ "2026-8f2d25d1-3033-4a14-a323-e86ebc923a8f": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 2044 (line 1 column 2045)",
+  "at": "2026-10-22"
+ },
+ "2026-3f7f6e6d-a605-4bf9-bc22-34f8980d17f2": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-18bcd4ca-144e-48c5-a0c8-3e0e25b5faa2": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 4714 (line 1 column 4715)",
+  "at": "2026-10-22"
+ },
+ "2026-944db015-680b-46fa-a635-c308f359e27e": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 6059 (line 1 column 6060)",
+  "at": "2026-10-22"
+ },
+ "2026-266266d0-b013-4b59-b7f2-213683a6f666": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-0fdaffc2-8ac6-4548-9fe6-83e6e87e46ac": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 2363 (line 1 column 2364)",
+  "at": "2026-10-22"
+ },
+ "51e50acc-afb7-4e58-a188-d5b5f4fd7b65": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-7c0afc37-10fe-4051-8313-c1b0967543a5": {
+  "s": "ok",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-1b0ff936-c943-4621-a555-c756b048e614": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-35101b94-6f91-4c43-be72-c0f2efaf460b": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-734800d9-1b4c-4e28-bbec-f0d782a78ff8": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-50328b7c-f74c-4846-8531-0e9d4d7980b6": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "53bb0423-72b4-4d67-99d9-c0026fe2e010": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-f6b32b8b-32b0-484f-854a-d2c26bf0f8a3": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-43524c48-b109-4a17-b079-202bbe4f0236": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 5790 (line 1 column 5791)",
+  "at": "2026-10-22"
+ },
+ "2026-d19349ec-010f-46fe-b9f2-d22e0133e863": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 8976 (line 1 column 8977)",
+  "at": "2026-10-22"
+ },
+ "54dd1856-ef5c-48ae-b176-1265619f4c18": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 4240 (line 1 column 4241)",
+  "at": "2026-10-22"
+ },
+ "2025-0e44d1cc-d467-400c-b743-2ec94c7f0ed0": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-9505ce20-93ce-4063-9b29-e63556ac987f": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-900ab3fd-267d-4c71-89b7-9900596d033c": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-ca9f508d-0720-47af-92dd-14a28bc9945e": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-fe0d285e-0c4a-49aa-843f-c1f414e3ebd7": {
+  "s": "no_valoracion",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-6966b82a-6e17-454a-93ef-0e8a94ed01c3": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-5244875a-c83b-4cb5-843d-3dfe567669d0": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 4133 (line 1 column 4134)",
+  "at": "2026-10-22"
+ },
+ "2026-ec9b4eb7-5c9b-41d2-b096-92d07c445560": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-b50ab96f-61e4-4cec-a266-230579c236f5": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-15683e2a-4a47-4acf-81c2-fcf39aabe1e0": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-ac652c89-4635-4fe3-81c2-223e9e36e539": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-5fd5c67a-1a3c-4d00-8092-aa0f5c8e34a9": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-a48bec24-9a05-4d16-99d1-72e99b9e5438": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "8bbb95e3-ea2c-44f5-a005-e81fad8ad550": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-64d4afca-6104-4076-9e3d-ba525b582a49": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 4288 (line 1 column 4289)",
+  "at": "2026-10-22"
+ },
+ "2026-0b2bed53-9664-487c-bb35-b1987aa1bd80": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-cc3c1aeb-b546-4c03-8f02-6c6d37ab9606": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-b7229725-518d-4d81-ba8c-0ba70cf3bf51": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 3488 (line 1 column 3489)",
+  "at": "2026-10-22"
+ },
+ "2026-861bf9b9-8d05-4a51-8ea4-7948e5326a55": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 5270 (line 1 column 5271)",
+  "at": "2026-10-22"
+ },
+ "b4ac6e12-524d-4934-a560-4ef9b0c792c8": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-8cec52a7-6a40-46f9-8d07-555a64c26c3c": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 5023 (line 1 column 5024)",
+  "at": "2026-10-22"
+ },
+ "2026-f6a65678-3895-4a0d-822a-89d3750cd0ce": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2025-50541466-2c0f-4fcc-8d4a-21364d15fdae": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 4527 (line 1 column 4528)",
+  "at": "2026-10-22"
+ },
+ "2026-1654fd21-8ae4-46ed-b0cd-23550e39045c": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 204 (line 1 column 205)",
+  "at": "2026-10-22"
+ },
+ "2026-34b4ac69-97dc-4efd-b0c2-75f627b66168": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-33013984-bf85-48b9-86cd-40c7c9c854d1": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-79c9c128-22de-4e8b-8d05-6c62867c6d5b": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "00ba494b-1239-4d38-83d3-82f0e64d0199": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-d8a8eb9e-3f64-4e45-abf0-706b30cb1676": {
+  "s": "ok",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-9f8a3ec3-d8ef-436e-b2ac-5e22e9e04062": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-59cc82f1-9b87-47d7-869e-76a0be1ad334": {
+  "s": "error",
+  "e": "Unexpected non-whitespace character after JSON at position 7043 (line 1 column 7044)",
+  "at": "2026-10-22"
+ },
+ "2026-5ba072ac-096c-4e72-b5fb-7c2099f146d5": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 1925 (line 1 column 1926)",
+  "at": "2026-10-22"
+ },
+ "979730ee-e81b-4165-85d8-24dfc27fb3ec": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 5646 (line 1 column 5647)",
+  "at": "2026-10-22"
+ },
+ "0fcc3edf-d5b2-4fee-a742-414ec8dfdfe7": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-0c2e2840-d671-4cfe-81c8-795414ecda5c": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 7243 (line 1 column 7244)",
+  "at": "2026-10-22"
+ },
+ "2026-40ab9fb2-42ad-401f-ba79-e5eb3f0f0bdd": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 3176 (line 1 column 3177)",
+  "at": "2026-10-22"
+ },
+ "2026-231b8e9c-82a3-4ccc-a2a3-d5d6602f08af": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 6493 (line 1 column 6494)",
+  "at": "2026-10-22"
+ },
+ "2026-901dc9d2-2812-47b7-aea4-6f43f1e18082": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-fd6d963d-8307-4c07-b1bf-a09060ca5161": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-513cb6cc-26ca-47d5-8816-9329d427ee6a": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-ee072805-2c30-4dc2-8060-e48869c32c1e": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "cde44463-f1c2-459d-b9fd-1b577de62e0c": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "cd4d0cbb-c5e8-4d3d-8fef-62c98feea188": {
+  "s": "no_valoracion",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-76feb144-b209-41a6-aaf6-fc7e0f679ce4": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-bc5ea921-b7b6-4bbe-b7fb-0c1cd0151e66": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 511 (line 1 column 512)",
+  "at": "2026-10-22"
+ },
+ "2026-f6a63a30-504f-4b95-9b0a-2cfbf511311f": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-400b570b-a52e-4725-880d-a22dd6334291": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-caac6505-7d6a-46e3-9b0c-fe68430ce6d9": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 4576 (line 1 column 4577)",
+  "at": "2026-10-22"
+ },
+ "2026-102f785b-d47e-4bf2-967a-4ee91c4b0bbe": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-27adc719-c137-4d0d-ad25-f470cfe58793": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 5938 (line 1 column 5939)",
+  "at": "2026-10-22"
+ },
+ "2026-4c1a7494-37c9-46ff-a105-3c7c73bb8a51": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 5362 (line 1 column 5363)",
+  "at": "2026-10-22"
+ },
+ "2026-e6747ace-d659-40d2-accc-596bc12ee557": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-76667799-4b52-4de5-90f0-d0f63d7be4b5": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 3355 (line 1 column 3356)",
+  "at": "2026-10-22"
+ },
+ "48992aaa-665f-48e9-9185-f9694c9e22d0": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-3e8d8b3c-8658-455d-8ff3-2e2c23a98ac4": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-290692c5-75a9-4f68-9edc-04044fe99694": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "262baaa6-4b75-46cc-9bf4-c11fb467c9ab": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 5490 (line 1 column 5491)",
+  "at": "2026-10-22"
+ },
+ "2026-7b80aa86-afbc-420d-aa02-520dabbed2f7": {
+  "s": "no_valoracion",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-261aec81-46f2-4235-8d55-1d1a1431f151": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-4395ea1b-9ce2-4195-beb7-f54e17051c42": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 11194 (line 1 column 11195)",
+  "at": "2026-10-22"
+ },
+ "2026-8b529894-c089-4f08-9a31-d332572a7c54": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-57d03516-7be2-4806-b360-c4f6cd4bb988": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 7850 (line 1 column 7851)",
+  "at": "2026-10-22"
+ },
+ "2025-c97e7048-0f91-4a53-984c-a8a4e5263179": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-88f45f16-d656-4999-a2ea-6fbd7f97c33f": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-df207a53-bf4b-40d7-b58e-5a878073ed56": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-72e9fa7e-44cf-4205-8068-d261c4d69851": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 1386 (line 1 column 1387)",
+  "at": "2026-10-22"
+ },
+ "2026-aae25042-a0cd-40dd-8e31-2242fdd5fcee": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "92dc30e4-0626-45d5-8534-28382a8b5da9": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2025-049466b7-3c2c-4318-b3ac-3ff9fcfe8da9": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-1e4eb422-2f7b-41b6-b007-64c5d6641d9b": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-95777999-9915-4417-8408-044cb469cbcd": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 8185 (line 1 column 8186)",
+  "at": "2026-10-22"
+ },
+ "2026-de4a4fb8-4db8-45f7-837e-1aa18c6e5064": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-f149a633-626d-42ed-8072-c092d54076f2": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-9f89d2b3-8be4-475b-bca6-a1ad8395f9e2": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 8735 (line 1 column 8736)",
+  "at": "2026-10-22"
+ },
+ "2026-59915a00-f0af-44cb-89eb-cbf7e4273e1c": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-42aa36e0-ca28-43f4-a68b-5ea597ca6b36": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-9409fcc5-fc59-421c-a8f3-bb27598578f9": {
+  "s": "ok",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-164a7431-ec12-41a8-ad45-719b19da6bed": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-da94ab28-2875-4c09-bc92-37ef355aaa6a": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-8403a941-8961-4960-94fb-d2c30b9c73a5": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-6ecc0041-1ce6-4b80-b266-44190f0db443": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-081c0ff5-5fe4-4df4-9906-e6c1b89365bf": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-ed305f65-5e95-4dd2-8a9d-e4bb149c77c5": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-08f36e8c-f2cf-490e-b24f-ca4f9f8fa9a6": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-042abbc5-e11d-452f-9ded-e89cdc115fb7": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-8fb8e6db-a26e-4b95-8b62-c1c958db60d2": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "6804a411-d827-4a6a-b852-e25ab84e45cb": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 1519 (line 1 column 1520)",
+  "at": "2026-10-22"
+ },
+ "2026-92d769fe-5252-4383-8ff9-4188809ff880": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 2027 (line 1 column 2028)",
+  "at": "2026-10-22"
+ },
+ "2026-14683d4e-c9d6-4c7c-98d7-dcddd0058e3c": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-3ba8e997-539d-49a8-9359-f66a667071a2": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 7996 (line 1 column 7997)",
+  "at": "2026-10-22"
+ },
+ "2024-836395c8-129b-4819-ae22-7a6784d2fb32": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-a1b59070-473f-4e62-8acc-12e04f05b939": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2025-cc00f075-e761-4f84-8ce1-7124c8794752": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-cd991ec1-be3a-4ada-9991-0e784b0e5cde": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-dc36f4da-f87d-444f-bfc5-298aebf01249": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-ddabaa16-6dda-4ba4-b9bc-c611061b452c": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 9344 (line 1 column 9345)",
+  "at": "2026-10-22"
+ },
+ "2026-89a2ffb2-da62-49dd-9299-b3e7856bfd45": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-485dd844-e10e-43f8-84ca-24cbda1ef06d": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 7907 (line 1 column 7908)",
+  "at": "2026-10-22"
+ },
+ "2026-154eb9b3-7a82-4d1d-9f9a-1fcba726b836": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 4966 (line 1 column 4967)",
+  "at": "2026-10-22"
+ },
+ "2026-ff470a3e-a846-4aaf-8843-3d54aa232eff": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-7906771c-1719-4637-91ac-28a3a27847ed": {
+  "s": "error",
+  "e": "Unexpected non-whitespace character after JSON at position 3634 (line 1 column 3635)",
+  "at": "2026-10-22"
+ },
+ "2026-366cb4dc-9faf-414f-a95c-876d3bff8648": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 5878 (line 1 column 5879)",
+  "at": "2026-10-22"
+ },
+ "2026-1a706585-5914-4281-ac6a-5a09becc088d": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-4e88f8ad-9ca0-4446-8480-6af23f9c9bf1": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-c445626d-72a8-4fd1-b6a1-e3084f8486cf": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-ffa35728-0437-43fa-a617-0595359fc849": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-4d3c8f0c-2c0d-48c9-ac0c-d8ec513163e7": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 7208 (line 1 column 7209)",
+  "at": "2026-10-22"
+ },
+ "2026-3e06f3df-05aa-46ad-a552-33c8f45f3840": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 3696 (line 1 column 3697)",
+  "at": "2026-10-22"
+ },
+ "2026-bfb97e86-f043-4866-bff4-ea43e82e9d69": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-0a61e7ce-d66e-4c4d-9b4f-43b9169ae6cd": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-e001ae8d-0cd2-489b-9362-600b92e8c0a5": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 3401 (line 1 column 3402)",
+  "at": "2026-10-22"
+ },
+ "2026-d2800812-fe25-49fd-adb1-bf8e36c93a2c": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-10b6a4fb-2e3d-4df5-a1af-c7aed7fac70b": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-67e1ee20-f17d-4f8d-9699-798a8f6cf5eb": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "fc66cef2-2577-4365-a233-affbfce6e0b7": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-4a02f26e-d878-4192-9385-4b7d08a4d902": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-11bdcce9-9c91-48ba-b61c-08f68cdd94da": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 7391 (line 1 column 7392)",
+  "at": "2026-10-22"
+ },
+ "2026-5e43d663-8318-4325-aab0-52d36fbf2632": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-d1efb2bb-05e6-4236-91b9-1dac04085302": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-fec95bcf-0769-4a9d-bf37-5e9b2e9f3609": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 9399 (line 1 column 9400)",
+  "at": "2026-10-22"
+ },
+ "2026-1af42390-7dd0-4652-b3f8-d42d01d31f99": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-f1a0aaf5-9242-48e3-90a4-84ec6575d4c7": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-c94b7355-76e7-47a1-98f3-3fbcce4fff08": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 3363 (line 1 column 3364)",
+  "at": "2026-10-22"
+ },
+ "2026-622b7f12-71e1-44ab-b4dd-55ac7b92909b": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-bef7ddff-c56d-4949-a949-5a14414519a4": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-71069102-b2ab-4d74-946d-97f4ed70edc3": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-3dd0d82b-6035-4551-854b-c8832e82947b": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-acb7c046-b084-4349-9dc5-10382ef878c8": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-9be99f60-a996-4b82-83d6-c16a44c4ce59": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-dc03bedf-0de2-4d19-bddb-0f6f611ae39c": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-210771c7-2046-4674-8799-7fb5206a4f6e": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2024-a7b291db-7fff-4381-9cf4-e998ec66ea15": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 8333 (line 1 column 8334)",
+  "at": "2026-10-22"
+ },
+ "2026-aeb1ff70-cbf5-4e11-873c-1c7cdf0e7216": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2025-ac1a1f06-4f3c-44e1-a801-c356541ce38f": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-53da30cf-a75c-4d27-9d31-7dc941cec1c4": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-4cf23610-17f1-4383-9d47-3b1fe2f9b493": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-eab47ee2-341d-4354-af65-5477ac77471b": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-1369d4e8-a19b-4137-81d8-471653cf0073": {
+  "s": "ok",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-760346b2-e0a0-4bb6-bf61-2658c7b09778": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-db67d9da-7930-460c-a3d3-912c52d6138d": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 5402 (line 1 column 5403)",
+  "at": "2026-10-22"
+ },
+ "2025-759e8c9f-3379-4506-883f-8a04e54f8f4e": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-a8bcd19a-d3da-446b-a6a7-40cee492623e": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-7d8f005d-b6d4-4a04-96af-0744186a19db": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-b389fd1c-4ee7-4d08-8ae5-a8e67faa3bdd": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-5d2e48bb-18bf-4faa-8d84-c50fd49d1958": {
+  "s": "error",
+  "e": "Unexpected end of JSON input",
+  "at": "2026-10-22"
+ },
+ "2026-b1f7e50a-5ea3-4aef-abb5-092ca4bdaf00": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2025-2653c122-5fa9-4b5f-8835-0803950a8712": {
+  "s": "ok",
+  "q": null,
+  "at": "2026-10-22"
+ },
+ "2026-de30e158-99d6-4af9-a575-b8db5853b0ea": {
+  "s": "error",
+  "e": "Unexpected non-whitespace character after JSON at position 1858 (line 1 column 1859)",
+  "at": "2026-10-22"
+ },
+ "2026-3bd93240-b0a7-4cfd-9d33-655f9d6fe619": {
   "s": "ok",
   "q": "alta",
   "at": "2026-10-22"

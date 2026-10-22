@@ -1,6 +1,6 @@
 {
  "cpv2": "34",
- "generated": "2026-10-22T14:39:58.994Z",
+ "generated": "2026-10-22T18:50:13.986Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -198,6 +198,35 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ynLe5grqWvezz8fXU2i3eQ%3D%3D",
    "doc": "2026-b89feca1-936b-4adf-bfc4-2bf51edd4724"
+  },
+  {
+   "crit": "Criterios cuya cuantificación depende de un juicio de valor",
+   "max": 49,
+   "exp": "p:16666563",
+   "ref": "96/2025",
+   "title": "Contratación del suministro mediante renting de un vehículo para el desplazamiento de profesionales de la Mancomunidad de Servicios Sociales",
+   "buyer": "Presidencia de la Mancomunidad de Servicios Sociales Pantueña",
+   "nuts": "ES300",
+   "date": "2025-03-24",
+   "offers": 1,
+   "top": {
+    "pts": 34,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Aporta memoria descriptiva del vehículo con catálogo del modelo.",
+    "Servicio de mantenimiento, asistencia y matriculación ajustado al pliego.",
+    "Seguro a todo riesgo sin franquicia ajustado al pliego."
+   ],
+   "weak": [
+    "No detalla vehículo de sustitución en caso de siniestro o avería que obligue a inmovilizar el vehículo.",
+    "Referencia genérica a \"una gestión de flotas por internet\" sin mayor especificación.",
+    "Compromiso de entrega con equipamiento y accesorios según pliegos sin concreción suficiente."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=heKZYxsn%2FTfN3k3tjedSGw%3D%3D",
+   "doc": "2025-ebf0b0aa-b044-4309-8b67-5871bee6429e"
   }
  ]
 }

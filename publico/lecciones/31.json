@@ -1,6 +1,6 @@
 {
  "cpv2": "31",
- "generated": "2026-10-22T14:39:58.993Z",
+ "generated": "2026-10-22T18:50:13.985Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -35,6 +35,238 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=VxMbrpoiWvY%2Bk2oCbDosIw%3D%3D",
    "doc": "2026-48ddacb7-3440-4542-acf1-cb376c3fc4db"
+  },
+  {
+   "crit": "MEMORIA TÉCNICA DE EJECUCIÓN DE LOS TRABAJOS",
+   "max": 15,
+   "exp": "p:19724058",
+   "ref": "42/2026",
+   "title": "Suministro del alumbrado ornamental eventual y ejecución de instalaciones eléctricas provisionales, para las fiestas de la ciudad de Huelva.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Huelva",
+   "nuts": "ES615",
+   "date": "2026-08-04",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Programación y cronogramas detallados para todas las actuaciones, con medios materiales y humanos asignados.",
+    "Organigramas de montaje, desmontaje y mantenimiento ajustados a los eventos de la ciudad.",
+    "Sistema de telecontrol, telemedida y monitorización de cuadros, y procedimientos que minimizan impacto en tráfico y entorno."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Cronogramas detallados, medios asignados a cada tarea y procedimientos que minimizan impacto urbano.",
+    "penaliza": "No se identifican deducciones; el informe no recoge carencias. Único licitador, sin comparación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=NIaTljwQdsnkY6rls5tG9A%3D%3D",
+   "doc": "2026-0d82cb72-9dc1-4e18-a8e9-8f9b2f6f70a2"
+  },
+  {
+   "crit": "CONFIGURACIÓN ESTÉTICA PARA LOS MONTAJES DE ELEMENTOS DURANTE LAS FIESTAS NAVIDEÑAS",
+   "max": 15,
+   "exp": "p:19724058",
+   "ref": "42/2026",
+   "title": "Suministro del alumbrado ornamental eventual y ejecución de instalaciones eléctricas provisionales, para las fiestas de la ciudad de Huelva.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Huelva",
+   "nuts": "ES615",
+   "date": "2026-08-04",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Gran variedad de bocetos, modelos de árboles, pórticos y figuras para elegir y variar los puntos de instalación.",
+    "Recoge lo indicado en el PPT.",
+    "Aporta propuestas de diseños de otras fiestas de la ciudad."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Variedad de bocetos y modelos para elegir, y cumplimiento de los mínimos del PPT.",
+    "penaliza": "No se identifican deducciones; el informe no recoge carencias. Único licitador, sin comparación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=NIaTljwQdsnkY6rls5tG9A%3D%3D",
+   "doc": "2026-0d82cb72-9dc1-4e18-a8e9-8f9b2f6f70a2"
+  },
+  {
+   "crit": "PROPUESTA PORTADA DE FIESTAS COLOMBINAS",
+   "max": 10,
+   "exp": "p:19724058",
+   "ref": "42/2026",
+   "title": "Suministro del alumbrado ornamental eventual y ejecución de instalaciones eléctricas provisionales, para las fiestas de la ciudad de Huelva.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Huelva",
+   "nuts": "ES615",
+   "date": "2026-08-04",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Variabilidad escénica y configuración técnica homogénea y versátil.",
+    "Modulación que permite reproducir la volumetría, proporciones y detalles arquitectónicos del diseño.",
+    "Boceto susceptible de modificación para adaptarse a la temática de años siguientes."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Variabilidad escénica, estructura versátil y capacidad de adaptación a temáticas futuras.",
+    "penaliza": "No se identifican deducciones; el informe no recoge carencias. Único licitador, sin comparación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=NIaTljwQdsnkY6rls5tG9A%3D%3D",
+   "doc": "2026-0d82cb72-9dc1-4e18-a8e9-8f9b2f6f70a2"
+  },
+  {
+   "crit": "Análisis de la oferta técnica propuesta por el licitador",
+   "max": 8,
+   "exp": "p:19588197",
+   "ref": "Suministro L3_2026",
+   "title": "Suministro de equipos de instrumentación y control para la red de abastecimiento y saneamiento de Granada.",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-07-20",
+   "offers": 2,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Materiales conforme al PPT y metodología de trabajo descrita correctamente.",
+    "Procedimientos estandarizados para flujos de pedidos-suministros y herramientas digitales.",
+    "Certificaciones 9001, 14001, 22301 y 45001; sistema informático con posibilidad de enlace con Emasagra.",
+    "Procedimientos estandarizados para flujos de pedidos-suministros.",
+    "Certificación 9001."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Metodología detallada del pedido y seguimiento, detalle técnico de equipos, proximidad de almacenes y experiencia acreditada en suministros similares.",
+    "penaliza": "Descripciones genéricas limitadas a cumplir el PPT y a una certificación básica, sin detalle de experiencia ni de logística."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=VxhXydXWzgsS7pcxhTeWOg%3D%3D",
+   "doc": "2026-181ddc01-92b0-4fb7-aaf5-c2b881b26320"
+  },
+  {
+   "crit": "Mejoras propuestas por el licitador",
+   "max": 2,
+   "exp": "p:19588197",
+   "ref": "Suministro L3_2026",
+   "title": "Suministro de equipos de instrumentación y control para la red de abastecimiento y saneamiento de Granada.",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-07-20",
+   "offers": 1,
+   "top": {
+    "pts": 0.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Propone mantener un stock de emergencia dedicado para Emasagra."
+   ],
+   "weak": [
+    "Unificar equipos FMS500 y FMT020 no aporta valor, porque Emasagra necesita comprarlos por separado en numerosas ocasiones."
+   ],
+   "hypothesis": {
+    "premia": "Mejoras con utilidad real para Emasagra, como la protección IP68 de los equipos.",
+    "penaliza": "No detallar mejoras o proponer unificaciones de equipos que no aportan valor operativo."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=VxhXydXWzgsS7pcxhTeWOg%3D%3D",
+   "doc": "2026-181ddc01-92b0-4fb7-aaf5-c2b881b26320"
+  },
+  {
+   "crit": "Análisis de la oferta técnica propuesta por el licitador",
+   "max": 8,
+   "exp": "p:19588197",
+   "ref": "Suministro L3_2026",
+   "title": "Suministro de equipos de instrumentación y control para la red de abastecimiento y saneamiento de Granada.",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-07-20",
+   "offers": 1,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Materiales conforme al PPT y metodología de trabajo descrita correctamente.",
+    "Procedimientos estandarizados y herramientas informáticas para la digitalización del suministro.",
+    "Certificaciones 9001, 14001, 22301 y 45001; sistema con enlace a los sistemas de Emasagra."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Metodología detallada del pedido y seguimiento, detalle técnico de equipos, proximidad de almacenes y experiencia acreditada en suministros similares.",
+    "penaliza": "Descripciones genéricas limitadas a cumplir el PPT y a una certificación básica, sin detalle de experiencia ni de logística."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=VxhXydXWzgsS7pcxhTeWOg%3D%3D",
+   "doc": "2026-181ddc01-92b0-4fb7-aaf5-c2b881b26320"
+  },
+  {
+   "crit": "Análisis de la oferta técnica propuesta por el licitador",
+   "max": 8,
+   "exp": "p:19588197",
+   "ref": "Suministro L3_2026",
+   "title": "Suministro de equipos de instrumentación y control para la red de abastecimiento y saneamiento de Granada.",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-07-20",
+   "offers": 3,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Describe metodología, forma de realizar pedidos y seguimiento; detalle técnico importante de los equipos.",
+    "Almacenes muy próximos al territorio de Emasagra (Peligros).",
+    "Acredita experiencia suficiente en suministros muy similares."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Metodología detallada del pedido y seguimiento, detalle técnico de equipos, proximidad de almacenes y experiencia acreditada en suministros similares.",
+    "penaliza": "Descripciones genéricas limitadas a cumplir el PPT y a una certificación básica, sin detalle de experiencia ni de logística."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=VxhXydXWzgsS7pcxhTeWOg%3D%3D",
+   "doc": "2026-181ddc01-92b0-4fb7-aaf5-c2b881b26320"
+  },
+  {
+   "crit": "Mejoras propuestas por el licitador",
+   "max": 2,
+   "exp": "p:19588197",
+   "ref": "Suministro L3_2026",
+   "title": "Suministro de equipos de instrumentación y control para la red de abastecimiento y saneamiento de Granada.",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-07-20",
+   "offers": 2,
+   "top": {
+    "pts": 1,
+    "winner": true
+   },
+   "low": {
+    "pts": 0.5
+   },
+   "best": [
+    "Trasmisores de presión suministrados con protección IP68."
+   ],
+   "weak": [
+    "No se detallan mejoras."
+   ],
+   "hypothesis": {
+    "premia": "Mejoras con utilidad real para Emasagra, como la protección IP68 de los equipos.",
+    "penaliza": "No detallar mejoras o proponer unificaciones de equipos que no aportan valor operativo."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=VxhXydXWzgsS7pcxhTeWOg%3D%3D",
+   "doc": "2026-181ddc01-92b0-4fb7-aaf5-c2b881b26320"
   }
  ]
 }

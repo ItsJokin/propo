@@ -1,0 +1,377 @@
+{
+ "cpv2": "44",
+ "generated": "2026-10-22T18:50:13.987Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Descripción del suministro",
+   "max": 15,
+   "exp": "p:19673086",
+   "ref": "CN 56/2026",
+   "title": "Remamparización de edificios del acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-05",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Descripción completa del producto Movinord"
+   ],
+   "weak": [
+    "No describe el resto de productos incluidos en los pliegos"
+   ],
+   "hypothesis": {
+    "premia": "Descripción completa de todos los productos incluidos en los pliegos (la oferta solo describe en detalle el Movinord)",
+    "penaliza": "Describir en detalle solo un producto y omitir el resto"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nwFHG2DvEBHN3k3tjedSGw%3D%3D",
+   "doc": "2026-50807ce4-abc7-4a06-8c99-36745b681ebe"
+  },
+  {
+   "crit": "Gestión de devoluciones",
+   "max": 15,
+   "exp": "p:19673086",
+   "ref": "CN 56/2026",
+   "title": "Remamparización de edificios del acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-05",
+   "offers": 1,
+   "top": {
+    "pts": 7,
+    "winner": false
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "Describe las devoluciones solo en el momento de recepción de materiales",
+    "No cubre el proceso hasta la instalación final"
+   ],
+   "hypothesis": {
+    "premia": "Gestión de devoluciones durante todo el proceso hasta la instalación final",
+    "penaliza": "Limitar la gestión de devoluciones al momento de recepción de materiales"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nwFHG2DvEBHN3k3tjedSGw%3D%3D",
+   "doc": "2026-50807ce4-abc7-4a06-8c99-36745b681ebe"
+  },
+  {
+   "crit": "Garantía de suministro",
+   "max": 10,
+   "exp": "p:19673086",
+   "ref": "CN 56/2026",
+   "title": "Remamparización de edificios del acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-05",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Describe el proceso de suministro desde fabricación hasta entrega al cliente",
+    "Incluye comunicaciones y coordinaciones previas con el director del expediente"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nwFHG2DvEBHN3k3tjedSGw%3D%3D",
+   "doc": "2026-50807ce4-abc7-4a06-8c99-36745b681ebe"
+  },
+  {
+   "crit": "Calidad a obtener",
+   "max": 15,
+   "exp": "p:19673086",
+   "ref": "CN 56/2026",
+   "title": "Remamparización de edificios del acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-05",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Certificación en sistemas de gestión de aseguramiento de la calidad",
+    "Asegura calidad desde fabricante hasta instalación con control, supervisión y diseño gráfico"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nwFHG2DvEBHN3k3tjedSGw%3D%3D",
+   "doc": "2026-50807ce4-abc7-4a06-8c99-36745b681ebe"
+  },
+  {
+   "crit": "Organización y planificación del suministro",
+   "max": 15,
+   "exp": "p:19673086",
+   "ref": "CN 56/2026",
+   "title": "Remamparización de edificios del acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-05",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Compromiso de aportar un planning con suficiente antelación"
+   ],
+   "weak": [
+    "El planning se hará cuando se conozcan los trabajos concretos, sin más información"
+   ],
+   "hypothesis": {
+    "premia": "Planning entregado con antelación y con información concreta",
+    "penaliza": "Posponer el planning hasta conocer los trabajos concretos, sin más detalle"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nwFHG2DvEBHN3k3tjedSGw%3D%3D",
+   "doc": "2026-50807ce4-abc7-4a06-8c99-36745b681ebe"
+  },
+  {
+   "crit": "Servicio técnico en periodo garantía",
+   "max": 15,
+   "exp": "p:19673086",
+   "ref": "CN 56/2026",
+   "title": "Remamparización de edificios del acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-05",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Compromiso de reemplazar todo el material defectuoso y asistencia técnica en garantía",
+    "Reposición de materiales durante un periodo mínimo de 10 años"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nwFHG2DvEBHN3k3tjedSGw%3D%3D",
+   "doc": "2026-50807ce4-abc7-4a06-8c99-36745b681ebe"
+  },
+  {
+   "crit": "Mejoras sin coste adicional",
+   "max": 15,
+   "exp": "p:19673086",
+   "ref": "CN 56/2026",
+   "title": "Remamparización de edificios del acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-05",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Incremento del plazo de garantía en un año adicional"
+   ],
+   "weak": [
+    "Solo se valora una de las mejoras propuestas"
+   ],
+   "hypothesis": {
+    "premia": "Mejoras valorables adicionales, más allá del plazo de garantía",
+    "penaliza": "Proponer mejoras que no son valoradas (solo se puntúa el año extra de garantía)"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nwFHG2DvEBHN3k3tjedSGw%3D%3D",
+   "doc": "2026-50807ce4-abc7-4a06-8c99-36745b681ebe"
+  },
+  {
+   "crit": "Metodología",
+   "max": 20,
+   "exp": "p:19791893",
+   "ref": "199/26",
+   "title": "Contratación de las actuaciones relativas a la ejecución del Proyecto ACVPA QR 23 en el marco de los presupuestos provinciales participativo",
+   "buyer": "Presidencia de la Diputación de Badajoz",
+   "nuts": "ES431",
+   "date": "2026-07-28",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Metodología acorde al tipo de trabajos, desde la redacción del proyecto hasta la documentación final.",
+    "Incluye localización, coordinación con administraciones, autorizaciones, diseño, códigos QR, fabricación e instalación."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Desarrollo completo de las fases del trabajo, con actuaciones técnicas y administrativas concretas y coherentes.",
+    "penaliza": "No consta en el informe; la única oferta obtiene la calificación Alta, no Excelente, sin detalle de deficiencias."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OTK7d9ZkhS%2BExvMJXBMHHQ%3D%3D",
+   "doc": "2026-80165977-bb47-4e6a-85ba-de97729a0dde"
+  },
+  {
+   "crit": "Planificación de los trabajos",
+   "max": 5,
+   "exp": "p:19791893",
+   "ref": "199/26",
+   "title": "Contratación de las actuaciones relativas a la ejecución del Proyecto ACVPA QR 23 en el marco de los presupuestos provinciales participativo",
+   "buyer": "Presidencia de la Diputación de Badajoz",
+   "nuts": "ES431",
+   "date": "2026-07-28",
+   "offers": 1,
+   "top": {
+    "pts": 3.75,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Equipo multidisciplinar y medios técnicos descritos para afrontar la totalidad de los trabajos.",
+    "Experiencia en GPS, reportajes fotográficos, códigos QR y gestión documental patrimonial.",
+    "Buen conocimiento del territorio extremeño y de sus municipios."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OTK7d9ZkhS%2BExvMJXBMHHQ%3D%3D",
+   "doc": "2026-80165977-bb47-4e6a-85ba-de97729a0dde"
+  },
+  {
+   "crit": "Programa de trabajo",
+   "max": 5,
+   "exp": "p:19791893",
+   "ref": "199/26",
+   "title": "Contratación de las actuaciones relativas a la ejecución del Proyecto ACVPA QR 23 en el marco de los presupuestos provinciales participativo",
+   "buyer": "Presidencia de la Diputación de Badajoz",
+   "nuts": "ES431",
+   "date": "2026-07-28",
+   "offers": 1,
+   "top": {
+    "pts": 3.75,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Fases de trabajo con cronograma e identificación de tareas por fase.",
+    "Programa coherente y adaptado a las necesidades del proyecto."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OTK7d9ZkhS%2BExvMJXBMHHQ%3D%3D",
+   "doc": "2026-80165977-bb47-4e6a-85ba-de97729a0dde"
+  },
+  {
+   "crit": "Originalidad e innovaciones",
+   "max": 10,
+   "exp": "p:19791893",
+   "ref": "199/26",
+   "title": "Contratación de las actuaciones relativas a la ejecución del Proyecto ACVPA QR 23 en el marco de los presupuestos provinciales participativo",
+   "buyer": "Presidencia de la Diputación de Badajoz",
+   "nuts": "ES431",
+   "date": "2026-07-28",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Propuesta adecuada a las necesidades del contrato."
+   ],
+   "weak": [
+    "No destaca por su originalidad ni por su innovación."
+   ],
+   "hypothesis": {
+    "premia": "Propuestas con innovaciones distintivas en diseños o mockups, que el informe no encuentra en esta oferta.",
+    "penaliza": "Propuesta adecuada pero sin originalidad ni innovación destacable, lo que limita la puntuación a Buena."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OTK7d9ZkhS%2BExvMJXBMHHQ%3D%3D",
+   "doc": "2026-80165977-bb47-4e6a-85ba-de97729a0dde"
+  },
+  {
+   "crit": "Valor técnico de la oferta",
+   "max": 50,
+   "exp": "p:19616478",
+   "ref": "028/26-SM",
+   "title": "Suministro de cemento sulfato resistente tipo CEM I 42,5 SR para inyecciones en el Canal de Aragón y Cataluña.",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Ebro",
+   "nuts": "ES243",
+   "date": "2026-07-22",
+   "offers": 1,
+   "top": {
+    "pts": 40,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Buen conocimiento de la zona regable en la que ejecutar las entregas.",
+    "Compromiso de respuesta a cualquier pedido en 24 horas, mejorando el mínimo de dos días exigido.",
+    "Plantas propias en el entorno; transporte al punto más alejado en una hora como máximo."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Conocimiento de la zona regable, acopio intermedio, respuesta en 24 horas y plantas propias que acortan el transporte.",
+    "penaliza": "No consta; el informe solo valora una oferta y no recoge aspectos negativos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KjnrjMhE%2F4iS81gZFETWmA%3D%3D",
+   "doc": "2026-09d50db4-1730-422b-bab6-8bdeae475e3e"
+  },
+  {
+   "crit": "Certificados de laboratorio de ensayos y del seguimiento de la calidad del producto",
+   "max": 30,
+   "exp": "p:19616478",
+   "ref": "028/26-SM",
+   "title": "Suministro de cemento sulfato resistente tipo CEM I 42,5 SR para inyecciones en el Canal de Aragón y Cataluña.",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Ebro",
+   "nuts": "ES243",
+   "date": "2026-07-22",
+   "offers": 1,
+   "top": {
+    "pts": 27,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Información muy notable sobre seguimiento de la calidad del producto.",
+    "Compromiso de calidad de dos fabricantes diferentes.",
+    "Aporta certificados de control de producción en fábrica."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Seguimiento de calidad detallado, compromiso con dos fabricantes y certificados de control de producción en fábrica.",
+    "penaliza": "No consta; el informe no recoge aspectos negativos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KjnrjMhE%2F4iS81gZFETWmA%3D%3D",
+   "doc": "2026-09d50db4-1730-422b-bab6-8bdeae475e3e"
+  },
+  {
+   "crit": "Grado de detalle del proceso de suministro en obra del material",
+   "max": 20,
+   "exp": "p:19616478",
+   "ref": "028/26-SM",
+   "title": "Suministro de cemento sulfato resistente tipo CEM I 42,5 SR para inyecciones en el Canal de Aragón y Cataluña.",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Ebro",
+   "nuts": "ES243",
+   "date": "2026-07-22",
+   "offers": 1,
+   "top": {
+    "pts": 18,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Buena definición de procesos para distintas situaciones, en obra y en almacén.",
+    "Define con claridad los procesos de transporte, carga y descarga del cemento."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Definición clara de procesos de entrega en distintas situaciones, incluida la carga y descarga.",
+    "penaliza": "No consta; el informe no recoge aspectos negativos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KjnrjMhE%2F4iS81gZFETWmA%3D%3D",
+   "doc": "2026-09d50db4-1730-422b-bab6-8bdeae475e3e"
+  }
+ ]
+}

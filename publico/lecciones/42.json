@@ -1,8 +1,158 @@
 {
  "cpv2": "42",
- "generated": "2026-10-22T14:39:58.993Z",
+ "generated": "2026-10-22T18:50:13.985Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Fase 1. Suministro",
+   "max": 8,
+   "exp": "p:19831791",
+   "ref": "971/2026",
+   "title": "Suministro Reparacion pozo principal de bombeo de Abruñeiras. POS + 2025",
+   "buyer": "Alcaldía del Ayuntamiento de Noia",
+   "nuts": "ES111",
+   "date": "2026-09-24",
+   "offers": 1,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Incluye todos los contenidos exigidos por el PCAP para esta fase.",
+    "Personal y funciones diferenciadas por perfil, con proceso de recepción documentado."
+   ],
+   "weak": [
+    "Descripción genérica de algunos medios materiales, sin características principales.",
+    "Falta de claridad sobre el lugar de la recepción técnica inicial (estación de bombeo o almacén de Santiago)."
+   ],
+   "hypothesis": {
+    "premia": "Sin comparativa: la oferta obtiene valoración alta por cubrir todos los contenidos exigidos y describir el proceso de recepción de forma diferenciada.",
+    "penaliza": "Medios descritos de forma genérica y falta de concreción sobre el lugar de recepción."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=D5kYWVl46KcUqXM96WStVA%3D%3D",
+   "doc": "2026-825d7727-29c5-46b8-8faf-325886ab6801"
+  },
+  {
+   "crit": "Fase 2. Instalación",
+   "max": 8,
+   "exp": "p:19831791",
+   "ref": "971/2026",
+   "title": "Suministro Reparacion pozo principal de bombeo de Abruñeiras. POS + 2025",
+   "buyer": "Alcaldía del Ayuntamiento de Noia",
+   "nuts": "ES111",
+   "date": "2026-09-24",
+   "offers": 1,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Incluye todos los contenidos exigidos y una metodología ordenada y adaptada a la instalación.",
+    "Personal y medios identificados con funciones diferenciadas."
+   ],
+   "weak": [
+    "Medios definidos de forma genérica (bombeo provisional, obturador, medios de elevación).",
+    "Reposición de cubierta e integración eléctrica desarrolladas con menor precisión."
+   ],
+   "hypothesis": {
+    "premia": "Sin comparativa: valoración alta por metodología ordenada y personal diferenciado por funciones.",
+    "penaliza": "Definición genérica de medios clave y menor precisión en reposición de cubierta e integración eléctrica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=D5kYWVl46KcUqXM96WStVA%3D%3D",
+   "doc": "2026-825d7727-29c5-46b8-8faf-325886ab6801"
+  },
+  {
+   "crit": "Fase 3. Puesta en marcha",
+   "max": 3,
+   "exp": "p:19831791",
+   "ref": "971/2026",
+   "title": "Suministro Reparacion pozo principal de bombeo de Abruñeiras. POS + 2025",
+   "buyer": "Alcaldía del Ayuntamiento de Noia",
+   "nuts": "ES111",
+   "date": "2026-09-24",
+   "offers": 1,
+   "top": {
+    "pts": 2.75,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Incluye todos los contenidos exigidos por el PCAP.",
+    "Prevé pruebas en vacío y en carga, con supervisión, registro e interrupción inmediata ante incidencias."
+   ],
+   "weak": [
+    "No concreta la duración ni el número de ciclos de las pruebas.",
+    "No establece criterios para considerar satisfactorios los resultados."
+   ],
+   "hypothesis": {
+    "premia": "Sin comparativa: valoración alta por cobertura completa de pruebas y supervisión.",
+    "penaliza": "Falta de duración, número de ciclos y criterios de aceptación de las pruebas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=D5kYWVl46KcUqXM96WStVA%3D%3D",
+   "doc": "2026-825d7727-29c5-46b8-8faf-325886ab6801"
+  },
+  {
+   "crit": "Fase 4. Comprobación",
+   "max": 3,
+   "exp": "p:19831791",
+   "ref": "971/2026",
+   "title": "Suministro Reparacion pozo principal de bombeo de Abruñeiras. POS + 2025",
+   "buyer": "Alcaldía del Ayuntamiento de Noia",
+   "nuts": "ES111",
+   "date": "2026-09-24",
+   "offers": 1,
+   "top": {
+    "pts": 2.6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Revisión completa de anclajes, alineación, estabilidad, protecciones y documentación técnica.",
+    "Personal y medios para control de vibraciones identificados."
+   ],
+   "weak": [
+    "Algunas comprobaciones se solapan con la fase de puesta en marcha.",
+    "Criterios finales de aceptación y gestión de incidencias poco concretos."
+   ],
+   "hypothesis": {
+    "premia": "Sin comparativa: valoración alta por revisión completa de componentes y documentación.",
+    "penaliza": "Solapamiento con puesta en marcha y criterios finales de aceptación poco concretos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=D5kYWVl46KcUqXM96WStVA%3D%3D",
+   "doc": "2026-825d7727-29c5-46b8-8faf-325886ab6801"
+  },
+  {
+   "crit": "Cronograma",
+   "max": 3,
+   "exp": "p:19831791",
+   "ref": "971/2026",
+   "title": "Suministro Reparacion pozo principal de bombeo de Abruñeiras. POS + 2025",
+   "buyer": "Alcaldía del Ayuntamiento de Noia",
+   "nuts": "ES111",
+   "date": "2026-09-24",
+   "offers": 1,
+   "top": {
+    "pts": 2.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Planificación en términos generales coherente con el plazo y la metodología.",
+    "Incluye cuadros de personal y medios asignados a cada fase."
+   ],
+   "weak": [
+    "La suma de duraciones parciales no coincide con los 66 días totales.",
+    "La actividad 'recepción y almacenamiento' (56 días) engloba también fabricación y suministro."
+   ],
+   "hypothesis": {
+    "premia": "Sin comparativa: valoración alta por planificación coherente y asignación de personal y medios por fase.",
+    "penaliza": "Incoherencia en la suma de duraciones, actividad excesivamente agregada y falta de dedicación del personal."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=D5kYWVl46KcUqXM96WStVA%3D%3D",
+   "doc": "2026-825d7727-29c5-46b8-8faf-325886ab6801"
+  },
   {
    "crit": "Adecuación de perfiles, funciones y responsabilidades",
    "max": 6,
@@ -250,6 +400,245 @@
    "hypothesis": null,
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tupnPyPXUpOS81gZFETWmA%3D%3D",
    "doc": "2026-ef5cec4b-eb32-4204-a0e6-fcaea35cb1a3"
+  },
+  {
+   "crit": "Adecuación de perfiles, funciones y responsabilidades",
+   "max": 6,
+   "exp": "p:19949904",
+   "ref": "SUM-26-0221-SIST",
+   "title": "Suministro, instalación, configuración e integración de servidores para la infraestructura corporativa de virtualización del puesto de traba",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES523",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Jefe de proyecto como único punto de contacto frente a umivale Activa.",
+    "Tres ingenieros cubren conjuntamente todas las necesidades técnicas previstas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qMqcXoW3MliHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-20338cc6-1eea-4295-ac9b-7dcd8f5dc154"
+  },
+  {
+   "crit": "Experiencia específica del equipo en proyectos similares",
+   "max": 10,
+   "exp": "p:19949904",
+   "ref": "SUM-26-0221-SIST",
+   "title": "Suministro, instalación, configuración e integración de servidores para la infraestructura corporativa de virtualización del puesto de traba",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES523",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Experiencia amplia y detallada de todos los perfiles en proyectos similares.",
+    "Incluye virtualización, conectividad LAN/SAN y almacenamiento."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qMqcXoW3MliHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-20338cc6-1eea-4295-ac9b-7dcd8f5dc154"
+  },
+  {
+   "crit": "Certificaciones y formación técnica vinculada al objeto del contrato",
+   "max": 7,
+   "exp": "p:19949904",
+   "ref": "SUM-26-0221-SIST",
+   "title": "Suministro, instalación, configuración e integración de servidores para la infraestructura corporativa de virtualización del puesto de traba",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES523",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Certificaciones de técnicos y formación adecuadas a las prestaciones del contrato."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qMqcXoW3MliHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-20338cc6-1eea-4295-ac9b-7dcd8f5dc154"
+  },
+  {
+   "crit": "Dedicación, disponibilidad y continuidad del equipo",
+   "max": 5,
+   "exp": "p:19949904",
+   "ref": "SUM-26-0221-SIST",
+   "title": "Suministro, instalación, configuración e integración de servidores para la infraestructura corporativa de virtualización del puesto de traba",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES523",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Se indica la dedicación prevista del equipo asignado."
+   ],
+   "weak": [
+    "No se detallan fases críticas ni mecanismos de continuidad."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qMqcXoW3MliHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-20338cc6-1eea-4295-ac9b-7dcd8f5dc154"
+  },
+  {
+   "crit": "Capacidad de coordinación técnica e interlocución con umivale Activa",
+   "max": 2,
+   "exp": "p:19949904",
+   "ref": "SUM-26-0221-SIST",
+   "title": "Suministro, instalación, configuración e integración de servidores para la infraestructura corporativa de virtualización del puesto de traba",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES523",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Modelo de coordinación claro y adecuado con jefe de proyecto único.",
+    "Gobierno adaptado a la duración y combina seguimiento, coordinación y trabajo técnico."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qMqcXoW3MliHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-20338cc6-1eea-4295-ac9b-7dcd8f5dc154"
+  },
+  {
+   "crit": "Metodología y enfoque técnico de implantación",
+   "max": 4,
+   "exp": "p:19949904",
+   "ref": "SUM-26-0221-SIST",
+   "title": "Suministro, instalación, configuración e integración de servidores para la infraestructura corporativa de virtualización del puesto de traba",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES523",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Material original del fabricante con partnumber y garantía directa.",
+    "Ocho fases con actividades, responsables, evidencias y entregables verificables."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qMqcXoW3MliHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-20338cc6-1eea-4295-ac9b-7dcd8f5dc154"
+  },
+  {
+   "crit": "Planificación, cronograma e hitos del proyecto",
+   "max": 2,
+   "exp": "p:19949904",
+   "ref": "SUM-26-0221-SIST",
+   "title": "Suministro, instalación, configuración e integración de servidores para la infraestructura corporativa de virtualización del puesto de traba",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES523",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Diagrama de Gantt, duración máxima de doce semanas y entrega de Project.",
+    "Planificación de entregas y trabajos por localización."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qMqcXoW3MliHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-20338cc6-1eea-4295-ac9b-7dcd8f5dc154"
+  },
+  {
+   "crit": "Gestión del proyecto, coordinación y seguimiento",
+   "max": 1.5,
+   "exp": "p:19949904",
+   "ref": "SUM-26-0221-SIST",
+   "title": "Suministro, instalación, configuración e integración de servidores para la infraestructura corporativa de virtualización del puesto de traba",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES523",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 1.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Gobierno adaptado a la duración con participantes y frecuencia de reuniones definidas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qMqcXoW3MliHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-20338cc6-1eea-4295-ac9b-7dcd8f5dc154"
+  },
+  {
+   "crit": "Plan de pruebas, validación y puesta en producción",
+   "max": 1.5,
+   "exp": "p:19949904",
+   "ref": "SUM-26-0221-SIST",
+   "title": "Suministro, instalación, configuración e integración de servidores para la infraestructura corporativa de virtualización del puesto de traba",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES523",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 1.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Implantación finalizada tras validación de umivale Activa con entregables detallados.",
+    "Pruebas de redundancia física y lógica, multipathing y alta disponibilidad."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qMqcXoW3MliHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-20338cc6-1eea-4295-ac9b-7dcd8f5dc154"
+  },
+  {
+   "crit": "Gestión de riesgos, transferencia de conocimiento y mejoras metodológicas",
+   "max": 1,
+   "exp": "p:19949904",
+   "ref": "SUM-26-0221-SIST",
+   "title": "Suministro, instalación, configuración e integración de servidores para la infraestructura corporativa de virtualización del puesto de traba",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES523",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 1,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Control de cambios con plan de reversión y comunicación inmediata de desviaciones.",
+    "Tabla de riesgos y transferencia basada en configuración real y documentación as-built."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qMqcXoW3MliHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-20338cc6-1eea-4295-ac9b-7dcd8f5dc154"
   }
  ]
 }

@@ -1,23 +1,43 @@
 {
- "30": {
-  "items": 12,
-  "total": 12,
-  "exps": 2
- },
- "31": {
+ "18": {
   "items": 1,
   "total": 1,
   "exps": 1
  },
+ "22": {
+  "items": 3,
+  "total": 3,
+  "exps": 1
+ },
+ "30": {
+  "items": 16,
+  "total": 16,
+  "exps": 4
+ },
+ "31": {
+  "items": 9,
+  "total": 9,
+  "exps": 3
+ },
  "32": {
-  "items": 5,
-  "total": 5,
-  "exps": 2
+  "items": 8,
+  "total": 8,
+  "exps": 3
+ },
+ "33": {
+  "items": 12,
+  "total": 12,
+  "exps": 5
  },
  "34": {
-  "items": 6,
-  "total": 6,
-  "exps": 2
+  "items": 7,
+  "total": 7,
+  "exps": 3
+ },
+ "35": {
+  "items": 10,
+  "total": 10,
+  "exps": 1
  },
  "38": {
   "items": 3,
@@ -25,19 +45,29 @@
   "exps": 1
  },
  "39": {
-  "items": 8,
-  "total": 8,
-  "exps": 2
+  "items": 23,
+  "total": 23,
+  "exps": 5
  },
- "42": {
-  "items": 10,
-  "total": 10,
+ "41": {
+  "items": 1,
+  "total": 1,
   "exps": 1
  },
+ "42": {
+  "items": 25,
+  "total": 25,
+  "exps": 3
+ },
+ "44": {
+  "items": 14,
+  "total": 14,
+  "exps": 3
+ },
  "45": {
-  "items": 32,
-  "total": 32,
-  "exps": 8
+  "items": 62,
+  "total": 62,
+  "exps": 18
  },
  "48": {
   "items": 2,
@@ -45,8 +75,13 @@
   "exps": 1
  },
  "50": {
-  "items": 38,
-  "total": 38,
+  "items": 77,
+  "total": 77,
+  "exps": 14
+ },
+ "55": {
+  "items": 34,
+  "total": 34,
   "exps": 6
  },
  "60": {
@@ -55,19 +90,24 @@
   "exps": 2
  },
  "63": {
-  "items": 10,
-  "total": 10,
-  "exps": 1
+  "items": 13,
+  "total": 13,
+  "exps": 2
  },
  "64": {
-  "items": 8,
-  "total": 8,
-  "exps": 1
+  "items": 25,
+  "total": 25,
+  "exps": 4
  },
  "65": {
-  "items": 4,
-  "total": 4,
-  "exps": 1
+  "items": 5,
+  "total": 5,
+  "exps": 2
+ },
+ "66": {
+  "items": 7,
+  "total": 7,
+  "exps": 3
  },
  "70": {
   "items": 1,
@@ -75,54 +115,59 @@
   "exps": 1
  },
  "71": {
-  "items": 25,
-  "total": 25,
-  "exps": 6
+  "items": 73,
+  "total": 73,
+  "exps": 18
  },
  "72": {
-  "items": 30,
-  "total": 30,
-  "exps": 10
+  "items": 63,
+  "total": 63,
+  "exps": 22
  },
- "77": {
-  "items": 4,
-  "total": 4,
+ "73": {
+  "items": 2,
+  "total": 2,
   "exps": 1
  },
- "79": {
+ "77": {
   "items": 17,
   "total": 17,
   "exps": 4
  },
+ "79": {
+  "items": 64,
+  "total": 64,
+  "exps": 15
+ },
  "80": {
-  "items": 9,
-  "total": 9,
-  "exps": 3
+  "items": 32,
+  "total": 32,
+  "exps": 7
  },
  "85": {
-  "items": 26,
-  "total": 26,
-  "exps": 4
+  "items": 80,
+  "total": 80,
+  "exps": 13
  },
  "90": {
-  "items": 9,
-  "total": 9,
-  "exps": 2
- },
- "92": {
-  "items": 14,
-  "total": 14,
-  "exps": 3
- },
- "98": {
-  "items": 4,
-  "total": 4,
-  "exps": 2
- },
- "03": {
   "items": 23,
   "total": 23,
-  "exps": 2
+  "exps": 6
+ },
+ "92": {
+  "items": 52,
+  "total": 52,
+  "exps": 14
+ },
+ "98": {
+  "items": 14,
+  "total": 14,
+  "exps": 4
+ },
+ "03": {
+  "items": 26,
+  "total": 26,
+  "exps": 3
  },
  "09": {
   "items": 2,

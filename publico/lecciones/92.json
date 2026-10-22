@@ -1,8 +1,445 @@
 {
  "cpv2": "92",
- "generated": "2026-10-22T14:39:58.991Z",
+ "generated": "2026-10-22T18:50:13.981Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Proyecto General de organización de la prueba",
+   "max": 15,
+   "exp": "p:20098264",
+   "ref": "2026000048",
+   "title": "Servicio consistente en la organización de la carrera popular San Silvestre Medanera",
+   "buyer": "Alcaldia del Ayuntamiento de Granadilla de Abona",
+   "nuts": "ES709",
+   "date": "2026-09-04",
+   "offers": 3,
+   "top": {
+    "pts": 15,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Proyecto se ajusta completamente al pliego técnico",
+    "Proyecto bastante bien elaborado"
+   ],
+   "weak": [
+    "Proyecto muy básico, con más énfasis en la labor del speaker",
+    "Plan de Sostenibilidad parece copiado de otra Administración"
+   ],
+   "hypothesis": {
+    "premia": "Ajuste completo al pliego técnico y proyecto bien elaborado",
+    "penaliza": "Proyecto muy básico, poco extenso o copiado de otro proyecto"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=UN2C5UcteNq8ebB%2FXTwy0A%3D%3D",
+   "doc": "2026-34b4ac69-97dc-4efd-b0c2-75f627b66168"
+  },
+  {
+   "crit": "Dinamización de redes sociales para la promoción del evento antes del mismo",
+   "max": 5,
+   "exp": "p:20098264",
+   "ref": "2026000048",
+   "title": "Servicio consistente en la organización de la carrera popular San Silvestre Medanera",
+   "buyer": "Alcaldia del Ayuntamiento de Granadilla de Abona",
+   "nuts": "ES709",
+   "date": "2026-09-04",
+   "offers": 3,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Dinamización en redes considerada perfecta"
+   ],
+   "weak": [
+    "Poco desarrollo de la dinamización en RRSS"
+   ],
+   "hypothesis": {
+    "premia": "Desarrollo completo y bien planteado de la dinamización en RRSS",
+    "penaliza": "Poco desarrollo de la dinamización en RRSS"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=UN2C5UcteNq8ebB%2FXTwy0A%3D%3D",
+   "doc": "2026-34b4ac69-97dc-4efd-b0c2-75f627b66168"
+  },
+  {
+   "crit": "Medidas de seguridad a adoptar durante el evento",
+   "max": 5,
+   "exp": "p:20098264",
+   "ref": "2026000048",
+   "title": "Servicio consistente en la organización de la carrera popular San Silvestre Medanera",
+   "buyer": "Alcaldia del Ayuntamiento de Granadilla de Abona",
+   "nuts": "ES709",
+   "date": "2026-09-04",
+   "offers": 3,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Medidas de seguridad consideradas perfectas"
+   ],
+   "weak": [
+    "Poco desarrollo de las medidas de seguridad"
+   ],
+   "hypothesis": {
+    "premia": "Medidas de seguridad completas y bien planteadas",
+    "penaliza": "Poco desarrollo de las medidas de seguridad"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=UN2C5UcteNq8ebB%2FXTwy0A%3D%3D",
+   "doc": "2026-34b4ac69-97dc-4efd-b0c2-75f627b66168"
+  },
+  {
+   "crit": "Calidad Técnica de la Memoria",
+   "max": null,
+   "exp": "p:19498876",
+   "ref": "26/2026",
+   "title": "Servicio de prestaciones deportivas para personas mayores para los años 2026, 2027 y 2028.",
+   "buyer": "Concejal Responsable del Área de Régimen Interior, Recursos Humanos y Modernización Digital del Ayuntamiento de Huelva",
+   "nuts": "ES615",
+   "date": "2026-09-04",
+   "offers": 5,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Demuestra experiencia en este campo.",
+    "Cubre todos los apartados de la Memoria, ampliando aspectos no requeridos.",
+    "Memoria muy bien argumentada, centrada en la ciudad y con datos específicos.",
+    "Ha trabajado con mayores en Córdoba, Murcia y Palencia."
+   ],
+   "weak": [
+    "Muy teórico, describe legislación al efecto.",
+    "Carece de contextualización adecuada a la ciudad y a la estructura del proyecto."
+   ],
+   "hypothesis": {
+    "premia": "Experiencia acreditada en el ámbito y memoria argumentada, centrada en la ciudad y con datos específicos.",
+    "penaliza": "Memoria genérica o teórica, sin datos de Huelva ni experiencia con mayores."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=LoxTEy00r8R%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-042abbc5-e11d-452f-9ded-e89cdc115fb7"
+  },
+  {
+   "crit": "Organización del Servicio",
+   "max": null,
+   "exp": "p:19498876",
+   "ref": "26/2026",
+   "title": "Servicio de prestaciones deportivas para personas mayores para los años 2026, 2027 y 2028.",
+   "buyer": "Concejal Responsable del Área de Régimen Interior, Recursos Humanos y Modernización Digital del Ayuntamiento de Huelva",
+   "nuts": "ES615",
+   "date": "2026-09-04",
+   "offers": 5,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Muy buena temporalización, evaluación y coordinación.",
+    "Sistema de calidad del servicio, único que lo desarrolla y mejora la eficiencia.",
+    "Descripción del personal muy completa.",
+    "Contextualización y diseño de actividades muy completos, específicos y detallados.",
+    "Muy buena descripción del personal."
+   ],
+   "weak": [
+    "No concreta qué desarrollará, dónde ni cómo.",
+    "No describe al personal, solo lo nombra."
+   ],
+   "hypothesis": {
+    "premia": "Diseño detallado de actividades, cronograma, personal descrito y sistema de calidad del servicio.",
+    "penaliza": "Falta de concreción sobre qué, dónde y cómo se desarrollará; personal solo nombrado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=LoxTEy00r8R%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-042abbc5-e11d-452f-9ded-e89cdc115fb7"
+  },
+  {
+   "crit": "Desarrollo de la Programación de Actividades y su adecuación a la población atendida",
+   "max": null,
+   "exp": "p:19498876",
+   "ref": "26/2026",
+   "title": "Servicio de prestaciones deportivas para personas mayores para los años 2026, 2027 y 2028.",
+   "buyer": "Concejal Responsable del Área de Régimen Interior, Recursos Humanos y Modernización Digital del Ayuntamiento de Huelva",
+   "nuts": "ES615",
+   "date": "2026-09-04",
+   "offers": 5,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Únicos que hablan de la innovación en la metodología.",
+    "Aspectos importantes desarrollados con bastante detalle."
+   ],
+   "weak": [
+    "No desarrolla adecuadamente la atención a la diversidad ni la adaptabilidad a la población."
+   ],
+   "hypothesis": {
+    "premia": "Desarrollo de protocolos de lesiones, atención a la diversidad e innovación metodológica.",
+    "penaliza": "Omitir o tratar por obligación los protocolos de lesiones, la diversidad o la innovación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=LoxTEy00r8R%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-042abbc5-e11d-452f-9ded-e89cdc115fb7"
+  },
+  {
+   "crit": "Propuesta creativa y metodología",
+   "max": 3,
+   "exp": "p:20040944",
+   "ref": "PC-MER/2026/00016-ORD",
+   "title": "Contrato de servicios de producción, grabación, edición y difusión de videopodcast \"Alimenta tu rutina\"",
+   "buyer": "Dirección General de Mercados Centrales de Abastecimiento de Madrid S.A. (MERCAMADRID S.A.)",
+   "nuts": "ES300",
+   "date": "2026-09-03",
+   "offers": 4,
+   "top": {
+    "pts": 2.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 0.5
+   },
+   "best": [
+    "Aporta objetivos con enfoques novedosos sobre 'alimenta tu rutina'.",
+    "Enfoca el protagonismo en la experiencia del invitado/a.",
+    "Metodología y planificación muy bien detalladas.",
+    "La metodología es correcta."
+   ],
+   "weak": [
+    "No realiza ninguna propuesta creativa identificable.",
+    "No realiza ninguna propuesta de mejora."
+   ],
+   "hypothesis": {
+    "premia": "Enfoque creativo novedoso y diferenciador, centrado en la experiencia del invitado, con metodología detallada.",
+    "penaliza": "Concepto genérico sin diferenciación, error en el origen de los alimentos, ausencia de propuesta creativa o de mejoras."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5phj7UM7iAaLAncw3qdZkA%3D%3D",
+   "doc": "2026-c445626d-72a8-4fd1-b6a1-e3084f8486cf"
+  },
+  {
+   "crit": "Planificación e invitados",
+   "max": 7,
+   "exp": "p:20040944",
+   "ref": "PC-MER/2026/00016-ORD",
+   "title": "Contrato de servicios de producción, grabación, edición y difusión de videopodcast \"Alimenta tu rutina\"",
+   "buyer": "Dirección General de Mercados Centrales de Abastecimiento de Madrid S.A. (MERCAMADRID S.A.)",
+   "nuts": "ES300",
+   "date": "2026-09-03",
+   "offers": 4,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Propuesta temática novedosa, variada y completa.",
+    "Invitados consolidados y rigurosos que aportan valor.",
+    "Liga los invitados a una planificación de capítulos."
+   ],
+   "weak": [
+    "No se realiza propuesta de invitados."
+   ],
+   "hypothesis": {
+    "premia": "Temática novedosa, variada y completa, con invitados consolidados ligados a las temáticas.",
+    "penaliza": "No proponer invitados, perfiles genéricos o desequilibrados y planificación insuficiente."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5phj7UM7iAaLAncw3qdZkA%3D%3D",
+   "doc": "2026-c445626d-72a8-4fd1-b6a1-e3084f8486cf"
+  },
+  {
+   "crit": "Guion",
+   "max": 2,
+   "exp": "p:20040944",
+   "ref": "PC-MER/2026/00016-ORD",
+   "title": "Contrato de servicios de producción, grabación, edición y difusión de videopodcast \"Alimenta tu rutina\"",
+   "buyer": "Dirección General de Mercados Centrales de Abastecimiento de Madrid S.A. (MERCAMADRID S.A.)",
+   "nuts": "ES300",
+   "date": "2026-09-03",
+   "offers": 4,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": {
+    "pts": 0.5
+   },
+   "best": [
+    "Estructura ágil.",
+    "Permite que los receptores conecten con el contenido.",
+    "Guion bien estructurado."
+   ],
+   "weak": [
+    "No se ajusta al enfoque de un videopodcast ni a 'Alimenta tu rutina'.",
+    "Introduce alarmas y planos innecesarios que no cuadran con el formato."
+   ],
+   "hypothesis": {
+    "premia": "Estructura ágil que conecta con el público y se ajusta al formato y al invitado.",
+    "penaliza": "Estructura rígida, mezcla confusa de temas, desajuste con el enfoque del videopodcast y falta de adaptación al invitado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5phj7UM7iAaLAncw3qdZkA%3D%3D",
+   "doc": "2026-c445626d-72a8-4fd1-b6a1-e3084f8486cf"
+  },
+  {
+   "crit": "Calidad y adecuación del perfil del presentador/a",
+   "max": 10,
+   "exp": "p:20040944",
+   "ref": "PC-MER/2026/00016-ORD",
+   "title": "Contrato de servicios de producción, grabación, edición y difusión de videopodcast \"Alimenta tu rutina\"",
+   "buyer": "Dirección General de Mercados Centrales de Abastecimiento de Madrid S.A. (MERCAMADRID S.A.)",
+   "nuts": "ES300",
+   "date": "2026-09-03",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Perfil adecuado.",
+    "Documentación acredita experiencia en formatos como 'Alimenta tu rutina'.",
+    "La presentadora tiene un perfil adecuado."
+   ],
+   "weak": [
+    "No se realiza ninguna propuesta de presentador/a."
+   ],
+   "hypothesis": {
+    "premia": "Perfil acreditado en formatos similares a 'Alimenta tu rutina'.",
+    "penaliza": "No proponer presentador/a, perfiles no definidos o aptitudes expresivas poco ajustadas al formato."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5phj7UM7iAaLAncw3qdZkA%3D%3D",
+   "doc": "2026-c445626d-72a8-4fd1-b6a1-e3084f8486cf"
+  },
+  {
+   "crit": "Estrategia de difusión",
+   "max": 3,
+   "exp": "p:20040944",
+   "ref": "PC-MER/2026/00016-ORD",
+   "title": "Contrato de servicios de producción, grabación, edición y difusión de videopodcast \"Alimenta tu rutina\"",
+   "buyer": "Dirección General de Mercados Centrales de Abastecimiento de Madrid S.A. (MERCAMADRID S.A.)",
+   "nuts": "ES300",
+   "date": "2026-09-03",
+   "offers": 4,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": {
+    "pts": 0.5
+   },
+   "best": [
+    "Estrategia bien desarrollada.",
+    "Soluciones imaginativas que permiten consolidar y posicionar el formato.",
+    "Propuesta bien desarrollada."
+   ],
+   "weak": [
+    "Propuesta confusa y excesivamente genérica.",
+    "No define estrategia específica para mejorar alcance e impacto."
+   ],
+   "hypothesis": {
+    "premia": "Estrategia bien desarrollada con soluciones imaginativas para consolidar y posicionar el formato.",
+    "penaliza": "Propuesta genérica, confusa o no desarrollada, sin apoyo para alcance e impacto."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5phj7UM7iAaLAncw3qdZkA%3D%3D",
+   "doc": "2026-c445626d-72a8-4fd1-b6a1-e3084f8486cf"
+  },
+  {
+   "crit": "B.1. Descripción de la metodología y procedimiento de trabajo",
+   "max": 18,
+   "exp": "p:20040944",
+   "ref": "PC-MER/2026/00016-ORD",
+   "title": "Contrato de servicios de producción, grabación, edición y difusión de videopodcast \"Alimenta tu rutina\"",
+   "buyer": "Dirección General de Mercados Centrales de Abastecimiento de Madrid S.A. (MERCAMADRID S.A.)",
+   "nuts": "ES300",
+   "date": "2026-09-03",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Documento sencillo pero claro, organizado por fases del proceso con actuaciones explicadas."
+   ],
+   "weak": [
+    "Poco detallado; echa en falta un mayor desarrollo de los pasos a seguir."
+   ],
+   "hypothesis": {
+    "premia": "Exposición clara y estructurada por fases, con actuaciones explicadas en cada una.",
+    "penaliza": "Falta de detalle en los pasos a seguir; ausencia total de descripción metodológica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5phj7UM7iAaLAncw3qdZkA%3D%3D",
+   "doc": "2026-d2800812-fe25-49fd-adb1-bf8e36c93a2c"
+  },
+  {
+   "crit": "B.2. Documentación y formularios tipo a utilizar durante la prestación del suministro",
+   "max": 4,
+   "exp": "p:20040944",
+   "ref": "PC-MER/2026/00016-ORD",
+   "title": "Contrato de servicios de producción, grabación, edición y difusión de videopodcast \"Alimenta tu rutina\"",
+   "buyer": "Dirección General de Mercados Centrales de Abastecimiento de Madrid S.A. (MERCAMADRID S.A.)",
+   "nuts": "ES300",
+   "date": "2026-09-03",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Documentos con estructura clara y campos fácilmente identificables.",
+    "Albaranes en formato físico y digital; hoja de revisión que favorece la trazabilidad."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Formularios claros, de campos identificables, con albaranes físico y digital y trazabilidad.",
+    "penaliza": "Impresos que no corresponden al modelo de la empresa licitadora."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5phj7UM7iAaLAncw3qdZkA%3D%3D",
+   "doc": "2026-d2800812-fe25-49fd-adb1-bf8e36c93a2c"
+  },
+  {
+   "crit": "B.3. Documentación complementaria de apoyo a la ejecución del contrato",
+   "max": 3,
+   "exp": "p:20040944",
+   "ref": "PC-MER/2026/00016-ORD",
+   "title": "Contrato de servicios de producción, grabación, edición y difusión de videopodcast \"Alimenta tu rutina\"",
+   "buyer": "Dirección General de Mercados Centrales de Abastecimiento de Madrid S.A. (MERCAMADRID S.A.)",
+   "nuts": "ES300",
+   "date": "2026-09-03",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Protocolo de carga de baterías y manuales de prevención de riesgos laborales, útiles para la ejecución."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Documentación de apoyo útil para la ejecución (protocolos, manuales de prevención).",
+    "penaliza": "Aportar solo material de formación sin relación con la ejecución del contrato."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5phj7UM7iAaLAncw3qdZkA%3D%3D",
+   "doc": "2026-d2800812-fe25-49fd-adb1-bf8e36c93a2c"
+  },
   {
    "crit": "Duración",
    "max": 20,
@@ -190,6 +627,137 @@
    "doc": "2026-a8b04456-a01d-4434-a556-bb45d6f13704"
   },
   {
+   "crit": "Memoria técnica descriptiva para la producción y para la ejecución de montaje y desmontaje",
+   "max": 30,
+   "exp": "p:20139036",
+   "ref": "280726/13 CT",
+   "title": "Producción, montaje y desmontaje de los elementos del proyecto museográfico, así como instalación y posterior desmontaje de las piezas de la",
+   "buyer": "Sociedad Mercantil Estatal de Acción Cultural S.A.",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 2,
+   "top": {
+    "pts": 30,
+    "winner": false
+   },
+   "low": {
+    "pts": 24
+   },
+   "best": [
+    "Desarrollo amplio y previsor que alcanza a elementos preexistentes y su acondicionamiento.",
+    "Fabricación de prototipos previos y tratamiento de elementos reutilizables tras la clausura.",
+    "Muestras con mayor esmero en acabados: cantos lijados, uniones y esquinas sin deterioros.",
+    "Recoge todas las fases del proyecto y cumple los plazos de entrega requeridos.",
+    "Atención con referencias precisas a obras con necesidades de montaje específicas."
+   ],
+   "weak": [
+    "Memoria más sintética, con precisión desigual y detalle parcial en algunos capítulos.",
+    "Faltan fichas técnicas y mayor especificidad en el capítulo audiovisual.",
+    "Pospone soluciones constructivas; muestras con diferencias leves de acabado."
+   ],
+   "hypothesis": {
+    "premia": "Tratamiento detallado de elementos preexistentes, prototipos previos, reutilización y acabados cuidados en muestras",
+    "penaliza": "Memoria sintética, detalle desigual, fichas técnicas incompletas y soluciones constructivas diferidas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=mKpK22m5WCm8ebB%2FXTwy0A%3D%3D",
+   "doc": "2026-b50ab96f-61e4-4cec-a266-230579c236f5"
+  },
+  {
+   "crit": "Medios técnicos y humanos asignados específicamente al desarrollo de las tareas de esta exposición",
+   "max": 10,
+   "exp": "p:20139036",
+   "ref": "280726/13 CT",
+   "title": "Producción, montaje y desmontaje de los elementos del proyecto museográfico, así como instalación y posterior desmontaje de las piezas de la",
+   "buyer": "Sociedad Mercantil Estatal de Acción Cultural S.A.",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Presentación detallada del equipo con número de técnicos identificado por fases y jornadas.",
+    "Cuenta con herramientas y maquinaria necesarias y especialización adecuada."
+   ],
+   "weak": [
+    "Discrepancias en datos de personal entre capítulos; no queda clara la correspondencia con el pliego.",
+    "Externaliza el suministro de soportes de metacrilato, lo que puede ralentizar el montaje."
+   ],
+   "hypothesis": {
+    "premia": "Identificación clara y coherente del equipo, técnicos y jornadas por fases",
+    "penaliza": "Discrepancias de datos entre capítulos y externalización de suministros que pueden ralentizar el montaje"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=mKpK22m5WCm8ebB%2FXTwy0A%3D%3D",
+   "doc": "2026-b50ab96f-61e4-4cec-a266-230579c236f5"
+  },
+  {
+   "crit": "Planificación y organización para la ejecución de las tareas",
+   "max": 9,
+   "exp": "p:20139036",
+   "ref": "280726/13 CT",
+   "title": "Producción, montaje y desmontaje de los elementos del proyecto museográfico, así como instalación y posterior desmontaje de las piezas de la",
+   "buyer": "Sociedad Mercantil Estatal de Acción Cultural S.A.",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 2,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Secuenciación razonada con mayor nivel de detalle y explicaciones, encajando con hitos del pliego.",
+    "Plan de mantenimiento minucioso, con equipo de intervenciones urgentes identificado.",
+    "Secuenciación razonada que encaja con los hitos de calendario del pliego.",
+    "Plan de mantenimiento similar en esencia al de la otra oferta."
+   ],
+   "weak": [
+    "Plazo muy ajustado (2 de octubre) para la presentación de artes finales de gráfica.",
+    "Producción de gráfica de diez días sin fecha límite establecida."
+   ],
+   "hypothesis": {
+    "premia": "Secuenciación más detallada y plan de mantenimiento con equipo de intervenciones urgentes",
+    "penaliza": "Plazos ajustados o sin fecha límite para entregables de gráfica"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=mKpK22m5WCm8ebB%2FXTwy0A%3D%3D",
+   "doc": "2026-b50ab96f-61e4-4cec-a266-230579c236f5"
+  },
+  {
+   "crit": "CRITERIO DE VALORACIÓN DEL PROGRAMA DIDÁCTICO",
+   "max": 20,
+   "exp": "p:19957621",
+   "ref": "PA 04 2026 S",
+   "title": "Servicio de actividades deportivas de Villanueva de la Torre",
+   "buyer": "Alcaldía del Ayuntamiento de Villanueva de la Torre",
+   "nuts": "ES424",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 16.85,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Presenta organigrama y experiencia previa en el municipio y en municipios cercanos.",
+    "Identifica nominalmente al técnico y al coordinador, con titulación y experiencia acreditada (+10 y +16 años).",
+    "Métodos evaluativos cuantitativos y cualitativos vinculados a objetivos, con modelos de registro e informes."
+   ],
+   "weak": [
+    "El cronograma no se ajusta a las actividades ofertadas en el pliego.",
+    "No vincula las actividades con espacios deportivos ni identifica a los monitores de atención directa.",
+    "Destinatarios centrados en menores; faltan leyes, datos y colectivos de otros grupos de población."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FWqjTX5M7UE%2B1TMyIiZmzw%3D%3D",
+   "doc": "2026-e95ad412-2591-435e-bbee-e0bf5093e56d"
+  },
+  {
    "crit": "Apartado 1",
    "max": 12,
    "exp": "p:20233774",
@@ -291,6 +859,639 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=e25uC%2Fuck%2F6TylGzYmBF9Q%3D%3D",
    "doc": "2026-fac29bd7-78e1-4326-b97c-8f31d5417f16"
+  },
+  {
+   "crit": "Estrategias de intervención y metodología del servicio",
+   "max": 5,
+   "exp": "p:19500473",
+   "ref": "2026000030",
+   "title": "Contratación de los servicios de participación de la infancia y adolescencia del municipio de Getafe.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Getafe",
+   "nuts": "ES300",
+   "date": "2026-08-19",
+   "offers": 3,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Estrategia sólida alineada con el Pliego de Prescripciones Técnicas y enfoque de derechos",
+    "Se adapta adecuadamente al contexto del municipio de Getafe",
+    "Integra de forma explícita centros educativos, familias y asociaciones",
+    "Desarrollo amplio y estructurado con enfoque de derechos y perspectiva de género",
+    "Aplicación de protocolos de buen trato y seguridad física y digital"
+   ],
+   "weak": [
+    "Enfoque metodológico generalista y de escaso nivel de concreción",
+    "No incluye referencia a la Comisión de Participación de la Infancia y la Adolescencia",
+    "No contempla las asociaciones infantojuveniles como agentes clave"
+   ],
+   "hypothesis": {
+    "premia": "Enfoque de derechos, alineación con el PPT y adaptación al contexto de Getafe con integración explícita de agentes clave",
+    "penaliza": "Enfoque generalista y falta de referencias a la Comisión de Participación y a las asociaciones infantojuveniles"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FRvVqZiTJib%2B3JAijKO%2Bkg%3D%3D",
+   "doc": "2026-9be99f60-a996-4b82-83d6-c16a44c4ce59"
+  },
+  {
+   "crit": "Plan de actuación",
+   "max": 5,
+   "exp": "p:19500473",
+   "ref": "2026000030",
+   "title": "Contratación de los servicios de participación de la infancia y adolescencia del municipio de Getafe.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Getafe",
+   "nuts": "ES300",
+   "date": "2026-08-19",
+   "offers": 3,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Cuatro fases interrelacionadas, coherentes y alineadas con el proceso participativo",
+    "Implicación de centros educativos, familias y asociaciones",
+    "Enfoque territorial con comisiones sectoriales y foros de barrio"
+   ],
+   "weak": [
+    "Formulación excesivamente generalista, sin desarrollo operativo suficiente",
+    "No incluye referencia explícita a la Comisión de Participación de la Infancia y la Adolescencia"
+   ],
+   "hypothesis": {
+    "premia": "Fases coherentes e implicación de centros, familias y asociaciones",
+    "penaliza": "Formulación genérica y ausencia de referencia explícita a la Comisión de Participación"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FRvVqZiTJib%2B3JAijKO%2Bkg%3D%3D",
+   "doc": "2026-9be99f60-a996-4b82-83d6-c16a44c4ce59"
+  },
+  {
+   "crit": "Propuesta de una actuación concreta dentro de cada línea que ponga en juego los principios metodológicos del servicio",
+   "max": 30,
+   "exp": "p:19500473",
+   "ref": "2026000030",
+   "title": "Contratación de los servicios de participación de la infancia y adolescencia del municipio de Getafe.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Getafe",
+   "nuts": "ES300",
+   "date": "2026-08-19",
+   "offers": 3,
+   "top": {
+    "pts": 25,
+    "winner": false
+   },
+   "low": {
+    "pts": 20
+   },
+   "best": [
+    "Actuaciones específicas por línea como 'Laboratorio de Ideas' o 'Participar se aprende'",
+    "Vincula la Comisión de Participación como grupo motor",
+    "Conocimiento profundo del contexto y de los recursos municipales"
+   ],
+   "weak": [
+    "Una única propuesta de trabajo para todas las líneas",
+    "No desarrolla actuaciones específicas diferenciadas por línea"
+   ],
+   "hypothesis": {
+    "premia": "Actuaciones concretas y diferenciadas por cada línea, con conocimiento del contexto municipal",
+    "penaliza": "Ausencia de actuaciones específicas por línea y desarrollo operativo insuficiente"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FRvVqZiTJib%2B3JAijKO%2Bkg%3D%3D",
+   "doc": "2026-9be99f60-a996-4b82-83d6-c16a44c4ce59"
+  },
+  {
+   "crit": "Proceso de evaluación del servicio",
+   "max": 5,
+   "exp": "p:19500473",
+   "ref": "2026000030",
+   "title": "Contratación de los servicios de participación de la infancia y adolescencia del municipio de Getafe.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Getafe",
+   "nuts": "ES300",
+   "date": "2026-08-19",
+   "offers": 3,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Distingue evaluación de proceso, de resultados y de impacto",
+    "Incorpora enfoque participativo, de equidad e inclusión",
+    "Indicadores de logro, seguimiento de KPIs, ciclo de calidad y DAFO",
+    "Herramientas accesibles para NNA y momentos de evaluación inicial, continua y final"
+   ],
+   "weak": [
+    "Planteamiento teórico sin concretar momentos ni agentes de evaluación"
+   ],
+   "hypothesis": {
+    "premia": "Indicadores cuantitativos, herramientas definidas y momentos de evaluación concretos",
+    "penaliza": "Planteamiento teórico o centrado solo en NNA y equipo técnico"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FRvVqZiTJib%2B3JAijKO%2Bkg%3D%3D",
+   "doc": "2026-9be99f60-a996-4b82-83d6-c16a44c4ce59"
+  },
+  {
+   "crit": "Fundamentación, objetivos y metodología",
+   "max": 7,
+   "exp": "p:17653135",
+   "ref": "2967/2024",
+   "title": "La prestación del servicio para la gestión de la ludoteca, entendida como un espacio lúdico, educativo y de encuentro para los niños y las n",
+   "buyer": "Concejalía Delegada de Hacienda y Régimen Interior del Ayuntamiento de Barbastro",
+   "nuts": "ES241",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 6.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Contextualización en entorno, contexto social y marco del III Plan de Infancia de Barbastro.",
+    "Tiene en cuenta el carácter de experiencia piloto.",
+    "Contextualización del entorno y objetivos generales y específicos adaptados al servicio."
+   ],
+   "weak": [
+    "Propuesta bastante teórica.",
+    "Repetición de líneas de trabajo y talleres.",
+    "Horario de tardes no ajustado al PPT.",
+    "Criterios de los pliegos mencionados de manera poco visual."
+   ],
+   "hypothesis": {
+    "premia": "Contextualización concreta en el entorno y en el marco municipal.",
+    "penaliza": "Exposición teórica genérica, válida para cualquier localidad."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=8xzOQq4SNXoUqXM96WStVA%3D%3D",
+   "doc": "2026-54c21934-9dbb-4cc4-a345-793c536845fc"
+  },
+  {
+   "crit": "Propuesta de actividades realizar. Herramientas e instrumentos para ejecutarlas",
+   "max": 10,
+   "exp": "p:17653135",
+   "ref": "2967/2024",
+   "title": "La prestación del servicio para la gestión de la ludoteca, entendida como un espacio lúdico, educativo y de encuentro para los niños y las n",
+   "buyer": "Concejalía Delegada de Hacienda y Régimen Interior del Ayuntamiento de Barbastro",
+   "nuts": "ES241",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Programación mensual y semanal de ejemplo, con actividades para cada día.",
+    "Programación extraordinaria y materiales exhaustivos.",
+    "Programación anual, extraordinaria y actividades en inglés.",
+    "Propuesta de salidas al aire libre."
+   ],
+   "weak": [
+    "No incluye programación semanal.",
+    "Difícil visualizar el desarrollo semanal del servicio."
+   ],
+   "hypothesis": {
+    "premia": "Programación semanal y mensual concreta, con actividades para cada día y programación extraordinaria.",
+    "penaliza": "Programación genérica por meses sin visualización semanal ni de la dinámica diaria."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=8xzOQq4SNXoUqXM96WStVA%3D%3D",
+   "doc": "2026-54c21934-9dbb-4cc4-a345-793c536845fc"
+  },
+  {
+   "crit": "Incorporación de elementos innovadores",
+   "max": 9,
+   "exp": "p:17653135",
+   "ref": "2967/2024",
+   "title": "La prestación del servicio para la gestión de la ludoteca, entendida como un espacio lúdico, educativo y de encuentro para los niños y las n",
+   "buyer": "Concejalía Delegada de Hacienda y Régimen Interior del Ayuntamiento de Barbastro",
+   "nuts": "ES241",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Métodos enumerados y explicados según la metodología propuesta.",
+    "Abordaje de situaciones específicas explicado.",
+    "Apartado de recursos comunitarios y trabajo en red."
+   ],
+   "weak": [
+    "Exposición teórica válida para cualquier localidad.",
+    "Abordaje de situaciones específicas básico y teórico."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=8xzOQq4SNXoUqXM96WStVA%3D%3D",
+   "doc": "2026-54c21934-9dbb-4cc4-a345-793c536845fc"
+  },
+  {
+   "crit": "Organización y gestión del servicio",
+   "max": 6,
+   "exp": "p:17653135",
+   "ref": "2967/2024",
+   "title": "La prestación del servicio para la gestión de la ludoteca, entendida como un espacio lúdico, educativo y de encuentro para los niños y las n",
+   "buyer": "Concejalía Delegada de Hacienda y Régimen Interior del Ayuntamiento de Barbastro",
+   "nuts": "ES241",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 6,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Planos de distribución de espacios y compromiso de local.",
+    "Modelo completo de gestión de personal.",
+    "Incluye explicación de una jornada diaria tipo."
+   ],
+   "weak": [
+    "Explicación general y breve.",
+    "Poca concreción sobre instalaciones y materiales."
+   ],
+   "hypothesis": {
+    "premia": "Planos de instalaciones, modelo de gestión de personal y jornada detallada.",
+    "penaliza": "Explicación general de instalaciones, materiales y jornada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=8xzOQq4SNXoUqXM96WStVA%3D%3D",
+   "doc": "2026-54c21934-9dbb-4cc4-a345-793c536845fc"
+  },
+  {
+   "crit": "Seguimiento, y coordinación con el Ayuntamiento y otros recursos o servicios",
+   "max": 5,
+   "exp": "p:17653135",
+   "ref": "2967/2024",
+   "title": "La prestación del servicio para la gestión de la ludoteca, entendida como un espacio lúdico, educativo y de encuentro para los niños y las n",
+   "buyer": "Concejalía Delegada de Hacienda y Régimen Interior del Ayuntamiento de Barbastro",
+   "nuts": "ES241",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 4.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Figura de coordinadora, funciones y canales de comunicación detallados.",
+    "Formas y sistemas de coordinación explicados.",
+    "Herramientas de coordinación enumeradas."
+   ],
+   "weak": [
+    "Explicación básica y resumida.",
+    "Herramientas descritas de manera somera."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=8xzOQq4SNXoUqXM96WStVA%3D%3D",
+   "doc": "2026-54c21934-9dbb-4cc4-a345-793c536845fc"
+  },
+  {
+   "crit": "Seguimiento, control y evaluación del servicio. sistema de evaluación e indicadores",
+   "max": 3,
+   "exp": "p:17653135",
+   "ref": "2967/2024",
+   "title": "La prestación del servicio para la gestión de la ludoteca, entendida como un espacio lúdico, educativo y de encuentro para los niños y las n",
+   "buyer": "Concejalía Delegada de Hacienda y Régimen Interior del Ayuntamiento de Barbastro",
+   "nuts": "ES241",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 2.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Apartado específico de evaluación.",
+    "Acciones, herramientas de seguimiento e informe de resultados.",
+    "Aplicación digital para control y seguimiento."
+   ],
+   "weak": [
+    "Principios generales y modelo teórico.",
+    "Instrumentos descritos de forma somera."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=8xzOQq4SNXoUqXM96WStVA%3D%3D",
+   "doc": "2026-54c21934-9dbb-4cc4-a345-793c536845fc"
+  },
+  {
+   "crit": "Planificación y organización operativa de la ejecución",
+   "max": 10,
+   "exp": "p:19831592",
+   "ref": "CONTR-2026000043",
+   "title": "Conservación y matenimiento de cuatro murales en Fuengirola (\"Eriana\" de Manuel Barbadillo, \"El saludo del pescador\" de José María Córdoba, ",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Fuengirola",
+   "nuts": "ES617",
+   "date": "2026-08-07",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Organización y control operativo muy bien construidos y definidos",
+    "Fases de trabajo enumeradas y personal con perfiles especificados",
+    "Seguimiento basado en inspecciones, reuniones, partes diarios y planificadores"
+   ],
+   "weak": [
+    "Cronograma no presentado",
+    "Medios auxiliares poco definidos"
+   ],
+   "hypothesis": {
+    "premia": "Organización y control operativo detallados, con fases, personal y seguimiento definidos",
+    "penaliza": "Ausencia de cronograma y medios auxiliares poco detallados"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rnlD0cdMsDu7JOCXkOhcDg%3D%3D",
+   "doc": "2026-35101b94-6f91-4c43-be72-c0f2efaf460b"
+  },
+  {
+   "crit": "Identificación de riesgos técnicos y medidas preventivas de ejecución",
+   "max": 10,
+   "exp": "p:19831592",
+   "ref": "CONTR-2026000043",
+   "title": "Conservación y matenimiento de cuatro murales en Fuengirola (\"Eriana\" de Manuel Barbadillo, \"El saludo del pescador\" de José María Córdoba, ",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Fuengirola",
+   "nuts": "ES617",
+   "date": "2026-08-07",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Riesgos concretos por tipología (conservación, anclajes, medios auxiliares, entorno urbano)",
+    "Medidas preventivas detalladas para cada riesgo",
+    "Protocolo de actuación ante incidencias bien concretado"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Riesgos concretos por tipología de mural y medidas preventivas asociadas, con protocolo de incidencias",
+    "penaliza": "No consta penalización expresa"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rnlD0cdMsDu7JOCXkOhcDg%3D%3D",
+   "doc": "2026-35101b94-6f91-4c43-be72-c0f2efaf460b"
+  },
+  {
+   "crit": "Sistema de control de calidad, verificación y documentación de la intervención",
+   "max": 10,
+   "exp": "p:19831592",
+   "ref": "CONTR-2026000043",
+   "title": "Conservación y matenimiento de cuatro murales en Fuengirola (\"Eriana\" de Manuel Barbadillo, \"El saludo del pescador\" de José María Córdoba, ",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Fuengirola",
+   "nuts": "ES617",
+   "date": "2026-08-07",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Control de pruebas previas con criterios de eficacia y compatibilidad",
+    "Trazabilidad de materiales y registro fotográfico y técnico",
+    "Programa básico de conservación preventiva completo"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Control de pruebas previas, trazabilidad de materiales y documentación fotográfica y técnica",
+    "penaliza": "No consta penalización expresa"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rnlD0cdMsDu7JOCXkOhcDg%3D%3D",
+   "doc": "2026-35101b94-6f91-4c43-be72-c0f2efaf460b"
+  },
+  {
+   "crit": "Calidad y fundamentación de la solución técnica integral de restauración y conservación del conjunto mural",
+   "max": 10,
+   "exp": "p:19831592",
+   "ref": "CONTR-2026000043",
+   "title": "Conservación y matenimiento de cuatro murales en Fuengirola (\"Eriana\" de Manuel Barbadillo, \"El saludo del pescador\" de José María Córdoba, ",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Fuengirola",
+   "nuts": "ES617",
+   "date": "2026-08-07",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Fundamentación en criterios internacionales y marco normativo",
+    "Fases diferenciadas para murales con estructura metálica y mural sobre muro",
+    "Inspección anual y medidas de conservación a largo plazo"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Fundamentación normativa y técnica, con fases diferenciadas según el tipo de mural",
+    "penaliza": "No consta penalización expresa"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rnlD0cdMsDu7JOCXkOhcDg%3D%3D",
+   "doc": "2026-35101b94-6f91-4c43-be72-c0f2efaf460b"
+  },
+  {
+   "crit": "Organización e funcionamento do servizo",
+   "max": 30,
+   "exp": "p:19853952",
+   "ref": "641/2026",
+   "title": "Servizo de actividades deportivas do Concello de O Pino, monitorizacion multidisciplinar en el Pabellon de Lameiro e demais servizos deporti",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de O Pino",
+   "nuts": "ES111",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 27,
+    "winner": false
+   },
+   "low": {
+    "pts": 26.5
+   },
+   "best": [
+    "Desarrollo detallado de los tres servizos con planificación continua y coordinación permanente",
+    "Planes anuales, procedimientos de coordinación con el Área de Deportes e indicadores verificables",
+    "Herramientas de control de calidad, registro de incidencias y mejora continua",
+    "Planificación anual, trimestral y mensual con coordinación interna y con el concello",
+    "Indicadores de participación, calidad y seguridad, e informes periódicos"
+   ],
+   "weak": [
+    "Procedimientos y operativa diaria descritos en un plano general, con menos concreción que otras propuestas"
+   ],
+   "hypothesis": {
+    "premia": "Descripción concreta de procedimientos operativos diarios, planificación detallada y coordinación permanente",
+    "penaliza": "Enfoque principalmente estratégico u organizativo, con procedimientos de ejecución expuestos en plano general"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SCK9S439U1N70UvEyYJSGw%3D%3D",
+   "doc": "2026-df207a53-bf4b-40d7-b58e-5a878073ed56"
+  },
+  {
+   "crit": "Medios humanos e materiais adscritos a execución do servizo",
+   "max": 10,
+   "exp": "p:19853952",
+   "ref": "641/2026",
+   "title": "Servizo de actividades deportivas do Concello de O Pino, monitorizacion multidisciplinar en el Pabellon de Lameiro e demais servizos deporti",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de O Pino",
+   "nuts": "ES111",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Personal identificado por servicio con titulación, formación y experiencia",
+    "Acredita disponibilidad de recursos humanos necesarios",
+    "Describe medios materiales y su control y mantenimiento",
+    "Perfiles profesionales cualificados y plan de formación continua",
+    "Sistemas de sustitución inmediata y dotación material suficiente"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Perfiles cualificados identificados por servicio, formación continua y sistemas de sustitución",
+    "penaliza": "No consta penalización específica en el informe"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SCK9S439U1N70UvEyYJSGw%3D%3D",
+   "doc": "2026-df207a53-bf4b-40d7-b58e-5a878073ed56"
+  },
+  {
+   "crit": "Protocolo de prevención e seguridade ante a manifestación dalgún accidente ou incidencia durante o desenvolvemento da práctica deportiva",
+   "max": 9,
+   "exp": "p:19853952",
+   "ref": "641/2026",
+   "title": "Servizo de actividades deportivas do Concello de O Pino, monitorizacion multidisciplinar en el Pabellon de Lameiro e demais servizos deporti",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de O Pino",
+   "nuts": "ES111",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Protocolos diferenciados por actividad deportiva, monitor y socorrismo",
+    "Secuencias de actuación, comunicación con el Concello y registro de incidencias",
+    "Prioriza la seguridad de las personas usuarias y la continuidad del servicio",
+    "Procedimientos claros de vigilancia, rescate acuático y primeros auxilios",
+    "Coordinación con los servicios de emergencia y control del material"
+   ],
+   "weak": [
+    "Protocolos suficientemente desarrollados, sin el nivel de detalle destacado en otras propuestas"
+   ],
+   "hypothesis": {
+    "premia": "Protocolos diferenciados por servicio, con secuencias de actuación, comunicación y registro de incidencias",
+    "penaliza": "Desarrollo de protocolos considerado suficiente pero menos completo"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SCK9S439U1N70UvEyYJSGw%3D%3D",
+   "doc": "2026-df207a53-bf4b-40d7-b58e-5a878073ed56"
+  },
+  {
+   "crit": "Propuesta metodológica y programa de trabajo",
+   "max": 50,
+   "exp": "p:19525907",
+   "ref": "2026/CTR/0900042",
+   "title": "Servicios de coordinación de programación y gestión cultural en el Centro Cultural de España en Bata, de la Agencia Española de Cooperación ",
+   "buyer": "Dirección de la Agencia Española de Cooperación Internacional para el Desarrollo (AECID)",
+   "nuts": "ES300",
+   "date": "2026-07-07",
+   "offers": 1,
+   "top": {
+    "pts": 38,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Estructura clara y coherencia entre objetivos, actividades y resultados esperados.",
+    "Cronograma con hitos anuales y programación regular, incluyendo ACERCA, Afroeste y efemérides como el 8M.",
+    "Buen conocimiento de públicos, actividades extramuros, redes fuera de Guinea Ecuatorial y portfolio de buena calidad estética."
+   ],
+   "weak": [
+    "Podría desarrollarse con más profundidad: disciplinas artísticas, agenda de festivos y vacaciones, y mediación con públicos.",
+    "Ausencia de consideración específica hacia mujeres y niñas, colectivos prioritarios de la cooperación española."
+   ],
+   "hypothesis": {
+    "premia": "Cronograma estructurado con programas propios y efemérides alineadas con la cooperación, buen conocimiento de públicos y portfolio de calidad estética y comunicativa.",
+    "penaliza": "Falta de profundidad en disciplinas, mediación y calendario de públicos, y ausencia de enfoque específico hacia mujeres y niñas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=mbjC21loQ9rkY6rls5tG9A%3D%3D",
+   "doc": "2026-e6747ace-d659-40d2-accc-596bc12ee557"
+  },
+  {
+   "crit": "JV1. Plan Básico de Explotación y Gestión Deportiva",
+   "max": 31,
+   "exp": "p:18358900",
+   "ref": "04101/2025/225-COSP",
+   "title": "La concesión del servicio público del Polideportivo Municipal “Parc Central” de la ciudad de València de nueva construcción, que nace de la ",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-03",
+   "offers": 1,
+   "top": {
+    "pts": 27.45,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Programas, planning y oferta superan ampliamente los mínimos del pliego y se adaptan a colectivos y espacios.",
+    "Sistema de seguridad acuática con sensores, tags y alertas, y software con monitorización remota avanzada.",
+    "Organigrama bien dimensionado y plantilla que supera los mínimos del PPT."
+   ],
+   "weak": [
+    "Protocolo de protección al menor: faltan tiempos de respuesta, registro de incidencias, confidencialidad y comunicación a familias.",
+    "Plan de formación sin detalle del presupuesto destinado.",
+    "Reglamento de régimen interno demasiado sintético; falta normativa específica de pista polideportiva y spa."
+   ],
+   "hypothesis": {
+    "premia": "Ampliación de los mínimos del pliego en programas, planning, plantilla y equipamiento tecnológico, con detalle operativo y adaptación a colectivos.",
+    "penaliza": "Protocolo de protección al menor incompleto, formación sin presupuesto y reglamento de régimen interno demasiado sintético."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Bmmro4vMlF0Xhk1FZxEyvw%3D%3D",
+   "doc": "2026-ee072805-2c30-4dc2-8060-e48869c32c1e"
+  },
+  {
+   "crit": "JV2: Plan básico de mantenimiento integral del Polideportivo (PBMI)",
+   "max": 18,
+   "exp": "p:18358900",
+   "ref": "04101/2025/225-COSP",
+   "title": "La concesión del servicio público del Polideportivo Municipal “Parc Central” de la ciudad de València de nueva construcción, que nace de la ",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-03",
+   "offers": 1,
+   "top": {
+    "pts": 18,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Referencias sistemáticas a normativa y al manual del OAM FDM, personalizadas a la instalación y en tablas claras.",
+    "Mantenimiento correctivo apoyado en GMAO con fases temporizadas.",
+    "Plan de limpieza y desinfección detallado, con frecuencias, productos, equipos y recogida selectiva."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Referencias a normativa y manual del OAM FDM, uso de GMAO y detalle de frecuencias y recursos de limpieza.",
+    "penaliza": "No se señalan carencias en los comentarios."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Bmmro4vMlF0Xhk1FZxEyvw%3D%3D",
+   "doc": "2026-ee072805-2c30-4dc2-8060-e48869c32c1e"
   },
   {
    "crit": "Criterio 1. Características técnicas de las instalaciones",

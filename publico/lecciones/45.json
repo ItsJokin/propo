@@ -1,8 +1,44 @@
 {
  "cpv2": "45",
- "generated": "2026-10-22T14:39:58.990Z",
+ "generated": "2026-10-22T18:50:13.978Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "A.1) METODOLOGÍA CONSTRUCTIVA, CONOCIMIENTO DE LA ZONA Y PLANIFICACIÓN Y CONTROL DE LOS TRABAJOS",
+   "max": 20,
+   "exp": "p:18721858",
+   "ref": "OBR/2025/0000159135",
+   "title": "Ejecución de la obra \"Tercer carril de la Autopista TF-5 entre Guamasa y el Aeropuerto del Norte, sentido Santa Cruz de Tenerife\"",
+   "buyer": "Consejería de Obras Públicas, Vivienda y Movilidad del Gobierno de Canarias",
+   "nuts": "ES709",
+   "date": "2026-09-03",
+   "offers": 7,
+   "top": {
+    "pts": 20,
+    "winner": false
+   },
+   "low": {
+    "pts": 17
+   },
+   "best": [
+    "Organigrama con 4 jefes de producción dedicados a frentes; capacidad de respuesta inmediata.",
+    "Canteras y plantas de hormigón propias con prioridad de suministro garantizada.",
+    "Plan de relaciones con vecinos y comerciantes; buen conocimiento de servicios afectados y AENA.",
+    "Segundo turno y trabajo de lunes a sábado para garantizar el plazo de 35 meses.",
+    "Construcción digital BIM y control de verticalidad de pantallas en tiempo real."
+   ],
+   "weak": [
+    "Sin plantas propias de asfalto ni hormigón; mayor riesgo de prioridad de suministro.",
+    "Planteamiento de desvíos más convencional que el de las ofertas líderes.",
+    "Plan de comunicación con vecinos menos detallado y sin figura específica."
+   ],
+   "hypothesis": {
+    "premia": "Plantas y canteras propias que garantizan suministro; estructura de mando con 4 o más jefes de producción; BIM o detección tecnológica de servicios; turnicidad o trabajo en sábado para cumplir plazo; desvíos innovadores y coherencia de la planificación.",
+    "penaliza": "Ausencia de plantas propias de asfalto u hormigón; turnos conservadores; desvíos convencionales; plan de comunicación con vecinos poco específico; detección de servicios menos detallada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Vsy839QQHyoeIBJRHQiPkQ%3D%3D",
+   "doc": "2026-901dc9d2-2812-47b7-aea4-6f43f1e18082"
+  },
   {
    "crit": "MEMORIA",
    "max": 34,
@@ -124,6 +160,87 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=mIzbc4ionFi9Hd5zqvq9cg%3D%3D",
    "doc": "2026-bc3ed908-ed9d-415c-ac29-efe54e2c49ff"
+  },
+  {
+   "crit": "PROGRAMA DE CONSTRUCIÓN DAS OBRAS",
+   "max": 6,
+   "exp": "p:19845896",
+   "ref": "AV 05004 26/13",
+   "title": "Obras comprendidas no \"Proxecto básico e de execución da Cidade do Deporte. Estadio de A Malata.Fase 2\", cofinanciado pola Vicepresidencia p",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Ferrol",
+   "nuts": "ES111",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Diagrama de Gantt completo con los seis apartados justificados de forma completa y específica para la obra.",
+    "Plan de obra de 3 meses (inicio outubro, fin decembro 2026) acorde al convenio y al proyecto.",
+    "Tiene en cuenta la compatibilidad con la actividad deportiva del equipamiento."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=DVokUvylK%2Fw7u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-102f785b-d47e-4bf2-967a-4ee91c4b0bbe"
+  },
+  {
+   "crit": "MEMORIA DESCRITIVA DO PROCESO DE EXECUCIÓN",
+   "max": 9,
+   "exp": "p:19845896",
+   "ref": "AV 05004 26/13",
+   "title": "Obras comprendidas no \"Proxecto básico e de execución da Cidade do Deporte. Estadio de A Malata.Fase 2\", cofinanciado pola Vicepresidencia p",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Ferrol",
+   "nuts": "ES111",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Distribución en planta y accesos, acopios y casetas planteados de forma específica para la parcela.",
+    "13 cartas de compromiso de suministros y subcontratas con tabla resumen.",
+    "Organigrama de 8 personas axeitado a la obra."
+   ],
+   "weak": [
+    "Solo 2 personas al 100% y 5 con dedicación parcial, lo que limita la valoración del equipo.",
+    "Subapartado de organigrama justificado solo de forma incompleta."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=DVokUvylK%2Fw7u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-102f785b-d47e-4bf2-967a-4ee91c4b0bbe"
+  },
+  {
+   "crit": "PROGRAMA DE ACTUACIÓNS AMBIENTAIS",
+   "max": 6,
+   "exp": "p:19845896",
+   "ref": "AV 05004 26/13",
+   "title": "Obras comprendidas no \"Proxecto básico e de execución da Cidade do Deporte. Estadio de A Malata.Fase 2\", cofinanciado pola Vicepresidencia p",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Ferrol",
+   "nuts": "ES111",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Plan de residuos con códigos LER, gestores autorizados, distancias y cartas de compromiso.",
+    "Tabla de materiales con certificados y aprovechamiento de materiales existentes."
+   ],
+   "weak": [
+    "Boas prácticas de reducción de consumo energético solo esquemáticas, sin desarrollo.",
+    "Recursos hídricos y materias primas tratados de forma escasa; DNSH desarrollado de manera breve.",
+    "Medidas de contaminación atmosférica, ruido y vertidos genéricas, sin detalle específico."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=DVokUvylK%2Fw7u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-102f785b-d47e-4bf2-967a-4ee91c4b0bbe"
   },
   {
    "crit": "EFICACIA Y EFICIENCIA DE LA PROPUESTA TÉCNICA, PLAN DE OBRA, ORGANIZACIÓN Y MEDIOS",
@@ -520,6 +637,75 @@
    "doc": "2026-8f48ca18-7301-43cb-81ab-0f6c904d66d3"
   },
   {
+   "crit": "PLAZO DE OBRA Y PROGRAMA DE TRABAJO",
+   "max": 15,
+   "exp": "p:19893437",
+   "ref": "Obra 2025-00043",
+   "title": "Mejora de infraestructuras y resiliencia hídrica en el ciclo integral del agua en Plaza de Gracia y calle Músico Vicente Zarzo (Granada).",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-08-27",
+   "offers": 7,
+   "top": {
+    "pts": 12.4,
+    "winner": false
+   },
+   "low": {
+    "pts": 10.3
+   },
+   "best": [
+    "Faseado específico para compatibilizar la obra con terrazas de hostelería",
+    "Rendimientos justificados con fichas por unidad y composición de equipos",
+    "Diagrama de Gantt y ruta crítica con presentación clara",
+    "Análisis de afecciones urbanas, arqueológicas, comerciales y de accesibilidad",
+    "Gantt y camino crítico con presentación clara"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Programa legible (Gantt y ruta crítica), rendimientos y equipos detallados, y faseado compatible con la actividad comercial y hostelera.",
+    "penaliza": "Planificación poco legible o sin detalle de equipos, y reducción de plazo limitada o nula."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=pCVqfuQ0ufmdkQsA7ROvsg%3D%3D",
+   "doc": "2026-53da30cf-a75c-4d27-9d31-7dc941cec1c4"
+  },
+  {
+   "crit": "ESTUDIO TÉCNICO DE LA OBRA",
+   "max": 25,
+   "exp": "p:19893437",
+   "ref": "Obra 2025-00043",
+   "title": "Mejora de infraestructuras y resiliencia hídrica en el ciclo integral del agua en Plaza de Gracia y calle Músico Vicente Zarzo (Granada).",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-08-27",
+   "offers": 7,
+   "top": {
+    "pts": 18.56,
+    "winner": false
+   },
+   "low": {
+    "pts": 13.38
+   },
+   "best": [
+    "Estudio de servicios con planos, arquetas, georradar y coordinación con compañías",
+    "Plan de tráfico específico por fase con desvíos y uso alternativo de aparcamiento",
+    "Relación nominativa de operarios y equipo técnico muy completo",
+    "Estudio de servicios con inspecciones, catas, georradar y coordinación",
+    "Medidas de reubicación de terrazas y mantenimiento de accesos"
+   ],
+   "weak": [
+    "Plan de trabajo de fibrocemento no presentado y planteamiento no viable por plazos",
+    "Medidas de tráfico e instalaciones auxiliares genéricas",
+    "No se hace referencia al personal operario adscrito",
+    "Implantación de obra limitada a caseta, aseo químico y punto de información"
+   ],
+   "hypothesis": {
+    "premia": "Estudio detallado de servicios afectados, medidas concretas por fase para comercio y tráfico, personal nominativo y documentación de amianto (RERA, plan de trabajo o carta de compromiso).",
+    "penaliza": "Medidas genéricas, falta de plan o carta de compromiso para amianto, personal operario no acreditado, discrepancias documentales e instalaciones auxiliares poco adaptadas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=pCVqfuQ0ufmdkQsA7ROvsg%3D%3D",
+   "doc": "2026-53da30cf-a75c-4d27-9d31-7dc941cec1c4"
+  },
+  {
    "crit": "Descriptivo técnico",
    "max": 9,
    "exp": "p:20014761",
@@ -624,6 +810,112 @@
    "doc": "2026-b2c6703e-9075-4e31-96fd-b941f3dc07f3"
   },
   {
+   "crit": "Memoria descriptiva",
+   "max": 15,
+   "exp": "p:19403629",
+   "ref": "2025/CMY_03/000101",
+   "title": "Contrato de obras para adecuar el terreno adyacente al Foro Iberoamericano de La Rábida para aparcamiento público.",
+   "buyer": "Junta de Gobierno de la Diputación Provincial de Huelva",
+   "nuts": "ES615",
+   "date": "2026-08-24",
+   "offers": 1,
+   "top": {
+    "pts": 13.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Descripción detallada de actuaciones, entorno patrimonial y procedimientos constructivos",
+    "Análisis de suministros, logística y subcontratación con cartas de compromiso"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Detalle técnico del entorno, procedimientos constructivos y logística con compromisos de proveedores",
+    "penaliza": "El informe no identifica carencias que resten puntos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=6Psp0JjlCQXs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-721cd778-f765-4402-8830-9b5c9a336fdb"
+  },
+  {
+   "crit": "Programa de trabajos",
+   "max": 15,
+   "exp": "p:19403629",
+   "ref": "2025/CMY_03/000101",
+   "title": "Contrato de obras para adecuar el terreno adyacente al Foro Iberoamericano de La Rábida para aparcamiento público.",
+   "buyer": "Junta de Gobierno de la Diputación Provincial de Huelva",
+   "nuts": "ES615",
+   "date": "2026-08-24",
+   "offers": 1,
+   "top": {
+    "pts": 13,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Secuencia lógica y viable; solapes que optimizan plazos sin comprometer calidad ni seguridad",
+    "Asignación de recursos coherente con rendimientos y memoria"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Secuencia lógica, solapes compatibles y recursos asignados coherentemente a los rendimientos",
+    "penaliza": "El informe no identifica carencias que resten puntos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=6Psp0JjlCQXs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-721cd778-f765-4402-8830-9b5c9a336fdb"
+  },
+  {
+   "crit": "Reducción del plazo de ejecución",
+   "max": 10,
+   "exp": "p:19403629",
+   "ref": "2025/CMY_03/000101",
+   "title": "Contrato de obras para adecuar el terreno adyacente al Foro Iberoamericano de La Rábida para aparcamiento público.",
+   "buyer": "Junta de Gobierno de la Diputación Provincial de Huelva",
+   "nuts": "ES615",
+   "date": "2026-08-24",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Reducción de 4 a 3 meses respaldada por planificación y organización de medios"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Reducción de plazo respaldada por planificación y medios",
+    "penaliza": "El informe no identifica carencias que resten puntos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=6Psp0JjlCQXs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-721cd778-f765-4402-8830-9b5c9a336fdb"
+  },
+  {
+   "crit": "Coherencia de la documentación presentada",
+   "max": 5,
+   "exp": "p:19403629",
+   "ref": "2025/CMY_03/000101",
+   "title": "Contrato de obras para adecuar el terreno adyacente al Foro Iberoamericano de La Rábida para aparcamiento público.",
+   "buyer": "Junta de Gobierno de la Diputación Provincial de Huelva",
+   "nuts": "ES615",
+   "date": "2026-08-24",
+   "offers": 1,
+   "top": {
+    "pts": 4.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Coherencia interna entre memoria, programa, medios y plazo ofertado"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Coherencia entre memoria, programa, medios y plazo",
+    "penaliza": "El informe no identifica carencias que resten puntos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=6Psp0JjlCQXs%2BnLj3vAg5A%3D%3D",
+   "doc": "2026-721cd778-f765-4402-8830-9b5c9a336fdb"
+  },
+  {
    "crit": "Memoria descriptiva sobre el conocimiento del estado actual del tramo de obra y del proyecto",
    "max": 20,
    "exp": "p:19724379",
@@ -716,6 +1008,194 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIc382ByRaMadbH3CysQuQ%3D%3D",
    "doc": "2026-9054f421-5a26-4927-8d46-5568f11fbf51"
+  },
+  {
+   "crit": "Grado de Conocimiento del Proyecto",
+   "max": 5,
+   "exp": "p:19348040",
+   "ref": "OB-030/25",
+   "title": "Obras de rehabilitación del interior del panteón erigido a la memoria de D. Manuel Agustín Heredia del Cementerio San Miguel en Málaga.",
+   "buyer": "Gerente de la Gerencia Municipal de Urbanismo del Ayuntamiento de Málaga",
+   "nuts": "ES617",
+   "date": "2026-08-18",
+   "offers": 4,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Diagnóstico general del estado de conservación, patologías, zonas de afección y riesgos de la intervención",
+    "Desglosa los 4 puntos del pliego; identifica riesgos y propone protección especial de la escultura de Bartolini",
+    "Detecta contradicción en el tratamiento de sales de paramentos y cúpula y propone alternativa"
+   ],
+   "weak": [
+    "No aporta ningún documento que demuestre conocimiento específico del proyecto objeto del contrato",
+    "No menciona posibles incongruencias o contradicciones entre documentos del proyecto"
+   ],
+   "hypothesis": {
+    "premia": "Diagnóstico propio del estado del edificio y detección de riesgos o incongruencias concretas del proyecto",
+    "penaliza": "Desglose del proyecto sin análisis propio o ausencia de documento específico del objeto del contrato"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=b9x%2F3L2X9NzgL1BHd3qjQA%3D%3D",
+   "doc": "2026-1e4eb422-2f7b-41b6-b007-64c5d6641d9b"
+  },
+  {
+   "crit": "Desarrollo de los trabajos y materiales utilizados",
+   "max": 4,
+   "exp": "p:19348040",
+   "ref": "OB-030/25",
+   "title": "Obras de rehabilitación del interior del panteón erigido a la memoria de D. Manuel Agustín Heredia del Cementerio San Miguel en Málaga.",
+   "buyer": "Gerente de la Gerencia Municipal de Urbanismo del Ayuntamiento de Málaga",
+   "nuts": "ES617",
+   "date": "2026-08-18",
+   "offers": 4,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Fundamenta el desarrollo en principios de conocer, ensayar, compatibilidad y documentación de decisiones",
+    "Describe equipos y maquinaria y unidades de obra más importantes por partidas, tratamientos y materiales"
+   ],
+   "weak": [
+    "Propuesta genérica sobre cementerios en general, sin mencionar el objeto particular del contrato",
+    "Documentación no coherente con lo solicitado"
+   ],
+   "hypothesis": {
+    "premia": "Fundamentación metodológica y descripción de equipos, materiales y unidades de obra por partidas",
+    "penaliza": "Falta de desarrollo de los trabajos o propuesta genérica no ajustada al objeto"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=b9x%2F3L2X9NzgL1BHd3qjQA%3D%3D",
+   "doc": "2026-1e4eb422-2f7b-41b6-b007-64c5d6641d9b"
+  },
+  {
+   "crit": "Medios humanos adscritos a las obras",
+   "max": 4,
+   "exp": "p:19348040",
+   "ref": "OB-030/25",
+   "title": "Obras de rehabilitación del interior del panteón erigido a la memoria de D. Manuel Agustín Heredia del Cementerio San Miguel en Málaga.",
+   "buyer": "Gerente de la Gerencia Municipal de Urbanismo del Ayuntamiento de Málaga",
+   "nuts": "ES617",
+   "date": "2026-08-18",
+   "offers": 4,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Personal propio: arquitecto, restaurador e historiador, además de ejecución y seguridad y salud",
+    "Personal propio: arquitecto, restaurador, historiador y arqueólogo, además de ejecución y seguridad"
+   ],
+   "weak": [
+    "Documentación no coherente con lo solicitado"
+   ],
+   "hypothesis": {
+    "premia": "Personal propio con arquitecto, restaurador e historiador, además de ejecución y seguridad",
+    "penaliza": "Ausencia de perfiles como arquitecto o historiador"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=b9x%2F3L2X9NzgL1BHd3qjQA%3D%3D",
+   "doc": "2026-1e4eb422-2f7b-41b6-b007-64c5d6641d9b"
+  },
+  {
+   "crit": "Forma de ejecución",
+   "max": 4,
+   "exp": "p:19348040",
+   "ref": "OB-030/25",
+   "title": "Obras de rehabilitación del interior del panteón erigido a la memoria de D. Manuel Agustín Heredia del Cementerio San Miguel en Málaga.",
+   "buyer": "Gerente de la Gerencia Municipal de Urbanismo del Ayuntamiento de Málaga",
+   "nuts": "ES617",
+   "date": "2026-08-18",
+   "offers": 4,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Fases ordenadas por zonas físicas y procedimientos especializados para cada tratamiento",
+    "Fases con código de color, ordenadas por zonas físicas, con plazo y puntos críticos por fase"
+   ],
+   "weak": [
+    "Documentación no coherente con lo solicitado"
+   ],
+   "hypothesis": {
+    "premia": "Fases por zonas físicas, procedimientos especializados y puntos críticos por fase",
+    "penaliza": "No describir la forma de ejecución de la obra en su conjunto"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=b9x%2F3L2X9NzgL1BHd3qjQA%3D%3D",
+   "doc": "2026-1e4eb422-2f7b-41b6-b007-64c5d6641d9b"
+  },
+  {
+   "crit": "Programa de trabajo",
+   "max": 4,
+   "exp": "p:19348040",
+   "ref": "OB-030/25",
+   "title": "Obras de rehabilitación del interior del panteón erigido a la memoria de D. Manuel Agustín Heredia del Cementerio San Miguel en Málaga.",
+   "buyer": "Gerente de la Gerencia Municipal de Urbanismo del Ayuntamiento de Málaga",
+   "nuts": "ES617",
+   "date": "2026-08-18",
+   "offers": 4,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Secuencia arriba-abajo desde operaciones de mayor riesgo; cuadro, cronograma y planificación operativa",
+    "Relaciona tareas con precedencias, plazos parciales y totales y diagrama de Gantt detallado"
+   ],
+   "weak": [
+    "Documentación no coherente con lo solicitado"
+   ],
+   "hypothesis": {
+    "premia": "Cronograma con precedencias, plazos parciales y totales y diagrama de Gantt",
+    "penaliza": "Cronograma genérico con hitos mensuales"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=b9x%2F3L2X9NzgL1BHd3qjQA%3D%3D",
+   "doc": "2026-1e4eb422-2f7b-41b6-b007-64c5d6641d9b"
+  },
+  {
+   "crit": "Medidas a adoptar",
+   "max": 4,
+   "exp": "p:19348040",
+   "ref": "OB-030/25",
+   "title": "Obras de rehabilitación del interior del panteón erigido a la memoria de D. Manuel Agustín Heredia del Cementerio San Miguel en Málaga.",
+   "buyer": "Gerente de la Gerencia Municipal de Urbanismo del Ayuntamiento de Málaga",
+   "nuts": "ES617",
+   "date": "2026-08-18",
+   "offers": 4,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Medidas de gestión de residuos, seguridad, arqueología, bien definidas y detalladas"
+   ],
+   "weak": [
+    "Documentación no coherente con lo solicitado"
+   ],
+   "hypothesis": {
+    "premia": "Apartado propio de medidas previas y durante la ejecución",
+    "penaliza": "Medidas dispersas en cada fase sin apartado específico"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=b9x%2F3L2X9NzgL1BHd3qjQA%3D%3D",
+   "doc": "2026-1e4eb422-2f7b-41b6-b007-64c5d6641d9b"
   },
   {
    "crit": "A.1.1 Memoria descriptiva del proceso de ejecución de la obra",
@@ -856,6 +1336,454 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=X%2FrO3p2P2Fh4zIRvjBVCSw%3D%3D",
    "doc": "2026-905fda7e-a347-443c-8f98-90c57870b8ac"
+  },
+  {
+   "crit": "Memoria constructiva",
+   "max": 14,
+   "exp": "p:20014779",
+   "ref": "DANA_Ald5",
+   "title": "Restauración de la EBAR de Bonaire (Aldaia)",
+   "buyer": "Gerencia de Aigües de l'Horta S.A.",
+   "nuts": "ES523",
+   "date": "2026-08-07",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Incluye una descripción general de las actuaciones previstas y de su desarrollo.",
+    "Hace referencia a medios, organización de obra y planificación de los trabajos."
+   ],
+   "weak": [
+    "Logística, accesos y posibles afecciones se tratan de manera genérica.",
+    "Las cuestiones de la memoria se desarrollan de forma general, sin mayor detalle."
+   ],
+   "hypothesis": {
+    "premia": "Descripción general de actuaciones, desarrollo de la obra y referencias a medios, organización y planificación.",
+    "penaliza": "Tratamiento genérico de logística, accesos y afecciones derivadas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=T1MxeV83vg%2BTylGzYmBF9Q%3D%3D",
+   "doc": "2026-80c21e57-1d9c-41b7-8f4f-d45c3e7b9981"
+  },
+  {
+   "crit": "Plan de obra",
+   "max": 10,
+   "exp": "p:20014779",
+   "ref": "DANA_Ald5",
+   "title": "Restauración de la EBAR de Bonaire (Aldaia)",
+   "buyer": "Gerencia de Aigües de l'Horta S.A.",
+   "nuts": "ES523",
+   "date": "2026-08-07",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Contempla programación de actividades y su relación con el desarrollo general de la obra.",
+    "Considera la organización temporal de los trabajos y la distribución de las principales actuaciones."
+   ],
+   "weak": [
+    "Valoración general de la planificación, sin mayor detalle.",
+    "Aspectos relacionados con los plazos tratados de forma genérica."
+   ],
+   "hypothesis": {
+    "premia": "Programación de actividades vinculada al desarrollo general de la obra y a la organización temporal de los trabajos.",
+    "penaliza": "Valoración general de la planificación y tratamiento genérico de los plazos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=T1MxeV83vg%2BTylGzYmBF9Q%3D%3D",
+   "doc": "2026-80c21e57-1d9c-41b7-8f4f-d45c3e7b9981"
+  },
+  {
+   "crit": "A.1. Análise da actuación obxecto do proxecto, das actividades e unidades de obra e dos condicionantes principais para a execución do proxecto",
+   "max": 10,
+   "exp": "p:19655817",
+   "ref": "2026006522",
+   "title": "Mellora da drenaxe na E.P. 5003 A Caniza-Arbo dende o P.Q. 9+706 ao 10+116. Concello de Arbo",
+   "buyer": "Presidencia de la Diputación Provincial de Pontevedra",
+   "nuts": "ES114",
+   "date": "2026-08-07",
+   "offers": 3,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Analiza la problemática de la obra, los condicionantes principales y las actividades más importantes de forma correcta",
+    "Analiza la problemática, los condicionantes principales y las actividades importantes de forma correcta"
+   ],
+   "weak": [
+    "No incide en ciertos aspectos relevantes",
+    "Omite algún condicionante relevante",
+    "No profundiza en los procesos constructivos"
+   ],
+   "hypothesis": {
+    "premia": "Analizar la problemática, todos los condicionantes relevantes y los procesos constructivos sin omisiones",
+    "penaliza": "Omitir condicionantes relevantes o no profundizar en procesos constructivos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=bD2XuBnTb3CHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-71069102-b2ab-4d74-946d-97f4ed70edc3"
+  },
+  {
+   "crit": "A.2. Estudio de implantación, acopios e desvios",
+   "max": 4,
+   "exp": "p:19655817",
+   "ref": "2026006522",
+   "title": "Mellora da drenaxe na E.P. 5003 A Caniza-Arbo dende o P.Q. 9+706 ao 10+116. Concello de Arbo",
+   "buyer": "Presidencia de la Diputación Provincial de Pontevedra",
+   "nuts": "ES114",
+   "date": "2026-08-07",
+   "offers": 3,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Estudio de implantación detallado, con provisiones y desvíos correctos, claros y concisos",
+    "Estudio de implantación detallado y desvíos necesarios claros y concisos"
+   ],
+   "weak": [
+    "Solo de forma general y no acordes a las necesidades de la programación"
+   ],
+   "hypothesis": {
+    "premia": "Estudio de implantación detallado con necesidades de acopios particularizadas y desvíos claros",
+    "penaliza": "Implantación solo enunciada o sin estudio particularizado de acopios"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=bD2XuBnTb3CHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-71069102-b2ab-4d74-946d-97f4ed70edc3"
+  },
+  {
+   "crit": "A.3. Programación das obras",
+   "max": 8,
+   "exp": "p:19655817",
+   "ref": "2026006522",
+   "title": "Mellora da drenaxe na E.P. 5003 A Caniza-Arbo dende o P.Q. 9+706 ao 10+116. Concello de Arbo",
+   "buyer": "Presidencia de la Diputación Provincial de Pontevedra",
+   "nuts": "ES114",
+   "date": "2026-08-07",
+   "offers": 3,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Programación particularizada a la empresa y a los condicionantes, con diagramas explicativos",
+    "Programación correcta y particularizada a la empresa y a los condicionantes de la obra"
+   ],
+   "weak": [
+    "Incoherencia en el orden de las actividades",
+    "No explica suficientemente la programación"
+   ],
+   "hypothesis": {
+    "premia": "Programación detallada, explicada y con diagramas o rendimientos coherentes",
+    "penaliza": "Programación general, sin explicación detallada o con orden de actividades incoherente"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=bD2XuBnTb3CHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-71069102-b2ab-4d74-946d-97f4ed70edc3"
+  },
+  {
+   "crit": "B.1. Emprego de materias reutilizados ou reciclados",
+   "max": 3,
+   "exp": "p:19655817",
+   "ref": "2026006522",
+   "title": "Mellora da drenaxe na E.P. 5003 A Caniza-Arbo dende o P.Q. 9+706 ao 10+116. Concello de Arbo",
+   "buyer": "Presidencia de la Diputación Provincial de Pontevedra",
+   "nuts": "ES114",
+   "date": "2026-08-07",
+   "offers": 3,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Propuesta de recogida selectiva adaptada a la obra con programa de puntos de inspección"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=bD2XuBnTb3CHCIsjvJ3rhQ%3D%3D",
+   "doc": "2026-71069102-b2ab-4d74-946d-97f4ed70edc3"
+  },
+  {
+   "crit": "MEMORIA TECNICA VARIANTE OBLIGATORIA",
+   "max": 49,
+   "exp": "p:19772806",
+   "ref": "IAA-2026-20013",
+   "title": "EDAR de Torrevelilla",
+   "buyer": "Instituto Aragonés del Agua",
+   "nuts": "ES242",
+   "date": "2026-07-26",
+   "offers": 2,
+   "top": {
+    "pts": 49,
+    "winner": true
+   },
+   "low": {
+    "pts": 36
+   },
+   "best": [
+    "Cálculo muy detallado del proceso",
+    "Asume rendimiento nulo del tanque Imhoff, dando capacidad añadida frente a contingencias de mantenimiento",
+    "Solución energética off-grid con campo fotovoltaico de 27 paneles y acumulación; respeta parámetros de diseño y vertido",
+    "Biodisco multietapa, opción válida recogida en el PCAP",
+    "Suministro eléctrico de baja potencia con sistema fotovoltaico y baterías"
+   ],
+   "weak": [
+    "El informe no detalla los motivos de la puntuación inferior"
+   ],
+   "hypothesis": {
+    "premia": "Cálculo detallado del proceso, consideración de contingencias (rendimiento nulo del Imhoff) y solución energética autónoma con fotovoltaica y acumulación",
+    "penaliza": "Ausencia de Carta de Compromiso (puntuación cero). Entre las ofertas con carta, el informe no explica por qué una obtiene 36 puntos frente a 49"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OC9mfmKpDGMeIBJRHQiPkQ%3D%3D",
+   "doc": "2026-6966b82a-6e17-454a-93ef-0e8a94ed01c3"
+  },
+  {
+   "crit": "JV1.a Capacidad de respuesta en actuaciones de urgencia",
+   "max": 8,
+   "exp": "p:19235122",
+   "ref": "04101/2025/215-O",
+   "title": "Acuerdo Marco para la ejecución de obras en inmuebles de propiedad municipal no adscritos.-",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-19",
+   "offers": 3,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.66
+   },
+   "best": [
+    "Memoria muy completa; declara respuesta inferior a 15 minutos.",
+    "Tres bases de maquinaria en València con movilización de 10 minutos.",
+    "Cinco equipos de guardia, cobertura 24 horas y análisis gráfico de isócronas.",
+    "Identifica medios humanos y maquinaria adscritos al contrato.",
+    "Declara respuesta en menos de media hora desde Paterna y Manises."
+   ],
+   "weak": [
+    "No concreta un sistema de equipos de guardia.",
+    "No especifica el número de efectivos adscritos a la atención urgente."
+   ],
+   "hypothesis": {
+    "premia": "Compromiso de respuesta inferior o igual a 45 minutos con medios, equipos de guardia y cobertura 24 horas justificados con detalle.",
+    "penaliza": "No concretar la composición del equipo de guardia ni el número de efectivos para urgencias."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rsVHe%2BerO0S2gkLQ8TeYKA%3D%3D",
+   "doc": "2026-0a61e7ce-d66e-4c4d-9b4f-43b9169ae6cd"
+  },
+  {
+   "crit": "JV1.b Ejecución de derribos",
+   "max": 8,
+   "exp": "p:19235122",
+   "ref": "04101/2025/215-O",
+   "title": "Acuerdo Marco para la ejecución de obras en inmuebles de propiedad municipal no adscritos.-",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-19",
+   "offers": 3,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Distingue demoliciones aisladas, entre medianeras, con conservación de fachada y con desamiantado.",
+    "Detalla técnicas, fases de desmontaje y gestión de escombros con ejemplos documentados.",
+    "Elevado nivel de detalle, casuística y experiencia.",
+    "Desarrolla de forma extensa las tres tipologías: aislado, adosado y entre medianeras.",
+    "Incluye desconexión de acometidas, inertización de gas, apuntalamientos y gestión de residuos."
+   ],
+   "weak": [
+    "No especifica procesos según situación aislada, adosada o entre medianeras."
+   ],
+   "hypothesis": {
+    "premia": "Distinguir procesos según situación aislada, adosada o entre medianeras, con ejemplos y técnicas detalladas.",
+    "penaliza": "Describir el proceso de forma general sin diferenciar tipologías de edificación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rsVHe%2BerO0S2gkLQ8TeYKA%3D%3D",
+   "doc": "2026-0a61e7ce-d66e-4c4d-9b4f-43b9169ae6cd"
+  },
+  {
+   "crit": "JV1.c1 Sistema de información compartida",
+   "max": 3,
+   "exp": "p:19235122",
+   "ref": "04101/2025/215-O",
+   "title": "Acuerdo Marco para la ejecución de obras en inmuebles de propiedad municipal no adscritos.-",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-19",
+   "offers": 3,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": {
+    "pts": 1.5
+   },
+   "best": [
+    "Sistema claro y estructurado con carpetas, permisos diferenciados y documentación clasificada por obra.",
+    "Complementado con Trello para seguimiento de actuaciones e incidencias.",
+    "Tres alternativas, con plataforma GIM propia orientada a centralizar información de obras y avisos."
+   ],
+   "weak": [
+    "No concreta un sistema propio de información compartida."
+   ],
+   "hypothesis": {
+    "premia": "Sistema propio y estructurado de información compartida con herramientas concretas y permisos diferenciados.",
+    "penaliza": "Proponer solo acordar el medio de comunicación con el Ayuntamiento sin concretar sistema."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rsVHe%2BerO0S2gkLQ8TeYKA%3D%3D",
+   "doc": "2026-0a61e7ce-d66e-4c4d-9b4f-43b9169ae6cd"
+  },
+  {
+   "crit": "JV1.c2 Comunicación de incidencias",
+   "max": 2,
+   "exp": "p:19235122",
+   "ref": "04101/2025/215-O",
+   "title": "Acuerdo Marco para la ejecución de obras en inmuebles de propiedad municipal no adscritos.-",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-19",
+   "offers": 3,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Comunicación inicial y diaria con el Servicio de Patrimonio.",
+    "Desglosa tipos de incidencias con informes, seguimiento diario y soporte fotográfico.",
+    "Seguimiento de incidencias mediante paneles, estados de avisos y control en tiempo real."
+   ],
+   "weak": [
+    "Comunicación mensual y sin propuesta por tipología de incidencias ni sistemas de apoyo."
+   ],
+   "hypothesis": {
+    "premia": "Comunicación diaria y clasificación por tipología de incidencias con soporte documental y fotográfico.",
+    "penaliza": "Comunicación mensual o genérica sin propuesta por tipología de incidencias."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rsVHe%2BerO0S2gkLQ8TeYKA%3D%3D",
+   "doc": "2026-0a61e7ce-d66e-4c4d-9b4f-43b9169ae6cd"
+  },
+  {
+   "crit": "JV1.c3 Gestión de desvíos con empresas concesionarias",
+   "max": 2,
+   "exp": "p:19235122",
+   "ref": "04101/2025/215-O",
+   "title": "Acuerdo Marco para la ejecución de obras en inmuebles de propiedad municipal no adscritos.-",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-19",
+   "offers": 3,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": {
+    "pts": 0.5
+   },
+   "best": [
+    "Gestión con gran nivel de detalle con compañías de electricidad, agua y telecomunicaciones.",
+    "Incluye procedimientos, contactos, autorizaciones y plazos.",
+    "Gestión detallada con compañías de electricidad, agua, gas y telecomunicaciones.",
+    "Combina plataformas digitales y gestiones presenciales."
+   ],
+   "weak": [
+    "Desarrollo muy limitado de la gestión con compañías."
+   ],
+   "hypothesis": {
+    "premia": "Detalle de compañías, procedimientos, contactos y plazos de gestión.",
+    "penaliza": "Limitarse a indicar que se recabará información de los servicios y compañías."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rsVHe%2BerO0S2gkLQ8TeYKA%3D%3D",
+   "doc": "2026-0a61e7ce-d66e-4c4d-9b4f-43b9169ae6cd"
+  },
+  {
+   "crit": "JV1.d Medidas adicionales de seguridad y salud",
+   "max": 2,
+   "exp": "p:19235122",
+   "ref": "04101/2025/215-O",
+   "title": "Acuerdo Marco para la ejecución de obras en inmuebles de propiedad municipal no adscritos.-",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-19",
+   "offers": 3,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Desarrollo muy extenso y específico en seguridad y salud.",
+    "Incluye medidas sobre desamiantado, actuación ante hallazgos y sistemas ISO 45001 e ISO 39001.",
+    "Evaluación previa del inmueble, protocolos de consignación y recurso preventivo permanente.",
+    "Uso de drones para inspección en zonas de riesgo."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Medidas adicionales concretas y tecnológicas, como evaluación previa, recurso preventivo permanente o drones.",
+    "penaliza": "Medidas más básicas y menos específicas, como charlas preventivas o vallado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rsVHe%2BerO0S2gkLQ8TeYKA%3D%3D",
+   "doc": "2026-0a61e7ce-d66e-4c4d-9b4f-43b9169ae6cd"
+  },
+  {
+   "crit": "Análisis del proyecto y de la ejecución de las obras",
+   "max": 20,
+   "exp": "p:18180814",
+   "ref": "OBR/2025/0000126340",
+   "title": "Acondicionamiento de edificio de primaria en el CEO El Cardón",
+   "buyer": "Dirección General de Infraestructuras y Equipamientos del Gobierno de Canarias",
+   "nuts": "ES70",
+   "date": "2025-12-30",
+   "offers": 2,
+   "top": {
+    "pts": 18,
+    "winner": true
+   },
+   "low": {
+    "pts": 12
+   },
+   "best": [
+    "Cumple extensión máxima, 24 líneas por página y 5 planos.",
+    "Plan de ejecución por fases con alto detalle, rendimientos y plazos parciales.",
+    "Circulación interior analizada atendiendo a la afluencia de un centro en uso.",
+    "Gantt coherente con el estudio de ejecución de la obra.",
+    "Propone cerramientos temporales para control acústico y de polvo."
+   ],
+   "weak": [
+    "Gantt desarrollado solo por capítulos, sin unidades de obra ni recursos humanos y materiales.",
+    "No menciona la repercusión sobre la actividad docente en la planificación.",
+    "Circulación exterior considerada anecdótica y medios auxiliares por capítulo, sin detalle por partida."
+   ],
+   "hypothesis": {
+    "premia": "Gantt detallado por fases y unidades de obra con recursos, plazos parciales y medidas concretas para minimizar la afectación al centro (horarios de tarde y fin de semana, cerramientos, itinerarios) y análisis de circulaciones y medios auxiliares ajustados al proyecto.",
+    "penaliza": "Gantt solo por capítulos sin recursos humanos ni materiales, falta de referencia a la repercusión docente, análisis de circulación exterior genérico y medios auxiliares agrupados por capítulo sin detalle por partida."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=VrCB6VZ3eoYadbH3CysQuQ%3D%3D",
+   "doc": "2025-cc00f075-e761-4f84-8ce1-7124c8794752"
   }
  ]
 }

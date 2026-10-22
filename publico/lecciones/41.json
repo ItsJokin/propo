@@ -1,0 +1,35 @@
+{
+ "cpv2": "41",
+ "generated": "2026-10-22T18:50:13.987Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Muestras",
+   "max": 45,
+   "exp": "p:19588304",
+   "ref": "SUM-26-0141-AYS",
+   "title": "Suministro en régimen de arrendamiento sin opción de compra, instalación, mantenimiento e higienización de fuentes de agua conectadas a red,",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES",
+   "date": "2026-07-01",
+   "offers": 1,
+   "top": {
+    "pts": 33.75,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Mecanismo muy intuitivo con pulsadores digitales",
+    "El vaso se deja en un mismo lugar y se elige el tipo de agua",
+    "Diseño moderno y funcional, estética vanguardista integrada en entorno sanitario"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Mecanismo intuitivo con pulsadores digitales, vaso en un único lugar, selección de tipo de agua clara y diseño moderno integrado en entorno sanitario",
+    "penaliza": "Pulsadores convencionales, obligar a cambiar el vaso de sitio, selección por palabras en inglés, diseño antiguo y deficiente suministro de agua tratada en alguna fuente"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ykc8GBjYnyKGCFcHcNGIlQ%3D%3D",
+   "doc": "2026-5bddd0ea-9a7e-4ff7-a548-b84d0abe7d8d"
+  }
+ ]
+}

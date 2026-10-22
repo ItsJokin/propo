@@ -1,0 +1,1024 @@
+{
+ "cpv2": "55",
+ "generated": "2026-10-22T18:50:13.987Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Calidad de la prestación del servicio",
+   "max": 10,
+   "exp": "p:19732480",
+   "ref": "SE13826002329",
+   "title": "Servicio de Cafetería-Comedor de la Facultad de Medicina del campus de Albacete",
+   "buyer": "Gerencia de la Universidad de Castilla-La Mancha",
+   "nuts": "ES421",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 1,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Describe servicio de almuerzo, desayunos, meriendas y barra",
+    "Indica equipos, maquinaria y personal para el servicio"
+   ],
+   "weak": [
+    "No explica la forma de prestación ni la organización técnica",
+    "Reproduce casi literalmente el contenido del PPT",
+    "Sin mejoras, innovación ni compromisos adicionales"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=JRMYePqToNXgL1BHd3qjQA%3D%3D",
+   "doc": "2026-f6a63a30-504f-4b95-9b0a-2cfbf511311f"
+  },
+  {
+   "crit": "Plan para evitar el desperdicio de alimentos",
+   "max": 5,
+   "exp": "p:19732480",
+   "ref": "SE13826002329",
+   "title": "Servicio de Cafetería-Comedor de la Facultad de Medicina del campus de Albacete",
+   "buyer": "Gerencia de la Universidad de Castilla-La Mancha",
+   "nuts": "ES421",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Incluye múltiples medidas teóricas: frecuencia de recepción, etiquetado y rotación FIFO"
+   ],
+   "weak": [
+    "Contenido genérico y poco personalizado al servicio",
+    "Sin indicadores, objetivos cuantificados ni sistema de evaluación",
+    "Sin compromisos concretos de reducción; parece manual de buenas prácticas"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=JRMYePqToNXgL1BHd3qjQA%3D%3D",
+   "doc": "2026-f6a63a30-504f-4b95-9b0a-2cfbf511311f"
+  },
+  {
+   "crit": "Plan para minimizar el uso de envases y plásticos",
+   "max": 5,
+   "exp": "p:19732480",
+   "ref": "SE13826002329",
+   "title": "Servicio de Cafetería-Comedor de la Facultad de Medicina del campus de Albacete",
+   "buyer": "Gerencia de la Universidad de Castilla-La Mancha",
+   "nuts": "ES421",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Se adecua a los principios ambientales",
+    "Reutilización de envases, bolsas de rafia y envío a compostaje"
+   ],
+   "weak": [
+    "Medidas genéricas, poco innovadoras y no adaptadas al servicio",
+    "Escasa concreción práctica (cómo, cuándo, con qué medios)",
+    "Sin indicadores ni compromisos medibles; reitera criterios del PPT"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=JRMYePqToNXgL1BHd3qjQA%3D%3D",
+   "doc": "2026-f6a63a30-504f-4b95-9b0a-2cfbf511311f"
+  },
+  {
+   "crit": "ELABORACIÓN DE UNA CARTA DE APERITIVOS, ALMUERZOS, COMIDAS Y BEBIDAS CON SUS PRECIOS",
+   "max": 30,
+   "exp": "p:19337850",
+   "ref": "11101/2024",
+   "title": "Contrato de concesión del servicio de bar en los campos de fútbol -Antonio López Guerrero-",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Benidorm",
+   "nuts": "ES521",
+   "date": "2026-08-31",
+   "offers": 3,
+   "top": {
+    "pts": 30,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Carta de desayunos variada, personalizable y con precio máximo de 4,50 euros.",
+    "Almuerzos a precio cerrado con bebida y café, los más económicos.",
+    "Menú económico de tres platos con postre y bebida incluidos.",
+    "Carta de aperitivos con 10 opciones."
+   ],
+   "weak": [
+    "Sin desayunos a precio cerrado; productos sueltos encarecen el desayuno.",
+    "Menús sin bebida, café ni postre; precios más caros que el resto.",
+    "Bebidas sensiblemente más caras que las del resto."
+   ],
+   "hypothesis": {
+    "premia": "Desayunos y almuerzos a precio cerrado, menús con bebida, café y postre, y precios más bajos.",
+    "penaliza": "Productos sueltos a precio unitario, menús sin bebida ni postre, bebidas caras y ausencia de desayuno."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=S3u99%2BxQWoMUqXM96WStVA%3D%3D",
+   "doc": "2026-3f6b3224-11b6-445f-ab5c-72d3858cbce4"
+  },
+  {
+   "crit": "ELABORACIÓN DE UN MENÚ PARA DEPORTISTAS, INGREDIENTES Y SUS PRECIOS",
+   "max": 10,
+   "exp": "p:19337850",
+   "ref": "11101/2024",
+   "title": "Contrato de concesión del servicio de bar en los campos de fútbol -Antonio López Guerrero-",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Benidorm",
+   "nuts": "ES521",
+   "date": "2026-08-31",
+   "offers": 3,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Menú con elección de carbohidratos, proteínas y vegetales.",
+    "Incluye postre a elegir y bebida.",
+    "Precio más económico de los ofertados.",
+    "Dos opciones de menú para deportistas equilibradas."
+   ],
+   "weak": [
+    "No presenta ningún menú concreto para deportistas."
+   ],
+   "hypothesis": {
+    "premia": "Menú con elección de ingredientes, postre y bebida a precio bajo.",
+    "penaliza": "Ausencia de menú específico, bebida solo de agua y precio que se duplica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=S3u99%2BxQWoMUqXM96WStVA%3D%3D",
+   "doc": "2026-3f6b3224-11b6-445f-ab5c-72d3858cbce4"
+  },
+  {
+   "crit": "ELABORACIÓN DE UNA CARTA DE MENUS PARA REGÍMENES ESPECIALES (CELÍACOS, DIABÉTICOS, INTOLERANCIAS ALIMENTARIAS, ETC",
+   "max": 10,
+   "exp": "p:19337850",
+   "ref": "11101/2024",
+   "title": "Contrato de concesión del servicio de bar en los campos de fútbol -Antonio López Guerrero-",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Benidorm",
+   "nuts": "ES521",
+   "date": "2026-08-31",
+   "offers": 3,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Menús para celíacos, veganos, lacto-ovo-vegetarianos y bajos en grasa y sal, con tres opciones.",
+    "Todos incluyen postre y bebida.",
+    "Precios más económicos de las ofertas presentadas.",
+    "Menús para celíacos, diabéticos, sin lácteos y bajos en grasa y sal, con postre."
+   ],
+   "weak": [
+    "No presenta menús completos con varios platos, postre y bebida.",
+    "Precios elevados por plato, sin extras."
+   ],
+   "hypothesis": {
+    "premia": "Menús completos con tres opciones, postre y bebida incluidos, a precio competitivo.",
+    "penaliza": "Platos sueltos sin menú completo, falta de bebida y precios elevados."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=S3u99%2BxQWoMUqXM96WStVA%3D%3D",
+   "doc": "2026-3f6b3224-11b6-445f-ab5c-72d3858cbce4"
+  },
+  {
+   "crit": "PROPUESTA DE CELEBRACIÓN DE CUMPLEAÑOS",
+   "max": 10,
+   "exp": "p:19337850",
+   "ref": "11101/2024",
+   "title": "Contrato de concesión del servicio de bar en los campos de fútbol -Antonio López Guerrero-",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Benidorm",
+   "nuts": "ES521",
+   "date": "2026-08-31",
+   "offers": 3,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Tres opciones de menú de cumpleaños con bebida incluida.",
+    "Incluye equipo de música, decoración y zona de fotografías.",
+    "Menor coste por niño y opciones sin coste adicional.",
+    "Dos menús de cumpleaños con bebida y postre.",
+    "Incluye música ambiente y posibilidad de animación."
+   ],
+   "weak": [
+    "Tarta opcional con coste no incluido ni definido.",
+    "No se indica si las actividades están incluidas en los packs."
+   ],
+   "hypothesis": {
+    "premia": "Menú con bebida incluida y entretenimiento, decoración y zona de fotos incluidos en el precio.",
+    "penaliza": "Costes de tarta o actividades no definidos u opcionales, y animación sin precio indicado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=S3u99%2BxQWoMUqXM96WStVA%3D%3D",
+   "doc": "2026-3f6b3224-11b6-445f-ab5c-72d3858cbce4"
+  },
+  {
+   "crit": "B.1.1",
+   "max": 4,
+   "exp": "p:19501441",
+   "ref": "1088",
+   "title": "Instalación y explotación de máquinas automáticas expendedoras de venta de productos: bebidas calientes y frías y productos alimenticios sól",
+   "buyer": "Rectorado de la Universidad de Almería",
+   "nuts": "ES611",
+   "date": "2026-06-30",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Parque de maquinaria moderno con alta eficiencia energética e iluminación LED.",
+    "Diseño accesible para personas con movilidad reducida.",
+    "Equipos modernos con interfaces intuitivas y pantallas táctiles de última generación."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fX9qEjO3Ddl%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-147704b6-e950-4048-959b-bc6fd9f56647"
+  },
+  {
+   "crit": "B.1.2.1",
+   "max": 4,
+   "exp": "p:19501441",
+   "ref": "1088",
+   "title": "Instalación y explotación de máquinas automáticas expendedoras de venta de productos: bebidas calientes y frías y productos alimenticios sól",
+   "buyer": "Rectorado de la Universidad de Almería",
+   "nuts": "ES611",
+   "date": "2026-06-30",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Rutas lógicas diarias adaptadas a la afluencia universitaria.",
+    "Sistema automatizado que predice las mermas de stock antes de que ocurran."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fX9qEjO3Ddl%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-147704b6-e950-4048-959b-bc6fd9f56647"
+  },
+  {
+   "crit": "B.1.2.2",
+   "max": 2,
+   "exp": "p:19501441",
+   "ref": "1088",
+   "title": "Instalación y explotación de máquinas automáticas expendedoras de venta de productos: bebidas calientes y frías y productos alimenticios sól",
+   "buyer": "Rectorado de la Universidad de Almería",
+   "nuts": "ES611",
+   "date": "2026-06-30",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Calendarios rigurosos de revisiones higiénicas y mecánicas periódicas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fX9qEjO3Ddl%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-147704b6-e950-4048-959b-bc6fd9f56647"
+  },
+  {
+   "crit": "B.1.2.4",
+   "max": 4,
+   "exp": "p:19501441",
+   "ref": "1088",
+   "title": "Instalación y explotación de máquinas automáticas expendedoras de venta de productos: bebidas calientes y frías y productos alimenticios sól",
+   "buyer": "Rectorado de la Universidad de Almería",
+   "nuts": "ES611",
+   "date": "2026-06-30",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Reparación en 1 hora desde la llegada del técnico y sustitución en 24 horas por stock permanente.",
+    "Técnico de referencia asignado a la Universidad.",
+    "Garantiza prestación ininterrumpida con personal, telemetría y stock de seguridad.",
+    "Telemetría activa con alertas automáticas y resolución urgente en 2 horas.",
+    "Bloqueo del carril correspondiente ante alertas alimentarias."
+   ],
+   "weak": [
+    "Plazo medio de 12 horas para incidencias graves no inmediatas.",
+    "Plazo de 24 horas para el resto de incidencias y de 48 horas para sustituciones."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fX9qEjO3Ddl%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-147704b6-e950-4048-959b-bc6fd9f56647"
+  },
+  {
+   "crit": "B.1.2.5",
+   "max": 6,
+   "exp": "p:19501441",
+   "ref": "1088",
+   "title": "Instalación y explotación de máquinas automáticas expendedoras de venta de productos: bebidas calientes y frías y productos alimenticios sól",
+   "buyer": "Rectorado de la Universidad de Almería",
+   "nuts": "ES611",
+   "date": "2026-06-30",
+   "offers": 2,
+   "top": {
+    "pts": 6,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Códigos QR y aplicaciones móviles para incidencias.",
+    "Devoluciones por Bizum o transferencia."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fX9qEjO3Ddl%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-147704b6-e950-4048-959b-bc6fd9f56647"
+  },
+  {
+   "crit": "B.2.2",
+   "max": 2.5,
+   "exp": "p:19501441",
+   "ref": "1088",
+   "title": "Instalación y explotación de máquinas automáticas expendedoras de venta de productos: bebidas calientes y frías y productos alimenticios sól",
+   "buyer": "Rectorado de la Universidad de Almería",
+   "nuts": "ES611",
+   "date": "2026-06-30",
+   "offers": 2,
+   "top": {
+    "pts": 1.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 1.5
+   },
+   "best": [
+    "Alineamiento con el programa Campus Saludable, con frutas, ensaladas, frutos secos y lácteos señalizados."
+   ],
+   "weak": [
+    "Predominan otro tipo de alimentos menos saludables."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fX9qEjO3Ddl%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-147704b6-e950-4048-959b-bc6fd9f56647"
+  },
+  {
+   "crit": "B.2.3",
+   "max": 2.5,
+   "exp": "p:19501441",
+   "ref": "1088",
+   "title": "Instalación y explotación de máquinas automáticas expendedoras de venta de productos: bebidas calientes y frías y productos alimenticios sól",
+   "buyer": "Rectorado de la Universidad de Almería",
+   "nuts": "ES611",
+   "date": "2026-06-30",
+   "offers": 2,
+   "top": {
+    "pts": 2.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 1.5
+   },
+   "best": [
+    "Amplia gama sin gluten, para intolerantes a la lactosa y sin azúcar añadido, con alternativas vegetales.",
+    "Código QR con información nutricional completa de cada producto.",
+    "Carta de alérgenos por código QR y tabla Excel con productos para diabéticos y celíacos."
+   ],
+   "weak": [
+    "No se muestran productos catalogados para intolerantes a la lactosa."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fX9qEjO3Ddl%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-147704b6-e950-4048-959b-bc6fd9f56647"
+  },
+  {
+   "crit": "B.3.3",
+   "max": 1,
+   "exp": "p:19501441",
+   "ref": "1088",
+   "title": "Instalación y explotación de máquinas automáticas expendedoras de venta de productos: bebidas calientes y frías y productos alimenticios sól",
+   "buyer": "Rectorado de la Universidad de Almería",
+   "nuts": "ES611",
+   "date": "2026-06-30",
+   "offers": 2,
+   "top": {
+    "pts": 1,
+    "winner": false
+   },
+   "low": {
+    "pts": 0.5
+   },
+   "best": [
+    "Proveedores de proximidad con instalaciones a menos de 100 km, documentados.",
+    "Incluye obradores de bebidas, snacks y hortalizas ecológicas.",
+    "Incorpora productos frescos de proveedor de proximidad."
+   ],
+   "weak": [
+    "Un único proveedor de proximidad identificado.",
+    "No se indica que el radio sea inferior a 100 km."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fX9qEjO3Ddl%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-147704b6-e950-4048-959b-bc6fd9f56647"
+  },
+  {
+   "crit": "B.3.4",
+   "max": 1,
+   "exp": "p:19501441",
+   "ref": "1088",
+   "title": "Instalación y explotación de máquinas automáticas expendedoras de venta de productos: bebidas calientes y frías y productos alimenticios sól",
+   "buyer": "Rectorado de la Universidad de Almería",
+   "nuts": "ES611",
+   "date": "2026-06-30",
+   "offers": 2,
+   "top": {
+    "pts": 1,
+    "winner": false
+   },
+   "low": {
+    "pts": 0.5
+   },
+   "best": [
+    "Oferta específica y estable de productos ecológicos con criterios de producción sostenible.",
+    "Productos ecológicos obtenidos con sistemas que preservan la biodiversidad y el suelo."
+   ],
+   "weak": [
+    "Solo 8 referencias ecológicas.",
+    "Porcentaje garantizado no inferior al 2 %.",
+    "Solo 15 de 359 referencias (4,18 %) son ecológicas.",
+    "Algunos productos ecológicos no tienen proveedor especificado."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fX9qEjO3Ddl%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-147704b6-e950-4048-959b-bc6fd9f56647"
+  },
+  {
+   "crit": "B.3.5",
+   "max": 4,
+   "exp": "p:19501441",
+   "ref": "1088",
+   "title": "Instalación y explotación de máquinas automáticas expendedoras de venta de productos: bebidas calientes y frías y productos alimenticios sól",
+   "buyer": "Rectorado de la Universidad de Almería",
+   "nuts": "ES611",
+   "date": "2026-06-30",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Sustitución total de gases fluorados por refrigerantes naturales de impacto nulo."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fX9qEjO3Ddl%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-147704b6-e950-4048-959b-bc6fd9f56647"
+  },
+  {
+   "crit": "P1 Descripción de los productos a ofertar y sus precios, tanto para el público general como para los miembros de las asociaciones de jubilados",
+   "max": 10,
+   "exp": "p:19279481",
+   "ref": "2443984Y",
+   "title": "El objeto del contrato es la concesión demanial de la prestación del bar-cafetería de la Casa de la Cultura y Hogar del Jubilado y pensionis",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Albal",
+   "nuts": "ES523",
+   "date": "2026-06-17",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Describe menú normal, saludable, alérgenos y bebidas",
+    "Aporta precios concretos y dos tarifas diferenciadas",
+    "Presenta categorías de productos correctas, aunque genéricas"
+   ],
+   "weak": [
+    "Descripción superficial, sin productos concretos, tamaños ni carta",
+    "No aporta precios ni tarifas diferenciadas para asociaciones",
+    "Tapas sin precio concreto",
+    "Combinados sin precio para público general"
+   ],
+   "hypothesis": {
+    "premia": "Productos detallados y precios concretos con dos tarifas diferenciadas para público general y asociaciones",
+    "penaliza": "Descripción genérica de categorías y ausencia de precios o tarifas diferenciadas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2ixUeITlutecCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-cc3c1aeb-b546-4c03-8f02-6c6d37ab9606"
+  },
+  {
+   "crit": "P2 Calendario de apertura, garantizando el mínimo previsto en el pliego y en el Pliego de Prescripciones Técnicas",
+   "max": 5,
+   "exp": "p:19279481",
+   "ref": "2443984Y",
+   "title": "El objeto del contrato es la concesión demanial de la prestación del bar-cafetería de la Casa de la Cultura y Hogar del Jubilado y pensionis",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Albal",
+   "nuts": "ES523",
+   "date": "2026-06-17",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Cumple exactamente el horario mínimo obligatorio",
+    "Horario claro, sin errores de días ni franjas",
+    "Presenta un horario semanal y menciona ampliaciones y disponibilidad para eventos"
+   ],
+   "weak": [
+    "Cierra los martes, incumpliendo el horario mínimo obligatorio",
+    "Ofrece domingo en lugar de sábado hasta las 24:00",
+    "Mejoras de horario que se valoran también en otro criterio"
+   ],
+   "hypothesis": {
+    "premia": "Horario que cumple exactamente los días y franjas mínimas exigidas",
+    "penaliza": "Cerrar días obligatorios o sustituir días de apertura exigidos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2ixUeITlutecCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-cc3c1aeb-b546-4c03-8f02-6c6d37ab9606"
+  },
+  {
+   "crit": "P3 Organización del servicio",
+   "max": 15,
+   "exp": "p:19279481",
+   "ref": "2443984Y",
+   "title": "El objeto del contrato es la concesión demanial de la prestación del bar-cafetería de la Casa de la Cultura y Hogar del Jubilado y pensionis",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Albal",
+   "nuts": "ES523",
+   "date": "2026-06-17",
+   "offers": 2,
+   "top": {
+    "pts": 14.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Memoria extensa y estructurada en cuatro zonas diferenciadas",
+    "Planificación de plantilla según escenarios de afluencia",
+    "Enuncia principios de eficiencia, atención personalizada y limpieza"
+   ],
+   "weak": [
+    "Intenciones genéricas sin descripción operativa ni mecanismos de control",
+    "Falta de coherencia e integración funcional en la organización"
+   ],
+   "hypothesis": {
+    "premia": "Organización operativa por zonas, planificación de personal y coordinación con el Ayuntamiento",
+    "penaliza": "Intenciones genéricas sin descripción operativa ni mecanismos de control"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2ixUeITlutecCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-cc3c1aeb-b546-4c03-8f02-6c6d37ab9606"
+  },
+  {
+   "crit": "P4 Cualquier otro aspecto adicional a desarrollar durante la ejecución del servicio, no contemplado como mínimo en el pliego",
+   "max": 15,
+   "exp": "p:19279481",
+   "ref": "2443984Y",
+   "title": "El objeto del contrato es la concesión demanial de la prestación del bar-cafetería de la Casa de la Cultura y Hogar del Jubilado y pensionis",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Albal",
+   "nuts": "ES523",
+   "date": "2026-06-17",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Juegos de mesa, campeonatos y baile de gran valor social",
+    "Formación específica acreditada y modelos APPCC",
+    "Incluye algunas mejoras"
+   ],
+   "weak": [
+    "No desarrolla actividades ni concreta ampliaciones",
+    "No aporta valor añadido significativo"
+   ],
+   "hypothesis": {
+    "premia": "Actividades sociales concretas y formación específica acreditada",
+    "penaliza": "Propuestas básicas sin actividades ni valor añadido significativo"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2ixUeITlutecCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-cc3c1aeb-b546-4c03-8f02-6c6d37ab9606"
+  },
+  {
+   "crit": "Objetivos generales",
+   "max": 2,
+   "exp": "p:19500919",
+   "ref": "442/2026",
+   "title": "Servicio de colonias urbanas del municipio de El Molar",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-22",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": {
+    "pts": 1.5
+   },
+   "best": [
+    "Objetivos claros, bien estructurados, coherentes y alineados con la finalidad educativa y social.",
+    "Sus objetivos específicos dan mayor contexto en cuanto a su aplicación."
+   ],
+   "weak": [
+    "Frente a la otra oferta, menor contexto de aplicación en sus objetivos específicos."
+   ],
+   "hypothesis": {
+    "premia": "Objetivos específicos que aportan mayor contexto de aplicación.",
+    "penaliza": "Objetivos específicos con menor contexto de aplicación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OyvFWn6rxRhVq4S9zvaQpQ%3D%3D",
+   "doc": "2026-34b07f55-d9a5-4654-922e-d9edd3e45ea2"
+  },
+  {
+   "crit": "Cronograma de contenidos",
+   "max": 3,
+   "exp": "p:19500919",
+   "ref": "442/2026",
+   "title": "Servicio de colonias urbanas del municipio de El Molar",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-22",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Cronograma claro, detallado y bien estructurado, con bloques temáticos semanales.",
+    "Cronograma claro y detallado, con bloques temáticos por quincenas y estructura de cada jornada."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OyvFWn6rxRhVq4S9zvaQpQ%3D%3D",
+   "doc": "2026-34b07f55-d9a5-4654-922e-d9edd3e45ea2"
+  },
+  {
+   "crit": "Metodología general",
+   "max": 3,
+   "exp": "p:19500919",
+   "ref": "442/2026",
+   "title": "Servicio de colonias urbanas del municipio de El Molar",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-22",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Metodología completa, coherente, participativa y adaptada; nivel de detalle favorece una aplicación realista.",
+    "Metodología completa, coherente, participativa y adaptada a los menores."
+   ],
+   "weak": [
+    "Menor nivel de detalle en la descripción de sus principios metodológicos que la otra oferta."
+   ],
+   "hypothesis": {
+    "premia": "Principios metodológicos descritos con mayor nivel de detalle y aplicación realista.",
+    "penaliza": "Menor detalle en la descripción de los principios metodológicos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OyvFWn6rxRhVq4S9zvaQpQ%3D%3D",
+   "doc": "2026-34b07f55-d9a5-4654-922e-d9edd3e45ea2"
+  },
+  {
+   "crit": "Recursos materiales",
+   "max": 2,
+   "exp": "p:19500919",
+   "ref": "442/2026",
+   "title": "Servicio de colonias urbanas del municipio de El Molar",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-22",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Detalla de forma completa los recursos materiales, más que necesarios para el funcionamiento.",
+    "Listados completos y variados de material para el correcto funcionamiento del servicio."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OyvFWn6rxRhVq4S9zvaQpQ%3D%3D",
+   "doc": "2026-34b07f55-d9a5-4654-922e-d9edd3e45ea2"
+  },
+  {
+   "crit": "Mecanismos de coordinación interna",
+   "max": 3,
+   "exp": "p:19500919",
+   "ref": "442/2026",
+   "title": "Servicio de colonias urbanas del municipio de El Molar",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-22",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Detalla el personal: coordinador general, coordinador de centro, monitores 1/7 y Apoyo NEE 1/2.",
+    "Estructura adecuada, funciones bien explicadas y buena organización."
+   ],
+   "weak": [
+    "No indica el número de personal dedicado al servicio, importante en el caso de Apoyo NEE."
+   ],
+   "hypothesis": {
+    "premia": "Indicar el número de personal por puesto, con ratios concretas (incluido Apoyo NEE).",
+    "penaliza": "No indicar el número de personal dedicado al servicio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OyvFWn6rxRhVq4S9zvaQpQ%3D%3D",
+   "doc": "2026-34b07f55-d9a5-4654-922e-d9edd3e45ea2"
+  },
+  {
+   "crit": "Mecanismos de coordinación externa",
+   "max": 3,
+   "exp": "p:19500919",
+   "ref": "442/2026",
+   "title": "Servicio de colonias urbanas del municipio de El Molar",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-22",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Mecanismos claros y adecuados para comunicación con familias y Ayuntamiento."
+   ],
+   "weak": [
+    "Mecanismos de carácter general."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OyvFWn6rxRhVq4S9zvaQpQ%3D%3D",
+   "doc": "2026-34b07f55-d9a5-4654-922e-d9edd3e45ea2"
+  },
+  {
+   "crit": "Criterios de seguimiento y evaluación general",
+   "max": 2,
+   "exp": "p:19500919",
+   "ref": "442/2026",
+   "title": "Servicio de colonias urbanas del municipio de El Molar",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-22",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Evaluación detallada, continua, objetiva y participativa, con herramientas consideradas suficientes.",
+    "Sistema detallado, continuo, objetivo y participativo, con herramientas adecuadas para el control."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OyvFWn6rxRhVq4S9zvaQpQ%3D%3D",
+   "doc": "2026-34b07f55-d9a5-4654-922e-d9edd3e45ea2"
+  },
+  {
+   "crit": "Desarrollo de actividades",
+   "max": 3,
+   "exp": "p:19500919",
+   "ref": "442/2026",
+   "title": "Servicio de colonias urbanas del municipio de El Molar",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-22",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Tabla detallada por día y franja de edad, con actividad principal, recreo dirigido, piscina y comedor.",
+    "Incluye las actividades en períodos de acogida y entrega de participantes."
+   ],
+   "weak": [
+    "Describe solo seis ejemplos de actividades; la programación queda incompleta.",
+    "No aparecen claros los objetivos de las actividades."
+   ],
+   "hypothesis": {
+    "premia": "Programación completa por día y franja de edad, con actividades de recreo, piscina y comedor.",
+    "penaliza": "Describir solo ejemplos de actividades, dejando la programación incompleta; objetivos de actividades poco claros."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OyvFWn6rxRhVq4S9zvaQpQ%3D%3D",
+   "doc": "2026-34b07f55-d9a5-4654-922e-d9edd3e45ea2"
+  },
+  {
+   "crit": "Plan de limpieza y desinfección de los espacios",
+   "max": 2,
+   "exp": "p:19500919",
+   "ref": "442/2026",
+   "title": "Servicio de colonias urbanas del municipio de El Molar",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-22",
+   "offers": 2,
+   "top": {
+    "pts": 1.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Plan que cubre el servicio satisfactoriamente, con reparto de funciones y organización horaria adecuada.",
+    "Plan detallado de limpieza que cubre el servicio de manera correcta."
+   ],
+   "weak": [
+    "No detalla con claridad quién se responsabiliza de la limpieza general.",
+    "No se valora la figura de un/a profesional exclusivo/a para la limpieza."
+   ],
+   "hypothesis": {
+    "premia": "Reparto claro de funciones y organización horaria que no interrumpe el servicio.",
+    "penaliza": "No concretar responsables de la limpieza general."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OyvFWn6rxRhVq4S9zvaQpQ%3D%3D",
+   "doc": "2026-34b07f55-d9a5-4654-922e-d9edd3e45ea2"
+  },
+  {
+   "crit": "Protocolo específico sobre manipulación de alimentos y seguridad alimentaria",
+   "max": 2,
+   "exp": "p:19500919",
+   "ref": "442/2026",
+   "title": "Servicio de colonias urbanas del municipio de El Molar",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de El Molar",
+   "nuts": "ES300",
+   "date": "2026-05-22",
+   "offers": 2,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Protocolo completo, con correcto cumplimiento normativo."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=OyvFWn6rxRhVq4S9zvaQpQ%3D%3D",
+   "doc": "2026-34b07f55-d9a5-4654-922e-d9edd3e45ea2"
+  },
+  {
+   "crit": "Descripción del Programa de Trabajo y Organización del Servicio",
+   "max": 25,
+   "exp": "p:17085340",
+   "ref": "SE2025/5",
+   "title": "Servicio de cocina y comedor para las escuelas infantiles municipales del Ayuntamiento de Cartagena.",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Cartagena",
+   "nuts": "ES620",
+   "date": "2025-06-30",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Homologación de proveedores, rotación de productos con plazo de 48 horas y dos auditorías externas anuales.",
+    "Jefa de área en Cartagena con disponibilidad inmediata y localizable.",
+    "Protocolo de apertura y puesta en marcha, y reuniones mensuales con la dirección de los centros."
+   ],
+   "weak": [
+    "Prácticamente sin mejoras sobre el pliego.",
+    "Mejora en la ratio de atención al alumnado considerada irrisoria."
+   ],
+   "hypothesis": {
+    "premia": "Concreción operativa: homologación de proveedores, plazos de rotación, auditorías externas y personas de contacto localizables.",
+    "penaliza": "Mejoras genéricas o copiadas del pliego, y logística contradictoria."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xt%2BVq2b%2FRgweIBJRHQiPkQ%3D%3D",
+   "doc": "2025-0e44d1cc-d467-400c-b743-2ec94c7f0ed0"
+  },
+  {
+   "crit": "Materias Primas",
+   "max": 10,
+   "exp": "p:17085340",
+   "ref": "SE2025/5",
+   "title": "Servicio de cocina y comedor para las escuelas infantiles municipales del Ayuntamiento de Cartagena.",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Cartagena",
+   "nuts": "ES620",
+   "date": "2025-06-30",
+   "offers": 4,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Variedad de frutas según temporada, verduras, ensaladas y diez tipos de pescado.",
+    "Caballa en aceite con menor contenido de mercurio y dos proveedores por producto."
+   ],
+   "weak": [
+    "Productos ecológicos sin frecuencia ni detalle; no valorables por poco especificados.",
+    "Proximidad, sostenibilidad, DOP, ETG y sello Q poco específicos, no puntuables."
+   ],
+   "hypothesis": {
+    "premia": "Especificaciones concretas y verificables (variedades, proveedores, calidades) adecuadas a la edad del alumnado.",
+    "penaliza": "Productos no adecuados a la edad, incumplir calidades exigidas en el pliego, y criterios de proximidad o ecológicos poco concretados."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xt%2BVq2b%2FRgweIBJRHQiPkQ%3D%3D",
+   "doc": "2025-0e44d1cc-d467-400c-b743-2ec94c7f0ed0"
+  },
+  {
+   "crit": "Menús",
+   "max": 16,
+   "exp": "p:17085340",
+   "ref": "SE2025/5",
+   "title": "Servicio de cocina y comedor para las escuelas infantiles municipales del Ayuntamiento de Cartagena.",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Cartagena",
+   "nuts": "ES620",
+   "date": "2025-06-30",
+   "offers": 4,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Diferenciación por meses, fruta triturada diaria para menores de 12 meses y variedad de pescados.",
+    "Menú de seis semanas y diferenciación por tramos de 6-7, 8-9 y 10-12 meses."
+   ],
+   "weak": [
+    "Menú de ejemplo de una semana sin yogur ni ensaladas; parte copiada del pliego.",
+    "Menú de 1 a 3 años sin distinguir entre 1-2 y 2-3 años."
+   ],
+   "hypothesis": {
+    "premia": "Ampliación de menús a seis semanas y diferenciación por tramos de edad.",
+    "penaliza": "No presentar menús, copiar el pliego o no adaptar los menús a la edad."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xt%2BVq2b%2FRgweIBJRHQiPkQ%3D%3D",
+   "doc": "2025-0e44d1cc-d467-400c-b743-2ec94c7f0ed0"
+  }
+ ]
+}

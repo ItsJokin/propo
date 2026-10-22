@@ -1,8 +1,263 @@
 {
  "cpv2": "90",
- "generated": "2026-10-22T14:39:58.993Z",
+ "generated": "2026-10-22T18:50:13.986Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "A.1 Memoria",
+   "max": null,
+   "exp": "p:19938895",
+   "ref": "2026/50000006",
+   "title": "Servicio de limpieza de las distintas dependencias de la Delegación del Gobierno en Aragón, Áreas Integradas, Parque Móvil, Oficina de Extra",
+   "buyer": "Delegación del Gobierno en Aragón",
+   "nuts": "ES243",
+   "date": "2026-09-03",
+   "offers": 1,
+   "top": {
+    "pts": 12,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Procedimientos de limpieza detallados con método, productos, utensilios y frecuencias",
+    "Garantiza sustitución del personal en menos de 2 horas",
+    "Organización horaria con 11 trabajadores subrogados en 6 ubicaciones"
+   ],
+   "weak": [
+    "Expresa 317,30 h cuando la conversión correcta es 317,50 h",
+    "Referencias a prevención de riesgos y sostenibilidad genéricas según el informe"
+   ],
+   "hypothesis": {
+    "premia": "Procedimientos de limpieza detallados, turnos concretos y sustitución de personal en menos de 2 horas",
+    "penaliza": "Errores de conversión horaria en la organización del servicio"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2Fx0x0tpEht3IGlsa0Wad%2Bw%3D%3D",
+   "doc": "2026-ca9f508d-0720-47af-92dd-14a28bc9945e"
+  },
+  {
+   "crit": "A2. Recursos humanos y materiales",
+   "max": null,
+   "exp": "p:19938895",
+   "ref": "2026/50000006",
+   "title": "Servicio de limpieza de las distintas dependencias de la Delegación del Gobierno en Aragón, Áreas Integradas, Parque Móvil, Oficina de Extra",
+   "buyer": "Delegación del Gobierno en Aragón",
+   "nuts": "ES243",
+   "date": "2026-09-03",
+   "offers": 1,
+   "top": {
+    "pts": 12,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Detalla los 11 trabajadores subrogados, sus turnos y espacios asignados"
+   ],
+   "weak": [
+    "No menciona dispensadores de jabón, papel ni equipamiento de aseos exigidos en el PPTP"
+   ],
+   "hypothesis": {
+    "premia": "Identificación de personal, turnos y espacios asignados",
+    "penaliza": "Omitir el equipamiento de aseos y consumibles exigido en el PPTP"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2Fx0x0tpEht3IGlsa0Wad%2Bw%3D%3D",
+   "doc": "2026-ca9f508d-0720-47af-92dd-14a28bc9945e"
+  },
+  {
+   "crit": "A3. Mejoras",
+   "max": null,
+   "exp": "p:19938895",
+   "ref": "2026/50000006",
+   "title": "Servicio de limpieza de las distintas dependencias de la Delegación del Gobierno en Aragón, Áreas Integradas, Parque Móvil, Oficina de Extra",
+   "buyer": "Delegación del Gobierno en Aragón",
+   "nuts": "ES243",
+   "date": "2026-09-03",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Sistema de gestión y trazabilidad digital con registro en tiempo real",
+    "Auditoría de calidad trimestral con informe escrito a la Delegación"
+   ],
+   "weak": [
+    "Bolsa anual de refuerzo de 16 horas, muy inferior a las 200 h de la anterior adjudicataria"
+   ],
+   "hypothesis": {
+    "premia": "Mejoras digitales de trazabilidad y auditorías periódicas",
+    "penaliza": "Bolsa de refuerzo de horas muy reducida frente a la licitación anterior"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2Fx0x0tpEht3IGlsa0Wad%2Bw%3D%3D",
+   "doc": "2026-ca9f508d-0720-47af-92dd-14a28bc9945e"
+  },
+  {
+   "crit": "Memoria técnica de prestación del servicio",
+   "max": 35,
+   "exp": "p:20000643",
+   "ref": "1/2026",
+   "title": "Servicios de limpieza de las instalaciones del edificio sede de BIC EURONOVA, S.A., sito en la Avenida Juan López Peñalver 21, Parque Tecnol",
+   "buyer": "BIC EURONOVA, S.A.",
+   "nuts": "ES617",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 26.25,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Descripción detallada de zonas, elementos, metodología y productos, con concentración y temperatura de aplicación.",
+    "Planning y diagrama de Gantt anual con frecuencias diarias, semanales, mensuales, quincenales y a demanda.",
+    "Medios detallados: personal, rotativa, aspirador HEPA, hidrolimpiadora y pértiga de agua osmotizada.",
+    "Servicio de respuesta inmediata en 2 horas y guardia de 24 horas centralizada."
+   ],
+   "weak": [
+    "El informe no señala carencias concretas; la puntuación corresponde al nivel Adecuado/Bueno, no al máximo."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SpFqJ%2BisyudLAIVZdUs8KA%3D%3D",
+   "doc": "2026-da94ab28-2875-4c09-bc92-37ef355aaa6a"
+  },
+  {
+   "crit": "Uniformes y equipos complementarios del personal",
+   "max": 5,
+   "exp": "p:20000643",
+   "ref": "1/2026",
+   "title": "Servicios de limpieza de las instalaciones del edificio sede de BIC EURONOVA, S.A., sito en la Avenida Juan López Peñalver 21, Parque Tecnol",
+   "buyer": "BIC EURONOVA, S.A.",
+   "nuts": "ES617",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 3.75,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Bocetos o fotografías de las cuatro combinaciones exigidas: femenino y masculino, verano e invierno.",
+    "Forro polar de tejido térmico para invierno.",
+    "Calzado antideslizante, botas S3 para especialistas y guantes de protección.",
+    "Logotipo de BIC EURONOVA serigrafiado en parte superior y pantalón."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SpFqJ%2BisyudLAIVZdUs8KA%3D%3D",
+   "doc": "2026-da94ab28-2875-4c09-bc92-37ef355aaa6a"
+  },
+  {
+   "crit": "Descripción de la organización del servicio",
+   "max": 25,
+   "exp": "p:19499607",
+   "ref": "211/2025/227",
+   "title": "Servicios de mantenimiento higiénico sanitario para prevención y control de legionelosis en instalaciones deportivas municipales",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 22.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 18.75
+   },
+   "best": [
+    "Protocolos de limpieza y desinfección detallados por tipo de instalación.",
+    "Programa de muestreo con frecuencias, puntos de toma y verificación tras L+D.",
+    "Cronograma anual optimizado con rutas y periodos críticos de temperatura.",
+    "Detalla operaciones por tipo de instalación, frecuencia y responsable.",
+    "Propone desinfección térmica y peróxido de hidrógeno como alternativa al cloro."
+   ],
+   "weak": [
+    "Descripción teórica, poco adaptada a las instalaciones municipales concretas.",
+    "Mezcla de tamaños de letra inferiores a 12 (admitido tras homogeneizar).",
+    "Reproduce la normativa aplicable con gran extensión.",
+    "Reproduce en exceso normas, reglamentos y PPT.",
+    "Enfoque a veces demasiado genérico."
+   ],
+   "hypothesis": {
+    "premia": "Detalle operativo por tipo de instalación, frecuencias, rutas, cronograma y programa de muestreo claramente ligados al servicio.",
+    "penaliza": "Descripción teórica, reproducción extensa de normativa y PPT y escasa adaptación a las instalaciones municipales."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KEMAFAgfq5WcTfjQf3USOg%3D%3D",
+   "doc": "2026-ae9bc815-3430-48b6-8dc3-d6cb78194252"
+  },
+  {
+   "crit": "Organización de los medios materiales y personales",
+   "max": 10,
+   "exp": "p:19499607",
+   "ref": "211/2025/227",
+   "title": "Servicios de mantenimiento higiénico sanitario para prevención y control de legionelosis en instalaciones deportivas municipales",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 6.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Personal titular, dos técnicos sustitutos y personal administrativo de apoyo.",
+    "Funciones del responsable técnico especificadas con detalle.",
+    "Énfasis en EPIs, vehículos y kits antiderrames.",
+    "Certificaciones detalladas del responsable técnico y de los aplicadores.",
+    "Equipos de medición y herramientas especificados técnicamente."
+   ],
+   "weak": [
+    "No menciona los EPIs que deberán emplear los aplicadores.",
+    "No identifica un interlocutor único de la empresa.",
+    "Solo dos técnicos, sin personal de sustitución.",
+    "Productos desinfectantes descritos solo por sus funciones.",
+    "Diferencia poco significativa frente a la otra oferta en medios materiales."
+   ],
+   "hypothesis": {
+    "premia": "Personal de sustitución, funciones del responsable técnico, EPIs, vehículos y medios de toma de muestras detallados.",
+    "penaliza": "Omitir EPIs, no designar interlocutor único y no prever personal de sustitución."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KEMAFAgfq5WcTfjQf3USOg%3D%3D",
+   "doc": "2026-ae9bc815-3430-48b6-8dc3-d6cb78194252"
+  },
+  {
+   "crit": "Plan de contingencias y respuestas ante imprevistos",
+   "max": 10,
+   "exp": "p:19499607",
+   "ref": "211/2025/227",
+   "title": "Servicios de mantenimiento higiénico sanitario para prevención y control de legionelosis en instalaciones deportivas municipales",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 6.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Cobertura 24 horas los 365 días con equipo de emergencias.",
+    "Medidas correctoras tras positivo más claras que la competidora.",
+    "Comunicación al Servicio de Medio ambiente en máximo 24 horas.",
+    "Cronograma de actuación ante casos con plazos definidos.",
+    "Guardia operativa 24 horas los 365 días y registro escrito de avisos."
+   ],
+   "weak": [
+    "Protocolo genérico y reiterativo respecto al RD 487/2022.",
+    "Dedica mucho espacio a la plataforma iGEO frente al contenido técnico.",
+    "Planteamiento apegado al texto normativo.",
+    "Cronograma de contingencias sustancialmente igual al de la competidora."
+   ],
+   "hypothesis": {
+    "premia": "Medidas correctoras tras positivo claras, plazos concretos, cobertura 24/365 y comunicación inmediata a la autoridad.",
+    "penaliza": "Contenido genérico, reiterativo respecto a la normativa y centrado en la descripción de la plataforma digital."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KEMAFAgfq5WcTfjQf3USOg%3D%3D",
+   "doc": "2026-ae9bc815-3430-48b6-8dc3-d6cb78194252"
+  },
   {
    "crit": "Millora de caràcter ambiental dels vehicles destinats a realitzar el servei del present contracte",
    "max": null,
@@ -274,6 +529,174 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=S%2FlVFIlqj9Z%2FR5QFTlaM4A%3D%3D",
    "doc": "2026-35b13932-dedf-48cf-b7e3-d93877236f0c"
+  },
+  {
+   "crit": "B.1. Plan organizativo del proceso transitorio",
+   "max": 8,
+   "exp": "p:9075009",
+   "ref": "61/2019",
+   "title": "Concesión de servicios de gestión de la red de ecoparques.",
+   "buyer": "Junta General del Consorcio para la Ejecución de las Previsiones del Plan Zonal de Residuos 7. Área de Gestión A2",
+   "nuts": "ES521",
+   "date": "2022-04-21",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Nivel suficiente de prestaciones transitorias: 3 móviles, 3 fijos y obras",
+    "Importante detalle de coordinación con el Consorcio e interna",
+    "Buena capacidad de optimizar planificación; puestos nominativos"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Detalle de coordinación con el Consorcio, buena capacidad de optimizar la planificación y puestos y responsabilidades descritos",
+    "penaliza": "Coordinación incompleta o básica, nivel incompleto de prestaciones transitorias y procesos de control centrados solo en obras"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ML8INR8tL42rz3GQd5r6SQ%3D%3D",
+   "doc": "b4ac6e12-524d-4934-a560-4ef9b0c792c8"
+  },
+  {
+   "crit": "B.2. Características del sistema informático de gestión.",
+   "max": 5,
+   "exp": "p:9075009",
+   "ref": "61/2019",
+   "title": "Concesión de servicios de gestión de la red de ecoparques.",
+   "buyer": "Junta General del Consorcio para la Ejecución de las Previsiones del Plan Zonal de Residuos 7. Área de Gestión A2",
+   "nuts": "ES521",
+   "date": "2022-04-21",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Alto número de prestaciones y versatilidad mediante software adicional",
+    "Atención telefónica de usuarios incorporada",
+    "Soporte de hardware y software correcto con asistencia en cercanía"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Número alto de prestaciones y versatilidad mediante software o apps, con soporte avanzado o asistencia en cercanía",
+    "penaliza": "Número de prestaciones y versatilidad solo suficiente o soporte básico"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ML8INR8tL42rz3GQd5r6SQ%3D%3D",
+   "doc": "b4ac6e12-524d-4934-a560-4ef9b0c792c8"
+  },
+  {
+   "crit": "B.3. Características de los ecoparques móviles",
+   "max": 5,
+   "exp": "p:9075009",
+   "ref": "61/2019",
+   "title": "Concesión de servicios de gestión de la red de ecoparques.",
+   "buyer": "Junta General del Consorcio para la Ejecución de las Previsiones del Plan Zonal de Residuos 7. Área de Gestión A2",
+   "nuts": "ES521",
+   "date": "2022-04-21",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Adecuados número, tipologías y características de contenedores",
+    "Buena adición de equipamientos, accesorios y elementos promocionales"
+   ],
+   "weak": [
+    "Inferior capacidad de almacenamiento respecto a otras ofertas"
+   ],
+   "hypothesis": {
+    "premia": "Mayor capacidad de almacenamiento y buena adición de equipamientos y elementos promocionales",
+    "penaliza": "Básica adición de equipamientos y elementos promocionales, e inferior capacidad de almacenamiento"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ML8INR8tL42rz3GQd5r6SQ%3D%3D",
+   "doc": "b4ac6e12-524d-4934-a560-4ef9b0c792c8"
+  },
+  {
+   "crit": "B.4. Mejor campaña de comunicación ambiental.",
+   "max": 5,
+   "exp": "p:9075009",
+   "ref": "61/2019",
+   "title": "Concesión de servicios de gestión de la red de ecoparques.",
+   "buyer": "Junta General del Consorcio para la Ejecución de las Previsiones del Plan Zonal de Residuos 7. Área de Gestión A2",
+   "nuts": "ES521",
+   "date": "2022-04-21",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Alto nivel de recursos económicos en todos los periodos",
+    "Aptitud inclusiva, ODS, lenguas cooficiales y red de educadores ambientales",
+    "Planificación anual de coordinación con el consorcio"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Alto nivel de recursos económicos en todos los periodos, planificación anual, red de educadores y aptitud inclusiva",
+    "penaliza": "Sin modificar recursos económicos, enumeración sin planificación, jornadas de puertas abiertas limitadas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ML8INR8tL42rz3GQd5r6SQ%3D%3D",
+   "doc": "b4ac6e12-524d-4934-a560-4ef9b0c792c8"
+  },
+  {
+   "crit": "B.5. Implantación de sistemas reutilización y/o preparación para la reutilización y fomento del reciclaje",
+   "max": 5,
+   "exp": "p:9075009",
+   "ref": "61/2019",
+   "title": "Concesión de servicios de gestión de la red de ecoparques.",
+   "buyer": "Junta General del Consorcio para la Ejecución de las Previsiones del Plan Zonal de Residuos 7. Área de Gestión A2",
+   "nuts": "ES521",
+   "date": "2022-04-21",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Tres convenios y medidas para inserción de colectivos en riesgo de exclusión",
+    "APP para reutilización con puntos y chat"
+   ],
+   "weak": [
+    "Propuesta de separación de voluminosos solo básica"
+   ],
+   "hypothesis": {
+    "premia": "Convenios aportados, medidas de inserción laboral y propuesta de separación de voluminosos dentro de los ecoparques",
+    "penaliza": "Ausencia de convenios e inserción laboral, o propuesta de separación fuera de ecoparques o sin aportar"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ML8INR8tL42rz3GQd5r6SQ%3D%3D",
+   "doc": "b4ac6e12-524d-4934-a560-4ef9b0c792c8"
+  },
+  {
+   "crit": "B.6. Mayor eficiencia del sistema de iluminación (alumbrado)",
+   "max": 2,
+   "exp": "p:9075009",
+   "ref": "61/2019",
+   "title": "Concesión de servicios de gestión de la red de ecoparques.",
+   "buyer": "Junta General del Consorcio para la Ejecución de las Previsiones del Plan Zonal de Residuos 7. Área de Gestión A2",
+   "nuts": "ES521",
+   "date": "2022-04-21",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Buena mejora del sistema de iluminación con lámparas y luminarias"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Mejora de iluminación con lámparas, equipos y luminarias, con implantación detallada",
+    "penaliza": "Mejora básica que solo menciona lámparas y luminarias"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ML8INR8tL42rz3GQd5r6SQ%3D%3D",
+   "doc": "b4ac6e12-524d-4934-a560-4ef9b0c792c8"
   }
  ]
 }

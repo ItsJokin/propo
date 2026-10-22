@@ -1,11 +1,11 @@
 {
- "generated": "2026-10-22T14:39:58.994Z",
+ "generated": "2026-10-22T18:50:13.987Z",
  "expedientes": 34023,
  "lotesAdjudicados": 56310,
  "porClase": {
   "D": 23477,
-  "C": 10474,
-  "B": 72
+  "C": 10324,
+  "B": 222
  },
  "porCpv2": {
   "14": 141,
@@ -123,16 +123,16 @@
   }
  },
  "textos": {
-  "ok": 218,
-  "scan": 6,
+  "ok": 491,
+  "scan": 19,
   "dup": 2,
-  "error": 6,
-  "formato": 1
+  "error": 12,
+  "formato": 2
  },
  "extraccion": {
-  "ok": 83,
-  "error": 60,
-  "no_valoracion": 1
+  "ok": 247,
+  "error": 134,
+  "no_valoracion": 8
  },
- "lecciones": 313
+ "lecciones": 816
 }

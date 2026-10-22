@@ -1,0 +1,66 @@
+{
+ "cpv2": "73",
+ "generated": "2026-10-22T18:50:13.987Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Memoria técnica",
+   "max": 20,
+   "exp": "p:19910630",
+   "ref": "FFIS/2025/13",
+   "title": "Contratación de actividades formativas Matrix dirigidas a población con problemas jurídicos-penales",
+   "buyer": "Fundación para la Formación e Investigación Sanitarias de la Región de Murcia (FFIS)",
+   "nuts": "ES620",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 18,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Desarrolla de forma amplia contenidos, metodología docente y distribución horaria exigidos.",
+    "Incluye psicoeducación familiar y actuaciones en medidas alternativas, tercer grado y seguimiento telemático.",
+    "Profesorado con perfil de terapeutas Matrix, psicología y trabajo social; recursos materiales descritos."
+   ],
+   "weak": [
+    "Reproduce de forma sustancial los contenidos establecidos en el Pliego.",
+    "Incluye objetivos de preparación para la reinserción social, propios del Lote 1."
+   ],
+   "hypothesis": {
+    "premia": "Amplitud en contenidos, metodología, profesorado y recursos; psicoeducación familiar y continuidad en medidas alternativas.",
+    "penaliza": "Reproducir sustancialmente contenidos del pliego y mezclar objetivos propios del Lote 1."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FIHR7fDB3kiLAncw3qdZkA%3D%3D",
+   "doc": "2026-c0165558-64ff-4fb3-ac09-72a66c2e1069"
+  },
+  {
+   "crit": "Memoria Técnica",
+   "max": 20,
+   "exp": "p:19910630",
+   "ref": "FFIS/2025/13",
+   "title": "Contratación de actividades formativas Matrix dirigidas a población con problemas jurídicos-penales",
+   "buyer": "Fundación para la Formación e Investigación Sanitarias de la Región de Murcia (FFIS)",
+   "nuts": "ES620",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 18,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Contenidos que comprenden íntegramente las materias previstas en el pliego.",
+    "Metodología presencial combinando sesiones grupales e individuales de refuerzo, con enfoque Matrix complementado.",
+    "Profesorado con capacitación específica como terapeutas Matrix."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Cobertura íntegra de los contenidos del pliego, metodología combinada presencial y profesorado con capacitación Matrix.",
+    "penaliza": "No consta en el documento ningún aspecto que penalice."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FIHR7fDB3kiLAncw3qdZkA%3D%3D",
+   "doc": "2026-38351fa8-216e-4db2-9cdc-0d401d11ff98"
+  }
+ ]
+}
