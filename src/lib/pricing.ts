@@ -1,14 +1,23 @@
 // El precio de la oferta: cómo lo puntúa el pliego, qué rebaja conviene y el texto que va en el sobre de precio.
 // PROPO nunca se inventa costes: calcula a partir del precio mínimo que el cliente dice que le compensa, de la fórmula
 // del pliego y de lo que se rebajó en adjudicaciones parecidas. El cliente elige, ajusta o pone sus propios precios.
-import type { Project } from './types';
+import type { Project, TeamMember } from './types';
+import { normalize } from './util';
 import { ai } from './ai/provider';
 import { projectPages } from './ai/engine';
 import { competitionFor, type Competition } from './data/awards';
 
 export type Formula = 'inverse' | 'linear' | 'threshold' | 'other';
 export interface UnitPrice { id: string; label: string; unit: string; max: number | null; qty: number | null }
-export interface OtherCriterion { id: string; label: string; points: number | null; rule: string; ask: string }
+export interface OtherCriterion {
+  id: string; label: string; points: number | null; rule: string; ask: string;
+  unit?: string | null;            // años, meses, días, horas… (null si no es una cifra)
+  perUnit?: number | null;         // puntos por cada unidad ofrecida
+  maxValue?: number | null;        // cifra a partir de la cual ya no suma
+  better?: 'more' | 'less';        // «less» en reducciones de plazo, por ejemplo
+  role?: string | null;            // si son años de experiencia de un perfil del equipo, ese perfil
+  roleMinYears?: number | null;    // años mínimos que el pliego ya exige a ese perfil
+}
 export interface PriceRule {
   budget: number | null;          // presupuesto base de licitación, sin IVA
   vat: number | null;             // tipo de IVA (%)
@@ -36,7 +45,7 @@ export interface Pricing {
   floor: number | null;           // precio total mínimo que le compensa al cliente, sin IVA
   ownText?: string;               // sus precios, escritos con sus palabras
   choice: PriceChoice | null;
-  others: Record<string, { text: string; formal?: string }>;
+  others: Record<string, { text: string; formal?: string; value?: number }>;
   approved: string | null;        // fecha de confirmación
   filled?: import('./offerModel').FilledModel | null;   // el modelo oficial del pliego, ya rellenado
   fillNote?: string;              // por qué no se ha podido rellenar (p. ej. PDF sin campos)
@@ -113,14 +122,16 @@ Devuelve SOLO un objeto JSON con esta forma exacta:
   "plain": "2 o 3 frases para el dueño de una pyme sin jerga: cuántos puntos da el precio, cómo se calculan y un ejemplo con números de esta licitación",
   "unit_prices": [{"label": "concepto", "unit": "unidad (menú, hora…)", "max_price": número o null, "qty": número o null}],
   "lots": [{"label": "Lote 1 · …", "budget": número o null}],
-  "other_formula": [{"label": "criterio", "points": número o null, "rule": "cómo se puntúa, breve", "ask": "pregunta clara al licitador para saber qué ofrece (p. ej. ¿Cuántos años de garantía adicional ofreces?)"}],
+  "other_formula": [{"label": "criterio", "points": número o null, "rule": "cómo se puntúa, breve", "ask": "pregunta clara al licitador para saber qué ofrece (p. ej. ¿Cuántos años de garantía adicional ofreces?)",
+                    "unit": "años | meses | días | horas | … o null si no se oferta una cifra", "points_per_unit": número o null, "max_value": número o null (cifra que ya da el máximo),
+                    "better": "more" | "less" (less si puntúa ofrecer menos, p. ej. reducir el plazo), "role": "perfil del equipo si son años de experiencia de una persona (p. ej. Ingeniero de Caminos)" o null, "role_min_years": número o null (años que el pliego ya exige a ese perfil)}],
   "model": {"doc": "nombre del documento", "page": número o null, "name": "nombre del modelo, p. ej. Anexo II · Modelo de proposición económica"} o null,
   "labor_cost_note": "costes salariales mínimos, convenio o subrogación que condicionan el precio" o null,
   "envelope": "en qué sobre o archivo va el precio" o null,
   "source": {"doc": "documento", "page": número, "quote": "frase literal corta donde se define la fórmula del precio"} o null
 }
 
-Reglas: no inventes nada; si un dato no está en los extractos, pon null o una lista vacía. Los importes, como números sin símbolos (12345.67). "other_formula" solo incluye criterios automáticos distintos del precio (garantía, plazos, horas, mejoras valoradas en euros…).`;
+Reglas: no inventes nada; si un dato no está en los extractos, pon null o una lista vacía. Los importes, como números sin símbolos (12345.67). "other_formula" solo incluye criterios automáticos distintos del precio (garantía, plazos, horas, mejoras valoradas en euros…). Una entrada por cada cifra que el licitador escribe en el modelo: si un criterio puntúa varios perfiles o conceptos por separado (p. ej. años adicionales de tres técnicos), una entrada para cada uno, con sus puntos.`;
 }
 
 function fromRules(p: Project): PriceRule {
@@ -153,7 +164,9 @@ export async function readPriceRule(p: Project): Promise<PriceRule> {
       plain: String(j.plain || base.plain),
       units: (Array.isArray(j.unit_prices) ? j.unit_prices : []).filter((u: any) => u?.label).slice(0, 30).map((u: any, i: number) => ({ id: `u${i}`, label: String(u.label), unit: String(u.unit || ''), max: n(u.max_price), qty: n(u.qty) })),
       lots: (Array.isArray(j.lots) ? j.lots : []).filter((l: any) => l?.label).slice(0, 20).map((l: any) => ({ label: String(l.label), budget: n(l.budget) })),
-      others: (Array.isArray(j.other_formula) ? j.other_formula : []).filter((o: any) => o?.label).slice(0, 10).map((o: any, i: number) => ({ id: `o${i}`, label: String(o.label), points: n(o.points), rule: String(o.rule || ''), ask: String(o.ask || `¿Qué ofreces en «${o.label}»?`) })),
+      others: (Array.isArray(j.other_formula) ? j.other_formula : []).filter((o: any) => o?.label).slice(0, 10).map((o: any, i: number) => ({ id: `o${i}`, label: String(o.label), points: n(o.points), rule: String(o.rule || ''), ask: String(o.ask || `¿Qué ofreces en «${o.label}»?`),
+        unit: o.unit ? String(o.unit) : null, perUnit: n(o.points_per_unit), maxValue: n(o.max_value), better: o.better === 'less' ? 'less' : 'more',
+        role: o.role ? String(o.role) : null, roleMinYears: n(o.role_min_years) })),
       model: j.model?.name ? { doc: String(j.model.doc || ''), page: n(j.model.page), name: String(j.model.name) } : null,
       labor: j.labor_cost_note ? String(j.labor_cost_note) : null, envelope: j.envelope ? String(j.envelope) : null,
       source: j.source?.quote ? { doc: String(j.source.doc || ''), page: n(j.source.page), quote: String(j.source.quote) } : null,
@@ -266,6 +279,55 @@ Lo que ofrece el licitador: «${answer.slice(0, 1000)}»
 Devuelve solo el texto.`, { tier: 'quick', project: p.isSample ? '' : p.id });
     return text.trim().replace(/^["«]|["»]$/g, '');
   } catch { return answer.trim(); }
+}
+
+// ── Otros criterios con fórmula: qué cifra conviene ──────────────────────────────────────────────────────────────────
+/** Puntos que da ofrecer `v` en un criterio con fórmula (si el pliego lo deja claro). */
+export function otherPoints(o: OtherCriterion, v: number): number | null {
+  if (!o.points) return null;
+  if (o.better === 'less') return null;   // las reducciones dependen de las demás ofertas
+  if (o.perUnit) return Math.min(o.points, Math.max(0, v) * o.perUnit);
+  if (o.maxValue) return Math.min(o.points, (o.points * Math.max(0, v)) / o.maxValue);
+  return null;
+}
+const GENERIC = new Set(['tecnico', 'tecnica', 'superior', 'ingeniero', 'ingeniera', 'titulado', 'titulada', 'grado', 'licenciado', 'experiencia', 'responsable']);
+/** La persona del equipo que encaja con el perfil que pide el pliego (por su puesto o su titulación). */
+export function memberFor(role: string, team: TeamMember[]): TeamMember | null {
+  const keys = normalize(role).split(' ').filter((w) => w.length >= 5 && !GENERIC.has(w));
+  if (!keys.length) return null;
+  const need = Math.min(2, keys.length);
+  let best: { m: TeamMember; n: number } | null = null;
+  for (const m of team) {
+    const hay = normalize(`${m.role} ${m.qualifications}`);
+    const n = keys.filter((k) => hay.includes(k)).length;
+    if (n >= need && (!best || n > best.n)) best = { m, n };
+  }
+  return best?.m ?? null;
+}
+export interface OtherAdvice { value: number | null; points: number | null; note: string; warn?: string }
+/** Cifra recomendada: la que da el máximo de puntos, sin pasar de lo que la empresa puede demostrar. */
+export function otherAdvice(o: OtherCriterion, team: TeamMember[]): OtherAdvice {
+  const unit = o.unit || '';
+  const top = o.maxValue ?? (o.points && o.perUnit ? Math.floor(o.points / o.perUnit + 1e-9) : null);
+  if (o.better === 'less') return { value: null, points: null, note: `Ofrecer menos ${unit} da puntos, pero queda como compromiso del contrato: pon solo lo que puedas cumplir con tu plan de trabajo.` };
+  if (top == null) return { value: null, points: null, note: 'El pliego no deja claro cuánto hace falta para el máximo: escribe lo que ofreces y PROPO lo redacta.' };
+  if (o.role) {
+    const m = memberFor(o.role, team);
+    const min = o.roleMinYears ?? 0;
+    if (m) {
+      const can = Math.max(0, Math.floor(m.years - min));
+      if (can < top) return { value: can, points: otherPoints(o, can), note: `${m.name} tiene ${m.years} años de experiencia${min ? ` y el pliego ya exige ${min}` : ''}: puedes comprometer ${can} ${unit} adicionales.`, warn: `Para el máximo (${top} ${unit}) haría falta alguien con ${min + top} años. Si ofreces más de lo que acredita su vida laboral, te pueden excluir.` };
+      return { value: top, points: otherPoints(o, top), note: `${m.name} tiene ${m.years} años: llega al máximo (${min ? `${min} exigidos + ` : ''}${top} adicionales).` };
+    }
+    return { value: top, points: otherPoints(o, top), note: `Para el máximo necesitas un ${o.role} con al menos ${min + top} años acreditables con su vida laboral.`, warn: `No encuentro este perfil en Empresa → Equipo: compruébalo antes de comprometerlo.` };
+  }
+  if (/mes|año|garant/i.test(`${unit} ${o.label}`)) return { value: top, points: otherPoints(o, top), note: `Con ${top} ${unit} te llevas todos los puntos. Más no suma. Es tiempo en el que respondes de los defectos de la obra: decide si te compensa.` };
+  return { value: top, points: otherPoints(o, top), note: `Con ${top} ${unit} te llevas todos los puntos; más no suma.` };
+}
+/** Compromiso formal con la cifra en letra y en número, como piden los modelos de oferta. */
+export function commitmentText(o: OtherCriterion, v: number) {
+  const n = Math.round(v);
+  return `Nos comprometemos a ofrecer ${words(n).toUpperCase()} (${n}) ${o.unit || 'unidades'} en «${o.label}».`;
 }
 
 // ── Comprobaciones ──────────────────────────────────────────────────────────────────────────────────────────────────

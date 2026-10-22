@@ -5,7 +5,7 @@ import type { AppState, Project, SourceDoc } from './types';
 import { ai } from './ai/provider';
 import { getFile, getPages, putFile } from './storage';
 import { readZip, writeZip, type ZipEntry } from './pipeline/zip';
-import { eur2, eurosInWords } from './pricing';
+import { eur2, eurosInWords, commitmentText } from './pricing';
 import { fmtDate, nowIso, isUnknown } from './util';
 import { PDFDocument, PDFTextField } from 'pdf-lib';
 
@@ -40,7 +40,12 @@ export async function findModelDoc(p: Project): Promise<SourceDoc | null> {
 function dataFor(p: Project, s: AppState) {
   const ch = p.pricing!.choice!; const rule = p.pricing!.rule!; const c = s.company;
   const vat = rule.vat ?? 21; const iva = Math.round(ch.total * vat) / 100; const tot = Math.round((ch.total + iva) * 100) / 100;
-  const others = rule.others.filter((o) => p.pricing!.others[o.id]?.formal).map((o) => ({ criterio: o.label, compromiso: p.pricing!.others[o.id].formal, respuesta: p.pricing!.others[o.id].text }));
+  const others = rule.others.filter((o) => p.pricing!.others[o.id]?.formal).map((o) => {
+    const a = p.pricing!.others[o.id];
+    // Con cifra: el modelo suele pedirla «en letra» y «en número» (p. ej. SIETE · 7 años).
+    const cifra = a.value != null ? { valor: a.value, valor_letra: (commitmentText(o, a.value).match(/ofrecer (.+?) \(/)?.[1] ?? ''), unidad: o.unit } : {};
+    return { criterio: o.label, compromiso: a.formal, respuesta: a.text, ...cifra };
+  });
   return {
     licitador: c.legalName || null, nif: c.taxId || null, domicilio: c.address || null, representante: c.signer || null,
     expediente: !isUnknown(p.analysis?.reference) ? p.analysis!.reference : p.tender?.live?.ref || null, objeto: p.tender?.title || p.name, organo: p.organization,

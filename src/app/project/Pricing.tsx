@@ -9,6 +9,7 @@ import { getFile } from '../../lib/storage';
 import { offerDownload } from '../../lib/services/download';
 import {
   emptyPricing, readPriceRule, marketFor, priceOptions, choose, readOwnPrices, formalCommitment, priceWarnings, eurosInWords, eur2, pct1, num, pointsFor,
+  otherAdvice, otherPoints, commitmentText,
   type Pricing as PricingState, type Market, type Option,
 } from '../../lib/pricing';
 import { Economic } from './Economic';
@@ -278,28 +279,43 @@ function OtherCriteria({ p, pr }: { p: Project; pr: PricingState }) {
   const rule = pr.rule!;
   const [draft, setDraft] = useState<Record<string, string>>(() => Object.fromEntries(rule.others.map((o) => [o.id, pr.others[o.id]?.text ?? ''])));
   const [busy, setBusy] = useState<string | null>(null);
+  const team = getState().team;
+  const store = (id: string, v: { text: string; formal: string; value?: number }) =>
+    updateProject(p.id, (x) => { const cur = x.pricing ?? emptyPricing(); cur.others = { ...cur.others, [id]: v }; x.pricing = cur; });
   const saveOne = async (id: string) => {
     const c = rule.others.find((o) => o.id === id)!; const t = (draft[id] || '').trim();
     if (!t) return;
+    // Si es una cifra (años, meses…), el compromiso se escribe sin IA, con la cifra en letra y en número.
+    const v = c.unit && /^\d+([.,]\d+)?$/.test(t) ? Math.floor(num(t)) : null;
+    if (v != null) { store(id, { text: `${v} ${c.unit}`, formal: commitmentText(c, v), value: v }); return; }
     setBusy(id);
     const formal = await formalCommitment(p, c, t);
     setBusy(null);
-    updateProject(p.id, (x) => { const cur = x.pricing ?? emptyPricing(); cur.others = { ...cur.others, [id]: { text: t, formal } }; x.pricing = cur; });
+    store(id, { text: t, formal });
   };
+  const total = rule.others.reduce((a, o) => a + (o.points ?? 0), 0);
   return (
     <div className="card card-pad">
       <h3 style={{ fontSize: 18 }}>Puntos casi gratis: otros criterios con fórmula</h3>
-      <p className="muted mt-4">Además del precio, este pliego da puntos automáticos por estos compromisos. Mucha gente los deja escapar. Contesta con tus palabras y PROPO lo redacta como compromiso formal en la oferta.</p>
+      <p className="muted mt-4">Además del precio, este pliego da {total ? <strong>{pts(total)} puntos</strong> : 'puntos'} automáticos por estos compromisos. Mucha gente los deja escapar. PROPO te dice qué cifra da el máximo sin pasarte de lo que puedes demostrar, y la escribe en el modelo oficial junto al precio.</p>
+      <div className="callout neutral small mt-8"><LuInfo /><div>Estas cifras van solo en el sobre de criterios automáticos, nunca en la memoria técnica: si aparecen antes de tiempo, la mesa puede excluir la oferta.</div></div>
       <div className="stack mt-16" style={{ gap: 14 }}>
         {rule.others.map((o) => {
           const saved = pr.others[o.id];
+          const adv = otherAdvice(o, team);
+          const typed = o.unit && /^\d+([.,]\d+)?$/.test((draft[o.id] || '').trim()) ? Math.floor(num(draft[o.id])) : null;
+          const got = typed != null ? otherPoints(o, typed) : null;
           return (
             <div key={o.id} className="pr-other">
               <div className="row" style={{ justifyContent: 'space-between', gap: 8 }}><strong>{o.label}</strong>{o.points != null && <span className="badge">{pts(o.points)} puntos</span>}</div>
               {o.rule && <div className="xs muted mt-4">{o.rule}</div>}
+              <div className="small mt-8"><LuSparkles style={{ verticalAlign: '-2px' }} /> {adv.note}</div>
+              {adv.warn && <div className="callout warn small mt-8"><LuTriangleAlert /><div>{adv.warn}</div></div>}
               <label className="small mt-8" style={{ display: 'block' }} htmlFor={`oc-${o.id}`}>{o.ask}</label>
-              <div className="row mt-4" style={{ gap: 8 }}>
-                <input id={`oc-${o.id}`} className="input" value={draft[o.id] ?? ''} onChange={(e) => setDraft({ ...draft, [o.id]: e.target.value })} placeholder="Escríbelo como te salga" />
+              <div className="row mt-4" style={{ gap: 8, flexWrap: 'wrap' }}>
+                <input id={`oc-${o.id}`} className="input" style={o.unit ? { maxWidth: 140 } : undefined} inputMode={o.unit ? 'numeric' : undefined} value={draft[o.id] ?? ''} onChange={(e) => setDraft({ ...draft, [o.id]: e.target.value })} placeholder={o.unit ? `Nº de ${o.unit}` : 'Escríbelo como te salga'} />
+                {o.unit && <span className="small muted" style={{ alignSelf: 'center' }}>{o.unit}{got != null ? ` · ${pts(got)} de ${pts(o.points)} puntos` : ''}</span>}
+                {adv.value != null && String(adv.value) !== (draft[o.id] || '').trim() && <button className="btn btn-ghost btn-sm" onClick={() => setDraft({ ...draft, [o.id]: String(adv.value) })}>Usar {adv.value}{adv.points != null ? ` (${pts(adv.points)} puntos)` : ''}</button>}
                 <button className="btn btn-secondary" disabled={!draft[o.id]?.trim() || busy === o.id} onClick={() => saveOne(o.id)}>{busy === o.id ? 'Redactando…' : saved ? 'Actualizar' : 'Guardar'}</button>
               </div>
               {saved?.formal && <div className="callout small mt-8"><LuCircleCheck /><div><strong>En la oferta pondrá:</strong> {saved.formal}</div></div>}
