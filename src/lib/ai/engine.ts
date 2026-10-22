@@ -141,6 +141,10 @@ function mergeExtractions(parts: ExtractionResult[]): ExtractionResult {
   // Si lo técnico se entrega solo en formularios, sobran las secciones de memoria que no responden a ningún criterio.
   // La oferta económica no es una sección: los precios los pone siempre la empresa.
   out.structure = out.structure.filter((x) => !/oferta econ|proposici[oó]n econ|sobre (n[ºo.]? ?)?3/i.test(`${x.title} ${x.form ?? ''}`));
+  // Los criterios de fórmula (años de experiencia extra, meses de garantía, reducción de plazo…) se ofertan en el sobre de
+  // criterios automáticos: si su valor aparece en la memoria técnica, la mesa puede excluir la oferta. No llevan sección.
+  const formula = new Set(out.criteria.filter((c) => c.kind === 'formula').map((c) => normalize(c.name)));
+  out.structure = out.structure.filter((x) => !x.criteria.length || x.criteria.some((c) => !formula.has(normalize(c))));
   // Un bloque puede haber creado una sección «paraguas» para un anexo (leyendo solo su descripción en el pliego) y otro
   // bloque una sección por cada formulario de ese anexo (leyendo el archivo): se quedan las concretas.
   const perDoc = new Map<string, number>();
