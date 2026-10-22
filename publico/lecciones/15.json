@@ -1,0 +1,270 @@
+{
+ "cpv2": "15",
+ "generated": "2026-10-22T20:52:09.371Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Envasado",
+   "max": 17,
+   "exp": "p:10415824",
+   "ref": "2022-0140",
+   "title": "Suministro de sobaos pasiegos y quesada pasiega, corbatas y palmeras de hojaldre y polkas de Torrelavega con destino a los Paradores de Turi",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2022-09-07",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Envasado individual correcto.",
+    "Etiqueta correcta en caja y envoltorio."
+   ],
+   "weak": [
+    "La caja de cartón es muy fina.",
+    "Tras abrir el envase al vacío la pieza resulta poco fresca."
+   ],
+   "hypothesis": {
+    "premia": "Envase individual correcto y etiquetado completo en caja y envoltorio, con tamaño y aspecto óptimos.",
+    "penaliza": "Caja de cartón muy fina y falta de información (fecha de caducidad, marca) en el envoltorio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=QjZaG0b%2FMMqiEJrVRqloyA%3D%3D",
+   "doc": "87caaf11-ee48-44f2-882f-1101d7ca11a1"
+  },
+  {
+   "crit": "Visual",
+   "max": 30,
+   "exp": "p:10415824",
+   "ref": "2022-0140",
+   "title": "Suministro de sobaos pasiegos y quesada pasiega, corbatas y palmeras de hojaldre y polkas de Torrelavega con destino a los Paradores de Turi",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2022-09-07",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Tamaño óptimo de la pieza.",
+    "Etiquetado con toda la información.",
+    "Etiqueta con información en caja y envoltorio."
+   ],
+   "weak": [
+    "Tamaño algo más pequeño de lo esperado."
+   ],
+   "hypothesis": {
+    "premia": "Tamaño de pieza óptimo y aspecto general correcto, con etiquetado completo.",
+    "penaliza": "Piezas más pequeñas de lo esperado y color o aspecto pálido."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=QjZaG0b%2FMMqiEJrVRqloyA%3D%3D",
+   "doc": "87caaf11-ee48-44f2-882f-1101d7ca11a1"
+  },
+  {
+   "crit": "Calidad",
+   "max": 17,
+   "exp": "p:10415824",
+   "ref": "2022-0140",
+   "title": "Suministro de sobaos pasiegos y quesada pasiega, corbatas y palmeras de hojaldre y polkas de Torrelavega con destino a los Paradores de Turi",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2022-09-07",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Color óptimo de la pieza.",
+    "Frescura correcta."
+   ],
+   "weak": [
+    "Le falta algo de frescura.",
+    "Un poco pálida por el centro."
+   ],
+   "hypothesis": {
+    "premia": "Color horneado óptimo y frescura correcta u óptima.",
+    "penaliza": "Piezas secas, pálidas o poco frescas, sobre todo tras abrir el envase al vacío."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=QjZaG0b%2FMMqiEJrVRqloyA%3D%3D",
+   "doc": "87caaf11-ee48-44f2-882f-1101d7ca11a1"
+  },
+  {
+   "crit": "Degustación",
+   "max": 36,
+   "exp": "p:10415824",
+   "ref": "2022-0140",
+   "title": "Suministro de sobaos pasiegos y quesada pasiega, corbatas y palmeras de hojaldre y polkas de Torrelavega con destino a los Paradores de Turi",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2022-09-07",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Sabor correcto y característico.",
+    "Jugosidad muy buena.",
+    "Olor y aroma correcto."
+   ],
+   "weak": [
+    "Le falta sabor a mantequilla característico.",
+    "Se encuentra bastante seca.",
+    "Un poco arenosa la textura."
+   ],
+   "hypothesis": {
+    "premia": "Sabor característico, aroma típico, textura óptima y buena jugosidad.",
+    "penaliza": "Sabor insípido o sin carácter, falta de aroma, textura seca o arenosa y poca jugosidad."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=QjZaG0b%2FMMqiEJrVRqloyA%3D%3D",
+   "doc": "87caaf11-ee48-44f2-882f-1101d7ca11a1"
+  },
+  {
+   "crit": "Envasado",
+   "max": 17,
+   "exp": "p:10415824",
+   "ref": "2022-0140",
+   "title": "Suministro de sobaos pasiegos y quesada pasiega, corbatas y palmeras de hojaldre y polkas de Torrelavega con destino a los Paradores de Turi",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2022-09-07",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Tamaño y aspecto óptimos.",
+    "Etiqueta correcta en caja y envoltorio.",
+    "Envasado individual correcto."
+   ],
+   "weak": [
+    "La caja de cartón es muy fina.",
+    "En el envoltorio no constan fecha de caducidad ni marca."
+   ],
+   "hypothesis": {
+    "premia": "Envase individual correcto y etiquetado completo en caja y envoltorio, con tamaño y aspecto óptimos.",
+    "penaliza": "Caja de cartón muy fina y falta de información (fecha de caducidad, marca) en el envoltorio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=QjZaG0b%2FMMqiEJrVRqloyA%3D%3D",
+   "doc": "87caaf11-ee48-44f2-882f-1101d7ca11a1"
+  },
+  {
+   "crit": "Visual",
+   "max": 30,
+   "exp": "p:10415824",
+   "ref": "2022-0140",
+   "title": "Suministro de sobaos pasiegos y quesada pasiega, corbatas y palmeras de hojaldre y polkas de Torrelavega con destino a los Paradores de Turi",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2022-09-07",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Tamaño óptimo.",
+    "Aspecto óptimo.",
+    "Buen aspecto general de la pieza."
+   ],
+   "weak": [
+    "Tamaño un poco más pequeño de lo esperado.",
+    "Color algo pálido."
+   ],
+   "hypothesis": {
+    "premia": "Tamaño de pieza óptimo y aspecto general correcto, con etiquetado completo.",
+    "penaliza": "Piezas más pequeñas de lo esperado y color o aspecto pálido."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=QjZaG0b%2FMMqiEJrVRqloyA%3D%3D",
+   "doc": "87caaf11-ee48-44f2-882f-1101d7ca11a1"
+  },
+  {
+   "crit": "Calidad",
+   "max": 17,
+   "exp": "p:10415824",
+   "ref": "2022-0140",
+   "title": "Suministro de sobaos pasiegos y quesada pasiega, corbatas y palmeras de hojaldre y polkas de Torrelavega con destino a los Paradores de Turi",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2022-09-07",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Color óptimo.",
+    "Frescura óptima."
+   ],
+   "weak": [
+    "Color algo pálido.",
+    "Frescura mejorable, la pieza se encuentra seca."
+   ],
+   "hypothesis": {
+    "premia": "Color horneado óptimo y frescura correcta u óptima.",
+    "penaliza": "Piezas secas, pálidas o poco frescas, sobre todo tras abrir el envase al vacío."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=QjZaG0b%2FMMqiEJrVRqloyA%3D%3D",
+   "doc": "87caaf11-ee48-44f2-882f-1101d7ca11a1"
+  },
+  {
+   "crit": "Degustación",
+   "max": 36,
+   "exp": "p:10415824",
+   "ref": "2022-0140",
+   "title": "Suministro de sobaos pasiegos y quesada pasiega, corbatas y palmeras de hojaldre y polkas de Torrelavega con destino a los Paradores de Turi",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2022-09-07",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Sabor muy bueno y característico.",
+    "Olor y aroma típicos.",
+    "Textura óptima y muy jugosa."
+   ],
+   "weak": [
+    "Poco sabor característico, insípida.",
+    "Le falta aroma al abrir el envoltorio.",
+    "Textura seca y quebradiza, difícil de comer.",
+    "Poco jugosa, resulta seca en boca."
+   ],
+   "hypothesis": {
+    "premia": "Sabor característico, aroma típico, textura óptima y buena jugosidad.",
+    "penaliza": "Sabor insípido o sin carácter, falta de aroma, textura seca o arenosa y poca jugosidad."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=QjZaG0b%2FMMqiEJrVRqloyA%3D%3D",
+   "doc": "87caaf11-ee48-44f2-882f-1101d7ca11a1"
+  }
+ ]
+}

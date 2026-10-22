@@ -1,8 +1,333 @@
 {
  "cpv2": "32",
- "generated": "2026-10-22T20:08:30.276Z",
+ "generated": "2026-10-22T20:52:09.364Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Solución ofertada",
+   "max": 5,
+   "exp": "p:19949704",
+   "ref": "I-26060030",
+   "title": "Suministro de equipamiento para el Congreso de los Diputados.",
+   "buyer": "Presidencia Ejecutiva de la Agencia E.F.E. S.A.U., S.M.E.",
+   "nuts": "ES300",
+   "date": "2026-09-14",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Cumple el PTT y añade protocolos y resoluciones mayores que lo requerido.",
+    "Se adecua a los requisitos pedidos en el PTT."
+   ],
+   "weak": [
+    "No se describen mejoras ni elementos adicionales sobre el PTT."
+   ],
+   "hypothesis": {
+    "premia": "Añadir características que superen el PTT (más protocolos, señales o resoluciones).",
+    "penaliza": "Limitarse a cumplir los requisitos del PTT sin mejoras (2,5 puntos)."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=AoallK8ilb8mMOlAXxDEjw%3D%3D",
+   "doc": "2026-9b9f6ea2-20e4-445d-a70c-ff3edc515e43"
+  },
+  {
+   "crit": "Planes de instalación y puesta en marcha",
+   "max": 5,
+   "exp": "p:19949704",
+   "ref": "I-26060030",
+   "title": "Suministro de equipamiento para el Congreso de los Diputados.",
+   "buyer": "Presidencia Ejecutiva de la Agencia E.F.E. S.A.U., S.M.E.",
+   "nuts": "ES300",
+   "date": "2026-09-14",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Plan detallado que identifica equipos, tareas y plan de trabajo.",
+    "Va más allá de los requisitos pedidos en el PTT."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Plan detallado con equipos, tareas, cronograma y plan de trabajo que supera el PTT.",
+    "penaliza": "Plan breve sin cronograma, descripción de tareas ni adscripción de medios humanos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=AoallK8ilb8mMOlAXxDEjw%3D%3D",
+   "doc": "2026-9b9f6ea2-20e4-445d-a70c-ff3edc515e43"
+  },
+  {
+   "crit": "Servicio de mantenimiento",
+   "max": 5,
+   "exp": "p:19949704",
+   "ref": "I-26060030",
+   "title": "Suministro de equipamiento para el Congreso de los Diputados.",
+   "buyer": "Presidencia Ejecutiva de la Agencia E.F.E. S.A.U., S.M.E.",
+   "nuts": "ES300",
+   "date": "2026-09-14",
+   "offers": 2,
+   "top": {
+    "pts": 2.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Se adecua a los requisitos pedidos en el PTT."
+   ],
+   "weak": [
+    "No se describen mejoras sobre el PTT."
+   ],
+   "hypothesis": {
+    "premia": "Ninguna diferencia: todas las ofertas obtienen 2,5 por adecuarse al PTT.",
+    "penaliza": "Ninguna diferencia: no se describen mejoras sobre el PTT."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=AoallK8ilb8mMOlAXxDEjw%3D%3D",
+   "doc": "2026-9b9f6ea2-20e4-445d-a70c-ff3edc515e43"
+  },
+  {
+   "crit": "Características medioambientales",
+   "max": 5,
+   "exp": "p:19949704",
+   "ref": "I-26060030",
+   "title": "Suministro de equipamiento para el Congreso de los Diputados.",
+   "buyer": "Presidencia Ejecutiva de la Agencia E.F.E. S.A.U., S.M.E.",
+   "nuts": "ES300",
+   "date": "2026-09-14",
+   "offers": 2,
+   "top": {
+    "pts": 2.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "La información aportada permite conocer las características medioambientales."
+   ],
+   "weak": [
+    "No aporta mejoras ni elementos adicionales."
+   ],
+   "hypothesis": {
+    "premia": "Información que permite conocer las características medioambientales de los equipos.",
+    "penaliza": "Omitir el apartado o aportar solo las fichas técnicas de los fabricantes."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=AoallK8ilb8mMOlAXxDEjw%3D%3D",
+   "doc": "2026-9b9f6ea2-20e4-445d-a70c-ff3edc515e43"
+  },
+  {
+   "crit": "Mejoras en las características técnicas de los elementos que componen el suministro",
+   "max": 15,
+   "exp": "p:19814590",
+   "ref": "CN 94/2026",
+   "title": "Traslado servicios varios a edificio ampliación acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 15
+   },
+   "best": [
+    "Presenta mejoras técnicas en dos partidas"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Presentar mejoras técnicas concretas en partidas del suministro",
+    "penaliza": "No indicar mejoras en las características técnicas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=AYRDIK%2Fn366opEMYCmrbmw%3D%3D",
+   "doc": "2026-2b216528-0e5a-48e5-a70c-e43038cec815"
+  },
+  {
+   "crit": "Certificaciones que demuestren el soporte de los fabricantes hardware",
+   "max": 15,
+   "exp": "p:19814590",
+   "ref": "CN 94/2026",
+   "title": "Traslado servicios varios a edificio ampliación acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 12
+   },
+   "best": [
+    "Presenta certificados de cuatro fabricantes",
+    "Presenta certificados de tres fabricantes"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Aportar certificados de un mayor número de fabricantes hardware",
+    "penaliza": "Aportar certificados de pocos fabricantes"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=AYRDIK%2Fn366opEMYCmrbmw%3D%3D",
+   "doc": "2026-2b216528-0e5a-48e5-a70c-e43038cec815"
+  },
+  {
+   "crit": "Certificaciones que demuestren el soporte de los fabricantes software",
+   "max": 10,
+   "exp": "p:19814590",
+   "ref": "CN 94/2026",
+   "title": "Traslado servicios varios a edificio ampliación acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Presenta certificados de tres fabricantes"
+   ],
+   "weak": [
+    "Presenta certificados de un solo fabricante"
+   ],
+   "hypothesis": {
+    "premia": "Aportar certificados de varios fabricantes software",
+    "penaliza": "Aportar certificados de un solo fabricante"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=AYRDIK%2Fn366opEMYCmrbmw%3D%3D",
+   "doc": "2026-2b216528-0e5a-48e5-a70c-e43038cec815"
+  },
+  {
+   "crit": "Cronograma con las distintas fases del expediente y el tiempo estimado de duración de cada una de ellas",
+   "max": 15,
+   "exp": "p:19814590",
+   "ref": "CN 94/2026",
+   "title": "Traslado servicios varios a edificio ampliación acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 15
+   },
+   "best": [
+    "Presenta cronograma con fases, tareas y tiempos asignados a cada tarea"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Cronograma con fases, tareas y tiempos asignados a cada tarea",
+    "penaliza": "Sin penalización observada: todas las ofertas obtuvieron la máxima puntuación"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=AYRDIK%2Fn366opEMYCmrbmw%3D%3D",
+   "doc": "2026-2b216528-0e5a-48e5-a70c-e43038cec815"
+  },
+  {
+   "crit": "Compromisos de niveles de servicio: disponibilidad, fiabilidad, tiempos de respuesta, notificación de incidencias, etc",
+   "max": 15,
+   "exp": "p:19814590",
+   "ref": "CN 94/2026",
+   "title": "Traslado servicios varios a edificio ampliación acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 12
+   },
+   "best": [
+    "Aporta gestión de incidencias y flujogramas",
+    "Aporta gestión de incidencias"
+   ],
+   "weak": [
+    "Sin otros compromisos de niveles de servicio mencionados"
+   ],
+   "hypothesis": {
+    "premia": "Gestión de incidencias y flujogramas de actuación",
+    "penaliza": "Solo gestión de incidencias o no presentar ningún ítem"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=AYRDIK%2Fn366opEMYCmrbmw%3D%3D",
+   "doc": "2026-2b216528-0e5a-48e5-a70c-e43038cec815"
+  },
+  {
+   "crit": "Organización, apoyo, asesoramiento",
+   "max": 15,
+   "exp": "p:19814590",
+   "ref": "CN 94/2026",
+   "title": "Traslado servicios varios a edificio ampliación acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Aporta medios humanos, asignación de tareas a cada uno, medios materiales y servicio de soporte con funciones",
+    "Aporta equipo de trabajo y tareas por perfil"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Medios humanos con asignación de tareas, medios materiales y servicio de soporte con funciones definidas",
+    "penaliza": "Solo equipo de trabajo y tareas por perfil, sin medios ni soporte"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=AYRDIK%2Fn366opEMYCmrbmw%3D%3D",
+   "doc": "2026-2b216528-0e5a-48e5-a70c-e43038cec815"
+  },
+  {
+   "crit": "Asignación de tiempo y recursos",
+   "max": 15,
+   "exp": "p:19814590",
+   "ref": "CN 94/2026",
+   "title": "Traslado servicios varios a edificio ampliación acc madrid",
+   "buyer": "ENAIRE. Dirección Regional NA. Región Centro Norte",
+   "nuts": "ES300",
+   "date": "2026-08-11",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Aporta tabla de asignación de recursos a cada tarea, según perfil"
+   ],
+   "weak": [
+    "No presenta ningún ítem"
+   ],
+   "hypothesis": {
+    "premia": "Tabla de asignación de recursos a cada tarea según perfil",
+    "penaliza": "No presentar ningún ítem"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=AYRDIK%2Fn366opEMYCmrbmw%3D%3D",
+   "doc": "2026-2b216528-0e5a-48e5-a70c-e43038cec815"
+  },
   {
    "crit": "CRITERIO A.1.a.- Características y Funcionalidades",
    "max": 15,

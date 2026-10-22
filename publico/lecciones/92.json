@@ -1,8 +1,128 @@
 {
  "cpv2": "92",
- "generated": "2026-10-22T20:08:30.271Z",
+ "generated": "2026-10-22T20:52:09.358Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Manual del árbitro",
+   "max": 35,
+   "exp": "p:20068307",
+   "ref": "2026/52C SER",
+   "title": "Servicio de arbitraje de los torneos provinciales de fútbol y fútbol sala. Dos lotes",
+   "buyer": "Presidencia de la Diputación Provincial de Palencia",
+   "nuts": "ES414",
+   "date": "2026-09-13",
+   "offers": 1,
+   "top": {
+    "pts": 27.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Fija la llegada del árbitro con más de 60 minutos de antelación sobre los pliegos.",
+    "Asume la mesa en semifinales y final y dispone de petos para duplicidades.",
+    "Redacción de actas bien definida y envío por la nube al finalizar el encuentro; compromiso con partes de accidentes."
+   ],
+   "weak": [
+    "Imprevistos descritos con redacción dubitativa ('parece tener claro'), con responsable solo en fines de semana.",
+    "La formación en primeros auxilios y la cánula orofaríngea o tubo de Guedel se mencionan sin mayor desarrollo."
+   ],
+   "hypothesis": {
+    "premia": "Detalle operativo: llegada anticipada, mesa en fases finales, petos, actas y envío digital, y formación en primeros auxilios (lote 2 añade comunicación electrónica y cuarto árbitro). Solo consta una oferta, así que es una deducción limitada.",
+    "penaliza": "Redacción dubitativa e imprecisa en la gestión de imprevistos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Y6tC2bA%2Fu3izz8fXU2i3eQ%3D%3D",
+   "doc": "2026-7a421969-d6cf-44ae-aa7a-df46f196fd57"
+  },
+  {
+   "crit": "Gestión de sustituciones",
+   "max": 14,
+   "exp": "p:20068307",
+   "ref": "2026/52C SER",
+   "title": "Servicio de arbitraje de los torneos provinciales de fútbol y fútbol sala. Dos lotes",
+   "buyer": "Presidencia de la Diputación Provincial de Palencia",
+   "nuts": "ES414",
+   "date": "2026-09-13",
+   "offers": 1,
+   "top": {
+    "pts": 8.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Figura del árbitro sustituto con correcta relación con la organización.",
+    "Impide la relación entre jugadores y árbitros en temas del Torneo."
+   ],
+   "weak": [
+    "Descripción poco concreta ('parece correcta') del sistema de organización y sustitución."
+   ],
+   "hypothesis": {
+    "premia": "Figura del árbitro sustituto y relación fluida con la organización, además de evitar la relación jugadores/árbitros. Solo consta una oferta.",
+    "penaliza": "Falta de concreción en la descripción del sistema de organización y sustitución."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Y6tC2bA%2Fu3izz8fXU2i3eQ%3D%3D",
+   "doc": "2026-7a421969-d6cf-44ae-aa7a-df46f196fd57"
+  },
+  {
+   "crit": "Manual del árbitro",
+   "max": 35,
+   "exp": "p:20068307",
+   "ref": "2026/52C SER",
+   "title": "Servicio de arbitraje de los torneos provinciales de fútbol y fútbol sala. Dos lotes",
+   "buyer": "Presidencia de la Diputación Provincial de Palencia",
+   "nuts": "ES414",
+   "date": "2026-09-13",
+   "offers": 1,
+   "top": {
+    "pts": 27.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Dotación de sistema de comunicación, banderines electrónicos y cuarto árbitro cuando se precise más de uno.",
+    "Llegada del árbitro con más de 60 minutos de antelación sobre los pliegos; petos para duplicidades.",
+    "Actas bien definidas, envío por la nube al finalizar el encuentro y compromiso con partes de accidente."
+   ],
+   "weak": [
+    "Imprevistos descritos con redacción dubitativa ('parece tener claro'), con responsable solo en fines de semana.",
+    "Formación en primeros auxilios y cánula orofaríngea o tubo de Guedel mencionados sin mayor desarrollo."
+   ],
+   "hypothesis": {
+    "premia": "Detalle operativo: llegada anticipada, mesa en fases finales, petos, actas y envío digital, y formación en primeros auxilios (lote 2 añade comunicación electrónica y cuarto árbitro). Solo consta una oferta, así que es una deducción limitada.",
+    "penaliza": "Redacción dubitativa e imprecisa en la gestión de imprevistos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Y6tC2bA%2Fu3izz8fXU2i3eQ%3D%3D",
+   "doc": "2026-7a421969-d6cf-44ae-aa7a-df46f196fd57"
+  },
+  {
+   "crit": "Gestión de sustituciones",
+   "max": 14,
+   "exp": "p:20068307",
+   "ref": "2026/52C SER",
+   "title": "Servicio de arbitraje de los torneos provinciales de fútbol y fútbol sala. Dos lotes",
+   "buyer": "Presidencia de la Diputación Provincial de Palencia",
+   "nuts": "ES414",
+   "date": "2026-09-13",
+   "offers": 1,
+   "top": {
+    "pts": 8.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Figura del árbitro sustituto con correcta relación con la organización.",
+    "Impide la relación entre jugadores y árbitros en temas del Torneo."
+   ],
+   "weak": [
+    "Descripción poco concreta ('parece correcta') del sistema de organización y sustitución."
+   ],
+   "hypothesis": {
+    "premia": "Figura del árbitro sustituto y relación fluida con la organización, además de evitar la relación jugadores/árbitros. Solo consta una oferta.",
+    "penaliza": "Falta de concreción en la descripción del sistema de organización y sustitución."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Y6tC2bA%2Fu3izz8fXU2i3eQ%3D%3D",
+   "doc": "2026-7a421969-d6cf-44ae-aa7a-df46f196fd57"
+  },
   {
    "crit": "Proyecto General de organización de la prueba",
    "max": 15,
@@ -1401,6 +1521,155 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SCK9S439U1N70UvEyYJSGw%3D%3D",
    "doc": "2026-df207a53-bf4b-40d7-b58e-5a878073ed56"
+  },
+  {
+   "crit": "Plan de trabajo y medios auxiliares",
+   "max": 20,
+   "exp": "p:19831894",
+   "ref": "B070005/2026-0010",
+   "title": "Restauración de las pinturas murales de la crujía este y de la capilla de San Miguel del claustrillo del Monasterio de La Cartuja Nuestra Se",
+   "buyer": "Presidencia de la Diputación Provincial de Huesca",
+   "nuts": "ES241",
+   "date": "2026-08-03",
+   "offers": 1,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Distribución de espacios de trabajo (oficinas, morteros, etc.) acertada, consecuencia de la experiencia de la empresa.",
+    "Equipos bien desarrollados, personal distribuido según especialidades y fases de intervención marcadas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=TsPVp4VvOKjIGlsa0Wad%2Bw%3D%3D",
+   "doc": "2026-ff3b452d-2c33-4c89-82f0-f20f61ca5f03"
+  },
+  {
+   "crit": "Descripción detallada, planos, alzados y fichas técnicas de andamios y otros medios auxiliares y maquinas a utilizar",
+   "max": 5,
+   "exp": "p:19831894",
+   "ref": "B070005/2026-0010",
+   "title": "Restauración de las pinturas murales de la crujía este y de la capilla de San Miguel del claustrillo del Monasterio de La Cartuja Nuestra Se",
+   "buyer": "Presidencia de la Diputación Provincial de Huesca",
+   "nuts": "ES241",
+   "date": "2026-08-03",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Andamios y medios auxiliares homologados y bien descritos.",
+    "Excelente documentación gráfica y técnica, con equipos, instalaciones eléctricas, oficinas y laboratorios detallados.",
+    "Incluye plan de residuos."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=TsPVp4VvOKjIGlsa0Wad%2Bw%3D%3D",
+   "doc": "2026-ff3b452d-2c33-4c89-82f0-f20f61ca5f03"
+  },
+  {
+   "crit": "Cronograma de montaje andamiaje y medios auxiliares",
+   "max": 5,
+   "exp": "p:19831894",
+   "ref": "B070005/2026-0010",
+   "title": "Restauración de las pinturas murales de la crujía este y de la capilla de San Miguel del claustrillo del Monasterio de La Cartuja Nuestra Se",
+   "buyer": "Presidencia de la Diputación Provincial de Huesca",
+   "nuts": "ES241",
+   "date": "2026-08-03",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Cronograma de montaje y desmontaje impecable.",
+    "Formas mixtas compatibles y rotatorias de instalación de andamios según necesidades y cronograma.",
+    "Detalla la compatibilidad con las visitas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=TsPVp4VvOKjIGlsa0Wad%2Bw%3D%3D",
+   "doc": "2026-ff3b452d-2c33-4c89-82f0-f20f61ca5f03"
+  },
+  {
+   "crit": "Sistemas de protección, limpieza y reposición de pavimentos",
+   "max": 10,
+   "exp": "p:19831894",
+   "ref": "B070005/2026-0010",
+   "title": "Restauración de las pinturas murales de la crujía este y de la capilla de San Miguel del claustrillo del Monasterio de La Cartuja Nuestra Se",
+   "buyer": "Presidencia de la Diputación Provincial de Huesca",
+   "nuts": "ES241",
+   "date": "2026-08-03",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Protección permanente de pavimentos desde el acceso y punto de descarga durante toda la intervención.",
+    "Protección también de andamiajes y medios auxiliares."
+   ],
+   "weak": [
+    "No contempla la reposición de pavimentos."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=TsPVp4VvOKjIGlsa0Wad%2Bw%3D%3D",
+   "doc": "2026-ff3b452d-2c33-4c89-82f0-f20f61ca5f03"
+  },
+  {
+   "crit": "Elaboración de soportes gráficos que ayuden a interpretar el desarrollo de los trabajos",
+   "max": 4,
+   "exp": "p:19831894",
+   "ref": "B070005/2026-0010",
+   "title": "Restauración de las pinturas murales de la crujía este y de la capilla de San Miguel del claustrillo del Monasterio de La Cartuja Nuestra Se",
+   "buyer": "Presidencia de la Diputación Provincial de Huesca",
+   "nuts": "ES241",
+   "date": "2026-08-03",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Lona serigrafiada de cierre con descripción de las intervenciones.",
+    "Paneles divulgativos, estudio y propuesta de conservación de grafitos, cartografías y ortofotografía final."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=TsPVp4VvOKjIGlsa0Wad%2Bw%3D%3D",
+   "doc": "2026-ff3b452d-2c33-4c89-82f0-f20f61ca5f03"
+  },
+  {
+   "crit": "Plan de difusión y comunicación",
+   "max": 6,
+   "exp": "p:19831894",
+   "ref": "B070005/2026-0010",
+   "title": "Restauración de las pinturas murales de la crujía este y de la capilla de San Miguel del claustrillo del Monasterio de La Cartuja Nuestra Se",
+   "buyer": "Presidencia de la Diputación Provincial de Huesca",
+   "nuts": "ES241",
+   "date": "2026-08-03",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Dos píldoras videográficas de corta duración realizadas por realizador profesional, a disposición del gabinete de comunicación de la DPH."
+   ],
+   "weak": [
+    "No consta montaje final que una ambas píldoras."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=TsPVp4VvOKjIGlsa0Wad%2Bw%3D%3D",
+   "doc": "2026-ff3b452d-2c33-4c89-82f0-f20f61ca5f03"
   },
   {
    "crit": "Propuesta metodológica y programa de trabajo",

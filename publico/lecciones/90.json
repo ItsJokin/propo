@@ -1,8 +1,69 @@
 {
  "cpv2": "90",
- "generated": "2026-10-22T20:08:30.276Z",
+ "generated": "2026-10-22T20:52:09.367Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "PROPUESTA TÉCNICA PRESENTADA",
+   "max": 60,
+   "exp": "p:19607396",
+   "ref": "FP.SGR.007/2026",
+   "title": "Limpieza de los embalses, la estación de bombeo de Benifaió, el centro de control de Casinos y los archivos de Sitjar pertenecientes a la Co",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Júcar",
+   "nuts": "ES523",
+   "date": "2026-09-14",
+   "offers": 1,
+   "top": {
+    "pts": 52,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Sigue exactamente la estructura exigida y memoria muy exhaustiva por centro, especialmente Tous",
+    "Metodología muy bien definida, con fases claras y técnicas diferenciadas por estancias",
+    "Plan de calidad adecuado con supervisión y control informatizado; plan ambiental bien definido con normas ISO"
+   ],
+   "weak": [
+    "Exceso descriptivo en algunos apartados, especialmente en el análisis de centros"
+   ],
+   "hypothesis": {
+    "premia": "Memoria detallada y específica por centro (especialmente Tous), metodología por fases y técnicas diferenciadas, con calidad y ambiental concretos. Con una sola oferta no hay comparación directa.",
+    "penaliza": "Exceso descriptivo, especialmente en el análisis de centros."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=FY39aeKoAMOkU02jNGj1Fw%3D%3D",
+   "doc": "2026-3ee34339-3f42-479b-a642-40cf8e89473e"
+  },
+  {
+   "crit": "PROGRAMA DE TRABAJO",
+   "max": 40,
+   "exp": "p:19607396",
+   "ref": "FP.SGR.007/2026",
+   "title": "Limpieza de los embalses, la estación de bombeo de Benifaió, el centro de control de Casinos y los archivos de Sitjar pertenecientes a la Co",
+   "buyer": "Presidencia de la Confederación Hidrográfica del Júcar",
+   "nuts": "ES523",
+   "date": "2026-09-14",
+   "offers": 1,
+   "top": {
+    "pts": 35,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Programación muy detallada con planificación diaria por centro, especialmente en Tous",
+    "Adecuación a las necesidades y características de las instalaciones; considera tareas extraordinarias",
+    "Tiene en cuenta la dispersión de centros, rutas, posibles interferencias y horarios"
+   ],
+   "weak": [
+    "Se echa en falta un cronograma más visual tipo Gantt",
+    "Falta un cronograma anual/mensual más claro"
+   ],
+   "hypothesis": {
+    "premia": "Planificación diaria por centro, adecuación a instalaciones, tareas extraordinarias y consideración de rutas, interferencias y horarios. Con una sola oferta no hay comparación directa.",
+    "penaliza": "Falta de cronograma visual tipo Gantt y de un cronograma anual/mensual más claro."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=FY39aeKoAMOkU02jNGj1Fw%3D%3D",
+   "doc": "2026-3ee34339-3f42-479b-a642-40cf8e89473e"
+  },
   {
    "crit": "A.1 Memoria",
    "max": null,

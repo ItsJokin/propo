@@ -1,8 +1,35 @@
 {
  "cpv2": "70",
- "generated": "2026-10-22T20:08:30.273Z",
+ "generated": "2026-10-22T20:52:09.359Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Localización del inmueble",
+   "max": 25,
+   "exp": "p:19779158",
+   "ref": "CO-2026/000138",
+   "title": "Contrato privado de arrendamiento de local para la oficina de la Unidad Territorial de Jaén, del Servicio Provincial de Gestión y Recaudació",
+   "buyer": "Presidencia del Servicio Provincial de Gestión y Recaudación",
+   "nuts": "ES616",
+   "date": "2026-09-07",
+   "offers": 1,
+   "top": {
+    "pts": 25,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Inmueble en Zona 1 (calle Bernabé Soriano), la de mayor puntuación según el PCAP.",
+    "Planos de situación, superficie, distribución y fotos aportados se consideran plenamente satisfactorios."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Ubicación en la Zona 1 del PCAP, acompañada de planos, superficie y distribución acreditados documentalmente.",
+    "penaliza": "No se identifica en el documento; solo consta una oferta."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=z%2B6cjCcbAs3LIx6q1oPaMg%3D%3D",
+   "doc": "2026-76119b80-d0c4-44fa-bbd0-df38819bd5ad"
+  },
   {
    "crit": "AHORRO-EFICIENCIA ENERGÉTICA Y DESARROLLO SOSTENIBLE",
    "max": 20,

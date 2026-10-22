@@ -1,8 +1,99 @@
 {
  "cpv2": "35",
- "generated": "2026-10-22T20:08:30.278Z",
+ "generated": "2026-10-22T20:52:09.369Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Ergonomía y comodidad",
+   "max": 8,
+   "exp": "p:19946527",
+   "ref": "57/2026",
+   "title": "Vestuario para el servicio de Policía Local y Agentes de Movilidad del Ayuntamiento de Cuenca.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Cuenca",
+   "nuts": "ES423",
+   "date": "2026-08-18",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Amplia disponibilidad de tallas diferenciadas para hombre y mujer (2XS-XL mujer, XS-XXXL hombre).",
+    "Diseño adaptado a las necesidades de Policía Local y Agentes de Movilidad, compatible con la uniformidad actual.",
+    "Soluciones técnicas de confort: tejido Coolmax, ventilación en axilas y transpiración en fundas."
+   ],
+   "weak": [
+    "Confort en uso continuado sin elementos suficientes para la puntuación máxima.",
+    "Libertad de movimientos no destacada respecto a las exigencias ordinarias del pliego."
+   ],
+   "hypothesis": {
+    "premia": "Tallas amplias para hombre y mujer, diseño compatible con la uniformidad actual y soluciones técnicas de confort (tejidos transpirables, ventilación).",
+    "penaliza": "Falta de evidencias suficientes de confort en uso prolongado y de libertad de movimientos destacada frente al pliego."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=IC%2FUrGfHcq6kU02jNGj1Fw%3D%3D",
+   "doc": "2026-d2617818-b697-4ab4-9e12-88da94ccf727"
+  },
+  {
+   "crit": "Homogeneidad, compatibilidad y similitud entre prendas",
+   "max": 10,
+   "exp": "p:19946527",
+   "ref": "57/2026",
+   "title": "Vestuario para el servicio de Policía Local y Agentes de Movilidad del Ayuntamiento de Cuenca.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Cuenca",
+   "nuts": "ES423",
+   "date": "2026-08-18",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Plena compatibilidad de cierres, anclajes y velcros con la uniformidad en servicio.",
+    "Elevada semejanza estética y funcional de la funda del chaleco antibalas.",
+    "Material y accesorios integrables con el equipamiento existente sin adaptaciones."
+   ],
+   "weak": [
+    "No es posible verificar el comportamiento real de las prendas en uso operativo prolongado."
+   ],
+   "hypothesis": {
+    "premia": "Compatibilidad verificada de cierres, anclajes y velcros, y semejanza estética de fundas y accesorios con la uniformidad existente.",
+    "penaliza": "No se penaliza en esta oferta; la limitación señalada es la imposibilidad de verificar el uso operativo prolongado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=IC%2FUrGfHcq6kU02jNGj1Fw%3D%3D",
+   "doc": "2026-d2617818-b697-4ab4-9e12-88da94ccf727"
+  },
+  {
+   "crit": "Plataforma por puntos",
+   "max": 7,
+   "exp": "p:19946527",
+   "ref": "57/2026",
+   "title": "Vestuario para el servicio de Policía Local y Agentes de Movilidad del Ayuntamiento de Cuenca.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Cuenca",
+   "nuts": "ES423",
+   "date": "2026-08-18",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Acceso con usuario, contraseña y doble autenticación por correo corporativo, verificado en la práctica.",
+    "Rol con funciones especiales para controlar usuarios y estado de pedidos, y realizar pedidos en nombre de usuarios."
+   ],
+   "weak": [
+    "Asignación de productos por usuario y restricción de visualización no verificadas en la práctica, solo según manual.",
+    "Puntuación limitada a 5 de 7 a falta de comprobación de la gestión por roles y especialidades."
+   ],
+   "hypothesis": {
+    "premia": "Funcionalidades comprobadas en la práctica: doble autenticación, control de pedidos y pedidos en nombre de usuarios.",
+    "penaliza": "Funcionalidades solo acreditadas por manual, como la asignación de productos por rol, sin comprobación práctica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=IC%2FUrGfHcq6kU02jNGj1Fw%3D%3D",
+   "doc": "2026-d2617818-b697-4ab4-9e12-88da94ccf727"
+  },
   {
    "crit": "Calidad y Acabados",
    "max": 15,

@@ -1,6 +1,6 @@
 {
  "cpv2": "42",
- "generated": "2026-10-22T20:08:30.275Z",
+ "generated": "2026-10-22T20:52:09.363Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -152,6 +152,215 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=D5kYWVl46KcUqXM96WStVA%3D%3D",
    "doc": "2026-825d7727-29c5-46b8-8faf-325886ab6801"
+  },
+  {
+   "crit": "A.1 Descripción del proceso de ejecución",
+   "max": 15,
+   "exp": "p:20010696",
+   "ref": "525/2026/38",
+   "title": "Suministro e instalación de sistema de generación de hielo en el Mercado de Elviña",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-09-14",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Planificación rigurosa y realista en 6 semanas, con esquemas, listado de materiales y planos.",
+    "Vallado provisional, limpieza diaria y control ambiental durante la obra.",
+    "Gestión de residuos y gases refrigerantes mediante gestores especializados; legalización ante Industria."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Planificación detallada con esquemas, materiales y medidas de control ambiental y de gestión de residuos.",
+    "penaliza": "Descripción genérica de fases de obra y cronograma sin justificación técnica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nR1fQtGzBVfi0Kd8%2Brcp6w%3D%3D",
+   "doc": "2026-8d8f48f0-2331-4bae-ad11-2023e36e8167"
+  },
+  {
+   "crit": "A.2 Características técnicas del generador de hielo y de los componentes propuestos",
+   "max": 7,
+   "exp": "p:20010696",
+   "ref": "525/2026/38",
+   "title": "Suministro e instalación de sistema de generación de hielo en el Mercado de Elviña",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-09-14",
+   "offers": 1,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Generador BUUS SC1000M en versión marina, con componentes resistentes al ambiente corrosivo.",
+    "Silo con revestimiento de acero inoxidable AISI-316 de 2 mm, con mejor higiene y resistencia.",
+    "Escalera FARAONE SY60-10 con plataforma amplia y barandilla, y carros de acero inoxidable AISI 304."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Especificación concreta de marcas, modelos y materiales adaptados al entorno del mercado.",
+    "penaliza": "Ficha técnica simple sin datos de proyecto adicionales ni justificación de idoneidad."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nR1fQtGzBVfi0Kd8%2Brcp6w%3D%3D",
+   "doc": "2026-8d8f48f0-2331-4bae-ad11-2023e36e8167"
+  },
+  {
+   "crit": "A.3 Características medioambientales (eficiencia energética y ahorro de agua)",
+   "max": 3,
+   "exp": "p:20010696",
+   "ref": "525/2026/38",
+   "title": "Suministro e instalación de sistema de generación de hielo en el Mercado de Elviña",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-09-14",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Ventiladores EC y compresor Bitzer con reducción de consumo eléctrico estimada superior al 20%.",
+    "Sistema de recirculación de agua de deshielo para optimizar el consumo hídrico.",
+    "Detector de fugas NDIR integrado con monitorización en la nube, con alarmas inmediatas."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Tecnologías concretas con ahorros estimados y sistemas de monitorización.",
+    "penaliza": "Enfoque descriptivo de sostenibilidad sin detalle ni cuantificación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nR1fQtGzBVfi0Kd8%2Brcp6w%3D%3D",
+   "doc": "2026-8d8f48f0-2331-4bae-ad11-2023e36e8167"
+  },
+  {
+   "crit": "Memoria descriptiva",
+   "max": 20,
+   "exp": "p:19814276",
+   "ref": "04/26 CCG3",
+   "title": "suministro, instalación, legalización, puesta en funcionamiento y mantenimiento de un ascensor en el centro comercial GETAFE-3,",
+   "buyer": "Empresa Estatal Mercados Centrales de Abastecimiento SA (MERCASA)",
+   "nuts": "ES300",
+   "date": "2026-09-07",
+   "offers": 2,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": {
+    "pts": 15
+   },
+   "best": [
+    "Explica con precisión y alto nivel de desarrollo cada componente del ascensor y su funcionamiento.",
+    "Incluye todos los apartados requeridos con buen desarrollo y asegura la prestación de los servicios."
+   ],
+   "weak": [
+    "No profundiza en exceso en la descripción de las calidades que ofrece la instalación."
+   ],
+   "hypothesis": {
+    "premia": "Explicación precisa de cada componente del ascensor y de su funcionamiento",
+    "penaliza": "Falta de profundidad en la descripción de calidades e instalación"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=GvhLcs3cg9wS7pcxhTeWOg%3D%3D",
+   "doc": "2026-cd1894bc-7ab8-4eb5-a7d9-caed8fe91ff4"
+  },
+  {
+   "crit": "Documentación justificativa de las medidas del ascensor",
+   "max": 10,
+   "exp": "p:19814276",
+   "ref": "04/26 CCG3",
+   "title": "suministro, instalación, legalización, puesta en funcionamiento y mantenimiento de un ascensor en el centro comercial GETAFE-3,",
+   "buyer": "Empresa Estatal Mercados Centrales de Abastecimiento SA (MERCASA)",
+   "nuts": "ES300",
+   "date": "2026-09-07",
+   "offers": 2,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Planos de planta y secciones; ancho y profundidad de la cabina encajan en el hueco existente.",
+    "Documento con medidas de las cabinas y plano en planta de implantación en el hueco existente."
+   ],
+   "weak": [
+    "No se localizan medidas de altura de la cabina ni secciones para verificar las dimensiones generales.",
+    "No profundiza en ningún detalle particular de la instalación."
+   ],
+   "hypothesis": {
+    "premia": "Planos de planta y secciones que justifican el encaje en el hueco",
+    "penaliza": "Ausencia de medidas de altura y secciones para verificar dimensiones"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=GvhLcs3cg9wS7pcxhTeWOg%3D%3D",
+   "doc": "2026-cd1894bc-7ab8-4eb5-a7d9-caed8fe91ff4"
+  },
+  {
+   "crit": "Plan de ejecución",
+   "max": 5,
+   "exp": "p:19814276",
+   "ref": "04/26 CCG3",
+   "title": "suministro, instalación, legalización, puesta en funcionamiento y mantenimiento de un ascensor en el centro comercial GETAFE-3,",
+   "buyer": "Empresa Estatal Mercados Centrales de Abastecimiento SA (MERCASA)",
+   "nuts": "ES300",
+   "date": "2026-09-07",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Gantt por semanas y meses de 6 meses de obra, con dossier de fases y trabajos muy detallado.",
+    "Diagrama de Gantt semanal con todas las fases desde la entrada a obra."
+   ],
+   "weak": [
+    "Enumera las fases de ejecución sin profundizar en la definición de los trabajos."
+   ],
+   "hypothesis": {
+    "premia": "Detalle de cada fase con los trabajos y su duración",
+    "penaliza": "Solo enumerar fases sin definir los trabajos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=GvhLcs3cg9wS7pcxhTeWOg%3D%3D",
+   "doc": "2026-cd1894bc-7ab8-4eb5-a7d9-caed8fe91ff4"
+  },
+  {
+   "crit": "Plan de mantenimiento",
+   "max": 5,
+   "exp": "p:19814276",
+   "ref": "04/26 CCG3",
+   "title": "suministro, instalación, legalización, puesta en funcionamiento y mantenimiento de un ascensor en el centro comercial GETAFE-3,",
+   "buyer": "Empresa Estatal Mercados Centrales de Abastecimiento SA (MERCASA)",
+   "nuts": "ES300",
+   "date": "2026-09-07",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 3.75
+   },
+   "best": [
+    "Define procedimientos, periodicidad y trabajos a realizar en cada elemento de la instalación, con descripción pormenorizada.",
+    "Incluye perfiles profesionales, procedimientos de detección y reparación de averías y calendario de operaciones."
+   ],
+   "weak": [
+    "La enumeración de trabajos es correcta, pero su descripción no profundiza en detalles."
+   ],
+   "hypothesis": {
+    "premia": "Periodicidad y trabajos específicos por cada elemento de la instalación",
+    "penaliza": "Enumeración de trabajos sin descripción detallada"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=GvhLcs3cg9wS7pcxhTeWOg%3D%3D",
+   "doc": "2026-cd1894bc-7ab8-4eb5-a7d9-caed8fe91ff4"
   },
   {
    "crit": "Adecuación de perfiles, funciones y responsabilidades",

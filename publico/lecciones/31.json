@@ -1,8 +1,204 @@
 {
  "cpv2": "31",
- "generated": "2026-10-22T20:08:30.275Z",
+ "generated": "2026-10-22T20:52:09.363Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Descripción de los trabajos a realizar",
+   "max": 10,
+   "exp": "p:19846725",
+   "ref": "0039980-26",
+   "title": "Suministro en régimen de alquiler de elementos de alumbrado navideño en Zaragoza para la Navidad 2026-2027 y la asistencia técnica para el m",
+   "buyer": "Gobierno de Zaragoza",
+   "nuts": "ES243",
+   "date": "2026-09-09",
+   "offers": 1,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Descripción metódica de elementos con referencia a normativa de seguridad y eficiencia energética.",
+    "Define mantenimiento preventivo y correctivo con funciones, responsabilidades y plazos de respuesta."
+   ],
+   "weak": [
+    "Implantación concreta en la ciudad desarrollada de manera somera.",
+    "Gálibo de 6 m indicado, sin cubrir expresamente los 6,8 m exigidos en Paseo de la Independencia."
+   ],
+   "hypothesis": {
+    "premia": "Descripción metódica y específica de elementos, normativa, mantenimiento y medios humanos con organigrama.",
+    "penaliza": "Información dispersa, vaguedad en la ejecución y medios genéricos sin organigrama."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=itAkH5cJh2W8ebB%2FXTwy0A%3D%3D",
+   "doc": "2026-90030c87-9f81-4c72-ae80-4d052d8a7ec3"
+  },
+  {
+   "crit": "Plan de ejecución y programación",
+   "max": 10,
+   "exp": "p:19846725",
+   "ref": "0039980-26",
+   "title": "Suministro en régimen de alquiler de elementos de alumbrado navideño en Zaragoza para la Navidad 2026-2027 y la asistencia técnica para el m",
+   "buyer": "Gobierno de Zaragoza",
+   "nuts": "ES243",
+   "date": "2026-09-09",
+   "offers": 1,
+   "top": {
+    "pts": 3.2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Diagrama de Gantt con tareas, medios humanos y materiales asignados y fechas de ejecución."
+   ],
+   "weak": [
+    "Ausencia de análisis de tareas críticas y de medidas para minimizar desviaciones.",
+    "Resta solidez a la garantía del cumplimiento de plazos."
+   ],
+   "hypothesis": {
+    "premia": "Diagrama de Gantt con recursos asignados y análisis de tareas críticas con medidas preventivas.",
+    "penaliza": "Cronogramas sin recursos ni duraciones y ausencia de análisis de tareas críticas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=itAkH5cJh2W8ebB%2FXTwy0A%3D%3D",
+   "doc": "2026-90030c87-9f81-4c72-ae80-4d052d8a7ec3"
+  },
+  {
+   "crit": "Propuesta de diseño de alumbrado navideño ad-hoc",
+   "max": 15,
+   "exp": "p:19846725",
+   "ref": "0039980-26",
+   "title": "Suministro en régimen de alquiler de elementos de alumbrado navideño en Zaragoza para la Navidad 2026-2027 y la asistencia técnica para el m",
+   "buyer": "Gobierno de Zaragoza",
+   "nuts": "ES243",
+   "date": "2026-09-09",
+   "offers": 1,
+   "top": {
+    "pts": 9.25,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Dos diseños por ubicación con fotomontajes y datos técnicos completos.",
+    "Diseños originales y vistosos en Alfonso I, Paseo de la Independencia, Plaza de España y otras ubicaciones."
+   ],
+   "weak": [
+    "Algunas escenas carecen de originalidad respecto a temporadas anteriores."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=itAkH5cJh2W8ebB%2FXTwy0A%3D%3D",
+   "doc": "2026-90030c87-9f81-4c72-ae80-4d052d8a7ec3"
+  },
+  {
+   "crit": "Propuesta de diseño de alumbrado navideño en calles",
+   "max": 10,
+   "exp": "p:19846725",
+   "ref": "0039980-26",
+   "title": "Suministro en régimen de alquiler de elementos de alumbrado navideño en Zaragoza para la Navidad 2026-2027 y la asistencia técnica para el m",
+   "buyer": "Gobierno de Zaragoza",
+   "nuts": "ES243",
+   "date": "2026-09-09",
+   "offers": 1,
+   "top": {
+    "pts": 6.35,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Propuestas originales en calles Bretón, León XIII, Cinco de Marzo y Plaza de San Miguel.",
+    "Integración formal adecuada en la escena urbana según fotomontajes."
+   ],
+   "weak": [
+    "Algunas propuestas en el resto de calles carecen de originalidad respecto a años anteriores."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=itAkH5cJh2W8ebB%2FXTwy0A%3D%3D",
+   "doc": "2026-90030c87-9f81-4c72-ae80-4d052d8a7ec3"
+  },
+  {
+   "crit": "Descripción de los trabajos a realizar",
+   "max": 15,
+   "exp": "p:19846725",
+   "ref": "0039980-26",
+   "title": "Suministro en régimen de alquiler de elementos de alumbrado navideño en Zaragoza para la Navidad 2026-2027 y la asistencia técnica para el m",
+   "buyer": "Gobierno de Zaragoza",
+   "nuts": "ES243",
+   "date": "2026-09-09",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Descripción metódica de elementos con normativa de seguridad industrial.",
+    "Organigrama de medios humanos y descripción detallada de medios materiales."
+   ],
+   "weak": [
+    "Implantación en la ciudad genérica, sin la precisión necesaria para garantizar coherencia."
+   ],
+   "hypothesis": {
+    "premia": "Descripción metódica y específica de elementos, normativa, mantenimiento y medios humanos con organigrama.",
+    "penaliza": "Información dispersa, vaguedad en la ejecución y medios genéricos sin organigrama."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=itAkH5cJh2W8ebB%2FXTwy0A%3D%3D",
+   "doc": "2026-90030c87-9f81-4c72-ae80-4d052d8a7ec3"
+  },
+  {
+   "crit": "Plan de ejecución y programación",
+   "max": 15,
+   "exp": "p:19846725",
+   "ref": "0039980-26",
+   "title": "Suministro en régimen de alquiler de elementos de alumbrado navideño en Zaragoza para la Navidad 2026-2027 y la asistencia técnica para el m",
+   "buyer": "Gobierno de Zaragoza",
+   "nuts": "ES243",
+   "date": "2026-09-09",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Diagrama de Gantt con medios humanos y materiales asignados a cada tarea."
+   ],
+   "weak": [
+    "Sin análisis de tareas críticas ni medidas para minimizar desviaciones.",
+    "Plazo ajustado para pruebas que debe garantizarse."
+   ],
+   "hypothesis": {
+    "premia": "Diagrama de Gantt con recursos asignados y análisis de tareas críticas con medidas preventivas.",
+    "penaliza": "Cronogramas sin recursos ni duraciones y ausencia de análisis de tareas críticas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=itAkH5cJh2W8ebB%2FXTwy0A%3D%3D",
+   "doc": "2026-90030c87-9f81-4c72-ae80-4d052d8a7ec3"
+  },
+  {
+   "crit": "Propuesta de diseño de motivos navideños individuales 3D",
+   "max": 15,
+   "exp": "p:19846725",
+   "ref": "0039980-26",
+   "title": "Suministro en régimen de alquiler de elementos de alumbrado navideño en Zaragoza para la Navidad 2026-2027 y la asistencia técnica para el m",
+   "buyer": "Gobierno de Zaragoza",
+   "nuts": "ES243",
+   "date": "2026-09-09",
+   "offers": 1,
+   "top": {
+    "pts": 11,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Escenas variadas y adaptación al entorno, incluida la glorieta sin acceso peatonal.",
+    "Fotomontajes con dimensiones, número de LED y potencia de cada motivo."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Adecuación al entorno, variedad de escenas y fichas con dimensiones, LED y potencia.",
+    "penaliza": "Incongruencias con pliegos, elementos transitables en zonas sin acceso peatonal y pérdida de evaluación por exceder la extensión."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=itAkH5cJh2W8ebB%2FXTwy0A%3D%3D",
+   "doc": "2026-90030c87-9f81-4c72-ae80-4d052d8a7ec3"
+  },
   {
    "crit": "Memoria del proyecto de ejecución",
    "max": 25,

@@ -1,8 +1,78 @@
 {
  "cpv2": "38",
- "generated": "2026-10-22T20:08:30.273Z",
+ "generated": "2026-10-22T20:52:09.360Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Implantación y formación",
+   "max": 10,
+   "exp": "p:19900317",
+   "ref": "19/26",
+   "title": "Adquisición de un analizador de adsorción-desorción de gases.",
+   "buyer": "Rectorado de la Universidad de les Illes Balears",
+   "nuts": "ES532",
+   "date": "2026-08-27",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Plan de instalación con comprobaciones previas, protocolos IQ y OQ y cronograma detallado.",
+    "Formación presencial de tres días con certificados individuales y evaluación.",
+    "Formadores identificados nominalmente con currículums acreditados.",
+    "Formación en tres fases, con jornadas iniciales y avanzadas más formación continuada.",
+    "Protocolos IQ y OQ con ejemplos de documentación de cualificación."
+   ],
+   "weak": [
+    "No identifica nominalmente a los formadores.",
+    "Programa centrado en el equipo ofertado, sin formación continuada equivalente a la de la otra oferta."
+   ],
+   "hypothesis": {
+    "premia": "Plan con protocolos IQ/OQ, cronograma detallado y formadores identificados con acreditación",
+    "penaliza": "No identificar nominalmente a los formadores; el informe no aprecia ventaja objetiva por ello"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=IFMBxm6gA5L5Rey58Yagpg%3D%3D",
+   "doc": "2026-3cb21586-b73b-4a3d-b65c-87bf28008b85"
+  },
+  {
+   "crit": "Servicio técnico, postventa y soporte tecnológico",
+   "max": 10,
+   "exp": "p:19900317",
+   "ref": "19/26",
+   "title": "Adquisición de un analizador de adsorción-desorción de gases.",
+   "buyer": "Rectorado de la Universidad de les Illes Balears",
+   "nuts": "ES532",
+   "date": "2026-08-27",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Respuesta máxima de 24 horas y resolución de incidencias críticas en 7 días.",
+    "Disponibilidad de repuestos durante diez años desde el fin de fabricación.",
+    "Software sin licencias ni suscripciones, con descarga gratuita sin limitación temporal.",
+    "Diagnóstico en 48 horas y envío de repuestos en menos de 72 horas.",
+    "Disponibilidad de repuestos durante diez años tras la garantía."
+   ],
+   "weak": [
+    "No establece que las actualizaciones de software sigan sin coste tras el periodo de mantenimiento.",
+    "No acredita que el software quede exento de licencias o suscripciones posteriores."
+   ],
+   "hypothesis": {
+    "premia": "Actualizaciones de software sin licencias ni limitación temporal, junto a tiempos de respuesta concretos",
+    "penaliza": "No garantizar actualizaciones sin coste ni software exento de licencias tras el periodo de mantenimiento"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=IFMBxm6gA5L5Rey58Yagpg%3D%3D",
+   "doc": "2026-3cb21586-b73b-4a3d-b65c-87bf28008b85"
+  },
   {
    "crit": "Diseño global e integración de la solución técnica",
    "max": 10,

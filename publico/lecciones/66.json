@@ -1,6 +1,6 @@
 {
  "cpv2": "66",
- "generated": "2026-10-22T20:08:30.277Z",
+ "generated": "2026-10-22T20:52:09.369Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -217,6 +217,64 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kbeECaSG0b8wYTJJ03sHog%3D%3D",
    "doc": "2026-92a4ceb5-16be-4e26-88c4-7af76ac83746"
+  },
+  {
+   "crit": "A.1. Prestaciones y coberturas",
+   "max": 40,
+   "exp": "p:19861707",
+   "ref": "ORD/0246/RH",
+   "title": "Contratación de seguro colectivo de asistencia sanitaria para la Autoridad Portuaria de Huelva",
+   "buyer": "Presidencia de la Autoridad Portuaria de Huelva",
+   "nuts": "ESZZZ",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 39,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Cumple en todos los casos los requisitos mínimos del PPT con las mismas coberturas y prestaciones.",
+    "Inclusiones y exclusiones en su mayoría muy similares a las del PPT."
+   ],
+   "weak": [
+    "En al menos 3 prestaciones de la modalidad ampliada incluye exclusiones no referenciadas en el PPT (p. ej., biopsias líquidas en análisis clínicos)."
+   ],
+   "hypothesis": {
+    "premia": "Ofertar las mismas coberturas del PPT en ambas modalidades y reproducir inclusiones y exclusiones de forma muy similar al pliego.",
+    "penaliza": "Añadir exclusiones no previstas en el PPT en prestaciones de la modalidad ampliada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Z7jBkyeUXlCTylGzYmBF9Q%3D%3D",
+   "doc": "2026-057a56b8-14de-492c-8f39-3bbaf1007dd6"
+  },
+  {
+   "crit": "A.2. Cuadros médicos e instalaciones disponibles",
+   "max": 20,
+   "exp": "p:19861707",
+   "ref": "ORD/0246/RH",
+   "title": "Contratación de seguro colectivo de asistencia sanitaria para la Autoridad Portuaria de Huelva",
+   "buyer": "Presidencia de la Autoridad Portuaria de Huelva",
+   "nuts": "ESZZZ",
+   "date": "2026-07-29",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Aporta un cuadro médico aplicable a cada modalidad de póliza."
+   ],
+   "weak": [
+    "No especifica horarios en ninguna de las modalidades, ni de 24 horas ni restringidos.",
+    "Agrega o renombra apartados, por lo que no sigue escrupulosamente la estructura de los puntos 4.1 y 4.2 del PPT."
+   ],
+   "hypothesis": {
+    "premia": "Indicar horarios de atención (24 horas y restringido) y seguir escrupulosamente la estructura de los puntos 4.1 y 4.2 del PPT.",
+    "penaliza": "No especificar horarios y agregar o renombrar apartados que alteran la estructura exigida."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Z7jBkyeUXlCTylGzYmBF9Q%3D%3D",
+   "doc": "2026-057a56b8-14de-492c-8f39-3bbaf1007dd6"
   }
  ]
 }

@@ -1,6 +1,6 @@
 {
  "cpv2": "30",
- "generated": "2026-10-22T20:08:30.273Z",
+ "generated": "2026-10-22T20:52:09.360Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -455,6 +455,137 @@
    "hypothesis": null,
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qIuEKhh5m4nzAq95uGTrDQ%3D%3D",
    "doc": "2026-021e1188-06d2-4b8e-933e-bd5c7d14538c"
+  },
+  {
+   "crit": "Calidad del Suministro",
+   "max": 5,
+   "exp": "p:18135171",
+   "ref": "02S/2025",
+   "title": "Suministro de impresoras, bajo la modalidad de renting, y de consumibles de impresión para la Fundación Centro de Cirugía de Mínima Invasión",
+   "buyer": "Dirección de la Fundación Centro de Cirugía de Mínima Invasión Jesús Usón",
+   "nuts": "ES432",
+   "date": "2025-11-24",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Plan de gestión de calidad basado en auditorías técnicas, de seguridad y rendimiento, descrito detalladamente.",
+    "Hace referencia a la calidad de los equipos y describe con detalle el software de gestión centralizada, superando el pliego.",
+    "Diferencia las acciones a llevar a cabo y mejora la atención a usuarios con procedimientos estandarizados."
+   ],
+   "weak": [
+    "No hace referencia a la calidad de los equipos suministrados.",
+    "No hace referencia a la calidad del software de gestión."
+   ],
+   "hypothesis": {
+    "premia": "Describir un plan de calidad con auditorías, detallar la calidad de los equipos y del software de gestión, superando el pliego.",
+    "penaliza": "No referirse a la calidad de los equipos ni del software de gestión, aunque mejore la atención a usuarios."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=onfGOTJroSWAAM7L03kM8A%3D%3D",
+   "doc": "2025-9d940a4e-da08-401b-8f6d-3b89997cb2b3"
+  },
+  {
+   "crit": "Planificación y control. Programa de trabajo",
+   "max": 5,
+   "exp": "p:18135171",
+   "ref": "02S/2025",
+   "title": "Suministro de impresoras, bajo la modalidad de renting, y de consumibles de impresión para la Fundación Centro de Cirugía de Mínima Invasión",
+   "buyer": "Dirección de la Fundación Centro de Cirugía de Mínima Invasión Jesús Usón",
+   "nuts": "ES432",
+   "date": "2025-11-24",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Cronograma detallado con tiempos de cada fase y tareas asociadas.",
+    "Mantenimiento continuo, medidas correctoras por incidente y mecanismos de control.",
+    "Canales de comunicación, tiempos de respuesta y planes de acción a corto y medio plazo.",
+    "Planificación de implantación detallada y experimentada, con todas las fases descritas.",
+    "Mantenimiento y gestión de incidencias muy completos, con formas de aviso variadas."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Cronograma detallado por fases, mantenimiento continuo, medidas correctoras por incidente y planes de acción a corto y medio plazo.",
+    "penaliza": "Planificación y mantenimiento descritos sin el mismo nivel de detalle en control y acciones correctoras."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=onfGOTJroSWAAM7L03kM8A%3D%3D",
+   "doc": "2025-9d940a4e-da08-401b-8f6d-3b89997cb2b3"
+  },
+  {
+   "crit": "Elaboración y aplicación de un plan de formación",
+   "max": 5,
+   "exp": "p:18135171",
+   "ref": "02S/2025",
+   "title": "Suministro de impresoras, bajo la modalidad de renting, y de consumibles de impresión para la Fundación Centro de Cirugía de Mínima Invasión",
+   "buyer": "Dirección de la Fundación Centro de Cirugía de Mínima Invasión Jesús Usón",
+   "nuts": "ES432",
+   "date": "2025-11-24",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Objetivos específicos integrados en el calendario de implantación general.",
+    "Contenidos adaptados a cada destinatario, con entregables de formación.",
+    "Evaluación y seguimiento propuestos para garantizar la eficacia del plan.",
+    "Formación completa con destinatarios, tipologías, tiempos y material empleado.",
+    "Describe cada tipo de formación y sus entregables."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Objetivos específicos integrados en el calendario, contenidos adaptados a cada destinatario y evaluación del plan.",
+    "penaliza": "Formación completa en contenidos y entregables, pero sin evaluación ni seguimiento de la eficacia formativa."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=onfGOTJroSWAAM7L03kM8A%3D%3D",
+   "doc": "2025-9d940a4e-da08-401b-8f6d-3b89997cb2b3"
+  },
+  {
+   "crit": "Plan de gestión de residuos y aportación de contenedores de reciclaje",
+   "max": 10,
+   "exp": "p:18135171",
+   "ref": "02S/2025",
+   "title": "Suministro de impresoras, bajo la modalidad de renting, y de consumibles de impresión para la Fundación Centro de Cirugía de Mínima Invasión",
+   "buyer": "Dirección de la Fundación Centro de Cirugía de Mínima Invasión Jesús Usón",
+   "nuts": "ES432",
+   "date": "2025-11-24",
+   "offers": 2,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Compromiso medioambiental y cumplimiento normativo del proceso.",
+    "Procedimiento completo con características del contenedor, trazabilidad y certificación.",
+    "Describe beneficios sociales y ambientales.",
+    "Plan de gestión de residuos bastante completo, desde el alta en el sistema hasta el certificado final.",
+    "Describe características del contenedor, modo de recogida y ventajas operativas."
+   ],
+   "weak": [
+    "Descripción calificada de bastante completa, no de perfecta, frente a la de SOLITIUM."
+   ],
+   "hypothesis": {
+    "premia": "Compromiso medioambiental, cumplimiento normativo, trazabilidad, certificación y beneficios sociales y ambientales.",
+    "penaliza": "Descripción del procedimiento menos profunda, sin tratar el compromiso, la normativa ni los beneficios."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=onfGOTJroSWAAM7L03kM8A%3D%3D",
+   "doc": "2025-9d940a4e-da08-401b-8f6d-3b89997cb2b3"
   }
  ]
 }

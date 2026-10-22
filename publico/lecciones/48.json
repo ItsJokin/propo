@@ -1,8 +1,71 @@
 {
  "cpv2": "48",
- "generated": "2026-10-22T20:08:30.274Z",
+ "generated": "2026-10-22T20:52:09.361Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Solución técnica propuesta",
+   "max": 25,
+   "exp": "p:19814208",
+   "ref": "20/26",
+   "title": "Adquisición de los cortafuegos de la red de comunicaciones de datos de la Universidad de las Illes Balears.",
+   "buyer": "Rectorado de la Universidad de les Illes Balears",
+   "nuts": "ES532",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 15.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "El clúster PA-5410 cumple los requisitos mínimos del PPT y añade funcionalidades de utilidad futura",
+    "Integración completa con Strata Cloud Manager, ya usada en la Universidad",
+    "Licenciamiento de 500 créditos LAB y mantenimiento de 5 años para todos los elementos"
+   ],
+   "weak": [
+    "No se licencian DNS security, WildFire, GlobalProtect, DLP ni SDWAN",
+    "Licencias limitadas a IPS y filtrado URL",
+    "Servicio de mantenimiento con atención 8x5 y resolución NBD, puntuado 1 de 4"
+   ],
+   "hypothesis": {
+    "premia": "Funcionalidades adicionales del clúster, integración con la plataforma de gestión y licenciamiento amplio de cortafuegos virtuales",
+    "penaliza": "Licenciamiento limitado a IPS y filtrado URL y mantenimiento con puntuación baja"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=AAKuHGkp%2BzHpxJFXpLZ%2B2A%3D%3D",
+   "doc": "2026-74cf4c0a-cb9a-45a5-a39a-fd8eee3907ed"
+  },
+  {
+   "crit": "Suministro de cortafuegos SOHO",
+   "max": 12,
+   "exp": "p:19814208",
+   "ref": "20/26",
+   "title": "Adquisición de los cortafuegos de la red de comunicaciones de datos de la Universidad de las Illes Balears.",
+   "buyer": "Rectorado de la Universidad de les Illes Balears",
+   "nuts": "ES532",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Cuatro PA-440 del mismo fabricante y sistema operativo que el clúster",
+    "Rendimiento superior a los mínimos: 2,4 Gbps, 1,2 Gbps y 1,1 Gbps",
+    "Licencias de IPS y filtrado URL incluidas como mejora"
+   ],
+   "weak": [
+    "Número máximo de sesiones concurrentes puntuado solo con 0,1 de 0,5",
+    "Características generales puntuadas con 0,4 de 0,5"
+   ],
+   "hypothesis": {
+    "premia": "Rendimiento de throughput por encima de los mínimos y licencias de IPS y filtrado URL",
+    "penaliza": "Número de sesiones concurrentes en el mínimo exigido"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=AAKuHGkp%2BzHpxJFXpLZ%2B2A%3D%3D",
+   "doc": "2026-74cf4c0a-cb9a-45a5-a39a-fd8eee3907ed"
+  },
   {
    "crit": "Subcriterio 1.1. Modelo de planificación y aplicación de estándares",
    "max": 15,
@@ -75,6 +138,146 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zyDQk0V284YkJPJS%2BPS9vg%3D%3D",
    "doc": "2026-40c96e23-ef67-41ef-b743-1e5dd9cd81d2"
+  },
+  {
+   "crit": "Videotutoriales",
+   "max": 5,
+   "exp": "p:15008578",
+   "ref": "CG-2024/2821/0091",
+   "title": "Suministro y mantenimiento de una plataforma de telerrehabilitación con ayuda de inteligencia artificial para pacientes y profesionales de I",
+   "buyer": "Dirección General de IBERMUTUA, Mutua Colaboradora con la Seguridad Social nº 274",
+   "nuts": "ES300",
+   "date": "2024-08-02",
+   "offers": 3,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Amplia variedad: guías iniciales, uso continuo, actualizaciones y videos explicativos de interés.",
+    "Catálogo amplio y de alta calidad a través de RehBody Academy, cubre diversas necesidades."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xJNxvQYd9UXXOjazN1Dw9Q%3D%3D",
+   "doc": "daad05fb-fb11-45f5-aa70-9415f11ed898"
+  },
+  {
+   "crit": "Facilidad de búsqueda",
+   "max": 4,
+   "exp": "p:15008578",
+   "ref": "CG-2024/2821/0091",
+   "title": "Suministro y mantenimiento de una plataforma de telerrehabilitación con ayuda de inteligencia artificial para pacientes y profesionales de I",
+   "buyer": "Dirección General de IBERMUTUA, Mutua Colaboradora con la Seguridad Social nº 274",
+   "nuts": "ES300",
+   "date": "2024-08-02",
+   "offers": 3,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Búsquedas categóricas y paramétricas, maximizando agilidad e intuitividad.",
+    "Búsquedas categóricas y paramétricas, ágiles e intuitivas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xJNxvQYd9UXXOjazN1Dw9Q%3D%3D",
+   "doc": "daad05fb-fb11-45f5-aa70-9415f11ed898"
+  },
+  {
+   "crit": "Configuración",
+   "max": 3,
+   "exp": "p:15008578",
+   "ref": "CG-2024/2821/0091",
+   "title": "Suministro y mantenimiento de una plataforma de telerrehabilitación con ayuda de inteligencia artificial para pacientes y profesionales de I",
+   "buyer": "Dirección General de IBERMUTUA, Mutua Colaboradora con la Seguridad Social nº 274",
+   "nuts": "ES300",
+   "date": "2024-08-02",
+   "offers": 3,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Amplia variedad de configuraciones (series, repeticiones, descansos, velocidad, isométrico, peso), gran flexibilidad.",
+    "Muchas opciones de configuración para adaptar ejercicios a las necesidades de los pacientes."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xJNxvQYd9UXXOjazN1Dw9Q%3D%3D",
+   "doc": "daad05fb-fb11-45f5-aa70-9415f11ed898"
+  },
+  {
+   "crit": "Informes",
+   "max": 5,
+   "exp": "p:15008578",
+   "ref": "CG-2024/2821/0091",
+   "title": "Suministro y mantenimiento de una plataforma de telerrehabilitación con ayuda de inteligencia artificial para pacientes y profesionales de I",
+   "buyer": "Dirección General de IBERMUTUA, Mutua Colaboradora con la Seguridad Social nº 274",
+   "nuts": "ES300",
+   "date": "2024-08-02",
+   "offers": 3,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Gran variedad de informes y notificaciones: uso global, usuarios profesionales, pacientes, alertas e incidencias.",
+    "Dashboard de control de uso con alertas automáticas para los fisioterapeutas."
+   ],
+   "weak": [
+    "No hace mención específica a alertas ni notificaciones automáticas."
+   ],
+   "hypothesis": {
+    "premia": "Variedad de informes y notificaciones, incluyendo alertas e incidencias automáticas.",
+    "penaliza": "No mencionar alertas ni notificaciones automáticas, limitándose a cuadro de mando e informes a demanda."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xJNxvQYd9UXXOjazN1Dw9Q%3D%3D",
+   "doc": "daad05fb-fb11-45f5-aa70-9415f11ed898"
+  },
+  {
+   "crit": "Memoria",
+   "max": 10,
+   "exp": "p:15008578",
+   "ref": "CG-2024/2821/0091",
+   "title": "Suministro y mantenimiento de una plataforma de telerrehabilitación con ayuda de inteligencia artificial para pacientes y profesionales de I",
+   "buyer": "Dirección General de IBERMUTUA, Mutua Colaboradora con la Seguridad Social nº 274",
+   "nuts": "ES300",
+   "date": "2024-08-02",
+   "offers": 3,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Metodología detallada y plan de implantación claro y bien estructurado, adecuado a Ibermutua.",
+    "Metodología de implantación planteada de forma incremental."
+   ],
+   "weak": [
+    "No presenta un plan específico de implantación."
+   ],
+   "hypothesis": {
+    "premia": "Plan de implantación detallado, claro y adaptado a las necesidades de Ibermutua, con integración móvil/API explícita.",
+    "penaliza": "Implantación sin integración con dispositivos móviles ni API (InnovaHealth) o sin plan específico de implantación (BioSenging)."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xJNxvQYd9UXXOjazN1Dw9Q%3D%3D",
+   "doc": "daad05fb-fb11-45f5-aa70-9415f11ed898"
   }
  ]
 }

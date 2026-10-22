@@ -801,7 +801,7 @@
  },
  "2026-9af0635b-9748-4672-8329-e73a98ef496d": {
   "s": "error",
-  "e": "Unexpected end of JSON input",
+  "e": "respuesta cortada (max_tokens)",
   "at": "2026-10-22"
  },
  "2026-76288747-c54d-4f0a-ba75-1503ac2638da": {
@@ -821,7 +821,7 @@
  },
  "2026-e4aa128e-d097-412c-ada5-ef448ec86d73": {
   "s": "error",
-  "e": "Expected ',' or ']' after array element in JSON at position 5991 (line 1 column 5992)",
+  "e": "respuesta cortada (max_tokens)",
   "at": "2026-10-22"
  },
  "2026-13295085-2f97-4537-b80a-e2b8442329b7": {
@@ -866,7 +866,7 @@
  },
  "2026-3c3e8027-3934-4ca1-b168-47d0323bb5de": {
   "s": "error",
-  "e": "Unexpected end of JSON input",
+  "e": "respuesta cortada (max_tokens)",
   "at": "2026-10-22"
  },
  "2026-69480086-4027-42db-ab6d-f7e884b75690": {
@@ -881,7 +881,7 @@
  },
  "2026-dac251f7-9233-4698-83b2-b38996cfeac3": {
   "s": "error",
-  "e": "Unexpected end of JSON input",
+  "e": "respuesta cortada (max_tokens)",
   "at": "2026-10-22"
  },
  "2026-c0165558-64ff-4fb3-ac09-72a66c2e1069": {
@@ -1940,6 +1940,376 @@
   "at": "2026-10-22"
  },
  "2026-3bd93240-b0a7-4cfd-9d33-655f9d6fe619": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-1e2b1c25-1ea0-44c1-8504-a3b4e99062c2": {
+  "s": "ok",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-3ee34339-3f42-479b-a642-40cf8e89473e": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2025-9d940a4e-da08-401b-8f6d-3b89997cb2b3": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-136700a6-29db-4537-8874-4a0421990e20": {
+  "s": "no_valoracion",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2025-a7b661bc-2d13-439f-8291-1a75bd29a327": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-ff3b452d-2c33-4c89-82f0-f20f61ca5f03": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-1bc1bc7e-5bf6-4adb-baf4-fbc95358d03d": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-57eaa7bb-c636-4d7d-8e5f-41d0a637455a": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-2e6f2f96-a6ad-48f2-a593-baba2f440893": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-52906a41-e4c4-4b16-934c-3383fae1a0be": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-6b66bc07-6c70-47a7-9ede-9342b7b1c476": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "3989618d-c49f-42ce-b9a2-f563896ba788": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-cd1894bc-7ab8-4eb5-a7d9-caed8fe91ff4": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-f5dd3ca3-e785-4c32-99e4-53c71f283db5": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-93e0f754-22d2-420a-acd1-1322f0299d2b": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-ec53efda-053c-4a32-9420-61f5ddb73c4d": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "daad05fb-fb11-45f5-aa70-9415f11ed898": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "3c85f53a-146d-45b3-9933-bcb012136549": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-ce36d306-f5f1-4958-ae02-e633017bdc2a": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-1785afaf-79af-4a99-848b-6fe412f6f134": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-91751d50-16b0-4f5c-b884-f37d317d45b7": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-b65a00b6-dacd-4551-9560-a2a34f5fffda": {
+  "s": "no_valoracion",
+  "q": "baja",
+  "at": "2026-10-22"
+ },
+ "2026-90030c87-9f81-4c72-ae80-4d052d8a7ec3": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-3918ec9c-f4b1-4d95-b188-396bff1f9677": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-d081a1a9-d95d-494a-8ba4-2655a2f053fc": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-81496621-8e1a-4c5a-990c-65ffad05ac89": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-3421dd9d-33c7-4391-a67a-81c77bcd80a1": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-9830ebd6-e569-4100-a9d3-7fdea950e02a": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-a1c32fa2-abf9-41e0-bb0b-1b0a4cfb4368": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-94fafe8e-8aa5-496f-a583-fdb1e95e398f": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-d2617818-b697-4ab4-9e12-88da94ccf727": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-0ec919bc-344f-4626-a079-983860be62c6": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-8d97d7c4-e781-4f70-9021-0e2a0c2b1b93": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-76119b80-d0c4-44fa-bbd0-df38819bd5ad": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-3b5c682d-69ad-4d18-81e1-6ae3594b1dce": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2025-3bbc0a8a-9108-4f14-9bb7-1386ee146ffc": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-a0b3bcd3-39bd-4e6f-9647-c4bf90483dec": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 5242 (line 1 column 5243)",
+  "at": "2026-10-22"
+ },
+ "2026-dcf34c3a-3511-42c1-867c-c2a252156318": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-0e68992f-3216-4b1e-9ec0-8668aad54da4": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 3860 (line 1 column 3861)",
+  "at": "2026-10-22"
+ },
+ "2026-07d02b03-c1ef-40dd-9c38-40c6145b92ec": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-08b199f8-1bdb-419d-8b02-1e0e54da0c22": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 4448 (line 1 column 4449)",
+  "at": "2026-10-22"
+ },
+ "2026-9b9f6ea2-20e4-445d-a70c-ff3edc515e43": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-0a268f8e-dd55-4ac0-ba75-ff224df2b2fd": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-e0a4dcdc-5a23-4824-93de-6dc5b0ddec46": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-ad17844d-44f7-4960-b8c1-92859c153d24": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-fc3a62db-95a9-49e1-9172-ad7e89d0aeb8": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-20c1f7b7-d90e-4f02-8749-f338b2608eb2": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-7c0ef46c-627d-42d1-aadc-6ce2330ccb4c": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-376f2043-0808-4820-bef6-cc6bb6867a1c": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-74cf4c0a-cb9a-45a5-a39a-fd8eee3907ed": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-8d8f48f0-2331-4bae-ad11-2023e36e8167": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-406d4724-22c9-4b29-b2c4-4c02d462dd48": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-4416d14c-9ee2-4b60-9bc9-df5abc88f02f": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-3fb9237e-2aa8-4c92-989f-e9888cff1971": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "0b21c2e7-0b12-446d-a648-fbb5a3369a60": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-eec3ee6b-fcac-4c29-9fe5-cc516fe852d9": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-aa9aad60-5157-4289-8d4f-912af6bc78bd": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-f2f3ec7d-8338-43e3-8f51-237d21ed2b70": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-3cb21586-b73b-4a3d-b65c-87bf28008b85": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-27272380-b480-4602-98b9-f58d08a05034": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "578c56d9-958e-4bbb-ae26-cf698a7a778e": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-931144b9-1f9c-46c6-928d-704314b33704": {
+  "s": "error",
+  "e": "Expected ',' or ']' after array element in JSON at position 2521 (line 1 column 2522)",
+  "at": "2026-10-22"
+ },
+ "2026-7b087f44-190d-4b8b-bc8a-3af895683c1a": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-057a56b8-14de-492c-8f39-3bbaf1007dd6": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-d3146720-86f4-4818-b443-bc539a32f41e": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-8b23f565-23f0-42f9-9fe7-41e7e9de2a96": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "87caaf11-ee48-44f2-882f-1101d7ca11a1": {
+  "s": "ok",
+  "q": "media",
+  "at": "2026-10-22"
+ },
+ "2026-990ae765-2877-400c-b646-cac894247e44": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-7a421969-d6cf-44ae-aa7a-df46f196fd57": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-59fe5d89-6455-4487-bca6-ab95203a0439": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-479a6c1b-cfa8-4e23-bee0-bb218dc4c884": {
+  "s": "error",
+  "e": "respuesta cortada (max_tokens)",
+  "at": "2026-10-22"
+ },
+ "2026-02c381a3-93ec-4eb2-a236-823b0d0ef21e": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-18b37bf9-bc87-48d8-b111-a994fb6d61b1": {
+  "s": "ok",
+  "q": "alta",
+  "at": "2026-10-22"
+ },
+ "2026-2b216528-0e5a-48e5-a70c-e43038cec815": {
   "s": "ok",
   "q": "alta",
   "at": "2026-10-22"

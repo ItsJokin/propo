@@ -1,8 +1,164 @@
 {
  "cpv2": "22",
- "generated": "2026-10-22T20:08:30.278Z",
+ "generated": "2026-10-22T20:52:09.370Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "La calidad del papel utilizado",
+   "max": 9,
+   "exp": "p:19993841",
+   "ref": "MNTB26-118",
+   "title": "Servicio de producción de materiales impresos de la exposición \"El Universo Freudiano de Dalí\" de la Fundación Colección Thyssen-Bornemisza.",
+   "buyer": "Fundación Colección Thyssen Bornemisza",
+   "nuts": "ES300",
+   "date": "2026-09-08",
+   "offers": 3,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Papel estucado mate ligeramente ahuesado excelente e idéntico al requerido",
+    "Cubierta en tapa blanda tipo offset con solapas, acorde al pliego",
+    "Papel estucado mate dos caras con tono cálido, excelente",
+    "Tapa dura en tela con estampación, ajustada al requisito"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Papel estucado mate de calidad y encuadernación acorde al pliego (tapa blanda o dura según corresponda)",
+    "penaliza": "Incluir páginas en papel offset no contempladas en el catálogo"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ztHKP2gFkdWKeVWTb9Scog%3D%3D",
+   "doc": "2026-a1c32fa2-abf9-41e0-bb0b-1b0a4cfb4368"
+  },
+  {
+   "crit": "La definición y nitidez del texto impreso",
+   "max": 9,
+   "exp": "p:19993841",
+   "ref": "MNTB26-118",
+   "title": "Servicio de producción de materiales impresos de la exposición \"El Universo Freudiano de Dalí\" de la Fundación Colección Thyssen-Bornemisza.",
+   "buyer": "Fundación Colección Thyssen Bornemisza",
+   "nuts": "ES300",
+   "date": "2026-09-08",
+   "offers": 3,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Definición del texto perfecta",
+    "Misma intensidad de negro en todas las páginas",
+    "Equilibrio de colores adecuado para la nitidez del texto"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Definición del texto perfecta y misma intensidad de negro en todas las páginas",
+    "penaliza": "Sin diferencias apreciadas entre ofertas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ztHKP2gFkdWKeVWTb9Scog%3D%3D",
+   "doc": "2026-a1c32fa2-abf9-41e0-bb0b-1b0a4cfb4368"
+  },
+  {
+   "crit": "La densidad y variedad de las tintas utilizadas",
+   "max": 9,
+   "exp": "p:19993841",
+   "ref": "MNTB26-118",
+   "title": "Servicio de producción de materiales impresos de la exposición \"El Universo Freudiano de Dalí\" de la Fundación Colección Thyssen-Bornemisza.",
+   "buyer": "Fundación Colección Thyssen Bornemisza",
+   "nuts": "ES300",
+   "date": "2026-09-08",
+   "offers": 3,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Densidad y variedad de tintas perfectas, imágenes naturales",
+    "Trama no apreciable a simple vista",
+    "Densidad y variedad de tintas muy adecuada y equilibrada en general"
+   ],
+   "weak": [
+    "Negro empastado o predominancia de rojo en páginas offset (50, 56, 60)",
+    "Partes oscuras de imágenes ligeramente oscuras, aspecto no natural"
+   ],
+   "hypothesis": {
+    "premia": "Tintas equilibradas, imágenes naturales y trama no visible",
+    "penaliza": "Imágenes oscuras, empastadas o viradas, especialmente en papel offset"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ztHKP2gFkdWKeVWTb9Scog%3D%3D",
+   "doc": "2026-a1c32fa2-abf9-41e0-bb0b-1b0a4cfb4368"
+  },
+  {
+   "crit": "El brillo y el acabado del barniz",
+   "max": 9,
+   "exp": "p:19993841",
+   "ref": "MNTB26-118",
+   "title": "Servicio de producción de materiales impresos de la exposición \"El Universo Freudiano de Dalí\" de la Fundación Colección Thyssen-Bornemisza.",
+   "buyer": "Fundación Colección Thyssen Bornemisza",
+   "nuts": "ES300",
+   "date": "2026-09-08",
+   "offers": 3,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Brillo de barniz el más adecuado, ni excesivo ni mate"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Brillo de barniz intermedio, ni brillante ni mate, que cubra bien las imágenes",
+    "penaliza": "Sin diferencias apreciadas entre ofertas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ztHKP2gFkdWKeVWTb9Scog%3D%3D",
+   "doc": "2026-a1c32fa2-abf9-41e0-bb0b-1b0a4cfb4368"
+  },
+  {
+   "crit": "El valor estético en su conjunto",
+   "max": 9,
+   "exp": "p:19993841",
+   "ref": "MNTB26-118",
+   "title": "Servicio de producción de materiales impresos de la exposición \"El Universo Freudiano de Dalí\" de la Fundación Colección Thyssen-Bornemisza.",
+   "buyer": "Fundación Colección Thyssen Bornemisza",
+   "nuts": "ES300",
+   "date": "2026-09-08",
+   "offers": 3,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Valor estético excelente, impresión natural, realista y armoniosa",
+    "Aspecto general natural, realista, agradable y equilibrado"
+   ],
+   "weak": [
+    "Libro de fotografía, no de pintura; aspectos pictóricos no valorables",
+    "Páginas offset no agradables",
+    "Libro de tejidos con cuadros, no demuestra al 100% la calidad en pinturas",
+    "Matices de reproducción pictórica no mostrados en todas las imágenes"
+   ],
+   "hypothesis": {
+    "premia": "Reproducción natural, realista y armoniosa, sin defectos puntuales",
+    "penaliza": "Defectos puntuales en imágenes y limitaciones por tratarse de fotografía o tejidos en lugar de pintura"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ztHKP2gFkdWKeVWTb9Scog%3D%3D",
+   "doc": "2026-a1c32fa2-abf9-41e0-bb0b-1b0a4cfb4368"
+  },
   {
    "crit": "Aspectos organizativos orientados a la calidad y rapidez en el servicio a los usuarios",
    "max": 25,

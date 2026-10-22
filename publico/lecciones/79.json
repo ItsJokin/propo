@@ -1,6 +1,6 @@
 {
  "cpv2": "79",
- "generated": "2026-10-22T20:08:30.269Z",
+ "generated": "2026-10-22T20:52:09.355Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -496,6 +496,79 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tC2%2FPgalrgeFQ%2FlhRK79lA%3D%3D",
    "doc": "2026-ff470a3e-a846-4aaf-8843-3d54aa232eff"
+  },
+  {
+   "crit": "SOLUCIÓN TÉCNICA OFERTADA",
+   "max": 35,
+   "exp": "p:19799036",
+   "ref": "262904PAS001",
+   "title": "Diseño de un estudio sobre el abandono de animales en todo el territorio nacional y la posterior gestión estadística de los datos recabados ",
+   "buyer": "Subdirección General de la Oficina Presupuestaria y Gestión Económica",
+   "nuts": "ES300",
+   "date": "2026-08-21",
+   "offers": 4,
+   "top": {
+    "pts": 34,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Batería completa de 15 indicadores estadísticos bien definidos",
+    "Mayor tamaño muestral (1.200 cuestionarios) con estratificación y reemplazos",
+    "Sistemas CAWI/CATI con Gandía Integra, Contact Center y gestión detallada de incidencias",
+    "Enfoque particularizado al objeto y sólido conocimiento teórico del abandono animal",
+    "Metodología de muestreo detallada, con estratificación, reemplazos y ponderación"
+   ],
+   "weak": [
+    "Cita de forma inexacta el estudio de la DGDA de 2023",
+    "No aborda indicadores, cuestionario, muestreo, validación, análisis ni incidencias",
+    "No define los medios materiales a asignar",
+    "Criterios graduados de validez sin procedimiento suficientemente explicado",
+    "Incluye ítems sobre gestión de colonias felinas, complementarios al objeto"
+   ],
+   "hypothesis": {
+    "premia": "Definición detallada de indicadores estadísticos, tamaño muestral amplio y estratificado, sistemas CAWI/CATI con medios humanos y gestión detallada de incidencias",
+    "penaliza": "Ausencia o superficialidad de indicadores, muestreo, validación y análisis; oferta genérica; tamaño muestral limitado; falta de gestión de contratiempos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uRBJAM8MuNIkJPJS%2BPS9vg%3D%3D",
+   "doc": "2026-e0a4dcdc-5a23-4824-93de-6dc5b0ddec46"
+  },
+  {
+   "crit": "CRONOGRAMA DE LOS TRABAJOS",
+   "max": 10,
+   "exp": "p:19799036",
+   "ref": "262904PAS001",
+   "title": "Diseño de un estudio sobre el abandono de animales en todo el territorio nacional y la posterior gestión estadística de los datos recabados ",
+   "buyer": "Subdirección General de la Oficina Presupuestaria y Gestión Económica",
+   "nuts": "ES300",
+   "date": "2026-08-21",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Cronograma de seis meses con fases, hitos temporales y tareas",
+    "Detalle elevado de entregables por fase",
+    "Define la gestión de hitos, plazos y retrasos",
+    "Planificación de fases, tareas y entregables con elevado detalle",
+    "Define detalladamente la gestión de hitos, plazos y retrasos"
+   ],
+   "weak": [
+    "Cronograma de 3,5 meses con escaso detalle, sin hitos, tareas ni entregables",
+    "No aborda la gestión de hitos y plazos"
+   ],
+   "hypothesis": {
+    "premia": "Fases, tareas, hitos y entregables con elevado detalle, y gestión de hitos, plazos y retrasos",
+    "penaliza": "Cronogramas esquemáticos o de corta duración sin hitos, tareas ni entregables, y falta de gestión de plazos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uRBJAM8MuNIkJPJS%2BPS9vg%3D%3D",
+   "doc": "2026-e0a4dcdc-5a23-4824-93de-6dc5b0ddec46"
   },
   {
    "crit": "LIBRO DE REGISTRO DE INCIDENCIAS",

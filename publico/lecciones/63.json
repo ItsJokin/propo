@@ -1,8 +1,98 @@
 {
  "cpv2": "63",
- "generated": "2026-10-22T20:08:30.273Z",
+ "generated": "2026-10-22T20:52:09.360Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Plan de trabajo, organización operativa y capacidad de respuesta",
+   "max": 10,
+   "exp": "p:20067990",
+   "ref": "CD2/07/2026",
+   "title": "Servicio de asistencia, carga, descarga, traslado, montaje y desmontaje de material para la actividad de la Sección de Música de la Orquesta",
+   "buyer": "Presidencia de la Fundación Canaria Orquesta Filarmónica de Gran Canaria",
+   "nuts": "ES70",
+   "date": "2026-09-13",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Sistema de gobierno muy detallado y adaptado a la OFGC, con cadena única de mando.",
+    "Mejora del SLA de sustitución (90 min frente a 2 horas) y acuse en 30 min.",
+    "Dos células autónomas y protocolo de refuerzo imprevisto con valor añadido notable."
+   ],
+   "weak": [
+    "Concreción solo genérica del refuerzo para grandes picos."
+   ],
+   "hypothesis": {
+    "premia": "Mejoras cuantificables de tiempos de respuesta frente al PPTP y gobierno del servicio adaptado a la OFGC",
+    "penaliza": "Refuerzo para grandes picos solo genérico"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=wVxBq1HFVWGsNfRW6APEDw%3D%3D",
+   "doc": "2026-02c381a3-93ec-4eb2-a236-823b0d0ef21e"
+  },
+  {
+   "crit": "Procedimientos de supervisión, evaluación del desempeño y control de calidad",
+   "max": 10,
+   "exp": "p:20067990",
+   "ref": "CD2/07/2026",
+   "title": "Servicio de asistencia, carga, descarga, traslado, montaje y desmontaje de material para la actividad de la Sección de Música de la Orquesta",
+   "buyer": "Presidencia de la Fundación Canaria Orquesta Filarmónica de Gran Canaria",
+   "nuts": "ES70",
+   "date": "2026-09-13",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Supervisión presencial continua fase por fase con método observar, corregir, verificar, registrar.",
+    "KPIs medibles y ambiciosos (puntualidad ≥99 %, daños imputables 0).",
+    "Protocolo de daños y ciclo PDCA que aportan madurez no exigida por el PPTP."
+   ],
+   "weak": [
+    "Plan de formación continua sin metodología, periodicidad ni contenidos."
+   ],
+   "hypothesis": {
+    "premia": "Supervisión continua con KPIs medibles y sistema de mejora continua (PDCA, protocolo de daños)",
+    "penaliza": "Plan de formación continua sin metodología, periodicidad ni contenidos"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=wVxBq1HFVWGsNfRW6APEDw%3D%3D",
+   "doc": "2026-02c381a3-93ec-4eb2-a236-823b0d0ef21e"
+  },
+  {
+   "crit": "Medios técnicos, materiales y propuesta de mejora del sistema de control horario y facturación",
+   "max": 10,
+   "exp": "p:20067990",
+   "ref": "CD2/07/2026",
+   "title": "Servicio de asistencia, carga, descarga, traslado, montaje y desmontaje de material para la actividad de la Sección de Música de la Orquesta",
+   "buyer": "Presidencia de la Fundación Canaria Orquesta Filarmónica de Gran Canaria",
+   "nuts": "ES70",
+   "date": "2026-09-13",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Fichaje móvil geolocalizado, código QR de servicio y registros inmutables (SHA-256).",
+    "Parte autogenerado con segmentación horaria exacta y flujo de validación con firma electrónica.",
+    "Panel de consulta en tiempo real y auditoría integral en 24 horas."
+   ],
+   "weak": [
+    "Falta de mayores garantías de integración del sistema digital."
+   ],
+   "hypothesis": {
+    "premia": "Control horario digital geolocalizado e inmutable, con parte autogenerado y acceso en tiempo real",
+    "penaliza": "Garantías de integración del sistema digital insuficientes"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=wVxBq1HFVWGsNfRW6APEDw%3D%3D",
+   "doc": "2026-02c381a3-93ec-4eb2-a236-823b0d0ef21e"
+  },
   {
    "crit": "Características anti-vandálicas y de seguridad de la máquina",
    "max": 10,

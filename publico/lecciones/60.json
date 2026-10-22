@@ -1,8 +1,264 @@
 {
  "cpv2": "60",
- "generated": "2026-10-22T20:08:30.274Z",
+ "generated": "2026-10-22T20:52:09.362Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Servicios asociados a la preparación de la carga: estudio de necesidades y características del embalaje, sensores, etc.",
+   "max": 9,
+   "exp": "p:19964857",
+   "ref": "010726/09 CT",
+   "title": "Transporte (construcción de cajas, embalaje, traslados, desembalaje, instalación, desmontaje y reembalaje de las obras y gestión de correos)",
+   "buyer": "Sociedad Mercantil Estatal de Acción Cultural S.A.",
+   "nuts": "ES300",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Adapta la descripción con referencias concretas del museo de destino",
+    "Recoge los sensores y dispositivos de registro en su descripción",
+    "Conoce las piezas por transportes recientes, con mayor grado de conocimiento material",
+    "Cumple prescripciones del Pliego, con visitas previas, toma de datos y personal especializado",
+    "Describe la secuencia y el contenido de las labores de embalaje"
+   ],
+   "weak": [
+    "No menciona sensores ni dispositivos de registro; deberá confirmar que quedan incluidos"
+   ],
+   "hypothesis": {
+    "premia": "Adaptar la propuesta a referencias concretas del museo de destino y reflejar sensores y dispositivos de registro.",
+    "penaliza": "No mencionar sensores ni dispositivos de registro en la descripción del servicio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Qy11E%2BJSgjJ70UvEyYJSGw%3D%3D",
+   "doc": "2026-8d97d7c4-e781-4f70-9021-0e2a0c2b1b93"
+  },
+  {
+   "crit": "Propuesta de transporte, en base a todos los servicios e información técnica solicitada",
+   "max": 25,
+   "exp": "p:19964857",
+   "ref": "010726/09 CT",
+   "title": "Transporte (construcción de cajas, embalaje, traslados, desembalaje, instalación, desmontaje y reembalaje de las obras y gestión de correos)",
+   "buyer": "Sociedad Mercantil Estatal de Acción Cultural S.A.",
+   "nuts": "ES300",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 23.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 20
+   },
+   "best": [
+    "Memoria pormenorizada de rutas, medios y personal responsable de cada desplazamiento",
+    "Documento de partidas y prestaciones coherente y que permite verificar el alcance",
+    "Verifica la compatibilidad del calendario con festivos en España y Portugal",
+    "Itinerarios, vehículos y almacenes de seguridad adecuados para la concentración",
+    "Identifica al agente en Portugal y aporta los datos requeridos"
+   ],
+   "weak": [
+    "No aporta el documento de partidas y prestaciones, lo que impide verificar el alcance",
+    "No identifica la empresa de escolta privada ni confirma su coste",
+    "Rutas e itinerarios descritos con un detalle menor",
+    "Falta el desembalaje final de las obras de Maruja Mallo tras su regreso",
+    "La hora de salida Madrid-Lisboa de una hora se interpreta como error tipográfico"
+   ],
+   "hypothesis": {
+    "premia": "Memoria pormenorizada de rutas, medios y personal, con documento de partidas y prestaciones verificable.",
+    "penaliza": "No aportar el documento de partidas y prestaciones y no identificar la escolta privada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Qy11E%2BJSgjJ70UvEyYJSGw%3D%3D",
+   "doc": "2026-8d97d7c4-e781-4f70-9021-0e2a0c2b1b93"
+  },
+  {
+   "crit": "Cronograma, planificación de trabajos y gestión del correo",
+   "max": 15,
+   "exp": "p:19964857",
+   "ref": "010726/09 CT",
+   "title": "Transporte (construcción de cajas, embalaje, traslados, desembalaje, instalación, desmontaje y reembalaje de las obras y gestión de correos)",
+   "buyer": "Sociedad Mercantil Estatal de Acción Cultural S.A.",
+   "nuts": "ES300",
+   "date": "2026-08-06",
+   "offers": 2,
+   "top": {
+    "pts": 15,
+    "winner": false
+   },
+   "low": {
+    "pts": 14.5
+   },
+   "best": [
+    "Planificación temporal con fases y secuencia lógica de operaciones",
+    "Atención a hoteles según localización, número de noches y dietas proporcionales",
+    "Cronogramas específicos y secuencia lógica de las operaciones",
+    "Describe de forma amplia la gestión de correos: seguros, desplazamientos, dietas y alojamiento"
+   ],
+   "weak": [
+    "Falta el desembalaje de las obras gallegas tras su entrega a la Fundación"
+   ],
+   "hypothesis": {
+    "premia": "Cronograma por fases con secuencia lógica y condiciones amplias de gestión de correos.",
+    "penaliza": "Omitir el desembalaje final de las obras tras el regreso."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Qy11E%2BJSgjJ70UvEyYJSGw%3D%3D",
+   "doc": "2026-8d97d7c4-e781-4f70-9021-0e2a0c2b1b93"
+  },
+  {
+   "crit": "A) Tipoloxía e calidade dos vehículos postos a disposición para a posta en marcha do inicio do servizo, durante o primeiro ano de contrato",
+   "max": 4,
+   "exp": "p:18721823",
+   "ref": "CON2025000075",
+   "title": "Contrato mixto de servicio y obras del servicio público de transporte colectivo urbano de viajeros/las del ayuntamiento de Santiago de Compo",
+   "buyer": "Xunta de Goberno do Concello de Santiago de Compostela",
+   "nuts": "ES111",
+   "date": "2026-07-22",
+   "offers": 4,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 1.5
+   },
+   "best": [],
+   "weak": [
+    "Non indica o número de prazas da frota provisional",
+    "Non indica dobre rampla nin sistemas para persoas con discapacidade visual, auditiva ou TEA"
+   ],
+   "hypothesis": {
+    "premia": "Dobre rampla en gran parte da frota, sistemas para persoas cegas, con discapacidade auditiva y TEA, y asignación xustificada por liña",
+    "penaliza": "No indicar número de prazas, tipo de rampla o sistemas de accesibilidade"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Qok7U4Fd%2BQaFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-d3146720-86f4-4818-b443-bc539a32f41e"
+  },
+  {
+   "crit": "B.a) Idoneidade da asignación da tipoloxía e características dos vehículos ás liñas",
+   "max": 5,
+   "exp": "p:18721823",
+   "ref": "CON2025000075",
+   "title": "Contrato mixto de servicio y obras del servicio público de transporte colectivo urbano de viajeros/las del ayuntamiento de Santiago de Compo",
+   "buyer": "Xunta de Goberno do Concello de Santiago de Compostela",
+   "nuts": "ES111",
+   "date": "2026-07-22",
+   "offers": 4,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Detalla as dimensións de todos os vehículos dentro dos rangos do prego",
+    "Asignación eléctrica completa de vehículos de 12,20 m sen reserva",
+    "Asignación xustificada con múltiples parámetros de demanda, rupturas de carga y electrificación"
+   ],
+   "weak": [
+    "Non inclúe a liña 10 na asignación",
+    "Asignación por liña non coincide co PPT, con 10 liñas afectadas",
+    "Avaliada como inviable técnicamente"
+   ],
+   "hypothesis": {
+    "premia": "Dimensións exactas de todos os autobuses y asignación por liña que cumpre o prego técnico",
+    "penaliza": "No indicar dimensións, asignacións incoherentes o liñas omitidas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Qok7U4Fd%2BQaFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-d3146720-86f4-4818-b443-bc539a32f41e"
+  },
+  {
+   "crit": "B.b) Idoneidade dos vehículos asignados ao servizo do aeroporto",
+   "max": 3,
+   "exp": "p:18721823",
+   "ref": "CON2025000075",
+   "title": "Contrato mixto de servicio y obras del servicio público de transporte colectivo urbano de viajeros/las del ayuntamiento de Santiago de Compo",
+   "buyer": "Xunta de Goberno do Concello de Santiago de Compostela",
+   "nuts": "ES111",
+   "date": "2026-07-22",
+   "offers": 4,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 1.5
+   },
+   "best": [
+    "Autobús de 15 m con maior número de prazas sentadas (45)",
+    "Maior capacidade total, adecuada a unha vía de alta capacidade"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Autobús de 15 m con maior número de prazas sentadas",
+    "penaliza": "Autobús pequeno con poucas prazas sentadas, que obriga a ir de pie"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Qok7U4Fd%2BQaFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-d3146720-86f4-4818-b443-bc539a32f41e"
+  },
+  {
+   "crit": "B.c) Versatilidade da frota para poder ser empregada nos distintos puntos da rede",
+   "max": 2,
+   "exp": "p:18721823",
+   "ref": "CON2025000075",
+   "title": "Contrato mixto de servicio y obras del servicio público de transporte colectivo urbano de viajeros/las del ayuntamiento de Santiago de Compo",
+   "buyer": "Xunta de Goberno do Concello de Santiago de Compostela",
+   "nuts": "ES111",
+   "date": "2026-07-22",
+   "offers": 4,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Análise de todas as posibilidades de prestación de servizo de cada autobús ofertado"
+   ],
+   "weak": [
+    "Non xustifica a versatilidade de tres das cinco tipoloxías"
+   ],
+   "hypothesis": {
+    "premia": "Análise de todas as posibilidades de servizo por autobús",
+    "penaliza": "No xustificar a versatilidade de todas as tipoloxías"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Qok7U4Fd%2BQaFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-d3146720-86f4-4818-b443-bc539a32f41e"
+  },
+  {
+   "crit": "B.d) Melloras propostas respecto ao sistema de información a bordo, seguridade, confort, accesibilidade e potencia",
+   "max": 2,
+   "exp": "p:18721823",
+   "ref": "CON2025000075",
+   "title": "Contrato mixto de servicio y obras del servicio público de transporte colectivo urbano de viajeros/las del ayuntamiento de Santiago de Compo",
+   "buyer": "Xunta de Goberno do Concello de Santiago de Compostela",
+   "nuts": "ES111",
+   "date": "2026-07-22",
+   "offers": 4,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": {
+    "pts": 0.8
+   },
+   "best": [
+    "Mellora de potencia do 45,57% sobre o mínimo, a máxima",
+    "Idioma adicional no sistema de información a bordo"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Potencia por encima do mínimo y idiomas adicionais en información ao viaxeiro",
+    "penaliza": "Melloras de accesibilidade presentadas como información ou potencia escasa sobre o mínimo"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Qok7U4Fd%2BQaFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-d3146720-86f4-4818-b443-bc539a32f41e"
+  },
   {
    "crit": "Apartado 1.1 Adecuación del servicio a las características que llevan implícitas las personas usuarias de los centros",
    "max": 5,

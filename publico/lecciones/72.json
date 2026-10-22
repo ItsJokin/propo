@@ -1,6 +1,6 @@
 {
  "cpv2": "72",
- "generated": "2026-10-22T20:08:30.270Z",
+ "generated": "2026-10-22T20:52:09.356Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -1962,6 +1962,144 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=KBkKpcbhySE%2Bk2oCbDosIw%3D%3D",
    "doc": "2026-210771c7-2046-4674-8799-7fb5206a4f6e"
+  },
+  {
+   "crit": "A.1.1. Monitorización de alertas",
+   "max": 10,
+   "exp": "p:14878442",
+   "ref": "37/pa/ser/24",
+   "title": "Servicio de gestión de Ciberseguridad (SOC/CSIRT) en SUMA. Gestión Tributaria. Diputación de Alicante.",
+   "buyer": "Dirección de Suma Gestión Tributaria. Diputación de Alicante",
+   "nuts": "ES521",
+   "date": "2024-08-21",
+   "offers": 2,
+   "top": {
+    "pts": 9.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Detalla cantidad de fuentes y dispositivos por fuente",
+    "Oficina Técnica como valor añadido",
+    "VDC Tier IV con arquitectura descrita; cronograma con responsables",
+    "Metodología alineada con el CCN",
+    "EDR y SOAR explicados de forma clara y amplia"
+   ],
+   "weak": [
+    "Metodología y procedimientos no desarrollados",
+    "SIEM sin datos concretos de ingesta y retención; infraestructura sin información",
+    "Dashboard limitado a incidentes; no detalla seguimiento del servicio"
+   ],
+   "hypothesis": {
+    "premia": "Detalle cuantitativo de fuentes y dispositivos, oficina técnica, infraestructura de alto nivel y cronograma con responsables",
+    "penaliza": "Metodología no desarrollada, datos de SIEM genéricos y falta de información sobre infraestructura"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=djxm2m2UWazIGlsa0Wad%2Bw%3D%3D",
+   "doc": "3989618d-c49f-42ce-b9a2-f563896ba788"
+  },
+  {
+   "crit": "A.1.2. Respuesta a incidentes",
+   "max": 10,
+   "exp": "p:14878442",
+   "ref": "37/pa/ser/24",
+   "title": "Servicio de gestión de Ciberseguridad (SOC/CSIRT) en SUMA. Gestión Tributaria. Diputación de Alicante.",
+   "buyer": "Dirección de Suma Gestión Tributaria. Diputación de Alicante",
+   "nuts": "ES521",
+   "date": "2024-08-21",
+   "offers": 2,
+   "top": {
+    "pts": 8.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5.5
+   },
+   "best": [
+    "Respuesta manual y automática, con contención y erradicación",
+    "Tres niveles de analistas 24x7 y SLO de 4 horas",
+    "Monitorización del estado de salud de los EDR",
+    "Procedimientos gráficos y escritos con múltiples canales de inicio",
+    "Tres niveles de analistas de ciberseguridad"
+   ],
+   "weak": [
+    "Planificación superficial sin seguimiento periódico (informes o reuniones)"
+   ],
+   "hypothesis": {
+    "premia": "Respuesta manual y automática, SLO concreto, niveles de analistas 24x7 y seguimiento con reuniones e informes",
+    "penaliza": "Planificación sin seguimiento periódico"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=djxm2m2UWazIGlsa0Wad%2Bw%3D%3D",
+   "doc": "3989618d-c49f-42ce-b9a2-f563896ba788"
+  },
+  {
+   "crit": "A.2 Análisis y gestión de vulnerabilidades",
+   "max": 10,
+   "exp": "p:14878442",
+   "ref": "37/pa/ser/24",
+   "title": "Servicio de gestión de Ciberseguridad (SOC/CSIRT) en SUMA. Gestión Tributaria. Diputación de Alicante.",
+   "buyer": "Dirección de Suma Gestión Tributaria. Diputación de Alicante",
+   "nuts": "ES521",
+   "date": "2024-08-21",
+   "offers": 2,
+   "top": {
+    "pts": 9.17,
+    "winner": false
+   },
+   "low": {
+    "pts": 7.5
+   },
+   "best": [
+    "Ciclo de vida y estados de vulnerabilidades, con alertas tempranas",
+    "Análisis externo, sondas internas y escaneo de aplicaciones web",
+    "Informes sin limitación de cantidad; planificación por fases",
+    "Descubrimiento de shadow-IT y cuadro de mando",
+    "Jira para seguimiento de vulnerabilidades"
+   ],
+   "weak": [
+    "No indica periodicidad de las tareas periódicas"
+   ],
+   "hypothesis": {
+    "premia": "Ciclo de vida con estados visibles, alertas tempranas, escaneo de aplicaciones web e informes sin límite",
+    "penaliza": "Falta de periodicidad en las tareas periódicas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=djxm2m2UWazIGlsa0Wad%2Bw%3D%3D",
+   "doc": "3989618d-c49f-42ce-b9a2-f563896ba788"
+  },
+  {
+   "crit": "A.3 Respuesta ante incidencias de alto impacto o cibercrisis",
+   "max": 10,
+   "exp": "p:14878442",
+   "ref": "37/pa/ser/24",
+   "title": "Servicio de gestión de Ciberseguridad (SOC/CSIRT) en SUMA. Gestión Tributaria. Diputación de Alicante.",
+   "buyer": "Dirección de Suma Gestión Tributaria. Diputación de Alicante",
+   "nuts": "ES521",
+   "date": "2024-08-21",
+   "offers": 2,
+   "top": {
+    "pts": 9.16,
+    "winner": false
+   },
+   "low": {
+    "pts": 7.5
+   },
+   "best": [
+    "Gestor de incidentes como punto de contacto y procedimientos por fase",
+    "Protocolos previos entre cliente y DFIR",
+    "Personal de apoyo local para reducir tiempos de respuesta",
+    "Escenarios de crisis ensayados y metodología descrita",
+    "Herramientas forenses y de ingeniería inversa especificadas"
+   ],
+   "weak": [
+    "No detalla los perfiles disponibles para el servicio"
+   ],
+   "hypothesis": {
+    "premia": "Gestor de incidentes, procedimientos por fase, escenarios de crisis ensayados y personal de apoyo local",
+    "penaliza": "No detallar los perfiles de personal disponibles"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=djxm2m2UWazIGlsa0Wad%2Bw%3D%3D",
+   "doc": "3989618d-c49f-42ce-b9a2-f563896ba788"
   },
   {
    "crit": "Organización del equipo de trabajo",

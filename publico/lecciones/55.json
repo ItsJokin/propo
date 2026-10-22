@@ -1,8 +1,152 @@
 {
  "cpv2": "55",
- "generated": "2026-10-22T20:08:30.277Z",
+ "generated": "2026-10-22T20:52:09.369Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Organización y planificación general del servicio",
+   "max": 10,
+   "exp": "p:19986535",
+   "ref": "CM26001",
+   "title": "Servicio integral de cocina y comedor del Colegio Mayor La Tebaida",
+   "buyer": "Dirección de la Fundación General de la Universidad de León y de la Empresa",
+   "nuts": "ES413",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 9.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 7.2
+   },
+   "best": [
+    "Planificación de los tres servicios diarios vinculada a personal, elaboraciones y aprovisionamiento.",
+    "Cuaderno de Bitácora con informe mensual, clasificación de incidencias y medidas correctoras.",
+    "Take Away y Picnic concretados y disponibilidad para servicios extraordinarios.",
+    "Gestión por procesos con planificación diaria basada en la ocupación prevista.",
+    "Aprovisionamiento y recepción con controles de temperatura, etiquetado y fechas de consumo."
+   ],
+   "weak": [
+    "Contenido formulado en términos generales o procedimentales, con menor detalle en Take Away, Picnic y extraordinarios.",
+    "Menor concreción ante variaciones de ocupación o necesidades particulares del centro.",
+    "Programación diaria y organización definitiva condicionadas a concreción posterior con FGULEM.",
+    "No incorpora una planificación temporal integral del servicio."
+   ],
+   "hypothesis": {
+    "premia": "Planificación temporal y operativa vinculada a ocupación, personal, aprovisionamiento y prestaciones concretas (Take Away, Picnic, extraordinarios) con mecanismos de seguimiento.",
+    "penaliza": "Contenido general o procedimental, programación diaria pendiente de concreción posterior y falta de detalle en servicios complementarios."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=suA4J3z7q8rN3k3tjedSGw%3D%3D",
+   "doc": "2026-7b087f44-190d-4b8b-bc8a-3af895683c1a"
+  },
+  {
+   "crit": "Organización del personal, turnos y cobertura de incidencias",
+   "max": 5,
+   "exp": "p:19986535",
+   "ref": "CM26001",
+   "title": "Servicio integral de cocina y comedor del Colegio Mayor La Tebaida",
+   "buyer": "Dirección de la Fundación General de la Universidad de León y de la Empresa",
+   "nuts": "ES413",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 4.8,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.7
+   },
+   "best": [
+    "Dimensionamiento concreto: tres trabajadores a jornada completa y uno a media jornada.",
+    "Cobertura de bajas con personal de otros centros y mecanismos alternativos ante incidencias.",
+    "Supervisión del personal y formación continuada en materias directamente relacionadas con el contrato.",
+    "Áreas y responsabilidades distribuidas entre coordinación, cocina, comedor y autocontrol.",
+    "Procedimientos de coordinación, incorporación de personal y formación en APPCC y alérgenos."
+   ],
+   "weak": [
+    "No concreta número de trabajadores, categorías, dimensionamiento de plantilla ni sistema de turnos.",
+    "Cobertura de ausencias solo mediante referencias generales, sin mecanismo específico de sustitución.",
+    "No incorpora un cuadrante completo con franjas horarias y distribución efectiva por puesto."
+   ],
+   "hypothesis": {
+    "premia": "Dimensionamiento concreto de la plantilla, perfiles, turnos y mecanismos específicos de sustitución ante bajas.",
+    "penaliza": "No concretar número de trabajadores, categorías, turnos ni mecanismo de sustitución, limitándose a referencias generales."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=suA4J3z7q8rN3k3tjedSGw%3D%3D",
+   "doc": "2026-7b087f44-190d-4b8b-bc8a-3af895683c1a"
+  },
+  {
+   "crit": "Planificación de menús, calidad alimentaria y atención de dietas especiales",
+   "max": 6,
+   "exp": "p:19986535",
+   "ref": "CM26001",
+   "title": "Servicio integral de cocina y comedor del Colegio Mayor La Tebaida",
+   "buyer": "Dirección de la Fundación General de la Universidad de León y de la Empresa",
+   "nuts": "ES413",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 5.8,
+    "winner": true
+   },
+   "low": {
+    "pts": 3.9
+   },
+   "best": [
+    "Menús rotacionales con planificación semanal y asesoramiento nutricional.",
+    "Composición del desayuno concreta y frecuencias determinadas por grupos alimentarios.",
+    "Dietas especiales con zona específica y utensilios diferenciados para prevenir contaminación cruzada.",
+    "Secuencia de producción y atención a dietas especiales bien descrita.",
+    "Procedimiento específico para gestión de alérgenos y trazabilidad de materias primas."
+   ],
+   "weak": [
+    "Menor desarrollo de la composición de menús, ciclos de rotación y frecuencias de consumo.",
+    "Menor concreción de la oferta alimentaria que efectivamente recibirá el usuario.",
+    "Algunos extremos operativos quedan sujetos a desarrollo posterior durante la ejecución."
+   ],
+   "hypothesis": {
+    "premia": "Composición concreta de menús, frecuencias por grupo alimentario, desayuno detallado y medidas específicas para dietas especiales.",
+    "penaliza": "Describir procedimientos sin detallar la oferta alimentaria efectiva, ciclos de rotación ni frecuencias de consumo."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=suA4J3z7q8rN3k3tjedSGw%3D%3D",
+   "doc": "2026-7b087f44-190d-4b8b-bc8a-3af895683c1a"
+  },
+  {
+   "crit": "Organización del control de calidad, mejora continua e innovación en la prestación del servicio",
+   "max": 4,
+   "exp": "p:19986535",
+   "ref": "CM26001",
+   "title": "Servicio integral de cocina y comedor del Colegio Mayor La Tebaida",
+   "buyer": "Dirección de la Fundación General de la Universidad de León y de la Empresa",
+   "nuts": "ES413",
+   "date": "2026-09-04",
+   "offers": 2,
+   "top": {
+    "pts": 3.9,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.3
+   },
+   "best": [
+    "Seguimiento operativo y verificable con visitas periódicas y responsables localizables.",
+    "Medición estructurada del desperdicio alimentario con análisis de su evolución.",
+    "Análisis de satisfacción de usuarios y uso de sus resultados para revisar el servicio.",
+    "Sistema APPCC, trazabilidad y control de temperaturas técnicamente sólido.",
+    "Revisión periódica de procedimientos a partir de registros, incidencias y observaciones de FGULEM."
+   ],
+   "weak": [
+    "Orientación fundamental a procedimientos internos, con menor desarrollo de la mejora continua global.",
+    "Menor concreción de indicadores de calidad, satisfacción, desperdicio, sostenibilidad e innovación."
+   ],
+   "hypothesis": {
+    "premia": "Sistemas de seguimiento verificables, medición de satisfacción y desperdicio, y mecanismos de mejora con periodicidades definidas.",
+    "penaliza": "Centrarse en APPCC y procedimientos internos sin indicadores cuantificados de calidad, satisfacción, desperdicio o innovación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=suA4J3z7q8rN3k3tjedSGw%3D%3D",
+   "doc": "2026-7b087f44-190d-4b8b-bc8a-3af895683c1a"
+  },
   {
    "crit": "Calidad de la prestación del servicio",
    "max": 10,
@@ -222,6 +366,178 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=S3u99%2BxQWoMUqXM96WStVA%3D%3D",
    "doc": "2026-3f6b3224-11b6-445f-ab5c-72d3858cbce4"
+  },
+  {
+   "crit": "Relación de proveedores",
+   "max": 4,
+   "exp": "p:19872532",
+   "ref": "G891/2026-C04/2026",
+   "title": "El objeto del presente contrato es la prestación del servicio de suministro de alimentos y elaboración de comidas",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Maracena",
+   "nuts": "ES614",
+   "date": "2026-08-13",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Relación de proveedores muy adecuada; indica proceso de homologación y auditoría de proveedores.",
+    "Muy adecuada; indica proveedores homologados, evaluación de estos y políticas de compras."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=H6SZ67EA3idrSd8H4b2soA%3D%3D",
+   "doc": "2026-81496621-8e1a-4c5a-990c-65ffad05ac89"
+  },
+  {
+   "crit": "Proceso de elaboración de menús",
+   "max": 10,
+   "exp": "p:19872532",
+   "ref": "G891/2026-C04/2026",
+   "title": "El objeto del presente contrato es la prestación del servicio de suministro de alimentos y elaboración de comidas",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Maracena",
+   "nuts": "ES614",
+   "date": "2026-08-13",
+   "offers": 2,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Muy adecuado y detallado: planificación de menús, 3 menús por edades, dietas especiales y ejemplos mensuales.",
+    "Adecuado: gestión nutricional, materias primas, técnicas culinarias, 3 menús, dietas especiales y ejemplos mensuales."
+   ],
+   "weak": [
+    "Valorado como adecuado, no como muy detallado."
+   ],
+   "hypothesis": {
+    "premia": "Planificación detallada con menús por edades, dietas especiales y ejemplos mensuales",
+    "penaliza": "Descripción calificada solo como adecuada, sin detalle"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=H6SZ67EA3idrSd8H4b2soA%3D%3D",
+   "doc": "2026-81496621-8e1a-4c5a-990c-65ffad05ac89"
+  },
+  {
+   "crit": "Medidas de control higiénico sanitario y de seguridad alimentaria",
+   "max": 10,
+   "exp": "p:19872532",
+   "ref": "G891/2026-C04/2026",
+   "title": "El objeto del presente contrato es la prestación del servicio de suministro de alimentos y elaboración de comidas",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Maracena",
+   "nuts": "ES614",
+   "date": "2026-08-13",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Medidas detalladas con controles de calidad en cocina y del producto terminado.",
+    "Incluye protocolo específico de atragantamientos.",
+    "APPCC con acciones correctoras, plan de trazabilidad, gestión de alertas, muestras testigo y auditoría.",
+    "Incluye anexo con modelos de registros de autocontrol."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=H6SZ67EA3idrSd8H4b2soA%3D%3D",
+   "doc": "2026-81496621-8e1a-4c5a-990c-65ffad05ac89"
+  },
+  {
+   "crit": "Formación, recursos humanos y técnicos",
+   "max": 7,
+   "exp": "p:19872532",
+   "ref": "G891/2026-C04/2026",
+   "title": "El objeto del presente contrato es la prestación del servicio de suministro de alimentos y elaboración de comidas",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Maracena",
+   "nuts": "ES614",
+   "date": "2026-08-13",
+   "offers": 2,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Organigrama, formación adicional a la exigida, referencia al cocinero adscrito y recursos técnicos adecuados.",
+    "Organigrama, formación continua y cocinero adscrito con funciones detalladas."
+   ],
+   "weak": [
+    "Formación descrita como continua, sin referencia a formación específica adicional."
+   ],
+   "hypothesis": {
+    "premia": "Formación específica adicional a la exigida, organigrama y recursos técnicos adecuados",
+    "penaliza": "Formación genérica o continua sin detalle"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=H6SZ67EA3idrSd8H4b2soA%3D%3D",
+   "doc": "2026-81496621-8e1a-4c5a-990c-65ffad05ac89"
+  },
+  {
+   "crit": "Plan de Trazabilidad o Autocontrol propio de la empresa",
+   "max": 8,
+   "exp": "p:19872532",
+   "ref": "G891/2026-C04/2026",
+   "title": "El objeto del presente contrato es la prestación del servicio de suministro de alimentos y elaboración de comidas",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Maracena",
+   "nuts": "ES614",
+   "date": "2026-08-13",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "APPCC con acciones correctoras, trazabilidad, gestión de alertas, muestras testigo y evaluación continua.",
+    "Basado en APPCC y muy detallado, con planes de potabilidad, limpieza, plagas, cadena de frío, alérgenos y residuos."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=H6SZ67EA3idrSd8H4b2soA%3D%3D",
+   "doc": "2026-81496621-8e1a-4c5a-990c-65ffad05ac89"
+  },
+  {
+   "crit": "Adaptación de menús a la época del año, condiciones y necesidades de los usuarios y del centro (eventos especiales, fin de curso, etc.)",
+   "max": 6,
+   "exp": "p:19872532",
+   "ref": "G891/2026-C04/2026",
+   "title": "El objeto del presente contrato es la prestación del servicio de suministro de alimentos y elaboración de comidas",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Maracena",
+   "nuts": "ES614",
+   "date": "2026-08-13",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Desarrollo correcto de las adaptaciones."
+   ],
+   "weak": [
+    "Solo referencia a las adaptaciones, sin desarrollo."
+   ],
+   "hypothesis": {
+    "premia": "Desarrollo concreto de las adaptaciones de menús",
+    "penaliza": "Mera referencia a las adaptaciones sin desarrollo"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=H6SZ67EA3idrSd8H4b2soA%3D%3D",
+   "doc": "2026-81496621-8e1a-4c5a-990c-65ffad05ac89"
   },
   {
    "crit": "B.1.1",

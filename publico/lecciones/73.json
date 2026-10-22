@@ -1,6 +1,6 @@
 {
  "cpv2": "73",
- "generated": "2026-10-22T20:08:30.278Z",
+ "generated": "2026-10-22T20:52:09.370Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -61,6 +61,78 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FIHR7fDB3kiLAncw3qdZkA%3D%3D",
    "doc": "2026-38351fa8-216e-4db2-9cdc-0d401d11ff98"
+  },
+  {
+   "crit": "A.1.- Descripción del servicio objeto del contrato",
+   "max": 20,
+   "exp": "p:18773163",
+   "ref": "SER/2025/0000159350",
+   "title": "Apoyo, acompañamiento y asesoramiento en los procesos de implantación, ejecución, seguimiento y evaluación de la planificaciónestratégica de",
+   "buyer": "Secretaría General Técnica de la Consejería de Obras Públicas, Vivienda y Movilidad del Gobierno de Canarias",
+   "nuts": "ES70",
+   "date": "2026-07-20",
+   "offers": 2,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Descripción clara, detallada y argumentada de cada tarea.",
+    "Ajuste a la estructura y contenido del apartado 4 del PPT.",
+    "Buen conocimiento del entorno de la administración pública.",
+    "Descripción correcta de las tareas.",
+    "Se ajusta a la estructura del apartado 4 del PPT."
+   ],
+   "weak": [
+    "Enfoque genérico, conceptual y esquemático.",
+    "Propuesta aplicable a cualquier entorno laboral.",
+    "No denota conocimiento concreto de la administración pública.",
+    "El contenido de un subapartado aparece duplicado."
+   ],
+   "hypothesis": {
+    "premia": "Descripción detallada y argumentada de cada tarea, con soluciones concretas y metodologías justificadas, ajustadas al funcionamiento de la administración pública canaria.",
+    "penaliza": "Enfoque genérico, conceptual o esquemático, que se limita a reflejar el PPT y podría aplicarse a cualquier entorno empresarial."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=0%2BGFgolQpViS81gZFETWmA%3D%3D",
+   "doc": "2026-18b37bf9-bc87-48d8-b111-a994fb6d61b1"
+  },
+  {
+   "crit": "A.2.- Planificación del servicio",
+   "max": 15,
+   "exp": "p:18773163",
+   "ref": "SER/2025/0000159350",
+   "title": "Apoyo, acompañamiento y asesoramiento en los procesos de implantación, ejecución, seguimiento y evaluación de la planificaciónestratégica de",
+   "buyer": "Secretaría General Técnica de la Consejería de Obras Públicas, Vivienda y Movilidad del Gobierno de Canarias",
+   "nuts": "ES70",
+   "date": "2026-07-20",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Relaciona tareas y subtareas con el apartado del PPT y la página de la memoria.",
+    "Estructura la ejecución por semanas y meses con recursos y horas previstas.",
+    "Justifica por perfiles las horas necesarias para cada tarea.",
+    "Relaciona tareas y subtareas con el apartado del PPT.",
+    "Estructura las tareas por quincenas y diferencia personal coordinador y consultor."
+   ],
+   "weak": [
+    "No indica en cada apartado la página de la memoria, como se exigía.",
+    "Horas genéricas y justificación muy básica y esquemática."
+   ],
+   "hypothesis": {
+    "premia": "Planificación detallada por semanas y meses, con referencia a apartados del PPT y páginas de la memoria, y horas justificadas por perfiles.",
+    "penaliza": "No referenciar páginas de la memoria, usar estructuras temporales genéricas (quincenas) y horas globales sin justificar por perfil."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=0%2BGFgolQpViS81gZFETWmA%3D%3D",
+   "doc": "2026-18b37bf9-bc87-48d8-b111-a994fb6d61b1"
   }
  ]
 }

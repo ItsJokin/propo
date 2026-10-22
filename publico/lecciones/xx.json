@@ -1,0 +1,169 @@
+{
+ "cpv2": "xx",
+ "generated": "2026-10-22T20:52:09.371Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Calidad del Diseño y \"Efecto Parque\"",
+   "max": 12,
+   "exp": "p:19845623",
+   "ref": "2026/51K",
+   "title": "La instalación y explotación de un quiosco modular desmontable en el Parque Concejal José Antonio Pérez Henarejos en el municipio de San Ped",
+   "buyer": "Junta de Gobierno del Ayuntamiento de San Pedro del Pinatar",
+   "nuts": "ES620",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Diseño modular desmontable con pérgolas que garantizan permeabilidad visual."
+   ],
+   "weak": [
+    "Sin renders ni desarrollo sobre la mimetización con el arbolado del entorno."
+   ],
+   "hypothesis": {
+    "premia": "Configuración abierta y permeable con pérgolas, y representación detallada del diseño y su integración con el entorno.",
+    "penaliza": "Ausencia de renders y de desarrollo sobre la mimetización estética con el arbolado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=3OFxoqxgHTi2gkLQ8TeYKA%3D%3D",
+   "doc": "2026-3b5c682d-69ad-4d18-81e1-6ae3594b1dce"
+  },
+  {
+   "crit": "Excelencia en Materiales y Sostenibilidad",
+   "max": 10,
+   "exp": "p:19845623",
+   "ref": "2026/51K",
+   "title": "La instalación y explotación de un quiosco modular desmontable en el Parque Concejal José Antonio Pérez Henarejos en el municipio de San Ped",
+   "buyer": "Junta de Gobierno del Ayuntamiento de San Pedro del Pinatar",
+   "nuts": "ES620",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Uso de madera y ensamblaje modular que respeta el pavimento del parque."
+   ],
+   "weak": [
+    "No detalla texturas, acabados ni marcas; omite certificaciones FSC o PEFC."
+   ],
+   "hypothesis": {
+    "premia": "Detalle de texturas, acabados, marcas y certificaciones ambientales (FSC o PEFC).",
+    "penaliza": "Falta de detalle de acabados y de certificaciones de origen de la madera."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=3OFxoqxgHTi2gkLQ8TeYKA%3D%3D",
+   "doc": "2026-3b5c682d-69ad-4d18-81e1-6ae3594b1dce"
+  },
+  {
+   "crit": "Funcionalidad y Accesibilidad Universal",
+   "max": 8,
+   "exp": "p:19845623",
+   "ref": "2026/51K",
+   "title": "La instalación y explotación de un quiosco modular desmontable en el Parque Concejal José Antonio Pérez Henarejos en el municipio de San Ped",
+   "buyer": "Junta de Gobierno del Ayuntamiento de San Pedro del Pinatar",
+   "nuts": "ES620",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Superficie de 120 m² bajo el umbral; distribución ergonómica y aseo adaptado."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Optimización espacial bajo el umbral máximo y accesibilidad universal en barra y terraza.",
+    "penaliza": "No consta en el informe."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=3OFxoqxgHTi2gkLQ8TeYKA%3D%3D",
+   "doc": "2026-3b5c682d-69ad-4d18-81e1-6ae3594b1dce"
+  },
+  {
+   "crit": "Proyecto de Servicio y Atención al Usuario",
+   "max": 6,
+   "exp": "p:19845623",
+   "ref": "2026/51K",
+   "title": "La instalación y explotación de un quiosco modular desmontable en el Parque Concejal José Antonio Pérez Henarejos en el municipio de San Ped",
+   "buyer": "Junta de Gobierno del Ayuntamiento de San Pedro del Pinatar",
+   "nuts": "ES620",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 4.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Apertura continuada doce meses, personal con competencias lingüísticas, WiFi gratuita y oferta adecuada."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Apertura continuada, atención en idiomas y servicios digitales gratuitos.",
+    "penaliza": "No consta en el informe."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=3OFxoqxgHTi2gkLQ8TeYKA%3D%3D",
+   "doc": "2026-3b5c682d-69ad-4d18-81e1-6ae3594b1dce"
+  },
+  {
+   "crit": "Recursos Materiales y Equipamiento Técnico",
+   "max": 6,
+   "exp": "p:19845623",
+   "ref": "2026/51K",
+   "title": "La instalación y explotación de un quiosco modular desmontable en el Parque Concejal José Antonio Pérez Henarejos en el municipio de San Ped",
+   "buyer": "Junta de Gobierno del Ayuntamiento de San Pedro del Pinatar",
+   "nuts": "ES620",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 4.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Inventario exhaustivo y numerado de 15 elementos listos para inicio inmediato."
+   ],
+   "weak": [
+    "No especifica etiquetas de eficiencia energética de la maquinaria."
+   ],
+   "hypothesis": {
+    "premia": "Inventario completo y numerado de equipamiento operativo desde el inicio.",
+    "penaliza": "No especificar etiquetas de eficiencia energética de la maquinaria."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=3OFxoqxgHTi2gkLQ8TeYKA%3D%3D",
+   "doc": "2026-3b5c682d-69ad-4d18-81e1-6ae3594b1dce"
+  },
+  {
+   "crit": "Plan de Gestión Ambiental y Mantenimiento",
+   "max": 6,
+   "exp": "p:19845623",
+   "ref": "2026/51K",
+   "title": "La instalación y explotación de un quiosco modular desmontable en el Parque Concejal José Antonio Pérez Henarejos en el municipio de San Ped",
+   "buyer": "Junta de Gobierno del Ayuntamiento de San Pedro del Pinatar",
+   "nuts": "ES620",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Remates cóncavos, rejilla de gases sobre el estándar, arqueta de 350 litros y limpieza diaria comprometida."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Medidas de higiene, evacuación de gases y separación de grasas por encima de los estándares, con compromisos de limpieza.",
+    "penaliza": "No consta en el informe."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=3OFxoqxgHTi2gkLQ8TeYKA%3D%3D",
+   "doc": "2026-3b5c682d-69ad-4d18-81e1-6ae3594b1dce"
+  }
+ ]
+}

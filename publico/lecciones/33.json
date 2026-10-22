@@ -1,8 +1,81 @@
 {
  "cpv2": "33",
- "generated": "2026-10-22T20:08:30.278Z",
+ "generated": "2026-10-22T20:52:09.371Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "CALIDAD DE LOS ACABADOS",
+   "max": null,
+   "exp": "p:20416708",
+   "ref": "CESDA 1703/2026",
+   "title": "Suministro de un videocolposcopio para el Servicio de Obstetricia y Ginecología del Hospital de Vinaròs",
+   "buyer": "Departamento de Salud de Vinaroz. Dirección Económica-Gerencia",
+   "nuts": "ES522",
+   "date": "2026-09-10",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Base maciza de cinco radios con ruedas de alta resistencia y freno individual, fijación segura",
+    "Diseño que favorece ergonomía, manipulación y movilidad entre áreas asistenciales"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=0liuIpGAU3Vq1DdmE7eaXg%3D%3D",
+   "doc": "2026-8b23f565-23f0-42f9-9fe7-41e7e9de2a96"
+  },
+  {
+   "crit": "CALIDAD FUNCIONAL",
+   "max": null,
+   "exp": "p:20416708",
+   "ref": "CESDA 1703/2026",
+   "title": "Suministro de un videocolposcopio para el Servicio de Obstetricia y Ginecología del Hospital de Vinaròs",
+   "buyer": "Departamento de Salud de Vinaroz. Dirección Económica-Gerencia",
+   "nuts": "ES522",
+   "date": "2026-09-10",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Base y brazo de aluminio con recubrimiento en polvo, superficies lisas y resistentes a químicos, fácil limpieza"
+   ],
+   "weak": [
+    "No se menciona protocolo de limpieza ni detalles de desmontaje o acceso a partes internas"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=0liuIpGAU3Vq1DdmE7eaXg%3D%3D",
+   "doc": "2026-8b23f565-23f0-42f9-9fe7-41e7e9de2a96"
+  },
+  {
+   "crit": "DISEÑO DE LOS PRODUCTOS",
+   "max": null,
+   "exp": "p:20416708",
+   "ref": "CESDA 1703/2026",
+   "title": "Suministro de un videocolposcopio para el Servicio de Obstetricia y Ginecología del Hospital de Vinaròs",
+   "buyer": "Departamento de Salud de Vinaroz. Dirección Económica-Gerencia",
+   "nuts": "ES522",
+   "date": "2026-09-10",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Pantalla táctil, protección frente a caídas de tensión, lámpara LED regulable, zoom óptico de hasta 36,5 aumentos",
+    "Software integrable con sistema de información hospitalaria y exportación a historial, red o USB"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=0liuIpGAU3Vq1DdmE7eaXg%3D%3D",
+   "doc": "2026-8b23f565-23f0-42f9-9fe7-41e7e9de2a96"
+  },
   {
    "crit": "Buena visibilidad de la escala",
    "max": 10,

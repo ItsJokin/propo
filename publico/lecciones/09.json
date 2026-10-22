@@ -1,8 +1,149 @@
 {
  "cpv2": "09",
- "generated": "2026-10-22T20:08:30.277Z",
+ "generated": "2026-10-22T20:52:09.368Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Experiencia y solvencia técnica en el suministro de energía eléctrica",
+   "max": 10,
+   "exp": "p:18080678",
+   "ref": "605/2025",
+   "title": "Suministro de Energía Eléctrica para los edificios, instalaciones, dependencias y alumbrado público del Ayuntamiento de Fines",
+   "buyer": "Pleno del Ayuntamiento de Fines",
+   "nuts": "ES611",
+   "date": "2026-07-30",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Tres contratos privados vigentes con más de 20.600 MWh anuales gestionados.",
+    "Certificados de buena ejecución originales y declaración de experiencia en el sector público."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Acreditación documental completa y verificable de contratos y experiencia en volumen y sector público.",
+    "penaliza": "No consta en el documento ninguna penalización específica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xCFqIMJBKZji0Kd8%2Brcp6w%3D%3D",
+   "doc": "2026-0ec919bc-344f-4626-a079-983860be62c6"
+  },
+  {
+   "crit": "Compromiso con la sostenibilidad y eficiencia energética",
+   "max": 10,
+   "exp": "p:18080678",
+   "ref": "605/2025",
+   "title": "Suministro de Energía Eléctrica para los edificios, instalaciones, dependencias y alumbrado público del Ayuntamiento de Fines",
+   "buyer": "Pleno del Ayuntamiento de Fines",
+   "nuts": "ES611",
+   "date": "2026-07-30",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "Catálogo genérico de buenas prácticas de oficina, sin adaptación al municipio.",
+    "Sin estudio energético preliminar ni análisis de curvas de consumo históricas.",
+    "Sin estrategia estructurada de reducción de huella de carbono."
+   ],
+   "hypothesis": {
+    "premia": "Estudio adaptado al municipio, análisis de curvas de consumo históricas y estrategia estructurada de reducción de huella de carbono.",
+    "penaliza": "Recomendaciones genéricas de hábitos de oficina sin análisis ni adaptación al caso concreto."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xCFqIMJBKZji0Kd8%2Brcp6w%3D%3D",
+   "doc": "2026-0ec919bc-344f-4626-a079-983860be62c6"
+  },
+  {
+   "crit": "Calidad del servicio de atención y gestión de incidencias",
+   "max": 10,
+   "exp": "p:18080678",
+   "ref": "605/2025",
+   "title": "Suministro de Energía Eléctrica para los edificios, instalaciones, dependencias y alumbrado público del Ayuntamiento de Fines",
+   "buyer": "Pleno del Ayuntamiento de Fines",
+   "nuts": "ES611",
+   "date": "2026-07-30",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Ventanilla única con gestora principal y de back-up nominales.",
+    "Atención permanente de urgencias 24 horas, 365 días al año.",
+    "Cinco fases secuenciales con trazabilidad y coordinación inicial en 15 días."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Asignación nominal de gestores, cobertura permanente y procedimiento por fases con trazabilidad.",
+    "penaliza": "No consta en el documento ninguna penalización específica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xCFqIMJBKZji0Kd8%2Brcp6w%3D%3D",
+   "doc": "2026-0ec919bc-344f-4626-a079-983860be62c6"
+  },
+  {
+   "crit": "Elaboración de informes periódicos de seguimiento",
+   "max": 10,
+   "exp": "p:18080678",
+   "ref": "605/2025",
+   "title": "Suministro de Energía Eléctrica para los edificios, instalaciones, dependencias y alumbrado público del Ayuntamiento de Fines",
+   "buyer": "Pleno del Ayuntamiento de Fines",
+   "nuts": "ES611",
+   "date": "2026-07-30",
+   "offers": 1,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Periodicidad mensual e índice analítico de nueve variables críticas.",
+    "Cruce de datos históricos mediante la plataforma SIPS."
+   ],
+   "weak": [
+    "Redactado enumerativo en texto, sin muestras visuales de gráficos.",
+    "Sin ejemplos prácticos de proyecciones financieras ni plantillas."
+   ],
+   "hypothesis": {
+    "premia": "Periodicidad definida, índice completo de variables y muestras visuales o ejemplos prácticos.",
+    "penaliza": "Propuesta meramente enumerativa en texto, sin gráficos, plantillas ni ejemplos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xCFqIMJBKZji0Kd8%2Brcp6w%3D%3D",
+   "doc": "2026-0ec919bc-344f-4626-a079-983860be62c6"
+  },
+  {
+   "crit": "Propuestas de formación para el personal",
+   "max": 5,
+   "exp": "p:18080678",
+   "ref": "605/2025",
+   "title": "Suministro de Energía Eléctrica para los edificios, instalaciones, dependencias y alumbrado público del Ayuntamiento de Fines",
+   "buyer": "Pleno del Ayuntamiento de Fines",
+   "nuts": "ES611",
+   "date": "2026-07-30",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Cuatro talleres telemáticos con tiempos y metas definidos.",
+    "Caso práctico interactivo con facturas del propio Ayuntamiento.",
+    "Entregable final de compromisos de ahorro firmado por cada área."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Programa estructurado con tiempos, metas, casos prácticos con datos propios y entregable de compromiso.",
+    "penaliza": "No consta en el documento ninguna penalización específica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=xCFqIMJBKZji0Kd8%2Brcp6w%3D%3D",
+   "doc": "2026-0ec919bc-344f-4626-a079-983860be62c6"
+  },
   {
    "crit": "APTITUDES PERSONALES DEL GESTOR DE CUENTA LOCAL ADSCRITO AL CONTRATO",
    "max": 20,

@@ -1,6 +1,6 @@
 {
  "cpv2": "71",
- "generated": "2026-10-22T20:08:30.272Z",
+ "generated": "2026-10-22T20:52:09.359Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -1933,6 +1933,41 @@
    "hypothesis": null,
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=RMEwz72fX6Zq1DdmE7eaXg%3D%3D",
    "doc": "2025-2653c122-5fa9-4b5f-8835-0803950a8712"
+  },
+  {
+   "crit": "Programa de puntos de inspección de las principales unidades constructivas",
+   "max": 25,
+   "exp": "p:16928584",
+   "ref": "17006/2025",
+   "title": "Asistencia técnica a la dirección de obra para el control y vigilancia de las obras del proyecto de colector general de saneamiento del sur ",
+   "buyer": "Consejería de Agua, Agricultura, Ganadería y Pesca de la Región de Murcia",
+   "nuts": "ES620",
+   "date": "2025-06-10",
+   "offers": 8,
+   "top": {
+    "pts": 22,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Programa muy bien desarrollado y organizado, con buena adaptación a las unidades de obra concretas.",
+    "Alcance muy alto: abarca la totalidad de las principales unidades de obra y aspectos a controlar.",
+    "Alta claridad, con ejemplo de ficha de inspección y desarrollo coherente.",
+    "Programa muy bien desarrollado y organizado, con buena adaptación a las unidades de obra.",
+    "Muy alta claridad, con fichas de inspección y desarrollo coherente."
+   ],
+   "weak": [
+    "Incumple la extensión máxima de 10 páginas: presenta 11.",
+    "Asignación de cero puntos en el sobre nº 2 por incumplir un requisito del PCAP."
+   ],
+   "hypothesis": {
+    "premia": "Programa muy bien desarrollado y organizado, con alcance que abarca la totalidad o gran mayoría de unidades, adaptación concreta, fichas de inspección y desarrollo coherente.",
+    "penaliza": "Alcance no total (solo gran mayoría de unidades) y superar la extensión máxima de 10 páginas, que supone cero puntos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ErBc1ZdaiQs%2B1TMyIiZmzw%3D%3D",
+   "doc": "2025-a7b661bc-2d13-439f-8291-1a75bd29a327"
   },
   {
    "crit": "Proyecto de obra: elementos y tajos fundamentales, patologías y soluciones",

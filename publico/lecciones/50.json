@@ -1,6 +1,6 @@
 {
  "cpv2": "50",
- "generated": "2026-10-22T20:08:30.275Z",
+ "generated": "2026-10-22T20:52:09.362Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -952,6 +952,92 @@
    "doc": "2026-aeb1ff70-cbf5-4e11-873c-1c7cdf0e7216"
   },
   {
+   "crit": "Solución técnica ofertada",
+   "max": 30,
+   "exp": "p:19498962",
+   "ref": "29/2026",
+   "title": "Servicio de Oficina de Calidad Informática del Fondo de Garantía Salarial, O.A.",
+   "buyer": "Secretaría General del Fondo de Garantía Salarial (FOGASA)",
+   "nuts": "ES300",
+   "date": "2026-08-03",
+   "offers": 14,
+   "top": {
+    "pts": 29,
+    "winner": false
+   },
+   "low": {
+    "pts": 20
+   },
+   "best": [
+    "Automatización CI/CD con gates.",
+    "Detalle extremo de las pruebas, calidad y automatización.",
+    "Empleo de la técnica code-first con IA."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Sistema de Quality Gates, automatizaciones y bancos de pruebas, automatización CI/CD con gates, técnica code-first con IA, gobierno de IA y servicios adicionales.",
+    "penaliza": "No consta en el documento."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=MBRi%2FWYU5%2FH9pbnDwlaUlg%3D%3D",
+   "doc": "2026-6b66bc07-6c70-47a7-9ede-9342b7b1c476"
+  },
+  {
+   "crit": "Planificación del servicio",
+   "max": 5,
+   "exp": "p:19498962",
+   "ref": "29/2026",
+   "title": "Servicio de Oficina de Calidad Informática del Fondo de Garantía Salarial, O.A.",
+   "buyer": "Secretaría General del Fondo de Garantía Salarial (FOGASA)",
+   "nuts": "ES300",
+   "date": "2026-08-03",
+   "offers": 14,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Detalle y estructuración de las tareas a realizar."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Detalle y estructuración de las tareas a realizar.",
+    "penaliza": "No consta en el documento."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=MBRi%2FWYU5%2FH9pbnDwlaUlg%3D%3D",
+   "doc": "2026-6b66bc07-6c70-47a7-9ede-9342b7b1c476"
+  },
+  {
+   "crit": "Plan de transferencia del servicio",
+   "max": 5,
+   "exp": "p:19498962",
+   "ref": "29/2026",
+   "title": "Servicio de Oficina de Calidad Informática del Fondo de Garantía Salarial, O.A.",
+   "buyer": "Secretaría General del Fondo de Garantía Salarial (FOGASA)",
+   "nuts": "ES300",
+   "date": "2026-08-03",
+   "offers": 14,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Plan claro y bien estructurado que garantiza la continuidad del servicio y evita la pérdida de conocimiento."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Planes claros y bien estructurados que garantizan la continuidad del servicio y evitan la pérdida de conocimiento.",
+    "penaliza": "No consta en el documento."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=MBRi%2FWYU5%2FH9pbnDwlaUlg%3D%3D",
+   "doc": "2026-6b66bc07-6c70-47a7-9ede-9342b7b1c476"
+  },
+  {
    "crit": "Programación y organización de los trabajos",
    "max": 15,
    "exp": "p:19429729",
@@ -1205,6 +1291,161 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2BY%2Bm9AveK9Z%2FR5QFTlaM4A%3D%3D",
    "doc": "2026-acb7c046-b084-4349-9dc5-10382ef878c8"
+  },
+  {
+   "crit": "Planes de mantenimiento preventivo",
+   "max": 9,
+   "exp": "p:19799008",
+   "ref": "CMAYOR/2026/HGUV0/1421/L02",
+   "title": "Servicio del mantenimiento integral de equipamiento médico de alta tecnología, en el Consorcio Hospital General Universitario de Valencia.",
+   "buyer": "Consorcio Hospital General Universitario de Valencia",
+   "nuts": "ES523",
+   "date": "2026-07-23",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Aporta protocolos oficiales del fabricante para Ingenia 1,5 T y Multiva 1,5 T con operaciones y periodicidad detallada.",
+    "Memoria técnica detallada con protocolos específicos para los equipos del contrato.",
+    "Controles conforme al Protocolo Español de Control de Calidad en Radiodiagnóstico y procedimientos del fabricante."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Protocolos oficiales o específicos con periodicidad y cobertura normativa.",
+    "penaliza": "No consta penalización en el documento."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tYBdeHJAqWisNfRW6APEDw%3D%3D",
+   "doc": "2026-20c1f7b7-d90e-4f02-8749-f338b2608eb2"
+  },
+  {
+   "crit": "Metodología del mantenimiento correctivo valorándose además capacidades avanzadas de diagnóstico y reparación mediante servicio remoto / servicios predictivos / servicios proactivos",
+   "max": 9,
+   "exp": "p:19799008",
+   "ref": "CMAYOR/2026/HGUV0/1421/L02",
+   "title": "Servicio del mantenimiento integral de equipamiento médico de alta tecnología, en el Consorcio Hospital General Universitario de Valencia.",
+   "buyer": "Consorcio Hospital General Universitario de Valencia",
+   "nuts": "ES523",
+   "date": "2026-07-23",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Monitorización remota predictiva con herramientas RADAR y e-Alert y detección temprana de anomalías.",
+    "Asistencia remota con escalado sucesivo hasta soporte de fábrica.",
+    "Diagnóstico telefónico, resolución remota mediante Unifi Connect e intervención presencial cuando sea necesario.",
+    "Certificación ENS categoría alta para la plataforma utilizada."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Procedimiento escalonado de diagnóstico remoto, predictivo y certificaciones de seguridad de la plataforma.",
+    "penaliza": "No consta penalización en el documento."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tYBdeHJAqWisNfRW6APEDw%3D%3D",
+   "doc": "2026-20c1f7b7-d90e-4f02-8749-f338b2608eb2"
+  },
+  {
+   "crit": "Tiempos máximos de respuesta",
+   "max": 7,
+   "exp": "p:19799008",
+   "ref": "CMAYOR/2026/HGUV0/1421/L02",
+   "title": "Servicio del mantenimiento integral de equipamiento médico de alta tecnología, en el Consorcio Hospital General Universitario de Valencia.",
+   "buyer": "Consorcio Hospital General Universitario de Valencia",
+   "nuts": "ES523",
+   "date": "2026-07-23",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Asistencia y respuesta remota inferiores a 1 hora, presencial máximo 6 horas y repuestos inferiores a 24 horas.",
+    "Respuesta telefónica inferior a 15 minutos, remota inferior a 2 horas y presencial inferior a 8 horas.",
+    "Repuestos inferiores a 24 horas naturales y tiempo de reparación/resolución inferior a 48 horas."
+   ],
+   "weak": [
+    "No se indica expresamente el tiempo de corrección o resolución, solicitado expresamente; se minora un punto."
+   ],
+   "hypothesis": {
+    "premia": "Indicar todos los tiempos solicitados, incluido el de corrección o resolución, con plazos concretos.",
+    "penaliza": "No indicar expresamente el tiempo de corrección o resolución."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tYBdeHJAqWisNfRW6APEDw%3D%3D",
+   "doc": "2026-20c1f7b7-d90e-4f02-8749-f338b2608eb2"
+  },
+  {
+   "crit": "Modelo de sistema de seguimiento online del servicio prestado y contratado uptime. Plataforma de acceso a clientes",
+   "max": 7,
+   "exp": "p:19799008",
+   "ref": "CMAYOR/2026/HGUV0/1421/L02",
+   "title": "Servicio del mantenimiento integral de equipamiento médico de alta tecnología, en el Consorcio Hospital General Universitario de Valencia.",
+   "buyer": "Consorcio Hospital General Universitario de Valencia",
+   "nuts": "ES523",
+   "date": "2026-07-23",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Plataforma Customer Portal integrada con ServiceMax, accesible 24 horas, con seguimiento de incidencias e informes.",
+    "Monitorización del entorno operativo y alertas automáticas.",
+    "Sistema de gestión con trazabilidad completa e histórico de actuaciones.",
+    "Informe técnico detallado tras cada actuación y plataforma oficial de conexión remota del fabricante."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Trazabilidad completa, informes técnicos tras cada actuación y plataforma remota oficial.",
+    "penaliza": "No consta penalización en el documento."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tYBdeHJAqWisNfRW6APEDw%3D%3D",
+   "doc": "2026-20c1f7b7-d90e-4f02-8749-f338b2608eb2"
+  },
+  {
+   "crit": "Técnicos asignados al contrato con certificados de formación expedidos por el fabricante para realizar labores de reparación y mantenimiento de los equipos objeto del contrato",
+   "max": 9,
+   "exp": "p:19799008",
+   "ref": "CMAYOR/2026/HGUV0/1421/L02",
+   "title": "Servicio del mantenimiento integral de equipamiento médico de alta tecnología, en el Consorcio Hospital General Universitario de Valencia.",
+   "buyer": "Consorcio Hospital General Universitario de Valencia",
+   "nuts": "ES523",
+   "date": "2026-07-23",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "8 técnicos adscritos con formación oficial del fabricante y certificados aportados.",
+    "4 técnicos ubicados en Valencia y disponibilidad de 46 especialistas con movilidad nacional.",
+    "15 técnicos asignados al contrato, certificados por el fabricante y con formación continuada.",
+    "Acreditaciones como operadores de rayos X y formación en protección radiológica."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Número de técnicos adscritos, certificación del fabricante y acreditaciones adicionales.",
+    "penaliza": "No consta penalización en el documento."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tYBdeHJAqWisNfRW6APEDw%3D%3D",
+   "doc": "2026-20c1f7b7-d90e-4f02-8749-f338b2608eb2"
   },
   {
    "crit": "Descripción completa, detallada y justificada de los servicios a realizar (estudio de los trabajos y organización)",

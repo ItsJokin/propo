@@ -1,8 +1,42 @@
 {
  "cpv2": "18",
- "generated": "2026-10-22T20:08:30.278Z",
+ "generated": "2026-10-22T20:52:09.370Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Valoración de muestras",
+   "max": 4,
+   "exp": "p:19854350",
+   "ref": "264211",
+   "title": "Contrato mediante procedimiento abierto para la contratación de suministro de vestuario y uniformidad para ser utilizado por los trabajadore",
+   "buyer": "Consejería Delegada de Actividades de Limpieza y Gestión S.A.",
+   "nuts": "ES612",
+   "date": "2026-08-17",
+   "offers": 2,
+   "top": {
+    "pts": 3.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Fichas técnicas ajustadas a las condiciones del pliego técnico.",
+    "Muestras ajustadas al pliego técnico; admitidas en los 8 artículos.",
+    "Valoración de mayor puntuación en calzado de trabajo, calzado de seguridad, botas y calzado conductor BUS.",
+    "Mejor valoración en calzado de seguridad especial (4)."
+   ],
+   "weak": [
+    "Menor valoración que la otra oferta en calzado de trabajo, calzado de seguridad, botas y calzado conductor BUS (2 en cada uno).",
+    "Menor valoración en calzado de seguridad especial (2 frente a 4)."
+   ],
+   "hypothesis": {
+    "premia": "Mayor valoración en calzado de trabajo, calzado de seguridad, botas de trabajo, bota de seguridad con puntera y calzado conductor BUS, con fichas técnicas y muestras conformes.",
+    "penaliza": "Menor valoración en calzado de seguridad especial (2 puntos) y puntuación más baja en la mayoría de tipos de calzado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=FqzH69PzCZYadbH3CysQuQ%3D%3D",
+   "doc": "2026-eec3ee6b-fcac-4c29-9fe5-cc516fe852d9"
+  },
   {
    "crit": "Características de los artículos (6 y 7 del PPTP)",
    "max": 40,

@@ -1,8 +1,66 @@
 {
  "cpv2": "39",
- "generated": "2026-10-22T20:08:30.272Z",
+ "generated": "2026-10-22T20:52:09.358Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Calidad y diseño del mobiliario",
+   "max": 10,
+   "exp": "p:20139445",
+   "ref": "9528/2026",
+   "title": "Adquisición de mobiliario para el edificio \"Casa de Cultura Salvador Cardona Miralles\" (antiguo \"Centro Olivense\")",
+   "buyer": "Concejal de Contratación del Ayuntamiento de Oliva",
+   "nuts": "ES523",
+   "date": "2026-09-10",
+   "offers": 1,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Individualiza 58 elementos con marca, modelo, dimensiones y materiales",
+    "Materiales de alta resistencia y mobiliario adaptado a uso público intensivo",
+    "Ergonomía materializada en regulación lumbar, brazos regulables y mecanismos sincro"
+   ],
+   "weak": [
+    "Soluciones de elevada calidad sin innovación ni singularidad excepcional para calificación sobresaliente"
+   ],
+   "hypothesis": {
+    "premia": "Individualización detallada de los elementos, materiales de alta resistencia, ergonomía materializada y adecuación a uso público intensivo",
+    "penaliza": "Falta de innovación o singularidad excepcional, que impide la calificación sobresaliente"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ciPko8t3imhQFSeKCRun4Q%3D%3D",
+   "doc": "2026-aa9aad60-5157-4289-8d4f-912af6bc78bd"
+  },
+  {
+   "crit": "Distribución espacial e integración en el espacio",
+   "max": 10,
+   "exp": "p:20139445",
+   "ref": "9528/2026",
+   "title": "Adquisición de mobiliario para el edificio \"Casa de Cultura Salvador Cardona Miralles\" (antiguo \"Centro Olivense\")",
+   "buyer": "Concejal de Contratación del Ayuntamiento de Oliva",
+   "nuts": "ES523",
+   "date": "2026-09-10",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Zonificación funcional y flexible con circulación y vías de evacuación despejadas",
+    "Integración del mobiliario con los pilares en la sala de exposiciones",
+    "Confort acústico y privacidad en despachos con paneles y mamparas tapizados"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Planos, renders y zonificación flexible con integración en la arquitectura existente",
+    "penaliza": "No constan aspectos penalizados en el informe"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ciPko8t3imhQFSeKCRun4Q%3D%3D",
+   "doc": "2026-aa9aad60-5157-4289-8d4f-912af6bc78bd"
+  },
   {
    "crit": "Trayectoria y especialización en la realización los trabajos",
    "max": 5,
@@ -339,6 +397,79 @@
    "hypothesis": null,
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ztBiORzbks4eIBJRHQiPkQ%3D%3D",
    "doc": "2026-0f2ac68d-39e8-4afc-ae15-005d2ea6983a"
+  },
+  {
+   "crit": "Calidad de los acabados",
+   "max": 39,
+   "exp": "p:20305589",
+   "ref": "CBSDA 887/2026",
+   "title": "Suministro de reposición de mobiliario para el Departamento de Salud Valencia-Doctor Peset, Lote único.",
+   "buyer": "Departamento de Salud Valencia Dr. Peset. Dirección Económica-Gerencia",
+   "nuts": "ES523",
+   "date": "2026-08-14",
+   "offers": 3,
+   "top": {
+    "pts": 37,
+    "winner": true
+   },
+   "low": {
+    "pts": 26
+   },
+   "best": [
+    "Fichas individualizadas con fabricante, modelo, materiales, herrajes y acabados de alta trazabilidad.",
+    "Relaciona acabados con idoneidad sanitaria, limpieza, ignifugación y homogeneidad con el mobiliario existente.",
+    "Soporte documental con referencias UNE/ISO, certificaciones FSC/PEFC, emisiones y reciclabilidad.",
+    "Describe numerosos productos con materiales, espesores, tratamientos anticorrosivos y pautas de mantenimiento.",
+    "Identifica apilabilidad, estabilidad, ergonomía y soluciones modulares o reconfigurables."
+   ],
+   "weak": [
+    "Nivel de detalle no uniforme; imágenes aproximadas y productos sin marca o modelo inequívoco.",
+    "Inconsistencias internas: estanterías, mesa de extracciones, taburete sin respaldo descrito con respaldo y colchón no identificado.",
+    "Algunas afirmaciones sanitarias no vinculadas a certificado del modelo concreto.",
+    "Imágenes con modelos equivalentes que no siempre representan el producto ofertado.",
+    "Banco de vestuario de 100 cm frente a 70 cm del PPT, pendiente de comprobación dimensional."
+   ],
+   "hypothesis": {
+    "premia": "Fichas individualizadas con trazabilidad de fabricante, modelo, materiales y acabados, vinculadas a idoneidad sanitaria y con soporte documental (UNE/ISO, certificaciones).",
+    "penaliza": "Descripciones genéricas, imágenes aproximadas, productos sin modelo inequívoco e incoherencias dimensionales o internas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=C6uqwvHBIHLIGlsa0Wad%2Bw%3D%3D",
+   "doc": "2026-1785afaf-79af-4a99-848b-6fe412f6f134"
+  },
+  {
+   "crit": "Propuesta de distribución de espacios",
+   "max": 10,
+   "exp": "p:20305589",
+   "ref": "CBSDA 887/2026",
+   "title": "Suministro de reposición de mobiliario para el Departamento de Salud Valencia-Doctor Peset, Lote único.",
+   "buyer": "Departamento de Salud Valencia Dr. Peset. Dirección Económica-Gerencia",
+   "nuts": "ES523",
+   "date": "2026-08-14",
+   "offers": 3,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Explica criterios de circulación, accesibilidad, separación de zonas y privacidad.",
+    "Desarrollo funcional amplio que va más allá de una representación gráfica general.",
+    "Identifica los tipos de mobiliario y permite visualizar su implantación conjunta.",
+    "Mobiliario modular y móvil aporta flexibilidad para usos administrativos y asistenciales."
+   ],
+   "weak": [
+    "No desarrolla alternativas para tipologías administrativas y asistenciales.",
+    "Sin justificación de recorridos, holguras, radios de giro ni compatibilidad dimensional.",
+    "Representaciones orientativas sin comprobación dimensional completa de todas las implantaciones."
+   ],
+   "hypothesis": {
+    "premia": "Explicación funcional amplia con criterios de circulación, accesibilidad y privacidad, más allá de la representación gráfica.",
+    "penaliza": "Representaciones generales sin alternativas por tipología de espacio ni comprobación dimensional."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=C6uqwvHBIHLIGlsa0Wad%2Bw%3D%3D",
+   "doc": "2026-1785afaf-79af-4a99-848b-6fe412f6f134"
   },
   {
    "crit": "Calidad de los acabados",

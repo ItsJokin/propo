@@ -1,8 +1,149 @@
 {
  "cpv2": "77",
- "generated": "2026-10-22T20:08:30.276Z",
+ "generated": "2026-10-22T20:52:09.368Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "Memoria con dimensionado y mejora de la eficacia del servicio",
+   "max": 13,
+   "exp": "p:19257348",
+   "ref": "SE2026/3",
+   "title": "Servicio de mantenimiento de jardines en la zona del litoral este en el Término Municipal de Cartagena.",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Cartagena",
+   "nuts": "ES620",
+   "date": "2026-09-10",
+   "offers": 4,
+   "top": {
+    "pts": 13,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Inventario detallado con unidades de árboles, arbustos, flores, riego y mobiliario.",
+    "Localización con código, coordenadas, plano y reportaje fotográfico.",
+    "Detalle de programador, electroválvulas y tuberías; incluye DAFO.",
+    "Inventario con superficies, arbolado por grupos de altura y mobiliario por tipo.",
+    "Localización de zonas verdes con código identificativo."
+   ],
+   "weak": [
+    "Inventario incompleto: 156 fichas frente a 316/317 indicadas.",
+    "Sin desarrollo de elementos como bancos; sin mejora del inventario del pliego.",
+    "Discrepancia de superficie en Estrella de Mar (23.618 m² frente a 29.618 m²)."
+   ],
+   "hypothesis": {
+    "premia": "Inventario detallado con unidades por tipo, localización con código y coordenadas, riego y mobiliario especificados, con reportaje fotográfico de calidad.",
+    "penaliza": "Inventario genérico o copiado del pliego, arbustos y flores solo por m², riego y mobiliario sin detalle, datos inconsistentes."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Hn73PgmoWk%2F10HRJw8TEnQ%3D%3D",
+   "doc": "2026-3fb9237e-2aa8-4c92-989f-e9888cff1971"
+  },
+  {
+   "crit": "Memoria con plan anual de trabajo",
+   "max": 12,
+   "exp": "p:19257348",
+   "ref": "SE2026/3",
+   "title": "Servicio de mantenimiento de jardines en la zona del litoral este en el Término Municipal de Cartagena.",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Cartagena",
+   "nuts": "ES620",
+   "date": "2026-09-10",
+   "offers": 4,
+   "top": {
+    "pts": 12,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Acorta plazos: podas de palmeras en mes y medio con rendimientos altos.",
+    "Frecuencias por días y semanas en riegos, limpiezas y tratamientos.",
+    "Calendario óptimo de siegas y equipos de trabajo bien distribuidos.",
+    "Calendario anual con inicio, fin y localización por código de zona.",
+    "Recoge el conjunto de tareas de conservación del servicio."
+   ],
+   "weak": [
+    "No acorta plazos: palmeras más de 8 meses, arbolado 10, siegas 12.",
+    "Riegos sin días, frecuencia ni duración programados.",
+    "Rendimientos de poda incoherentes con las unidades de la zona."
+   ],
+   "hypothesis": {
+    "premia": "Calendario con frecuencias por días y semanas, rendimientos que acortan plazos en podas y siegas, y riegos y tratamientos programados.",
+    "penaliza": "Tareas sin frecuencia cuantificada, plazos largos en podas y siegas, riegos sin programación y tratamientos poco detallados."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Hn73PgmoWk%2F10HRJw8TEnQ%3D%3D",
+   "doc": "2026-3fb9237e-2aa8-4c92-989f-e9888cff1971"
+  },
+  {
+   "crit": "Memoria con programación de seguridad de arbolado y palmeras",
+   "max": 12,
+   "exp": "p:19257348",
+   "ref": "SE2026/3",
+   "title": "Servicio de mantenimiento de jardines en la zona del litoral este en el Término Municipal de Cartagena.",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Cartagena",
+   "nuts": "ES620",
+   "date": "2026-09-10",
+   "offers": 4,
+   "top": {
+    "pts": 12,
+    "winner": false
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Tecnología, frecuencia y observación de puntos con riesgo.",
+    "Detalla la solución pertinente para cada riesgo identificado.",
+    "Diagnóstico instrumental en tres niveles de inspección.",
+    "Frecuencia semanal por sectores y solución detallada por riesgo."
+   ],
+   "weak": [
+    "Diagnóstico instrumental básico, no considerado tecnología.",
+    "Puntos de riesgo indicados de forma poco precisa."
+   ],
+   "hypothesis": {
+    "premia": "Metodología por niveles con diagnóstico instrumental, puntos de riesgo precisos y solución por riesgo con frecuencia por sectores.",
+    "penaliza": "Riesgos genéricos y tecnología limitada o básica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Hn73PgmoWk%2F10HRJw8TEnQ%3D%3D",
+   "doc": "2026-3fb9237e-2aa8-4c92-989f-e9888cff1971"
+  },
+  {
+   "crit": "Memoria con plan anual de reposición vegetal y flor ornamental",
+   "max": 12,
+   "exp": "p:19257348",
+   "ref": "SE2026/3",
+   "title": "Servicio de mantenimiento de jardines en la zona del litoral este en el Término Municipal de Cartagena.",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Cartagena",
+   "nuts": "ES620",
+   "date": "2026-09-10",
+   "offers": 4,
+   "top": {
+    "pts": 12,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Especies adaptadas al clima litoral y bajo consumo hídrico.",
+    "Propuesta de mejora estética y funcional de parterres.",
+    "Fechas, cantidades por zona, plantación y seguimiento hasta agarre.",
+    "Fechas, cantidades por zona, descripción de plantación y seguimiento."
+   ],
+   "weak": [
+    "Propone especies invasoras y contraindicadas en ambientes salinos.",
+    "No existe propuesta de mejora estética y funcional.",
+    "Cantidades escasas y erróneas; sin días planificados."
+   ],
+   "hypothesis": {
+    "premia": "Especies adaptadas al clima litoral y no invasoras, propuesta de mejora estética y funcional, con fechas, cantidades y seguimiento.",
+    "penaliza": "Especies invasoras o contraindicadas, ausencia de mejora estética y cantidades escasas o erróneas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Hn73PgmoWk%2F10HRJw8TEnQ%3D%3D",
+   "doc": "2026-3fb9237e-2aa8-4c92-989f-e9888cff1971"
+  },
   {
    "crit": "CR3.1",
    "max": 14,
