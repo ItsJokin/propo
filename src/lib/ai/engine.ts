@@ -12,6 +12,7 @@ import { getPages } from '../storage';
 import { uid, nowIso, normalize, tokens, wordCount } from '../util';
 import { lineWithout } from '../lineEdit';
 import { demoSection } from '../demo/demoWriter';
+import { isWorks } from '../obra';
 
 export type StageId = 'read' | 'requirements' | 'deadlines' | 'criteria' | 'documents' | 'structure';
 export const STAGES: { id: StageId; label: string }[] = [
@@ -364,6 +365,7 @@ export async function generateSection(opts: {
         outline: project.sections.map((s, i) => `${s.id === section.id ? '→' : ' '} ${i + 1}. ${s.title}`).join('\n'),
         form: section.form, formsOnly: project.analysis?.formNote, usedFacts: usedElsewhere.length ? usedElsewhere.join('; ') : undefined,
         maxAsks: MAX_ASKS, asked: askedElsewhere.length ? askedElsewhere.map((x) => `«${x}»`).join('; ') : undefined,
+        works: isWorks(project),
       }), { tier: 'default', signal: opts.signal, project: (project.isSample ? '' : project.id) });
       let content = String(j?.content ?? '').trim();
       if (!content) throw new AIError('empty_completion', 'empty');

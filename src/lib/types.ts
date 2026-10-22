@@ -65,6 +65,11 @@ export interface CompanyInfo {
   regions: string[];       // NUTS prefixes where the company works, e.g. ES51
   logo?: string;           // data URL (PNG) del logo: portada y cabecera de los PDF
   brandColor?: string;     // color corporativo en hexadecimal, p. ej. #0B1730
+  // Constructoras
+  clasificaciones?: { grupo: string; subgrupo: string; categoria: string }[];   // clasificación de contratistas (RD 773/2015)
+  rolece?: boolean;        // inscrita en el ROLECE o en el registro de su comunidad
+  rera?: boolean;          // inscrita en el RERA (trabajos con amianto)
+  maquinaria?: { id: string; nombre: string; cantidad: number; propia: boolean }[];
 }
 
 export interface PastProject {
@@ -264,6 +269,7 @@ export interface Project {
   interview?: Interview;   // conversación guiada «PROPO te pregunta»
   answers?: GivenAnswer[]; // datos que el cliente ha aportado al revisar la propuesta: se reutilizan en la comprobación final
   pricing?: import('./pricing').Pricing; // paso «Precio»: cómo puntúa el pliego, el precio elegido y los criterios con fórmula
+  obra?: import('./obra').Obra;          // solo obras: lo que exige el pliego a la constructora, plan de obra y presupuesto ofertado
 }
 
 export interface GivenAnswer { label: string; kind: string; value: string; section: string; at: string }

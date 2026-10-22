@@ -11,6 +11,7 @@ import { Requirements } from './Requirements';
 import { Proposal } from './Proposal';
 import { Criteria } from './Criteria';
 import { Pricing } from './Pricing';
+import { Obra } from './Obra';
 import { Compliance } from './Compliance';
 import { Package } from './Package';
 import { Documents } from './Documents';
@@ -46,6 +47,7 @@ export function ProjectView({ id, tab }: { id: string; tab: string }) {
       case 'proposal': return <Proposal p={p} />;
       case 'criteria': return <Criteria p={p} />;
       case 'economic': return <Pricing p={p} />;
+      case 'obra': return <Obra p={p} />;
       case 'compliance': return <Compliance p={p} />;
       case 'package': return <Package p={p} />;
       case 'documents': return <Documents p={p} />;

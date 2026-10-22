@@ -2,7 +2,8 @@
 import type { AppState, Project } from '../types';
 import { complianceChecks, readiness } from '../derive';
 import { fmtDate, nowIso, isUnknown } from '../util';
-import { newDoc, cover, tocPlaceholder, finish, h1, h2, text, bullet, body, note, table, facts, space, addPage } from './kit';
+import { newDoc, cover, tocPlaceholder, finish, h1, h2, text, bullet, body, note, table, facts, space, addPage, clean } from './kit';
+import { rgb } from 'pdf-lib';
 import { eur2, eurosInWords } from '../pricing';
 
 function plainSection(content: string) {
@@ -219,6 +220,43 @@ export async function abnormalJustificationPdf(p: Project, s: AppState) {
   ].forEach(([t, d]) => { h2(w, t); text(w, d, { gap: 8 }); });
   space(w, 10);
   table(w, [{ title: 'Lugar y fecha', w: 40 }, { title: 'Firma del representante legal', w: 60 }], [['\n\n\n', '\n\n\n']]);
+  return finish(w);
+}
+
+/** Plan de obra: justificación y diagrama de Gantt con el camino crítico, para el sobre técnico. */
+export async function ganttPdf(p: Project, s: AppState) {
+  const g = p.obra?.gantt;
+  const w = await newDoc(`Plan de obra — ${p.name}`, s.company);
+  h1(w, 'Plan de obra y programa de trabajos');
+  facts(w, [['Obra', fullTitle(p)], ['Licitador', s.company.legalName || '[razón social]'], ['Plazo de ejecución', g ? `${g.total} días naturales${g.plazo ? ` (máximo del pliego: ${g.plazo})` : ''}` : '—']]);
+  if (!g) { text(w, 'Todavía no se ha preparado el plan de obra.'); return finish(w); }
+  h2(w, 'Diagrama de Gantt');
+  // Dibujo del diagrama: nombres a la izquierda, barras a la derecha; en rojo el camino crítico.
+  const L = 56, NAME = 175, X0 = L + NAME, X1 = 595 - 56, RH = 15;
+  const span = Math.max(1, g.total); const step = span > 240 ? 30 : span > 90 ? 14 : 7;
+  const xs = (d: number) => X0 + (d / span) * (X1 - X0);
+  const red = rgb(0.85, 0.18, 0.14); const blue = rgb(w.brand.color[0], w.brand.color[1], w.brand.color[2]); const grey = rgb(0.86, 0.88, 0.91);
+  const header = () => {
+    space(w, 4);
+    for (let d = 0; d <= span; d += step) { w.page.drawText(clean(`día ${d}`), { x: xs(d) + 1, y: w.y, size: 6.5, font: w.font, color: rgb(0.42, 0.45, 0.5) }); }
+    space(w, 6);
+  };
+  header();
+  for (const a of g.activities) {
+    if (w.y - RH < 80) { addPage(w); header(); }
+    const y = w.y - RH;
+    for (let d = 0; d <= span; d += step) w.page.drawLine({ start: { x: xs(d), y: y }, end: { x: xs(d), y: y + RH }, thickness: 0.4, color: grey });
+    const nm = clean(a.name.length > 42 ? a.name.slice(0, 41) + '…' : a.name);
+    w.page.drawText(nm, { x: L, y: y + 4, size: 7.5, font: a.critical ? w.bold : w.font, color: rgb(0.07, 0.09, 0.15) });
+    w.page.drawRectangle({ x: xs(a.es ?? 0), y: y + 3, width: Math.max(2, xs(a.ef ?? 0) - xs(a.es ?? 0)), height: RH - 6, color: a.critical ? red : blue, opacity: a.critical ? 0.9 : 0.8 });
+    w.y = y;
+  }
+  space(w, 10);
+  text(w, 'En rojo, las actividades del camino crítico: un retraso en cualquiera de ellas retrasa el final de la obra.', { size: 8 });
+  h2(w, 'Actividades, duraciones y rendimientos');
+  table(w, [{ title: 'Actividad', w: 30, bold: true }, { title: 'Inicio', w: 9, align: 'right' }, { title: 'Fin', w: 9, align: 'right' }, { title: 'Días', w: 8, align: 'right' }, { title: 'Justificación', w: 44 }],
+    g.activities.map((a) => [`${a.name}${a.critical ? ' (crítica)' : ''}`, `día ${a.es ?? 0}`, `día ${a.ef ?? 0}`, String(a.dur), a.why || '—']), { size: 7.5 });
+  if (g.justification) { h2(w, 'Justificación del plan de obra'); g.justification.split(/\n{2,}|\n/).filter(Boolean).forEach((par) => text(w, par, { gap: 8 })); }
   return finish(w);
 }
 

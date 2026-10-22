@@ -1,6 +1,8 @@
 // Derived, never stored: progress, readiness, compliance, company knowledge score.
 import type { Project, AppState, Section, Criterion } from './types';
 import { daysUntil, wordCount } from './util';
+import { obraChecks } from './obra';
+import { getState } from './store';
 const INFO = /\[(?:Información requerida|Information required)/;
 
 export type ProjectStatus = 'Analizando' | 'Error en el análisis' | 'En preparación' | 'Falta información' | 'Lista para revisar' | 'Lista para presentar';
@@ -68,6 +70,12 @@ export function complianceChecks(p: Project): CheckItem[] {
     { id: 'signature', label: 'Firma pendiente', state: p.manualChecks.signature ? 'pass' : 'warn', detail: p.manualChecks.signature ? 'Firmante confirmado por tu equipo' : 'Confirma quién firma con firma electrónica cualificada', action: p.manualChecks.signature ? undefined : { label: 'Confirmar firmante', tab: 'compliance', manual: 'signature' } },
     { id: 'financial', label: 'Oferta económica confirmada', state: p.pricing?.approved || p.manualChecks.financialApproved ? 'pass' : 'fail', detail: p.pricing?.approved ? 'Precio confirmado en el paso «Fija el precio»' : p.manualChecks.financialApproved ? 'Aprobada por tu equipo' : 'Falta fijar y confirmar el precio de la oferta', action: p.pricing?.approved || p.manualChecks.financialApproved ? undefined : { label: 'Fijar el precio', tab: 'economic' } },
   ];
+  // Obras: clasificación, registros, plan de obra, presupuesto BC3… resumidos en una sola comprobación.
+  const oc = p.obra?.rules ? obraChecks(p, getState().company) : [];
+  if (oc.length) {
+    const bad = oc.filter((c) => c.state === 'fail'); const warn = oc.filter((c) => c.state === 'warn');
+    items.push({ id: 'obra', label: 'Requisitos propios de la obra', state: bad.length ? 'fail' : warn.length ? 'warn' : 'pass', detail: bad.length ? bad.map((c) => c.label).join(' · ') : warn.length ? warn.map((c) => c.label).join(' · ') : 'Clasificación, registros y documentos de obra en orden', action: bad.length || warn.length ? { label: 'Ver plan de obra', tab: 'obra' } : undefined });
+  }
   return items;
 }
 

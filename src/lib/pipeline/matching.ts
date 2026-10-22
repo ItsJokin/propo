@@ -19,13 +19,21 @@ export function knowledgeIndex(k: Knowledge) {
   k.certifications.forEach((c) => items.push({ id: c.id, kind: 'company', label: c.name, text: `${c.name} ${c.issuer}` }));
   k.team.forEach((t) => items.push({ id: t.id, kind: 'company', label: `${t.name} — ${t.role}`, text: `${t.role} ${t.qualifications} ${t.years} years` }));
   k.vault.forEach((v) => items.push({ id: v.id, kind: 'vault', label: v.name, text: `${v.name} ${v.category}` }));
+  // Constructoras: clasificación, registros y maquinaria propia también son datos de la empresa que se pueden citar.
+  const cl = k.company.clasificaciones ?? [];
+  if (cl.length) items.push({ id: 'co_clasif', kind: 'company', label: 'Clasificación de contratista', text: `Clasificada en: ${cl.map((c) => `grupo ${c.grupo}, subgrupo ${c.subgrupo}, categoría ${c.categoria}`).join('; ')}` });
+  if (k.company.rolece) items.push({ id: 'co_rolece', kind: 'company', label: 'Inscripción en el ROLECE', text: 'Empresa inscrita en el Registro Oficial de Licitadores y Empresas Clasificadas del Sector Público (ROLECE).' });
+  if (k.company.rera) items.push({ id: 'co_rera', kind: 'company', label: 'Inscripción en el RERA', text: 'Empresa inscrita en el Registro de Empresas con Riesgo de Amianto (RERA).' });
+  (k.company.maquinaria ?? []).forEach((m) => items.push({ id: `mq_${m.id}`, kind: 'company', label: `Maquinaria: ${m.nombre}`, text: `${m.cantidad || 1} × ${m.nombre}, ${m.propia ? 'en propiedad' : 'alquilada o disponible'}` }));
   return items;
 }
 
 /** Compact JSON of company knowledge given to the model. Only facts the company stored. */
 export function knowledgeForPrompt(k: Knowledge) {
   return {
-    company: { legal_name: k.company.legalName, industry: k.company.industry, employees: k.company.employees, revenue: k.company.revenue, description: k.company.description, capabilities: k.company.capabilities, address: k.company.address },
+    company: { legal_name: k.company.legalName, industry: k.company.industry, employees: k.company.employees, revenue: k.company.revenue, description: k.company.description, capabilities: k.company.capabilities, address: k.company.address,
+      ...(k.company.clasificaciones?.length ? { contractor_classification: k.company.clasificaciones } : {}), ...(k.company.rolece ? { rolece: true } : {}), ...(k.company.rera ? { rera: true } : {}),
+      ...(k.company.maquinaria?.length ? { machinery: k.company.maquinaria.map((m) => ({ id: `mq_${m.id}`, name: m.nombre, units: m.cantidad, owned: m.propia })) } : {}) },
     past_projects: k.pastProjects.map((p) => ({ id: p.id, title: p.title, client: p.client, years: p.years, value: p.value, description: p.description, has_good_execution_certificate: p.hasCertificate })),
     certifications: k.certifications.map((c) => ({ id: c.id, name: c.name, valid_until: c.validUntil })),
     team: k.team.map((t) => ({ id: t.id, name: t.name, role: t.role, years: t.years, qualifications: t.qualifications })),

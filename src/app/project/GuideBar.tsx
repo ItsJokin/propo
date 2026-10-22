@@ -4,6 +4,7 @@ import type { Project } from '../../lib/types';
 import { navigate } from '../../lib/store';
 import { pendingQuestions, needsYou } from '../../lib/interview';
 import { sectionCounts, reqCounts, complianceChecks } from '../../lib/derive';
+import { isWorks } from '../../lib/obra';
 
 // La ruta de la propuesta: cuatro pasos que son a la vez la navegación principal del proyecto.
 // Cada paso dice en qué estado está y cuánto falta; el resto de vistas quedan en una fila secundaria.
@@ -46,7 +47,7 @@ export function GuideBar({ p, tab }: { p: Project; tab: string }) {
   ];
   const cur = steps.find((s) => !s.done);
   const go = (to: string) => navigate(`/app/projects/${p.id}${to === 'overview' ? '' : '/' + to}`);
-  const more: [string, string, number?][] = [['overview', 'Resumen'], ['requirements', 'Todos los requisitos', rc.total || undefined], ['criteria', 'Criterios'], ['documents', 'Documentos del pliego', p.docs.length || undefined]];
+  const more: [string, string, number?][] = [['overview', 'Resumen'], ...(isWorks(p) ? [['obra', 'Plan de obra'] as [string, string]] : []), ['requirements', 'Todos los requisitos', rc.total || undefined], ['criteria', 'Criterios'], ['documents', 'Documentos del pliego', p.docs.length || undefined]];
   return (
     <div className="journey-wrap">
       <nav className="journey" aria-label="Pasos de la propuesta">

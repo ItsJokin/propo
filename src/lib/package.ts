@@ -1,7 +1,7 @@
 // Submission package: generated PDFs + stored company documents + tender forms.
 // El precio lo confirma siempre el cliente en el paso «Fija el precio»; PROPO nunca presenta nada.
-import { technicalProposalPdf, declarationPdf, experiencePdf, companyIndexPdf, complianceReportPdf, economicOfferPdf, abnormalJustificationPdf } from './pdf/docs';
-export { technicalProposalPdf, declarationPdf, experiencePdf, companyIndexPdf, complianceReportPdf, economicOfferPdf, abnormalJustificationPdf };
+import { technicalProposalPdf, declarationPdf, experiencePdf, companyIndexPdf, complianceReportPdf, economicOfferPdf, abnormalJustificationPdf, ganttPdf } from './pdf/docs';
+export { technicalProposalPdf, declarationPdf, experiencePdf, companyIndexPdf, complianceReportPdf, economicOfferPdf, abnormalJustificationPdf, ganttPdf };
 import { abnormalBaja } from './pricing';
 import type { AppState, Project } from './types';
 import { writeZip, type ZipEntry } from './pipeline/zip';
@@ -28,6 +28,8 @@ export function packageItems(p: Project, s: AppState): PkgItem[] {
   const items: PkgItem[] = [];
   items.push({ id: 'tech', name: 'Memoria técnica.pdf', ext: 'pdf', status: approved === p.sections.length && p.sections.length > 0 ? 'ready' : 'draft', include: true,
     note: approved === p.sections.length ? `${p.sections.length} secciones aprobadas` : `${approved} de ${p.sections.length} secciones aprobadas — las no aprobadas se marcan como BORRADOR` });
+  if (p.obra?.gantt) items.push({ id: 'gantt', name: 'Plan de obra (Gantt).pdf', ext: 'pdf', status: 'ready', include: true, note: `${p.obra.gantt.activities.length} actividades · ${p.obra.gantt.total} días · va con la memoria técnica` });
+  if (p.obra?.budget) items.push({ id: 'budget', name: p.obra.budget.name, ext: 'other', status: 'ready', include: true, note: `Presupuesto con tu rebaja del ${(p.obra.budget.baja * 100).toFixed(1).replace('.', ',')} % · sobre de la oferta económica` });
   items.push({ id: 'decl', name: 'Declaración responsable.pdf', ext: 'pdf', status: 'ready', include: true, note: 'Preparada con tu perfil de empresa · fírmala antes de presentar' });
   items.push({ id: 'exp', name: 'Experiencia.pdf', ext: 'pdf', status: s.pastProjects.length ? 'ready' : 'pending', include: s.pastProjects.length > 0, note: s.pastProjects.length ? `${s.pastProjects.length} proyectos previos de tu perfil de empresa` : 'Añade proyectos previos en Empresa' });
   const vaultIds = new Set(p.requirements.flatMap((r) => r.evidence.filter((e) => e.kind === 'vault' && e.ref).map((e) => e.ref!)));
@@ -62,6 +64,8 @@ export async function buildPackageZip(p: Project, s: AppState): Promise<Uint8Arr
   if (s.pastProjects.length) put('Experiencia.pdf', await experiencePdf(p, s));
   if (items.some((i) => i.id === 'company')) put('Documentación de empresa.pdf', await companyIndexPdf(p, s));
   if (p.pricing?.choice) put('Sobre de la oferta económica/Oferta económica.pdf', await economicOfferPdf(p, s));
+  if (p.obra?.gantt) put('Plan de obra (Gantt).pdf', await ganttPdf(p, s));
+  if (p.obra?.budget) { const b = await getFile(p.obra.budget.key); if (b) put(`Sobre de la oferta económica/${p.obra.budget.name}`, new Uint8Array(b)); }
   if (p.pricing?.approved && p.pricing.filled) { const b = await getFile(p.pricing.filled.key); if (b) put(`Sobre de la oferta económica/${p.pricing.filled.name}`, new Uint8Array(b)); }
   if (items.some((i) => i.id === 'justif')) put('_Interno — Justificación de la oferta (borrador, solo si la piden).pdf', await abnormalJustificationPdf(p, s));
   for (const it of items) {

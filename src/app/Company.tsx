@@ -1,5 +1,6 @@
+import { ObraTab } from './CompanyObra';
 import React, { useState } from 'react';
-import { LuPlus, LuTrash2, LuPencil, LuBriefcase, LuAward, LuUsers, LuBuilding2, LuWrench, LuCircleCheck, LuTriangleAlert, LuSearch, LuCheck } from 'react-icons/lu';
+import { LuPlus, LuTrash2, LuPencil, LuBriefcase, LuAward, LuUsers, LuBuilding2, LuWrench, LuHardHat, LuCircleCheck, LuTriangleAlert, LuSearch, LuCheck } from 'react-icons/lu';
 import { SECTORS, REGIONS, cpvsForSectors } from '../lib/discovery/match';
 import { useStore, update, navigate, toast } from '../lib/store';
 import { knowledgeScore } from '../lib/derive';
@@ -15,6 +16,7 @@ const TABS: [string, string, React.ReactNode][] = [
   ['certifications', 'Certificaciones', <LuAward />],
   ['team', 'Equipo', <LuUsers />],
   ['capabilities', 'Capacidades', <LuWrench />],
+  ['obra', 'Construcción', <LuHardHat />],
 ];
 
 export function Company({ tab }: { tab: string }) {
@@ -52,6 +54,7 @@ export function Company({ tab }: { tab: string }) {
           {tab === 'certifications' && <CertsTab />}
           {tab === 'team' && <TeamTab />}
           {tab === 'capabilities' && <CapabilitiesTab />}
+          {tab === 'obra' && <ObraTab />}
         </div>
       </div>
     </>

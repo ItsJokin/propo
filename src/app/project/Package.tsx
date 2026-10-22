@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { LuDownload, LuEye, LuFileText, LuShieldCheck, LuCircleCheck, LuCircleAlert, LuInfo, LuLoaderCircle, LuExternalLink } from 'react-icons/lu';
 import type { Project } from '../../lib/types';
 import { useStore, navigate, toast, track } from '../../lib/store';
-import { packageItems, buildPackageZip, technicalProposalPdf, declarationPdf, experiencePdf, companyIndexPdf, complianceReportPdf, economicOfferPdf, abnormalJustificationPdf, type PkgStatus } from '../../lib/package';
+import { packageItems, buildPackageZip, technicalProposalPdf, declarationPdf, experiencePdf, companyIndexPdf, complianceReportPdf, economicOfferPdf, abnormalJustificationPdf, ganttPdf, type PkgStatus } from '../../lib/package';
 import { PDFDocument } from 'pdf-lib';
 import { Modal } from '../../components/ui';
 import { technicalProposalDocx } from '../../lib/docx';
@@ -45,7 +45,7 @@ export function Package({ p }: { p: Project }) {
   const [opening, setOpening] = useState<string | null>(null);
   const GEN: Record<string, () => Promise<Uint8Array>> = {
     tech: () => technicalProposalPdf(p, s), decl: () => declarationPdf(p, s), exp: () => experiencePdf(p, s),
-    company: () => companyIndexPdf(p, s), report: () => complianceReportPdf(p, s), ...(p.pricing?.choice ? { fin: () => economicOfferPdf(p, s), justif: () => abnormalJustificationPdf(p, s) } : {}),
+    company: () => companyIndexPdf(p, s), report: () => complianceReportPdf(p, s), ...(p.obra?.gantt ? { gantt: () => ganttPdf(p, s) } : {}), ...(p.pricing?.choice ? { fin: () => economicOfferPdf(p, s), justif: () => abnormalJustificationPdf(p, s) } : {}),
   };
   const preview = async (id: string, name: string) => {
     setOpening(id);
