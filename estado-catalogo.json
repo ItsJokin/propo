@@ -1,0 +1,18 @@
+{
+ "months": {
+  "2026-09": {
+   "ok": true,
+   "at": "2026-10-22T13:41:16.547Z",
+   "entries": 130411,
+   "records": 34023,
+   "evalDocs": 49149,
+   "geoRejected": 8,
+   "byScope": {
+    "es": 24905,
+    "es_sin_pais": 9118
+   },
+   "files": 269,
+   "errors": []
+  }
+ }
+}
