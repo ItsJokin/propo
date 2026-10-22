@@ -13,7 +13,7 @@ import { plainRequirement } from '../../lib/glossary';
 import { ACCEPTED } from '../../lib/pipeline/parse';
 import { nowIso, fmtDate } from '../../lib/util';
 import { openSource } from '../common';
-import { reviewCoherence, coherenceStale, type CoherenceIssue } from '../../lib/coherence';
+import { reviewCoherence, coherenceStale, coherenceHash, type CoherenceIssue } from '../../lib/coherence';
 
 /** Revisión de coherencia en segundo plano (una a la vez por proyecto). Aplica las correcciones seguras al texto. */
 const reviewing = new Set<string>();
@@ -22,7 +22,7 @@ async function runCoherence(id: string, onDone?: () => void) {
   reviewing.add(id);
   try {
     const st = getState(); const p = st.projects.find((x) => x.id === id); if (!p) return;
-    const { coherence, contents } = await reviewCoherence(p, st.company, st.team);
+    const { coherence, contents } = await reviewCoherence(p, st);
     const fixed = coherence.issues.filter((i) => i.fixed).length;
     updateProject(id, (x) => {
       for (const sec of x.sections) if (contents[sec.id] != null && contents[sec.id] !== sec.content) { sec.content = contents[sec.id]; sec.updatedAt = nowIso(); }
@@ -331,6 +331,13 @@ function CoherenceStep({ p, onRerun }: { p: Project; onRerun: () => void }) {
   const fixed = co.issues.filter((i) => i.fixed);
   const pending = co.issues.filter((i) => !i.fixed && !i.dismissed);
   const sev = (i: CoherenceIssue) => (i.severity === 'critical' ? <span className="fin-must">Grave</span> : i.severity === 'important' ? <span className="fin-opt">Importante</span> : <span className="fin-opt">Menor</span>);
+  // Deshacer una corrección: vuelve a poner el texto anterior si el corregido sigue ahí tal cual.
+  const undo = (id: string) => updateProject(p.id, (x) => {
+    const it = x.coherence?.issues.find((i) => i.id === id); if (!it) return;
+    for (const f of it.fixes.filter((z) => z.applied)) { const sec = x.sections.find((z) => z.id === f.section); const at = sec ? sec.content.indexOf(f.after) : -1; if (sec && at >= 0) { sec.content = sec.content.slice(0, at) + f.before + sec.content.slice(at + f.after.length); f.applied = false; } }
+    it.fixed = false; it.dismissed = true;
+    if (x.coherence) x.coherence.hash = coherenceHash(x);   // deshacer no obliga a revisar otra vez
+  });
   const dismiss = (id: string) => updateProject(p.id, (x) => { const it = x.coherence?.issues.find((i) => i.id === id); if (it) it.dismissed = true; });
   return (
     <div className="stack gap-12">
@@ -339,7 +346,7 @@ function CoherenceStep({ p, onRerun }: { p: Project; onRerun: () => void }) {
       )}
       {fixed.map((i) => (
         <div key={i.id} className="well small">
-          <div className="row" style={{ gap: 8 }}><LuCheck style={{ color: 'var(--ok)' }} /><span className="grow">{i.problem}</span><button className="link xs" onClick={() => setOpen(open === i.id ? null : i.id)}>{open === i.id ? 'Ocultar' : 'Ver el cambio'}</button></div>
+          <div className="row" style={{ gap: 8 }}><LuCheck style={{ color: 'var(--ok)' }} /><span className="grow">{i.problem}</span><button className="link xs" onClick={() => setOpen(open === i.id ? null : i.id)}>{open === i.id ? 'Ocultar' : 'Ver el cambio'}</button><button className="link xs" onClick={() => undo(i.id)}>Deshacer</button></div>
           {open === i.id && i.fixes.filter((f) => f.applied).map((f, k) => (
             <div key={k} className="mt-8 xs"><div className="muted">En «{title(f.section)}»</div><div style={{ textDecoration: 'line-through', opacity: 0.7 }}>{f.before}</div><div><strong>{f.after}</strong></div></div>
           ))}

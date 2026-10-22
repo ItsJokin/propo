@@ -3,7 +3,7 @@
 // tienen que encajar entre sí. La IA encuentra las contradicciones y propone el cambio exacto; PROPO lo aplica solo
 // cuando la cifra correcta sale de la propia oferta, del pliego o de la empresa (nunca inventa un dato). Lo que solo
 // puede decidir el cliente se le pregunta.
-import type { Project, CompanyInfo, TeamMember } from './types';
+import type { Project, AppState } from './types';
 import { ai } from './ai/provider';
 import { nowIso } from './util';
 
@@ -40,7 +40,11 @@ export function ruleIssues(p: Project): CoherenceIssue[] {
   return out;
 }
 
-function prompt(p: Project, c: CompanyInfo, team: TeamMember[], hints: CoherenceIssue[]) {
+type Facts = Pick<AppState, 'company' | 'team' | 'pastProjects' | 'certifications'>;
+function prompt(p: Project, f: Facts, hints: CoherenceIssue[]) {
+  const c = f.company; const team = f.team;
+  // Lo que el cliente ha confirmado para esta licitación también es un dato de la empresa (p. ej. «la clasificación la tenemos»).
+  const said = p.requirements.filter((r) => r.status === 'fulfilled' && r.humanValidated).map((r) => `- ${r.title}: confirmado por la empresa${r.note ? ` (${r.note.replace(/\s+/g, ' ').slice(0, 160)})` : ''}`).join('\n');
   const g = p.obra?.gantt;
   const reqs = p.requirements.filter((r) => r.mandatory !== false && /technical|team|format|experience/.test(r.category)).slice(0, 40)
     .map((r) => `- ${r.title}: ${(r.plain || r.text).replace(/\s+/g, ' ').slice(0, 220)}`).join('\n');
@@ -59,6 +63,12 @@ Datos de la empresa:
 - Maquinaria: ${(c.maquinaria ?? []).map((m) => `${m.cantidad || 1} × ${m.nombre}`).join('; ') || 'no consta'}
 - Equipo: ${team.map((t) => `${t.name} (${t.role}, ${t.years} años${t.qualifications ? `, ${t.qualifications}` : ''})`).join('; ') || 'no consta'}
 - Clasificación: ${(c.clasificaciones ?? []).map((x) => `${x.grupo}-${x.subgrupo}-${x.categoria}`).join(', ') || 'no consta'}
+- Facturación: ${c.revenue || 'no consta'} · Plantilla: ${c.employees || 'no consta'}
+- Experiencia: ${f.pastProjects.map((x) => `${x.title} (${x.client || 'cliente sin indicar'}, ${x.years || ''}, ${x.value || ''}${x.hasCertificate ? ', con certificado' : ''})`).join('; ') || 'no consta'}
+- Certificaciones: ${f.certifications.map((x) => x.name).join(', ') || 'no consta'}
+- Descripción: ${(c.description || '').slice(0, 400)}
+Confirmado por la empresa para esta licitación (cuenta como dato cierto aunque no esté en la ficha):
+${said || '(nada)'}
 
 Lo que exige el pliego (extracto):
 Plazo de ejecución: ${g?.plazo ? `${g.plazo} días` : p.analysis?.duration || 'no consta'}
@@ -81,41 +91,45 @@ Devuelve SOLO JSON:
   "fix": [{"section": "id del apartado a corregir", "find": "texto EXACTO copiado del apartado, de 20 a 300 caracteres, que aparece una sola vez", "replace": "el mismo texto corregido, cambiando lo mínimo"}],
   "ask": "pregunta breve al cliente si la solución depende de un dato que solo él conoce; si no, null"
 }]}
-Reglas: corrige solo cuando el valor correcto está claro por el pliego, el plan de obra, los datos de la empresa o porque el resto de apartados coinciden; nunca inventes cifras, medios ni personas. Para quitar una cifra del sobre automático, reescribe la frase sin la cifra. Si no hay incoherencias, devuelve {"issues": []}. Como mucho 12 incidencias, las más graves primero.`;
+Reglas: corrige solo cuando el valor correcto está claro por el plan de obra, los datos de la empresa, lo confirmado por la empresa o porque el resto de apartados coinciden; nunca inventes cifras, medios ni personas. No corrijas frases que citan el pliego con una marca [S…]: tú solo ves un extracto del pliego; si dudas de una cifra del pliego, usa "ask". No contradigas nada de lo confirmado por la empresa. Si la memoria atribuye a la empresa algo que no figura en sus datos, no lo sustituyas por otra cosa: reemplaza ese dato por [Información requerida: qué hay que confirmar] y pon la pregunta en "ask". Para quitar una cifra del sobre automático, reescribe la frase sin la cifra. Si no hay incoherencias, devuelve {"issues": []}. Como mucho 12 incidencias, las más graves primero.`;
 }
 
 /** Revisa la oferta, aplica las correcciones seguras y devuelve el resultado y los textos corregidos. */
-export async function reviewCoherence(p: Project, c: CompanyInfo, team: TeamMember[]): Promise<{ coherence: Coherence; contents: Record<string, string> }> {
+export async function reviewCoherence(p: Project, f: Facts): Promise<{ coherence: Coherence; contents: Record<string, string> }> {
+  const c = f.company; const team = f.team;
   const hints = ruleIssues(p);
   const contents: Record<string, string> = Object.fromEntries(p.sections.map((s) => [s.id, s.content]));
   // Cifras que una corrección puede usar: las que ya están en la oferta, el pliego, el plan de obra o la empresa.
   const corpus = new Set(nums([
     ...p.sections.map((s) => s.content), ...p.requirements.map((r) => `${r.title} ${r.text} ${r.plain ?? ''}`), p.analysis?.duration ?? '',
-    JSON.stringify(p.obra?.gantt ?? {}), JSON.stringify(p.obra?.rules ?? {}), JSON.stringify(c.maquinaria ?? []), JSON.stringify(team),
+    JSON.stringify(p.obra?.gantt ?? {}), JSON.stringify(p.obra?.rules ?? {}), JSON.stringify(c.maquinaria ?? []), JSON.stringify(team), JSON.stringify(f.pastProjects), c.revenue, c.employees,
   ].join(' ')));
   let issues: CoherenceIssue[] = [...hints]; let mode: Coherence['mode'] = 'rules';
   try {
-    const j = await ai.json<any>(prompt(p, c, team, hints), { tier: 'default', project: p.isSample ? '' : p.id });
+    const j = await ai.json<any>(prompt(p, f, hints), { tier: 'default', project: p.isSample ? '' : p.id });
     mode = 'ai';
     const found: CoherenceIssue[] = (Array.isArray(j?.issues) ? j.issues : []).slice(0, 12).map((x: any, i: number) => ({
       id: `a${i}`, severity: ['critical', 'important', 'minor'].includes(x?.severity) ? x.severity : 'important', problem: String(x?.problem || '').slice(0, 400),
       where: (Array.isArray(x?.where) ? x.where : []).map(String), ask: x?.ask ? String(x.ask).slice(0, 300) : null, fixed: false,
-      fixes: (Array.isArray(x?.fix) ? x.fix : []).filter((f: any) => f?.section && f?.find && typeof f?.replace === 'string').map((f: any) => ({ section: String(f.section), before: String(f.find), after: String(f.replace), applied: false })),
+      fixes: (Array.isArray(x?.fix) ? x.fix : []).filter((z: any) => z?.section && z?.find && typeof z?.replace === 'string').map((z: any) => ({ section: String(z.section), before: String(z.find), after: String(z.replace), applied: false })),
     })).filter((x: CoherenceIssue) => x.problem);
     // Las incidencias automáticas que la IA ya trata no se duplican.
     issues = [...hints, ...found];
   } catch { /* sin IA: quedan las comprobaciones automáticas */ }
 
   for (const is of issues) {
-    for (const f of is.fixes) {
-      const cur = contents[f.section]; if (cur == null) continue;
-      const at = cur.indexOf(f.before);
-      if (at < 0 || cur.indexOf(f.before, at + 1) >= 0 || f.before.length < 12) continue;   // tiene que estar una sola vez
-      const newNums = nums(f.after).filter((n) => !nums(f.before).includes(n));
+    for (const fx of is.fixes) {
+      const cur = contents[fx.section]; if (cur == null) continue;
+      const at = cur.indexOf(fx.before);
+      if (at < 0 || cur.indexOf(fx.before, at + 1) >= 0 || fx.before.length < 12) continue;   // tiene que estar una sola vez
+      // Lo que cita el pliego no se toca: la IA solo ve un extracto; se queda como pregunta.
+      const ctx = cur.slice(Math.max(0, at - 40), at + fx.before.length + 40);
+      if (/\[S\d+\]/.test(ctx) && p.sections.find((x) => x.id === fx.section)?.citations.some((ci) => ci.kind === 'tender' && ctx.includes(`[${ci.marker}]`))) continue;
+      const newNums = nums(fx.after).filter((n) => !nums(fx.before).includes(n));
       if (newNums.some((n) => !corpus.has(n))) continue;                                     // una cifra nueva tiene que salir de algún sitio
-      if (f.after.length > f.before.length * 3 + 200) continue;                              // corrección mínima, no reescritura
-      contents[f.section] = cur.slice(0, at) + f.after + cur.slice(at + f.before.length);
-      f.applied = true;
+      if (fx.after.length > fx.before.length * 3 + 200) continue;                              // corrección mínima, no reescritura
+      contents[fx.section] = cur.slice(0, at) + fx.after + cur.slice(at + fx.before.length);
+      fx.applied = true;
     }
     is.fixed = is.fixes.length > 0 && is.fixes.every((f) => f.applied);
   }
