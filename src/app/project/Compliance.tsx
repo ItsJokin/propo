@@ -13,7 +13,8 @@ import { plainRequirement } from '../../lib/glossary';
 import { ACCEPTED } from '../../lib/pipeline/parse';
 import { nowIso, fmtDate } from '../../lib/util';
 import { openSource } from '../common';
-import { reviewCoherence, coherenceStale, coherenceHash, type CoherenceIssue } from '../../lib/coherence';
+import { reviewCoherence, fixIssue, coherenceStale, coherenceHash, openIssues, type CoherenceIssue } from '../../lib/coherence';
+import { planObra, emptyObra } from '../../lib/obra';
 
 /** Revisión de coherencia en segundo plano (una a la vez por proyecto). Aplica las correcciones seguras al texto. */
 const reviewing = new Set<string>();
@@ -22,19 +23,21 @@ async function runCoherence(id: string, onDone?: () => void) {
   reviewing.add(id);
   try {
     const st = getState(); const p = st.projects.find((x) => x.id === id); if (!p) return;
-    const { coherence, contents } = await reviewCoherence(p, st);
-    const fixed = coherence.issues.filter((i) => i.fixed).length;
+    const coherence = await reviewCoherence(p, st);
     updateProject(id, (x) => {
-      for (const sec of x.sections) if (contents[sec.id] != null && contents[sec.id] !== sec.content) { sec.content = contents[sec.id]; sec.updatedAt = nowIso(); }
+      // Lo que el cliente ya descartó o PROPO ya arregló no vuelve a salir si la IA lo repite con el mismo título.
+      const prev = x.coherence?.issues ?? [];
+      const gone = new Set(prev.filter((i) => i.dismissed || i.fixed).map((i) => i.title.toLowerCase()));
+      coherence.issues = coherence.issues.filter((i) => !gone.has(i.title.toLowerCase())).concat(prev.filter((i) => i.fixed));
       x.coherence = coherence;
-      x.activity.unshift({ at: nowIso(), text: `Revisión de coherencia: ${coherence.issues.length} incoherencias encontradas, ${fixed} corregidas por PROPO` });
+      x.activity.unshift({ at: nowIso(), text: `Revisión de coherencia: ${openIssues(x).length} incoherencias por arreglar` });
     });
   } catch { toast('No se ha podido revisar la coherencia ahora. Vuelve a intentarlo en unos minutos.', 'warn'); }
   finally { reviewing.delete(id); onDone?.(); }
 }
 
 type Tone = 'fail' | 'warn';
-interface Card { id: string; tone: Tone; kicker: string; title: string; why: string; icon: React.ReactNode; check?: CheckItem; req?: Requirement; papers?: Requirement[] }
+interface Card { id: string; tone: Tone; kicker: string; title: string; why: string; icon: React.ReactNode; check?: CheckItem; req?: Requirement; papers?: Requirement[]; issue?: CoherenceIssue }
 
 const isOpen = (r: Requirement) => r.status === 'missing' || r.status === 'needs_info';
 
@@ -60,8 +63,11 @@ function buildCards(p: Project, checks: CheckItem[]): Card[] {
   const papers = p.requirements.filter((r) => isOpen(r) && inChecks(r) && !needsYou(r));
   if (papers.length) cards.push({ id: 'papers', tone: papers.some((r) => r.status === 'missing') ? 'fail' : 'warn', kicker: 'Papeles', title: papers.length === 1 ? 'Un papel que tendrás que adjuntar' : `${papers.length} papeles que tendrás que adjuntar`, why: 'Son documentos y declaraciones que se entregan al presentar la oferta. PROPO te prepara los modelos; aquí solo confirmas que los tienes localizados.', icon: <LuListChecks />, papers });
   // 3 · Comprobaciones automáticas que no han salido bien.
-  const co = by('coherence');
-  if (co && co.state !== 'pass') cards.push({ id: 'coherence', tone: co.state, kicker: 'Revisión', title: 'Que todo encaje', why: 'PROPO relee la oferta entera como lo haría un jefe de licitaciones: que la memoria, el plan de obra, el precio y los compromisos no se contradigan, que se respete lo que fija el pliego y que no se cuele en la memoria nada del sobre económico. Lo que puede, lo corrige solo.', icon: <LuSparkles />, check: co });
+  // Coherencia: mientras PROPO relee la oferta, una tarjeta de espera; después, una tarjeta por incoherencia real.
+  if (p.sections.some((x) => x.content.trim())) {
+    if (coherenceStale(p)) cards.push({ id: 'coherence-run', tone: 'warn', kicker: 'Coherencia', title: 'PROPO está comprobando que todo encaje', why: 'Relee la oferta entera como un jefe de licitaciones: que la memoria, el plan de obra, el precio y los compromisos no se contradigan, que se respete lo que fija el pliego y que no se cuele en la memoria nada del sobre económico.', icon: <LuSparkles /> });
+    else for (const i of openIssues(p)) cards.push({ id: `co:${i.id}`, tone: i.severity === 'critical' ? 'fail' : 'warn', kicker: 'Coherencia', title: i.title || 'Algo no encaja', why: i.problem, icon: <LuSparkles />, issue: i });
+  }
   for (const id of ['technical', 'criteria', 'pages', 'price', 'formats', 'sources']) {
     const c = by(id);
     if (c && c.state !== 'pass') cards.push({ id, tone: c.state, kicker: 'Revisión', title: COPY[id].title, why: COPY[id].why, icon: id === 'technical' ? <LuPencil /> : <LuTriangleAlert />, check: c });
@@ -130,7 +136,8 @@ export function Compliance({ p }: { p: Project }) {
               : cur.id === 'signature' ? <SignatureStep p={p} />
               : cur.id === 'financial' ? <FinancialStep p={p} />
               : cur.id === 'pages' ? <PagesStep p={p} detail={cur.check?.detail ?? ''} />
-              : cur.id === 'coherence' ? <CoherenceStep p={p} onRerun={() => { tick((t) => t + 1); runCoherence(p.id, () => tick((t) => t + 1)); }} />
+              : cur.id === 'coherence-run' ? <div className="fin-work"><div className="row small"><LuLoaderCircle className="spin" /> <span>PROPO está releyendo la oferta entera…</span></div><p className="xs muted" style={{ margin: 0 }}>Tarda uno o dos minutos. Si encuentra algo que no encaja, te lo enseña aquí con un botón para arreglarlo.</p></div>
+              : cur.issue ? <IssueStep key={cur.issue.id} p={p} issue={cur.issue} />
               : <div className="stack gap-12"><div className="well small">{cur.check?.detail}</div><div><button className="btn btn-primary" onClick={() => navigate(`/app/projects/${p.id}/${TAB[cur.id]}`)}>{COPY[cur.id].cta} <LuArrowRight /></button></div></div>}
           </div>
           <div className="fin-nav">
@@ -162,6 +169,8 @@ export function Compliance({ p }: { p: Project }) {
         </button>
         {showOk && <div className="fin-ok-list">{passes.map((c) => <div key={c.id}><LuCheck /><div><div className="check-title">{c.label}</div><div className="small muted">{c.detail}</div></div></div>)}</div>}
       </div>
+
+      <CoherenceFixed p={p} />
 
       <div className="callout neutral small"><LuInfo /><div>La firma, los precios y la presentación en la plataforma de contratación los hace siempre tu equipo. PROPO no presenta nada por ti.</div></div>
 
@@ -317,55 +326,86 @@ function FinancialStep({ p }: { p: Project }) {
   );
 }
 
-/** Resultado de la revisión de coherencia: lo que PROPO ha corregido y lo que necesita al cliente. */
-function CoherenceStep({ p, onRerun }: { p: Project; onRerun: () => void }) {
-  const [open, setOpen] = useState<string | null>(null);
-  const co = p.coherence; const busy = reviewing.has(p.id);
+/** Una incoherencia: PROPO la arregla con un botón; solo si le falta un dato que únicamente tiene el cliente, lo pregunta. */
+function IssueStep({ p, issue }: { p: Project; issue: CoherenceIssue }) {
+  const [busy, setBusy] = useState(false);
+  const [text, setText] = useState('');
   const title = (id: string) => (id === 'obra' ? 'Plan de obra' : p.sections.find((x) => x.id === id)?.title ?? id);
-  if (busy || !co) return (
-    <div className="fin-work">
-      <div className="row small"><LuLoaderCircle className="spin" /> <span>PROPO está releyendo la oferta entera: memoria, plan de obra, precio y compromisos…</span></div>
-      <p className="xs muted" style={{ margin: 0 }}>Tarda uno o dos minutos. Puedes seguir con otras cosas: el resultado aparecerá aquí.</p>
+  const patch = (fn: (i: CoherenceIssue) => void) => updateProject(p.id, (x) => { const it = x.coherence?.issues.find((i) => i.id === issue.id); if (it) fn(it); });
+  const fix = async (answer?: string) => {
+    setBusy(true);
+    try {
+      const st = getState(); const cur = st.projects.find((x) => x.id === p.id) ?? p;
+      if (issue.id === 'r-plazo') {   // el plan de obra se rehace para que quepa en el plazo
+        const g = await planObra(cur, st.company, st.team);
+        const over = !!g.plazo && g.total > g.plazo;
+        updateProject(p.id, (x) => { x.obra = x.obra ?? emptyObra(); x.obra.gantt = g; const it = x.coherence?.issues.find((i) => i.id === issue.id); if (it) it.fixed = !over; if (x.coherence) x.coherence.hash = coherenceHash(x); });
+        toast(over ? 'He rehecho el plan de obra, pero sigue pasándose del plazo. Revísalo en «Plan de obra».' : 'Plan de obra rehecho dentro del plazo', over ? 'warn' : 'ok');
+        return;
+      }
+      const r = await fixIssue(cur, st, issue, answer);
+      const applied = r.fixes.filter((f) => f.applied);
+      updateProject(p.id, (x) => {
+        for (const sec of x.sections) if (r.contents[sec.id] != null && r.contents[sec.id] !== sec.content) { sec.content = r.contents[sec.id]; sec.updatedAt = nowIso(); }
+        const it = x.coherence?.issues.find((i) => i.id === issue.id);
+        if (it) { it.fixes = r.fixes; it.fixed = applied.length > 0; it.answer = answer; it.question = applied.length ? null : (r.question ?? 'No he encontrado cómo arreglarlo sin un dato tuyo. ¿Puedes contarme cómo es en realidad?'); }
+        if (x.coherence) x.coherence.hash = coherenceHash(x);   // arreglar una no obliga a revisar todo otra vez
+        if (applied.length) x.activity.unshift({ at: nowIso(), text: `PROPO ha arreglado una incoherencia: ${issue.title}` });
+      });
+      if (applied.length) toast('Arreglado. Lo tienes en «Lo que ha arreglado PROPO», por si quieres deshacerlo.', 'ok');
+    } catch (e: any) { toast(friendlyAIError(e?.code ?? 'upstream_error'), 'bad'); }
+    finally { setBusy(false); }
+  };
+  return (
+    <div className="stack gap-12">
+      {issue.where.length > 0 && <div className="xs muted">En: {issue.where.map(title).join(' · ')}</div>}
+      {busy ? (
+        <div className="fin-work"><div className="row small"><LuLoaderCircle className="spin" /> <span>PROPO lo está arreglando…</span></div></div>
+      ) : issue.question ? (
+        <div className="stack gap-8">
+          <div className="fin-said"><LuMessageCircle /><div><strong>Necesito un dato tuyo.</strong> {issue.question}</div></div>
+          <textarea className="textarea" rows={3} value={text} onChange={(e) => setText(e.target.value)} placeholder="Escríbelo con tus palabras" />
+          <div className="row-wrap">
+            <button className="btn btn-primary" disabled={!text.trim()} onClick={() => fix(text.trim())}><LuSend /> Enviar y que PROPO lo arregle</button>
+            <button className="btn btn-ghost btn-sm" onClick={() => patch((i) => { i.dismissed = true; })}>No es un problema</button>
+          </div>
+        </div>
+      ) : (
+        <div className="row-wrap">
+          <button className="btn btn-primary" onClick={() => fix()}><LuSparkles /> Que PROPO lo arregle</button>
+          <button className="btn btn-ghost btn-sm" onClick={() => patch((i) => { i.dismissed = true; })}>No es un problema</button>
+        </div>
+      )}
     </div>
   );
-  const fixed = co.issues.filter((i) => i.fixed);
-  const pending = co.issues.filter((i) => !i.fixed && !i.dismissed);
-  const sev = (i: CoherenceIssue) => (i.severity === 'critical' ? <span className="fin-must">Grave</span> : i.severity === 'important' ? <span className="fin-opt">Importante</span> : <span className="fin-opt">Menor</span>);
-  // Deshacer una corrección: vuelve a poner el texto anterior si el corregido sigue ahí tal cual.
+}
+
+/** Lo que PROPO ha cambiado al arreglar incoherencias, con la opción de deshacerlo. */
+function CoherenceFixed({ p }: { p: Project }) {
+  const [open, setOpen] = useState(false);
+  const fixed = (p.coherence?.issues ?? []).filter((i) => i.fixed && i.fixes.some((f) => f.applied));
+  if (!fixed.length) return null;
+  const title = (id: string) => p.sections.find((x) => x.id === id)?.title ?? id;
   const undo = (id: string) => updateProject(p.id, (x) => {
     const it = x.coherence?.issues.find((i) => i.id === id); if (!it) return;
     for (const f of it.fixes.filter((z) => z.applied)) { const sec = x.sections.find((z) => z.id === f.section); const at = sec ? sec.content.indexOf(f.after) : -1; if (sec && at >= 0) { sec.content = sec.content.slice(0, at) + f.before + sec.content.slice(at + f.after.length); f.applied = false; } }
     it.fixed = false; it.dismissed = true;
-    if (x.coherence) x.coherence.hash = coherenceHash(x);   // deshacer no obliga a revisar otra vez
+    if (x.coherence) x.coherence.hash = coherenceHash(x);
   });
-  const dismiss = (id: string) => updateProject(p.id, (x) => { const it = x.coherence?.issues.find((i) => i.id === id); if (it) it.dismissed = true; });
   return (
-    <div className="stack gap-12">
-      {fixed.length > 0 && (
-        <div className="callout small"><LuCircleCheck /><div><strong>PROPO ha corregido {fixed.length} incoherencia{fixed.length > 1 ? 's' : ''} por su cuenta.</strong> Solo ha cambiado las frases necesarias y con datos que ya estaban en tu oferta, el pliego o tu empresa.</div></div>
-      )}
-      {fixed.map((i) => (
-        <div key={i.id} className="well small">
-          <div className="row" style={{ gap: 8 }}><LuCheck style={{ color: 'var(--ok)' }} /><span className="grow">{i.problem}</span><button className="link xs" onClick={() => setOpen(open === i.id ? null : i.id)}>{open === i.id ? 'Ocultar' : 'Ver el cambio'}</button><button className="link xs" onClick={() => undo(i.id)}>Deshacer</button></div>
-          {open === i.id && i.fixes.filter((f) => f.applied).map((f, k) => (
-            <div key={k} className="mt-8 xs"><div className="muted">En «{title(f.section)}»</div><div style={{ textDecoration: 'line-through', opacity: 0.7 }}>{f.before}</div><div><strong>{f.after}</strong></div></div>
-          ))}
-        </div>
-      ))}
-      {pending.length > 0 && <div className="small"><strong>{pending.length === 1 ? 'Queda una cosa que necesita tu decisión' : `Quedan ${pending.length} cosas que necesitan tu decisión`}</strong></div>}
-      {pending.map((i) => (
-        <div key={i.id} className="well small">
-          <div className="row" style={{ gap: 8, alignItems: 'flex-start' }}><LuTriangleAlert style={{ color: 'var(--warn-ink)', flex: 'none', marginTop: 2 }} /><span className="grow">{i.problem}</span>{sev(i)}</div>
-          {i.ask && <div className="mt-8"><LuMessageCircle style={{ verticalAlign: -2 }} /> {i.ask}</div>}
-          <div className="row-wrap mt-8">
-            {(i.tab || i.where[0]) && <button className="btn btn-secondary btn-sm" onClick={() => navigate(`/app/projects/${p.id}/${i.tab ?? (i.where[0] === 'obra' ? 'obra' : 'proposal')}`)}>Ir a {i.tab === 'obra' || i.where[0] === 'obra' ? 'el plan de obra' : `«${title(i.where[0])}»`} <LuArrowRight /></button>}
-            <button className="btn btn-ghost btn-sm" onClick={() => dismiss(i.id)}>No es un problema</button>
-            {i.fixes.some((f) => f.applied) && <button className="btn btn-ghost btn-sm" onClick={() => undo(i.id)}>Deshacer lo que cambió PROPO</button>}
-          </div>
-        </div>
-      ))}
-      {!fixed.length && !pending.length && <div className="callout small"><LuCircleCheck /><div>Todo encaja: memoria, plan de obra, precio y compromisos no se contradicen.</div></div>}
-      <div><button className="btn btn-ghost btn-sm" onClick={onRerun}><LuSparkles /> Volver a revisar</button></div>
+    <div className="card fin-ok">
+      <button className="fin-ok-head" onClick={() => setOpen(!open)} aria-expanded={open}>
+        <LuSparkles className="state-ico ok" />
+        <span className="grow"><strong>Lo que ha arreglado PROPO</strong><span className="small muted"> · {fixed.length} incoherencia{fixed.length > 1 ? 's' : ''} corregida{fixed.length > 1 ? 's' : ''}</span></span>
+        <LuChevronDown style={{ transform: open ? 'rotate(180deg)' : undefined, transition: 'transform .2s' }} />
+      </button>
+      {open && <div className="fin-ok-list">{fixed.map((i) => (
+        <div key={i.id}><LuCheck /><div className="grow">
+          <div className="check-title">{i.title}</div>
+          {i.fixes.filter((f) => f.applied).map((f, k) => <div key={k} className="xs mt-4"><span className="muted">En «{title(f.section)}»: </span><span style={{ textDecoration: 'line-through', opacity: 0.65 }}>{f.before}</span> → <strong>{f.after}</strong></div>)}
+          <button className="link xs mt-4" onClick={() => undo(i.id)}>Deshacer</button>
+        </div></div>
+      ))}</div>}
     </div>
   );
 }
