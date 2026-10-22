@@ -302,7 +302,7 @@ function OtherCriteria({ p, pr }: { p: Project; pr: PricingState }) {
       <div className="stack mt-16" style={{ gap: 14 }}>
         {rule.others.map((o) => {
           const saved = pr.others[o.id];
-          const adv = otherAdvice(o, team);
+          const adv = otherAdvice(o, team, p.requirements);
           const typed = o.unit && /^\d+([.,]\d+)?$/.test((draft[o.id] || '').trim()) ? Math.floor(num(draft[o.id])) : null;
           const got = typed != null ? otherPoints(o, typed) : null;
           return (

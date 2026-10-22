@@ -292,8 +292,9 @@ export function otherPoints(o: OtherCriterion, v: number): number | null {
 }
 const GENERIC = new Set(['tecnico', 'tecnica', 'superior', 'ingeniero', 'ingeniera', 'titulado', 'titulada', 'grado', 'licenciado', 'experiencia', 'responsable']);
 /** La persona del equipo que encaja con el perfil que pide el pliego (por su puesto o su titulación). */
+const roleKeys = (role: string) => normalize(role).split(' ').filter((w) => w.length >= 5 && !GENERIC.has(w));
 export function memberFor(role: string, team: TeamMember[]): TeamMember | null {
-  const keys = normalize(role).split(' ').filter((w) => w.length >= 5 && !GENERIC.has(w));
+  const keys = roleKeys(role);
   if (!keys.length) return null;
   const need = Math.min(2, keys.length);
   let best: { m: TeamMember; n: number } | null = null;
@@ -304,22 +305,36 @@ export function memberFor(role: string, team: TeamMember[]): TeamMember | null {
   }
   return best?.m ?? null;
 }
+/** Años mínimos que el pliego exige a un perfil, buscados en los requisitos ya extraídos (p. ej. «Ingeniero Técnico de Obras Públicas 10 años»). */
+export function minYearsFor(role: string, reqs: { title: string; text: string }[]): number | null {
+  const keys = roleKeys(role); if (!keys.length) return null;
+  const need = Math.min(2, keys.length);
+  for (const r of reqs) {
+    const t = normalize(`${r.title} ${r.text}`);
+    if (keys.filter((k) => t.includes(k)).length < need) continue;
+    const m = `${r.title} ${r.text}`.match(/(\d{1,2})\s*a[ñn]os/i);
+    if (m) return Number(m[1]);
+  }
+  return null;
+}
 export interface OtherAdvice { value: number | null; points: number | null; note: string; warn?: string }
 /** Cifra recomendada: la que da el máximo de puntos, sin pasar de lo que la empresa puede demostrar. */
-export function otherAdvice(o: OtherCriterion, team: TeamMember[]): OtherAdvice {
+export function otherAdvice(o: OtherCriterion, team: TeamMember[], reqs: { title: string; text: string }[] = []): OtherAdvice {
   const unit = o.unit || '';
   const top = o.maxValue ?? (o.points && o.perUnit ? Math.floor(o.points / o.perUnit + 1e-9) : null);
   if (o.better === 'less') return { value: null, points: null, note: `Ofrecer menos ${unit} da puntos, pero queda como compromiso del contrato: pon solo lo que puedas cumplir con tu plan de trabajo.` };
   if (top == null) return { value: null, points: null, note: 'El pliego no deja claro cuánto hace falta para el máximo: escribe lo que ofreces y PROPO lo redacta.' };
   if (o.role) {
     const m = memberFor(o.role, team);
-    const min = o.roleMinYears ?? 0;
+    const known = o.roleMinYears ?? minYearsFor(o.role, reqs);
+    const min = known ?? 0;
+    if (m && known == null) return { value: null, points: null, note: `${m.name} tiene ${m.years} años de experiencia. Los años adicionales se cuentan sobre el mínimo que exige el pliego: réstaselo y pon el resultado (como mucho ${top}).`, warn: 'No he encontrado cuántos años mínimos exige el pliego a este perfil: compruébalo antes de comprometer la cifra.' };
     if (m) {
       const can = Math.max(0, Math.floor(m.years - min));
       if (can < top) return { value: can, points: otherPoints(o, can), note: `${m.name} tiene ${m.years} años de experiencia${min ? ` y el pliego ya exige ${min}` : ''}: puedes comprometer ${can} ${unit} adicionales.`, warn: `Para el máximo (${top} ${unit}) haría falta alguien con ${min + top} años. Si ofreces más de lo que acredita su vida laboral, te pueden excluir.` };
       return { value: top, points: otherPoints(o, top), note: `${m.name} tiene ${m.years} años: llega al máximo (${min ? `${min} exigidos + ` : ''}${top} adicionales).` };
     }
-    return { value: top, points: otherPoints(o, top), note: `Para el máximo necesitas un ${o.role} con al menos ${min + top} años acreditables con su vida laboral.`, warn: `No encuentro este perfil en Empresa → Equipo: compruébalo antes de comprometerlo.` };
+    return { value: top, points: otherPoints(o, top), note: known != null ? `Para el máximo necesitas un ${o.role} con al menos ${min + top} años acreditables con su vida laboral.` : `Para el máximo necesitas un ${o.role} con ${top} años más de los que exige el pliego, acreditables con su vida laboral.`, warn: `No encuentro este perfil en Empresa → Equipo: compruébalo antes de comprometerlo.` };
   }
   if (/mes|año|garant/i.test(`${unit} ${o.label}`)) return { value: top, points: otherPoints(o, top), note: `Con ${top} ${unit} te llevas todos los puntos. Más no suma. Es tiempo en el que respondes de los defectos de la obra: decide si te compensa.` };
   return { value: top, points: otherPoints(o, top), note: `Con ${top} ${unit} te llevas todos los puntos; más no suma.` };
