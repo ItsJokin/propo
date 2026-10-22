@@ -22,7 +22,7 @@ on:
         default: '45'
       extract_docs:
         description: 'Informes a extraer con IA en esta ejecución'
-        default: '300'
+        default: '0'
 
 permissions:
   contents: write   # rama «conocimiento»
@@ -67,7 +67,7 @@ jobs:
         run: node scripts/knowledge/extract.mjs
         env:
           KDIR: conocimiento
-          MAX_DOCS: ${{ inputs.extract_docs || '300' }}
+          MAX_DOCS: ${{ inputs.extract_docs || '0' }}   # las ejecuciones automáticas no gastan IA: solo las lanzadas a mano
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       - name: Lecciones y cobertura
         run: node --max-old-space-size=6000 scripts/knowledge/lessons.mjs
