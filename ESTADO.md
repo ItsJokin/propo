@@ -1,6 +1,6 @@
 # Base de conocimiento de PROPO — estado
 
-Generado: 2026-10-22T13:52:45.170Z
+Generado: 2026-10-22T14:06:09.008Z
 
 | Fase | Cifra |
 |---|---|
@@ -8,8 +8,8 @@ Generado: 2026-10-22T13:52:45.170Z
 | Expedientes adjudicados únicos | 34023 |
 | Lotes adjudicados | 56310 |
 | Documentos de evaluación detectados | 49149 (acta_adjudicacion: 21059 · acta_mesa: 16910 · informe_valoracion_libre: 7619 · informe_valoracion: 2410 · informe_anormalidad: 1151) |
-| Textos | ok: 68 · scan: 1 · dup: 1 · error: 1 |
-| Extracción con IA | — |
+| Textos | ok: 174 · scan: 5 · error: 3 · dup: 2 · formato: 1 |
+| Extracción con IA | error: 100 |
 | Lecciones publicadas | 0 en 0 sectores CPV |
 
 Clases (A oferta ganadora accesible · B puntuaciones extraídas · C informe o acta sin extraer · D información parcial · F sin resultado): D: 23477 · C: 10546
