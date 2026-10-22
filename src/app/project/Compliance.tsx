@@ -360,6 +360,7 @@ function CoherenceStep({ p, onRerun }: { p: Project; onRerun: () => void }) {
           <div className="row-wrap mt-8">
             {(i.tab || i.where[0]) && <button className="btn btn-secondary btn-sm" onClick={() => navigate(`/app/projects/${p.id}/${i.tab ?? (i.where[0] === 'obra' ? 'obra' : 'proposal')}`)}>Ir a {i.tab === 'obra' || i.where[0] === 'obra' ? 'el plan de obra' : `«${title(i.where[0])}»`} <LuArrowRight /></button>}
             <button className="btn btn-ghost btn-sm" onClick={() => dismiss(i.id)}>No es un problema</button>
+            {i.fixes.some((f) => f.applied) && <button className="btn btn-ghost btn-sm" onClick={() => undo(i.id)}>Deshacer lo que cambió PROPO</button>}
           </div>
         </div>
       ))}
