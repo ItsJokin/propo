@@ -30,7 +30,7 @@ export const mix = (a: RGB, b: RGB, t: number): RGB => [a[0] + (b[0] - a[0]) * t
 export const tint = (c: RGB, t: number) => mix(c, [1, 1, 1], t);
 export const shade = (c: RGB, t: number) => mix(c, [0, 0, 0], t);
 /** Oscurece (o aclara) un color hasta que tenga el contraste pedido sobre `bg`. */
-function readable(c: RGB, bg: RGB, min: number): RGB {
+export function readable(c: RGB, bg: RGB, min: number): RGB {
   let x = c;
   for (let i = 0; i < 20 && contrast(x, bg) < min; i++) x = luminance(bg) > 0.5 ? shade(x, 0.12) : tint(x, 0.12);
   return x;
@@ -73,7 +73,7 @@ export function paletteFor(primaryHex?: string, accentHex?: string, neutral = fa
     // Acento derivado: mismo tono algo desplazado y más luminoso; con marcas casi grises, un dorado sobrio.
     const [h, s, l] = hsl(primary);
     // Con marcas muy claras, el acento es la propia marca oscurecida (un tono vecino quedaría chillón).
-    accent = s < 0.15 || neutral ? [0.79, 0.64, 0.2] : luminance(primary) > 0.42 ? shade(primary, 0.38) : fromHsl((h + 28) % 360, Math.min(0.85, s + 0.1), Math.min(0.62, Math.max(0.45, l + 0.15)));
+    accent = s < 0.15 || neutral || !primaryHex ? [0.79, 0.64, 0.2] : luminance(primary) > 0.42 ? shade(primary, 0.38) : fromHsl((h + 28) % 360, Math.min(0.85, s + 0.1), Math.min(0.62, Math.max(0.45, l + 0.15)));
   }
   const heading: RGB = luminance(primary) > 0.42 ? [0.1, 0.12, 0.17] : deep;
   return { primary, deep, heading, accentInk: readable(accent, white, 3.2), onPrimary, accent, numeral: luminance(primary) > 0.42 ? tint(primary, 0.3) : tint(primary, 0.78), soft: tint(primary, 0.88), softer: tint(primary, 0.95), ink, muted: [0.4, 0.43, 0.49], line: [0.85, 0.87, 0.9], paper: white };

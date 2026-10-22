@@ -4,7 +4,7 @@
 import { PDFDocument, StandardFonts, rgb, degrees, type PDFFont, type PDFImage, type PDFPage } from 'pdf-lib';
 import type { CompanyInfo, Project, TeamMember } from '../types';
 import { richBlocks } from '../richBlocks';
-import { themeFor, tint, shade, mix, TYPE, PAGE, type DocTheme, type RGB, type CoverStyle } from '../design/theme';
+import { themeFor, tint, shade, mix, readable, TYPE, PAGE, type DocTheme, type RGB, type CoverStyle } from '../design/theme';
 import { drawMotif } from '../design/motifs';
 
 type Color = RGB;
@@ -456,10 +456,10 @@ export function cover(w: W, c: CoverData, style?: CoverStyle) {
       drawMotif(page, motif, { x: -20, y: PH * 0.3, w: PW + 40, h: PH * 0.7 }, pal.onPrimary, 0.2, seed);
       gradientV(page, 0, 0, PW, PH * 0.62, shade(pal.primary, 0.45), 0.95, 0);
       logoTab(w, page, 0, PH - 108, 62);
-      page.drawText(kind, { x: ML, y: PH * 0.47, size: 9, font: w.bold, color: col(tint(pal.accent, 0.1)) });
+      page.drawText(kind, { x: ML, y: PH * 0.47, size: 9, font: w.bold, color: col(readable(pal.accent, shade(pal.primary, 0.4), 4.5)) });
       page.drawRectangle({ x: ML, y: PH * 0.47 - 12, width: 48, height: 2.6, color: col(pal.accent) });
       const y = titleBlock(w, page, c.title, ML, PH * 0.47 - 24, CW, 30, white, w.bold, 6);
-      metaList(w, page, c.lines, ML, Math.min(y - 26, 230), CW, { label: tint(pal.accent, 0.25), value: white }, 2);
+      metaList(w, page, c.lines, ML, Math.min(y - 26, 230), CW, { label: readable(pal.accent, shade(pal.primary, 0.4), 4.5), value: white }, 2);
       if (c.footnote) page.drawText(clean(c.footnote), { x: ML, y: 34, size: 7.5, font: w.font, color: col(tint(pal.primary, 0.6)) });
       break;
     }
@@ -478,23 +478,24 @@ export function cover(w: W, c: CoverData, style?: CoverStyle) {
     }
     case 'tecnica': {   // plano técnico: fondo oscuro de marca, retícula, marcas de corte y ficha técnica
       const bg = shade(pal.primary, 0.5);
+      const lab = readable(pal.accent, bg, 4.5);   // acento aclarado hasta leerse sobre el fondo
       page.drawRectangle({ x: 0, y: 0, width: PW, height: PH, color: col(bg) });
       for (let x = 0; x < PW; x += 18) page.drawLine({ start: { x, y: 0 }, end: { x, y: PH }, thickness: x % 90 === 0 ? 0.6 : 0.25, color: col(white), opacity: x % 90 === 0 ? 0.14 : 0.07 });
       for (let y = 0; y < PH; y += 18) page.drawLine({ start: { x: 0, y }, end: { x: PW, y }, thickness: y % 90 === 0 ? 0.6 : 0.25, color: col(white), opacity: y % 90 === 0 ? 0.14 : 0.07 });
-      drawMotif(page, motif, { x: PW * 0.3, y: PH * 0.52, w: PW * 0.7 - 30, h: PH * 0.3 }, pal.accent, 0.4, seed);
+      drawMotif(page, motif, { x: PW * 0.3, y: PH * 0.52, w: PW * 0.7 - 30, h: PH * 0.3 }, lab, 0.4, seed);
       for (const [x, y, sx, sy] of [[30, PH - 30, 1, -1], [PW - 30, PH - 30, -1, -1], [30, 30, 1, 1], [PW - 30, 30, -1, 1]] as const) {
         page.drawLine({ start: { x, y }, end: { x: x + sx * 22, y }, thickness: 1, color: col(white), opacity: 0.7 });
         page.drawLine({ start: { x, y }, end: { x, y: y + sy * 22 }, thickness: 1, color: col(white), opacity: 0.7 });
       }
       logoTab(w, page, 30, PH - 112, 58);
-      page.drawText(kind, { x: ML, y: PH * 0.45, size: 9, font: w.bold, color: col(pal.accent) });
+      page.drawText(kind, { x: ML, y: PH * 0.45, size: 9, font: w.bold, color: col(lab) });
       const y = titleBlock(w, page, c.title, ML, PH * 0.45 - 14, CW, 28, white, w.bold, 6);
       const items = c.lines.filter(([, v]) => v && v.trim()); const top = Math.min(y - 24, 250);
       page.drawRectangle({ x: ML, y: top - items.length * 30 - 6, width: CW, height: items.length * 30 + 6, borderColor: col(white), borderWidth: 0.6, borderOpacity: 0.45, opacity: 0 });
       items.forEach(([k, v], i) => {
         const yy = top - i * 30;
         if (i) page.drawLine({ start: { x: ML, y: yy }, end: { x: ML + CW, y: yy }, thickness: 0.4, color: col(white), opacity: 0.3 });
-        page.drawText(clean(k).toUpperCase(), { x: ML + 10, y: yy - 18, size: 6.8, font: w.bold, color: col(pal.accent) });
+        page.drawText(clean(k).toUpperCase(), { x: ML + 10, y: yy - 18, size: 6.8, font: w.bold, color: col(lab) });
         let vv = clean(v); while (w.font.widthOfTextAtSize(vv, 9.5) > CW - 160 && vv.length > 8) vv = vv.slice(0, -2);
         if (vv !== clean(v)) vv = vv.trimEnd() + '…';
         page.drawText(vv, { x: ML + 140, y: yy - 19, size: 9.5, font: w.font, color: col(white) });
@@ -523,7 +524,7 @@ export function cover(w: W, c: CoverData, style?: CoverStyle) {
       drawMotif(page, motif, { x: 0, y: PH - bh * 0.45, w: PW, h: bh * 0.45 }, pal.onPrimary, 0.1, seed);
       page.drawRectangle({ x: 0, y: PH - bh - 5, width: PW, height: 5, color: col(pal.accent) });
       logoTab(w, page, ML - 13, PH - 100, 56);
-      page.drawText(kind, { x: ML, y: PH - bh + 210, size: 9, font: w.bold, color: col(tint(pal.accent, 0.1)) });
+      page.drawText(kind, { x: ML, y: PH - bh + 210, size: 9, font: w.bold, color: col(readable(pal.accent, pal.primary, 4.5)) });
       titleBlock(w, page, c.title, ML, PH - bh + 196, CW, 28, pal.onPrimary, w.serif, 5);
       metaList(w, page, c.lines, ML, PH - bh - 46, CW, { label: pal.muted, value: pal.ink }, 2);
       if (name) page.drawText(name, { x: PW - MR - w.serif.widthOfTextAtSize(name, 10), y: 40, size: 10, font: w.serif, color: col(pal.deep) });
