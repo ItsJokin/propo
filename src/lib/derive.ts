@@ -2,6 +2,7 @@
 import type { Project, AppState, Section, Criterion } from './types';
 import { daysUntil, wordCount } from './util';
 import { obraChecks } from './obra';
+import { coherenceStale } from './coherence';
 import { getState } from './store';
 const INFO = /\[(?:Información requerida|Information required)/;
 
@@ -70,6 +71,14 @@ export function complianceChecks(p: Project): CheckItem[] {
     { id: 'signature', label: 'Firma pendiente', state: p.manualChecks.signature ? 'pass' : 'warn', detail: p.manualChecks.signature ? 'Firmante confirmado por tu equipo' : 'Confirma quién firma con firma electrónica cualificada', action: p.manualChecks.signature ? undefined : { label: 'Confirmar firmante', tab: 'compliance', manual: 'signature' } },
     { id: 'financial', label: 'Oferta económica confirmada', state: p.pricing?.approved || p.manualChecks.financialApproved ? 'pass' : 'fail', detail: p.pricing?.approved ? 'Precio confirmado en el paso «Fija el precio»' : p.manualChecks.financialApproved ? 'Aprobada por tu equipo' : 'Falta fijar y confirmar el precio de la oferta', action: p.pricing?.approved || p.manualChecks.financialApproved ? undefined : { label: 'Fijar el precio', tab: 'economic' } },
   ];
+  // Coherencia de la oferta completa: la revisa PROPO y corrige lo que puede; queda abierto solo lo que necesita al cliente.
+  if (p.sections.some((s) => s.content.trim())) {
+    const co = p.coherence; const stale = coherenceStale(p);
+    const open = (co?.issues ?? []).filter((i) => !i.fixed && !i.dismissed);
+    const fixed = (co?.issues ?? []).filter((i) => i.fixed).length;
+    items.push({ id: 'coherence', label: 'La oferta es coherente', state: stale ? 'warn' : open.some((i) => i.severity === 'critical') ? 'fail' : open.length ? 'warn' : 'pass',
+      detail: stale ? 'PROPO la revisa al entrar en la comprobación final' : open.length ? `${open.length} incoherencia${open.length > 1 ? 's' : ''} por resolver${fixed ? ` · ${fixed} corregida${fixed > 1 ? 's' : ''} por PROPO` : ''}` : fixed ? `PROPO ha corregido ${fixed} incoherencia${fixed > 1 ? 's' : ''}` : 'Memoria, plan de obra, precio y compromisos encajan entre sí' });
+  }
   // Obras: clasificación, registros, plan de obra, presupuesto BC3… resumidos en una sola comprobación.
   const oc = p.obra?.rules ? obraChecks(p, getState().company) : [];
   if (oc.length) {

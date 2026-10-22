@@ -1,6 +1,6 @@
 // Comprobación final: lo que queda antes de presentar, de una en una. Cada tarjeta pide una sola cosa y se resuelve
 // ahí mismo; lo que ya está bien queda recogido abajo, sin estorbar.
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { LuCircleCheck, LuArrowRight, LuShieldCheck, LuInfo, LuCheck, LuChevronLeft, LuChevronDown, LuUpload, LuFileText, LuSparkles, LuListChecks, LuMessageCircle, LuPencil, LuTriangleAlert, LuSend, LuLoaderCircle, LuClock } from 'react-icons/lu';
 import type { Project, Requirement } from '../../lib/types';
 import { complianceChecks, readiness, type CheckItem } from '../../lib/derive';
@@ -13,6 +13,25 @@ import { plainRequirement } from '../../lib/glossary';
 import { ACCEPTED } from '../../lib/pipeline/parse';
 import { nowIso, fmtDate } from '../../lib/util';
 import { openSource } from '../common';
+import { reviewCoherence, coherenceStale, type CoherenceIssue } from '../../lib/coherence';
+
+/** Revisión de coherencia en segundo plano (una a la vez por proyecto). Aplica las correcciones seguras al texto. */
+const reviewing = new Set<string>();
+async function runCoherence(id: string, onDone?: () => void) {
+  if (reviewing.has(id)) return;
+  reviewing.add(id);
+  try {
+    const st = getState(); const p = st.projects.find((x) => x.id === id); if (!p) return;
+    const { coherence, contents } = await reviewCoherence(p, st.company, st.team);
+    const fixed = coherence.issues.filter((i) => i.fixed).length;
+    updateProject(id, (x) => {
+      for (const sec of x.sections) if (contents[sec.id] != null && contents[sec.id] !== sec.content) { sec.content = contents[sec.id]; sec.updatedAt = nowIso(); }
+      x.coherence = coherence;
+      x.activity.unshift({ at: nowIso(), text: `Revisión de coherencia: ${coherence.issues.length} incoherencias encontradas, ${fixed} corregidas por PROPO` });
+    });
+  } catch { toast('No se ha podido revisar la coherencia ahora. Vuelve a intentarlo en unos minutos.', 'warn'); }
+  finally { reviewing.delete(id); onDone?.(); }
+}
 
 type Tone = 'fail' | 'warn';
 interface Card { id: string; tone: Tone; kicker: string; title: string; why: string; icon: React.ReactNode; check?: CheckItem; req?: Requirement; papers?: Requirement[] }
@@ -41,6 +60,8 @@ function buildCards(p: Project, checks: CheckItem[]): Card[] {
   const papers = p.requirements.filter((r) => isOpen(r) && inChecks(r) && !needsYou(r));
   if (papers.length) cards.push({ id: 'papers', tone: papers.some((r) => r.status === 'missing') ? 'fail' : 'warn', kicker: 'Papeles', title: papers.length === 1 ? 'Un papel que tendrás que adjuntar' : `${papers.length} papeles que tendrás que adjuntar`, why: 'Son documentos y declaraciones que se entregan al presentar la oferta. PROPO te prepara los modelos; aquí solo confirmas que los tienes localizados.', icon: <LuListChecks />, papers });
   // 3 · Comprobaciones automáticas que no han salido bien.
+  const co = by('coherence');
+  if (co && co.state !== 'pass') cards.push({ id: 'coherence', tone: co.state, kicker: 'Revisión', title: 'Que todo encaje', why: 'PROPO relee la oferta entera como lo haría un jefe de licitaciones: que la memoria, el plan de obra, el precio y los compromisos no se contradigan, que se respete lo que fija el pliego y que no se cuele en la memoria nada del sobre económico. Lo que puede, lo corrige solo.', icon: <LuSparkles />, check: co });
   for (const id of ['technical', 'criteria', 'pages', 'price', 'formats', 'sources']) {
     const c = by(id);
     if (c && c.state !== 'pass') cards.push({ id, tone: c.state, kicker: 'Revisión', title: COPY[id].title, why: COPY[id].why, icon: id === 'technical' ? <LuPencil /> : <LuTriangleAlert />, check: c });
@@ -68,6 +89,10 @@ export function Compliance({ p }: { p: Project }) {
   const reopen = (id: string) => setLater((l) => l.filter((x) => x !== id));
   const n = cards.length;
   const pos = cur ? cards.indexOf(cur) + 1 : n;
+  // La revisión de coherencia se lanza sola al entrar y cada vez que la oferta ha cambiado desde la última.
+  const [, tick] = useState(0);
+  const ready = p.sections.some((x) => x.content.trim());
+  useEffect(() => { if (ready && coherenceStale(p) && !reviewing.has(p.id)) { tick((t) => t + 1); runCoherence(p.id, () => tick((t) => t + 1)); } }, [p.id, ready && coherenceStale(p)]);
 
   return (
     <div className="stack gap-16 fin">
@@ -105,6 +130,7 @@ export function Compliance({ p }: { p: Project }) {
               : cur.id === 'signature' ? <SignatureStep p={p} />
               : cur.id === 'financial' ? <FinancialStep p={p} />
               : cur.id === 'pages' ? <PagesStep p={p} detail={cur.check?.detail ?? ''} />
+              : cur.id === 'coherence' ? <CoherenceStep p={p} onRerun={() => { tick((t) => t + 1); runCoherence(p.id, () => tick((t) => t + 1)); }} />
               : <div className="stack gap-12"><div className="well small">{cur.check?.detail}</div><div><button className="btn btn-primary" onClick={() => navigate(`/app/projects/${p.id}/${TAB[cur.id]}`)}>{COPY[cur.id].cta} <LuArrowRight /></button></div></div>}
           </div>
           <div className="fin-nav">
@@ -287,6 +313,51 @@ function FinancialStep({ p }: { p: Project }) {
       <div className="row-wrap">
         <button className="btn btn-secondary" disabled={!ok || !ok2} onClick={() => { updateProject(p.id, (x) => { x.manualChecks.financialApproved = true; x.activity.unshift({ at: nowIso(), text: `Oferta económica aprobada por ${user?.name ?? 'tu equipo'}` }); }); toast('Oferta económica aprobada', 'ok'); }}><LuCheck /> Dar el visto bueno</button>
       </div>
+    </div>
+  );
+}
+
+/** Resultado de la revisión de coherencia: lo que PROPO ha corregido y lo que necesita al cliente. */
+function CoherenceStep({ p, onRerun }: { p: Project; onRerun: () => void }) {
+  const [open, setOpen] = useState<string | null>(null);
+  const co = p.coherence; const busy = reviewing.has(p.id);
+  const title = (id: string) => (id === 'obra' ? 'Plan de obra' : p.sections.find((x) => x.id === id)?.title ?? id);
+  if (busy || !co) return (
+    <div className="fin-work">
+      <div className="row small"><LuLoaderCircle className="spin" /> <span>PROPO está releyendo la oferta entera: memoria, plan de obra, precio y compromisos…</span></div>
+      <p className="xs muted" style={{ margin: 0 }}>Tarda uno o dos minutos. Puedes seguir con otras cosas: el resultado aparecerá aquí.</p>
+    </div>
+  );
+  const fixed = co.issues.filter((i) => i.fixed);
+  const pending = co.issues.filter((i) => !i.fixed && !i.dismissed);
+  const sev = (i: CoherenceIssue) => (i.severity === 'critical' ? <span className="fin-must">Grave</span> : i.severity === 'important' ? <span className="fin-opt">Importante</span> : <span className="fin-opt">Menor</span>);
+  const dismiss = (id: string) => updateProject(p.id, (x) => { const it = x.coherence?.issues.find((i) => i.id === id); if (it) it.dismissed = true; });
+  return (
+    <div className="stack gap-12">
+      {fixed.length > 0 && (
+        <div className="callout small"><LuCircleCheck /><div><strong>PROPO ha corregido {fixed.length} incoherencia{fixed.length > 1 ? 's' : ''} por su cuenta.</strong> Solo ha cambiado las frases necesarias y con datos que ya estaban en tu oferta, el pliego o tu empresa.</div></div>
+      )}
+      {fixed.map((i) => (
+        <div key={i.id} className="well small">
+          <div className="row" style={{ gap: 8 }}><LuCheck style={{ color: 'var(--ok)' }} /><span className="grow">{i.problem}</span><button className="link xs" onClick={() => setOpen(open === i.id ? null : i.id)}>{open === i.id ? 'Ocultar' : 'Ver el cambio'}</button></div>
+          {open === i.id && i.fixes.filter((f) => f.applied).map((f, k) => (
+            <div key={k} className="mt-8 xs"><div className="muted">En «{title(f.section)}»</div><div style={{ textDecoration: 'line-through', opacity: 0.7 }}>{f.before}</div><div><strong>{f.after}</strong></div></div>
+          ))}
+        </div>
+      ))}
+      {pending.length > 0 && <div className="small"><strong>{pending.length === 1 ? 'Queda una cosa que necesita tu decisión' : `Quedan ${pending.length} cosas que necesitan tu decisión`}</strong></div>}
+      {pending.map((i) => (
+        <div key={i.id} className="well small">
+          <div className="row" style={{ gap: 8, alignItems: 'flex-start' }}><LuTriangleAlert style={{ color: 'var(--warn-ink)', flex: 'none', marginTop: 2 }} /><span className="grow">{i.problem}</span>{sev(i)}</div>
+          {i.ask && <div className="mt-8"><LuMessageCircle style={{ verticalAlign: -2 }} /> {i.ask}</div>}
+          <div className="row-wrap mt-8">
+            {(i.tab || i.where[0]) && <button className="btn btn-secondary btn-sm" onClick={() => navigate(`/app/projects/${p.id}/${i.tab ?? (i.where[0] === 'obra' ? 'obra' : 'proposal')}`)}>Ir a {i.tab === 'obra' || i.where[0] === 'obra' ? 'el plan de obra' : `«${title(i.where[0])}»`} <LuArrowRight /></button>}
+            <button className="btn btn-ghost btn-sm" onClick={() => dismiss(i.id)}>No es un problema</button>
+          </div>
+        </div>
+      ))}
+      {!fixed.length && !pending.length && <div className="callout small"><LuCircleCheck /><div>Todo encaja: memoria, plan de obra, precio y compromisos no se contradicen.</div></div>}
+      <div><button className="btn btn-ghost btn-sm" onClick={onRerun}><LuSparkles /> Volver a revisar</button></div>
     </div>
   );
 }

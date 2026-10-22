@@ -271,7 +271,8 @@ export interface Project {
   interview?: Interview;   // conversación guiada «PROPO te pregunta»
   answers?: GivenAnswer[]; // datos que el cliente ha aportado al revisar la propuesta: se reutilizan en la comprobación final
   pricing?: import('./pricing').Pricing; // paso «Precio»: cómo puntúa el pliego, el precio elegido y los criterios con fórmula
-  obra?: import('./obra').Obra;          // solo obras: lo que exige el pliego a la constructora, plan de obra y presupuesto ofertado
+  obra?: import('./obra').Obra;
+  coherence?: import('./coherence').Coherence;   // revisión de coherencia de la oferta completa (comprobación final)          // solo obras: lo que exige el pliego a la constructora, plan de obra y presupuesto ofertado
 }
 
 export interface GivenAnswer { label: string; kind: string; value: string; section: string; at: string }
