@@ -13,6 +13,7 @@ import { uid, nowIso, normalize, tokens, wordCount, cleanText } from '../util';
 import { lineWithout } from '../lineEdit';
 import { demoSection } from '../demo/demoWriter';
 import { isWorks } from '../obra';
+import { lessonsFor, lessonsPrompt } from '../data/lessons';
 
 export type StageId = 'read' | 'requirements' | 'deadlines' | 'criteria' | 'documents' | 'structure';
 export const STAGES: { id: StageId; label: string }[] = [
@@ -359,6 +360,9 @@ export async function generateSection(opts: {
   const sample = await getSample();
   if (sample && aiState() !== 'declined') {
     try {
+      // Lo que han premiado y criticado los tribunales en contratos parecidos (informes de valoración oficiales).
+      let lessons = '';
+      if (!section.form) try { const ls = await lessonsFor(project, section.title, crits.map((c) => c.name)); lessons = ls.length ? lessonsPrompt(ls) : ''; } catch { /* sin conocimiento */ }
       const j = await ai.json<any>(sectionPrompt({
         company: knowledge.company.legalName || 'the company', project: project.name, section: section.title, guidance: section.guidance,
         criteria: crits.map((c) => `- ${c.name} (${c.points} pts): ${c.description}`).join('\n'),
@@ -369,7 +373,7 @@ export async function generateSection(opts: {
         outline: project.sections.map((s, i) => `${s.id === section.id ? '→' : ' '} ${i + 1}. ${s.title}`).join('\n'),
         form: section.form, formsOnly: project.analysis?.formNote, usedFacts: usedElsewhere.length ? usedElsewhere.join('; ') : undefined,
         maxAsks: MAX_ASKS, asked: askedElsewhere.length ? askedElsewhere.map((x) => `«${x}»`).join('; ') : undefined,
-        works: isWorks(project),
+        works: isWorks(project), lessons: lessons || undefined,
       }), { tier: 'default', signal: opts.signal, project: (project.isSample ? '' : project.id) });
       let content = String(j?.content ?? '').trim();
       if (!content) throw new AIError('empty_completion', 'empty');

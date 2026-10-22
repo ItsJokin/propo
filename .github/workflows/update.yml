@@ -95,6 +95,10 @@ jobs:
           if [ -f dist/app.enc ]; then cp dist/app.enc _site/app.enc; fi   # la web, cifrada
           rsync -a --exclude '_state.json' data/ _site/data/
           cp -r media _site/media   # vídeo de presentación de la pantalla de acceso
+          # Lecciones de los informes de valoración (rama «conocimiento», workflow knowledge.yml).
+          if git ls-remote --exit-code --heads origin conocimiento >/dev/null 2>&1; then
+            git fetch -q --depth 1 origin conocimiento && mkdir -p _site/data/conocimiento && git archive FETCH_HEAD publico | tar -x --strip-components=1 -C _site/data/conocimiento || true
+          fi
           touch _site/.nojekyll
           du -sh _site
       - uses: actions/upload-pages-artifact@v3

@@ -44,7 +44,7 @@ ${pagesBlock}`;
 
 export function sectionPrompt(p: {
   company: string; project: string; section: string; guidance: string; criteria: string; requirements: string; sources: string; words: number; previous?: string;
-  authority?: string; outline?: string; pageLimit?: string; maxAsks: number; asked?: string; form?: string; formsOnly?: string; usedFacts?: string; works?: boolean;
+  authority?: string; outline?: string; pageLimit?: string; maxAsks: number; asked?: string; form?: string; formsOnly?: string; usedFacts?: string; works?: boolean; lessons?: string;
 }) {
   if (p.form) return formPrompt(p as Parameters<typeof formPrompt>[0]);
   return `You are PROPO, writing one section of the technical proposal (memoria técnica) that ${p.company} will submit for "${p.project}"${p.authority ? `, a contract of ${p.authority}` : ''}. An evaluation committee scores this section against the criteria listed below. Write it so that an evaluator can award the points without having to search for the answer.
@@ -56,6 +56,10 @@ ${p.works ? `This is a CONSTRUCTION WORKS tender (obra). The evaluator is an eng
 - If the tender reserves some units or critical tasks to the contractor (no subcontracting), never say they will be subcontracted: an offer that does so is not even evaluated. Only mention subcontracting for work the tender allows.
 - Show knowledge of the specific site and its problems (location, access, existing activity, seasonal weather, operating constraints) and justify the schedule against them: evaluators reward this explicitly.
 - Do not copy the project's memoria: show your own approach to executing it. If a plan de obra (Gantt) is part of the offer, refer to it for durations instead of repeating it.
+
+` : ''}${p.lessons ? `What evaluation committees rewarded and criticised in comparable Spanish contracts, criterion by criterion (summaries of real comments in official valuation reports; the lines marked «Deducción» are inferences, not facts):
+${p.lessons}
+Use this only to decide what to make explicit, concrete and verifiable and what weaknesses to avoid. Never copy their wording, never mention those contracts or companies, and never attribute to this company anything that is not in its SOURCES.
 
 ` : ''}How to build the section
 - Mirror the tender. Use one "## " subheading for each scored sub-criterion or aspect, with the tender's own wording and in the tender's order. If the tender states no sub-criteria, organise it as: understanding of the need, method of work, people and means assigned, schedule, control and follow-up.

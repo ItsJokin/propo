@@ -1,0 +1,89 @@
+# Base de conocimiento de PROPO: catálogo de expedientes adjudicados en España, informes de valoración, extracción de
+# puntuaciones y comentarios de los tribunales, y lecciones por sector que PROPO usa al redactar.
+# Se guarda en la rama «conocimiento» (no ensucia main). Cada ejecución sigue donde lo dejó la anterior.
+name: PROPO · conocimiento
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      from:
+        description: 'Primer mes del catálogo (AAAA-MM); vacío = el mes pasado'
+        default: ''
+      to:
+        description: 'Último mes del catálogo (AAAA-MM); vacío = el mes pasado'
+        default: ''
+      max_months:
+        description: 'Meses de catálogo por ejecución'
+        default: '4'
+      harvest_minutes:
+        description: 'Minutos de descarga de informes'
+        default: '45'
+      extract_docs:
+        description: 'Informes a extraer con IA en esta ejecución'
+        default: '300'
+
+permissions:
+  contents: write   # rama «conocimiento»
+  actions: write    # volver a publicar la web con las lecciones nuevas
+
+concurrency:
+  group: propo-knowledge
+  cancel-in-progress: false
+
+jobs:
+  knowledge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Rama de conocimiento
+        run: |
+          git config --global user.name "propo-bot"; git config --global user.email "propo-bot@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin conocimiento >/dev/null; then
+            git clone -q --depth 1 --branch conocimiento "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" conocimiento
+          else
+            mkdir conocimiento && cd conocimiento && git init -q -b conocimiento && git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          fi
+      - name: Herramientas
+        run: sudo apt-get install -y -qq poppler-utils >/dev/null && npm install --no-save --no-audit --no-fund @anthropic-ai/sdk >/dev/null
+      - name: Catálogo de expedientes adjudicados
+        run: node --max-old-space-size=6000 scripts/knowledge/catalog.mjs
+        env:
+          KDIR: conocimiento
+          FROM: ${{ inputs.from }}
+          TO: ${{ inputs.to }}
+          MAX_MONTHS: ${{ inputs.max_months || '2' }}
+      - name: Descarga de informes de valoración
+        run: node scripts/knowledge/harvest.mjs
+        env:
+          KDIR: conocimiento
+          RUN_MINUTES: ${{ inputs.harvest_minutes || '45' }}
+      - name: Extracción de puntuaciones y comentarios (IA)
+        run: node scripts/knowledge/extract.mjs
+        env:
+          KDIR: conocimiento
+          MAX_DOCS: ${{ inputs.extract_docs || '300' }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Lecciones y cobertura
+        run: node --max-old-space-size=6000 scripts/knowledge/lessons.mjs
+        env:
+          KDIR: conocimiento
+      - name: Guardar
+        id: save
+        run: |
+          cd conocimiento
+          git add -A
+          if git diff --cached --quiet; then echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git commit -qm "conocimiento $(date -u +%Y-%m-%dT%H:%M)" && git push -q origin conocimiento
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          cat ESTADO.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Volver a publicar la web
+        if: steps.save.outputs.changed == 'true'
+        run: gh workflow run update.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
