@@ -27,6 +27,7 @@ export interface ObraRules {
   plazoDias: number | null;         // plazo de ejecución, en días naturales
   capitulos: { nombre: string; importe: number | null }[];
   avisos: string[];                 // otras causas de exclusión propias de la obra
+  noSubcontratar: string[];         // unidades o trabajos que el pliego reserva al contratista (no se pueden subcontratar)
   mode: 'ai' | 'rules';
 }
 export interface Activity { id: string; name: string; dur: number; deps: string[]; why: string; es?: number; ef?: number; ls?: number; lf?: number; slack?: number; critical?: boolean }
@@ -54,7 +55,7 @@ async function obraPages(p: Project): Promise<string> {
 const num = (x: any) => { if (x == null || x === '') return null; const n = Number(String(x).replace(/\./g, '').replace(',', '.')); return Number.isFinite(n) ? n : null; };
 
 export async function readObraRules(p: Project): Promise<ObraRules> {
-  const base: ObraRules = { clasificacion: [], clasifObligatoria: false, rolece: false, rera: false, visita: false, notaMinima: null, ceroExcluye: [], gantt: false, bc3: false, plazoDias: null, capitulos: [], avisos: [], mode: 'rules' };
+  const base: ObraRules = { clasificacion: [], clasifObligatoria: false, rolece: false, rera: false, visita: false, notaMinima: null, ceroExcluye: [], gantt: false, bc3: false, plazoDias: null, capitulos: [], avisos: [], noSubcontratar: [], mode: 'rules' };
   let pages = '';
   try { pages = await obraPages(p); } catch { /* sin textos */ }
   if (!pages) return base;
@@ -80,7 +81,8 @@ Devuelve SOLO JSON:
   "bc3": true|false,                             // piden el presupuesto en BC3/FIEBDC, Presto o Excel de mediciones
   "plazo_dias": número o null,                   // plazo de ejecución en días naturales (convierte meses a días ×30)
   "capitulos": [{"nombre": "Demoliciones", "importe": número o null}],   // capítulos del presupuesto del proyecto, en orden
-  "avisos": ["otras causas de exclusión propias de la obra, en una frase cada una"]
+  "avisos": ["otras causas de exclusión propias de la obra, en una frase cada una"],
+  "no_subcontratar": ["unidades, partes o tareas críticas que el pliego obliga a ejecutar directamente al contratista (no se pueden subcontratar)"]
 }
 No inventes nada: si no está en los extractos, pon false, null o una lista vacía.`, { tier: 'default', project: p.isSample ? '' : p.id });
     return {
@@ -89,7 +91,7 @@ No inventes nada: si no está en los extractos, pon false, null o una lista vac�
       notaMinima: num(j.nota_minima), ceroExcluye: (j.cero_excluye || []).map(String).slice(0, 6),
       gantt: !!j.gantt, bc3: !!j.bc3, plazoDias: num(j.plazo_dias),
       capitulos: (Array.isArray(j.capitulos) ? j.capitulos : []).filter((c: any) => c?.nombre).slice(0, 40).map((c: any) => ({ nombre: String(c.nombre), importe: num(c.importe) })),
-      avisos: (j.avisos || []).map(String).slice(0, 8), mode: 'ai',
+      avisos: (j.avisos || []).map(String).slice(0, 8), noSubcontratar: (j.no_subcontratar || []).map(String).slice(0, 8), mode: 'ai',
     };
   } catch { return base; }
 }
@@ -117,6 +119,7 @@ export function obraChecks(p: Project, c: CompanyInfo): ObraCheck[] {
   if (r.bc3) out.push({ id: 'bc3', label: 'Presupuesto en BC3/Presto o Excel', state: p.obra?.budget ? 'pass' : 'fail', detail: p.obra?.budget ? `${p.obra.budget.name} con rebaja del ${(p.obra.budget.baja * 100).toFixed(1).replace('.', ',')} %` : 'El pliego lo pide en el sobre económico: súbelo en «Plan de obra» y PROPO le aplica tu rebaja.' });
   if (r.notaMinima != null) out.push({ id: 'nota', label: `Nota mínima de ${r.notaMinima} puntos en la memoria`, state: 'warn', detail: 'Por debajo te excluyen: no dejes ningún apartado de la memoria sin desarrollar.' });
   r.ceroExcluye.forEach((x, i) => out.push({ id: `cero${i}`, label: 'Subcriterio que excluye con un 0', state: 'warn', detail: x }));
+  if ((r.noSubcontratar ?? []).length) out.push({ id: 'subcontrata', label: 'Trabajos que no se pueden subcontratar', state: 'warn', detail: `${r.noSubcontratar.join('; ')}. Si la memoria dice que los subcontratarás, la oferta puede quedar sin valorar.` });
   return out;
 }
 
