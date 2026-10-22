@@ -18,21 +18,22 @@ import { planObra, emptyObra } from '../../lib/obra';
 
 /** Revisión de coherencia en segundo plano (una a la vez por proyecto). Aplica las correcciones seguras al texto. */
 const reviewing = new Set<string>();
+const failed = new Set<string>();   // la última revisión falló: la tarjeta ofrece reintentar en vez de esperar
 async function runCoherence(id: string, onDone?: () => void) {
   if (reviewing.has(id)) return;
-  reviewing.add(id);
+  reviewing.add(id); failed.delete(id);
   try {
     const st = getState(); const p = st.projects.find((x) => x.id === id); if (!p) return;
     const coherence = await reviewCoherence(p, st);
     updateProject(id, (x) => {
       // Lo que el cliente ya descartó o PROPO ya arregló no vuelve a salir si la IA lo repite con el mismo título.
-      const prev = x.coherence?.issues ?? [];
+      const prev = (x.coherence?.issues ?? []).filter((i) => i.title);   // las de la versión anterior (sin título) no se arrastran
       const gone = new Set(prev.filter((i) => i.dismissed || i.fixed).map((i) => i.title.toLowerCase()));
-      coherence.issues = coherence.issues.filter((i) => !gone.has(i.title.toLowerCase())).concat(prev.filter((i) => i.fixed));
+      coherence.issues = coherence.issues.filter((i) => !gone.has(i.title.toLowerCase())).concat(prev.filter((i) => i.fixed && i.fixes?.length));
       x.coherence = coherence;
       x.activity.unshift({ at: nowIso(), text: `Revisión de coherencia: ${openIssues(x).length} incoherencias por arreglar` });
     });
-  } catch { toast('No se ha podido revisar la coherencia ahora. Vuelve a intentarlo en unos minutos.', 'warn'); }
+  } catch { failed.add(id); toast('No se ha podido revisar la coherencia ahora. Vuelve a intentarlo en unos minutos.', 'warn'); }
   finally { reviewing.delete(id); onDone?.(); }
 }
 
@@ -98,7 +99,7 @@ export function Compliance({ p }: { p: Project }) {
   // La revisión de coherencia se lanza sola al entrar y cada vez que la oferta ha cambiado desde la última.
   const [, tick] = useState(0);
   const ready = p.sections.some((x) => x.content.trim());
-  useEffect(() => { if (ready && coherenceStale(p) && !reviewing.has(p.id)) { tick((t) => t + 1); runCoherence(p.id, () => tick((t) => t + 1)); } }, [p.id, ready && coherenceStale(p)]);
+  useEffect(() => { if (ready && coherenceStale(p) && !reviewing.has(p.id) && !failed.has(p.id)) { tick((t) => t + 1); runCoherence(p.id, () => tick((t) => t + 1)); } }, [p.id, ready && coherenceStale(p)]);
 
   return (
     <div className="stack gap-16 fin">
@@ -136,6 +137,7 @@ export function Compliance({ p }: { p: Project }) {
               : cur.id === 'signature' ? <SignatureStep p={p} />
               : cur.id === 'financial' ? <FinancialStep p={p} />
               : cur.id === 'pages' ? <PagesStep p={p} detail={cur.check?.detail ?? ''} />
+              : cur.id === 'coherence-run' && failed.has(p.id) && !reviewing.has(p.id) ? <div className="stack gap-12"><div className="well small">No se ha podido terminar la revisión. Suele ser algo puntual.</div><div><button className="btn btn-primary" onClick={() => { tick((t) => t + 1); runCoherence(p.id, () => tick((t) => t + 1)); }}><LuSparkles /> Reintentar</button></div></div>
               : cur.id === 'coherence-run' ? <div className="fin-work"><div className="row small"><LuLoaderCircle className="spin" /> <span>PROPO está releyendo la oferta entera…</span></div><p className="xs muted" style={{ margin: 0 }}>Tarda uno o dos minutos. Si encuentra algo que no encaja, te lo enseña aquí con un botón para arreglarlo.</p></div>
               : cur.issue ? <IssueStep key={cur.issue.id} p={p} issue={cur.issue} />
               : <div className="stack gap-12"><div className="well small">{cur.check?.detail}</div><div><button className="btn btn-primary" onClick={() => navigate(`/app/projects/${p.id}/${TAB[cur.id]}`)}>{COPY[cur.id].cta} <LuArrowRight /></button></div></div>}
