@@ -17,7 +17,7 @@ const MAX_DOCS = Number(process.env.MAX_DOCS || 400);
 // Tope de gasto: se para al llegar. Precios por millón de tokens (orientativos y algo altos, para no pasarse).
 const BUDGET = Number(process.env.BUDGET_USD || 0);
 const PRICE_IN = Number(process.env.PRICE_IN || 1.2), PRICE_OUT = Number(process.env.PRICE_OUT || 6);
-let spent = 0;
+let spent = 0, tokensIn = 0, tokensOut = 0;
 const CONC = Number(process.env.CONCURRENCY || 3);
 if (!process.env.ANTHROPIC_API_KEY) { console.log('Sin ANTHROPIC_API_KEY: no se extrae nada en esta ejecución.'); process.exit(0); }
 const client = new Anthropic();
@@ -71,9 +71,12 @@ async function one(t) {
   const r = cat.get(t.exp);
   try {
     const msg = await client.messages.create({ model: MODEL, max_tokens: 8000, messages: [{ role: 'user', content: prompt(t, r) }] });
+    // Lo que cobra Anthropic se cuenta siempre, aunque luego la respuesta no se pueda leer.
+    spent += ((msg.usage?.input_tokens || 0) * PRICE_IN + (msg.usage?.output_tokens || 0) * PRICE_OUT) / 1e6;
+    tokensIn += msg.usage?.input_tokens || 0; tokensOut += msg.usage?.output_tokens || 0;
+    if (msg.stop_reason === 'max_tokens') throw new Error('respuesta cortada (max_tokens)');
     const text = msg.content.filter((b) => b.type === 'text').map((b) => b.text).join('');
     const j = JSON.parse(text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1));
-    spent += ((msg.usage?.input_tokens || 0) * PRICE_IN + (msg.usage?.output_tokens || 0) * PRICE_OUT) / 1e6;
     out.push({ doc: t.doc, exp: t.exp, model: MODEL, at: new Date().toISOString(), usage: msg.usage, data: j });
     state[t.doc] = { s: j.es_valoracion ? 'ok' : 'no_valoracion', q: j.calidad || null, at: new Date().toISOString().slice(0, 10) };
     stats[j.es_valoracion ? 'ok' : 'no_valoracion']++;
@@ -95,5 +98,5 @@ for (let i = 0; i < todo.length; i += CONC) {
 }
 if (out.length) writeJsonl(path.join(KDIR, 'extraccion', `${new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-')}.jsonl.gz`), out);
 writeJson(statePath, state);
-const tokens = out.reduce((a, x) => ({ in: a.in + (x.usage?.input_tokens || 0), out: a.out + (x.usage?.output_tokens || 0) }), { in: 0, out: 0 });
+const tokens = { in: tokensIn, out: tokensOut };   // incluye las respuestas que no se pudieron leer
 console.log(`Hecho: ${JSON.stringify(stats)} · tokens ${JSON.stringify(tokens)} · modelo ${MODEL} · gasto estimado ${spent.toFixed(2)} $`);
