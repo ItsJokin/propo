@@ -156,6 +156,14 @@ export async function answer(projectId: string, q: Question, a: { choice?: strin
       const out = a.text ? (/^\s*no\b/i.test(a.text) ? 'no' : 'yes') : outcomeOf(a.choice ?? '');
       if (out === 'yes') {
         updateRequirement(projectId, q.reqId, { status: 'fulfilled', humanValidated: true, evidence: [{ kind: 'user', label: a.text ? a.text.slice(0, 160) : `Confirmado por ${who}` }], note: a.text ? `Respuesta de ${who}: ${a.text}` : `Confirmado por ${who} en el asistente` }, 'Requisito confirmado en el asistente');
+        // Obras: si confirma la clasificación exigida, se guarda en Empresa → Construcción para que el plan de obra lo sepa.
+        const p = getState().projects.find((x) => x.id === projectId);
+        const req = p?.requirements.find((x) => x.id === q.reqId);
+        const need = p?.obra?.rules?.clasificacion ?? [];
+        if (req && need.length && /clasificaci/i.test(req.title + ' ' + req.text)) update((s) => {
+          const have = (s.company.clasificaciones ??= []);
+          for (const n of need) if (!have.some((h) => h.grupo === n.grupo && h.subgrupo === n.subgrupo && Number(h.categoria) >= Number(n.categoria))) have.push({ ...n });
+        });
         reply = a.text ? `${ack()} Lo uso al redactar la propuesta.` : `${ack()} Si tienes a mano el documento que lo acredita, puedes subirlo cuando quieras; no hace falta ahora.`;
       } else if (out === 'partial') {
         updateRequirement(projectId, q.reqId, { status: 'needs_info', note: `Respuesta de ${who}: ${a.choice}` }, 'Requisito con respuesta parcial');

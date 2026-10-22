@@ -4,6 +4,7 @@
 import * as pdfjs from 'pdfjs-dist/build/pdf.mjs';
 import * as pdfWorker from 'pdfjs-dist/build/pdf.worker.mjs';
 import { readZip } from './zip';
+import { cleanText } from '../util';
 
 // pdf.js "fake worker": parse on the main thread (artifact pages cannot load worker files by URL).
 (globalThis as any).pdfjsWorker = pdfWorker;
@@ -92,7 +93,7 @@ async function parsePdf(name: string, buf: ArrayBuffer, sizeKb: number, onProgre
       s += it.str;
       s += it.hasEOL ? '\n' : (it.str && !it.str.endsWith(' ') ? ' ' : '');
     }
-    pages.push(s.replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim());
+    pages.push(cleanText(s).replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim());
     page.cleanup?.();
   }
   await doc.destroy?.();

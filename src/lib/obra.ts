@@ -107,7 +107,9 @@ export function obraChecks(p: Project, c: CompanyInfo): ObraCheck[] {
   const out: ObraCheck[] = [];
   const have = c.clasificaciones ?? [];
   if (r.clasificacion.length) {
-    const ok = r.clasificacion.filter((n) => covers(have, n));
+    // Si ya la confirmó en «Responde a PROPO», cuenta como acreditada aunque no esté en Empresa → Construcción.
+    const said = p.requirements.some((q) => q.status === 'fulfilled' && q.humanValidated && /clasificaci/i.test(q.title + ' ' + q.text));
+    const ok = said ? r.clasificacion : r.clasificacion.filter((n) => covers(have, n));
     const txt = r.clasificacion.map((n) => `${n.grupo}${n.subgrupo ? `-${n.subgrupo}` : ''}${n.categoria ? ` cat. ${n.categoria}` : ''}`).join(', ');
     out.push({ id: 'clasif', label: r.clasifObligatoria ? 'Clasificación exigida' : 'Clasificación (sirve como solvencia)', state: ok.length === r.clasificacion.length ? 'pass' : r.clasifObligatoria ? 'fail' : 'warn',
       detail: ok.length === r.clasificacion.length ? `Tu clasificación cubre ${txt}` : r.clasifObligatoria ? `El pliego exige ${txt}. Añade tu clasificación en Empresa → Construcción o preséntate en UTE con quien la tenga.` : `Sin la clasificación ${txt} tendrás que acreditar la solvencia con tu facturación y tus obras.` });
@@ -146,7 +148,7 @@ export async function planObra(p: Project, c: CompanyInfo, team: { name: string;
   const caps = r?.capitulos.length ? r.capitulos.map((x) => `- ${x.nombre}${x.importe ? ` (${Math.round(x.importe)} €)` : ''}`).join('\n') : '(no se han encontrado los capítulos: deduce las actividades de la obra a partir del pliego)';
   let pages = '';
   try { pages = (await obraPages(p)).slice(0, 30000); } catch { /* nada */ }
-  const j = await ai.json<any>(`Eres jefe de obra con mucha experiencia en España. Prepara el PLAN DE OBRA para la oferta de esta licitación.
+  const prompt = `Eres jefe de obra con mucha experiencia en España. Prepara el PLAN DE OBRA para la oferta de esta licitación.
 
 Obra: ${p.name}
 Plazo máximo de ejecución: ${r?.plazoDias ? `${r.plazoDias} días naturales` : p.analysis?.duration || 'no consta'}
@@ -164,12 +166,31 @@ Devuelve SOLO JSON:
   "activities": [{"id": "A1", "name": "Implantación de obra y medidas de seguridad", "dur": días, "deps": ["ids de las que tienen que terminar antes"], "why": "rendimiento y medios que justifican la duración, una frase con números (p. ej. 2 oficiales + 1 peón, 120 m²/día)"}],
   "justification": "Justificación del plan de obra en 3 o 4 párrafos: secuencia, solapes, camino crítico, rendimientos, coordinación con la actividad existente y condicionantes climáticos. Sin inventar medios que la empresa no tenga."
 }
-Reglas: entre 8 y 18 actividades representativas, cubriendo todos los capítulos (incluidos gestión de residuos y seguridad y salud), con solapes realistas; el plazo total no debe superar el máximo; duraciones en días naturales.`, { tier: 'default', project: p.isSample ? '' : p.id });
-  const acts: Activity[] = (Array.isArray(j?.activities) ? j.activities : []).filter((a: any) => a?.id && a?.name).slice(0, 24)
+Reglas: entre 8 y 18 actividades representativas, cubriendo todos los capítulos (incluidos gestión de residuos y seguridad y salud), con solapes realistas; duraciones en días naturales.
+- PROPO calcula el plazo total con el camino crítico a partir de tus duraciones y dependencias: la actividad que más tarde termine fija el total, y no debe superar el máximo.
+- Las tareas que acompañan a toda la obra (seguridad y salud, gestión de residuos, control de calidad, vigilancia ambiental) dependen solo de la implantación y duran como mucho lo que dura la obra; nunca las encadenes detrás de otra fase larga.
+- En la justificación no escribas la duración total ni el camino crítico con números: PROPO los añade calculados.`;
+  const parse = (j: any): Activity[] => (Array.isArray(j?.activities) ? j.activities : []).filter((a: any) => a?.id && a?.name).slice(0, 24)
     .map((a: any) => ({ id: String(a.id), name: String(a.name), dur: Math.max(1, Math.round(Number(a.dur) || 1)), deps: (a.deps || []).map(String), why: String(a.why || '') }));
+  const opts = { tier: 'default' as const, project: p.isSample ? '' : p.id };
+  let j = await ai.json<any>(prompt, opts);
+  let acts = parse(j);
   if (!acts.length) throw new Error('empty_plan');
-  const res = cpm(acts);
-  return { activities: res.activities, total: res.total, plazo: r?.plazoDias ?? null, justification: String(j.justification || ''), at: nowIso() };
+  let res = cpm(acts);
+  const max = r?.plazoDias ?? null;
+  // Pasarse del plazo es causa de exclusión: se le devuelve a la IA el cálculo real para que lo corrija (hasta dos veces).
+  for (let i = 0; i < 2 && max && res.total > max; i++) {
+    const calc = res.activities.map((a) => `${a.id} ${a.name}: ${a.dur} días, del día ${a.es} al ${a.ef}${a.critical ? ' (crítica)' : ''}`).join('\n');
+    const fixed = await ai.json<any>(`${prompt}\n\nTu propuesta anterior daba ${res.total} días con el camino crítico, más que el máximo de ${max}. Así quedaba:\n${calc}\n\nCorrígela: ajusta dependencias, solapes y duraciones (sin rendimientos irreales) para que el total quede por debajo de ${max} días, con algo de holgura. Devuelve el JSON completo.`, opts).catch(() => null);
+    const next = parse(fixed);
+    if (!next.length) break;
+    const nres = cpm(next);
+    if (nres.total < res.total) { j = fixed; acts = next; res = nres; }
+  }
+  const crit = res.activities.filter((a) => a.critical).map((a) => a.name.toLowerCase()).join(' → ');
+  const fit = max ? (res.total <= max ? `, dentro del plazo máximo de ${max} días (holgura de ${max - res.total} días)` : `, por encima del plazo máximo de ${max} días: revisa las duraciones antes de presentarlo`) : '';
+  const justification = `${String(j.justification || '').trim()}\n\nDuración total calculada: ${res.total} días naturales${fit}. Camino crítico: ${crit}.`;
+  return { activities: res.activities, total: res.total, plazo: max, justification, at: nowIso() };
 }
 
 // ── Presupuesto ofertado: BC3 (FIEBDC-3) y Excel ───────────────────────────────────────────────────────────────────

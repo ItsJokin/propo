@@ -53,3 +53,6 @@ export const INFO_TAG = 'Información requerida';
 
 export function wordCount(s: string) { return (s.trim().match(/\S+/g) || []).length; }
 export const isUnknown = (s?: string | null) => !s || /^(No identificad|Not identified)/.test(s);
+
+/** Algunos PDF codifican los espacios como caracteres de control (p. ej. \u0000): se convierten en espacios normales. */
+export const cleanText = (s: string) => s.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u00A0]+/g, ' ').replace(/ {2,}/g, ' ');

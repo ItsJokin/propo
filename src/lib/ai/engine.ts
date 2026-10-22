@@ -9,7 +9,7 @@ import { extractWithRules } from '../pipeline/extractRules';
 import { chunkPages, search, quoteOnPage, type Passage } from '../pipeline/retrieval';
 import { knowledgeForPrompt, knowledgeIndex, toRequirements, type Knowledge } from '../pipeline/matching';
 import { getPages } from '../storage';
-import { uid, nowIso, normalize, tokens, wordCount } from '../util';
+import { uid, nowIso, normalize, tokens, wordCount, cleanText } from '../util';
 import { lineWithout } from '../lineEdit';
 import { demoSection } from '../demo/demoWriter';
 import { isWorks } from '../obra';
@@ -31,7 +31,7 @@ export async function projectPages(project: Project): Promise<Map<string, string
   for (const d of project.docs) {
     if (d.textKey) {
       const pages = await getPages(d.textKey);
-      if (pages) { map.set(d.id, pages); continue; }
+      if (pages) { map.set(d.id, pages.map(cleanText)); continue; }   // limpia también los textos ya guardados
     }
     if (d.excerpts) {
       const arr = Array.from({ length: d.pages }, (_, i) => d.excerpts![i + 1] ?? '');
