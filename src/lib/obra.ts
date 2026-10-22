@@ -169,6 +169,7 @@ Devuelve SOLO JSON:
 Reglas: entre 8 y 18 actividades representativas, cubriendo todos los capítulos (incluidos gestión de residuos y seguridad y salud), con solapes realistas; duraciones en días naturales.
 - PROPO calcula el plazo total con el camino crítico a partir de tus duraciones y dependencias: la actividad que más tarde termine fija el total, y no debe superar el máximo.
 - Las tareas que acompañan a toda la obra (seguridad y salud, gestión de residuos, control de calidad, vigilancia ambiental) dependen solo de la implantación y duran como mucho lo que dura la obra; nunca las encadenes detrás de otra fase larga.
+- Si el pliego solo permite trabajar en ciertas épocas (p. ej. fuera de la campaña de riego, de octubre a marzo, o en vacaciones escolares), el plan lo refleja: los trabajos afectados se dividen en campañas reales y entre ellas va una actividad «Parada: …» con su duración, sin esos trabajos. Supón que la obra empieza al inicio de la primera ventana. Nunca programes en una época prohibida un trabajo que el pliego restringe.
 - En la justificación no escribas la duración total ni el camino crítico con números: PROPO los añade calculados.`;
   const parse = (j: any): Activity[] => (Array.isArray(j?.activities) ? j.activities : []).filter((a: any) => a?.id && a?.name).slice(0, 24)
     .map((a: any) => ({ id: String(a.id), name: String(a.name), dur: Math.max(1, Math.round(Number(a.dur) || 1)), deps: (a.deps || []).map(String), why: String(a.why || '') }));
@@ -181,7 +182,7 @@ Reglas: entre 8 y 18 actividades representativas, cubriendo todos los capítulos
   // Pasarse del plazo es causa de exclusión: se le devuelve a la IA el cálculo real para que lo corrija (hasta dos veces).
   for (let i = 0; i < 2 && max && res.total > max; i++) {
     const calc = res.activities.map((a) => `${a.id} ${a.name}: ${a.dur} días, del día ${a.es} al ${a.ef}${a.critical ? ' (crítica)' : ''}`).join('\n');
-    const fixed = await ai.json<any>(`${prompt}\n\nTu propuesta anterior daba ${res.total} días con el camino crítico, más que el máximo de ${max}. Así quedaba:\n${calc}\n\nCorrígela: ajusta dependencias, solapes y duraciones (sin rendimientos irreales) para que el total quede por debajo de ${max} días, con algo de holgura. Devuelve el JSON completo.`, opts).catch(() => null);
+    const fixed = await ai.json<any>(`${prompt}\n\nTu propuesta anterior daba ${res.total} días con el camino crítico, más que el máximo de ${max}. Así quedaba:\n${calc}\n\nCorrígela: ajusta dependencias, solapes y duraciones (sin rendimientos irreales) para que el total quede por debajo de ${max} días, con una holgura de al menos el 5 %. Devuelve el JSON completo. La justificación se presenta a la Administración: no menciones esta corrección ni ninguna versión anterior.`, opts).catch(() => null);
     const next = parse(fixed);
     if (!next.length) break;
     const nres = cpm(next);
