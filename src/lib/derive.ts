@@ -46,7 +46,8 @@ const PRICE_LEAK = /(€\s?\d|\d[\d.,]*\s?(€|eur\b|euros)|unit price|precio un
  *  de la propia empresa (importes de sus obras anteriores, facturación): eso es experiencia, no precio. */
 export function priceLeaks(p: Project): { section: string; amounts: string[] }[] {
   const raw = (t: string) => [...t.matchAll(/(\d[\d.,]*)\s?(?:€|eur\b|euros)|€\s?(\d[\d.,]*)/gi)].map((m) => (m[1] || m[2]));
-  const key = (a: string) => a.replace(/[.,]0+$/, '').replace(/[.,]$/, '').replace(/[.,]/g, '');
+  // Solo se quitan los decimales de verdad («,00», «.35»); «950.000» son miles y se quedan.
+  const key = (a: string) => a.replace(/[.,]$/, '').replace(/[.,]\d{1,2}$/, '').replace(/[.,]/g, '');
   const st = getState();
   const known = new Set([
     ...p.requirements.flatMap((r) => raw(`${r.text} ${r.plain ?? ''} ${r.source.quote ?? ''}`)), ...p.sections.flatMap((s) => s.citations.filter((c) => c.kind === 'tender' || c.kind === 'company').flatMap((c) => raw(c.quote ?? ''))), ...raw(p.analysis?.budget ?? ''),
