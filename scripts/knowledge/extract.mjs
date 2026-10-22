@@ -26,7 +26,7 @@ const catDir = path.join(KDIR, 'catalogo');
 for (const f of fs.existsSync(catDir) ? fs.readdirSync(catDir).sort() : []) for (const r of readJsonl(path.join(catDir, f))) cat.set(r.id, r);
 const txtDir = path.join(KDIR, 'textos');
 const docs = [];
-for (const f of fs.existsSync(txtDir) ? fs.readdirSync(txtDir).sort().reverse() : []) for (const t of readJsonl(path.join(txtDir, f))) if (!state[t.doc]) docs.push(t);
+for (const f of fs.existsSync(txtDir) ? fs.readdirSync(txtDir).sort().reverse() : []) for (const t of readJsonl(path.join(txtDir, f))) if (!state[t.doc] || state[t.doc].s === 'error') docs.push(t);   // los errores se reintentan
 console.log(`Informes con texto pendientes de extraer: ${docs.length}`);
 
 function prompt(t, r) {
