@@ -42,6 +42,21 @@ export function pageLimitNumber(p: Project): number | null {
 
 const PRICE_LEAK = /(€\s?\d|\d[\d.,]*\s?(€|eur\b|euros)|unit price|precio unitario)/i;
 
+/** Importes de la memoria técnica que podrían revelar la oferta económica. Se admiten los que salen del pliego y los
+ *  de la propia empresa (importes de sus obras anteriores, facturación): eso es experiencia, no precio. */
+export function priceLeaks(p: Project): { section: string; amounts: string[] }[] {
+  const raw = (t: string) => [...t.matchAll(/(\d[\d.,]*)\s?(?:€|eur\b|euros)|€\s?(\d[\d.,]*)/gi)].map((m) => (m[1] || m[2]));
+  const key = (a: string) => a.replace(/[.,]0+$/, '').replace(/[.,]$/, '').replace(/[.,]/g, '');
+  const st = getState();
+  const known = new Set([
+    ...p.requirements.flatMap((r) => raw(`${r.text} ${r.plain ?? ''} ${r.source.quote ?? ''}`)), ...p.sections.flatMap((s) => s.citations.filter((c) => c.kind === 'tender' || c.kind === 'company').flatMap((c) => raw(c.quote ?? ''))), ...raw(p.analysis?.budget ?? ''),
+    ...st.pastProjects.flatMap((x) => [...raw(`${x.value} ${x.description}`), ...((x.value || '').match(/\d[\d.,]*/g) ?? [])]), ...((st.company.revenue || '').match(/\d[\d.,]*/g) ?? []),
+  ].map(key));
+  const offer = p.pricing?.choice ? new Set([p.pricing.choice.total, ...p.pricing.choice.units.map((u) => u.price)].map((n) => key(n.toFixed(2)))) : new Set<string>();
+  return p.sections.filter((s) => !s.form).map((s) => ({ section: s.id, amounts: [...new Set(raw(s.content).filter((a) => offer.has(key(a)) || !known.has(key(a))))] }))
+    .filter((x) => x.amounts.length || /precio unitario|unit price/i.test(p.sections.find((s) => s.id === x.section)!.content));
+}
+
 export function complianceChecks(p: Project): CheckItem[] {
   const docReqs = p.requirements.filter((r) => ['administrative', 'legal', 'certification'].includes(r.category));
   const docOpen = docReqs.filter((r) => r.status === 'missing' || r.status === 'needs_info');
@@ -53,10 +68,9 @@ export function complianceChecks(p: Project): CheckItem[] {
   const uncovered = judgement.filter((c) => criterionCoverage(p, c) === 'weak');
   const limit = pageLimitNumber(p);
   const est = estimatePages(p);
-  const amounts = (t: string) => [...t.matchAll(/(\d[\d.,]*)\s?(?:€|eur\b|euros)|€\s?(\d[\d.,]*)/gi)].map((m) => (m[1] || m[2]).replace(/[.,]0+$/, '').replace(/[.,]$/, ''));
-  const fromTender = new Set([...p.requirements.flatMap((r) => amounts(`${r.text} ${r.plain ?? ''} ${r.source.quote ?? ''}`)), ...p.sections.flatMap((s) => s.citations.filter((c) => c.kind === 'tender').flatMap((c) => amounts(c.quote ?? ''))), ...amounts(p.analysis?.budget ?? '')]);
+  const leakList = priceLeaks(p);
   // Solo es fuga un importe que no viene del pliego. En los formularios del pliego el precio va donde el pliego lo pide.
-  const leaks = p.sections.filter((s) => !s.form && (/unit price|precio unitario/i.test(s.content) || amounts(s.content).some((a) => !fromTender.has(a))));
+  const leaks = p.sections.filter((s) => leakList.some((l) => l.section === s.id));
   const unreadable = p.docs.filter((d) => d.status === 'unreadable' || d.status === 'unsupported');
   const uncertain = p.requirements.filter((r) => r.uncertain && r.status !== 'skipped');
   const items: CheckItem[] = [

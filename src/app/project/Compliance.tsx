@@ -3,7 +3,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { LuCircleCheck, LuArrowRight, LuShieldCheck, LuInfo, LuCheck, LuChevronLeft, LuChevronDown, LuUpload, LuFileText, LuSparkles, LuListChecks, LuMessageCircle, LuPencil, LuTriangleAlert, LuSend, LuLoaderCircle, LuClock } from 'react-icons/lu';
 import type { Project, Requirement } from '../../lib/types';
-import { complianceChecks, readiness, type CheckItem } from '../../lib/derive';
+import { complianceChecks, readiness, priceLeaks, type CheckItem } from '../../lib/derive';
 import { Ring, Modal } from '../../components/ui';
 import { navigate, updateProject, update, toast, useStore, getState } from '../../lib/store';
 import { markReady, updateRequirement, shortenProposal } from '../../lib/actions';
@@ -140,6 +140,7 @@ export function Compliance({ p }: { p: Project }) {
               : cur.id === 'coherence-run' && failed.has(p.id) && !reviewing.has(p.id) ? <div className="stack gap-12"><div className="well small">No se ha podido terminar la revisión. Suele ser algo puntual.</div><div><button className="btn btn-primary" onClick={() => { tick((t) => t + 1); runCoherence(p.id, () => tick((t) => t + 1)); }}><LuSparkles /> Reintentar</button></div></div>
               : cur.id === 'coherence-run' ? <div className="fin-work"><div className="row small"><LuLoaderCircle className="spin" /> <span>PROPO está releyendo la oferta entera…</span></div><p className="xs muted" style={{ margin: 0 }}>Tarda uno o dos minutos. Si encuentra algo que no encaja, te lo enseña aquí con un botón para arreglarlo.</p></div>
               : cur.issue ? <IssueStep key={cur.issue.id} p={p} issue={cur.issue} />
+              : cur.id === 'price' ? <IssueStep key="price" p={p} issue={priceIssue(p)} />
               : <div className="stack gap-12"><div className="well small">{cur.check?.detail}</div><div><button className="btn btn-primary" onClick={() => navigate(`/app/projects/${p.id}/${TAB[cur.id]}`)}>{COPY[cur.id].cta} <LuArrowRight /></button></div></div>}
           </div>
           <div className="fin-nav">
@@ -355,6 +356,7 @@ function IssueStep({ p, issue }: { p: Project; issue: CoherenceIssue }) {
         if (applied.length) x.activity.unshift({ at: nowIso(), text: `PROPO ha arreglado una incoherencia: ${issue.title}` });
       });
       if (applied.length) toast('Arreglado. Lo tienes en «Lo que ha arreglado PROPO», por si quieres deshacerlo.', 'ok');
+      else if (!getState().projects.find((x) => x.id === p.id)?.coherence?.issues.some((i) => i.id === issue.id)) toast('No he podido arreglarlo solo. Revísalo en la sección indicada.', 'warn');
     } catch (e: any) { toast(friendlyAIError(e?.code ?? 'upstream_error'), 'bad'); }
     finally { setBusy(false); }
   };
@@ -410,4 +412,12 @@ function CoherenceFixed({ p }: { p: Project }) {
       ))}</div>}
     </div>
   );
+}
+
+/** Los importes filtrados en la memoria se tratan como una incoherencia más: PROPO los quita con un botón. */
+function priceIssue(p: Project): CoherenceIssue {
+  const leaks = priceLeaks(p);
+  const title = (id: string) => p.sections.find((x) => x.id === id)?.title ?? id;
+  return { id: 'price', severity: 'critical', title: 'Hay precios dentro de la memoria técnica', fixed: false, question: null, fixes: [], where: leaks.map((l) => l.section),
+    problem: `Estos importes pueden revelar la oferta económica y no pueden ir en la memoria técnica: ${leaks.map((l) => `en «${title(l.section)}», ${l.amounts.join(', ') || 'precios unitarios'}`).join('; ')}. Quítalos sin cambiar el resto del texto.` };
 }
