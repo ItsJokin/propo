@@ -65,6 +65,8 @@ export interface CompanyInfo {
   regions: string[];       // NUTS prefixes where the company works, e.g. ES51
   logo?: string;           // data URL (PNG) del logo: portada y cabecera de los PDF
   brandColor?: string;     // color corporativo en hexadecimal, p. ej. #0B1730
+  brandColor2?: string;    // color secundario (acentos de portada y detalles), opcional
+  coverStyle?: import('./design/theme').CoverStyle;   // portada elegida; vacío = la elige PROPO según el contrato
   // Constructoras
   clasificaciones?: { grupo: string; subgrupo: string; categoria: string }[];   // clasificación de contratistas (RD 773/2015)
   rolece?: boolean;        // inscrita en el ROLECE o en el registro de su comunidad

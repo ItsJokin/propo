@@ -2,7 +2,7 @@
 import type { AppState, Project } from '../types';
 import { complianceChecks, readiness } from '../derive';
 import { fmtDate, nowIso, isUnknown } from '../util';
-import { newDoc, cover, tocPlaceholder, finish, h1, h2, text, bullet, body, note, table, facts, space, addPage, clean } from './kit';
+import { newDoc, cover, tocPlaceholder, finish, h1, h2, text, bullet, body, note, table, facts, space, addPage, clean, bars, orgChart } from './kit';
 import { rgb } from 'pdf-lib';
 import { eur2, eurosInWords } from '../pricing';
 
@@ -18,10 +18,12 @@ const fullTitle = (p: Project) => (p.name.endsWith('…') && p.tender?.title ? p
 
 export async function technicalProposalPdf(p: Project, s: AppState) {
   const c = s.company;
-  const w = await newDoc(`Memoria técnica — ${p.name}`, c, { cover: true });
+  const w = await newDoc(`Memoria técnica — ${p.name}`, c, { cover: true, project: p, technical: true });
+  const anon = w.theme.anonymous;   // el pliego exige que la oferta técnica no identifique al licitador
   cover(w, {
     kind: 'Memoria técnica', title: fullTitle(p),
-    lines: [['Órgano de contratación', p.organization], ['Expediente', reference(p)], ['Licitador', `${c.legalName || '[razón social]'}${c.taxId ? ` · NIF ${c.taxId}` : ''}`], ['Domicilio', c.address], ['Fecha', today()]],
+    lines: [['Órgano de contratación', p.organization], ['Expediente', reference(p)], ...(anon ? [] : [['Licitador', `${c.legalName || '[razón social]'}${c.taxId ? ` · NIF ${c.taxId}` : ''}`], ['Domicilio', c.address]] as [string, string][]), ['Fecha', today()]],
+    footnote: anon ? 'Documento sin identificación del licitador, como exige el pliego.' : undefined,
   });
   tocPlaceholder(w);
 
@@ -29,7 +31,7 @@ export async function technicalProposalPdf(p: Project, s: AppState) {
   facts(w, [
     ['Objeto del contrato', fullTitle(p)], ['Órgano de contratación', p.organization], ['Expediente', reference(p)],
     ['Fin de presentación de ofertas', p.analysis?.deadline ? fmtDate(p.analysis.deadline) : ''], ['Duración', p.analysis?.duration ?? ''],
-    ['Licitador', c.legalName], ['NIF', c.taxId], ['Domicilio', c.address], ['Web', c.website],
+    ...(anon ? [] : [['Licitador', c.legalName], ['NIF', c.taxId], ['Domicilio', c.address], ['Web', c.website]] as [string, string][]),
   ]);
   const judged = p.criteria.filter((k) => k.kind === 'judgement');
   if (judged.length) {
@@ -40,6 +42,7 @@ export async function technicalProposalPdf(p: Project, s: AppState) {
         const secs = p.sections.map((x, i) => ({ x, i })).filter(({ x }) => x.criteria.includes(k.id) || k.addressedBy.includes(x.id));
         return [k.name, String(k.points).replace('.', ','), secs.length ? secs.map(({ x, i }) => `${i + 1}. ${x.title}`).join('; ') : 'Conjunto de la memoria'];
       }));
+    if (judged.length > 1) bars(w, judged.map((k) => ({ label: k.name, value: k.points })), { unit: 'pts', caption: 'Puntos máximos de cada criterio de juicio de valor, según el pliego.' });
   }
 
   p.sections.forEach((sec, i) => {
@@ -50,7 +53,8 @@ export async function technicalProposalPdf(p: Project, s: AppState) {
     else body(w, plainSection(sec.content));
   });
 
-  // Anexos: la memoria de empresa que respalda lo afirmado en las secciones.
+  // Anexos: la memoria de empresa que respalda lo afirmado en las secciones. Con anonimato, no van en este documento.
+  if (anon) return finish(w);
   h1(w, 'Anexo A. Ficha de la empresa', { newPage: true });
   if (c.description) text(w, c.description, { gap: 10 });
   facts(w, [['Razón social', c.legalName], ['Nombre comercial', c.tradeName !== c.legalName ? c.tradeName : ''], ['NIF', c.taxId], ['Domicilio', c.address], ['Sector', c.industry], ['Plantilla', c.employees ? `${c.employees} personas` : ''], ['Ámbitos de actividad', c.sectors.join(', ')], ['Web', c.website]]);
@@ -58,7 +62,8 @@ export async function technicalProposalPdf(p: Project, s: AppState) {
 
   if (s.team.length) {
     h1(w, 'Anexo B. Equipo adscrito al contrato');
-    text(w, 'Personas de la plantilla que asumirán la dirección y la ejecución del contrato.', { size: 10, gap: 8 });
+    text(w, 'Personas de la plantilla que asumirán la dirección y la ejecución del contrato.', { size: 10, gap: 10 });
+    if (s.team.length > 1) orgChart(w, s.team);
     table(w, [{ title: 'Nombre', w: 24, bold: true }, { title: 'Función', w: 30 }, { title: 'Experiencia', w: 14 }, { title: 'Titulación y cualificación', w: 32 }],
       s.team.map((m) => [m.name, m.role, m.years ? `${m.years} años` : '—', m.qualifications || '—']));
   }
@@ -85,7 +90,7 @@ export async function technicalProposalPdf(p: Project, s: AppState) {
 
 export async function declarationPdf(p: Project, s: AppState) {
   const c = s.company;
-  const w = await newDoc(`Declaración responsable — ${p.name}`, c);
+  const w = await newDoc(`Declaración responsable — ${p.name}`, c, { project: p });
   h1(w, 'Declaración responsable');
   note(w, 'Borrador preparado por PROPO con tu perfil de empresa. Revísalo, completa los datos del representante y fírmalo con firma electrónica cualificada antes de presentarlo.', { label: 'Antes de firmar' });
   h2(w, 'Datos del procedimiento');
@@ -114,7 +119,7 @@ export async function declarationPdf(p: Project, s: AppState) {
 
 export async function experiencePdf(p: Project, s: AppState) {
   const c = s.company;
-  const w = await newDoc(`Experiencia relevante — ${c.legalName}`, c, { cover: true });
+  const w = await newDoc(`Experiencia relevante — ${c.legalName}`, c, { cover: true, project: p });
   cover(w, { kind: 'Relación de contratos similares', title: fullTitle(p), lines: [['Órgano de contratación', p.organization], ['Expediente', reference(p)], ['Licitador', `${c.legalName}${c.taxId ? ` · NIF ${c.taxId}` : ''}`], ['Fecha', today()]] });
   h1(w, 'Experiencia en contratos similares');
   text(w, `${c.legalName || 'La empresa'} acredita la siguiente experiencia en contratos de naturaleza análoga a la del objeto de esta licitación.`, { gap: 10 });
@@ -130,7 +135,7 @@ export async function experiencePdf(p: Project, s: AppState) {
 }
 
 export async function companyIndexPdf(p: Project, s: AppState) {
-  const w = await newDoc(`Documentación de empresa — ${s.company.legalName}`, s.company);
+  const w = await newDoc(`Documentación de empresa — ${s.company.legalName}`, s.company, { project: p });
   h1(w, 'Documentación de empresa');
   text(w, `Índice de los documentos de ${s.company.legalName || 'la empresa'} que acreditan los requisitos de «${p.name}».`, { gap: 10 });
   const ids = new Set(p.requirements.flatMap((r) => r.evidence.filter((e) => e.kind === 'vault').map((e) => e.ref)));
@@ -143,7 +148,7 @@ export async function companyIndexPdf(p: Project, s: AppState) {
 }
 
 export async function complianceReportPdf(p: Project, s?: AppState) {
-  const w = await newDoc(`Informe de cumplimiento — ${p.name}`, s?.company ?? ({ legalName: 'Informe interno', tradeName: '' } as any));
+  const w = await newDoc(`Informe de cumplimiento — ${p.name}`, s?.company ?? ({ legalName: 'Informe interno', tradeName: '' } as any), { project: p });
   h1(w, 'Informe de cumplimiento');
   const checks = complianceChecks(p);
   const fulfilled = p.requirements.filter((r) => r.status === 'fulfilled').length;
@@ -167,7 +172,7 @@ export async function complianceReportPdf(p: Project, s?: AppState) {
 /** Oferta económica (proposición económica) con el precio que el cliente ha confirmado en el paso «Fija el precio». */
 export async function economicOfferPdf(p: Project, s: AppState) {
   const c = s.company; const pr = p.pricing; const ch = pr?.choice; const rule = pr?.rule;
-  const w = await newDoc(`Oferta económica — ${p.name}`, c);
+  const w = await newDoc(`Oferta económica — ${p.name}`, c, { project: p });
   h1(w, 'Proposición económica');
   note(w, rule?.model
     ? `Preparada por PROPO con el precio que has confirmado. El pliego tiene su propio modelo (${rule.model.name}): si la plataforma exige ese modelo, copia en él estos mismos importes. Firma con firma electrónica cualificada y preséntala solo en el sobre de la oferta económica.`
@@ -206,7 +211,7 @@ export async function economicOfferPdf(p: Project, s: AppState) {
 /** Borrador de justificación de la oferta, por si la Administración la considera anormalmente baja y la pide. */
 export async function abnormalJustificationPdf(p: Project, s: AppState) {
   const c = s.company; const ch = p.pricing?.choice;
-  const w = await newDoc(`Justificación de la oferta — ${p.name}`, c);
+  const w = await newDoc(`Justificación de la oferta — ${p.name}`, c, { project: p });
   h1(w, 'Justificación de la viabilidad de la oferta');
   note(w, 'Borrador para tener preparado. Solo se presenta si el órgano de contratación te pide justificar tu oferta por considerarla anormalmente baja (suelen dar entre 5 y 10 días). Completa los datos entre corchetes con tus números reales.', { label: 'Uso interno hasta que te lo pidan' });
   facts(w, [['Contrato', fullTitle(p)], ['Expediente', reference(p)], ['Licitador', `${c.legalName || '[razón social]'}${c.taxId ? ` · NIF ${c.taxId}` : ''}`], ['Precio ofertado sin IVA', ch ? eur2(ch.total) : '[importe]']]);
@@ -226,9 +231,9 @@ export async function abnormalJustificationPdf(p: Project, s: AppState) {
 /** Plan de obra: justificación y diagrama de Gantt con el camino crítico, para el sobre técnico. */
 export async function ganttPdf(p: Project, s: AppState) {
   const g = p.obra?.gantt;
-  const w = await newDoc(`Plan de obra — ${p.name}`, s.company);
+  const w = await newDoc(`Plan de obra — ${p.name}`, s.company, { project: p, technical: true });
   h1(w, 'Plan de obra y programa de trabajos');
-  facts(w, [['Obra', fullTitle(p)], ['Licitador', s.company.legalName || '[razón social]'], ['Plazo de ejecución', g ? `${g.total} días naturales${g.plazo ? ` (máximo del pliego: ${g.plazo})` : ''}` : '—']]);
+  facts(w, [['Obra', fullTitle(p)], ...(w.theme.anonymous ? [] : [['Licitador', s.company.legalName || '[razón social]']] as [string, string][]), ['Plazo de ejecución', g ? `${g.total} días naturales${g.plazo ? ` (máximo del pliego: ${g.plazo})` : ''}` : '—']]);
   if (!g) { text(w, 'Todavía no se ha preparado el plan de obra.'); return finish(w); }
   h2(w, 'Diagrama de Gantt');
   // Dibujo del diagrama: nombres a la izquierda, barras a la derecha; en rojo el camino crítico.

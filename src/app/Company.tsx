@@ -8,6 +8,7 @@ import { Ring, Bar, Empty, Modal } from '../components/ui';
 import { uid, fmtDate, daysUntil } from '../lib/util';
 import { SAMPLE_COMPANY, SAMPLE_PAST_PROJECTS, SAMPLE_CERTS, SAMPLE_TEAM, SAMPLE_VAULT } from '../lib/demoData';
 import type { PastProject, Certification, TeamMember } from '../lib/types';
+import { COVER_STYLES, type CoverStyle } from '../lib/design/theme';
 
 const TABS: [string, string, React.ReactNode][] = [
   ['info', 'Datos de empresa', <LuBuilding2 />],
@@ -86,7 +87,26 @@ function InfoTab() {
   );
 }
 
-/** Logo y color corporativo: personalizan la portada, la cabecera y las tablas de los PDF de cada propuesta. */
+/** Color dominante de un logo: el más saturado y frecuente, ignorando blancos, negros y transparencias. */
+function dominantColor(cv: HTMLCanvasElement): string | null {
+  try {
+    const { data } = cv.getContext('2d')!.getImageData(0, 0, cv.width, cv.height);
+    const bins = new Map<string, { n: number; r: number; g: number; b: number }>();
+    for (let i = 0; i < data.length; i += 16) {
+      const [r, g, b, a] = [data[i], data[i + 1], data[i + 2], data[i + 3]];
+      const mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+      if (a < 128 || mx < 30 || (mx - mn) < 40 || mn > 225) continue;
+      const k = `${r >> 5}-${g >> 5}-${b >> 5}`; const e = bins.get(k) ?? { n: 0, r: 0, g: 0, b: 0 };
+      e.n++; e.r += r; e.g += g; e.b += b; bins.set(k, e);
+    }
+    const best = [...bins.values()].sort((a, b) => b.n - a.n)[0];
+    if (!best || best.n < 20) return null;
+    const hx = (v: number) => Math.round(v / best.n).toString(16).padStart(2, '0');
+    return `#${hx(best.r)}${hx(best.g)}${hx(best.b)}`;
+  } catch { return null; }
+}
+
+/** Logo y colores corporativos: personalizan la portada, la cabecera y las tablas de los PDF y Word de cada propuesta. */
 function BrandCard() {
   const c = useStore((s) => s.company);
   const input = React.useRef<HTMLInputElement>(null);
@@ -102,7 +122,9 @@ function BrandCard() {
       const cv = document.createElement('canvas'); cv.width = Math.max(1, Math.round(img.width * k)); cv.height = Math.max(1, Math.round(img.height * k));
       cv.getContext('2d')!.drawImage(img, 0, 0, cv.width, cv.height);
       URL.revokeObjectURL(url);
-      try { const data = cv.toDataURL('image/png'); update((s) => { s.company.logo = data; }); toast('Logo guardado. Aparecerá en tus documentos.', 'ok'); }
+      // Si aún no ha elegido color, se toma el color dominante del logo: así la memoria sale con su marca sin configurar nada.
+      const auto = c.brandColor ? null : dominantColor(cv);
+      try { const data = cv.toDataURL('image/png'); update((s) => { s.company.logo = data; if (auto && !s.company.brandColor) s.company.brandColor = auto; }); toast(auto ? 'Logo guardado. Hemos tomado su color principal para tus documentos.' : 'Logo guardado. Aparecerá en tus documentos.', 'ok'); }
       catch { toast('No se ha podido leer esta imagen. Prueba con un PNG o un JPG.', 'bad'); }
     };
     img.onerror = () => { URL.revokeObjectURL(url); toast('No se ha podido leer esta imagen. Prueba con un PNG o un JPG.', 'bad'); };
@@ -126,6 +148,18 @@ function BrandCard() {
           <label className="row small" style={{ gap: 10 }}>
             <input type="color" className="brand-color" value={color} onChange={(e) => update((s) => { s.company.brandColor = e.target.value; })} aria-label="Color corporativo" />
             <span>Color corporativo <span className="subtle">· títulos, portada y tablas</span></span>
+          </label>
+          <label className="row small" style={{ gap: 10 }}>
+            <input type="color" className="brand-color" value={c.brandColor2 || '#C9A227'} onChange={(e) => update((s) => { s.company.brandColor2 = e.target.value; })} aria-label="Color secundario" />
+            <span>Color secundario <span className="subtle">· detalles y acentos{c.brandColor2 ? '' : ' (opcional)'}</span></span>
+            {c.brandColor2 && <button className="btn btn-ghost btn-sm" onClick={() => update((s) => { s.company.brandColor2 = undefined; })}>Quitar</button>}
+          </label>
+          <label className="row small" style={{ gap: 10 }}>
+            <span>Portada</span>
+            <select className="select" style={{ maxWidth: 240 }} value={c.coverStyle || 'auto'} onChange={(e) => update((s) => { s.company.coverStyle = e.target.value === 'auto' ? undefined : e.target.value as CoverStyle; })} aria-label="Estilo de portada">
+              <option value="auto">Automática según el contrato</option>
+              {Object.entries(COVER_STYLES).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+            </select>
           </label>
         </div>
       </div>
