@@ -1,0 +1,40 @@
+{
+ "cpv2": "31",
+ "generated": "2026-10-22T14:39:58.993Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Memoria del proyecto de ejecución",
+   "max": 25,
+   "exp": "p:19279288",
+   "ref": "2026-013-S",
+   "title": "Contrato mixto de suministro y servicio para ampliación del sistema de videovigilancia de la Playa de Palma",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Palma de Mallorca",
+   "nuts": "ES532",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 18.75,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Describe de forma detallada la tipología y características de los elementos propuestos, con marcas y especificaciones",
+    "Especifica el tipo de cámaras a instalar en cada área",
+    "Adapta y respeta la red existente, con información sobre protecciones, canalizaciones y certificaciones",
+    "Propuesta de fibra pragmática y controlada, con planificación detallada por punto",
+    "Describe las capacidades del sistema de gestión, servidores y cámaras"
+   ],
+   "weak": [
+    "El informe no detalla carencias concretas",
+    "No justifica expresamente por qué no alcanza la calificación de Excelente"
+   ],
+   "hypothesis": {
+    "premia": "Propuesta completa y detallada que especifica equipos, marcas, tipo de cámaras, adaptación a la red existente y planificación de la fibra",
+    "penaliza": "Omitir especificaciones fundamentales del objeto del contrato, como el tipo de cámaras, lo que provoca que la memoria se considere incompleta y la exclusión"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=VxMbrpoiWvY%2Bk2oCbDosIw%3D%3D",
+   "doc": "2026-48ddacb7-3440-4542-acf1-cb376c3fc4db"
+  }
+ ]
+}

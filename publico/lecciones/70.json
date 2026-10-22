@@ -1,0 +1,33 @@
+{
+ "cpv2": "70",
+ "generated": "2026-10-22T14:39:58.992Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "AHORRO-EFICIENCIA ENERGÉTICA Y DESARROLLO SOSTENIBLE",
+   "max": 20,
+   "exp": "p:20361165",
+   "ref": "324/2022 NEG IV",
+   "title": "Enajenación de parcela municipal de carácter patrimonial, situada en la TF-217, Zona Codezales (La Matanza de Acentejo), con destino a la co",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de La Matanza de Acentejo",
+   "nuts": "ES709",
+   "date": "2026-08-13",
+   "offers": 1,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "La memoria abarca todos los aspectos requeridos en el criterio y en el PPTP, reflejando íntegramente su contenido.",
+    "Prioriza materiales de procedencia local o insular, con proveedores próximos y posibilidad de reciclaje.",
+    "Plantea medidas pasivas previas al dimensionado de instalaciones: control solar, envolvente continua, reducción de puentes térmicos y ventilación natural.",
+    "Incluye infraestructura de recarga para vehículos eléctricos, arbolado de baja demanda hídrica y materiales con certificaciones ambientales."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5GTEGZ0PDtcZDGvgaZEVxQ%3D%3D",
+   "doc": "2026-95c0b862-c09e-44a3-9b37-336c4cd586e3"
+  }
+ ]
+}

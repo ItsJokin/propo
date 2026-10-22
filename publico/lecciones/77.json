@@ -1,0 +1,147 @@
+{
+ "cpv2": "77",
+ "generated": "2026-10-22T14:39:58.994Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Memoria",
+   "max": 20,
+   "exp": "p:9034706",
+   "ref": "SE 45/22",
+   "title": "Servicio de tala y poda de arboles y palmeras para el Excmo. Ayuntamiento de Marbella.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Marbella",
+   "nuts": "ES617",
+   "date": "2022-06-28",
+   "offers": 6,
+   "top": {
+    "pts": 17.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 4.5
+   },
+   "best": [
+    "Estudia el total de las zonas arboladas y realiza análisis detallado de parques y viales.",
+    "Informe del estado del arbolado en 15 días, plan de emergencias y tratamientos preventivos de picudo.",
+    "Personal con nombres, titulaciones y cursos específicos de poda.",
+    "Entrega planes de calidad y medio ambiente, inspección visual antes y después, GPS y plan de renovación de maquinaria.",
+    "Cronogramas mensuales por calles y análisis extenso de zonas, parques y palmeras."
+   ],
+   "weak": [
+    "Estudio general de las zonas de actuación.",
+    "Personal listado sin nombres ni titulaciones.",
+    "Medios materiales listados sin detalle."
+   ],
+   "hypothesis": {
+    "premia": "Estudio detallado y específico de todo el arbolado y del municipio, personal identificado con titulaciones de poda, planes de calidad, emergencias y medidas concretas de riesgo.",
+    "penaliza": "Estudios generales o parciales de zonas, incluir zonas fuera del contrato, personal sin nombres ni titulaciones y soluciones alejadas de los criterios técnicos del municipio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=F1i558QtkECmq21uxhbaVQ%3D%3D",
+   "doc": "ad4c4625-50d3-4611-9b2a-61cfd50ce2d7"
+  },
+  {
+   "crit": "Programa de los trabajos",
+   "max": 25,
+   "exp": "p:9034706",
+   "ref": "SE 45/22",
+   "title": "Servicio de tala y poda de arboles y palmeras para el Excmo. Ayuntamiento de Marbella.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Marbella",
+   "nuts": "ES617",
+   "date": "2022-06-28",
+   "offers": 6,
+   "top": {
+    "pts": 16.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 9.75
+   },
+   "best": [
+    "Detecta problemas en casi todas las zonas y propone soluciones para ellos.",
+    "Buena planificación por capacidad de trabajo.",
+    "Presenta un cronograma anual y un programa básico acorde a los trabajos diarios."
+   ],
+   "weak": [
+    "Cronograma simple y general para cualquier ciudad.",
+    "Detección de problemas y soluciones con pocos ejemplos.",
+    "Planificación básica.",
+    "Cronograma simple y general para cualquier tipo de ciudad."
+   ],
+   "hypothesis": {
+    "premia": "Detección de problemas en casi todas las zonas, soluciones que los abordan y planificación ajustada a la capacidad de trabajo real.",
+    "penaliza": "Cronogramas genéricos válidos para cualquier ciudad, ejemplos limitados de problemas y planificación básica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=F1i558QtkECmq21uxhbaVQ%3D%3D",
+   "doc": "ad4c4625-50d3-4611-9b2a-61cfd50ce2d7"
+  },
+  {
+   "crit": "Memoria",
+   "max": 20,
+   "exp": "p:9034706",
+   "ref": "SE 45/22",
+   "title": "Servicio de tala y poda de arboles y palmeras para el Excmo. Ayuntamiento de Marbella.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Marbella",
+   "nuts": "ES617",
+   "date": "2022-06-28",
+   "offers": 7,
+   "top": {
+    "pts": 17.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 4.5
+   },
+   "best": [
+    "Estudia el total de las zonas arboladas y realiza análisis detallado de parques y viales.",
+    "Informe del estado del arbolado en 15 días, plan de emergencias y tratamientos preventivos de picudo.",
+    "Personal con nombres, titulaciones y cursos específicos de poda.",
+    "Propone informe inicial del arbolado, itinerario de vigilancia e informes previos de árboles singulares.",
+    "Plan de autocontrol de podas e ISO 9001 y 14001."
+   ],
+   "weak": [
+    "Estudio de zonas que incluye zonas que no entran en el contrato.",
+    "Personal listado sin nombres ni titulaciones."
+   ],
+   "hypothesis": {
+    "premia": "Estudio detallado y específico de todo el arbolado y del municipio, personal identificado con titulaciones de poda, planes de calidad, emergencias y medidas concretas de riesgo.",
+    "penaliza": "Estudios generales o parciales de zonas, incluir zonas fuera del contrato, personal sin nombres ni titulaciones y soluciones alejadas de los criterios técnicos del municipio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=F1i558QtkECmq21uxhbaVQ%3D%3D",
+   "doc": "ad4c4625-50d3-4611-9b2a-61cfd50ce2d7"
+  },
+  {
+   "crit": "Programa de los trabajos",
+   "max": 25,
+   "exp": "p:9034706",
+   "ref": "SE 45/22",
+   "title": "Servicio de tala y poda de arboles y palmeras para el Excmo. Ayuntamiento de Marbella.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Marbella",
+   "nuts": "ES617",
+   "date": "2022-06-28",
+   "offers": 7,
+   "top": {
+    "pts": 16.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 7.5
+   },
+   "best": [
+    "Detecta problemas en casi todas las zonas y propone soluciones.",
+    "Buena planificación por capacidad de trabajo.",
+    "Cronograma anual y programa básico acorde a los trabajos diarios."
+   ],
+   "weak": [
+    "Cronograma simple y general para cualquier tipo de ciudad.",
+    "Ejemplos limitados de problemas y soluciones.",
+    "Planificación básica."
+   ],
+   "hypothesis": {
+    "premia": "Detección de problemas en casi todas las zonas, soluciones que los abordan y planificación ajustada a la capacidad de trabajo real.",
+    "penaliza": "Cronogramas genéricos válidos para cualquier ciudad, ejemplos limitados de problemas y planificación básica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=F1i558QtkECmq21uxhbaVQ%3D%3D",
+   "doc": "ad4c4625-50d3-4611-9b2a-61cfd50ce2d7"
+  }
+ ]
+}

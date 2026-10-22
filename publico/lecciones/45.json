@@ -1,0 +1,861 @@
+{
+ "cpv2": "45",
+ "generated": "2026-10-22T14:39:58.990Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "MEMORIA",
+   "max": 34,
+   "exp": "p:19596236",
+   "ref": "0551/2026",
+   "title": "Proyecto para la mejora de la recogida y evacuación de aguas pluviales en el Barrio Tiro de Línea. Distrito Sur (Sevilla).",
+   "buyer": "Consejería Delegada de la Empresa Metropolitana de Abastecimiento y Saneamiento de Aguas de Sevilla S.A. (EMASESA)",
+   "nuts": "ES618",
+   "date": "2026-09-02",
+   "offers": 6,
+   "top": {
+    "pts": 27.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 14
+   },
+   "best": [
+    "Estudio de ingeniería de la pantalla de pilotes con ensayos cross-hole y propuesta de puntales provisionales.",
+    "Inicia con la EBAP en paralelo con la C2 y colector, en orden natural de aguas abajo hacia arriba.",
+    "Planificación sin solapes entre subfases considerada muy adecuada y con equipos semana a semana.",
+    "Rendimientos conservadores con coeficiente reductor y longitud máxima de zanja abierta de 20 m.",
+    "Procedimientos detallados de excavación, retirada de tubería, demoliciones y colocación."
+   ],
+   "weak": [
+    "No aporta nada sobre aspectos no técnicos de la ejecución (coordinación con servicios municipales).",
+    "Fases de planificación incoherentes con el sentido de ejecución propuesto en la memoria.",
+    "Tres tajos simultáneos de excavación sin equipos suficientes para atenderlos.",
+    "Rendimientos poco conservadores y sin estudio de conjunto de los equipos de excavación.",
+    "Frente de avance y ocupación de cajones no aclarados; afecciones y soluciones muy genéricas."
+   ],
+   "hypothesis": {
+    "premia": "Planificación coherente con el orden natural de ejecución y frentes cortos, rendimientos prudentes justificados, equipos suficientes, personal identificado con dedicación y estudio detallado de afecciones con medidas concretas.",
+    "penaliza": "Ejecución aguas arriba o en serie sin solapes, rendimientos temerarios o incoherentes con la memoria, equipos inadecuados o insuficientes, afecciones y proveedores tratados de forma genérica y omisión de comercios, garajes y servicios municipales."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=C4OyebGr%2FBizz8fXU2i3eQ%3D%3D",
+   "doc": "2026-b092e890-e42b-412f-bed8-25e8c44d40f9"
+  },
+  {
+   "crit": "Propuesta actuaciones interior",
+   "max": 8,
+   "exp": "p:20014763",
+   "ref": "OBR-26-0235-SOM",
+   "title": "Trabajos de impermeabilización en planta -1 del centro de umivale Activa en Tecnoparc",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES514",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Plano que cubre la totalidad de la zona especificada, no solo manchas, parches o repasos puntuales.",
+    "Amplía sustancialmente la zona de actuación respecto a la prevista inicialmente.",
+    "Aporta detalle adicional sobre salidas de aguas residuales y entrada de gas que afectan a la actuación."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Ampliar la actuación a la totalidad de la zona indicada y detallar las instalaciones que la afectan (aguas residuales, gas).",
+    "penaliza": "Limitarse a manchas, parches o repasos puntuales sin ampliar la zona de actuación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=mIzbc4ionFi9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-bc3ed908-ed9d-415c-ac29-efe54e2c49ff"
+  },
+  {
+   "crit": "Propuesta actuaciones exterior",
+   "max": 20,
+   "exp": "p:20014763",
+   "ref": "OBR-26-0235-SOM",
+   "title": "Trabajos de impermeabilización en planta -1 del centro de umivale Activa en Tecnoparc",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES514",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Plano que identifica claramente el cambio de aspecto en la zona de entrada a la clínica.",
+    "La propuesta se considera adecuada."
+   ],
+   "weak": [
+    "El cambio respecto al aspecto actual es solo ligero, lo que explica la puntuación inferior al máximo."
+   ],
+   "hypothesis": {
+    "premia": "Un cambio visible en el acabado de la superficie, con plano que muestre el resultado final y que resulte adecuado.",
+    "penaliza": "Un cambio solo ligero respecto al aspecto actual."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=mIzbc4ionFi9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-bc3ed908-ed9d-415c-ac29-efe54e2c49ff"
+  },
+  {
+   "crit": "Memoria técnica",
+   "max": 12,
+   "exp": "p:20014763",
+   "ref": "OBR-26-0235-SOM",
+   "title": "Trabajos de impermeabilización en planta -1 del centro de umivale Activa en Tecnoparc",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES514",
+   "date": "2026-09-02",
+   "offers": 1,
+   "top": {
+    "pts": 12,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Memoria completa que indica las actuaciones a realizar.",
+    "Incluye planning de ejecución y personal puesto a disposición del contrato."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Memoria completa con actuaciones, planning de ejecución y personal asignado al contrato.",
+    "penaliza": "No consta en el documento ningún aspecto penalizado para la oferta valorada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=mIzbc4ionFi9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-bc3ed908-ed9d-415c-ac29-efe54e2c49ff"
+  },
+  {
+   "crit": "EFICACIA Y EFICIENCIA DE LA PROPUESTA TÉCNICA, PLAN DE OBRA, ORGANIZACIÓN Y MEDIOS",
+   "max": 7,
+   "exp": "p:20001074",
+   "ref": "2026-0057",
+   "title": "Realización de las obras del proyecto de reforma de la nueva oficina OAC en la Estación del Norte (ADIF) para la Empresa Municipal de Transp",
+   "buyer": "Consejo de Administración de la Empresa Municipal de Transportes de Valencia, S.A.U.",
+   "nuts": "ES523",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 5.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Metodología adaptada al Local SAP 109, con fases correlativas, coordinación con ADIF, control documental de calidad, seguridad y residuos y reuniones internas y con EMT/Dirección Facultativa"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nyTvzNDg5%2FcwYTJJ03sHog%3D%3D",
+   "doc": "2026-5f0af67a-17ec-4983-808c-61d759235b14"
+  },
+  {
+   "crit": "MEMORIA DE CALIDADES DE LOS MATERIALES",
+   "max": 4,
+   "exp": "p:20001074",
+   "ref": "2026-0057",
+   "title": "Realización de las obras del proyecto de reforma de la nueva oficina OAC en la Estación del Norte (ADIF) para la Empresa Municipal de Transp",
+   "buyer": "Consejo de Administración de la Empresa Municipal de Transportes de Valencia, S.A.U.",
+   "nuts": "ES523",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 3.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Materiales concretos y adecuados al uso administrativo y de atención al público, con fichas técnicas, declaraciones de prestaciones y certificados de producto"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nyTvzNDg5%2FcwYTJJ03sHog%3D%3D",
+   "doc": "2026-5f0af67a-17ec-4983-808c-61d759235b14"
+  },
+  {
+   "crit": "CALIDAD DEL SISTEMA DE CLIMATIZACIÓN",
+   "max": 4,
+   "exp": "p:20001074",
+   "ref": "2026-0057",
+   "title": "Realización de las obras del proyecto de reforma de la nueva oficina OAC en la Estación del Norte (ADIF) para la Empresa Municipal de Transp",
+   "buyer": "Consejo de Administración de la Empresa Municipal de Transportes de Valencia, S.A.U.",
+   "nuts": "ES523",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 3.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Cuatro unidades interiores tipo cassette, bombas de calor reversibles con refrigerante R-32, regulación independiente, puesta en marcha, manual y revisión conforme al RITE"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nyTvzNDg5%2FcwYTJJ03sHog%3D%3D",
+   "doc": "2026-5f0af67a-17ec-4983-808c-61d759235b14"
+  },
+  {
+   "crit": "SOLUCIÓN DE PUERTAS CORREDERAS DE VIDRIO DE ACCESO AL LOCAL",
+   "max": 7,
+   "exp": "p:20001074",
+   "ref": "2026-0057",
+   "title": "Realización de las obras del proyecto de reforma de la nueva oficina OAC en la Estación del Norte (ADIF) para la Empresa Municipal de Transp",
+   "buyer": "Consejo de Administración de la Empresa Municipal de Transportes de Valencia, S.A.U.",
+   "nuts": "ES523",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 6.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Puerta automática con apertura central, carpintería A35-2, operador inverter, batería antipánico, sensores, cerradura electromecánica, vidrio laminado y referencias normativas"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nyTvzNDg5%2FcwYTJJ03sHog%3D%3D",
+   "doc": "2026-5f0af67a-17ec-4983-808c-61d759235b14"
+  },
+  {
+   "crit": "CARPINTERÍA INTERIOR Y SOLUCIÓN DE ARMARIOS",
+   "max": 3,
+   "exp": "p:20001074",
+   "ref": "2026-0057",
+   "title": "Realización de las obras del proyecto de reforma de la nueva oficina OAC en la Estación del Norte (ADIF) para la Empresa Municipal de Transp",
+   "buyer": "Consejo de Administración de la Empresa Municipal de Transportes de Valencia, S.A.U.",
+   "nuts": "ES523",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Puertas de paso PROMA serie BLOCK, modelo LISA2C, lacadas, MDF resistente a humedad, normativa UNE y certificaciones de calidad y cadena de custodia"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nyTvzNDg5%2FcwYTJJ03sHog%3D%3D",
+   "doc": "2026-5f0af67a-17ec-4983-808c-61d759235b14"
+  },
+  {
+   "crit": "VT1 Memoria constructiva",
+   "max": 8,
+   "exp": "p:19900241",
+   "ref": "216/2026/CMA",
+   "title": "Refuerzo del firme y capa de rodadura en la calle Castellón de la Plana y en la Avda Cándido Lobera de la CAM.",
+   "buyer": "Consejería de Hacienda de la Ciudad Autónoma de Melilla",
+   "nuts": "ES640",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Desarrolla la totalidad de los apartados exigidos y cumple los criterios de extensión",
+    "Se considera sin errores, descrita de forma suficiente y viable, y coherente con el resto de la oferta, el proyecto y los pliegos"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=XjNzsA%2FGaMY4NavIWzMcHA%3D%3D",
+   "doc": "2026-4d0064f9-7cba-408a-9633-f182bb795b2c"
+  },
+  {
+   "crit": "VT2 Programa de trabajos",
+   "max": 8,
+   "exp": "p:19900241",
+   "ref": "216/2026/CMA",
+   "title": "Refuerzo del firme y capa de rodadura en la calle Castellón de la Plana y en la Avda Cándido Lobera de la CAM.",
+   "buyer": "Consejería de Hacienda de la Ciudad Autónoma de Melilla",
+   "nuts": "ES640",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Desarrolla la totalidad de los apartados exigidos y cumple los criterios de extensión",
+    "Se considera sin errores, descrito de forma suficiente y viable, y coherente con el resto de la oferta, el proyecto y los pliegos"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=XjNzsA%2FGaMY4NavIWzMcHA%3D%3D",
+   "doc": "2026-4d0064f9-7cba-408a-9633-f182bb795b2c"
+  },
+  {
+   "crit": "VT3 Análisis de Unidades Principales",
+   "max": 16,
+   "exp": "p:19900241",
+   "ref": "216/2026/CMA",
+   "title": "Refuerzo del firme y capa de rodadura en la calle Castellón de la Plana y en la Avda Cándido Lobera de la CAM.",
+   "buyer": "Consejería de Hacienda de la Ciudad Autónoma de Melilla",
+   "nuts": "ES640",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 16,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Las cuatro unidades principales analizadas (pozo/arqueta, marca vial, fresado de firme, AC22 BIN y MBC BBTM) cumplen completitud y requisitos formales",
+    "Cada unidad se considera sin errores, viable y coherente con el resto de la documentación"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=XjNzsA%2FGaMY4NavIWzMcHA%3D%3D",
+   "doc": "2026-4d0064f9-7cba-408a-9633-f182bb795b2c"
+  },
+  {
+   "crit": "VT4 Mejoras-1. Equipo de sustitución",
+   "max": 4,
+   "exp": "p:19900241",
+   "ref": "216/2026/CMA",
+   "title": "Refuerzo del firme y capa de rodadura en la calle Castellón de la Plana y en la Avda Cándido Lobera de la CAM.",
+   "buyer": "Consejería de Hacienda de la Ciudad Autónoma de Melilla",
+   "nuts": "ES640",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Entrega declaración de sustitución inmediata de extendedora y barredora en caso de avería, robo o daños"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=XjNzsA%2FGaMY4NavIWzMcHA%3D%3D",
+   "doc": "2026-4d0064f9-7cba-408a-9633-f182bb795b2c"
+  },
+  {
+   "crit": "VT5 Mejoras-2. Uso de maquinaria de bajas emisiones",
+   "max": 4,
+   "exp": "p:19900241",
+   "ref": "216/2026/CMA",
+   "title": "Refuerzo del firme y capa de rodadura en la calle Castellón de la Plana y en la Avda Cándido Lobera de la CAM.",
+   "buyer": "Consejería de Hacienda de la Ciudad Autónoma de Melilla",
+   "nuts": "ES640",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Aporta carta de compromiso de adscripción de maquinaria con norma EURO VI (motor a partir de 2013) para las cinco máquinas valoradas"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=XjNzsA%2FGaMY4NavIWzMcHA%3D%3D",
+   "doc": "2026-4d0064f9-7cba-408a-9633-f182bb795b2c"
+  },
+  {
+   "crit": "Análisis del proyecto",
+   "max": 12,
+   "exp": "p:19753659",
+   "ref": "C.1707",
+   "title": "Materialización de los proyectos de rehabilitación energética de los 17 edificios (166 viviendas) del Barrio de la Font Dolça, incluyendo ta",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Alcoy",
+   "nuts": "ES521",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Realiza un análisis del proyecto con breve descripción de la concepción global de las obras y del conocimiento del proyecto de ejecución."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SvfvUw0X1ypSYrkJkLlFdw%3D%3D",
+   "doc": "2026-8f48ca18-7301-43cb-81ab-0f6c904d66d3"
+  },
+  {
+   "crit": "Análisis de necesidades en la ejecución de las obras",
+   "max": 8,
+   "exp": "p:19753659",
+   "ref": "C.1707",
+   "title": "Materialización de los proyectos de rehabilitación energética de los 17 edificios (166 viviendas) del Barrio de la Font Dolça, incluyendo ta",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Alcoy",
+   "nuts": "ES521",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Analiza ocupación e instalaciones de obra, vía pública, condicionantes climáticos, desvíos de servicios y protocolo de comunicación y señalización para vecinos."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SvfvUw0X1ypSYrkJkLlFdw%3D%3D",
+   "doc": "2026-8f48ca18-7301-43cb-81ab-0f6c904d66d3"
+  },
+  {
+   "crit": "Programación individual por bloque",
+   "max": 10,
+   "exp": "p:19753659",
+   "ref": "C.1707",
+   "title": "Materialización de los proyectos de rehabilitación energética de los 17 edificios (166 viviendas) del Barrio de la Font Dolça, incluyendo ta",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Alcoy",
+   "nuts": "ES521",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Describe actividades importantes y procesos constructivos, y aporta el Gantt del bloque 11 con actividades críticas, duraciones, holguras e inversiones mensuales."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SvfvUw0X1ypSYrkJkLlFdw%3D%3D",
+   "doc": "2026-8f48ca18-7301-43cb-81ab-0f6c904d66d3"
+  },
+  {
+   "crit": "Programación del conjunto de la intervención (17 bloques)",
+   "max": 10,
+   "exp": "p:19753659",
+   "ref": "C.1707",
+   "title": "Materialización de los proyectos de rehabilitación energética de los 17 edificios (166 viviendas) del Barrio de la Font Dolça, incluyendo ta",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Alcoy",
+   "nuts": "ES521",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Aporta el Gantt de los 17 bloques en el plazo de 10 meses, con gráfico de fases y plano de organización y coordinación de las obras."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SvfvUw0X1ypSYrkJkLlFdw%3D%3D",
+   "doc": "2026-8f48ca18-7301-43cb-81ab-0f6c904d66d3"
+  },
+  {
+   "crit": "Colaboración en la justificación de los programas de ayudas",
+   "max": 4,
+   "exp": "p:19753659",
+   "ref": "C.1707",
+   "title": "Materialización de los proyectos de rehabilitación energética de los 17 edificios (166 viviendas) del Barrio de la Font Dolça, incluyendo ta",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Alcoy",
+   "nuts": "ES521",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Asume el compromiso de participar en todas las fases de la justificación técnica y administrativa y propone un plan de trabajo con la dirección facultativa."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SvfvUw0X1ypSYrkJkLlFdw%3D%3D",
+   "doc": "2026-8f48ca18-7301-43cb-81ab-0f6c904d66d3"
+  },
+  {
+   "crit": "Control de calidad",
+   "max": 2,
+   "exp": "p:19753659",
+   "ref": "C.1707",
+   "title": "Materialización de los proyectos de rehabilitación energética de los 17 edificios (166 viviendas) del Barrio de la Font Dolça, incluyendo ta",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Alcoy",
+   "nuts": "ES521",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 0.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Indica aspectos concretos de unidades de obra a controlar, normativa aplicable y organización dedicada al control de calidad."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SvfvUw0X1ypSYrkJkLlFdw%3D%3D",
+   "doc": "2026-8f48ca18-7301-43cb-81ab-0f6c904d66d3"
+  },
+  {
+   "crit": "Gestión medioambiental",
+   "max": 2,
+   "exp": "p:19753659",
+   "ref": "C.1707",
+   "title": "Materialización de los proyectos de rehabilitación energética de los 17 edificios (166 viviendas) del Barrio de la Font Dolça, incluyendo ta",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Alcoy",
+   "nuts": "ES521",
+   "date": "2026-08-27",
+   "offers": 1,
+   "top": {
+    "pts": 1,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Propone programa de actuaciones medioambientales, compromiso de valorización superior al 70% en peso, disponibilidad de contenedores y selección responsable de residuos."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SvfvUw0X1ypSYrkJkLlFdw%3D%3D",
+   "doc": "2026-8f48ca18-7301-43cb-81ab-0f6c904d66d3"
+  },
+  {
+   "crit": "Descriptivo técnico",
+   "max": 9,
+   "exp": "p:20014761",
+   "ref": "3401-342-1-2026-16906",
+   "title": "Ejecución de las obras de renovación del sistema de climatización del centro de salud de Ponferrada IV, con cargo a FONDOS DE SALUD BUCODENT",
+   "buyer": "Gerencia de Asistencia Sanitaria del Bierzo",
+   "nuts": "ES413",
+   "date": "2026-08-26",
+   "offers": 3,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 5.5
+   },
+   "best": [
+    "Programa de trabajo completo y coherente en nueve fases, con cronograma general de ejecución.",
+    "Muestra un conocimiento elevado del proyecto, del edificio y de sus condicionantes: zonas de acopio, grúa, accesos y climatización provisional.",
+    "Programa desglosado en siete fases y 53 actividades, con diagrama de Gantt y duraciones individualizadas.",
+    "Asigna temporalmente las unidades de obra de forma detallada."
+   ],
+   "weak": [
+    "Inconsistencias entre el número de fases (ocho y diez), el plazo general de seis semanas y las ocho semanas asignadas a Seguridad y Salud.",
+    "No concreta suficientemente dependencias, recursos y fechas de ejecución de cada actividad.",
+    "No adjunta compromiso firmado de cumplimiento del descriptivo técnico."
+   ],
+   "hypothesis": {
+    "premia": "Programa coherente y completo con cronograma, y conocimiento específico del edificio, sus accesos, acopios y condicionantes; compromiso firmado de cumplimiento.",
+    "penaliza": "Enumerar unidades de obra sin recursos, rendimientos ni dependencias; inconsistencias internas en fases y plazos; falta de detalle en pruebas y climatización provisional."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Jjuhj6%2Fu9k99Zh%2FyRJgM8w%3D%3D",
+   "doc": "2026-b2c6703e-9075-4e31-96fd-b941f3dc07f3"
+  },
+  {
+   "crit": "Plan de contingencia. Criterio 1: medidas y estrategias para la recuperación del desvío de plazos",
+   "max": 8,
+   "exp": "p:20014761",
+   "ref": "3401-342-1-2026-16906",
+   "title": "Ejecución de las obras de renovación del sistema de climatización del centro de salud de Ponferrada IV, con cargo a FONDOS DE SALUD BUCODENT",
+   "buyer": "Gerencia de Asistencia Sanitaria del Bierzo",
+   "nuts": "ES413",
+   "date": "2026-08-26",
+   "offers": 3,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Sistema completo de prevención, detección y corrección: partes diarios, reuniones semanales, revisiones quincenales y análisis de puntos críticos.",
+    "Prevé dobles turnos, trabajos nocturnos y de fin de semana, equipos adicionales, proveedores alternativos y equipos de reserva, con medidas orientadas a recuperar el retraso.",
+    "Propone valoración de medidas como turnos dobles, trabajo fuera de horario asistencial, acopio previo y prefabricación de colectores."
+   ],
+   "weak": [
+    "Concreta el tiempo de análisis de la incidencia, pero no el de recuperación del plazo.",
+    "Sus soluciones consisten sobre todo en trasladar trabajadores a otros frentes, lo que no garantiza recuperar la actividad afectada.",
+    "No cuantifica refuerzos ni rendimientos; el seguimiento es poco desarrollado y las medidas de aceleración solo se activan con desvíos superiores al 10 %.",
+    "No cuantifica los refuerzos ni los rendimientos necesarios para recuperar el plazo acumulado."
+   ],
+   "hypothesis": {
+    "premia": "Medidas que recuperan materialmente el plazo (dobles turnos, equipos adicionales, stock y reserva) junto con seguimiento diario y periódico del cronograma.",
+    "penaliza": "Basar la recuperación en reasignar trabajadores, no cuantificar refuerzos y tener seguimiento poco desarrollado o activación de medidas solo tras grandes desvíos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Jjuhj6%2Fu9k99Zh%2FyRJgM8w%3D%3D",
+   "doc": "2026-b2c6703e-9075-4e31-96fd-b941f3dc07f3"
+  },
+  {
+   "crit": "Plan de contingencia. Criterio 2: soluciones para reducir el impacto en el centro sanitario",
+   "max": 8,
+   "exp": "p:20014761",
+   "ref": "3401-342-1-2026-16906",
+   "title": "Ejecución de las obras de renovación del sistema de climatización del centro de salud de Ponferrada IV, con cargo a FONDOS DE SALUD BUCODENT",
+   "buyer": "Gerencia de Asistencia Sanitaria del Bierzo",
+   "nuts": "ES413",
+   "date": "2026-08-26",
+   "offers": 3,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Conjunto más completo de soluciones: ejecución por fases, reubicación temporal de actividades, cerramientos modulares y depresión con filtros HEPA.",
+    "Comunicación de cortes con 72 horas de antelación y climatización provisional disponible en Camponaraya.",
+    "Uso de herramientas ruidosas en horas de mínima afluencia, mamparas estancas, coordinación diaria y retirada inmediata de residuos.",
+    "Ejecución continuada por zonas y aportación de bomba provisional para la enfriadora existente."
+   ],
+   "weak": [
+    "Poco desarrollo en sectorización estanca, depresión y filtración HEPA, control de polvo, ruido y vibraciones, separación de circuitos, residuos y protección de equipos.",
+    "No concreta la antelación ni la duración máxima de los cortes de instalaciones."
+   ],
+   "hypothesis": {
+    "premia": "Medidas integrales de protección: ejecución por fases, compartimentación, filtración HEPA, depresión, limpieza por zonas y comunicación anticipada de cortes.",
+    "penaliza": "Escaso desarrollo en sectorización, control de polvo y ruido, equipos portátiles, duración y antelación de cortes y medidas ante interrupciones imprevistas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Jjuhj6%2Fu9k99Zh%2FyRJgM8w%3D%3D",
+   "doc": "2026-b2c6703e-9075-4e31-96fd-b941f3dc07f3"
+  },
+  {
+   "crit": "Memoria descriptiva sobre el conocimiento del estado actual del tramo de obra y del proyecto",
+   "max": 20,
+   "exp": "p:19724379",
+   "ref": "1282/25",
+   "title": "Contrato de obra de Mejora del Camino Rural de Los Ballesteros (4ª FASE) (Nueva Carteya-Córdoba) PROGRAMA DE AGENDA RURAL 24_27).",
+   "buyer": "Diputado delegado de Infraestructuras, Sostenibilidad y Agricultura",
+   "nuts": "ES613",
+   "date": "2026-08-20",
+   "offers": 1,
+   "top": {
+    "pts": 18,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Describe la situación actual con apoyo fotográfico y fecha de toma de datos.",
+    "Analiza la compatibilidad del tráfico con la obra y propone cortes temporales o desvíos.",
+    "Identifica y localiza zonas de acopio e implantación de equipos.",
+    "Denota un conocimiento adecuado del proyecto, del entorno y de la obra."
+   ],
+   "weak": [
+    "Solo identifica algunos puntos críticos que pueden condicionar la ejecución."
+   ],
+   "hypothesis": {
+    "premia": "Documentación gráfica con fecha, análisis del tráfico con propuestas de cortes o desvíos y localización de acopios.",
+    "penaliza": "Identificar solo algunos puntos críticos en lugar de todos los que condicionan la ejecución."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIc382ByRaMadbH3CysQuQ%3D%3D",
+   "doc": "2026-9054f421-5a26-4927-8d46-5568f11fbf51"
+  },
+  {
+   "crit": "Programa de trabajo",
+   "max": 10,
+   "exp": "p:19724379",
+   "ref": "1282/25",
+   "title": "Contrato de obra de Mejora del Camino Rural de Los Ballesteros (4ª FASE) (Nueva Carteya-Córdoba) PROGRAMA DE AGENDA RURAL 24_27).",
+   "buyer": "Diputado delegado de Infraestructuras, Sostenibilidad y Agricultura",
+   "nuts": "ES613",
+   "date": "2026-08-20",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Presenta diagrama de Gantt por unidades de obra que incluye todas las actividades del proyecto.",
+    "Contempla plazos parciales con valoración mensual y acumulada a precios del proyecto.",
+    "Ordena las unidades de obra y el programa se ajusta a la memoria constructiva ofertada."
+   ],
+   "weak": [
+    "Solo analiza casi todas las actividades críticas que condicionan la obra.",
+    "Determina casi todos los medios necesarios para la ejecución, no la totalidad."
+   ],
+   "hypothesis": {
+    "premia": "Gantt completo por unidades de obra, análisis de todas las actividades críticas y programación mensual y acumulada.",
+    "penaliza": "Cubrir solo casi todas las actividades críticas y casi todos los medios necesarios."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIc382ByRaMadbH3CysQuQ%3D%3D",
+   "doc": "2026-9054f421-5a26-4927-8d46-5568f11fbf51"
+  },
+  {
+   "crit": "Justificación del aumento de calidad en el proceso de ejecución",
+   "max": 10,
+   "exp": "p:19724379",
+   "ref": "1282/25",
+   "title": "Contrato de obra de Mejora del Camino Rural de Los Ballesteros (4ª FASE) (Nueva Carteya-Córdoba) PROGRAMA DE AGENDA RURAL 24_27).",
+   "buyer": "Diputado delegado de Infraestructuras, Sostenibilidad y Agricultura",
+   "nuts": "ES613",
+   "date": "2026-08-20",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Identifica materiales con marcado CE, incluye certificados de algunos y certificaciones ISO 9001.",
+    "Analiza la fórmula de trabajo de la mezcla bituminosa y propone dos laboratorios de control.",
+    "Propone informes puntuales, informe final de obra e informes trimestrales en garantía."
+   ],
+   "weak": [
+    "Aporta solo un resumen del plan de ensayos.",
+    "La supervisión de materiales en origen y acopios cubre casi todos los materiales, no todos.",
+    "Los certificados de marcado CE se aportan solo de algunos materiales."
+   ],
+   "hypothesis": {
+    "premia": "Certificados de marcado CE aportados para cada material, fórmula de trabajo, laboratorios concretos y seguimiento durante la garantía.",
+    "penaliza": "Supervisión en origen parcial, plan de ensayos resumido y certificación CE solo de algunos materiales."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIc382ByRaMadbH3CysQuQ%3D%3D",
+   "doc": "2026-9054f421-5a26-4927-8d46-5568f11fbf51"
+  },
+  {
+   "crit": "A.1.1 Memoria descriptiva del proceso de ejecución de la obra",
+   "max": 10,
+   "exp": "p:19551252",
+   "ref": "521/2025/686",
+   "title": "Obras comprendidas en el royecto de restauración del mausoleo del general sir John Moore (financiado íntegramente por la secretaría de estad",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-08-10",
+   "offers": 1,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Análisis riguroso del bien como conjunto patrimonial unitario, con lectura estratigráfica precisa y diferenciación de ámbitos constructivos.",
+    "Enfoque de conservación del 'palimpsesto histórico', evitando intervenciones homogeneizadoras.",
+    "Correlación clara entre patologías y causas; tratamiento adecuado de condicionantes ambientales y urbanísticos.",
+    "Actividades críticas identificadas con medidas de control; sistemas de ejecución planteados como mejoras, no alternativas."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Lectura estratigráfica y patrimonial del bien, correlación entre patologías y causas, y medidas de control sobre actividades críticas.",
+    "penaliza": "No consta en el informe; no se describen deficiencias de la oferta."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=X%2FrO3p2P2Fh4zIRvjBVCSw%3D%3D",
+   "doc": "2026-905fda7e-a347-443c-8f98-90c57870b8ac"
+  },
+  {
+   "crit": "A.1.2. Memoria de metodologías técnicas aplicables",
+   "max": 10,
+   "exp": "p:19551252",
+   "ref": "521/2025/686",
+   "title": "Obras comprendidas en el royecto de restauración del mausoleo del general sir John Moore (financiado íntegramente por la secretaría de estad",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-08-10",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Soldadura 'a calda' aplicada selectivamente y reintegración volumétrica diferenciando reposiciones estructurales y visuales.",
+    "Emplomaduras con plomo purificado, reversibles y compatibles; acabados coherentes con el carácter histórico.",
+    "Resolución técnicamente solvente de patologías por empujes y dilataciones, con desmontajes controlados y cosidos compatibles."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Metodologías específicas y justificadas para unidades comprometidas, con criterios conservacionales y materiales compatibles.",
+    "penaliza": "No consta en el informe; no se describen deficiencias de la oferta."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=X%2FrO3p2P2Fh4zIRvjBVCSw%3D%3D",
+   "doc": "2026-905fda7e-a347-443c-8f98-90c57870b8ac"
+  },
+  {
+   "crit": "A.1.3.1. Programa de ensayos y pruebas diagnósticas",
+   "max": 2,
+   "exp": "p:19551252",
+   "ref": "521/2025/686",
+   "title": "Obras comprendidas en el royecto de restauración del mausoleo del general sir John Moore (financiado íntegramente por la secretaría de estad",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-08-10",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Programa no destructivo alineado con el proyecto, con cartografía de sales y mapas de riesgo por sectores.",
+    "Descarta acertadamente la desalinización integral por ineficaz; incluye ensayos de dureza, disgregabilidad y catas de pátinas.",
+    "Cada prueba se traduce en un criterio de intervención concreto."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Ensayos no destructivos vinculados directamente a decisiones de intervención y a las condiciones de la resolución patrimonial.",
+    "penaliza": "No consta en el informe; no se describen deficiencias de la oferta."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=X%2FrO3p2P2Fh4zIRvjBVCSw%3D%3D",
+   "doc": "2026-905fda7e-a347-443c-8f98-90c57870b8ac"
+  },
+  {
+   "crit": "A.1.3.2. Programa de optimización de los procesos restaurativos",
+   "max": 2,
+   "exp": "p:19551252",
+   "ref": "521/2025/686",
+   "title": "Obras comprendidas en el royecto de restauración del mausoleo del general sir John Moore (financiado íntegramente por la secretaría de estad",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-08-10",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Seis propuestas de optimización bien fundamentadas, sin alterar el alcance del proyecto.",
+    "Control salino sectorizado, ventanas climáticas, plantillas geométricas y aislamiento en contactos suelo-metal.",
+    "Documentación as-built y microseguimiento post-intervención; calendarización supeditada a la Dirección Facultativa."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Optimizaciones fundamentadas, coherentes con el diagnóstico y que no alteran el alcance del proyecto.",
+    "penaliza": "No consta en el informe; no se describen deficiencias de la oferta."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=X%2FrO3p2P2Fh4zIRvjBVCSw%3D%3D",
+   "doc": "2026-905fda7e-a347-443c-8f98-90c57870b8ac"
+  },
+  {
+   "crit": "A.2. Programa de trabajos",
+   "max": 1,
+   "exp": "p:19551252",
+   "ref": "521/2025/686",
+   "title": "Obras comprendidas en el royecto de restauración del mausoleo del general sir John Moore (financiado íntegramente por la secretaría de estad",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-08-10",
+   "offers": 1,
+   "top": {
+    "pts": 1,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Planificación coherente, sectorizada y ajustada al plazo, con medios y rendimientos adecuados.",
+    "Incorpora mecanismos de control frente a desviaciones y especialización técnica diversa."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Planificación sectorizada, coherente con el plazo y con medios y rendimientos realistas, con mecanismos de control.",
+    "penaliza": "No consta en el informe; no se describen deficiencias de la oferta."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=X%2FrO3p2P2Fh4zIRvjBVCSw%3D%3D",
+   "doc": "2026-905fda7e-a347-443c-8f98-90c57870b8ac"
+  }
+ ]
+}

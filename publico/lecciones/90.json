@@ -1,0 +1,279 @@
+{
+ "cpv2": "90",
+ "generated": "2026-10-22T14:39:58.993Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Millora de caràcter ambiental dels vehicles destinats a realitzar el servei del present contracte",
+   "max": null,
+   "exp": "p:19763584",
+   "ref": "2026_033SE",
+   "title": "Servicio para la recogida y gestión de residuos del Puerto de Tarragona.",
+   "buyer": "Presidencia de la Autoridad Portuaria de Tarragona",
+   "nuts": "ES514",
+   "date": "2026-07-27",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Aporta una furgoneta 100% eléctrica para la inspección de muelles y un vehículo de caja abierta 100% eléctrico.",
+    "Especifica y concreta las mejoras ambientales de los vehículos que realizarán el servicio."
+   ],
+   "weak": [
+    "No presenta una flota totalmente eléctrica.",
+    "No presenta vehículos híbridos ni de GNC/GNL."
+   ],
+   "hypothesis": {
+    "premia": "Aportar vehículos 100% eléctricos y especificar con detalle las mejoras ambientales de la flota que prestará el servicio.",
+    "penaliza": "No presentar una flota totalmente eléctrica ni vehículos híbridos o de GNC/GNL."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=yEHRujv46Z1%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-4ba573fa-9ba0-426f-98dc-4e6a64eabf58"
+  },
+  {
+   "crit": "Millores que afegeixin valor al contracte",
+   "max": 10,
+   "exp": "p:19763584",
+   "ref": "2026_033SE",
+   "title": "Servicio para la recogida y gestión de residuos del Puerto de Tarragona.",
+   "buyer": "Presidencia de la Autoridad Portuaria de Tarragona",
+   "nuts": "ES514",
+   "date": "2026-07-27",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Propone un sistema de recogida bilateral.",
+    "Incrementa la recogida de papel y cartón en las islas cercanas a la restauración, quincenal en temporada alta.",
+    "Aumenta la frecuencia de limpieza de vehículos y contenedores, y ofrece tres recogidas extra, una por fracción.",
+    "Incluye colaboración con entidades como Papel Solidario y Serendipity, y mejoras en el almacenamiento de residuos."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Ofrecer mejoras concretas y medibles por encima del pliego, como recogidas adicionales, mayor frecuencia de limpieza y colaboraciones externas.",
+    "penaliza": "No se identifica en el documento."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=yEHRujv46Z1%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-4ba573fa-9ba0-426f-98dc-4e6a64eabf58"
+  },
+  {
+   "crit": "Aplicació web per la gestió d'incidències internes o sol·licitud de serveis",
+   "max": 10,
+   "exp": "p:19763584",
+   "ref": "2026_033SE",
+   "title": "Servicio para la recogida y gestión de residuos del Puerto de Tarragona.",
+   "buyer": "Presidencia de la Autoridad Portuaria de Tarragona",
+   "nuts": "ES514",
+   "date": "2026-07-27",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Aporta un software consultable por la APT y FCC para la gestión de incidencias y el control de los servicios."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Disponer de una aplicación accesible tanto para la APT como para la empresa, que gestione incidencias y controle los servicios.",
+    "penaliza": "No se identifica en el documento."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=yEHRujv46Z1%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-4ba573fa-9ba0-426f-98dc-4e6a64eabf58"
+  },
+  {
+   "crit": "Medios materiales y técnicos a disposición del servicio",
+   "max": 6,
+   "exp": "p:18105480",
+   "ref": "10107/2024",
+   "title": "Servicios de Recogida de Residuos Sólidos Urbanos, Limpieza Viaria y Limpieza de Playas del TM de La Oliva.",
+   "buyer": "Pleno del Ayuntamiento de La Oliva",
+   "nuts": "ES704",
+   "date": "2026-06-09",
+   "offers": 5,
+   "top": {
+    "pts": 5.6,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Correspondencia directa entre medios ofertados y necesidades operativas, con asignación por tipo de servicio y turnos.",
+    "Flota dimensionada con márgenes de disponibilidad y medios de reserva para incidencias.",
+    "Tecnologías de bajas emisiones distribuidas de forma estructurada entre los servicios.",
+    "Medios complementarios con clara utilidad para respuesta ante incidencias y actuaciones extraordinarias.",
+    "Presencia de tecnologías de bajas emisiones y cumplimiento de requisitos del PPT."
+   ],
+   "weak": [
+    "No presentó el Proyecto Técnico exigido en el PCAP, solo anexos; no fue valorado."
+   ],
+   "hypothesis": {
+    "premia": "Correspondencia explícita entre medios y operaciones, asignación por turnos y zonas, medios de reserva y bajas emisiones distribuidas en toda la flota.",
+    "penaliza": "Falta de trazabilidad entre medios y operaciones, asignación poco homogénea y bajas emisiones presentes solo de forma puntual."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=S%2FlVFIlqj9Z%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-35b13932-dedf-48cf-b7e3-d93877236f0c"
+  },
+  {
+   "crit": "Mejor y más claro desarrollo del plan de trabajo",
+   "max": 20,
+   "exp": "p:18105480",
+   "ref": "10107/2024",
+   "title": "Servicios de Recogida de Residuos Sólidos Urbanos, Limpieza Viaria y Limpieza de Playas del TM de La Oliva.",
+   "buyer": "Pleno del Ayuntamiento de La Oliva",
+   "nuts": "ES704",
+   "date": "2026-06-09",
+   "offers": 5,
+   "top": {
+    "pts": 18.9,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Desarrollo exhaustivo que sigue el esquema del Anexo VIII del PPT, con buena trazabilidad.",
+    "Integración sólida de limpieza viaria, playas y recogida, con planificación por turnos y zonas.",
+    "Tabla de mejoras y frecuencias que aporta claridad y verificabilidad.",
+    "Estructuración completa de servicios y operaciones, con memoria clara y técnicamente solvente."
+   ],
+   "weak": [
+    "Sin Proyecto Técnico; no procede su valoración y se asigna cero puntos.",
+    "Existen aspectos susceptibles de mayor desarrollo en detalle operativo."
+   ],
+   "hypothesis": {
+    "premia": "Definición de rutas, turnos y asignación directa de medios por operación, integración entre servicios y mejoras cuantificadas.",
+    "penaliza": "Descripciones generales o corporativas, enfoque de dimensionamiento teórico y falta de planificación diaria verificable."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=S%2FlVFIlqj9Z%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-35b13932-dedf-48cf-b7e3-d93877236f0c"
+  },
+  {
+   "crit": "Mayor asignación de medios humanos",
+   "max": 4,
+   "exp": "p:18105480",
+   "ref": "10107/2024",
+   "title": "Servicios de Recogida de Residuos Sólidos Urbanos, Limpieza Viaria y Limpieza de Playas del TM de La Oliva.",
+   "buyer": "Pleno del Ayuntamiento de La Oliva",
+   "nuts": "ES704",
+   "date": "2026-06-09",
+   "offers": 5,
+   "top": {
+    "pts": 3.85,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Asignación robusta en puestos clave de explotación y soporte, superior al mínimo.",
+    "Estructura de apoyo corporativo que refuerza seguimiento, control y respuesta a incidencias.",
+    "Propuesta de segundo encargado y mecánico adicional para reforzar turnos de mañana y tarde."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Asignación funcional del personal a puestos clave, organización por turnos y mecanismos de cobertura ante incidencias.",
+    "penaliza": "Dotación cuantitativa sin detalle sobre asignación funcional, turnos ni sustituciones."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=S%2FlVFIlqj9Z%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-35b13932-dedf-48cf-b7e3-d93877236f0c"
+  },
+  {
+   "crit": "Mejores méritos académicos y profesionales",
+   "max": 2,
+   "exp": "p:18105480",
+   "ref": "10107/2024",
+   "title": "Servicios de Recogida de Residuos Sólidos Urbanos, Limpieza Viaria y Limpieza de Playas del TM de La Oliva.",
+   "buyer": "Pleno del Ayuntamiento de La Oliva",
+   "nuts": "ES704",
+   "date": "2026-06-09",
+   "offers": 5,
+   "top": {
+    "pts": 1.85,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Descripción detallada de formación y experiencia de los puestos principales, con funciones razonadas.",
+    "Plantilla equivalente superior al mínimo del pliego.",
+    "Perfiles con formación y experiencia en servicios de similar naturaleza."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=S%2FlVFIlqj9Z%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-35b13932-dedf-48cf-b7e3-d93877236f0c"
+  },
+  {
+   "crit": "Mayor ejecución y frecuencias sobre mínimos",
+   "max": 4,
+   "exp": "p:18105480",
+   "ref": "10107/2024",
+   "title": "Servicios de Recogida de Residuos Sólidos Urbanos, Limpieza Viaria y Limpieza de Playas del TM de La Oliva.",
+   "buyer": "Pleno del Ayuntamiento de La Oliva",
+   "nuts": "ES704",
+   "date": "2026-06-09",
+   "offers": 5,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Mejoras claramente identificadas (recogida de resto, orgánica y enseres) e integradas en la planificación.",
+    "Refuerzos en servicios especiales coherentes con medios humanos y materiales asignados.",
+    "Se incorporan mejoras respecto a los mínimos exigidos."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Tabla de mejoras con incrementos concretos de frecuencias, integrada en la planificación operativa.",
+    "penaliza": "Mejoras no cuantificadas ni vinculadas a recursos humanos y materiales."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=S%2FlVFIlqj9Z%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-35b13932-dedf-48cf-b7e3-d93877236f0c"
+  },
+  {
+   "crit": "Herramientas de gestión ofertadas",
+   "max": 4,
+   "exp": "p:18105480",
+   "ref": "10107/2024",
+   "title": "Servicios de Recogida de Residuos Sólidos Urbanos, Limpieza Viaria y Limpieza de Playas del TM de La Oliva.",
+   "buyer": "Pleno del Ayuntamiento de La Oliva",
+   "nuts": "ES704",
+   "date": "2026-06-09",
+   "offers": 3,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Plataforma integral (ID Soft) para coordinación, gestión en tiempo real y seguimiento de los servicios.",
+    "Control de asistencia del personal integrado en la plataforma y satisfacción ciudadana operativa.",
+    "Herramienta considerada la más completa, integrada y directamente aplicable al control del servicio.",
+    "Plataforma siGEUS con desarrollos innovadores (detección de impropios, gestión de desbordes, reutilización de enseres).",
+    "Sistema de control de asistencia RFID/NFC/QR y app ciudadana con interacción desarrollada."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Sistema integrado que relaciona planificación, ejecución, control en tiempo real, asistencia y satisfacción ciudadana.",
+    "penaliza": "Repertorio de aplicaciones aisladas o desarrollos añadidos que fragmentan la operativa."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=S%2FlVFIlqj9Z%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-35b13932-dedf-48cf-b7e3-d93877236f0c"
+  }
+ ]
+}

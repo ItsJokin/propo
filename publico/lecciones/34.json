@@ -1,0 +1,203 @@
+{
+ "cpv2": "34",
+ "generated": "2026-10-22T14:39:58.994Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Mejoras sobre las características técnicas de los vehículos",
+   "max": 20,
+   "exp": "p:19429556",
+   "ref": "CON/2026/3",
+   "title": "Suministro de 3 vehículos de renting para diferentes servicios municipales",
+   "buyer": "Alcaldía del Ayuntamiento de Llanes",
+   "nuts": "ES120",
+   "date": "2026-08-07",
+   "offers": 2,
+   "top": {
+    "pts": 18,
+    "winner": true
+   },
+   "low": {
+    "pts": 18
+   },
+   "best": [
+    "Amplio paquete de mejoras de seguridad y comodidad (airbags, ESP, TPMS, alertas de carril y fatiga, ángulo muerto), de gran importancia para conductores y acompañantes.",
+    "Mejoras de seguridad y comodidad sobre el PPT (faros LED, frenado de emergencia, asistente de fatiga, otros), consideradas de gran importancia."
+   ],
+   "weak": [
+    "Mejoras técnicas consideradas equivalentes a las de la otra oferta."
+   ],
+   "hypothesis": {
+    "premia": "Amplio paquete de mejoras de seguridad y comodidad para conductores y acompañantes.",
+    "penaliza": "No se observa diferencia de puntuación: ambas ofertas recibieron 18 puntos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=PkHIYvnziceopEMYCmrbmw%3D%3D",
+   "doc": "2026-a92967c3-e1e8-4255-936a-78db54a8575f"
+  },
+  {
+   "crit": "Mejoras en la asistencia técnica",
+   "max": 20,
+   "exp": "p:19429556",
+   "ref": "CON/2026/3",
+   "title": "Suministro de 3 vehículos de renting para diferentes servicios municipales",
+   "buyer": "Alcaldía del Ayuntamiento de Llanes",
+   "nuts": "ES120",
+   "date": "2026-08-07",
+   "offers": 2,
+   "top": {
+    "pts": 18,
+    "winner": true
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Taller móvil 24 horas, sustitución en 15 minutos ante avería y en el acto ante mantenimiento; aplicación claramente detallada y de gran importancia.",
+    "Reparaciones programadas en menos de 24 horas y mejoras en reparaciones menores, revisiones y sustitución urgente."
+   ],
+   "weak": [
+    "No ofrece vehículo sustituto inmediato; la aplicación de las mejoras se considera sin detallar claramente."
+   ],
+   "hypothesis": {
+    "premia": "Tiempos de sustitución inmediatos (15 minutos o en el acto), taller móvil y compromisos cuantificables con aplicación detallada.",
+    "penaliza": "Reparaciones en 24 horas sin vehículo sustituto inmediato y propuestas con aplicación poco detallada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=PkHIYvnziceopEMYCmrbmw%3D%3D",
+   "doc": "2026-a92967c3-e1e8-4255-936a-78db54a8575f"
+  },
+  {
+   "crit": "Otras mejoras",
+   "max": 10,
+   "exp": "p:19429556",
+   "ref": "CON/2026/3",
+   "title": "Suministro de 3 vehículos de renting para diferentes servicios municipales",
+   "buyer": "Alcaldía del Ayuntamiento de Llanes",
+   "nuts": "ES120",
+   "date": "2026-08-07",
+   "offers": 2,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Km de exceso adicionales, lavado semanal y seguimiento continuo de la flota, que inciden en la seguridad de los ocupantes y en la imagen municipal.",
+    "Mejoras concretas: asistencia inmediata ante accidente o avería, vehículo de sustitución tras 24 h, base logística y responsable de contrato."
+   ],
+   "weak": [
+    "Se consideran de menor importancia por no garantizar una respuesta idónea en la prestación de servicios públicos."
+   ],
+   "hypothesis": {
+    "premia": "Compromisos concretos de alto impacto operativo, como km adicionales, lavado semanal y seguimiento continuo de la flota.",
+    "penaliza": "Mejoras de impacto indirecto o considerado de menor importancia para la prestación del servicio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=PkHIYvnziceopEMYCmrbmw%3D%3D",
+   "doc": "2026-a92967c3-e1e8-4255-936a-78db54a8575f"
+  },
+  {
+   "crit": "Aspecto 1: Calidad de la propuesta del servicio, envío y reparto del suministro y su adecuación a las necesidades. Servicio postventa.",
+   "max": 10,
+   "exp": "p:19396499",
+   "ref": "42025-G.664",
+   "title": "Suministro de señales verticales de tráfico, pintura vial y otros elementos de señalización y balizamiento para el Ayuntamiento de Rojales.",
+   "buyer": "Alcaldía del Ayuntamiento de Rojales",
+   "nuts": "ES521",
+   "date": "2026-07-21",
+   "offers": 3,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 7.5
+   },
+   "best": [
+    "Modelo organizativo bueno y muy pormenorizado.",
+    "Fábrica propia en Guarromán y cinco canales de comunicación 24/7, incluido WhatsApp.",
+    "Entrega de licencias de software de pedidos en un máximo de 5 días.",
+    "Equipo técnico propio permanente, furgón y herramientas exclusivos para Rojales.",
+    "Delegado del contrato con 14 años de experiencia y encargado de apoyo."
+   ],
+   "weak": [
+    "Estructura postventa menos detallada en personal adscrito de forma fija al contrato que otros licitadores."
+   ],
+   "hypothesis": {
+    "premia": "Personal fijo y equipo técnico adscrito de forma permanente al contrato, canales de atención continuos y herramientas o vehículos exclusivos para Rojales.",
+    "penaliza": "Estructura postventa sin personal fijo detallado y atención menos pormenorizada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ynLe5grqWvezz8fXU2i3eQ%3D%3D",
+   "doc": "2026-b89feca1-936b-4adf-bfc4-2bf51edd4724"
+  },
+  {
+   "crit": "Aspecto 2: Planificación relativa a la ejecución de los trabajos, disponibilidad, definición de los suministros, fichas técnicas y composiciones.",
+   "max": 10,
+   "exp": "p:19396499",
+   "ref": "42025-G.664",
+   "title": "Suministro de señales verticales de tráfico, pintura vial y otros elementos de señalización y balizamiento para el Ayuntamiento de Rojales.",
+   "buyer": "Alcaldía del Ayuntamiento de Rojales",
+   "nuts": "ES521",
+   "date": "2026-07-21",
+   "offers": 3,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 7.5
+   },
+   "best": [
+    "Centro logístico en San Vicente del Raspeig, a 52 km (menos de 1 hora), con stock permanente.",
+    "Certificado AENOR de Constancia de las Prestaciones de Marcado CE.",
+    "Fichas técnicas minuciosas de señales de acero, aluminio y pintura.",
+    "Proximidad geográfica (Beniaján, 58 km, 50 minutos) y stock permanente de 1.000 kg de pintura y 1.000 kg de microesferas.",
+    "Cartas de compromiso con fabricantes de primer nivel y certificaciones ISO 9001 e ISO 14001."
+   ],
+   "weak": [
+    "Base logística de Catadau a 120 minutos de Rojales, lo que ralentiza la respuesta física inmediata."
+   ],
+   "hypothesis": {
+    "premia": "Proximidad logística (menos de una hora de trayecto), stock permanente en Rojales o cercanías y fichas técnicas minuciosas con certificaciones de conformidad.",
+    "penaliza": "Base logística lejana (120 minutos) que ralentiza la respuesta inmediata."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ynLe5grqWvezz8fXU2i3eQ%3D%3D",
+   "doc": "2026-b89feca1-936b-4adf-bfc4-2bf51edd4724"
+  },
+  {
+   "crit": "Aspecto 3: Previsión del impacto ambiental, utilización de elementos de baja emisión contaminante y transportes empleados.",
+   "max": 10,
+   "exp": "p:19396499",
+   "ref": "42025-G.664",
+   "title": "Suministro de señales verticales de tráfico, pintura vial y otros elementos de señalización y balizamiento para el Ayuntamiento de Rojales.",
+   "buyer": "Alcaldía del Ayuntamiento de Rojales",
+   "nuts": "ES521",
+   "date": "2026-07-21",
+   "offers": 3,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Fábrica de Jaén energéticamente independiente con planta solar de 30 kWp; placas solares en el almacén de Alicante.",
+    "Declaración Ambiental de Producto y cálculo de huella de carbono de sus señales.",
+    "Dos furgones de GNC identificados por matrícula para el transporte local.",
+    "Pinturas que cumplen las directrices más estrictas de baja emisión de COV.",
+    "Vehículos con etiqueta Eco de la DGT adscritos al contrato: un híbrido y un furgón de GNC."
+   ],
+   "weak": [
+    "Falta de concreción en transportes y reducción de emisiones.",
+    "No detalla vehículos eco, híbridos o GNC; flota convencional para el reparto local."
+   ],
+   "hypothesis": {
+    "premia": "Vehículos de baja emisión identificados por matrícula o etiqueta, huella de carbono certificada, energía renovable y materiales reciclados.",
+    "penaliza": "Flota convencional sin concreción de vehículos eco y falta de detalle en transportes y reducción de emisiones."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ynLe5grqWvezz8fXU2i3eQ%3D%3D",
+   "doc": "2026-b89feca1-936b-4adf-bfc4-2bf51edd4724"
+  }
+ ]
+}

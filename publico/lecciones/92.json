@@ -1,0 +1,418 @@
+{
+ "cpv2": "92",
+ "generated": "2026-10-22T14:39:58.991Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Duración",
+   "max": 20,
+   "exp": "p:19636944",
+   "ref": "CON21-2026/0114",
+   "title": "XVIII concurso internacional de espectáculos pirotécnicos de las fiestas de San Mateo 2026",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Logroño",
+   "nuts": "ES230",
+   "date": "2026-09-02",
+   "offers": 7,
+   "top": {
+    "pts": 18,
+    "winner": true
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Duración de 17 min y 25 s con espectáculo intenso y variado",
+    "La intensidad y velocidad del lanzamiento compensan la brevedad de 15 min"
+   ],
+   "weak": [
+    "Materia reglamentada baja; espectáculo breve y poco intenso. Nota: el cuadro final asigna 36 puntos, distinto de la suma de las puntuaciones motivadas (34)"
+   ],
+   "hypothesis": {
+    "premia": "Ratio favorable entre materia reglamentada y duración, o lanzamientos intensos que compensan la brevedad (Pibierzo, Zaragozana, Artefogo, Tomás).",
+    "penaliza": "Materia reglamentada baja respecto a la duración, que genera espectáculos breves y monótonos (Mediterráneo, Mulhacen, Turis)."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=PauKrxHjsdq9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-a8b04456-a01d-4434-a556-bb45d6f13704"
+  },
+  {
+   "crit": "Número y Tipología de artificios",
+   "max": 10,
+   "exp": "p:19636944",
+   "ref": "CON21-2026/0114",
+   "title": "XVIII concurso internacional de espectáculos pirotécnicos de las fiestas de San Mateo 2026",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Logroño",
+   "nuts": "ES230",
+   "date": "2026-09-02",
+   "offers": 7,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Mayor número de artificios de todas las ofertas, más de 6.000",
+    "4.896 artificios, el tercero de todas las ofertas"
+   ],
+   "weak": [
+    "1.341 artificios, la cifra más baja de todas las ofertas"
+   ],
+   "hypothesis": {
+    "premia": "Gran número de artificios y tipologías diversas (Artefogo con más de 6.000, Zaragozana con 5.127, Tomás con 4.896).",
+    "penaliza": "Cifras bajas de artificios (Mulhacen con 1.341, Turis con 1.966) y tipologías repetitivas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=PauKrxHjsdq9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-a8b04456-a01d-4434-a556-bb45d6f13704"
+  },
+  {
+   "crit": "Variedad cromática y vistosidad",
+   "max": 10,
+   "exp": "p:19636944",
+   "ref": "CON21-2026/0114",
+   "title": "XVIII concurso internacional de espectáculos pirotécnicos de las fiestas de San Mateo 2026",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Logroño",
+   "nuts": "ES230",
+   "date": "2026-09-02",
+   "offers": 7,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Lanzamiento rápido, variado y muy vistoso",
+    "Lanzamiento variado y muy vistoso, con pocas interrupciones"
+   ],
+   "weak": [
+    "Efectos muy repetitivos; no aporta fotografías"
+   ],
+   "hypothesis": {
+    "premia": "Variedad de colores y efectos respaldada por documentación fotográfica o cuadro técnico detallado.",
+    "penaliza": "Ausencia de documentación gráfica que impide visualizar el espectáculo y repetición de colores y efectos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=PauKrxHjsdq9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-a8b04456-a01d-4434-a556-bb45d6f13704"
+  },
+  {
+   "crit": "Cadencia/fases",
+   "max": 10,
+   "exp": "p:19636944",
+   "ref": "CON21-2026/0114",
+   "title": "XVIII concurso internacional de espectáculos pirotécnicos de las fiestas de San Mateo 2026",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Logroño",
+   "nuts": "ES230",
+   "date": "2026-09-02",
+   "offers": 7,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Intensidad mantenida sin interrupciones",
+    "Espectáculo equilibrado en duración y cadencia"
+   ],
+   "weak": [
+    "Contenido escaso y repetitivo en cada fase"
+   ],
+   "hypothesis": {
+    "premia": "Cadencia sin interrupciones, con fases equilibradas y ritmo sostenido.",
+    "penaliza": "Interrupciones en la continuidad y falta de variaciones de intensidad entre fases."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=PauKrxHjsdq9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-a8b04456-a01d-4434-a556-bb45d6f13704"
+  },
+  {
+   "crit": "Orden de disparo",
+   "max": 10,
+   "exp": "p:19636944",
+   "ref": "CON21-2026/0114",
+   "title": "XVIII concurso internacional de espectáculos pirotécnicos de las fiestas de San Mateo 2026",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Logroño",
+   "nuts": "ES230",
+   "date": "2026-09-02",
+   "offers": 7,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Orden muy notable, con intensidad mantenida en todas las fases",
+    "23 secciones con diversidad y variedad de figuras en todas sus fases"
+   ],
+   "weak": [
+    "No se aprecian variaciones de intensidad; resulta monótono"
+   ],
+   "hypothesis": {
+    "premia": "Progresión clara de menos a más, con prefinales y clímax bien construidos y diversidad en todas las fases.",
+    "penaliza": "Secuencias monótonas y poco originales en la organización de los efectos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=PauKrxHjsdq9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-a8b04456-a01d-4434-a556-bb45d6f13704"
+  },
+  {
+   "crit": "Espectacularidad",
+   "max": 20,
+   "exp": "p:19636944",
+   "ref": "CON21-2026/0114",
+   "title": "XVIII concurso internacional de espectáculos pirotécnicos de las fiestas de San Mateo 2026",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Logroño",
+   "nuts": "ES230",
+   "date": "2026-09-02",
+   "offers": 7,
+   "top": {
+    "pts": 18,
+    "winner": true
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Espectacular, con gran diversidad cromática en varias alturas",
+    "Grupo de prefinales espectacular, con sonoridad destacada y carcasa bomba final"
+   ],
+   "weak": [
+    "Poco original en figuras, con repetición de perlas y lentejuelas"
+   ],
+   "hypothesis": {
+    "premia": "Uso de fuego en varias alturas combinado con diversidad cromática y de figuras, y impacto sonoro destacado.",
+    "penaliza": "Bajo impacto sonoro y figuras o colores repetidos, con poco impacto visual."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=PauKrxHjsdq9Hd5zqvq9cg%3D%3D",
+   "doc": "2026-a8b04456-a01d-4434-a556-bb45d6f13704"
+  },
+  {
+   "crit": "Apartado 1",
+   "max": 12,
+   "exp": "p:20233774",
+   "ref": "13/2026 Servicios",
+   "title": "Atención socioeducativa a niños y niñas en el programa de actividades extraescolares y complementarias.",
+   "buyer": "Concejalía Delegada de Contratación del Ayuntamiento de Alcázar de San Juan",
+   "nuts": "ES422",
+   "date": "2026-08-27",
+   "offers": 2,
+   "top": {
+    "pts": 12,
+    "winner": true
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Contextualización exhaustiva y justificación muy adecuada al objeto del contrato, con objetivos, contenidos y ámbitos temáticos concretos.",
+    "Aporta programación anual de actividades extraescolares, con contenidos por sesiones, planificación por cuatrimestre y criterios de evaluación.",
+    "Propuesta de Quijote Infantil detallada, con atención a la diversidad muy adecuada en lo metodológico.",
+    "Aporta diseño y material gráfico de propuestas de actividades, y criterios de coordinación con una metodología óptima.",
+    "Define bloques de contenido y tipología de talleres conforme al pliego, con organización y sesión tipo."
+   ],
+   "weak": [
+    "La contextualización y orientación de contenidos se presentan de forma esquemática.",
+    "Las adaptaciones para el alumnado NEAE se apuntan sin un desarrollo detallado.",
+    "La sesión tipo de los talleres es básica y la programación del Quijote es poco concreta."
+   ],
+   "hypothesis": {
+    "premia": "Contextualización exhaustiva, objetivos y contenidos concretados por proyecto, programación anual con planificación, materiales de difusión diseñados y atención NEAE desarrollada.",
+    "penaliza": "Contextualización esquemática, adaptaciones solo apuntadas, sesión tipo básica y programación poco concreta del Quijote."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=e25uC%2Fuck%2F6TylGzYmBF9Q%3D%3D",
+   "doc": "2026-fac29bd7-78e1-4326-b97c-8f31d5417f16"
+  },
+  {
+   "crit": "Apartado 2",
+   "max": 5,
+   "exp": "p:20233774",
+   "ref": "13/2026 Servicios",
+   "title": "Atención socioeducativa a niños y niñas en el programa de actividades extraescolares y complementarias.",
+   "buyer": "Concejalía Delegada de Contratación del Ayuntamiento de Alcázar de San Juan",
+   "nuts": "ES422",
+   "date": "2026-08-27",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Presenta un plan de sustitución de personal con método ante ausencias y bajas, y cobertura inmediata.",
+    "Detalla las medidas ante errores o falta de competencia del personal.",
+    "Incluye compromiso explícito de comunicar incidencias y decisiones al Servicio de Educación.",
+    "Presenta una propuesta de gestión del personal con sistema de sustituciones.",
+    "Concreta un procedimiento de actuación ante disfunciones, errores o falta de competencia."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Plan de sustitución con cobertura inmediata y medidas detalladas ante errores o falta de competencia, junto con compromiso de comunicación.",
+    "penaliza": "Deducción: el informe no señala carencias explícitas; la menor puntuación se asocia a un detalle menor del método de cobertura inmediata y de las medidas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=e25uC%2Fuck%2F6TylGzYmBF9Q%3D%3D",
+   "doc": "2026-fac29bd7-78e1-4326-b97c-8f31d5417f16"
+  },
+  {
+   "crit": "Apartado 3",
+   "max": 8,
+   "exp": "p:20233774",
+   "ref": "13/2026 Servicios",
+   "title": "Atención socioeducativa a niños y niñas en el programa de actividades extraescolares y complementarias.",
+   "buyer": "Concejalía Delegada de Contratación del Ayuntamiento de Alcázar de San Juan",
+   "nuts": "ES422",
+   "date": "2026-08-27",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "La persona responsable de la coordinación y dirección presenta título de directora de Actividades Juveniles, conforme al pliego.",
+    "Bolsa de sustituciones solvente con titulación, formación y experiencia; certificación negativa del registro de delincuentes sexuales.",
+    "Plan de formación con horas óptimas, compromiso de formación municipal, Plan de Igualdad y convenio con el Instituto de la Mujer.",
+    "Equipamientos con grado óptimo de adecuación, sede en la localidad y protocolo de emergencias detallado.",
+    "Detalla un equipo básico de 9 monitores/as con titulación y experiencia, y presenta bolsa de sustituciones con CV."
+   ],
+   "weak": [
+    "La persona responsable de la coordinación no acredita el título de director/a de Actividades Juveniles exigido en el pliego.",
+    "Indica disponibilidad de oficina técnica, pero solo apunta el compromiso de adscripción de infraestructura sin concretarlo."
+   ],
+   "hypothesis": {
+    "premia": "Coordinación con titulación exigida acreditada, bolsa de sustitutos solvente, equipamientos e infraestructura concretados, sede local y planes de igualdad.",
+    "penaliza": "No acreditar la titulación exigida al responsable de coordinación y no concretar la infraestructura comprometida."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=e25uC%2Fuck%2F6TylGzYmBF9Q%3D%3D",
+   "doc": "2026-fac29bd7-78e1-4326-b97c-8f31d5417f16"
+  },
+  {
+   "crit": "Criterio 1. Características técnicas de las instalaciones",
+   "max": 20,
+   "exp": "p:19571124",
+   "ref": "02410/2026/26-NOCO",
+   "title": "Otorgamiento de las autorizaciones relativas a la explotación de los servicios de temporada en la playas del Pinedo y el Saler, dividido en ",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-17",
+   "offers": 1,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Descripción técnica detallada de kioscos, sombrillas, hamacas y casetas, con fotografías y documentación gráfica.",
+    "Imagen mediterránea homogénea y materiales adaptados a ambientes marinos, resistentes al ambiente salino.",
+    "Sistemas de seguridad, accesibilidad, mantenimiento y criterios de sostenibilidad e integración paisajística."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5WaM7R3YkL6dkQsA7ROvsg%3D%3D",
+   "doc": "2026-8056ea87-4e97-46ac-8775-643fe2002d56"
+  },
+  {
+   "crit": "Criterio 2. Uniforme del personal",
+   "max": 5,
+   "exp": "p:19571124",
+   "ref": "02410/2026/26-NOCO",
+   "title": "Otorgamiento de las autorizaciones relativas a la explotación de los servicios de temporada en la playas del Pinedo y el Saler, dividido en ",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-17",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Uniformes diferenciados por funciones, con colores corporativos, logotipos y tejidos técnicos transpirables y anti-UV.",
+    "Equipamiento complementario y EPIs específicos por puesto; lavandería propia para mantener la uniformidad."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5WaM7R3YkL6dkQsA7ROvsg%3D%3D",
+   "doc": "2026-8056ea87-4e97-46ac-8775-643fe2002d56"
+  },
+  {
+   "crit": "Criterio 3. Montaje de los diferentes elementos en la playa",
+   "max": 5,
+   "exp": "p:19571124",
+   "ref": "02410/2026/26-NOCO",
+   "title": "Otorgamiento de las autorizaciones relativas a la explotación de los servicios de temporada en la playas del Pinedo y el Saler, dividido en ",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-17",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Operativa de instalación y desmontaje con medios, maquinaria, vehículos y medidas para minimizar el impacto en la arena.",
+    "Planificación para rapidez con equipos simultáneos y turnos continuados, incluso de 24 horas, y medidas de seguridad."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5WaM7R3YkL6dkQsA7ROvsg%3D%3D",
+   "doc": "2026-8056ea87-4e97-46ac-8775-643fe2002d56"
+  },
+  {
+   "crit": "Criterio 4. Procedimientos",
+   "max": 5,
+   "exp": "p:19571124",
+   "ref": "02410/2026/26-NOCO",
+   "title": "Otorgamiento de las autorizaciones relativas a la explotación de los servicios de temporada en la playas del Pinedo y el Saler, dividido en ",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-17",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Procedimientos detallados de funcionamiento, organización, limpieza, atención al usuario y gestión de incidencias.",
+    "Protocolos de coordinación, control de calidad, gestión ambiental, gestión selectiva de residuos y reclamaciones.",
+    "Experiencia acreditada en servicios similares y sistemas de calidad y gestión medioambiental."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5WaM7R3YkL6dkQsA7ROvsg%3D%3D",
+   "doc": "2026-8056ea87-4e97-46ac-8775-643fe2002d56"
+  },
+  {
+   "crit": "Criterio 5. Mejoras",
+   "max": 5,
+   "exp": "p:19571124",
+   "ref": "02410/2026/26-NOCO",
+   "title": "Otorgamiento de las autorizaciones relativas a la explotación de los servicios de temporada en la playas del Pinedo y el Saler, dividido en ",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-17",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Mejoras relacionadas con los objetivos del pliego: códigos QR, accesibilidad e inclusión.",
+    "Campañas de limpieza y concienciación ambiental, promoción del comercio de proximidad y programas de fidelización."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=5WaM7R3YkL6dkQsA7ROvsg%3D%3D",
+   "doc": "2026-8056ea87-4e97-46ac-8775-643fe2002d56"
+  }
+ ]
+}

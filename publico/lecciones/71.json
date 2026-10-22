@@ -1,0 +1,841 @@
+{
+ "cpv2": "71",
+ "generated": "2026-10-22T14:39:58.992Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Bloque I: Aspectos técnicos",
+   "max": 15,
+   "exp": "p:19099658",
+   "ref": "323/2025",
+   "title": "Contrato de Servicios de redacción de proyectos, dirección de obras, redacción de pliegos, gestión y justificación de las mismas: Marco de A",
+   "buyer": "Alcaldía del Ayuntamiento de Hinojos",
+   "nuts": "ES615",
+   "date": "2026-08-31",
+   "offers": 5,
+   "top": {
+    "pts": 14.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 11
+   },
+   "best": [
+    "Diagnóstico exhaustivo de los 9 proyectos con sistemas SCADA para control de fugas y gestión 'Papel Cero'.",
+    "Identifica riesgo de amianto en redes P2 y P3, necesidad de ejecución simultánea para evitar doble financiación e interferencias entre obras.",
+    "Propone infraestructura paisajística integrada y transformar el ciclo del agua en elemento estructurante, eliminando superficies impermeables.",
+    "Identifica riesgos técnicos y administrativos ligados a Red Natura 2000 y anticipa autorizaciones de CHG y Consejería.",
+    "Muestra comprensión de las metas del Ayuntamiento y del MITECO bajo el RD 842/2024."
+   ],
+   "weak": [
+    "Enfoque más general.",
+    "No profundiza en riesgos técnicos específicos de ejecución de los proyectos."
+   ],
+   "hypothesis": {
+    "premia": "Diagnóstico pormenorizado de los proyectos, identificación de riesgos técnicos específicos (amianto, interferencias, Red Natura 2000) y conexión con los objetivos MITECO.",
+    "penaliza": "Enfoque general y riesgos técnicos de ejecución poco detallados o genéricos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2F5w56mRO%2FWvjHF5qKI4aaw%3D%3D",
+   "doc": "2026-6ae6b21f-15f6-414c-8970-e1c87e883429"
+  },
+  {
+   "crit": "Bloque II: Metodología de trabajo",
+   "max": 15,
+   "exp": "p:19099658",
+   "ref": "323/2025",
+   "title": "Contrato de Servicios de redacción de proyectos, dirección de obras, redacción de pliegos, gestión y justificación de las mismas: Marco de A",
+   "buyer": "Alcaldía del Ayuntamiento de Hinojos",
+   "nuts": "ES615",
+   "date": "2026-08-31",
+   "offers": 5,
+   "top": {
+    "pts": 14.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 11
+   },
+   "best": [
+    "Metodología más robusta y profesionalizada del grupo: Stage-Gate (ISO 21502:2020) y Matriz RACI.",
+    "Validación cruzada Go/No-Go de áreas técnica, jurídica y económica y alertas tempranas al 75% de cada hito.",
+    "Modelo de Secretaría Técnica tipo PMO y cuadro de mando que vincula avance físico con elegibilidad del gasto.",
+    "Protocolo de actualización del cronograma cada 10 días y validación jurídica antes de cada publicación."
+   ],
+   "weak": [
+    "Metodología más estándar y genérica, con ausencia de herramientas tecnológicas avanzadas.",
+    "No detalla herramientas avanzadas de control de riesgos de auditoría o trazabilidad internacional."
+   ],
+   "hypothesis": {
+    "premia": "Gobernanza con herramientas de monitorización proactiva (Stage-Gate, PMO, cuadro de mando, validaciones cruzadas) y metodologías adaptables.",
+    "penaliza": "Mando jerárquico convencional y ausencia de herramientas digitales de monitorización de hitos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2F5w56mRO%2FWvjHF5qKI4aaw%3D%3D",
+   "doc": "2026-6ae6b21f-15f6-414c-8970-e1c87e883429"
+  },
+  {
+   "crit": "Bloque III: Innovación y sostenibilidad",
+   "max": 8,
+   "exp": "p:19099658",
+   "ref": "323/2025",
+   "title": "Contrato de Servicios de redacción de proyectos, dirección de obras, redacción de pliegos, gestión y justificación de las mismas: Marco de A",
+   "buyer": "Alcaldía del Ayuntamiento de Hinojos",
+   "nuts": "ES615",
+   "date": "2026-08-31",
+   "offers": 5,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Integración de BIM en dimensiones 4D a 7D y entrega de un Gemelo Digital de los activos municipales.",
+    "Arquitectura bioclimática avanzada para calificación A+ y ecosistema de inteligencia de negocio integrado en SharePoint.",
+    "Balance de tierras entre proyectos y reutilización de excedentes de excavación de P2 y P3 en P11.1.",
+    "Sistema de monitorización energética en tiempo real para edificios públicos en la gestión posterior a la obra."
+   ],
+   "weak": [
+    "Valoración positiva pero menos innovadora que otras propuestas."
+   ],
+   "hypothesis": {
+    "premia": "Innovación tecnológica (BIM 4D-7D, gemelo digital, monitorización energética) y medidas concretas de economía circular, eficiencia y biodiversidad.",
+    "penaliza": "Medidas de sostenibilidad correctas pero poco innovadoras."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2F5w56mRO%2FWvjHF5qKI4aaw%3D%3D",
+   "doc": "2026-6ae6b21f-15f6-414c-8970-e1c87e883429"
+  },
+  {
+   "crit": "Bloque IV: Cronograma y plan de seguimiento",
+   "max": 11,
+   "exp": "p:19099658",
+   "ref": "323/2025",
+   "title": "Contrato de Servicios de redacción de proyectos, dirección de obras, redacción de pliegos, gestión y justificación de las mismas: Marco de A",
+   "buyer": "Alcaldía del Ayuntamiento de Hinojos",
+   "nuts": "ES615",
+   "date": "2026-08-31",
+   "offers": 5,
+   "top": {
+    "pts": 10.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Sistema de control de hitos orientado a la seguridad financiera de la subvención.",
+    "Actualización del cronograma cada diez días con datos reales y alertas ante desviaciones superiores al 5%; seguimiento auditable conforme al RD 842/2024.",
+    "Semáforos de criticidad que monitorizan el avance real frente a la línea de base.",
+    "Matriz de evidencias documentales vinculada al sistema Stage-Gate y resolución de requerimientos en menos de diez días."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Control de hitos con actualización periódica con datos reales, alertas ante desviaciones y seguimiento auditable de los gastos.",
+    "penaliza": "Seguimiento basado en herramientas básicas, sin sistema de alertas ni control avanzado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2F5w56mRO%2FWvjHF5qKI4aaw%3D%3D",
+   "doc": "2026-6ae6b21f-15f6-414c-8970-e1c87e883429"
+  },
+  {
+   "crit": "Calidad de la propuesta técnica / Descripción obras a proyectar / Conocimiento de la zona de actuación",
+   "max": 25,
+   "exp": "p:19100443",
+   "ref": "2026/01C FEDER EDIL 5.1 SER",
+   "title": "Servicio de Redacción de Proyectos y Dirección de Obras de Construcción de Viviendas de alquiler municipal y Urbanización en Alar del Rey, i",
+   "buyer": "Presidencia de la Diputación Provincial de Palencia",
+   "nuts": "ES414",
+   "date": "2026-08-28",
+   "offers": 5,
+   "top": {
+    "pts": 18,
+    "winner": false
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Volumen compacto que reduce pérdidas energéticas y huella de carbono casi nula",
+    "Descripción constructiva detallada de sótano, forjados, fachadas, cubierta y carpintería",
+    "Integración adecuada en el paisaje urbano de Alar y conexión viaria con el paseo fluvial",
+    "Variante volumétrica con cubierta invertida que aporta interés compositivo",
+    "Estructura de madera CLT y sistemas de aguas grises, pluviales y monitorización"
+   ],
+   "weak": [
+    "No incorpora definición gráfica de plantas ni alzados",
+    "No señala cómo se ejecutará el sótano",
+    "Asume el diseño del Pliego sin aportar variantes"
+   ],
+   "hypothesis": {
+    "premia": "Soluciones constructivas y volumétricas propias, con descripción detallada de estructura, cerramientos y cubierta, e integración en el entorno urbano de Alar.",
+    "penaliza": "Repetir el diseño del Pliego sin variantes, omitir la descripción de sótano o estructura y limitar el conocimiento de la zona a referencias genéricas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=MthJgFoWyX87u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-135350b6-e77e-4e81-b4c3-074def83fa43"
+  },
+  {
+   "crit": "Grado definición y desarrollo del contenido / Grado definición de Estudios Previos y Proyectos Técnico y Ampliación de las Prestac mínimas del PPT",
+   "max": 10,
+   "exp": "p:19100443",
+   "ref": "2026/01C FEDER EDIL 5.1 SER",
+   "title": "Servicio de Redacción de Proyectos y Dirección de Obras de Construcción de Viviendas de alquiler municipal y Urbanización en Alar del Rey, i",
+   "buyer": "Presidencia de la Diputación Provincial de Palencia",
+   "nuts": "ES414",
+   "date": "2026-08-28",
+   "offers": 5,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Detalla la documentación de Anteproyecto, Proyecto Básico y de Ejecución"
+   ],
+   "weak": [
+    "No señala el grado de definición del Proyecto ni de los Estudios Previos"
+   ],
+   "hypothesis": {
+    "premia": "Concretar los documentos a entregar en cada fase, con planos, memoria y presupuesto, y formato BIM.",
+    "penaliza": "No indicar el grado de definición del proyecto ni de los estudios previos, y no incluir planos ni definición gráfica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=MthJgFoWyX87u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-135350b6-e77e-4e81-b4c3-074def83fa43"
+  },
+  {
+   "crit": "Planificación del Servicio, organigrama y Metodología de trabajo / Propuesta desarrollo relaciones empresa con Administración y Apoyo elaboración y tramitación documentación",
+   "max": 10,
+   "exp": "p:19100443",
+   "ref": "2026/01C FEDER EDIL 5.1 SER",
+   "title": "Servicio de Redacción de Proyectos y Dirección de Obras de Construcción de Viviendas de alquiler municipal y Urbanización en Alar del Rey, i",
+   "buyer": "Presidencia de la Diputación Provincial de Palencia",
+   "nuts": "ES414",
+   "date": "2026-08-28",
+   "offers": 5,
+   "top": {
+    "pts": 7,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Equipo de proyecto multidisciplinar con arquitectos e ingenieros de estructuras e instalaciones",
+    "Enumera trabajos de dirección de obra y del libro del edificio",
+    "Visitas semanales de dirección, ampliables según la fase de estructura",
+    "Equipo con perfiles variados: arquitecto, arquitecto técnico, topógrafo e ingenieros"
+   ],
+   "weak": [
+    "Se limita a señalar actuaciones de dirección de obra sin detallar el equipo ni la metodología"
+   ],
+   "hypothesis": {
+    "premia": "Equipos multidisciplinares con ingeniería especializada, dirección de obra con visitas frecuentes y comunicación continua con la administración.",
+    "penaliza": "Equipos reducidos o sin detalle, y descripciones que se limitan a enumerar actuaciones sin metodología ni apoyo a la tramitación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=MthJgFoWyX87u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-135350b6-e77e-4e81-b4c3-074def83fa43"
+  },
+  {
+   "crit": "METODOLOGÍA GENERAL DE EJECUCIÓN Y RESPONSABILIDADES DE LA ADJUDICATARIA",
+   "max": 5,
+   "exp": "p:19772854",
+   "ref": "2026-0043",
+   "title": "Contratación de cesión de ahorros energéticos con contraprestación y venta de certificados de ahorro energético para la Empresa Municipal de",
+   "buyer": "Consejo de Administración de la Empresa Municipal de Transportes de Valencia, S.A.U.",
+   "nuts": "ES523",
+   "date": "2026-07-28",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Metodología integral del ciclo CAE, desde la identificación de actuaciones hasta la monetización del ahorro.",
+    "Oficina técnica especializada, acuerdos con verificadores y plataforma digital propia con trazabilidad y seguridad de la información.",
+    "Metodología robusta que diferencia actuaciones estándar y singulares con fases definidas.",
+    "Clasifica a EMT como gran cuenta y plantea seguimiento quincenal y planificación con Gantt."
+   ],
+   "weak": [
+    "Propone herramientas convencionales (Teams, Excel) con menor automatización, integración y capacidad tecnológica específica."
+   ],
+   "hypothesis": {
+    "premia": "Metodología integral con plataforma tecnológica propia, oficina técnica, acuerdos con verificadores y trazabilidad.",
+    "penaliza": "Herramientas convencionales con menor automatización e integración tecnológica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=lcl1SFYW7h59PLkba5eRog%3D%3D",
+   "doc": "2026-28cfc243-6c4d-4f8e-80ed-19acdba07b11"
+  },
+  {
+   "crit": "ACTUACIONES DE ELECTRIFICACIÓN E HIBRIDACIÓN DE LA FLOTA",
+   "max": 5,
+   "exp": "p:19772854",
+   "ref": "2026-0043",
+   "title": "Contratación de cesión de ahorros energéticos con contraprestación y venta de certificados de ahorro energético para la Empresa Municipal de",
+   "buyer": "Consejo de Administración de la Empresa Municipal de Transportes de Valencia, S.A.U.",
+   "nuts": "ES523",
+   "date": "2026-07-28",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Aporta gestión directa en cambios de flota y aplica la ficha TRA050 con optimización de parámetros.",
+    "Usa datos reales de EMT e identifica que la hibridación debe tramitarse como actuación singular conforme a IPMVP.",
+    "Metodología por capas (elegibilidad, cálculo y optimización documental) aplicando la ficha TRA050 a autobuses eléctricos.",
+    "Propuesta técnicamente correcta, prudente y alineada con el Pliego, con buena capacidad de tramitación y defensa del expediente."
+   ],
+   "weak": [
+    "Su propuesta depende de hipótesis pendientes de contraste, aunque aporta cálculos alternativos de interés."
+   ],
+   "hypothesis": {
+    "premia": "Metodología prudente, secuencial y defendible, orientada a la efectiva certificación del ahorro.",
+    "penaliza": "Dependencia de hipótesis pendientes de contraste."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=lcl1SFYW7h59PLkba5eRog%3D%3D",
+   "doc": "2026-28cfc243-6c4d-4f8e-80ed-19acdba07b11"
+  },
+  {
+   "crit": "ACTUACIÓN SINGULAR DE EMT VALENCIA DE CAMBIO MODAL URBANO",
+   "max": 5,
+   "exp": "p:19772854",
+   "ref": "2026-0043",
+   "title": "Contratación de cesión de ahorros energéticos con contraprestación y venta de certificados de ahorro energético para la Empresa Municipal de",
+   "buyer": "Consejo de Administración de la Empresa Municipal de Transportes de Valencia, S.A.U.",
+   "nuts": "ES523",
+   "date": "2026-07-28",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Metodología robusta en cinco bloques técnicos, validando y refinando parámetros de referencia.",
+    "Destaca en defensa técnica y regulatoria, con interacción temprana con verificadores y posible consulta previa.",
+    "Planteamiento potente, orientado a cuantificar y maximizar el ahorro, partiendo de los viajes incrementales del expediente."
+   ],
+   "weak": [
+    "Exige justificar causalidad pública, incremento de demanda y tratamiento de datos, y se apoya en analogías con fichas de movilidad compartida."
+   ],
+   "hypothesis": {
+    "premia": "Validación y refinamiento de parámetros, causalidad bien construida y defensa ante verificadores y Administración.",
+    "penaliza": "Apoyarse en analogías con fichas de movilidad compartida y falta de justificación de causalidad y datos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=lcl1SFYW7h59PLkba5eRog%3D%3D",
+   "doc": "2026-28cfc243-6c4d-4f8e-80ed-19acdba07b11"
+  },
+  {
+   "crit": "PROPUESTA TÉCNICA RELATIVA AL ALCANCE DE OTRAS ACTUACIONES DE EFICIENCIA ENERGÉTICA",
+   "max": 5,
+   "exp": "p:19772854",
+   "ref": "2026-0043",
+   "title": "Contratación de cesión de ahorros energéticos con contraprestación y venta de certificados de ahorro energético para la Empresa Municipal de",
+   "buyer": "Consejo de Administración de la Empresa Municipal de Transportes de Valencia, S.A.U.",
+   "nuts": "ES523",
+   "date": "2026-07-28",
+   "offers": 2,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Sistema continuado de detección y cribado de oportunidades organizado en familias, escalable durante la vigencia.",
+    "Decide caso por caso la vía de tramitación e incorpora proyectos futuros no previstos inicialmente.",
+    "Propone actuaciones concretas: optimización de rutas por telemetría, neumáticos de baja resistencia, servicios auxiliares e instalaciones fijas."
+   ],
+   "weak": [
+    "Propuesta solvente pero más cerrada y menos integrada como sistema continuo durante toda la vigencia del contrato."
+   ],
+   "hypothesis": {
+    "premia": "Enfoque sistemático, continuo y escalable de identificación y cribado de actuaciones durante toda la vigencia.",
+    "penaliza": "Propuesta cerrada de actuaciones concretas, menos integrada como sistema continuo."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=lcl1SFYW7h59PLkba5eRog%3D%3D",
+   "doc": "2026-28cfc243-6c4d-4f8e-80ed-19acdba07b11"
+  },
+  {
+   "crit": "Memoria descriptiva sobre la metodología y organización del desarrollo de las labores de asistencia, vigilancia, supervisión de obras, y supervisión de proyectos",
+   "max": 3,
+   "exp": "p:18458778",
+   "ref": "2025-00444",
+   "title": "Acuerdo marco servicios de a tecnica para la direccion de obra a las obras del puerto de Barcelona, direccion facultativa en obras de edific",
+   "buyer": "Presidencia del Consejo de Administración de la Autoridad Portuaria de Barcelona (PORT DE BARCELONA)",
+   "nuts": "ES511",
+   "date": "2026-07-26",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Organización funcional, metodología y gestión documental completas y correctas."
+   ],
+   "weak": [
+    "No incluye organigrama de dependencias (-2p).",
+    "No vincula los trabajos de seguimiento con figuras de la ATDO ni las identifica (-2p).",
+    "No especifica sistemas, herramientas ni gestión documental (-2p)."
+   ],
+   "hypothesis": {
+    "premia": "Organización funcional, metodología y gestión documental completas, con figuras identificadas y vinculadas al seguimiento.",
+    "penaliza": "Carecer de organigrama, no identificar figuras de la ATDO ni detallar herramientas o gestión documental."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2xNqTS1C4GlVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-0c1c9230-b3b5-4da0-8f9a-8db2a8db3a7d"
+  },
+  {
+   "crit": "Memoria descriptiva sobre la metodología y organización del desarrollo de las labores de asistencia geotécnica y el control de la instrumentación",
+   "max": 1.9,
+   "exp": "p:18458778",
+   "ref": "2025-00444",
+   "title": "Acuerdo marco servicios de a tecnica para la direccion de obra a las obras del puerto de Barcelona, direccion facultativa en obras de edific",
+   "buyer": "Presidencia del Consejo de Administración de la Autoridad Portuaria de Barcelona (PORT DE BARCELONA)",
+   "nuts": "ES511",
+   "date": "2026-07-26",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Organización, metodología, programas de análisis y equipos de medida correctos.",
+    "Organización, metodología y programas de análisis geotécnico correctos."
+   ],
+   "weak": [
+    "Organización funcional poco desarrollada.",
+    "Faltan programas de análisis geotécnico y equipos de lectura de instrumentación (-4p)."
+   ],
+   "hypothesis": {
+    "premia": "Detallar programas de análisis geotécnico y equipos de lectura de instrumentación, referidos al acuerdo marco.",
+    "penaliza": "Omitir equipos de lectura o programas, desarrollar poco la organización o describir una obra antigua como si fuera actual."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2xNqTS1C4GlVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-0c1c9230-b3b5-4da0-8f9a-8db2a8db3a7d"
+  },
+  {
+   "crit": "Memoria descriptiva sobre la metodología y organización del desarrollo de las labores de control de calidad",
+   "max": 1.9,
+   "exp": "p:18458778",
+   "ref": "2025-00444",
+   "title": "Acuerdo marco servicios de a tecnica para la direccion de obra a las obras del puerto de Barcelona, direccion facultativa en obras de edific",
+   "buyer": "Presidencia del Consejo de Administración de la Autoridad Portuaria de Barcelona (PORT DE BARCELONA)",
+   "nuts": "ES511",
+   "date": "2026-07-26",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Organización, metodología y herramientas de control de calidad completas y correctas.",
+    "Organización, metodología y herramientas de control de calidad correctas."
+   ],
+   "weak": [
+    "Desarrollo escaso y error de dependencia: depende de la JU en lugar de la JOT (-1p)."
+   ],
+   "hypothesis": {
+    "premia": "Organización, metodología y herramientas completas y correctas, con dependencias bien definidas.",
+    "penaliza": "Desarrollo escaso o errores en la dependencia orgánica dentro del equipo."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2xNqTS1C4GlVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-0c1c9230-b3b5-4da0-8f9a-8db2a8db3a7d"
+  },
+  {
+   "crit": "Memoria descriptiva sobre la metodología en relación con el apoyo a las obras desde la oficina técnica central, aportando compromiso específico de prestación",
+   "max": 0.5,
+   "exp": "p:18458778",
+   "ref": "2025-00444",
+   "title": "Acuerdo marco servicios de a tecnica para la direccion de obra a las obras del puerto de Barcelona, direccion facultativa en obras de edific",
+   "buyer": "Presidencia del Consejo de Administración de la Autoridad Portuaria de Barcelona (PORT DE BARCELONA)",
+   "nuts": "ES511",
+   "date": "2026-07-26",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Listado de especialistas con nombres, años de experiencia y titulación, y listado concreto de herramientas.",
+    "Listado concreto de herramientas y metodología correcta."
+   ],
+   "weak": [
+    "Listado de especialistas sin nombres (-1p)."
+   ],
+   "hypothesis": {
+    "premia": "Listado de especialistas con nombres, años de experiencia y titulación, junto a un listado concreto de herramientas.",
+    "penaliza": "Listado de especialistas sin nombres."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2xNqTS1C4GlVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-0c1c9230-b3b5-4da0-8f9a-8db2a8db3a7d"
+  },
+  {
+   "crit": "Memoria descriptiva sobre la metodología en relación con la prestación de servicios a la Dirección de Proyectos, tanto en revisiones de proyectos como en la definición y ejecución de campañas geotécnicas",
+   "max": 1.8,
+   "exp": "p:18458778",
+   "ref": "2025-00444",
+   "title": "Acuerdo marco servicios de a tecnica para la direccion de obra a las obras del puerto de Barcelona, direccion facultativa en obras de edific",
+   "buyer": "Presidencia del Consejo de Administración de la Autoridad Portuaria de Barcelona (PORT DE BARCELONA)",
+   "nuts": "ES511",
+   "date": "2026-07-26",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Organización, metodología y herramientas completas y correctas."
+   ],
+   "weak": [
+    "No aporta organización funcional (-2p).",
+    "Falta detalle sobre las campañas geotécnicas (-1p)."
+   ],
+   "hypothesis": {
+    "premia": "Organización funcional y metodología de campañas geotécnicas completas y correctas.",
+    "penaliza": "No aportar organización funcional o detallar poco las campañas geotécnicas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2xNqTS1C4GlVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-0c1c9230-b3b5-4da0-8f9a-8db2a8db3a7d"
+  },
+  {
+   "crit": "Servicios y/o prestaciones adicionales propuestas por el licitador como mejora al contrato, aportando compromiso específico de prestación",
+   "max": 0.5,
+   "exp": "p:18458778",
+   "ref": "2025-00444",
+   "title": "Acuerdo marco servicios de a tecnica para la direccion de obra a las obras del puerto de Barcelona, direccion facultativa en obras de edific",
+   "buyer": "Presidencia del Consejo de Administración de la Autoridad Portuaria de Barcelona (PORT DE BARCELONA)",
+   "nuts": "ES511",
+   "date": "2026-07-26",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Aportan número de vehículos dentro de una franja concreta (entre 9 y 20).",
+    "Aportan número de vehículos dentro de una franja concreta (entre 11 y 18)."
+   ],
+   "weak": [
+    "No aportan número de vehículos ni asignaciones (-3p)."
+   ],
+   "hypothesis": {
+    "premia": "Indicar el número de vehículos ECO o ZERO dentro de una franja concreta, de modo que el total quede acotado.",
+    "penaliza": "No indicar número ni franja de vehículos, o no concretar asignaciones."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2xNqTS1C4GlVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-0c1c9230-b3b5-4da0-8f9a-8db2a8db3a7d"
+  },
+  {
+   "crit": "Memoria descriptiva de la implantación de la metodología BIM",
+   "max": 0.4,
+   "exp": "p:18458778",
+   "ref": "2025-00444",
+   "title": "Acuerdo marco servicios de a tecnica para la direccion de obra a las obras del puerto de Barcelona, direccion facultativa en obras de edific",
+   "buyer": "Presidencia del Consejo de Administración de la Autoridad Portuaria de Barcelona (PORT DE BARCELONA)",
+   "nuts": "ES511",
+   "date": "2026-07-26",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Organización, metodología y herramientas BIM correctas."
+   ],
+   "weak": [
+    "No aporta organización funcional (-2p).",
+    "Ofrece aspectos no solicitados ni retribuidos."
+   ],
+   "hypothesis": {
+    "premia": "Contenido ajustado a lo solicitado, con organización funcional, metodología y herramientas correctas.",
+    "penaliza": "Ofrecer aspectos no solicitados ni retribuidos o no aportar organización funcional."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2xNqTS1C4GlVkTabT%2FRM8A%3D%3D",
+   "doc": "2026-0c1c9230-b3b5-4da0-8f9a-8db2a8db3a7d"
+  },
+  {
+   "crit": "Descripción particularizada del servicio",
+   "max": 15,
+   "exp": "p:19558634",
+   "ref": "PSS/2026/0000030605",
+   "title": "Servicio para la exhumación de Fosas comunes de la Guerra Civil en Extremadura, anualidad 2026: Fosas de los cementerios de Villanueva de la",
+   "buyer": "Consejería de Cultura, Turismo y Deportes",
+   "nuts": "ES43",
+   "date": "2026-07-15",
+   "offers": 3,
+   "top": {
+    "pts": 11,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.67
+   },
+   "best": [
+    "Legislación completa y en vigor, con amplio repertorio autonómico, estatal e internacional",
+    "Escáner 3D y SIG para el registro, y contratación de laboratorio alternativo si el ayuntamiento no lo cede",
+    "Organigrama y división de tareas por especialidades muy bien desarrollados",
+    "Seguros de responsabilidad civil y accidentes, cursos al personal y seguridad de visitas",
+    "Legislación actualizada, considerada suficiente aunque incompleta"
+   ],
+   "weak": [
+    "Normativa desactualizada, con textos derogados y sin la legislación autonómica en vigor",
+    "Conocimiento muy limitado de los antecedentes y ubicación de la fosa",
+    "Cadena de custodia sin modelo de documento ni procedimientos detallados",
+    "Espacio de laboratorio sin alternativa si no se consigue local público",
+    "Organigrama conforme al pliego, pero sin reflejar la atención a visitas"
+   ],
+   "hypothesis": {
+    "premia": "Legislación vigente y completa, conocimiento específico de la fosa y sus antecedentes, tecnología de registro (3D, SIG), organigrama detallado y mejoras de seguridad (seguros, formación, visitas)",
+    "penaliza": "Normativa desactualizada, desconocimiento de antecedentes, cadena de custodia sin documentos concretos, organigrama incompleto y falta de alternativas para espacios de laboratorio"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=g7No5BCG5s8Xhk1FZxEyvw%3D%3D",
+   "doc": "2026-dbffb651-6300-467d-a602-fad398e61285"
+  },
+  {
+   "crit": "Descripción del planteamiento general",
+   "max": 10,
+   "exp": "p:19558634",
+   "ref": "PSS/2026/0000030605",
+   "title": "Servicio para la exhumación de Fosas comunes de la Guerra Civil en Extremadura, anualidad 2026: Fosas de los cementerios de Villanueva de la",
+   "buyer": "Consejería de Cultura, Turismo y Deportes",
+   "nuts": "ES43",
+   "date": "2026-07-15",
+   "offers": 3,
+   "top": {
+    "pts": 6.67,
+    "winner": true
+   },
+   "low": {
+    "pts": 1.67
+   },
+   "best": [
+    "Metodología mejor ordenada y adaptada al caso concreto que el de otras propuestas",
+    "Jornadas de difusión, presentación de resultados en congresos y estudios balísticos",
+    "Relación de fichas de trabajo presentada",
+    "Ampliación de la investigación histórico-documental a un amplio listado de archivos",
+    "Desarrollo de la cadena de custodia y acuerdos con el ayuntamiento para cesión de espacios"
+   ],
+   "weak": [
+    "Proyectos plantilla mal ajustados: menciones a otros municipios y a un recinto cementerial inexistente",
+    "Referencias a apartados que no aparecen en la oferta",
+    "Desajustes en el procesamiento de enterramientos regulares",
+    "No se presentan las fichas de trabajo",
+    "Planteamientos técnicos conformes al pliego, sin innovaciones"
+   ],
+   "hypothesis": {
+    "premia": "Metodología adaptada al caso concreto, innovaciones fuera del pliego (difusión, congresos, estudios especializados) y amplia investigación documental",
+    "penaliza": "Proyectos plantilla con errores de contexto, referencias a apartados inexistentes, fichas no presentadas y ausencia de soluciones alternativas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=g7No5BCG5s8Xhk1FZxEyvw%3D%3D",
+   "doc": "2026-dbffb651-6300-467d-a602-fad398e61285"
+  },
+  {
+   "crit": "Calidad técnica",
+   "max": 15,
+   "exp": "p:19558634",
+   "ref": "PSS/2026/0000030605",
+   "title": "Servicio para la exhumación de Fosas comunes de la Guerra Civil en Extremadura, anualidad 2026: Fosas de los cementerios de Villanueva de la",
+   "buyer": "Consejería de Cultura, Turismo y Deportes",
+   "nuts": "ES43",
+   "date": "2026-07-15",
+   "offers": 3,
+   "top": {
+    "pts": 12.67,
+    "winner": false
+   },
+   "low": {
+    "pts": 7.33
+   },
+   "best": [
+    "Legislación autonómica y estatal completa y conocimiento amplio del contexto histórico represivo local.",
+    "Recorrido por campañas exhumatorias del municipio desde 2018 con ubicación precisa de la fosa.",
+    "Planning muy correcto, desglosado por días y horas, con restitución de espacios y difusión.",
+    "Recursos materiales que superan el PPT, con recursos planimétricos, tecnológicos y de laboratorio.",
+    "Seguro para visitantes y equipo técnico, plan de emergencia y protocolos de seguridad completos."
+   ],
+   "weak": [
+    "Cita la ley extremeña 1/19 derogada y no la ley vigente de Concordia.",
+    "Antecedentes arqueológicos e históricos muy breves y someros.",
+    "Incluye un estudio comparativo ya realizado en 2025 como labor a ejecutar.",
+    "Recursos humanos sin detalle suficiente; el organigrama es breve.",
+    "Falta especificar las fases de trabajo, aunque aparecen nombradas en un cuadro."
+   ],
+   "hypothesis": {
+    "premia": "Antecedentes históricos y arqueológicos detallados, legislación vigente completa, planning por horas y recursos que superan el PPT.",
+    "penaliza": "Citar legislación derogada, antecedentes someros, falta de número de profesionales o de fases descritas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=g7No5BCG5s8Xhk1FZxEyvw%3D%3D",
+   "doc": "2026-8b98c0f9-b179-4b4d-a7d2-57a61d390ad5"
+  },
+  {
+   "crit": "Metodología",
+   "max": 10,
+   "exp": "p:19558634",
+   "ref": "PSS/2026/0000030605",
+   "title": "Servicio para la exhumación de Fosas comunes de la Guerra Civil en Extremadura, anualidad 2026: Fosas de los cementerios de Villanueva de la",
+   "buyer": "Consejería de Cultura, Turismo y Deportes",
+   "nuts": "ES43",
+   "date": "2026-07-15",
+   "offers": 3,
+   "top": {
+    "pts": 8.33,
+    "winner": false
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Metodología ampliamente desarrollada: repositorio digital, testimonios orales, antropología virtual y digitalización 3D.",
+    "Incluye estudios balísticos, SIG, medidas contra contaminación genética y coordinación con familias.",
+    "Fichas de registro de unidades estratigráficas y antropológicas, fotogrametría y levantamiento UAV.",
+    "Mejoras como grabación Time Lapse, análisis armamentístico, reconstrucción craneofacial y metodología sociológica."
+   ],
+   "weak": [
+    "Menciona estudio antropológico de restos ya exhumados en campaña anterior, sin cuerpos pendientes.",
+    "Cita la ley derogada 1/19 para el destino de los restos.",
+    "Echa en falta fichas de registro para la parte arqueológica y antropológica.",
+    "Falta una descripción específica de las fases del trabajo."
+   ],
+   "hypothesis": {
+    "premia": "Metodologías por disciplina con mejoras concretas (fichas, SIG, fotogrametría, estudios balísticos, digitalización 3D).",
+    "penaliza": "Errores de planteamiento (trabajos ya realizados, ley derogada), falta de fichas de registro o fases sin describir."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=g7No5BCG5s8Xhk1FZxEyvw%3D%3D",
+   "doc": "2026-8b98c0f9-b179-4b4d-a7d2-57a61d390ad5"
+  },
+  {
+   "crit": "Calidad técnica",
+   "max": null,
+   "exp": "p:19558634",
+   "ref": "PSS/2026/0000030605",
+   "title": "Servicio para la exhumación de Fosas comunes de la Guerra Civil en Extremadura, anualidad 2026: Fosas de los cementerios de Villanueva de la",
+   "buyer": "Consejería de Cultura, Turismo y Deportes",
+   "nuts": "ES43",
+   "date": "2026-07-15",
+   "offers": 4,
+   "top": {
+    "pts": 12.66,
+    "winner": true
+   },
+   "low": {
+    "pts": 3.67
+   },
+   "best": [
+    "Legislación completísima y amplio conocimiento del contexto represivo y de sondeos previos, con documentación gráfica.",
+    "Planning muy correcto; seguros para visitantes y equipo, formación en riesgos y organigrama completo.",
+    "Cita legislación autonómica, nacional e internacional y protocolos forenses; protege el memorial.",
+    "Experiencia previa en búsqueda y exhumación de fosas; recursos con estación total, maquinaria y laboratorio."
+   ],
+   "weak": [
+    "Cita leyes derogadas en materia de memoria y no conoce intervenciones previas en el cementerio.",
+    "Contiene una errata sobre fosas en la Transición en Hornachos y no indica zonas clave como el memorial.",
+    "Seguridad básica, sin aportes; funciones de profesionales esquemáticas y sin titulación.",
+    "Recursos materiales se adecuan a lo exigido en el PPT, sin superarlo."
+   ],
+   "hypothesis": {
+    "premia": "Legislación completa y actualizada, conocimiento de antecedentes y sondeos previos, seguros y formación en riesgos, organigrama detallado y recursos que superan el PPT.",
+    "penaliza": "Legislación escasa o derogada, desconocimiento de intervenciones previas, errores en el contexto histórico, seguridad básica sin seguros y recursos que solo cumplen el PPT."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=g7No5BCG5s8Xhk1FZxEyvw%3D%3D",
+   "doc": "2026-1f1ce83d-e048-4a32-82f3-7efb37aff8d4"
+  },
+  {
+   "crit": "Metodología",
+   "max": null,
+   "exp": "p:19558634",
+   "ref": "PSS/2026/0000030605",
+   "title": "Servicio para la exhumación de Fosas comunes de la Guerra Civil en Extremadura, anualidad 2026: Fosas de los cementerios de Villanueva de la",
+   "buyer": "Consejería de Cultura, Turismo y Deportes",
+   "nuts": "ES43",
+   "date": "2026-07-15",
+   "offers": 4,
+   "top": {
+    "pts": 8.33,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Exposición ordenada y muy completa, con objetivos por fase, metodologías por disciplina y cronograma idóneo.",
+    "Localización en plano y coordenadas de la zona; supera el PPT en procedimientos y cadena de custodia.",
+    "Metodología clara y completa, con uso de archivos municipales y autonómicos y repositorio digital.",
+    "Aportaciones como estudios balísticos, antropología virtual, digitalización 3D y medidas contra la contaminación genética."
+   ],
+   "weak": [
+    "No aporta fichas a cumplimentar en cada fase de trabajo.",
+    "No localiza tareas a ejecutar en zonas imprescindibles como el memorial.",
+    "Echan de menos las fichas de registro usadas en la parte arqueológica y antropológica."
+   ],
+   "hypothesis": {
+    "premia": "Aportaciones innovadoras (SIG, digitalización, estudios balísticos), fichas de registro, cronogramas detallados, referencias a manuales y localización precisa de zonas clave.",
+    "penaliza": "Falta de fichas de registro, duplicidades en el desglose de fases, tareas por perfil someras y no localizar zonas imprescindibles como el memorial."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=g7No5BCG5s8Xhk1FZxEyvw%3D%3D",
+   "doc": "2026-1f1ce83d-e048-4a32-82f3-7efb37aff8d4"
+  },
+  {
+   "crit": "PROPUESTA METODOLÓGICA PARA LA REALIZACIÓN DE LOS TRABAJOS",
+   "max": 35,
+   "exp": "p:19100432",
+   "ref": "04101/2026/4-SEROB",
+   "title": "Servicios de dirección de obra, dirección arqueológica y coordinación de seguridad y salud de las obras de “Renovación del pavimento de la i",
+   "buyer": "Concejalía Delegada de Contratación del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-08",
+   "offers": 5,
+   "top": {
+    "pts": 35,
+    "winner": false
+   },
+   "low": {
+    "pts": 20
+   },
+   "best": [
+    "Metodología de dirección de obra en 3 fases (trabajos previos, durante la ejecución y posteriores) y metodología específica para coordinación de seguridad y salud.",
+    "Propuesta lógica, clara y coherente, con actividades identificadas en cada fase.",
+    "Metodología adaptada al entorno y al tipo de obra, con experiencia en proyectos similares y conocimiento de la ciudad.",
+    "Metodología en 4 fases con descripción de tareas y actividades antes, durante y después de la ejecución de las obras.",
+    "Metodología correcta y coherente, con buen conocimiento del entorno de las obras."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Metodologías diferenciadas para dirección de obra y coordinación de seguridad, con tareas detalladas por fase, adaptación específica a la obra y su entorno, y propuestas concretas (riesgos, tráfico, control de calidad).",
+    "penaliza": "Metodologías genéricas o estándar, descripciones esquemáticas, coordinación de seguridad resumida y falta de detalle sobre riesgos específicos del tráfico y la convivencia con la ciudadanía."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K55KFjg9Kw59Zh%2FyRJgM8w%3D%3D",
+   "doc": "2026-c3309e8e-7ac1-46b5-9cc4-368c123d741d"
+  }
+ ]
+}

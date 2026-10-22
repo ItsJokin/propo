@@ -1,0 +1,77 @@
+{
+ "cpv2": "09",
+ "generated": "2026-10-22T14:39:58.994Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "APTITUDES PERSONALES DEL GESTOR DE CUENTA LOCAL ADSCRITO AL CONTRATO",
+   "max": 20,
+   "exp": "p:19772855",
+   "ref": "2026-0038",
+   "title": "Suministro eléctrico para las instalaciones propias de EMT y para los aparcamientos Plaza de la Reina y Centro Histórico - Mercado Central p",
+   "buyer": "Consejo de Administración de la Empresa Municipal de Transportes de Valencia, S.A.U.",
+   "nuts": "ES523",
+   "date": "2026-07-28",
+   "offers": 6,
+   "top": {
+    "pts": 20,
+    "winner": false
+   },
+   "low": {
+    "pts": 13
+   },
+   "best": [
+    "Experiencia desde 2002 en preparación y gestión de concursos públicos para grandes clientes.",
+    "Titulación de Ingeniero de Minas (Energía y Combustibles), directamente relacionada con el objeto del contrato.",
+    "Perfil considerado el más adecuado por su extensa experiencia específica en contratación pública.",
+    "Trayectoria desde 2004 en grandes cuentas y desde 2009 como especialista sénior en sector público.",
+    "Licenciatura en Administración y Dirección de Empresas, adecuada para la gestión contractual y comercial."
+   ],
+   "weak": [
+    "Especialización en contratación pública relativamente reciente, desde enero de 2022.",
+    "No se aporta información sobre la formación académica de la persona propuesta."
+   ],
+   "hypothesis": {
+    "premia": "Experiencia amplia y específica en contratación o sector público, unida a formación universitaria directamente relacionada con el objeto del contrato (Iberdrola, 20 puntos) o a la adscripción de perfiles complementarios con experiencia consolidada en contratación pública (TotalEnergies y EDP, 19 puntos).",
+    "penaliza": "Especialización en contratación pública reciente o no acreditada, ausencia de información sobre formación académica y experiencia apenas por encima del mínimo exigido de cinco años (ADX Renovables, 13 puntos; Nexus Energia, 15 puntos)."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=quZ7UuyqRIKKeVWTb9Scog%3D%3D",
+   "doc": "2026-e3ad6157-d5f0-4cf6-9a03-797460efefdc"
+  },
+  {
+   "crit": "APTITUDES PERSONALES DEL GESTOR DE CUENTA LOCAL ADSCRITO AL CONTRATO",
+   "max": 20,
+   "exp": "p:19772855",
+   "ref": "2026-0038",
+   "title": "Suministro eléctrico para las instalaciones propias de EMT y para los aparcamientos Plaza de la Reina y Centro Histórico - Mercado Central p",
+   "buyer": "Consejo de Administración de la Empresa Municipal de Transportes de Valencia, S.A.U.",
+   "nuts": "ES523",
+   "date": "2026-07-28",
+   "offers": 5,
+   "top": {
+    "pts": 20,
+    "winner": false
+   },
+   "low": {
+    "pts": 13
+   },
+   "best": [
+    "Experiencia desde 2002 en preparación y gestión de concursos públicos para grandes clientes.",
+    "Titulación de Ingeniero de Minas (Energía y Combustibles), directamente relacionada con el objeto del contrato.",
+    "Perfil considerado el más adecuado por su extensa experiencia específica en contratación pública.",
+    "Gestión de carteras de grandes clientes desde 2009 y de Administraciones Públicas desde 2018.",
+    "Experiencia específica suficiente y formación técnica considerada adecuada."
+   ],
+   "weak": [
+    "Especialización en contratación pública relativamente reciente, desde enero de 2022.",
+    "No se aporta información sobre la formación académica de la persona propuesta."
+   ],
+   "hypothesis": {
+    "premia": "Experiencia amplia y específica en contratación o sector público, unida a formación universitaria directamente relacionada con el objeto del contrato (Iberdrola, 20 puntos) o a la adscripción de perfiles complementarios con experiencia consolidada en contratación pública (TotalEnergies y EDP, 19 puntos).",
+    "penaliza": "Especialización en contratación pública reciente o no acreditada, ausencia de información sobre formación académica y experiencia apenas por encima del mínimo exigido de cinco años (ADX Renovables, 13 puntos; Nexus Energia, 15 puntos)."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=quZ7UuyqRIKKeVWTb9Scog%3D%3D",
+   "doc": "2026-e3ad6157-d5f0-4cf6-9a03-797460efefdc"
+  }
+ ]
+}

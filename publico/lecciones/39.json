@@ -1,0 +1,290 @@
+{
+ "cpv2": "39",
+ "generated": "2026-10-22T14:39:58.991Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Calidad de los acabados",
+   "max": 25,
+   "exp": "p:20276222",
+   "ref": "1070/2026",
+   "title": "Suministro de sofás-cama de habitaciones de pacientes para el nuevo edificio, del Departamento de Salud de Valencia Clínico-Malvarrosa (Sist",
+   "buyer": "Departamento de Salud de Valencia Clínico. Dirección Económica-Gerencia",
+   "nuts": "ES523",
+   "date": "2026-08-07",
+   "offers": 4,
+   "top": {
+    "pts": 25,
+    "winner": false
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Cumple lo solicitado en el PPT.",
+    "Colchón de 20 cm frente a los 12 cm exigidos en el pliego, con solidez, buen comportamiento estructural, ergonomía y confort.",
+    "Buen acabado y confortabilidad en su uso."
+   ],
+   "weak": [
+    "Al sentarse se hunde en la parte central por relleno menos compacto, lo que reduce confortabilidad, solidez y durabilidad.",
+    "Tirador de plástico que puede romperse con el uso."
+   ],
+   "hypothesis": {
+    "premia": "Acabados con buena confortabilidad, relleno compacto y solidez, y un colchón de mayor altura que el exigido en el pliego (MOBIAL).",
+    "penaliza": "Relleno poco compacto que se hunde al sentarse, tiradores de plástico frágiles y asiento de profundidad inadecuada que impide apoyar la zona lumbar."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FYmrxXpAaoJVYjgxA4nMUw%3D%3D",
+   "doc": "2026-bfb42845-9330-418a-94ca-2050cccbd161"
+  },
+  {
+   "crit": "Diseño de los productos",
+   "max": 15,
+   "exp": "p:20276222",
+   "ref": "1070/2026",
+   "title": "Suministro de sofás-cama de habitaciones de pacientes para el nuevo edificio, del Departamento de Salud de Valencia Clínico-Malvarrosa (Sist",
+   "buyer": "Departamento de Salud de Valencia Clínico. Dirección Económica-Gerencia",
+   "nuts": "ES523",
+   "date": "2026-08-07",
+   "offers": 4,
+   "top": {
+    "pts": 15,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Cumple lo solicitado en el PPT.",
+    "Sistema de apertura y plegado con funcionamiento óptimo, suave y sencillo, ergonómico y confortable para el entorno hospitalario.",
+    "Buen sistema de apertura sin riesgo de atrapamiento de las manos."
+   ],
+   "weak": [
+    "Riesgo de atrapamiento de la mano al cerrar el sofá tras su uso como cama, con deficiencias en seguridad, ergonomía y confort."
+   ],
+   "hypothesis": {
+    "premia": "Sistema de apertura y plegado suave, sencillo y ergonómico, sin riesgo de atrapamiento.",
+    "penaliza": "Riesgo de atrapamiento de la mano al cerrar el sofá y dificultad o resistencia al plegarlo."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FYmrxXpAaoJVYjgxA4nMUw%3D%3D",
+   "doc": "2026-bfb42845-9330-418a-94ca-2050cccbd161"
+  },
+  {
+   "crit": "Estudio del estado actual: accesos y ensayo",
+   "max": 15,
+   "exp": "p:18320396",
+   "ref": "04101/2025/238-SU",
+   "title": "Suministro e instalación de pavimento de césped artificial en campo de rugby y campo de fútbol del polideportivo Quatre Carreres y campo de ",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-17",
+   "offers": 3,
+   "top": {
+    "pts": 13.65,
+    "winner": false
+   },
+   "low": {
+    "pts": 9.75
+   },
+   "best": [
+    "Amplio reportaje fotográfico del estado de las instalaciones y de los espacios públicos afectados.",
+    "Segregación de la zona de obra con vallado y reubicación de casetas y contenedores.",
+    "Estudio de accesos con solicitud de permisos y documentación gráfica adecuada.",
+    "Ensayos de planimetría con espesor medio y previsión de relleno segregado en arena y SBR.",
+    "Sellos de calidad ambientales y acciones concretas durante la obra."
+   ],
+   "weak": [
+    "Reportaje fotográfico básico, sin identificar claramente interferencias durante la ejecución.",
+    "Espesor medio de 18 mm considerado errata de cálculo.",
+    "Relleno aportado en toneladas totales sin segregar.",
+    "Medidas ambientales genéricas, vinculadas solo a reducción de residuos.",
+    "Algunos elementos deteriorados identificados solo de forma parcial en el reportaje."
+   ],
+   "hypothesis": {
+    "premia": "Reportaje fotográfico amplio que identifica elementos deteriorados y espacios públicos afectados; estudio de accesos con permisos; segregación de la zona de obra; ensayos de planimetría con espesor medio; relleno segregado en arena y SBR; sellos ambientales con acciones concretas.",
+    "penaliza": "Reportaje básico o escaso sin identificar interferencias; documentación gráfica básica; espesor considerado errata; relleno sin segregar; medidas ambientales genéricas; seguridad y salud sin referencia a la documentación aplicable."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zRFXX%2FbDY2mIzo3LHNPGcQ%3D%3D",
+   "doc": "2026-e7d62332-14f6-42a7-a12c-6cf74a309413"
+  },
+  {
+   "crit": "Estudio del proceso constructivo",
+   "max": 14,
+   "exp": "p:18320396",
+   "ref": "04101/2025/238-SU",
+   "title": "Suministro e instalación de pavimento de césped artificial en campo de rugby y campo de fútbol del polideportivo Quatre Carreres y campo de ",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-17",
+   "offers": 3,
+   "top": {
+    "pts": 10.95,
+    "winner": false
+   },
+   "low": {
+    "pts": 9.7
+   },
+   "best": [
+    "Proceso constructivo con materiales, maquinaria y documentación gráfica.",
+    "Gantt con desglose de unidades, ruta crítica identificada y medidas correctivas.",
+    "Plan de mantenimiento segregado con plantilla de registro y jornada explicativa a gestores.",
+    "Gantt con ruta crítica identificada y recursos humanos previstos por fases de obra.",
+    "Mantenimiento regular y especializado segregado con frecuencias temporales."
+   ],
+   "weak": [
+    "Gantt sin desglose de las unidades de obra principales.",
+    "No prevé medidas correctivas ante imponderables que incidan en la ruta crítica.",
+    "Consejos de mantenimiento regular genéricos; sin plantilla de registro ni jornada explicativa.",
+    "No describe la limpieza de canaletas ni la limpieza general.",
+    "No indica los recursos humanos previstos ni su organización."
+   ],
+   "hypothesis": {
+    "premia": "Gantt con desglose de unidades, ruta crítica y medidas correctivas; recursos humanos por fases; plan de mantenimiento con plantilla de registro y jornada explicativa a gestores; descripción de limpieza y procesos auxiliares.",
+    "penaliza": "Gantt sin desglose de unidades; medidas correctivas genéricas o ausentes; sin recursos humanos previstos; falta de descripción de limpieza de canaletas y retirada de equipamiento; mantenimiento genérico sin plantilla ni jornada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zRFXX%2FbDY2mIzo3LHNPGcQ%3D%3D",
+   "doc": "2026-e7d62332-14f6-42a7-a12c-6cf74a309413"
+  },
+  {
+   "crit": "Estudio del estado actual: accesos y ensayo",
+   "max": 15,
+   "exp": "p:18320396",
+   "ref": "04101/2025/238-SU",
+   "title": "Suministro e instalación de pavimento de césped artificial en campo de rugby y campo de fútbol del polideportivo Quatre Carreres y campo de ",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-17",
+   "offers": 3,
+   "top": {
+    "pts": 13.4,
+    "winner": false
+   },
+   "low": {
+    "pts": 9.25
+   },
+   "best": [
+    "Amplio reportaje fotográfico del estado de las instalaciones y de los espacios públicos.",
+    "Propone cierre de la instalación y protección de la pérgola de la cafetería.",
+    "Ensayos de planimetría con identificación gráfica de zonas con defectos.",
+    "Relleno segregado en arena y SBR, con previsiones de extracción según espesor medio.",
+    "Sellos de calidad ambientales y acciones concretas durante la obra."
+   ],
+   "weak": [
+    "Reportaje fotográfico escaso, sin identificar espacios exteriores ni interferencias.",
+    "Documentación gráfica básica y plano de organización solo descriptivo.",
+    "Espesor medio de 18 mm considerado errata de cálculo.",
+    "Relleno aportado en toneladas totales sin segregar; medidas ambientales genéricas.",
+    "Elementos deteriorados identificados de forma básica en el reportaje fotográfico."
+   ],
+   "hypothesis": {
+    "premia": "Reportaje fotográfico amplio que identifica elementos deteriorados y espacios públicos afectados; estudio de accesos con permisos; segregación de la zona de obra; ensayos de planimetría con espesor medio; relleno segregado en arena y SBR; sellos ambientales con acciones concretas.",
+    "penaliza": "Reportaje básico o escaso sin identificar interferencias; documentación gráfica básica; espesor considerado errata; relleno sin segregar; medidas ambientales genéricas; seguridad y salud sin referencia a la documentación aplicable."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zRFXX%2FbDY2mIzo3LHNPGcQ%3D%3D",
+   "doc": "2026-e7d62332-14f6-42a7-a12c-6cf74a309413"
+  },
+  {
+   "crit": "Estudio del proceso constructivo",
+   "max": 14,
+   "exp": "p:18320396",
+   "ref": "04101/2025/238-SU",
+   "title": "Suministro e instalación de pavimento de césped artificial en campo de rugby y campo de fútbol del polideportivo Quatre Carreres y campo de ",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-17",
+   "offers": 3,
+   "top": {
+    "pts": 10.95,
+    "winner": false
+   },
+   "low": {
+    "pts": 9.7
+   },
+   "best": [
+    "Proceso constructivo con materiales, maquinaria y documentación gráfica.",
+    "Gantt con desglose de unidades, ruta crítica identificada y medidas correctivas.",
+    "Plan de mantenimiento con plantilla de registro y jornada explicativa a gestores.",
+    "Gantt con ruta crítica identificada y recursos humanos previstos por fases de obra.",
+    "Mantenimiento regular y especializado segregado con frecuencias temporales."
+   ],
+   "weak": [
+    "Gantt sin desglose de las unidades de obra principales.",
+    "No prevé medidas correctivas ante imponderables que incidan en la ruta crítica.",
+    "Consejos de mantenimiento regular genéricos; sin plantilla de registro ni jornada explicativa.",
+    "No describe la limpieza de canaletas ni la limpieza general.",
+    "No indica los recursos humanos previstos ni su organización."
+   ],
+   "hypothesis": {
+    "premia": "Gantt con desglose de unidades, ruta crítica y medidas correctivas; recursos humanos por fases; plan de mantenimiento con plantilla de registro y jornada explicativa a gestores; descripción de limpieza y procesos auxiliares.",
+    "penaliza": "Gantt sin desglose de unidades; medidas correctivas genéricas o ausentes; sin recursos humanos previstos; falta de descripción de limpieza de canaletas y retirada de equipamiento; mantenimiento genérico sin plantilla ni jornada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zRFXX%2FbDY2mIzo3LHNPGcQ%3D%3D",
+   "doc": "2026-e7d62332-14f6-42a7-a12c-6cf74a309413"
+  },
+  {
+   "crit": "Estudio del estado actual: accesos y ensayo",
+   "max": 15,
+   "exp": "p:18320396",
+   "ref": "04101/2025/238-SU",
+   "title": "Suministro e instalación de pavimento de césped artificial en campo de rugby y campo de fútbol del polideportivo Quatre Carreres y campo de ",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-17",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Identifica claramente diversos elementos deteriorados susceptibles de intervención.",
+    "Ruta de acceso por el noroeste, desviando el tráfico pesado fuera de la ciudad.",
+    "Organización de obra adecuada, con plano y ubicación de acopios.",
+    "Medidas de seguridad y salud adecuadas y disponen de sellos de calidad ambientales."
+   ],
+   "weak": [
+    "Reportaje fotográfico escaso y sin identificar espacios exteriores de uso público.",
+    "No identifica claramente las interferencias durante la ejecución; documentación gráfica básica.",
+    "Espesor medio de 18 mm considerado errata; relleno aportado en toneladas totales sin segregar.",
+    "Medidas medioambientales genéricas, vinculadas a la reducción de residuos."
+   ],
+   "hypothesis": {
+    "premia": "Reportaje fotográfico amplio que identifica elementos deteriorados y espacios públicos afectados; estudio de accesos con permisos; segregación de la zona de obra; ensayos de planimetría con espesor medio; relleno segregado en arena y SBR; sellos ambientales con acciones concretas.",
+    "penaliza": "Reportaje básico o escaso sin identificar interferencias; documentación gráfica básica; espesor considerado errata; relleno sin segregar; medidas ambientales genéricas; seguridad y salud sin referencia a la documentación aplicable."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zRFXX%2FbDY2mIzo3LHNPGcQ%3D%3D",
+   "doc": "2026-e7d62332-14f6-42a7-a12c-6cf74a309413"
+  },
+  {
+   "crit": "Estudio del proceso constructivo",
+   "max": 14,
+   "exp": "p:18320396",
+   "ref": "04101/2025/238-SU",
+   "title": "Suministro e instalación de pavimento de césped artificial en campo de rugby y campo de fútbol del polideportivo Quatre Carreres y campo de ",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-17",
+   "offers": 1,
+   "top": {
+    "pts": 9.7,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Proceso constructivo con materiales, maquinaria y documentación gráfica.",
+    "Recursos humanos previstos en las diferentes fases de la obra.",
+    "Mantenimiento segregado con frecuencias de mantenimiento especializado."
+   ],
+   "weak": [
+    "Gantt sin desglose de las unidades de obra principales.",
+    "No prevé medidas correctivas ante imponderables que incidan en la ruta crítica.",
+    "Consejos de mantenimiento regular genéricos; sin plantilla de registro ni jornada explicativa."
+   ],
+   "hypothesis": {
+    "premia": "Gantt con desglose de unidades, ruta crítica y medidas correctivas; recursos humanos por fases; plan de mantenimiento con plantilla de registro y jornada explicativa a gestores; descripción de limpieza y procesos auxiliares.",
+    "penaliza": "Gantt sin desglose de unidades; medidas correctivas genéricas o ausentes; sin recursos humanos previstos; falta de descripción de limpieza de canaletas y retirada de equipamiento; mantenimiento genérico sin plantilla ni jornada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zRFXX%2FbDY2mIzo3LHNPGcQ%3D%3D",
+   "doc": "2026-e7d62332-14f6-42a7-a12c-6cf74a309413"
+  }
+ ]
+}

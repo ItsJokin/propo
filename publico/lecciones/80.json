@@ -1,0 +1,327 @@
+{
+ "cpv2": "80",
+ "generated": "2026-10-22T14:39:58.992Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Oferta educativa (gestión educativa)",
+   "max": 20,
+   "exp": "p:19930949",
+   "ref": "12241/2025",
+   "title": "Prestación y gestión del servicio público de la Escuela de Música y Danza de Guadarrama.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Guadarrama",
+   "nuts": "ES300",
+   "date": "2026-08-25",
+   "offers": 2,
+   "top": {
+    "pts": 20,
+    "winner": false
+   },
+   "low": {
+    "pts": 20
+   },
+   "best": [
+    "Objetivos correctamente desarrollados y acordes al pliego de prescripciones técnicas.",
+    "Estructura por cursos y áreas sobradamente desarrollada, para música y danza.",
+    "Amplía la oferta con otras especialidades musicales, nuevas agrupaciones y danza tradicional.",
+    "Criterios de evaluación claros, basados en seguimiento, participación y evolución del alumno.",
+    "Propuestas complementarias (audiciones, conciertos, muestras) y programa para alumnado con diversidad funcional."
+   ],
+   "weak": [
+    "La ampliación de la oferta queda condicionada a la consolidación del proyecto y a la demanda suficiente."
+   ],
+   "hypothesis": {
+    "premia": "Objetivos, estructura y evaluación bien desarrollados, con oferta ampliada (danza tradicional, nuevas agrupaciones) y avales de un modelo ya implantado en otras escuelas.",
+    "penaliza": "Ampliaciones de oferta condicionadas o dependientes de consolidación y demanda, sin compromisos inmediatos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=k3k3k594Ntd%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-87a5da34-681c-4868-928d-a1196320e6d3"
+  },
+  {
+   "crit": "Propuesta de gestión (gestión administrativa)",
+   "max": 10,
+   "exp": "p:19930949",
+   "ref": "12241/2025",
+   "title": "Prestación y gestión del servicio público de la Escuela de Música y Danza de Guadarrama.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Guadarrama",
+   "nuts": "ES300",
+   "date": "2026-08-25",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Régimen de admisión reglamentado, con prioridad para antiguos alumnos y sistema de pagos de cuotas definido.",
+    "Asesoramiento del profesorado en el proceso de elección, incluyendo a familias de menores.",
+    "Estructura administrativa especializada en la gestión de escuelas municipales.",
+    "Compromiso de medios suficientes para apertura y cierre durante el funcionamiento.",
+    "Régimen de admisión estructurado y reglamentado, con prioridad para antiguos alumnos."
+   ],
+   "weak": [
+    "La cuota por alquiler de instrumentos se cobrará solo si así se acuerda con el Ayuntamiento.",
+    "No se detallan medidas concretas de conservación y uso de instrumentos; solo se menciona el inventario.",
+    "Remite a adecuarse al modelo vigente o a proponer el suyo, sin concretarlo."
+   ],
+   "hypothesis": {
+    "premia": "Régimen de admisión y facturación reglamentado y medidas concretas sobre instrumentos y medios administrativos.",
+    "penaliza": "Compromisos genéricos de adecuarse a un modelo sin concretar medidas, o cobros de alquiler de instrumentos condicionados."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=k3k3k594Ntd%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-87a5da34-681c-4868-928d-a1196320e6d3"
+  },
+  {
+   "crit": "Propuesta de organización (gestión organizativa)",
+   "max": 10,
+   "exp": "p:19930949",
+   "ref": "12241/2025",
+   "title": "Prestación y gestión del servicio público de la Escuela de Música y Danza de Guadarrama.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Guadarrama",
+   "nuts": "ES300",
+   "date": "2026-08-25",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Estructura organizativa clara, con coordinación entre niveles y supervisión definida.",
+    "Acepta la subrogación recogida en los pliegos.",
+    "Explicita la implantación del plan de igualdad y sus contenidos.",
+    "Dirección con competencias educativas y coordinación administrativa diferenciadas.",
+    "Acepta la subrogación de la plantilla actual de profesores."
+   ],
+   "weak": [
+    "No aporta currículum de la persona propuesta para la dirección, solo del coordinador.",
+    "No menciona expresamente un plan de igualdad entre mujeres y hombres, solo criterios de trato equitativo.",
+    "No se incluyen copias de documentos que acrediten las titulaciones de la directora/coordinadora propuesta.",
+    "No concreta las relaciones con otras escuelas, entidades o asociaciones."
+   ],
+   "hypothesis": {
+    "premia": "Estructura organizativa clara, aceptación de subrogación, y explicitación del plan de igualdad y de relaciones con otras entidades.",
+    "penaliza": "Falta de acreditación del currículum y titulaciones de la dirección y relaciones institucionales no concretadas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=k3k3k594Ntd%2FR5QFTlaM4A%3D%3D",
+   "doc": "2026-87a5da34-681c-4868-928d-a1196320e6d3"
+  },
+  {
+   "crit": "Herramientas de seguimiento, evaluación y coordinación",
+   "max": 10,
+   "exp": "p:19179910",
+   "ref": "CON/2025/7",
+   "title": "Dinamización de Grupos de Participación Infantil y Adolescente",
+   "buyer": "Alcaldía del Ayuntamiento de Llanes",
+   "nuts": "ES120",
+   "date": "2026-08-20",
+   "offers": 2,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Sistema adecuado y seguimiento continuo y exhaustivo del proyecto.",
+    "Incluye reuniones periódicas con técnicos municipales y coordinación con centros educativos y entidades locales.",
+    "Incorpora participación del grupo motor y seguimiento participativo de niños y adolescentes, permitiendo redefinir la intervención.",
+    "Describe mecanismos de seguimiento y coordinación."
+   ],
+   "weak": [
+    "Baja concreción; coordinación genérica 'con el Ayuntamiento' sin detallar interlocutores.",
+    "No hay sistema de seguimiento estructurado en el tiempo que permita reajustes.",
+    "No vincula la intervención con espacios autonómicos de participación, UNICEF ni el Observatorio de la Infancia."
+   ],
+   "hypothesis": {
+    "premia": "Sistema de seguimiento continuo y concreto, con coordinación nominal con técnicos municipales, centros educativos y entidades locales, y seguimiento participativo.",
+    "penaliza": "Coordinación genérica sin interlocutores definidos, falta de seguimiento estructurado y ausencia de vinculación con redes y observatorios de infancia."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=8zxvW%2FDCBpzua%2Fi14w%2FPLA%3D%3D",
+   "doc": "2026-c6a59742-d1a1-4087-b861-ac72fbb1b5e0"
+  },
+  {
+   "crit": "Propuesta metodológica alineada con el III Plan de Infancia y Adolescencia",
+   "max": 5,
+   "exp": "p:19179910",
+   "ref": "CON/2025/7",
+   "title": "Dinamización de Grupos de Participación Infantil y Adolescente",
+   "buyer": "Alcaldía del Ayuntamiento de Llanes",
+   "nuts": "ES120",
+   "date": "2026-08-20",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Parte del conocimiento del contexto municipal y de los logros de planes anteriores.",
+    "Se alinea expresamente con los cinco ámbitos del III Plan de Infancia y Adolescencia.",
+    "Se ajusta formalmente al proyecto y recoge los principales objetivos del pliego."
+   ],
+   "weak": [
+    "Carece de conexión con el III Plan y no menciona mecanismos de participación existentes.",
+    "Propuesta genérica, podría aplicarse a cualquier municipio; no considera la trayectoria de Llanes ni su condición de Ciudad Amiga de la Infancia."
+   ],
+   "hypothesis": {
+    "premia": "Alineación explícita con los ámbitos del Plan y conocimiento del contexto municipal y de planes anteriores.",
+    "penaliza": "Propuesta genérica, sin conexión con el III Plan ni con la trayectoria y contexto de Llanes."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=8zxvW%2FDCBpzua%2Fi14w%2FPLA%3D%3D",
+   "doc": "2026-c6a59742-d1a1-4087-b861-ac72fbb1b5e0"
+  },
+  {
+   "crit": "Propuesta de talleres y actividades comunitarias",
+   "max": 10,
+   "exp": "p:19179910",
+   "ref": "CON/2025/7",
+   "title": "Dinamización de Grupos de Participación Infantil y Adolescente",
+   "buyer": "Alcaldía del Ayuntamiento de Llanes",
+   "nuts": "ES120",
+   "date": "2026-08-20",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Detalla acciones en centros educativos, Juega-Pueblos, P.I.LL.A., actividades intergeneracionales y participación en redes.",
+    "Aprovecha actividades ya ejecutadas y proyectos del plan anterior; introduce la intergeneracionalidad y pone en valor los activos locales.",
+    "Describe actividades a desarrollar."
+   ],
+   "weak": [
+    "Actividades genéricas, sin mecanismos claros de participación y evaluación.",
+    "No recoge de forma concreta los objetivos del Plan ni conoce en detalle las iniciativas previas del concejo.",
+    "Enfoque basado en la animación sociocultural y no en la participación infantojuvenil; carece de visión comunitaria y de pertenencia."
+   ],
+   "hypothesis": {
+    "premia": "Actividades concretas que dan continuidad a iniciativas existentes, con enfoque intergeneracional y comunitario, y mecanismos de participación y evaluación.",
+    "penaliza": "Actividades genéricas, sin mecanismos de participación ni evaluación, y enfoque de animación sociocultural sin visión comunitaria."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=8zxvW%2FDCBpzua%2Fi14w%2FPLA%3D%3D",
+   "doc": "2026-c6a59742-d1a1-4087-b861-ac72fbb1b5e0"
+  },
+  {
+   "crit": "CRITERIO JV1 – PROYECTO EDUCATIVO",
+   "max": 17,
+   "exp": "p:19153002",
+   "ref": "04101/2025/287-COSP",
+   "title": "Contrato de concesión de servicios para la Gestión indirecta y explotación de la Escuela Infantil Municipal Cabanyal-Canyamelar",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-26",
+   "offers": 4,
+   "top": {
+    "pts": 17,
+    "winner": false
+   },
+   "low": {
+    "pts": 14.1
+   },
+   "best": [
+    "Práctica psicomotriz completa, estructurada y plenamente adaptada",
+    "Metodología sólida, con coherencia entre metodología, actividades y evaluación",
+    "Relación con la administración en apartado específico, claro y completo",
+    "Bloque plurilingüe e inglés muy desarrollado y concreto",
+    "Atención a la diversidad, inclusión e igualdad tratadas de forma clara"
+   ],
+   "weak": [
+    "Escasa concreción en evaluación continua, registros y planificación por edades",
+    "Escuela abierta de desarrollo general, con pocos canales de participación definidos",
+    "Normativa enumerada pero no integrada en el desarrollo del proyecto",
+    "Relación con la administración sin concretar mejoras pedagógicas ni seguimiento",
+    "Innovación poco singularizada y sin indicadores de impacto"
+   ],
+   "hypothesis": {
+    "premia": "Práctica psicomotriz completa y adaptada, relación con la administración de enfoque pedagógico, y tratamiento concreto de diversidad, plurilingüismo y participación familiar.",
+    "penaliza": "Falta de concreción en evaluación y seguimiento, relación con la administración más procedimental que pedagógica, normativa solo enumerada y escasa singularidad en la innovación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=wdfLbn%2BiY24%2B1TMyIiZmzw%3D%3D",
+   "doc": "2026-eb5a8da6-a1d9-4500-900a-33277aced948"
+  },
+  {
+   "crit": "CRITERIO JV2 – PROYECTO DE GESTIÓN ORGANIZATIVA",
+   "max": 3,
+   "exp": "p:19153002",
+   "ref": "04101/2025/287-COSP",
+   "title": "Contrato de concesión de servicios para la Gestión indirecta y explotación de la Escuela Infantil Municipal Cabanyal-Canyamelar",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-26",
+   "offers": 4,
+   "top": {
+    "pts": 2.95,
+    "winner": false
+   },
+   "low": {
+    "pts": 2.3
+   },
+   "best": [
+    "Estructura muy completa, operativa y bien fundamentada",
+    "Canales de relación y sistema de mejora con la administración operativos",
+    "Jerarquía interna coherente, con Comisión Gestora y órganos descritos con claridad"
+   ],
+   "weak": [
+    "No presenta organigrama",
+    "Canales de relación parciales, con referencias genéricas y sin procedimientos de seguimiento",
+    "Sistema de mejora sin modelos y con concreción insuficiente",
+    "Organigrama que no refleja la jerarquía existente"
+   ],
+   "hypothesis": {
+    "premia": "Organigrama visual, canales de relación con responsables y medios definidos, y sistemas de mejora con modelos y medidas concretas.",
+    "penaliza": "Ausencia de organigrama o de jerarquía reflejada, canales genéricos sin procedimientos de seguimiento y sistemas de mejora poco concretos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=wdfLbn%2BiY24%2B1TMyIiZmzw%3D%3D",
+   "doc": "2026-eb5a8da6-a1d9-4500-900a-33277aced948"
+  },
+  {
+   "crit": "CRITERIO JV3 – FUNCIONAMIENTO DEL CENTRO",
+   "max": 20,
+   "exp": "p:19153002",
+   "ref": "04101/2025/287-COSP",
+   "title": "Contrato de concesión de servicios para la Gestión indirecta y explotación de la Escuela Infantil Municipal Cabanyal-Canyamelar",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-26",
+   "offers": 4,
+   "top": {
+    "pts": 16.9,
+    "winner": false
+   },
+   "low": {
+    "pts": 12.05
+   },
+   "best": [
+    "Planificación muy completa de servicios complementarios, por edades e integrada en el proyecto",
+    "Comedor: adaptación a exigencias del pliego, situaciones concretas y propuestas de mejora",
+    "Protocolos de bebés y dietas especiales detallados, con casi todos los escenarios",
+    "Programa de proyectos colaborativos completo, creativo y práctico",
+    "Planificación completa de servicios complementarios, coherente con el proyecto educativo"
+   ],
+   "weak": [
+    "Destinatarios, personal y agrupamiento no desarrollados (0 puntos)",
+    "Puesta en marcha del equipo exhaustiva pero no contextualizada",
+    "Protocolos de comedor sin adaptar a la legislación vigente",
+    "Admisión, campañas y puesta en marcha sin temporalización clara",
+    "Destinatarios, personal y agrupamiento poco detallados para servicios complementarios"
+   ],
+   "hypothesis": {
+    "premia": "Planificación de servicios complementarios por edades y coherente con el proyecto educativo, y comedor con situaciones concretas, protocolos detallados y propuestas de mejora.",
+    "penaliza": "Destinatarios, personal y agrupamiento poco desarrollados o no desarrollados, exposiciones teóricas o genéricas, falta de contextualización y de temporalización, y protocolos sin desarrollar."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=wdfLbn%2BiY24%2B1TMyIiZmzw%3D%3D",
+   "doc": "2026-eb5a8da6-a1d9-4500-900a-33277aced948"
+  }
+ ]
+}

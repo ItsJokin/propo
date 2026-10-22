@@ -1,0 +1,1095 @@
+{
+ "cpv2": "50",
+ "generated": "2026-10-22T14:39:58.993Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "1.- Plan de mantenimiento correctivo - a) Procedimientos de actuación",
+   "max": 8,
+   "exp": "p:19724267",
+   "ref": "8301-831-1-2026-16763",
+   "title": "Manteniemiento integral resonancia magnética SIGNA1,5T GENERAL ELECTRIC",
+   "buyer": "Gerencia de Atención Especializada Hospital Univ. Rio Hortega de Valladolid",
+   "nuts": "ES418",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Procedimiento de mantenimiento correctivo completamente desarrollado, desde la comunicación de la avería hasta su cierre documental."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FPXIVoeKo%2FXXOjazN1Dw9Q%3D%3D",
+   "doc": "2026-6302450b-3a23-4415-a5c5-6808dd121a6a"
+  },
+  {
+   "crit": "1.- Plan de mantenimiento correctivo - b) Medios técnicos",
+   "max": 5,
+   "exp": "p:19724267",
+   "ref": "8301-831-1-2026-16763",
+   "title": "Manteniemiento integral resonancia magnética SIGNA1,5T GENERAL ELECTRIC",
+   "buyer": "Gerencia de Atención Especializada Hospital Univ. Rio Hortega de Valladolid",
+   "nuts": "ES418",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Describe medios informáticos de campo, comunicación, vehículos y una relación detallada de herramientas específicas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FPXIVoeKo%2FXXOjazN1Dw9Q%3D%3D",
+   "doc": "2026-6302450b-3a23-4415-a5c5-6808dd121a6a"
+  },
+  {
+   "crit": "1.- Plan de mantenimiento correctivo - c) Medios de contacto",
+   "max": 3,
+   "exp": "p:19724267",
+   "ref": "8301-831-1-2026-16763",
+   "title": "Manteniemiento integral resonancia magnética SIGNA1,5T GENERAL ELECTRIC",
+   "buyer": "Gerencia de Atención Especializada Hospital Univ. Rio Hortega de Valladolid",
+   "nuts": "ES418",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Centro de Atención al Cliente, ingenieros remotos, asignación inteligente de incidencias, escalado técnico, logística internacional de repuestos, protocolos para incidencias críticas y trazabilidad documental."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FPXIVoeKo%2FXXOjazN1Dw9Q%3D%3D",
+   "doc": "2026-6302450b-3a23-4415-a5c5-6808dd121a6a"
+  },
+  {
+   "crit": "2.- Plan de mantenimiento preventivo - a) Parámetros de revisión",
+   "max": 5,
+   "exp": "p:19724267",
+   "ref": "8301-831-1-2026-16763",
+   "title": "Manteniemiento integral resonancia magnética SIGNA1,5T GENERAL ELECTRIC",
+   "buyer": "Gerencia de Atención Especializada Hospital Univ. Rio Hortega de Valladolid",
+   "nuts": "ES418",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Protocolos específicos del modelo, alineados con el fabricante, con tareas preventivas, predictivas y de seguridad y elevado nivel de detalle."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FPXIVoeKo%2FXXOjazN1Dw9Q%3D%3D",
+   "doc": "2026-6302450b-3a23-4415-a5c5-6808dd121a6a"
+  },
+  {
+   "crit": "2.- Plan de mantenimiento preventivo - b) Procedimientos de revisión",
+   "max": 5,
+   "exp": "p:19724267",
+   "ref": "8301-831-1-2026-16763",
+   "title": "Manteniemiento integral resonancia magnética SIGNA1,5T GENERAL ELECTRIC",
+   "buyer": "Gerencia de Atención Especializada Hospital Univ. Rio Hortega de Valladolid",
+   "nuts": "ES418",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Valora positivamente las actuaciones remotas que agilizan y mejoran el mantenimiento preventivo."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FPXIVoeKo%2FXXOjazN1Dw9Q%3D%3D",
+   "doc": "2026-6302450b-3a23-4415-a5c5-6808dd121a6a"
+  },
+  {
+   "crit": "3.- Sistema de acceso remoto al equipo - a) Diagnóstico predictivo y correctivo",
+   "max": 5,
+   "exp": "p:19724267",
+   "ref": "8301-831-1-2026-16763",
+   "title": "Manteniemiento integral resonancia magnética SIGNA1,5T GENERAL ELECTRIC",
+   "buyer": "Gerencia de Atención Especializada Hospital Univ. Rio Hortega de Valladolid",
+   "nuts": "ES418",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Herramienta InSite integrada: monitorización continua, análisis de errores, detección temprana, diagnóstico por ingenieros remotos y resolución remota; mejora significativa sobre el PPT."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FPXIVoeKo%2FXXOjazN1Dw9Q%3D%3D",
+   "doc": "2026-6302450b-3a23-4415-a5c5-6808dd121a6a"
+  },
+  {
+   "crit": "3.- Sistema de acceso remoto al equipo - b) Información técnica",
+   "max": 4,
+   "exp": "p:19724267",
+   "ref": "8301-831-1-2026-16763",
+   "title": "Manteniemiento integral resonancia magnética SIGNA1,5T GENERAL ELECTRIC",
+   "buyer": "Gerencia de Atención Especializada Hospital Univ. Rio Hortega de Valladolid",
+   "nuts": "ES418",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Acceso remoto a registros de eventos, códigos de error, análisis de imágenes, pruebas diagnósticas e identificación previa de repuestos."
+   ],
+   "weak": [
+    "No detalla el alcance de la modificación remota de parámetros ni las actuaciones sobre los subsistemas, por lo que no se otorga la máxima puntuación."
+   ],
+   "hypothesis": {
+    "premia": "Detallar explícitamente el alcance de la modificación remota de parámetros y las actuaciones posibles sobre los subsistemas del equipo.",
+    "penaliza": "No detallar el alcance de la modificación remota de parámetros ni las actuaciones sobre subsistemas, aunque existan amplias capacidades de diagnóstico remoto."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FPXIVoeKo%2FXXOjazN1Dw9Q%3D%3D",
+   "doc": "2026-6302450b-3a23-4415-a5c5-6808dd121a6a"
+  },
+  {
+   "crit": "4.- Informes de seguimiento de actividad",
+   "max": 5,
+   "exp": "p:19724267",
+   "ref": "8301-831-1-2026-16763",
+   "title": "Manteniemiento integral resonancia magnética SIGNA1,5T GENERAL ELECTRIC",
+   "buyer": "Gerencia de Atención Especializada Hospital Univ. Rio Hortega de Valladolid",
+   "nuts": "ES418",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Plataformas iCenter y MyGEHealthcare, accesibles por web y móvil, con histórico, actuaciones, indicadores e información en tiempo real; cumple ampliamente los requisitos."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FPXIVoeKo%2FXXOjazN1Dw9Q%3D%3D",
+   "doc": "2026-6302450b-3a23-4415-a5c5-6808dd121a6a"
+  },
+  {
+   "crit": "5.- Plan de formación",
+   "max": 4,
+   "exp": "p:19724267",
+   "ref": "8301-831-1-2026-16763",
+   "title": "Manteniemiento integral resonancia magnética SIGNA1,5T GENERAL ELECTRIC",
+   "buyer": "Gerencia de Atención Especializada Hospital Univ. Rio Hortega de Valladolid",
+   "nuts": "ES418",
+   "date": "2026-08-31",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Plan presencial y práctico orientado a reducir el tiempo de respuesta ante incidencias, con módulo técnico y de herramientas de gestión."
+   ],
+   "weak": [
+    "No indica la duración en todos los módulos."
+   ],
+   "hypothesis": {
+    "premia": "Formación presencial y práctica con duración indicada en todos los módulos y orientada a reducir el tiempo de respuesta.",
+    "penaliza": "No indicar la duración de todos los módulos del plan de formación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2FPXIVoeKo%2FXXOjazN1Dw9Q%3D%3D",
+   "doc": "2026-6302450b-3a23-4415-a5c5-6808dd121a6a"
+  },
+  {
+   "crit": "CS1: Plan de gestión medioambiental del servicio",
+   "max": 15,
+   "exp": "p:19910653",
+   "ref": "2026 10",
+   "title": "Suministro en régimen de arrendamiento de equipos de impresión, mantenimiento integral y servicio de impresión para RIVAMADRID",
+   "buyer": "Consejo de Administración de Rivas-Vaciamadrid Empresa Municipal de Servicios S.A. (Rivamadrid)",
+   "nuts": "ES300",
+   "date": "2026-08-14",
+   "offers": 4,
+   "top": {
+    "pts": 15,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Plan logístico muy detallado y a medida (Just-In-Time) con contenedores Eco-Box.",
+    "Protocolo de Residuo Cero que clasifica in situ las piezas de mantenimiento en cuatro fracciones.",
+    "Configuración ECO obligatoria, Pull Printing y eliminación de páginas vacías.",
+    "Punto de Recogida Oficial vía Ecofimática, con trazabilidad legal conforme al RD 553/2020.",
+    "Sistema propio de reciclaje con contenedores especializados para separar embalajes y piezas in situ."
+   ],
+   "weak": [
+    "Memoria con poca profundidad metodológica en su vertiente operativa.",
+    "No aporta protocolo detallado de segregación de residuos del mantenimiento correctivo.",
+    "No propone medidas de optimización que amplíen significativamente los requisitos mínimos."
+   ],
+   "hypothesis": {
+    "premia": "Planes operativos concretos y personalizados: separación de residuos por fracciones o cajas identificadas, retirada programada, recogida oficial con trazabilidad legal y configuración ECO o impresión retenida.",
+    "penaliza": "Apoyarse en políticas corporativas o certificaciones genéricas, carecer de protocolo operativo de segregación de residuos o proponer solo requisitos mínimos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=jfh28KAUjsL%2Fa9DgO%2BoYKQ%3D%3D",
+   "doc": "2026-9694857e-7170-47f4-99e8-4618c55b1340"
+  },
+  {
+   "crit": "CS2: Experiencia y certificación del personal técnico",
+   "max": 10,
+   "exp": "p:19910653",
+   "ref": "2026 10",
+   "title": "Suministro en régimen de arrendamiento de equipos de impresión, mantenimiento integral y servicio de impresión para RIVAMADRID",
+   "buyer": "Consejo de Administración de Rivas-Vaciamadrid Empresa Municipal de Servicios S.A. (Rivamadrid)",
+   "nuts": "ES300",
+   "date": "2026-08-14",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Relación nominal de dos técnicos adscritos, con números de certificación del fabricante y vigencia detallados.",
+    "Declara la adscripción de dos técnicos certificados por el fabricante, con certificaciones nominales anexas."
+   ],
+   "weak": [
+    "Describe perfiles técnicos genéricos sin relación nominativa del personal ni certificaciones del fabricante."
+   ],
+   "hypothesis": {
+    "premia": "Relación nominal de técnicos adscritos con certificación vigente del fabricante y certificaciones anexadas a la oferta.",
+    "penaliza": "Omitir la relación de personal o las certificaciones, describir perfiles genéricos o presentar solo certificaciones empresariales como ISO 14001."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=jfh28KAUjsL%2Fa9DgO%2BoYKQ%3D%3D",
+   "doc": "2026-9694857e-7170-47f4-99e8-4618c55b1340"
+  },
+  {
+   "crit": "Programación y organización de los trabajos",
+   "max": 15,
+   "exp": "p:19429729",
+   "ref": "211/2025/723",
+   "title": "Servicio de conservación y mantenimiento integral de las instalaciones deportivas municipales de A Coruña.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-07-29",
+   "offers": 4,
+   "top": {
+    "pts": 14.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 13
+   },
+   "best": [
+    "Describe detalladamente fases de trabajos iniciales y de desarrollo, con plan de mantenimiento individualizado.",
+    "Implanta KPIs (MTTR y MTTF) con ejemplos de cálculo, objetivo de más del 80% preventivo y servicio 24/365.",
+    "Relación clara de trabajos a subcontratar con empresas especializadas y locales.",
+    "Análisis previo de las instalaciones visitadas, con procedimientos alineados con la normativa y tiempos SLA definidos.",
+    "Especifica los trabajos a subcontratar garantizando la supervisión técnica."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Ajustarse a las fases del pliego técnico, KPIs de mantenimiento, tiempos de respuesta concretos y relación detallada de subcontratas.",
+    "penaliza": "No definir las fases del servicio como figuran en el pliego técnico (punto 7.2)."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kJEaEeeAUAlq1DdmE7eaXg%3D%3D",
+   "doc": "2026-2498c062-330a-4d23-9006-95326c6dcd41"
+  },
+  {
+   "crit": "Organigrama funcional",
+   "max": 5,
+   "exp": "p:19429729",
+   "ref": "211/2025/723",
+   "title": "Servicio de conservación y mantenimiento integral de las instalaciones deportivas municipales de A Coruña.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-07-29",
+   "offers": 4,
+   "top": {
+    "pts": 4.8,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Estructura sólida con dedicación a jornada completa y perfiles técnicos y de oficialía especializada.",
+    "Amplia experiencia laboral del personal y estructura de apoyo en jornada parcial bien detallada.",
+    "Organigrama funcional con jerarquía clara, perfiles técnicos adecuados y dedicación especificada."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Detalle del personal de apoyo, experiencia acreditada y dedicación completa del equipo.",
+    "penaliza": "Describir de forma leve el personal de apoyo y no aportar valor añadido en el personal operativo."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kJEaEeeAUAlq1DdmE7eaXg%3D%3D",
+   "doc": "2026-2498c062-330a-4d23-9006-95326c6dcd41"
+  },
+  {
+   "crit": "Medios materiales que se pongan a disposición del servicio",
+   "max": 10,
+   "exp": "p:19429729",
+   "ref": "211/2025/723",
+   "title": "Servicio de conservación y mantenimiento integral de las instalaciones deportivas municipales de A Coruña.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-07-29",
+   "offers": 4,
+   "top": {
+    "pts": 9.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Medios adicionales pormenorizados, con compromiso formal de disponibilidad y materiales con etiqueta ecológica.",
+    "Plataforma WOFFU de fichaje móvil y geolocalización de vehículos para justificar horas de trabajo.",
+    "Dotación muy superior a la mínima, con camión de desatascos y equipos de alta tecnología.",
+    "Almacenes dentro del municipio y smartphones profesionales vinculados al GMAO."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Medios adicionales detallados, tecnología para control de horas y compromisos de disponibilidad y sostenibilidad.",
+    "penaliza": "Sin penalizaciones explícitas en los comentarios."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kJEaEeeAUAlq1DdmE7eaXg%3D%3D",
+   "doc": "2026-2498c062-330a-4d23-9006-95326c6dcd41"
+  },
+  {
+   "crit": "Gestión documental asociada al contrato",
+   "max": 15,
+   "exp": "p:19429729",
+   "ref": "211/2025/723",
+   "title": "Servicio de conservación y mantenimiento integral de las instalaciones deportivas municipales de A Coruña.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de A Coruña",
+   "nuts": "ES111",
+   "date": "2026-07-29",
+   "offers": 4,
+   "top": {
+    "pts": 14.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Registro informático centralizado tipo libro del edificio digital, con checklists, firmas digitales y reportajes fotográficos.",
+    "Sistema documental en la nube (Teams/SharePoint) por centros, con formatos y sistemática de informes definidos."
+   ],
+   "weak": [
+    "Describe herramientas existentes sin propuesta innovadora ni diferenciadora en la metodología documental."
+   ],
+   "hypothesis": {
+    "premia": "Sistemas documentales propios o en la nube, formatos e informes definidos y flujos de comunicación con el Ayuntamiento detallados.",
+    "penaliza": "Describir herramientas existentes sin innovación y no detallar la integración de flujos de validación con el Ayuntamiento."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kJEaEeeAUAlq1DdmE7eaXg%3D%3D",
+   "doc": "2026-2498c062-330a-4d23-9006-95326c6dcd41"
+  },
+  {
+   "crit": "Descripción completa, detallada y justificada de los servicios a realizar (estudio de los trabajos y organización)",
+   "max": 6,
+   "exp": "p:19429535",
+   "ref": "Servicio L6_2026",
+   "title": "Servicio de mantenimiento de instalaciones de telecomunicaciones y soporte a las comunicaciones profesionales de Emasagra por radio Tetra.",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Metodología muy exhaustiva",
+    "Organización del mantenimiento correctivo que mejora los tiempos de respuesta exigidos (<4h críticas, <8h graves, disponibilidad 24/7)",
+    "Flujo de trabajo de seis pasos bien definido"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Pn3UqE3LfqLua%2Fi14w%2FPLA%3D%3D",
+   "doc": "2026-74cc0b4a-c6d8-41f1-ab0c-447779b8dfbf"
+  },
+  {
+   "crit": "Descripción de medios humanos adscritos a la prestación de los servicios de mantenimiento",
+   "max": 5,
+   "exp": "p:19429535",
+   "ref": "Servicio L6_2026",
+   "title": "Servicio de mantenimiento de instalaciones de telecomunicaciones y soporte a las comunicaciones profesionales de Emasagra por radio Tetra.",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Dos técnicos en telecomunicaciones con 16 años de experiencia",
+    "Aseguran cualificación y certificados ISO 22000, relevantes para el ámbito de inocuidad del agua",
+    "Acreditan y presentan certificaciones requeridas por el contrato para la operación de redes de comunicaciones"
+   ],
+   "weak": [
+    "Descripción algo escueta"
+   ],
+   "hypothesis": {
+    "premia": "Descripción detallada del personal con cualificación, experiencia y certificaciones acreditadas",
+    "penaliza": "Descripción escueta del personal adscrito"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Pn3UqE3LfqLua%2Fi14w%2FPLA%3D%3D",
+   "doc": "2026-74cc0b4a-c6d8-41f1-ab0c-447779b8dfbf"
+  },
+  {
+   "crit": "Descripción de los medios técnicos puestos a disposición del servicio, así como resto de medios materiales para la prestación del servicio de mantenimiento",
+   "max": 5,
+   "exp": "p:19429535",
+   "ref": "Servicio L6_2026",
+   "title": "Servicio de mantenimiento de instalaciones de telecomunicaciones y soporte a las comunicaciones profesionales de Emasagra por radio Tetra.",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Gran despliegue de medios materiales propios en Pinos Genil (Granada)",
+    "Dos naves con laboratorio técnico, taller de reparaciones de 350 m2 y stock de seguridad para equipos de cortesía"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Pn3UqE3LfqLua%2Fi14w%2FPLA%3D%3D",
+   "doc": "2026-74cc0b4a-c6d8-41f1-ab0c-447779b8dfbf"
+  },
+  {
+   "crit": "Descripción técnica de los equipos propuestos para los suministros englobados en este contrato (terminales móviles TETRA, radios/repetidores)",
+   "max": 4,
+   "exp": "p:19429535",
+   "ref": "Servicio L6_2026",
+   "title": "Servicio de mantenimiento de instalaciones de telecomunicaciones y soporte a las comunicaciones profesionales de Emasagra por radio Tetra.",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Propone ecosistema 100% Motorola (MXM600, MXP600, MTP3550, SLR5500) con características técnicas superiores",
+    "Disponibilidad de equipos de cortesía ante averías críticas"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Pn3UqE3LfqLua%2Fi14w%2FPLA%3D%3D",
+   "doc": "2026-74cc0b4a-c6d8-41f1-ab0c-447779b8dfbf"
+  },
+  {
+   "crit": "Disposición de emplazamientos de radio distribuidos en el área metropolitana de Granada",
+   "max": 15,
+   "exp": "p:19429535",
+   "ref": "Servicio L6_2026",
+   "title": "Servicio de mantenimiento de instalaciones de telecomunicaciones y soporte a las comunicaciones profesionales de Emasagra por radio Tetra.",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Diez emplazamientos con posición indicada",
+    "Garantiza seguridad en el suministro energético de los mismos"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Pn3UqE3LfqLua%2Fi14w%2FPLA%3D%3D",
+   "doc": "2026-74cc0b4a-c6d8-41f1-ab0c-447779b8dfbf"
+  },
+  {
+   "crit": "Mejoras propuestas por el licitador",
+   "max": 5,
+   "exp": "p:19429535",
+   "ref": "Servicio L6_2026",
+   "title": "Servicio de mantenimiento de instalaciones de telecomunicaciones y soporte a las comunicaciones profesionales de Emasagra por radio Tetra.",
+   "buyer": "Dirección Gerente de la Empresa Municipal de Abastecimiento y Saneamiento de Granada, S.A.",
+   "nuts": "ES614",
+   "date": "2026-07-16",
+   "offers": 1,
+   "top": {
+    "pts": 0,
+    "winner": false
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "No incluye paquete de mejoras adicionales a su costa",
+    "Solo indica cumplir ISO 22000 e ISO 50001, que ya eran exigencias del pliego"
+   ],
+   "hypothesis": {
+    "premia": "Mejoras propuestas a costa del licitador que aporten valor en sostenibilidad o digitalización",
+    "penaliza": "Limitarse a cumplir normas ya exigidas en el pliego"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Pn3UqE3LfqLua%2Fi14w%2FPLA%3D%3D",
+   "doc": "2026-74cc0b4a-c6d8-41f1-ab0c-447779b8dfbf"
+  },
+  {
+   "crit": "Organización del Mantenimiento Correctivo",
+   "max": 5,
+   "exp": "p:18897155",
+   "ref": "SE 78/26",
+   "title": "Contratación del Servicio de Conservación, Mantenimiento y Suministro del Sistema Semafórico para la Regulación del Tráfico del Termino Muni",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Marbella",
+   "nuts": "ES617",
+   "date": "2026-07-15",
+   "offers": 2,
+   "top": {
+    "pts": 4.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.5
+   },
+   "best": [
+    "Conocimiento del territorio con nudos clasificados por distritos, procedimientos por tipología de intervención, plano general y sistema de gestión para trazabilidad.",
+    "Enumera tareas y fases de reparación correctiva y propone un sistema de gestión para control y seguimiento de actuaciones."
+   ],
+   "weak": [
+    "Repite conceptos sin detalle; no especifica rutómetro, planimetría, ubicación de la base ni concreta la mejora de tiempos."
+   ],
+   "hypothesis": {
+    "premia": "Procedimientos específicos por tipología de avería, conocimiento del territorio y sistema de trazabilidad de intervenciones.",
+    "penaliza": "Repetir conceptos sin detalle y no concretar rutómetro, planimetría ni ubicación de la base."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=g6j4jhwtofzpxJFXpLZ%2B2A%3D%3D",
+   "doc": "2026-172f04d3-a8e7-461e-9f48-816205627455"
+  },
+  {
+   "crit": "Organización del Mantenimiento Preventivo",
+   "max": 5,
+   "exp": "p:18897155",
+   "ref": "SE 78/26",
+   "title": "Contratación del Servicio de Conservación, Mantenimiento y Suministro del Sistema Semafórico para la Regulación del Tráfico del Termino Muni",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Marbella",
+   "nuts": "ES617",
+   "date": "2026-07-15",
+   "offers": 2,
+   "top": {
+    "pts": 4.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.75
+   },
+   "best": [
+    "Tareas diarias y periódicas planificadas según inventario, limpieza y repintado anual, procedimientos específicos y recursos detallados.",
+    "Define perfiles de personal, cronograma anual de periodicidades, mejoras en algunas instalaciones y recursos materiales y humanos."
+   ],
+   "weak": [
+    "Fija horario preventivo de 07:00 a 15:00 horas; el texto no acredita cobertura 24h/365d.",
+    "No concreta el cronograma y funcionograma del servicio durante 24h/365d."
+   ],
+   "hypothesis": {
+    "premia": "Cronograma y funcionograma concretos de 24h/365d, tareas periódicas planificadas y recursos detallados.",
+    "penaliza": "No concretar el cronograma y funcionograma del servicio durante 24h/365d."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=g6j4jhwtofzpxJFXpLZ%2B2A%3D%3D",
+   "doc": "2026-172f04d3-a8e7-461e-9f48-816205627455"
+  },
+  {
+   "crit": "Proyecto Funcionamiento Sistema. Mantenimiento, Reforma y Ampliación",
+   "max": 8,
+   "exp": "p:18897155",
+   "ref": "SE 78/26",
+   "title": "Contratación del Servicio de Conservación, Mantenimiento y Suministro del Sistema Semafórico para la Regulación del Tráfico del Termino Muni",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Marbella",
+   "nuts": "ES617",
+   "date": "2026-07-15",
+   "offers": 2,
+   "top": {
+    "pts": 7.2,
+    "winner": true
+   },
+   "low": {
+    "pts": 5.6
+   },
+   "best": [
+    "Anexos con medios materiales y humanos, centro de mantenimiento, organigrama, currículos, repuestos en stock, documentación de materiales y certificaciones ISO 9001, 14001 y 45001.",
+    "Organigrama con tareas por perfil, staff técnico a disposición, plan de formación continua y herramienta de gestión de mantenimiento."
+   ],
+   "weak": [
+    "Describe la base sin rutómetro y desarrolla de forma muy somera la metodología de reformas y ampliaciones."
+   ],
+   "hypothesis": {
+    "premia": "Anexos con medios, personal, repuestos, documentación de materiales y certificaciones de calidad.",
+    "penaliza": "Descripción somera de la base sin rutómetro y de la metodología de reformas y ampliaciones."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=g6j4jhwtofzpxJFXpLZ%2B2A%3D%3D",
+   "doc": "2026-172f04d3-a8e7-461e-9f48-816205627455"
+  },
+  {
+   "crit": "Conocimientos, Experiencias Conservación Gestión Semafórica",
+   "max": 20,
+   "exp": "p:18897155",
+   "ref": "SE 78/26",
+   "title": "Contratación del Servicio de Conservación, Mantenimiento y Suministro del Sistema Semafórico para la Regulación del Tráfico del Termino Muni",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Marbella",
+   "nuts": "ES617",
+   "date": "2026-07-15",
+   "offers": 2,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Relación de los 60 cruces con coordenadas, planimetría, fotografías, inventario particularizado y extensa relación de proyectos realizados.",
+    "Algunas observaciones de inspección ocular en puntos concretos de la ciudad pueden tener fundamento."
+   ],
+   "weak": [
+    "No aporta datos de demanda ni conocimiento de la estructura de tráfico; contiene afirmaciones que no se ajustan a la red (pulsador en cruce 25 y lámparas incandescentes, cuando la red es LED)."
+   ],
+   "hypothesis": {
+    "premia": "Inventario completo y verificado de los cruces, con planimetría, fotografías y proyectos acreditados.",
+    "penaliza": "Análisis basado en inspección ocular sin datos de demanda y afirmaciones que no coinciden con la red existente."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=g6j4jhwtofzpxJFXpLZ%2B2A%3D%3D",
+   "doc": "2026-172f04d3-a8e7-461e-9f48-816205627455"
+  },
+  {
+   "crit": "Memoria Innovación y Eficiencia Movilidad y Sistema Gestión y Operación",
+   "max": 6,
+   "exp": "p:18897155",
+   "ref": "SE 78/26",
+   "title": "Contratación del Servicio de Conservación, Mantenimiento y Suministro del Sistema Semafórico para la Regulación del Tráfico del Termino Muni",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Marbella",
+   "nuts": "ES617",
+   "date": "2026-07-15",
+   "offers": 2,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.7
+   },
+   "best": [
+    "Desarrolla 17 medidas tecnológicas de alto grado de innovación (IoT, Big Data, visión artificial, IA), con interoperabilidad, resiliencia y sostenibilidad.",
+    "Propone software centralizado de gestión de tráfico con control adaptativo, video-detección y priorización del transporte público."
+   ],
+   "weak": [
+    "Propone sustituir lámparas por LED, tecnología que la red semafórica ya tiene implantada."
+   ],
+   "hypothesis": {
+    "premia": "Número y variedad de medidas tecnológicas innovadoras con enfoque integrado de gestión inteligente.",
+    "penaliza": "Proponer medidas de eficiencia ya implantadas en la red, como la sustitución por LED."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=g6j4jhwtofzpxJFXpLZ%2B2A%3D%3D",
+   "doc": "2026-172f04d3-a8e7-461e-9f48-816205627455"
+  },
+  {
+   "crit": "Propuestas Programación Actuaciones Mejora de la Movilidad Global",
+   "max": 6,
+   "exp": "p:18897155",
+   "ref": "SE 78/26",
+   "title": "Contratación del Servicio de Conservación, Mantenimiento y Suministro del Sistema Semafórico para la Regulación del Tráfico del Termino Muni",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Marbella",
+   "nuts": "ES617",
+   "date": "2026-07-15",
+   "offers": 2,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.4
+   },
+   "best": [
+    "Prognosis por cuatro sectores, programa para una legislatura, medidas de transporte sostenible, programa educativo y revisión normativa municipal.",
+    "Estructura formal en torno a las 3E y plantea diversas medidas tecnológicas, de estudio de tráfico y de control."
+   ],
+   "weak": [
+    "No se ajusta de forma equilibrada a las 3E; acciones educativas genéricas, sin programas, indicadores ni planificación por pilar; varias propuestas son posibles estudios."
+   ],
+   "hypothesis": {
+    "premia": "Desarrollo equilibrado de las tres E, con prognosis por sectores, programa temporal y medidas educativas concretas.",
+    "penaliza": "Acciones educativas genéricas, falta de programas e indicadores y propuestas que quedan como posibles estudios."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=g6j4jhwtofzpxJFXpLZ%2B2A%3D%3D",
+   "doc": "2026-172f04d3-a8e7-461e-9f48-816205627455"
+  },
+  {
+   "crit": "Aspecto formal y capacidad de explicación",
+   "max": 5,
+   "exp": "p:9643985",
+   "ref": "SERV/ABR/2022000005",
+   "title": "Servicios de mantenimiento, reposición y colocación de nueva señalización vial en el Término Municipal de Elche.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Elche",
+   "nuts": "ES521",
+   "date": "2023-08-03",
+   "offers": 5,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Maquetación cuidada que permite incluir más información, con documentación adecuada al pliego y de fácil comprensión.",
+    "Presenta documentación correcta y comprensible."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Maquetación clara y estructurada que permite exponer más información de forma comprensible.",
+    "penaliza": "Documentación esquemática que no explicita los recursos suplementarios exigidos en el pliego."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I1lOKfyM0McBPRBxZ4nJ%2Fg%3D%3D",
+   "doc": "af0dfbdc-2102-455d-bf5c-00e139a7d359"
+  },
+  {
+   "crit": "Organización del servicio, incluido el programa de trabajo",
+   "max": 6,
+   "exp": "p:9643985",
+   "ref": "SERV/ABR/2022000005",
+   "title": "Servicios de mantenimiento, reposición y colocación de nueva señalización vial en el Término Municipal de Elche.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Elche",
+   "nuts": "ES521",
+   "date": "2023-08-03",
+   "offers": 5,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Explicita horarios, procedimientos, órdenes de trabajo, plazos, control de calidad y programa de trabajo a dos años.",
+    "Establece objetivos de calidad, controles propios, plazos acertados, rendimientos y procedimiento con documentación de control."
+   ],
+   "weak": [
+    "Descripción algo prolija en la comunicación entre contratista y ayuntamiento."
+   ],
+   "hypothesis": {
+    "premia": "Explicitar horarios, procedimientos, controles de calidad, plazos, rendimientos y un programa de trabajo a dos años.",
+    "penaliza": "Descripción genérica tipo pliego de condiciones técnicas o ausencia de cronograma."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I1lOKfyM0McBPRBxZ4nJ%2Fg%3D%3D",
+   "doc": "af0dfbdc-2102-455d-bf5c-00e139a7d359"
+  },
+  {
+   "crit": "Recursos humanos y técnico-materiales",
+   "max": 6,
+   "exp": "p:9643985",
+   "ref": "SERV/ABR/2022000005",
+   "title": "Servicios de mantenimiento, reposición y colocación de nueva señalización vial en el Término Municipal de Elche.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Elche",
+   "nuts": "ES521",
+   "date": "2023-08-03",
+   "offers": 5,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Completa lo exigido con equipo de 3 personas, camión de 5,5 t y vehículos adicionales; central en Alicante y almacén en Elche.",
+    "Propone auditor de seguridad vial, furgón, camión Eurocargo y equipo ECO de pintado manual con oficial y peón."
+   ],
+   "weak": [
+    "Parte de la mejora (equipo de 3 personas y camión de 5,5 t) se ofrece solo en caso de necesidad."
+   ],
+   "hypothesis": {
+    "premia": "Recursos concretos y justificados, que superan lo exigido con mejoras útiles y ubicación cercana al municipio.",
+    "penaliza": "Recursos no nominales, fotos de catálogo, listados ambiguos, equipos innecesarios o datos incoherentes con otras fuentes."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I1lOKfyM0McBPRBxZ4nJ%2Fg%3D%3D",
+   "doc": "af0dfbdc-2102-455d-bf5c-00e139a7d359"
+  },
+  {
+   "crit": "Conocimiento del medio",
+   "max": 3,
+   "exp": "p:9643985",
+   "ref": "SERV/ABR/2022000005",
+   "title": "Servicios de mantenimiento, reposición y colocación de nueva señalización vial en el Término Municipal de Elche.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Elche",
+   "nuts": "ES521",
+   "date": "2023-08-03",
+   "offers": 5,
+   "top": {
+    "pts": 1.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Demuestra contacto real con el territorio, con breve estudio de señalización horizontal, ejemplos y conclusiones de necesidades."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Estudio real del territorio con ejemplos, análisis de necesidades y conclusiones.",
+    "penaliza": "Ausencia de aportación o mención meramente testimonial del territorio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I1lOKfyM0McBPRBxZ4nJ%2Fg%3D%3D",
+   "doc": "af0dfbdc-2102-455d-bf5c-00e139a7d359"
+  },
+  {
+   "crit": "Propuestas de carácter innovador",
+   "max": 10,
+   "exp": "p:9643985",
+   "ref": "SERV/ABR/2022000005",
+   "title": "Servicios de mantenimiento, reposición y colocación de nueva señalización vial en el Término Municipal de Elche.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Elche",
+   "nuts": "ES521",
+   "date": "2023-08-03",
+   "offers": 5,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Esfuerzo medioambiental con proyección manual eléctrica, energía solar, vehículos ECO, huella de carbono acreditada y software propio de control.",
+    "Máquina de señalización a batería, localización en tiempo real de equipos y programa propio INCA URBANO para gestión del servicio."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Propuestas internas u operativas de aplicación inmediata en el contrato (software de control, energía solar, vehículos ECO, localización en tiempo real).",
+    "penaliza": "Innovaciones solo teóricas o de interés general, y no aclarar si suponen coste extra para el ayuntamiento."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I1lOKfyM0McBPRBxZ4nJ%2Fg%3D%3D",
+   "doc": "af0dfbdc-2102-455d-bf5c-00e139a7d359"
+  },
+  {
+   "crit": "Aspecto formal y capacidad de explicación",
+   "max": 5,
+   "exp": "p:9643985",
+   "ref": "SERV/ABR/2022000005",
+   "title": "Servicios de mantenimiento, reposición y colocación de nueva señalización vial en el Término Municipal de Elche.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Elche",
+   "nuts": "ES521",
+   "date": "2023-08-03",
+   "offers": 4,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Maquetación cuidada que permite incluir mayor cantidad de información",
+    "Documentación correcta, clara y ajustada a la acotación del pliego"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Maquetación cuidada que permite incluir más información de forma clara",
+    "penaliza": "No se señala una penalización específica en el informe"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I1lOKfyM0McBPRBxZ4nJ%2Fg%3D%3D",
+   "doc": "9c631797-08d7-47e6-a373-b0b057f3bd69"
+  },
+  {
+   "crit": "Organización del servicio, incluido el programa de trabajo",
+   "max": 6,
+   "exp": "p:9643985",
+   "ref": "SERV/ABR/2022000005",
+   "title": "Servicios de mantenimiento, reposición y colocación de nueva señalización vial en el Término Municipal de Elche.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Elche",
+   "nuts": "ES521",
+   "date": "2023-08-03",
+   "offers": 4,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Buen conocimiento del funcionamiento municipal y de su papel de refuerzo",
+    "Procedimiento operativo adecuado que considera trabajos y afecciones al tráfico",
+    "Aporta rendimientos",
+    "Explicita horarios, procedimientos de gestión, control de calidad y programa de trabajo a dos años"
+   ],
+   "weak": [
+    "Explicación de fabricación de señales algo prolija"
+   ],
+   "hypothesis": {
+    "premia": "Procedimientos operativos concretos, horarios, rendimientos y programa de trabajo plurianual",
+    "penaliza": "Descripciones genéricas o escasas de los métodos de ejecución"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I1lOKfyM0McBPRBxZ4nJ%2Fg%3D%3D",
+   "doc": "9c631797-08d7-47e6-a373-b0b057f3bd69"
+  },
+  {
+   "crit": "Recursos humanos y técnico-materiales puestos a disposición",
+   "max": 6,
+   "exp": "p:9643985",
+   "ref": "SERV/ABR/2022000005",
+   "title": "Servicios de mantenimiento, reposición y colocación de nueva señalización vial en el Término Municipal de Elche.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Elche",
+   "nuts": "ES521",
+   "date": "2023-08-03",
+   "offers": 4,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Completa lo solicitado y añade un equipo adicional de 2 operarios con medios propios",
+    "Central en Alicante y almacén en Elche, a distancia adecuada",
+    "Instalaciones a distancia adecuada de las zonas de actuación",
+    "Completa lo solicitado con equipo adicional de 2 operarios y medios propios"
+   ],
+   "weak": [
+    "No incluye la maquinaria solicitada en el pliego",
+    "Indica instalaciones en Perleta que no se corresponden con su web oficial"
+   ],
+   "hypothesis": {
+    "premia": "Personal y maquinaria nominales y creíbles, con mejoras coherentes con el servicio y ubicación cercana",
+    "penaliza": "Recursos no nominales, sobredimensionados o sin justificar, y maquinaria exigida en pliego no incluida"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I1lOKfyM0McBPRBxZ4nJ%2Fg%3D%3D",
+   "doc": "9c631797-08d7-47e6-a373-b0b057f3bd69"
+  },
+  {
+   "crit": "Conocimiento del medio",
+   "max": 3,
+   "exp": "p:9643985",
+   "ref": "SERV/ABR/2022000005",
+   "title": "Servicios de mantenimiento, reposición y colocación de nueva señalización vial en el Término Municipal de Elche.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Elche",
+   "nuts": "ES521",
+   "date": "2023-08-03",
+   "offers": 4,
+   "top": {
+    "pts": 1.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Demuestra contacto real con el territorio",
+    "Incluye un breve estudio de señalización vertical con ejemplos y conclusiones"
+   ],
+   "weak": [
+    "No aporta nada relevante sobre el municipio"
+   ],
+   "hypothesis": {
+    "premia": "Contacto real con el territorio, con estudio o ejemplos concretos del municipio",
+    "penaliza": "Ausencia de aportaciones específicas sobre el municipio"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I1lOKfyM0McBPRBxZ4nJ%2Fg%3D%3D",
+   "doc": "9c631797-08d7-47e6-a373-b0b057f3bd69"
+  },
+  {
+   "crit": "Propuestas de carácter innovador",
+   "max": 10,
+   "exp": "p:9643985",
+   "ref": "SERV/ABR/2022000005",
+   "title": "Servicios de mantenimiento, reposición y colocación de nueva señalización vial en el Término Municipal de Elche.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Elche",
+   "nuts": "ES521",
+   "date": "2023-08-03",
+   "offers": 4,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Telegestión sin coste de señales led con aplicación STS Systems",
+    "Radar pedagógico con toma de datos de aforo en hasta tres emplazamientos, sin coste",
+    "Refuerzo de señalización en rotondas, señalización reforzada con led e informativa en vías ciclistas"
+   ],
+   "weak": [
+    "Sin propuestas internas u operativas de aplicación en el contrato"
+   ],
+   "hypothesis": {
+    "premia": "Propuestas aplicables de inmediato al contrato y sin coste para el ayuntamiento",
+    "penaliza": "Propuestas de interés teórico o sin aplicación operativa en el servicio"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I1lOKfyM0McBPRBxZ4nJ%2Fg%3D%3D",
+   "doc": "9c631797-08d7-47e6-a373-b0b057f3bd69"
+  },
+  {
+   "crit": "Plan de señalización informativa",
+   "max": 15,
+   "exp": "p:9643985",
+   "ref": "SERV/ABR/2022000005",
+   "title": "Servicios de mantenimiento, reposición y colocación de nueva señalización vial en el Término Municipal de Elche.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Elche",
+   "nuts": "ES521",
+   "date": "2023-08-03",
+   "offers": 4,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Documento claro y conciso",
+    "Propone 73 actuaciones, la cifra más alta presentada",
+    "Indica 42 señales propuestas"
+   ],
+   "weak": [
+    "No consta plan de señalización informativa que analizar"
+   ],
+   "hypothesis": {
+    "premia": "Mayor número de actuaciones propuestas dentro del ámbito y límites del pliego, con documento claro",
+    "penaliza": "No presentar el plan de señalización informativa"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=I1lOKfyM0McBPRBxZ4nJ%2Fg%3D%3D",
+   "doc": "9c631797-08d7-47e6-a373-b0b057f3bd69"
+  }
+ ]
+}

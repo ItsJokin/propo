@@ -1,0 +1,274 @@
+{
+ "cpv2": "60",
+ "generated": "2026-10-22T14:39:58.993Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Apartado 1.1 Adecuación del servicio a las características que llevan implícitas las personas usuarias de los centros",
+   "max": 5,
+   "exp": "p:19371356",
+   "ref": "528/2026",
+   "title": "Servicio de transporte de personas usuarias del Centro de Equipamientos Sociales Reina Sofía",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Fortuna",
+   "nuts": "ES620",
+   "date": "2026-07-17",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Descripción detallada del perfil funcional de los usuarios y de sus necesidades de accesibilidad.",
+    "Vehículos adaptados con plataforma elevadora, anclajes y cinturones específicos, con actualización continua de listados.",
+    "Protocolos de coordinación con el Centro y los servicios sociales municipales."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=DG5VzLiEdho7u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-033bf94a-618e-43dd-ae36-3aea2600ac83"
+  },
+  {
+   "crit": "Apartado 1.2 Viabilidad de los recorridos propuestos",
+   "max": 5,
+   "exp": "p:19371356",
+   "ref": "528/2026",
+   "title": "Servicio de transporte de personas usuarias del Centro de Equipamientos Sociales Reina Sofía",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Fortuna",
+   "nuts": "ES620",
+   "date": "2026-07-17",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Descripción precisa de las cuatro rutas, con tiempos de desplazamiento, recogida y bajada ajustados al PPTP.",
+    "Incluye información gráfica de los recorridos."
+   ],
+   "weak": [
+    "Uso de Google Maps, que no es una herramienta profesional de optimización; la propuesta se considera adecuada pero no mejorada."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=DG5VzLiEdho7u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-033bf94a-618e-43dd-ae36-3aea2600ac83"
+  },
+  {
+   "crit": "Apartado 1.3 Capacidad organizativa y de gestión para satisfacer las necesidades del contrato",
+   "max": 1,
+   "exp": "p:19371356",
+   "ref": "528/2026",
+   "title": "Servicio de transporte de personas usuarias del Centro de Equipamientos Sociales Reina Sofía",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Fortuna",
+   "nuts": "ES620",
+   "date": "2026-07-17",
+   "offers": 1,
+   "top": {
+    "pts": 1,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Organigrama funcional claro, con funciones definidas, protocolos de actuación y plan de formación adecuado."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=DG5VzLiEdho7u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-033bf94a-618e-43dd-ae36-3aea2600ac83"
+  },
+  {
+   "crit": "Apartado 1.4 Planes de mantenimiento",
+   "max": 5,
+   "exp": "p:19371356",
+   "ref": "528/2026",
+   "title": "Servicio de transporte de personas usuarias del Centro de Equipamientos Sociales Reina Sofía",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Fortuna",
+   "nuts": "ES620",
+   "date": "2026-07-17",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Compromiso de revisiones periódicas según fabricante y normativa, con plan de mantenimiento de plataformas y anclajes."
+   ],
+   "weak": [
+    "Nivel de detalle limitado: no desglosa operaciones mecánicas ni metodología de limpieza y mantenimiento."
+   ],
+   "hypothesis": {
+    "premia": "Desglose pormenorizado de operaciones mecánicas, metodología de limpieza y mantenimiento de plataformas y anclajes, con registros documentales.",
+    "penaliza": "Formulación general sin detallar procedimientos técnicos ni metodología, aunque cumpla los elementos esenciales del PPTP."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=DG5VzLiEdho7u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-033bf94a-618e-43dd-ae36-3aea2600ac83"
+  },
+  {
+   "crit": "Apartado 1.5 Antigüedad media de la flota de vehículos propuesta",
+   "max": 10,
+   "exp": "p:19371356",
+   "ref": "528/2026",
+   "title": "Servicio de transporte de personas usuarias del Centro de Equipamientos Sociales Reina Sofía",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Fortuna",
+   "nuts": "ES620",
+   "date": "2026-07-17",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Antigüedad media de la flota de 2,5 años, dentro del tramo de mayor puntuación."
+   ],
+   "weak": [
+    "La puntuación depende de la acreditación documental en fase de adjudicación."
+   ],
+   "hypothesis": {
+    "premia": "Antigüedad media de la flota inferior a tres años (10 puntos).",
+    "penaliza": "Antigüedad media superior a tres años y hasta cinco (5 puntos); por encima de cinco años el vehículo queda excluido."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=DG5VzLiEdho7u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-033bf94a-618e-43dd-ae36-3aea2600ac83"
+  },
+  {
+   "crit": "Apartado 1.6 Niveles de emisión de gases",
+   "max": 10,
+   "exp": "p:19371356",
+   "ref": "528/2026",
+   "title": "Servicio de transporte de personas usuarias del Centro de Equipamientos Sociales Reina Sofía",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Fortuna",
+   "nuts": "ES620",
+   "date": "2026-07-17",
+   "offers": 1,
+   "top": {
+    "pts": 4.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Flota con distintivos ambientales adecuados, que cumple los mínimos exigidos."
+   ],
+   "weak": [
+    "Tres vehículos con distintivo C y uno con ECO; ningún vehículo con distintivo Cero o ECO en toda la flota, lo que limita la puntuación."
+   ],
+   "hypothesis": {
+    "premia": "Flota con mayor proporción de vehículos con distintivos Cero o ECO según la escala del PCAP.",
+    "penaliza": "Vehículos con distintivo C o sin distintivo, que suman 1 punto por autobús frente a 2,5 del distintivo Cero."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=DG5VzLiEdho7u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-033bf94a-618e-43dd-ae36-3aea2600ac83"
+  },
+  {
+   "crit": "Apartado 1.7 Cobertura del servicio",
+   "max": 5,
+   "exp": "p:19371356",
+   "ref": "528/2026",
+   "title": "Servicio de transporte de personas usuarias del Centro de Equipamientos Sociales Reina Sofía",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Fortuna",
+   "nuts": "ES620",
+   "date": "2026-07-17",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Personal de reserva y procedimientos de sustitución para bajas y vacaciones.",
+    "Medidas de estabilidad laboral y equipos humanos estables por ruta."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=DG5VzLiEdho7u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-033bf94a-618e-43dd-ae36-3aea2600ac83"
+  },
+  {
+   "crit": "Apartado 1.8 Respuesta a incidencias",
+   "max": 3,
+   "exp": "p:19371356",
+   "ref": "528/2026",
+   "title": "Servicio de transporte de personas usuarias del Centro de Equipamientos Sociales Reina Sofía",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Fortuna",
+   "nuts": "ES620",
+   "date": "2026-07-17",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Vehículo de sustitución con características equivalentes y protocolo de actuación ante averías, con registro en hoja de ruta."
+   ],
+   "weak": [
+    "Se recomienda un seguimiento específico en ejecución para verificar los tiempos de respuesta reales."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=DG5VzLiEdho7u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-033bf94a-618e-43dd-ae36-3aea2600ac83"
+  },
+  {
+   "crit": "Apartado 1.9 Recogida de usuarios en casos sobrevenidos",
+   "max": 5,
+   "exp": "p:19371356",
+   "ref": "528/2026",
+   "title": "Servicio de transporte de personas usuarias del Centro de Equipamientos Sociales Reina Sofía",
+   "buyer": "Junta de Gobierno Local del Ayuntamiento de Fortuna",
+   "nuts": "ES620",
+   "date": "2026-07-17",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Protocolo con medios humanos y mecánicos adicionales, ajustes de ruta y coordinación con el Centro."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=DG5VzLiEdho7u6%2B%2FR7DUoA%3D%3D",
+   "doc": "2026-033bf94a-618e-43dd-ae36-3aea2600ac83"
+  },
+  {
+   "crit": "Implementación de un Sistema Inteligente de Transporte",
+   "max": 5,
+   "exp": "p:11772976",
+   "ref": "CMAYOR/2022/06Y02/195",
+   "title": "Servicio de transporte escolar de centros docentes públicos de titularidad de la Generalitat Valenciana para los cursos 2023-2024, 2024-2025",
+   "buyer": "Conselleria de Educación, Cultura y Deportes de la Generalitat Valenciana",
+   "nuts": "ES52",
+   "date": "2023-06-06",
+   "offers": 14,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 0
+   },
+   "best": [
+    "Plataforma web accesible desde cualquier dispositivo y apps para personal de ruta, usuarios y familias en Google Play y App Store.",
+    "Panel web con visualización en tiempo real de vehículos, horas de paso, retrasos, tiempos y kilometrajes.",
+    "Notificaciones de subida, bajada, llegada o salida y retrasos, con tres opciones de control de acceso del alumnado.",
+    "Plataforma web y apps para personal de ruta y familias disponibles en iOS y Android, sin instalación especial.",
+    "Localización en tiempo real en la app de familias, actualizada cada 10 segundos."
+   ],
+   "weak": [
+    "Sistema basado en un smartphone del auxiliar de ruta, sin aplicación ni plataforma específica.",
+    "Accesibilidad limitada a llamadas o mensajes al número del teléfono, sin cumplir la funcionalidad requerida.",
+    "Localización solo bajo solicitud previa al auxiliar, sin seguimiento ágil en tiempo real.",
+    "Notificaciones solo mediante mensajería genérica e incidencias informadas a posteriori, en menos de 12 horas."
+   ],
+   "hypothesis": {
+    "premia": "Plataforma web y apps para personal de ruta y familias, con localización en tiempo real, notificaciones automáticas de paso, subida, bajada y retrasos, y gestión de incidencias en la plataforma.",
+    "penaliza": "Depender de un único smartphone sin aplicación ni plataforma, con localización bajo solicitud previa y comunicación de incidencias a posteriori."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=jBzt%2Fxsm3Uumq21uxhbaVQ%3D%3D",
+   "doc": "d1d0ff4e-a5b9-4200-88ea-f062808cdc57"
+  }
+ ]
+}

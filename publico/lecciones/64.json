@@ -1,0 +1,257 @@
+{
+ "cpv2": "64",
+ "generated": "2026-10-22T14:39:58.992Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Accesos a Internet",
+   "max": 20,
+   "exp": "p:19226942",
+   "ref": "13773/2025",
+   "title": "Servizos de comunicacións municipais: telefonía fixa, telefonía móbil, datos e internet",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Monforte de Lemos",
+   "nuts": "ES112",
+   "date": "2026-08-24",
+   "offers": 2,
+   "top": {
+    "pts": 18.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 14
+   },
+   "best": [
+    "Sedes integradas en la VPN y con salida directa a Internet",
+    "Uso de red propia y características del firewall; mejoran lo requerido",
+    "Solución de calidad con red virtual corporativa y accesos con salida directa a Internet, adecuada al PPT",
+    "Grado de detalle alto"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Mencionar de forma concreta sedes, VPN, salida directa a Internet, red propia y firewall con sus características.",
+    "penaliza": "Información genérica que no detalla los accesos de cada sede ni el firewall."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SupdYa37LhmcCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-873a3b5c-ead2-4326-ae63-e58a5493341b"
+  },
+  {
+   "crit": "Telefonía Fixa",
+   "max": 8,
+   "exp": "p:19226942",
+   "ref": "13773/2025",
+   "title": "Servizos de comunicacións municipais: telefonía fixa, telefonía móbil, datos e internet",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Monforte de Lemos",
+   "nuts": "ES112",
+   "date": "2026-08-24",
+   "offers": 2,
+   "top": {
+    "pts": 7,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Terminales propuestos, plataforma de centralita en nube y formación ofertada",
+    "Mejoran el PPT con grado de detalle alto",
+    "Plataforma de centralita en nube Centrex IP",
+    "Arquitecturas y terminales definidos por tipo de sede, con grado de detalle alto"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Definir arquitecturas, terminales y formación para todos los tipos de sede, con alto grado de detalle.",
+    "penaliza": "Centrarse solo en algunas sedes sin definir el resto de centros."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SupdYa37LhmcCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-873a3b5c-ead2-4326-ae63-e58a5493341b"
+  },
+  {
+   "crit": "Telefonía Móbil",
+   "max": 8,
+   "exp": "p:19226942",
+   "ref": "13773/2025",
+   "title": "Servizos de comunicacións municipais: telefonía fixa, telefonía móbil, datos e internet",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Monforte de Lemos",
+   "nuts": "ES112",
+   "date": "2026-08-24",
+   "offers": 2,
+   "top": {
+    "pts": 7,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Líneas adicionales ofertadas y terminales propuestos",
+    "Mejoran lo requerido con grado de detalle alto",
+    "Líneas y terminales a suministrar y licencias de la capa de seguridad propuestas",
+    "Grado de detalle alto"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Concretar líneas, terminales, licencias de seguridad y mejoras sobre lo requerido.",
+    "penaliza": "No definir terminales ni tarifas de forma clara."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SupdYa37LhmcCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-873a3b5c-ead2-4326-ae63-e58a5493341b"
+  },
+  {
+   "crit": "Mantemento",
+   "max": 5,
+   "exp": "p:19226942",
+   "ref": "13773/2025",
+   "title": "Servizos de comunicacións municipais: telefonía fixa, telefonía móbil, datos e internet",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Monforte de Lemos",
+   "nuts": "ES112",
+   "date": "2026-08-24",
+   "offers": 2,
+   "top": {
+    "pts": 3.4,
+    "winner": true
+   },
+   "low": {
+    "pts": 3.4
+   },
+   "best": [
+    "Centro de atención a clientes y SLAs definidos",
+    "Grado de detalle alto",
+    "Define diferentes tipos de mantenimiento según activo o servicio"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Definir SLAs, centro de atención al cliente y tipos de mantenimiento según activo o servicio.",
+    "penaliza": "No definir de forma clara el tipo de mantenimiento ofertado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SupdYa37LhmcCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-873a3b5c-ead2-4326-ae63-e58a5493341b"
+  },
+  {
+   "crit": "Portabilidade",
+   "max": 1,
+   "exp": "p:19226942",
+   "ref": "13773/2025",
+   "title": "Servizos de comunicacións municipais: telefonía fixa, telefonía móbil, datos e internet",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Monforte de Lemos",
+   "nuts": "ES112",
+   "date": "2026-08-24",
+   "offers": 2,
+   "top": {
+    "pts": 0.6,
+    "winner": true
+   },
+   "low": {
+    "pts": 0.53
+   },
+   "best": [
+    "Planificación conjunta y definición de ventanas de portabilidad",
+    "Solución adecuada al PPT"
+   ],
+   "weak": [
+    "No marca tiempos ni plazos para las portabilidades",
+    "Grado de detalle medio"
+   ],
+   "hypothesis": {
+    "premia": "Fijar fases, ventanas, prazos y tiempos de portabilidad para fijos y móviles.",
+    "penaliza": "No marcar tiempos ni plazos para las portabilidades."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SupdYa37LhmcCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-873a3b5c-ead2-4326-ae63-e58a5493341b"
+  },
+  {
+   "crit": "Facturación",
+   "max": 1,
+   "exp": "p:19226942",
+   "ref": "13773/2025",
+   "title": "Servizos de comunicacións municipais: telefonía fixa, telefonía móbil, datos e internet",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Monforte de Lemos",
+   "nuts": "ES112",
+   "date": "2026-08-24",
+   "offers": 2,
+   "top": {
+    "pts": 0.8,
+    "winner": false
+   },
+   "low": {
+    "pts": 0.45
+   },
+   "best": [
+    "Mucha información sobre la plataforma de gestión de facturación y sus funcionalidades",
+    "Grado de detalle muy alto",
+    "Adecuada al requerido en el PPT"
+   ],
+   "weak": [
+    "Solución de poca calidad",
+    "No detalla con profundidad el proceso ni las herramientas de facturación"
+   ],
+   "hypothesis": {
+    "premia": "Detallar el proceso y las funcionalidades de la plataforma de facturación.",
+    "penaliza": "No detallar el proceso ni las herramientas de facturación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SupdYa37LhmcCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-873a3b5c-ead2-4326-ae63-e58a5493341b"
+  },
+  {
+   "crit": "Plan de implantación",
+   "max": 4,
+   "exp": "p:19226942",
+   "ref": "13773/2025",
+   "title": "Servizos de comunicacións municipais: telefonía fixa, telefonía móbil, datos e internet",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Monforte de Lemos",
+   "nuts": "ES112",
+   "date": "2026-08-24",
+   "offers": 2,
+   "top": {
+    "pts": 2.6,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.6
+   },
+   "best": [
+    "Plazo definido para la implantación y planificación en fases",
+    "Grado de detalle alto",
+    "Plazo ajustado a los pliegos",
+    "Modelo organizativo en fases con grado de detalle alto"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Plazo claro, planificación en fases y roles o funciones asignados.",
+    "penaliza": "Detalle medio y falta de precisión en la planificación."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SupdYa37LhmcCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-873a3b5c-ead2-4326-ae63-e58a5493341b"
+  },
+  {
+   "crit": "Finalización do contrato. Plan de devolución do servizo",
+   "max": 3,
+   "exp": "p:19226942",
+   "ref": "13773/2025",
+   "title": "Servizos de comunicacións municipais: telefonía fixa, telefonía móbil, datos e internet",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Monforte de Lemos",
+   "nuts": "ES112",
+   "date": "2026-08-24",
+   "offers": 2,
+   "top": {
+    "pts": 2.25,
+    "winner": true
+   },
+   "low": {
+    "pts": 2.25
+   },
+   "best": [
+    "Duración ajustada a lo solicitado",
+    "Grado de detalle muy alto",
+    "Plazo ajustado a lo requerido",
+    "Menciona entregables y fases a acometer"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Plazo ajustado y relación de entregables y fases a acometer con alto detalle.",
+    "penaliza": "Cronograma que no deja claro el plazo de devolución del servicio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=SupdYa37LhmcCF8sV%2BqtYA%3D%3D",
+   "doc": "2026-873a3b5c-ead2-4326-ae63-e58a5493341b"
+  }
+ ]
+}

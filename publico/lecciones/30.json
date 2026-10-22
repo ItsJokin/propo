@@ -1,0 +1,339 @@
+{
+ "cpv2": "30",
+ "generated": "2026-10-22T14:39:58.992Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "1.a. Capacidad",
+   "max": 7.5,
+   "exp": "p:19687987",
+   "ref": "T26018801",
+   "title": "Renovación de la infraestructura tecnológica de TUSSAM.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Procesadores un 29% más rápidos que el mínimo exigido y casi un 6% más de capacidad neta de almacenamiento."
+   ],
+   "weak": [
+    "No se oferta ninguna mejora en la memoria."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2BPR1A34fgiZ%2BF6L2uCfUWg%3D%3D",
+   "doc": "2026-1f478eb7-3c23-4dd2-9aea-5789e7f30bea"
+  },
+  {
+   "crit": "1.b. Eficiencia",
+   "max": 7.5,
+   "exp": "p:19687987",
+   "ref": "T26018801",
+   "title": "Renovación de la infraestructura tecnológica de TUSSAM.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Compresión, deduplicación y erasure coding aplicables a nivel global o por contenedor.",
+    "Uso de la RAM de la CVM como caché local de lectura.",
+    "Fuentes de alimentación con certificación 80 Plus Titanium."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2BPR1A34fgiZ%2BF6L2uCfUWg%3D%3D",
+   "doc": "2026-1f478eb7-3c23-4dd2-9aea-5789e7f30bea"
+  },
+  {
+   "crit": "1.c. Gestión",
+   "max": 7.5,
+   "exp": "p:19687987",
+   "ref": "T26018801",
+   "title": "Renovación de la infraestructura tecnológica de TUSSAM.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Gestión centralizada con Prism Central y automatización del ciclo de vida con Lifecycle Management.",
+    "Integración completa con Veeam y funciones de snapshots sin afectar al rendimiento de la VM.",
+    "Autoservicio de recuperación de snapshots y versiones de ficheros para el usuario."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2BPR1A34fgiZ%2BF6L2uCfUWg%3D%3D",
+   "doc": "2026-1f478eb7-3c23-4dd2-9aea-5789e7f30bea"
+  },
+  {
+   "crit": "1.d. Compatibilidad",
+   "max": 7.5,
+   "exp": "p:19687987",
+   "ref": "T26018801",
+   "title": "Renovación de la infraestructura tecnológica de TUSSAM.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 7.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Permite mezclar nodos de distintas generaciones y configuraciones, y ampliar RAM y discos.",
+    "Licencias en suscripción migrables a otro equipamiento certificado o a clouds públicos.",
+    "Soporta hipervisores Acropolis, VMware ESXi, Hyper-V y Citrix XenServer."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2BPR1A34fgiZ%2BF6L2uCfUWg%3D%3D",
+   "doc": "2026-1f478eb7-3c23-4dd2-9aea-5789e7f30bea"
+  },
+  {
+   "crit": "2. Medios técnicos y humanos asignados a la ejecución del contrato",
+   "max": 5,
+   "exp": "p:19687987",
+   "ref": "T26018801",
+   "title": "Renovación de la infraestructura tecnológica de TUSSAM.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Ofrece herramientas adicionales (Xray, Insight, Prism Security Dashboard, Lifecycle Management).",
+    "Equipo de 5 personas con perfiles senior y más de 8 años de experiencia."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2BPR1A34fgiZ%2BF6L2uCfUWg%3D%3D",
+   "doc": "2026-1f478eb7-3c23-4dd2-9aea-5789e7f30bea"
+  },
+  {
+   "crit": "3. Planificación",
+   "max": 5,
+   "exp": "p:19687987",
+   "ref": "T26018801",
+   "title": "Renovación de la infraestructura tecnológica de TUSSAM.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Planificación en 10 fases, con descripción, requisitos, tareas, entregables y finalización de cada una.",
+    "Aporta cronograma con una implantación estimada de 2 meses."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2BPR1A34fgiZ%2BF6L2uCfUWg%3D%3D",
+   "doc": "2026-1f478eb7-3c23-4dd2-9aea-5789e7f30bea"
+  },
+  {
+   "crit": "4. Metodología",
+   "max": 5,
+   "exp": "p:19687987",
+   "ref": "T26018801",
+   "title": "Renovación de la infraestructura tecnológica de TUSSAM.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 4.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Gestión de proyecto basada en PMP, con roles definidos y personas asignadas.",
+    "Modelo de relación con cinco comités y acuerdos de nivel de servicio de seguimiento."
+   ],
+   "weak": [
+    "Periodicidad y composición de algunos comités se dejan para fijar tras el arranque, sin propuesta inicial."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2BPR1A34fgiZ%2BF6L2uCfUWg%3D%3D",
+   "doc": "2026-1f478eb7-3c23-4dd2-9aea-5789e7f30bea"
+  },
+  {
+   "crit": "Funcionalidades técnicas del sistema",
+   "max": 25,
+   "exp": "p:19207710",
+   "ref": "C.E. 07/2026",
+   "title": "Adquisición e implantación de un nuevo modelo de gestión de mantenimiento asistido por ordenador (GMAO)",
+   "buyer": "Comisión Ejecutiva de la Limpieza Pública y Protección Ambiental Sociedad Anónima Municipal (LIPASAM)",
+   "nuts": "ES618",
+   "date": "2026-07-23",
+   "offers": 4,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Se describe como software con módulos de alta complejidad: activos, órdenes de trabajo, mantenimiento preventivo, predictivo y movilidad para técnicos.",
+    "Alto grado de automatización y trazabilidad completa de operaciones, con BI y cuadros de mando.",
+    "Módulo propio de Business Intelligence, cuadros de mando personalizables por usuario e informes automáticos exportables.",
+    "Interfaz intuitiva y personalizable por roles y perfiles, comprobada en la demo."
+   ],
+   "weak": [
+    "En la demo, funcionalidad significativamente más básica que la descrita en la oferta.",
+    "No se evidencian informes personalizados, cuadros de mando por perfil ni integración clara entre activos, órdenes de trabajo y recursos.",
+    "No es posible evaluar el nivel de cumplimiento funcional por falta de evidencias."
+   ],
+   "hypothesis": {
+    "premia": "Funcionalidades mostradas y verificadas en la demo, con BI y cuadros de mando por usuario, automatización y trazabilidad.",
+    "penaliza": "Funcionalidades descritas en la oferta pero no evidenciadas en la demo, o software orientado a instalaciones sin enfoque en flota y talleres."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qIuEKhh5m4nzAq95uGTrDQ%3D%3D",
+   "doc": "2026-021e1188-06d2-4b8e-933e-bd5c7d14538c"
+  },
+  {
+   "crit": "Capacitación del equipo técnico implantador",
+   "max": 5,
+   "exp": "p:19207710",
+   "ref": "C.E. 07/2026",
+   "title": "Adquisición e implantación de un nuevo modelo de gestión de mantenimiento asistido por ordenador (GMAO)",
+   "buyer": "Comisión Ejecutiva de la Limpieza Pública y Protección Ambiental Sociedad Anónima Municipal (LIPASAM)",
+   "nuts": "ES618",
+   "date": "2026-07-23",
+   "offers": 3,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Currículos aportados con experiencia en mantenimiento de flota, incluido vehículos de recogida de residuos y limpieza viaria.",
+    "Equipo con experiencia específica en flota de vehículos y en recogida de residuos y limpieza viaria, con currículos aportados."
+   ],
+   "weak": [
+    "Perfiles no nominativos y sin acreditar proyectos de gestión de flotas ni de servicios de limpieza viaria y recogida de residuos."
+   ],
+   "hypothesis": {
+    "premia": "Equipo con experiencia acreditada en flota de vehículos y en servicios de recogida de residuos y limpieza viaria.",
+    "penaliza": "Perfiles no nominativos o sin experiencia acreditada en flota ni en limpieza viaria."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qIuEKhh5m4nzAq95uGTrDQ%3D%3D",
+   "doc": "2026-021e1188-06d2-4b8e-933e-bd5c7d14538c"
+  },
+  {
+   "crit": "Implantación sistema GMAO ofertado",
+   "max": 5,
+   "exp": "p:19207710",
+   "ref": "C.E. 07/2026",
+   "title": "Adquisición e implantación de un nuevo modelo de gestión de mantenimiento asistido por ordenador (GMAO)",
+   "buyer": "Comisión Ejecutiva de la Limpieza Pública y Protección Ambiental Sociedad Anónima Municipal (LIPASAM)",
+   "nuts": "ES618",
+   "date": "2026-07-23",
+   "offers": 4,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Referencias en sanidad con gestión integral de flota (Servicio Andaluz de Salud, 800 vehículos) y en aeropuertos y aviación civil.",
+    "Implantaciones en Urbaser, FCC Medio Ambiente, GS FRESH, Metro de Sevilla, EMT de Valencia y Tranvía de Cádiz, entre otras."
+   ],
+   "weak": [
+    "Menciona implantaciones sin especificar alcance, y no se evidencian implantaciones en flotas de limpieza viaria ni recogida de residuos.",
+    "No se evidencian implantaciones específicas en flotas de vehículos de limpieza viaria y recogida de residuos."
+   ],
+   "hypothesis": {
+    "premia": "Implantaciones de referencia en servicios de limpieza viaria, recogida de residuos o gestión de flotas grandes.",
+    "penaliza": "Falta de implantaciones en flotas de limpieza viaria y recogida de residuos, o alcance de las referencias no especificado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qIuEKhh5m4nzAq95uGTrDQ%3D%3D",
+   "doc": "2026-021e1188-06d2-4b8e-933e-bd5c7d14538c"
+  },
+  {
+   "crit": "Plan de implementación y formación",
+   "max": 3,
+   "exp": "p:19207710",
+   "ref": "C.E. 07/2026",
+   "title": "Adquisición e implantación de un nuevo modelo de gestión de mantenimiento asistido por ordenador (GMAO)",
+   "buyer": "Comisión Ejecutiva de la Limpieza Pública y Protección Ambiental Sociedad Anónima Municipal (LIPASAM)",
+   "nuts": "ES618",
+   "date": "2026-07-23",
+   "offers": 4,
+   "top": {
+    "pts": null,
+    "winner": true
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Cronograma por fases detallado, con plan de migración de datos y formación por perfiles con duración y contenido.",
+    "Cronograma detallado por fases (diagnóstico, desarrollo, implantación, pruebas y puesta en marcha) y plan detallado de migración de datos."
+   ],
+   "weak": [
+    "Propone implantación en 5 meses frente a los 10 del PPTP, sin justificación suficiente.",
+    "Plan general sin desarrollo detallado de subfases; plazos considerados poco realistas."
+   ],
+   "hypothesis": {
+    "premia": "Cronograma detallado por fases y subfases, plan de migración de datos y formación por perfiles.",
+    "penaliza": "Plazos poco realistas o no justificados, planificación general sin subfases y ausencia de estrategia de migración de datos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qIuEKhh5m4nzAq95uGTrDQ%3D%3D",
+   "doc": "2026-021e1188-06d2-4b8e-933e-bd5c7d14538c"
+  },
+  {
+   "crit": "Capacidad de integración con otros sistemas",
+   "max": 4,
+   "exp": "p:19207710",
+   "ref": "C.E. 07/2026",
+   "title": "Adquisición e implantación de un nuevo modelo de gestión de mantenimiento asistido por ordenador (GMAO)",
+   "buyer": "Comisión Ejecutiva de la Limpieza Pública y Protección Ambiental Sociedad Anónima Municipal (LIPASAM)",
+   "nuts": "ES618",
+   "date": "2026-07-23",
+   "offers": 2,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Integración con SAP, SGA, AD, sistemas GIS y ejemplos de modelos de integración.",
+    "Capacidad de integración funcional con ERP y otros sistemas básicos."
+   ],
+   "weak": [
+    "Menor evidencia de integraciones avanzadas o estandarizadas, con mayor dependencia de desarrollos a medida."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=qIuEKhh5m4nzAq95uGTrDQ%3D%3D",
+   "doc": "2026-021e1188-06d2-4b8e-933e-bd5c7d14538c"
+  }
+ ]
+}

@@ -1,0 +1,777 @@
+{
+ "cpv2": "85",
+ "generated": "2026-10-22T14:39:58.991Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Criterio 1: Fundamentación y adecuación del proyecto a las características de las personas atendidas",
+   "max": 15,
+   "exp": "p:18182410",
+   "ref": "04101/2025/102-SER",
+   "title": "La prestación del servicio para la gestión integral de 50 plazas en el Centro de Día Municipal para personas mayores dependientes “La Purísi",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-31",
+   "offers": 7,
+   "top": {
+    "pts": 15,
+    "winner": false
+   },
+   "low": {
+    "pts": 13
+   },
+   "best": [
+    "Aproximación amplia al envejecimiento y la dependencia, con datos municipales, análisis del barrio y actuaciones dirigidas a familias.",
+    "Marco normativo muy amplio, datos municipales y perfil real de usuarios, con propuesta sólida para familias y cuidadores."
+   ],
+   "weak": [
+    "No contextualiza la realidad urbana y sociodemográfica de València ni del barrio.",
+    "Apartado de familiares y cuidadores sintético y centrado en la dimensión organizativa."
+   ],
+   "hypothesis": {
+    "premia": "Marco normativo completo, datos sociodemográficos de la ciudad y del barrio, perfil real de usuarios y un apartado específico y desarrollado sobre familias y cuidadores.",
+    "penaliza": "Falta de contextualización territorial y sociodemográfica, y tratamiento de familias y cuidadores sintético o ausente."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rT51HIvga3Xi0Kd8%2Brcp6w%3D%3D",
+   "doc": "2026-2e827ae8-78f6-4722-b930-a4d3a532fe04"
+  },
+  {
+   "crit": "Criterio 2: Organización del servicio",
+   "max": 15,
+   "exp": "p:18182410",
+   "ref": "04101/2025/102-SER",
+   "title": "La prestación del servicio para la gestión integral de 50 plazas en el Centro de Día Municipal para personas mayores dependientes “La Purísi",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-31",
+   "offers": 7,
+   "top": {
+    "pts": 15,
+    "winner": false
+   },
+   "low": {
+    "pts": 14
+   },
+   "best": [
+    "Metodología centrada en la persona muy concreta, con programas terapéuticos, ocupacionales y de estimulación bien desarrollados.",
+    "Enfoque ACP y ACR, circuito asistencial definido, programación semanal e inclusión de la administración contratante en los procesos."
+   ],
+   "weak": [
+    "La propuesta tiene 229 páginas, por encima del máximo de 175 fijado en el pliego."
+   ],
+   "hypothesis": {
+    "premia": "Metodología ACP o ACR aplicada de forma operativa, con circuito asistencial definido, programación semanal, responsables y periodicidades.",
+    "penaliza": "Descripción meramente declarativa, falta de cronograma de implantación y exceder el límite de extensión fijado en el pliego."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rT51HIvga3Xi0Kd8%2Brcp6w%3D%3D",
+   "doc": "2026-2e827ae8-78f6-4722-b930-a4d3a532fe04"
+  },
+  {
+   "crit": "Criterio 3: Viabilidad y coherencia técnica del proyecto",
+   "max": 15,
+   "exp": "p:18182410",
+   "ref": "04101/2025/102-SER",
+   "title": "La prestación del servicio para la gestión integral de 50 plazas en el Centro de Día Municipal para personas mayores dependientes “La Purísi",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-07-31",
+   "offers": 7,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 11
+   },
+   "best": [
+    "Sistema de control basado en procedimientos normalizados, indicadores mensuales, auditorías internas y tratamiento de quejas y reclamaciones.",
+    "Niveles de apoyo por persona, registros de actividades, indicadores por áreas y checklist de cumplimiento normativo."
+   ],
+   "weak": [
+    "Indicadores de gestión poco desarrollados para evaluar el funcionamiento global del centro.",
+    "No nombra a la administración contratante en evaluación, control ni coordinación.",
+    "No concreta los instrumentos para la revisión periódica de resultados."
+   ],
+   "hypothesis": {
+    "premia": "Indicadores de gestión concretos, auditorías y registros, y mención explícita de la administración contratante en la coordinación y el control.",
+    "penaliza": "No mencionar a la administración contratante, usar protocolos no adaptados al recurso, errores en la estructura municipal, horarios de transporte incompatibles e indicadores de resultados poco concretos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=rT51HIvga3Xi0Kd8%2Brcp6w%3D%3D",
+   "doc": "2026-2e827ae8-78f6-4722-b930-a4d3a532fe04"
+  },
+  {
+   "crit": "I.1 Experiencia mínima acreditada en la prestación y gestión de servicios de alojamiento para personas sin hogar",
+   "max": 15,
+   "exp": "p:18943067",
+   "ref": "2024000004/GEST_SP/SOC",
+   "title": "Procedimiento de concertación social para la gestión del Centro de Integración Social de Burgos, CEIS-BUR (2024-2028)",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Experiencia acreditada de 28 años y 9 meses, por encima del tramo de más de 6 años."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=4oyRxXo4Jxw4NavIWzMcHA%3D%3D",
+   "doc": "2026-8bc60181-a444-4795-9092-5e7f42f0370c"
+  },
+  {
+   "crit": "I.2 Prácticas innovadoras y/o buenas prácticas, certificados de calidad y/o premios obtenidos",
+   "max": 9,
+   "exp": "p:18943067",
+   "ref": "2024000004/GEST_SP/SOC",
+   "title": "Procedimiento de concertación social para la gestión del Centro de Integración Social de Burgos, CEIS-BUR (2024-2028)",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Certificados ISO 9001, ISO 14001 y EFQM 4000+, además de varios premios y reconocimientos."
+   ],
+   "weak": [
+    "La metodología OKR se encuentra en proceso de implantación y no consolidada."
+   ],
+   "hypothesis": {
+    "premia": "Certificaciones de calidad reconocidas (ISO, EFQM) y premios oficiales ya implantados.",
+    "penaliza": "Metodologías que todavía están en proceso de implantación y no consolidadas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=4oyRxXo4Jxw4NavIWzMcHA%3D%3D",
+   "doc": "2026-8bc60181-a444-4795-9092-5e7f42f0370c"
+  },
+  {
+   "crit": "I.3 Programa de voluntariado como complemento a la actividad del centro",
+   "max": 8,
+   "exp": "p:18943067",
+   "ref": "2024000004/GEST_SP/SOC",
+   "title": "Procedimiento de concertación social para la gestión del Centro de Integración Social de Burgos, CEIS-BUR (2024-2028)",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "Número de voluntarios limitado.",
+    "No indica en qué tareas del programa participa el voluntariado."
+   ],
+   "hypothesis": {
+    "premia": "Programas con número relevante de voluntarios y tareas concretas definidas.",
+    "penaliza": "Número limitado de voluntarios y falta de detalle sobre sus tareas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=4oyRxXo4Jxw4NavIWzMcHA%3D%3D",
+   "doc": "2026-8bc60181-a444-4795-9092-5e7f42f0370c"
+  },
+  {
+   "crit": "I.4 Plan de Igualdad de Oportunidades y/o buenas prácticas en conciliación e igualdad",
+   "max": 8,
+   "exp": "p:18943067",
+   "ref": "2024000004/GEST_SP/SOC",
+   "title": "Procedimiento de concertación social para la gestión del Centro de Integración Social de Burgos, CEIS-BUR (2024-2028)",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Plan de Igualdad implantado desde 2020 (Óptima 2020)."
+   ],
+   "weak": [
+    "No se especifica en qué medidas del plan se ha gastado el importe indicado."
+   ],
+   "hypothesis": {
+    "premia": "Planes implantados y costes asociados detallados por medida.",
+    "penaliza": "Indicar un coste sin especificar en qué medidas se aplica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=4oyRxXo4Jxw4NavIWzMcHA%3D%3D",
+   "doc": "2026-8bc60181-a444-4795-9092-5e7f42f0370c"
+  },
+  {
+   "crit": "II.1 Titularidad y disponibilidad de centro residencial, pisos y talleres",
+   "max": 6,
+   "exp": "p:18943067",
+   "ref": "2024000004/GEST_SP/SOC",
+   "title": "Procedimiento de concertación social para la gestión del Centro de Integración Social de Burgos, CEIS-BUR (2024-2028)",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 0,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Dispone de centro residencial, dos viviendas municipales y taller ocupacional cedido."
+   ],
+   "weak": [
+    "No hay incremento de dotación de espacios sobre lo exigido."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=4oyRxXo4Jxw4NavIWzMcHA%3D%3D",
+   "doc": "2026-8bc60181-a444-4795-9092-5e7f42f0370c"
+  },
+  {
+   "crit": "II.2 Ajuste de las plazas ofertadas a los mínimos establecidos (incremento de plazas residenciales, tuteladas y de taller)",
+   "max": 8,
+   "exp": "p:18943067",
+   "ref": "2024000004/GEST_SP/SOC",
+   "title": "Procedimiento de concertación social para la gestión del Centro de Integración Social de Burgos, CEIS-BUR (2024-2028)",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 0,
+    "winner": true
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "No hay incremento de plazas en ninguna de las fases; se ofertan los mínimos."
+   ],
+   "hypothesis": {
+    "premia": "Incrementos de plazas proporcionados y justificados en cada fase.",
+    "penaliza": "Ofertar únicamente los mínimos establecidos en las bases."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=4oyRxXo4Jxw4NavIWzMcHA%3D%3D",
+   "doc": "2026-8bc60181-a444-4795-9092-5e7f42f0370c"
+  },
+  {
+   "crit": "II.4 Ajuste a otras condiciones técnicas y servicios adicionales a los recogidos en el art. 5.3",
+   "max": 10,
+   "exp": "p:18943067",
+   "ref": "2024000004/GEST_SP/SOC",
+   "title": "Procedimiento de concertación social para la gestión del Centro de Integración Social de Burgos, CEIS-BUR (2024-2028)",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Ofrece lavandería, servicio de transporte y un programa para personas cronificadas."
+   ],
+   "weak": [
+    "Falta de concreción en el programa para personas cronificadas."
+   ],
+   "hypothesis": {
+    "premia": "Servicios adicionales concretados y con pertinencia para la atención de usuarios.",
+    "penaliza": "Servicios complementarios poco concretados en su desarrollo."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=4oyRxXo4Jxw4NavIWzMcHA%3D%3D",
+   "doc": "2026-8bc60181-a444-4795-9092-5e7f42f0370c"
+  },
+  {
+   "crit": "II.5 Metodología",
+   "max": 15,
+   "exp": "p:18943067",
+   "ref": "2024000004/GEST_SP/SOC",
+   "title": "Procedimiento de concertación social para la gestión del Centro de Integración Social de Burgos, CEIS-BUR (2024-2028)",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 14,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Identificación adecuada del perfil de personas usuarias.",
+    "Fases de intervención bien explicitadas.",
+    "Presentación pertinente y bien desarrollada."
+   ],
+   "weak": [
+    "En la segunda y tercera fase no se establece una duración orientativa."
+   ],
+   "hypothesis": {
+    "premia": "Perfil de usuarios bien identificado y fases con duración orientativa definida.",
+    "penaliza": "Fases sin duración orientativa."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=4oyRxXo4Jxw4NavIWzMcHA%3D%3D",
+   "doc": "2026-8bc60181-a444-4795-9092-5e7f42f0370c"
+  },
+  {
+   "crit": "II.6 Incardinación con restantes servicios sociales del municipio",
+   "max": 13,
+   "exp": "p:18943067",
+   "ref": "2024000004/GEST_SP/SOC",
+   "title": "Procedimiento de concertación social para la gestión del Centro de Integración Social de Burgos, CEIS-BUR (2024-2028)",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-31",
+   "offers": 1,
+   "top": {
+    "pts": 11,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Coordinación adecuada con otras entidades de servicios sociales del municipio."
+   ],
+   "weak": [
+    "Se observan algunas incorrecciones respecto al registro en SAUSS."
+   ],
+   "hypothesis": {
+    "premia": "Procedimientos de coordinación con servicios municipales correctamente registrados.",
+    "penaliza": "Incorrecciones en el registro de información en SAUSS."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=4oyRxXo4Jxw4NavIWzMcHA%3D%3D",
+   "doc": "2026-8bc60181-a444-4795-9092-5e7f42f0370c"
+  },
+  {
+   "crit": "Modelo de gestión y desarrollo de la casa de acogida",
+   "max": 10,
+   "exp": "p:19257419",
+   "ref": "2025000118/SERV/INM",
+   "title": "Procedimiento abierto, a través de varios criterios y tramitación ordinaria para la licitación de la gestión de la Casa de acogida de \"LA EN",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 7,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Describe el servicio como recurso residencial y espacio de apoyo, ajustado a las necesidades de la población destinataria",
+    "Desarrolla completamente los principios de intervención (8 principios, enfoque centrado en la persona)",
+    "Encuadra el recurso en el entorno comunitario, mencionando el trabajo en red"
+   ],
+   "weak": [
+    "La propuesta es coherente, pero no desciende a la estructura y al detalle, con referencias generalistas"
+   ],
+   "hypothesis": {
+    "premia": "Descripción del servicio como recurso concreto, con necesidades cubiertas, principios de intervención completos y encuadre comunitario",
+    "penaliza": "Propuesta coherente pero con referencias generalistas y sin desarrollo de estructura y detalle"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ACH3luOrzSLI8aL3PRS10Q%3D%3D",
+   "doc": "2026-55b56cad-7e2c-4caf-b9b8-84e894285008"
+  },
+  {
+   "crit": "Fundamentación del proyecto y objetivos generales y específicos",
+   "max": 10,
+   "exp": "p:19257419",
+   "ref": "2025000118/SERV/INM",
+   "title": "Procedimiento abierto, a través de varios criterios y tramitación ordinaria para la licitación de la gestión de la Casa de acogida de \"LA EN",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Ajuste completo a los objetivos municipales, completando los apartados que se desarrollan en el pliego",
+    "Objetivos concretos y detallados, adecuados al perfil y realidad social de las personas residentes",
+    "Distingue residencia estable y temporal, y analiza las características de sus usuarios/as"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ACH3luOrzSLI8aL3PRS10Q%3D%3D",
+   "doc": "2026-55b56cad-7e2c-4caf-b9b8-84e894285008"
+  },
+  {
+   "crit": "Desarrollo y adecuación del proyecto al modelo teórico de intervención propuesto en las prescripciones",
+   "max": 10,
+   "exp": "p:19257419",
+   "ref": "2025000118/SERV/INM",
+   "title": "Procedimiento abierto, a través de varios criterios y tramitación ordinaria para la licitación de la gestión de la Casa de acogida de \"LA EN",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Analogía perfecta con el pliego de prescripciones técnicas, que amplía sus apartados",
+    "Buen desarrollo de los niveles de intervención (programa general, de refuerzo y de apoyo)",
+    "Plan de Desarrollo Personal completo, con marco ético como enfoque prioritario"
+   ],
+   "weak": [
+    "La coordinación se menciona (comisiones de seguimiento y valoración) sin un modelo concreto que facilite la adaptación"
+   ],
+   "hypothesis": {
+    "premia": "Analogía con el pliego que amplía sus apartados y desarrollo completo de niveles de intervención y Plan de Desarrollo Personal",
+    "penaliza": "Coordinación solo referenciada, sin modelo concreto que facilite la adaptación al modelo municipal"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ACH3luOrzSLI8aL3PRS10Q%3D%3D",
+   "doc": "2026-55b56cad-7e2c-4caf-b9b8-84e894285008"
+  },
+  {
+   "crit": "Protocolos de acceso y funcionamiento de la casa acogida",
+   "max": 5,
+   "exp": "p:19257419",
+   "ref": "2025000118/SERV/INM",
+   "title": "Procedimiento abierto, a través de varios criterios y tramitación ordinaria para la licitación de la gestión de la Casa de acogida de \"LA EN",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 3.75,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Fase de ingreso y diagnóstico social desarrollada, con tareas enumeradas por fase",
+    "Áreas de intervención (sanitaria, social, ocupacional y formativa) descritas de forma concreta",
+    "Régimen de vida y causas de alta descritos de forma exhaustiva y correcta"
+   ],
+   "weak": [
+    "Servicios enumerados sin desarrollo diferenciado y sin mencionar orientación, información y acompañamiento",
+    "Descripción de la organización y del plan de trabajo de cada servicio incompleta",
+    "No desarrolla un protocolo de coordinación con la familia"
+   ],
+   "hypothesis": {
+    "premia": "Fases de ingreso y acogida con tareas detalladas y áreas de intervención descritas de forma concreta",
+    "penaliza": "Servicios solo enumerados, sin desarrollo ni servicios de orientación, información y acompañamiento, y ausencia de protocolo con la familia"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ACH3luOrzSLI8aL3PRS10Q%3D%3D",
+   "doc": "2026-55b56cad-7e2c-4caf-b9b8-84e894285008"
+  },
+  {
+   "crit": "Organización, funcionamiento y coordinación interna del equipo",
+   "max": 5,
+   "exp": "p:19257419",
+   "ref": "2025000118/SERV/INM",
+   "title": "Procedimiento abierto, a través de varios criterios y tramitación ordinaria para la licitación de la gestión de la Casa de acogida de \"LA EN",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 3.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Cumple el equipo exigido y lo amplía con un/a educador/a social a tiempo parcial",
+    "Descripción correcta y detallada de las funciones de cada profesional del equipo"
+   ],
+   "weak": [
+    "Turnos descritos de forma genérica, sin número de profesionales por turno ni gestión de bajas",
+    "La coordinación interprofesional solo cita ámbitos, sin agentes, temporalización ni medios"
+   ],
+   "hypothesis": {
+    "premia": "Equipo que cumple y amplía lo exigido, con funciones de cada profesional descritas en detalle",
+    "penaliza": "Turnos genéricos sin número de profesionales ni gestión de bajas, y coordinación interprofesional sin agentes ni temporalización"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ACH3luOrzSLI8aL3PRS10Q%3D%3D",
+   "doc": "2026-55b56cad-7e2c-4caf-b9b8-84e894285008"
+  },
+  {
+   "crit": "Sistemas e indicadores de evaluación de los servicios prestados en la casa de acogida",
+   "max": 5,
+   "exp": "p:19257419",
+   "ref": "2025000118/SERV/INM",
+   "title": "Procedimiento abierto, a través de varios criterios y tramitación ordinaria para la licitación de la gestión de la Casa de acogida de \"LA EN",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 2.5,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Enumera indicadores de procesos y de resultados"
+   ],
+   "weak": [
+    "Sin estrategia global ni modelo de evaluación",
+    "No explica cómo evaluar los Planes de Desarrollo Personal",
+    "No aborda cómo usar la información cuando las actividades resultan poco eficaces",
+    "No enmarca la evaluación en un modelo de calidad",
+    "No detalla cómo valorar las relaciones con el entorno comunitario"
+   ],
+   "hypothesis": {
+    "premia": "Indicadores de procesos y resultados vinculados a una estrategia y a un modelo de evaluación y calidad",
+    "penaliza": "Enumeración de indicadores sin estrategia, sin método de evaluación de los planes personales ni uso de resultados"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ACH3luOrzSLI8aL3PRS10Q%3D%3D",
+   "doc": "2026-55b56cad-7e2c-4caf-b9b8-84e894285008"
+  },
+  {
+   "crit": "Sistema de registro de actividades. Modelo de memoria anual. Documentación a utilizar",
+   "max": 5,
+   "exp": "p:19257419",
+   "ref": "2025000118/SERV/INM",
+   "title": "Procedimiento abierto, a través de varios criterios y tramitación ordinaria para la licitación de la gestión de la Casa de acogida de \"LA EN",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 0.75,
+    "winner": false
+   },
+   "low": null,
+   "best": [],
+   "weak": [
+    "Enumera documentos de registro sin aportar modelos ni descripciones de registros diarios, comunicaciones o incidencias",
+    "No detalla qué profesional rellena cada documento ni aporta ejemplos",
+    "No aporta modelo de hojas de derivación, informes o actas",
+    "No aporta modelo de la estructura de la memoria anual"
+   ],
+   "hypothesis": {
+    "premia": "Aportación de modelos, ejemplos y descripciones de registros, derivaciones, informes y memoria anual",
+    "penaliza": "Enumeración de documentos sin modelos, sin responsables de cada registro y sin estructura de memoria"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ACH3luOrzSLI8aL3PRS10Q%3D%3D",
+   "doc": "2026-55b56cad-7e2c-4caf-b9b8-84e894285008"
+  },
+  {
+   "crit": "Sistema de coordinación con los servicios técnico municipales",
+   "max": 5,
+   "exp": "p:19257419",
+   "ref": "2025000118/SERV/INM",
+   "title": "Procedimiento abierto, a través de varios criterios y tramitación ordinaria para la licitación de la gestión de la Casa de acogida de \"LA EN",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Burgos",
+   "nuts": "ES412",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 2.75,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Comisión mixta de seguimiento: quién la forma y sus objetivos, correctos y adecuados",
+    "Comisión de valoración: quién la forma y sus objetivos, correctos y adecuados"
+   ],
+   "weak": [
+    "Menciona la coordinación con el Ayuntamiento sin aportar un modelo desarrollado y concreto",
+    "Ubica las comisiones en el protocolo de acceso y no como recurso de coordinación"
+   ],
+   "hypothesis": {
+    "premia": "Comisiones de seguimiento y valoración con composición y objetivos claros, y modelo de interlocución desarrollado",
+    "penaliza": "Coordinación mencionada sin modelo concreto y comisiones ubicadas en el protocolo de acceso en lugar de como recurso de coordinación"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ACH3luOrzSLI8aL3PRS10Q%3D%3D",
+   "doc": "2026-55b56cad-7e2c-4caf-b9b8-84e894285008"
+  },
+  {
+   "crit": "Fundamentación y Metodología",
+   "max": 2,
+   "exp": "p:19357576",
+   "ref": "300/2025/02703",
+   "title": "Organización y desarrollo de un Centro integrado de menores en situación de vulnerabilidad en el barrio de la Concepción en el Distrito de C",
+   "buyer": "Distrito de Ciudad Lineal",
+   "nuts": "ES300",
+   "date": "2026-07-17",
+   "offers": 6,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": {
+    "pts": 1.5
+   },
+   "best": [
+    "Fundamentación sólida con diagnóstico detallado del distrito y barrio",
+    "Enfoque de derechos de la infancia y perspectiva de género",
+    "Fundamentación sólida en normativa internacional, estatal y autonómica",
+    "Metodología activa y participativa basada en el juego y espacios seguros"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Diagnóstico territorial detallado y marco normativo actualizado con metodología clara.",
+    "penaliza": "No se registran debilidades en los comentarios."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=6LnTLodWEwp4zIRvjBVCSw%3D%3D",
+   "doc": "2026-6a72e068-1310-466e-8fce-5caff37828f4"
+  },
+  {
+   "crit": "Descripción de estrategias de intervención",
+   "max": 3,
+   "exp": "p:19357576",
+   "ref": "300/2025/02703",
+   "title": "Organización y desarrollo de un Centro integrado de menores en situación de vulnerabilidad en el barrio de la Concepción en el Distrito de C",
+   "buyer": "Distrito de Ciudad Lineal",
+   "nuts": "ES300",
+   "date": "2026-07-17",
+   "offers": 6,
+   "top": {
+    "pts": 3,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Estrategias bien diferenciadas en niveles individual, grupal y comunitario",
+    "Estrategias operativas y adaptadas a situaciones de vulnerabilidad",
+    "Estrategias detalladas en niveles individual, grupal y familiar",
+    "Incorpora perspectiva de género, TIC y habilidades psicosociales"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Estrategias diferenciadas y operativas en niveles individual, grupal, familiar y comunitario.",
+    "penaliza": "No se registran debilidades en los comentarios."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=6LnTLodWEwp4zIRvjBVCSw%3D%3D",
+   "doc": "2026-6a72e068-1310-466e-8fce-5caff37828f4"
+  },
+  {
+   "crit": "Organización y gestión del proyecto",
+   "max": 26,
+   "exp": "p:19357576",
+   "ref": "300/2025/02703",
+   "title": "Organización y desarrollo de un Centro integrado de menores en situación de vulnerabilidad en el barrio de la Concepción en el Distrito de C",
+   "buyer": "Distrito de Ciudad Lineal",
+   "nuts": "ES300",
+   "date": "2026-07-17",
+   "offers": 6,
+   "top": {
+    "pts": 25,
+    "winner": false
+   },
+   "low": {
+    "pts": 13
+   },
+   "best": [
+    "Jornada diaria con franjas horarias claras y planificación multinivel",
+    "Protocolos muy completos y plan de continuidad ante situaciones excepcionales",
+    "Cronograma completo, itinerarios claros y plataforma digital con indicadores en tiempo real",
+    "Protocolos operativos detallados y recursos materiales bien definidos"
+   ],
+   "weak": [
+    "No presenta una organización del servicio que desarrolle claramente las actividades ordinarias",
+    "No detalla el reparto del tiempo de las actividades socioeducativas, emocionales y de ocio"
+   ],
+   "hypothesis": {
+    "premia": "Detalle de horarios, ratios, turnos, protocolos operativos, planificación multinivel y herramientas técnicas con modelos completos.",
+    "penaliza": "No describir una organización del servicio que desarrolle las actividades ordinarias ni el reparto del tiempo de actividades."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=6LnTLodWEwp4zIRvjBVCSw%3D%3D",
+   "doc": "2026-6a72e068-1310-466e-8fce-5caff37828f4"
+  },
+  {
+   "crit": "Protocolos y sistemas de coordinación",
+   "max": 2,
+   "exp": "p:19357576",
+   "ref": "300/2025/02703",
+   "title": "Organización y desarrollo de un Centro integrado de menores en situación de vulnerabilidad en el barrio de la Concepción en el Distrito de C",
+   "buyer": "Distrito de Ciudad Lineal",
+   "nuts": "ES300",
+   "date": "2026-07-17",
+   "offers": 6,
+   "top": {
+    "pts": 2,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Coordinación estructurada con Servicios Sociales y otros agentes",
+    "Define periodicidades de reuniones y protocolos internos y externos",
+    "Protocolo exhaustivo con Servicios Sociales: derivaciones, informes periódicos y participación en ETMF"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Protocolos con periodicidades, responsabilidades, derivaciones e informes con Servicios Sociales y otros agentes.",
+    "penaliza": "No se registran debilidades en los comentarios."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=6LnTLodWEwp4zIRvjBVCSw%3D%3D",
+   "doc": "2026-6a72e068-1310-466e-8fce-5caff37828f4"
+  },
+  {
+   "crit": "Documentos técnicos y sistemas de evaluación",
+   "max": 2,
+   "exp": "p:19357576",
+   "ref": "300/2025/02703",
+   "title": "Organización y desarrollo de un Centro integrado de menores en situación de vulnerabilidad en el barrio de la Concepción en el Distrito de C",
+   "buyer": "Distrito de Ciudad Lineal",
+   "nuts": "ES300",
+   "date": "2026-07-17",
+   "offers": 6,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": {
+    "pts": 1.5
+   },
+   "best": [
+    "Evaluación de proceso, resultados e impacto con indicadores cuantitativos y cualitativos",
+    "Aporta modelos de las herramientas",
+    "Indicadores cuantitativos y cualitativos con informes semestrales y memoria anual"
+   ],
+   "weak": [
+    "Los documentos presentados en los anexos (desde la página 31) no se valoran"
+   ],
+   "hypothesis": {
+    "premia": "Indicadores cuantitativos y cualitativos de proceso, resultado e impacto, aportando modelos de los instrumentos.",
+    "penaliza": "Instrumentos descritos sin modelos aportados, o documentación situada en anexos que no se valora."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=6LnTLodWEwp4zIRvjBVCSw%3D%3D",
+   "doc": "2026-6a72e068-1310-466e-8fce-5caff37828f4"
+  },
+  {
+   "crit": "Descripción de actividades y excursiones",
+   "max": 10,
+   "exp": "p:19357576",
+   "ref": "300/2025/02703",
+   "title": "Organización y desarrollo de un Centro integrado de menores en situación de vulnerabilidad en el barrio de la Concepción en el Distrito de C",
+   "buyer": "Distrito de Ciudad Lineal",
+   "nuts": "ES300",
+   "date": "2026-07-17",
+   "offers": 6,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Programación extensa y estructurada por áreas con objetivos, metodología y temporalización",
+    "Actividades innovadoras y excursiones con contenido educativo",
+    "Planificación diaria, semanal y mensual, cronograma anual temático y modelo de jornada",
+    "Detalle de materiales fungibles y no fungibles y modelos de fichas de seguimiento"
+   ],
+   "weak": [
+    "No se ha desarrollado nada sobre excursiones",
+    "Modelos de fichas de participantes poco desarrollados en el cuerpo principal",
+    "Logística de excursiones básica"
+   ],
+   "hypothesis": {
+    "premia": "Programación detallada por áreas y edades, excursiones con objetivos y logística, materiales y modelos de fichas.",
+    "penaliza": "Actividades no desarrolladas con detalle, solo recursos materiales definidos o excursiones no desarrolladas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=6LnTLodWEwp4zIRvjBVCSw%3D%3D",
+   "doc": "2026-6a72e068-1310-466e-8fce-5caff37828f4"
+  }
+ ]
+}

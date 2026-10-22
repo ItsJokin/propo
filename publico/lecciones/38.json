@@ -1,0 +1,101 @@
+{
+ "cpv2": "38",
+ "generated": "2026-10-22T14:39:58.992Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Diseño global e integración de la solución técnica",
+   "max": 10,
+   "exp": "p:19525628",
+   "ref": "UGR/2026/0029",
+   "title": "Suministro, instalación y puesta en marcha de un sistema de deposición de películas delgadas por evaporación térmica y sputtering magnetrón ",
+   "buyer": "Rectorado de la Universidad de Granada",
+   "nuts": "ES",
+   "date": "2026-07-09",
+   "offers": 3,
+   "top": {
+    "pts": 9.2,
+    "winner": false
+   },
+   "low": {
+    "pts": 7.3
+   },
+   "best": [],
+   "weak": [
+    "La arquitectura no integra de partida todas las capacidades experimentales disponibles en otras ofertas."
+   ],
+   "hypothesis": {
+    "premia": "Arquitectura que integra de partida todas las capacidades experimentales disponibles.",
+    "penaliza": "No integrar de partida todas las capacidades experimentales presentes en otras ofertas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2g4KBNTXHmvCfVQHDepjGQ%3D%3D",
+   "doc": "2026-818dc515-fb75-45c9-b701-2cacf7f12a2c"
+  },
+  {
+   "crit": "Prestaciones del sistema de vacío, control de presión y procesos de deposición",
+   "max": 10,
+   "exp": "p:19525628",
+   "ref": "UGR/2026/0029",
+   "title": "Suministro, instalación y puesta en marcha de un sistema de deposición de películas delgadas por evaporación térmica y sputtering magnetrón ",
+   "buyer": "Rectorado de la Universidad de Granada",
+   "nuts": "ES",
+   "date": "2026-07-09",
+   "offers": 3,
+   "top": {
+    "pts": 9.7,
+    "winner": false
+   },
+   "low": {
+    "pts": 3.5
+   },
+   "best": [
+    "Integra de forma efectiva capacidades RF y DC, con fuente DC de 1,5 kW incluida en el suministro.",
+    "Cámara de mayores dimensiones, magnetrones de 3 pulgadas, limpieza integrada de sustratos y sustratos de hasta 6 pulgadas.",
+    "Se considera la oferta más completa en capacidades experimentales efectivamente suministradas.",
+    "Incorpora fuente DC/DC pulsada de 1 kW, valorada para sputtering reactivo, control de arcos y materiales complejos.",
+    "Software de control, automatización y trazabilidad valorados positivamente."
+   ],
+   "weak": [
+    "No incluye fuente DC en el suministro, lo que reduce la capacidad de procesos de sputtering DC desde la puesta en marcha.",
+    "Penalización muy significativa por la ausencia de fuente DC."
+   ],
+   "hypothesis": {
+    "premia": "Disponer de fuente DC incluida en el suministro y operar RF y DC de forma efectiva, junto con mayor cámara, magnetrones de 3 pulgadas y sustratos de hasta 6 pulgadas.",
+    "penaliza": "No incluir fuente DC en el suministro, aunque los magnetrones sean compatibles con operación DC."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2g4KBNTXHmvCfVQHDepjGQ%3D%3D",
+   "doc": "2026-818dc515-fb75-45c9-b701-2cacf7f12a2c"
+  },
+  {
+   "crit": "Otros criterios",
+   "max": 30,
+   "exp": "p:19525628",
+   "ref": "UGR/2026/0029",
+   "title": "Suministro, instalación y puesta en marcha de un sistema de deposición de películas delgadas por evaporación térmica y sputtering magnetrón ",
+   "buyer": "Rectorado de la Universidad de Granada",
+   "nuts": "ES",
+   "date": "2026-07-09",
+   "offers": 3,
+   "top": {
+    "pts": 25.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 24.1
+   },
+   "best": [
+    "Valorados positivamente la integración documental, el software de control, la automatización, la trazabilidad, el plan de instalación y el servicio postventa."
+   ],
+   "weak": [
+    "Reservas en cuanto al tamaño de cámara y la capacidad física del equipo.",
+    "Menor aportación de mejoras respecto de la oferta de HIGASAR."
+   ],
+   "hypothesis": {
+    "premia": "Software de control, automatización y trazabilidad, así como aportación de mejoras significativas.",
+    "penaliza": "Reservas sobre el tamaño de cámara y la capacidad física, y menor aportación de mejoras."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2g4KBNTXHmvCfVQHDepjGQ%3D%3D",
+   "doc": "2026-818dc515-fb75-45c9-b701-2cacf7f12a2c"
+  }
+ ]
+}

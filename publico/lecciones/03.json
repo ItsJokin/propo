@@ -1,0 +1,643 @@
+{
+ "cpv2": "03",
+ "generated": "2026-10-22T14:39:58.993Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Entereza del producto",
+   "max": 25,
+   "exp": "p:19845747",
+   "ref": "2026-0388",
+   "title": "Contratación del Acuerdo Marco para el suministro de frutas y verduras frescas con destino a los Paradores de Turismo de España, S.M.E., S.A",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Frescura y aspecto general adecuados en kiwi, naranja, tomate rosa y aguacate",
+    "Uniformidad correcta en la mayoría de productos"
+   ],
+   "weak": [
+    "Tomate rosa con piezas de tamaño muy dispar",
+    "Naranja con aspecto poco vistoso",
+    "Melón todavía duro y poco maduro"
+   ],
+   "hypothesis": {
+    "premia": "Frescura, aspecto general sin golpes ni defectos externos y piezas de tamaño uniforme dentro de la caja",
+    "penaliza": "Golpes, piezas de tamaño dispar y aspecto poco vistoso"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ejproN1BxBeFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9aaabebd-961e-4318-8fba-afdbdc9adec8"
+  },
+  {
+   "crit": "Calibre y Tamaño",
+   "max": 20,
+   "exp": "p:19845747",
+   "ref": "2026-0388",
+   "title": "Contratación del Acuerdo Marco para el suministro de frutas y verduras frescas con destino a los Paradores de Turismo de España, S.M.E., S.A",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Tamaño y calibre adecuados en tomate pera, ciruela, pimiento y melón"
+   ],
+   "weak": [
+    "Naranja con calibre insuficiente y piezas muy pequeñas",
+    "Tomate rosa con calibre irregular",
+    "Aguacate con falta de defectos solo correcta"
+   ],
+   "hypothesis": {
+    "premia": "Calibre acorde al solicitado y tamaño homogéneo de las piezas",
+    "penaliza": "Piezas muy pequeñas, calibre insuficiente o irregular"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ejproN1BxBeFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9aaabebd-961e-4318-8fba-afdbdc9adec8"
+  },
+  {
+   "crit": "Color",
+   "max": 20,
+   "exp": "p:19845747",
+   "ref": "2026-0388",
+   "title": "Contratación del Acuerdo Marco para el suministro de frutas y verduras frescas con destino a los Paradores de Turismo de España, S.M.E., S.A",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Color propio llamativo en tomate rosa, pimiento y ciruela",
+    "Buen color en kiwi, tomate pera y naranja"
+   ],
+   "weak": [
+    "Kiwi, ciruela, aguacate y melón sin alcanzar madurez óptima",
+    "Ausencia de defectos en color solo correcta, no óptima, en varios productos"
+   ],
+   "hypothesis": {
+    "premia": "Estado de maduración óptimo y color propio sin manchas ni magulladuras",
+    "penaliza": "Falta de maduración, sobremaduración o escaso color"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ejproN1BxBeFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9aaabebd-961e-4318-8fba-afdbdc9adec8"
+  },
+  {
+   "crit": "Sabor",
+   "max": 35,
+   "exp": "p:19845747",
+   "ref": "2026-0388",
+   "title": "Contratación del Acuerdo Marco para el suministro de frutas y verduras frescas con destino a los Paradores de Turismo de España, S.M.E., S.A",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Sabor correcto en pimiento, melón y tomate pera",
+    "Jugosidad adecuada en pimiento y tomate rosa"
+   ],
+   "weak": [
+    "Kiwi, tomate pera, tomate rosa y aguacate sin textura crujiente",
+    "Sabor tímido o escaso en tomate pera, tomate rosa, kiwi y aguacate",
+    "Ciruela con sabor ligero y poca jugosidad"
+   ],
+   "hypothesis": {
+    "premia": "Textura crujiente, jugosidad y sabor intenso acordes a la maduración",
+    "penaliza": "Textura blanda o dura, sabor tímido o nulo y jugosidad insuficiente"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ejproN1BxBeFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9aaabebd-961e-4318-8fba-afdbdc9adec8"
+  },
+  {
+   "crit": "Entereza del producto",
+   "max": 25,
+   "exp": "p:19845747",
+   "ref": "2026-0388",
+   "title": "Contratación del Acuerdo Marco para el suministro de frutas y verduras frescas con destino a los Paradores de Turismo de España, S.M.E., S.A",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Frescura y aspecto excelentes en piña y tomate de Penjar",
+    "Buen aspecto general en pitaya, kiwi y melón"
+   ],
+   "weak": [
+    "Papaya con golpes y uniformidad mejorable",
+    "Piña con uniformidad de piezas baja"
+   ],
+   "hypothesis": {
+    "premia": "Frescura, aspecto general sin golpes ni defectos externos y piezas de tamaño uniforme dentro de la caja",
+    "penaliza": "Golpes, piezas de tamaño dispar y aspecto poco vistoso"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ejproN1BxBeFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9aaabebd-961e-4318-8fba-afdbdc9adec8"
+  },
+  {
+   "crit": "Calibre y Tamaño",
+   "max": 20,
+   "exp": "p:19845747",
+   "ref": "2026-0388",
+   "title": "Contratación del Acuerdo Marco para el suministro de frutas y verduras frescas con destino a los Paradores de Turismo de España, S.M.E., S.A",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Tamaño adecuado en tomate de Penjar, piña, papaya y melón",
+    "Calibre adecuado en tomate de Penjar, piña y melón"
+   ],
+   "weak": [
+    "Pitaya con calibre poco adecuado",
+    "Naranja de zumo con calibre justo"
+   ],
+   "hypothesis": {
+    "premia": "Calibre acorde al solicitado y tamaño homogéneo de las piezas",
+    "penaliza": "Piezas muy pequeñas, calibre insuficiente o irregular"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ejproN1BxBeFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9aaabebd-961e-4318-8fba-afdbdc9adec8"
+  },
+  {
+   "crit": "Color",
+   "max": 20,
+   "exp": "p:19845747",
+   "ref": "2026-0388",
+   "title": "Contratación del Acuerdo Marco para el suministro de frutas y verduras frescas con destino a los Paradores de Turismo de España, S.M.E., S.A",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Buen color en tomate de Penjar, piña y melón",
+    "Estado de maduración adecuado en pitaya y piña"
+   ],
+   "weak": [
+    "Papaya con poco color",
+    "Naranja y kiwi sin madurar",
+    "Tomate pera demasiado maduro",
+    "Tomate de Penjar con alguna deformación"
+   ],
+   "hypothesis": {
+    "premia": "Estado de maduración óptimo y color propio sin manchas ni magulladuras",
+    "penaliza": "Falta de maduración, sobremaduración o escaso color"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ejproN1BxBeFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9aaabebd-961e-4318-8fba-afdbdc9adec8"
+  },
+  {
+   "crit": "Sabor",
+   "max": 35,
+   "exp": "p:19845747",
+   "ref": "2026-0388",
+   "title": "Contratación del Acuerdo Marco para el suministro de frutas y verduras frescas con destino a los Paradores de Turismo de España, S.M.E., S.A",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Buen sabor y jugosidad en tomate de Penjar y piña",
+    "Sabor muy valorado en pitaya y correcto en melón y naranja"
+   ],
+   "weak": [
+    "Papaya sin sabor, amarga y poco jugosa",
+    "Melón con poco sabor",
+    "Tomate pera muy blando y con sabor escaso"
+   ],
+   "hypothesis": {
+    "premia": "Textura crujiente, jugosidad y sabor intenso acordes a la maduración",
+    "penaliza": "Textura blanda o dura, sabor tímido o nulo y jugosidad insuficiente"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ejproN1BxBeFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9aaabebd-961e-4318-8fba-afdbdc9adec8"
+  },
+  {
+   "crit": "Entereza del producto",
+   "max": 25,
+   "exp": "p:19845747",
+   "ref": "2026-0388",
+   "title": "Contratación del Acuerdo Marco para el suministro de frutas y verduras frescas con destino a los Paradores de Turismo de España, S.M.E., S.A",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Frescura y aspecto general adecuados en kiwi, naranja, tomate rosa y aguacate",
+    "Uniformidad correcta en la mayoría de productos"
+   ],
+   "weak": [
+    "Tomate rosa con piezas de tamaño muy dispar",
+    "Naranja con aspecto poco vistoso",
+    "Melón todavía duro y poco maduro"
+   ],
+   "hypothesis": {
+    "premia": "Frescura, aspecto general sin golpes ni defectos externos y piezas de tamaño uniforme dentro de la caja",
+    "penaliza": "Golpes, piezas de tamaño dispar y aspecto poco vistoso"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ejproN1BxBeFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9aaabebd-961e-4318-8fba-afdbdc9adec8"
+  },
+  {
+   "crit": "Calibre y Tamaño",
+   "max": 20,
+   "exp": "p:19845747",
+   "ref": "2026-0388",
+   "title": "Contratación del Acuerdo Marco para el suministro de frutas y verduras frescas con destino a los Paradores de Turismo de España, S.M.E., S.A",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Tamaño y calibre adecuados en tomate pera, ciruela, pimiento y melón"
+   ],
+   "weak": [
+    "Naranja con calibre insuficiente y piezas muy pequeñas",
+    "Tomate rosa con calibre irregular",
+    "Aguacate con falta de defectos solo correcta"
+   ],
+   "hypothesis": {
+    "premia": "Calibre acorde al solicitado y tamaño homogéneo de las piezas",
+    "penaliza": "Piezas muy pequeñas, calibre insuficiente o irregular"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ejproN1BxBeFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9aaabebd-961e-4318-8fba-afdbdc9adec8"
+  },
+  {
+   "crit": "Color",
+   "max": 20,
+   "exp": "p:19845747",
+   "ref": "2026-0388",
+   "title": "Contratación del Acuerdo Marco para el suministro de frutas y verduras frescas con destino a los Paradores de Turismo de España, S.M.E., S.A",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Color propio llamativo en tomate rosa, pimiento y ciruela",
+    "Buen color en kiwi, tomate pera y naranja"
+   ],
+   "weak": [
+    "Kiwi, ciruela, aguacate y melón sin alcanzar madurez óptima",
+    "Ausencia de defectos en color solo correcta, no óptima, en varios productos"
+   ],
+   "hypothesis": {
+    "premia": "Estado de maduración óptimo y color propio sin manchas ni magulladuras",
+    "penaliza": "Falta de maduración, sobremaduración o escaso color"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ejproN1BxBeFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9aaabebd-961e-4318-8fba-afdbdc9adec8"
+  },
+  {
+   "crit": "Sabor",
+   "max": 35,
+   "exp": "p:19845747",
+   "ref": "2026-0388",
+   "title": "Contratación del Acuerdo Marco para el suministro de frutas y verduras frescas con destino a los Paradores de Turismo de España, S.M.E., S.A",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Sabor correcto en pimiento, melón y tomate pera",
+    "Jugosidad adecuada en pimiento y tomate rosa"
+   ],
+   "weak": [
+    "Kiwi, tomate pera, tomate rosa y aguacate sin textura crujiente",
+    "Sabor tímido o escaso en tomate pera, tomate rosa, kiwi y aguacate",
+    "Ciruela con sabor ligero y poca jugosidad"
+   ],
+   "hypothesis": {
+    "premia": "Textura crujiente, jugosidad y sabor intenso acordes a la maduración",
+    "penaliza": "Textura blanda o dura, sabor tímido o nulo y jugosidad insuficiente"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ejproN1BxBeFlFRHfEzEaw%3D%3D",
+   "doc": "2026-9aaabebd-961e-4318-8fba-afdbdc9adec8"
+  },
+  {
+   "crit": "Tamaño apropiado de la pieza",
+   "max": 10,
+   "exp": "p:19687791",
+   "ref": "2026-0334",
+   "title": "Contratación del Acuerdo marco del Suministro de pescados frescos de lonja, con destino a varios establecimientos de Paradores de Turismo de",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Piezas en perfecto estado y de tamaño idóneo según la cata."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ndh0E72yPtRSYrkJkLlFdw%3D%3D",
+   "doc": "2026-04bf3420-4ccf-4eba-999b-056276851f52"
+  },
+  {
+   "crit": "Frescura de la pieza",
+   "max": 10,
+   "exp": "p:19687791",
+   "ref": "2026-0334",
+   "title": "Contratación del Acuerdo marco del Suministro de pescados frescos de lonja, con destino a varios establecimientos de Paradores de Turismo de",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Ojos en perfecto estado y agallas frescas en las muestras evaluadas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ndh0E72yPtRSYrkJkLlFdw%3D%3D",
+   "doc": "2026-04bf3420-4ccf-4eba-999b-056276851f52"
+  },
+  {
+   "crit": "Textura de la pieza",
+   "max": 10,
+   "exp": "p:19687791",
+   "ref": "2026-0334",
+   "title": "Contratación del Acuerdo marco del Suministro de pescados frescos de lonja, con destino a varios establecimientos de Paradores de Turismo de",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Piezas firmes y tersas al tacto visual y de cata."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ndh0E72yPtRSYrkJkLlFdw%3D%3D",
+   "doc": "2026-04bf3420-4ccf-4eba-999b-056276851f52"
+  },
+  {
+   "crit": "Sabor propio de la especie, sin sabores extraños",
+   "max": 20,
+   "exp": "p:19687791",
+   "ref": "2026-0334",
+   "title": "Contratación del Acuerdo marco del Suministro de pescados frescos de lonja, con destino a varios establecimientos de Paradores de Turismo de",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Sabor fresco, incluso un poco dulce, valorado como perfecto."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Sabor fresco y propio de la especie, sin matices extraños, en las muestras valoradas como perfectas.",
+    "penaliza": "Matices que desvirtúan el sabor de la especie."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ndh0E72yPtRSYrkJkLlFdw%3D%3D",
+   "doc": "2026-04bf3420-4ccf-4eba-999b-056276851f52"
+  },
+  {
+   "crit": "Olor y aroma, ausencia de olor amoniacal",
+   "max": 10,
+   "exp": "p:19687791",
+   "ref": "2026-0334",
+   "title": "Contratación del Acuerdo marco del Suministro de pescados frescos de lonja, con destino a varios establecimientos de Paradores de Turismo de",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Las muestras conservan todas sus propiedades organolépticas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ndh0E72yPtRSYrkJkLlFdw%3D%3D",
+   "doc": "2026-04bf3420-4ccf-4eba-999b-056276851f52"
+  },
+  {
+   "crit": "Jugosidad, conserva la humedad propia del producto, sin pérdida de jugos.",
+   "max": 10,
+   "exp": "p:19687791",
+   "ref": "2026-0334",
+   "title": "Contratación del Acuerdo marco del Suministro de pescados frescos de lonja, con destino a varios establecimientos de Paradores de Turismo de",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Producto bien cocinado, manteniéndose en perfecto estado."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Piezas cocinadas que conservan la humedad propia y están bien cocinadas.",
+    "penaliza": "Zonas secas o tersas en el producto cocinado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ndh0E72yPtRSYrkJkLlFdw%3D%3D",
+   "doc": "2026-04bf3420-4ccf-4eba-999b-056276851f52"
+  },
+  {
+   "crit": "Tamaño apropiado de la pieza",
+   "max": 10,
+   "exp": "p:19687791",
+   "ref": "2026-0334",
+   "title": "Contratación del Acuerdo marco del Suministro de pescados frescos de lonja, con destino a varios establecimientos de Paradores de Turismo de",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Calificado como óptimo en las muestras evaluadas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ndh0E72yPtRSYrkJkLlFdw%3D%3D",
+   "doc": "2026-04bf3420-4ccf-4eba-999b-056276851f52"
+  },
+  {
+   "crit": "Frescura de la pieza",
+   "max": 10,
+   "exp": "p:19687791",
+   "ref": "2026-0334",
+   "title": "Contratación del Acuerdo marco del Suministro de pescados frescos de lonja, con destino a varios establecimientos de Paradores de Turismo de",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Calificada como óptima en las muestras evaluadas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ndh0E72yPtRSYrkJkLlFdw%3D%3D",
+   "doc": "2026-04bf3420-4ccf-4eba-999b-056276851f52"
+  },
+  {
+   "crit": "Textura de la pieza",
+   "max": 10,
+   "exp": "p:19687791",
+   "ref": "2026-0334",
+   "title": "Contratación del Acuerdo marco del Suministro de pescados frescos de lonja, con destino a varios establecimientos de Paradores de Turismo de",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Calificada como óptima en las muestras evaluadas."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ndh0E72yPtRSYrkJkLlFdw%3D%3D",
+   "doc": "2026-04bf3420-4ccf-4eba-999b-056276851f52"
+  },
+  {
+   "crit": "Sabor propio de la especie, sin sabores extraños",
+   "max": 20,
+   "exp": "p:19687791",
+   "ref": "2026-0334",
+   "title": "Contratación del Acuerdo marco del Suministro de pescados frescos de lonja, con destino a varios establecimientos de Paradores de Turismo de",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Sabor propio de la especie en algunas muestras."
+   ],
+   "weak": [
+    "Ligeros matices que desvirtúan el sabor en algunas muestras."
+   ],
+   "hypothesis": {
+    "premia": "Sabor fresco y propio de la especie, sin matices extraños, en las muestras valoradas como perfectas.",
+    "penaliza": "Matices que desvirtúan el sabor de la especie."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ndh0E72yPtRSYrkJkLlFdw%3D%3D",
+   "doc": "2026-04bf3420-4ccf-4eba-999b-056276851f52"
+  },
+  {
+   "crit": "Jugosidad, conserva la humedad propia del producto, sin pérdida de jugos.",
+   "max": 10,
+   "exp": "p:19687791",
+   "ref": "2026-0334",
+   "title": "Contratación del Acuerdo marco del Suministro de pescados frescos de lonja, con destino a varios establecimientos de Paradores de Turismo de",
+   "buyer": "Paradores de Turismo de España, S.M.E., S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": null,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Jugosidad correcta en general."
+   ],
+   "weak": [
+    "Se aprecian zonas algo más secas o tersas."
+   ],
+   "hypothesis": {
+    "premia": "Piezas cocinadas que conservan la humedad propia y están bien cocinadas.",
+    "penaliza": "Zonas secas o tersas en el producto cocinado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ndh0E72yPtRSYrkJkLlFdw%3D%3D",
+   "doc": "2026-04bf3420-4ccf-4eba-999b-056276851f52"
+  }
+ ]
+}

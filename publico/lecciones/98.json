@@ -1,0 +1,139 @@
+{
+ "cpv2": "98",
+ "generated": "2026-10-22T14:39:58.993Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Plan de Gestión",
+   "max": 10,
+   "exp": "p:19551152",
+   "ref": "153/2025",
+   "title": "Servicio gestión integral de las piscinas del polideportivo Andrés Estrada.",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Huelva",
+   "nuts": "ES615",
+   "date": "2026-07-27",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Plan completo con estructura y sistematización adecuadas",
+    "Control horario mediante sistema tecnológico y coordinador técnico 24 horas con recurso preventivo",
+    "Medidas de control de cloro y pH con personal cualificado y protocolo de contaminación biológica",
+    "Medios materiales, equipamiento y compromiso de reposición urgente; adecuado a los intereses municipales",
+    "Estructura adecuada y horarios con distribución horaria del personal"
+   ],
+   "weak": [
+    "Plan de actuación y medidas de control explicados de manera genérica",
+    "Sistema digital de coordinación sin especificar",
+    "Nivel de detalle escaso"
+   ],
+   "hypothesis": {
+    "premia": "Planes completos y concretos: medidas de control de cloro y pH con personal cualificado, coordinación con interlocutor 24 horas, control horario tecnológico y medios materiales definidos",
+    "penaliza": "Descripciones genéricas sin detalle, sistemas de coordinación o digitales sin especificar y medidas de control poco concretas"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=52GPp8%2F3hLl70UvEyYJSGw%3D%3D",
+   "doc": "2026-3664a693-3626-4242-9097-3f38cb0a75ad"
+  },
+  {
+   "crit": "Criterio 1. Experiencia del director técnico y responsable del servicio",
+   "max": 5,
+   "exp": "p:13194687",
+   "ref": "23-109",
+   "title": "Trabajos en materia de divulgación y defensa de los derechos de las personas consumidoras y usuarias del servicio público de aguas gestionad",
+   "buyer": "Consejero Delegado de la Empresa Municipal de Aguas de Málaga S.A.",
+   "nuts": "ES617",
+   "date": "2023-10-09",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": false
+   },
+   "low": {
+    "pts": 4.52
+   },
+   "best": [
+    "Directora muy cualificada con experiencia en trabajos similares desde 2002.",
+    "Es la oferta con mayor experiencia de las presentadas, por lo que obtiene la puntuación máxima.",
+    "Director muy cualificado con experiencia en trabajos similares desde 2004."
+   ],
+   "weak": [
+    "Cuenta con menos experiencia que la otra oferta, por lo que obtiene una puntuación proporcional de 4,52 puntos."
+   ],
+   "hypothesis": {
+    "premia": "Mayor número de años de experiencia en trabajos similares por encima del mínimo de 5 años (directora con experiencia desde 2002).",
+    "penaliza": "Menor experiencia del director o responsable, con puntuación proporcional (experiencia desde 2004)."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=s%2FWaNcqE%2Fg%2F10HRJw8TEnQ%3D%3D",
+   "doc": "d58a76d2-065b-44c5-afd7-4bab12653ccf"
+  },
+  {
+   "crit": "Criterio 2. Experiencia de los técnicos propuestos",
+   "max": 5,
+   "exp": "p:13194687",
+   "ref": "23-109",
+   "title": "Trabajos en materia de divulgación y defensa de los derechos de las personas consumidoras y usuarias del servicio público de aguas gestionad",
+   "buyer": "Consejero Delegado de la Empresa Municipal de Aguas de Málaga S.A.",
+   "nuts": "ES617",
+   "date": "2023-10-09",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Una de las dos técnicas evaluadas tiene experiencia en trabajos similares desde 2008, lo que le otorga la máxima puntuación de 5 puntos."
+   ],
+   "weak": [
+    "Equipo técnico formado por una sola persona con experiencia desde 2017.",
+    "Al aportar menos experiencia que el resto de ofertas, obtiene una puntuación proporcional de 2 puntos.",
+    "El equipo propuesto consta de tres personas, una de ellas asesora, por lo que no se evalúa.",
+    "Una de las técnicas evaluadas tiene experiencia desde 2022, no cumple el mínimo de 5 años y obtiene 0 puntos."
+   ],
+   "hypothesis": {
+    "premia": "Técnicos con mayor experiencia en trabajos similares (experiencia desde 2008).",
+    "penaliza": "Técnicos con experiencia inferior a 5 años, que obtienen 0 puntos (desde 2022), o equipos con menos experiencia, con puntuación proporcional (desde 2017)."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=s%2FWaNcqE%2Fg%2F10HRJw8TEnQ%3D%3D",
+   "doc": "d58a76d2-065b-44c5-afd7-4bab12653ccf"
+  },
+  {
+   "crit": "Criterio 3. Programa de trabajo",
+   "max": 20,
+   "exp": "p:13194687",
+   "ref": "23-109",
+   "title": "Trabajos en materia de divulgación y defensa de los derechos de las personas consumidoras y usuarias del servicio público de aguas gestionad",
+   "buyer": "Consejero Delegado de la Empresa Municipal de Aguas de Málaga S.A.",
+   "nuts": "ES617",
+   "date": "2023-10-09",
+   "offers": 2,
+   "top": {
+    "pts": 20,
+    "winner": false
+   },
+   "low": {
+    "pts": 18
+   },
+   "best": [
+    "La programación presentada es la que más se adecua a las necesidades del servicio objeto del contrato.",
+    "Obtiene la máxima puntuación en el apartado."
+   ],
+   "weak": [
+    "Su programación se valora de forma proporcional, con 18 de 20 puntos, por detrás de la propuesta más acorde a las necesidades del servicio."
+   ],
+   "hypothesis": {
+    "premia": "Programación más acorde a las necesidades del servicio objeto del contrato.",
+    "penaliza": "Programación menos acorde a las necesidades del servicio, valorada de forma proporcional."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=s%2FWaNcqE%2Fg%2F10HRJw8TEnQ%3D%3D",
+   "doc": "d58a76d2-065b-44c5-afd7-4bab12653ccf"
+  }
+ ]
+}

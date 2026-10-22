@@ -1,0 +1,148 @@
+{
+ "cpv2": "65",
+ "generated": "2026-10-22T14:39:58.993Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Propuesta de mantenimiento",
+   "max": 15,
+   "exp": "p:19900704",
+   "ref": "36/2026",
+   "title": "Mantenimiento de las Plantas de Potabilización de Agua en el Abastecimiento de Ondara",
+   "buyer": "Gerencia de Serveis Integrals de Neteja i Medi Ambient d'Ondara, S.L. (SINMA)",
+   "nuts": "ES521",
+   "date": "2026-07-17",
+   "offers": 3,
+   "top": {
+    "pts": 13.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 10.5
+   },
+   "best": [
+    "Revisión diaria de las tres plantas, con chequeo de bombas, control de membranas y limpieza preventiva.",
+    "Incluye procedimiento completo de sustitución de membranas y actuaciones para la futura planta de carbón activo.",
+    "Su condición de mantenedor actual aporta conocimiento práctico de la instalación.",
+    "Identifica líneas Ondara I y II, pozos, tres líneas de ósmosis, equipos concretos y número de membranas.",
+    "Plan preventivo por subsistemas, seguimiento normalizado de membranas, umbrales de CIP y sustitución de 94 membranas."
+   ],
+   "weak": [
+    "Desarrollo más genérico y menos vinculado a la configuración de Ondara.",
+    "No identifica con detalle equipos, líneas, número de membranas, secuencia de sustitución ni criterios propios.",
+    "Cambio de alcalinizante formulado sin suficiente integración con el pliego y la explotación existente."
+   ],
+   "hypothesis": {
+    "premia": "Concreción sobre la instalación de Ondara (líneas, pozos, equipos, membranas), frecuencias de revisión detalladas y actuaciones previstas también para el carbón activo.",
+    "penaliza": "Desarrollo genérico poco vinculado a la configuración real, falta de equipos y secuencias concretas, y ausencia de actuaciones para la nueva planta."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=MPq7cVMAIiKP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-dff094dc-5c96-43f8-8a04-a2b15fed487c"
+  },
+  {
+   "crit": "Organización del servicio",
+   "max": 10,
+   "exp": "p:19900704",
+   "ref": "36/2026",
+   "title": "Mantenimiento de las Plantas de Potabilización de Agua en el Abastecimiento de Ondara",
+   "buyer": "Gerencia de Serveis Integrals de Neteja i Medi Ambient d'Ondara, S.L. (SINMA)",
+   "nuts": "ES521",
+   "date": "2026-07-17",
+   "offers": 3,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Técnicos con disponibilidad a menos de 5 km, atención 24 h ante emergencias y revisión diaria presencial.",
+    "Medios materiales, canales de aviso múltiples y jerarquía de contactos.",
+    "Integración gratuita de un sistema SCADA para la organización del servicio, desarrollada de forma exhaustiva.",
+    "Interlocución técnica clara, equipo adscrito, disponibilidad 24/7/365 y servicio de guardia.",
+    "Clasifica incidencias y define actuaciones para escenarios probables de Ondara."
+   ],
+   "weak": [
+    "Parte de la experiencia descrita se apoya en referencias externas no valorables como mérito directo.",
+    "Detalle de medios materiales concretos y de coordinación contractual inferior a la oferta mejor puntuada."
+   ],
+   "hypothesis": {
+    "premia": "Medios humanos y materiales concretos, disponibilidad 24/7 y protocolos de incidencias adaptados a escenarios de Ondara.",
+    "penaliza": "Apoyo en experiencia externa no valorable y menor detalle en medios materiales y coordinación contractual."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=MPq7cVMAIiKP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-dff094dc-5c96-43f8-8a04-a2b15fed487c"
+  },
+  {
+   "crit": "Metodología, documentación, gestión y comunicación de la información",
+   "max": 10,
+   "exp": "p:19900704",
+   "ref": "36/2026",
+   "title": "Mantenimiento de las Plantas de Potabilización de Agua en el Abastecimiento de Ondara",
+   "buyer": "Gerencia de Serveis Integrals de Neteja i Medi Ambient d'Ondara, S.L. (SINMA)",
+   "nuts": "ES521",
+   "date": "2026-07-17",
+   "offers": 3,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Propuesta más completa en trazabilidad y gestión documental, con diagnóstico inicial, inventario e histórico.",
+    "Informes mensuales, informes de incidencia, cuadro de mando, indicadores de nivel de servicio y KPIs de coordinación.",
+    "Seguridad de la información y sistema de seguimiento verificable orientado a la mejora continua.",
+    "Resumen mensual en Excel junto con la certificación, cuadros de mando y reuniones mensuales de cierre.",
+    "Servicio de recopilación y gestión de datos vía remota, útil para fiscalización y seguimiento económico-técnico."
+   ],
+   "weak": [
+    "No desarrolla con igual detalle los indicadores contractuales, la trazabilidad administrativa ni la seguridad de la información.",
+    "No detalla el circuito de validación documental."
+   ],
+   "hypothesis": {
+    "premia": "Sistema de seguimiento formal: indicadores de nivel de servicio, trazabilidad, KPIs, seguridad de la información y estructura documental verificable.",
+    "penaliza": "Monitorización o reporting descritos sin indicadores contractuales, circuito de validación documental ni seguridad de la información."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=MPq7cVMAIiKP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-dff094dc-5c96-43f8-8a04-a2b15fed487c"
+  },
+  {
+   "crit": "Ante propuesta de planta de filtración por carbón activo",
+   "max": 10,
+   "exp": "p:19900704",
+   "ref": "36/2026",
+   "title": "Mantenimiento de las Plantas de Potabilización de Agua en el Abastecimiento de Ondara",
+   "buyer": "Gerencia de Serveis Integrals de Neteja i Medi Ambient d'Ondara, S.L. (SINMA)",
+   "nuts": "ES521",
+   "date": "2026-07-17",
+   "offers": 3,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Solución compacta de 4 módulos de 15 m³/h con filtros PRFV, válvulas automáticas y 3.600 kg de carbón de coco.",
+    "Instalación llave en mano e identificación de ubicación, conexiones y vertido de contralavados.",
+    "Conocimiento de las instalaciones que permite plantear alternativas de operación frente a incidencias.",
+    "Vinculada directamente al pozo de Pamis/Pla de la Font II e integrada en la operación global de la ETAP.",
+    "Adecuada en obra civil exterior, pre ensamblaje, conexión final y minimización de afecciones al servicio."
+   ],
+   "weak": [
+    "Parte relevante del apartado se apoya en experiencia acreditada externa, no valorable como mérito autónomo.",
+    "Adaptación física e hidráulica específica a Ondara menos concreta que en otras propuestas."
+   ],
+   "hypothesis": {
+    "premia": "Identificación concreta de equipos, caudales y dimensionado, ubicación, ejecución e integración con la operación de la ETAP.",
+    "penaliza": "Peso de la experiencia externa frente a la adaptación física e hidráulica a Ondara, y errores de dimensionado en la propuesta."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=MPq7cVMAIiKP%2Bo96UAV7cQ%3D%3D",
+   "doc": "2026-dff094dc-5c96-43f8-8a04-a2b15fed487c"
+  }
+ ]
+}

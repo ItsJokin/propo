@@ -1,0 +1,261 @@
+{
+ "cpv2": "63",
+ "generated": "2026-10-22T14:39:58.992Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Características anti-vandálicas y de seguridad de la máquina",
+   "max": 10,
+   "exp": "p:19964994",
+   "ref": "T26023001",
+   "title": "Servicio de venta de billetes mediante equipos automáticos en terminal Aeropuerto.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Chapa de 1,5 mm reforzada con tubo de acero, grado IK10 declarado",
+    "Cerraduras de seguridad, cajón de recaudación independiente y anclaje",
+    "Pantalla con vidrio antivandálico de 6 mm y certificado de ensayo"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Grado IK declarado, chapa reforzada, cerraduras de seguridad, cajón independiente, anclaje y certificados de ensayo.",
+    "penaliza": "El documento no señala penalizaciones en este criterio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIfqkzofB2cS7pcxhTeWOg%3D%3D",
+   "doc": "2026-76b888ab-b380-4743-adf2-7b07c5759604"
+  },
+  {
+   "crit": "Versatilidad y Facilidad de configuración de la máquina",
+   "max": 4,
+   "exp": "p:19964994",
+   "ref": "T26023001",
+   "title": "Servicio de venta de billetes mediante equipos automáticos en terminal Aeropuerto.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Configuración y actualizaciones remotas desde la central, incluidos títulos y software",
+    "Función de fuera de servicio que restringe la venta al horario de la línea"
+   ],
+   "weak": [
+    "No menciona que TUSSAM pueda facilitar por medios telemáticos la estructura de títulos válidos",
+    "No ofrece un calendario centralizado con horarios que se aplique automáticamente en las máquinas"
+   ],
+   "hypothesis": {
+    "premia": "Configuración y actualización remota, y restricción automática de la venta al horario de la línea.",
+    "penaliza": "No ofrecer estructura de títulos válidos por medios telemáticos ni un calendario centralizado que se aplique automáticamente en las máquinas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIfqkzofB2cS7pcxhTeWOg%3D%3D",
+   "doc": "2026-76b888ab-b380-4743-adf2-7b07c5759604"
+  },
+  {
+   "crit": "Características y Fiabilidad de los dispositivos de pago en efectivo de la máquina (MTBF) - billetero y monedero",
+   "max": 5,
+   "exp": "p:19964994",
+   "ref": "T26023001",
+   "title": "Servicio de venta de billetes mediante equipos automáticos en terminal Aeropuerto.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Tecnología reciente: billetero NV22 y monedero Smart Coin System de 1.500 monedas",
+    "Datos de 100.000 ciclos medios entre fallos para ambos dispositivos"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIfqkzofB2cS7pcxhTeWOg%3D%3D",
+   "doc": "2026-76b888ab-b380-4743-adf2-7b07c5759604"
+  },
+  {
+   "crit": "Características de la impresora: velocidad, capacidad del porta-rollos, número máximo de billetes imprimibles por rollo, calidad y gramaje del papel suministrado",
+   "max": 5,
+   "exp": "p:19964994",
+   "ref": "T26023001",
+   "title": "Servicio de venta de billetes mediante equipos automáticos en terminal Aeropuerto.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Velocidad mínima de 100 mm/s, impresión de gráficos y códigos QR",
+    "Más de 350 billetes por rollo y papel de alta calidad, superando el pliego"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIfqkzofB2cS7pcxhTeWOg%3D%3D",
+   "doc": "2026-76b888ab-b380-4743-adf2-7b07c5759604"
+  },
+  {
+   "crit": "Flexibilidad en la definición del interfaz de usuario, sencillez de uso, tiempo estimado de una operación estándar de compra de billetes",
+   "max": 4,
+   "exp": "p:19964994",
+   "ref": "T26023001",
+   "title": "Servicio de venta de billetes mediante equipos automáticos en terminal Aeropuerto.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Propuesta de interfaz que muestra el proceso típico de compra, con 4 idiomas",
+    "Adaptación a la imagen corporativa de TUSSAM y posibilidad de modificarla"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIfqkzofB2cS7pcxhTeWOg%3D%3D",
+   "doc": "2026-76b888ab-b380-4743-adf2-7b07c5759604"
+  },
+  {
+   "crit": "Monitorización y gestión remotas",
+   "max": 5,
+   "exp": "p:19964994",
+   "ref": "T26023001",
+   "title": "Servicio de venta de billetes mediante equipos automáticos en terminal Aeropuerto.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Avisos de falta de papel, atascos y necesidad de recaudación",
+    "Sincronización horaria y actualizaciones remotas de software y tipología de títulos"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIfqkzofB2cS7pcxhTeWOg%3D%3D",
+   "doc": "2026-76b888ab-b380-4743-adf2-7b07c5759604"
+  },
+  {
+   "crit": "Disponibilidad de lector-grabador integrado de tarjetas sin contacto NFC, compatible con tecnologías ISO 1443 A/B (Mifare Classic, Desfire, etc)",
+   "max": 4,
+   "exp": "p:19964994",
+   "ref": "T26023001",
+   "title": "Servicio de venta de billetes mediante equipos automáticos en terminal Aeropuerto.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Lector integrado compatible con ISO 14443 A/B, Mifare Classic, Desfire, Felica y NFC"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIfqkzofB2cS7pcxhTeWOg%3D%3D",
+   "doc": "2026-76b888ab-b380-4743-adf2-7b07c5759604"
+  },
+  {
+   "crit": "Disponibilidad de un dispensador integrado de tarjetas sin contacto",
+   "max": 2,
+   "exp": "p:19964994",
+   "ref": "T26023001",
+   "title": "Servicio de venta de billetes mediante equipos automáticos en terminal Aeropuerto.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Dos dispensadores con capacidad total de 300 tarjetas de grosor estándar"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIfqkzofB2cS7pcxhTeWOg%3D%3D",
+   "doc": "2026-76b888ab-b380-4743-adf2-7b07c5759604"
+  },
+  {
+   "crit": "Características técnicas y organizativas del CPD (Centro de Proceso de Datos) desde el que se lleva a cabo la gestión de los servicios electrónicos y terminales de venta",
+   "max": 5,
+   "exp": "p:19964994",
+   "ref": "T26023001",
+   "title": "Servicio de venta de billetes mediante equipos automáticos en terminal Aeropuerto.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Dos centros de datos interconectados, cada uno redundante y dimensionado para absorber el 100% de la carga del otro",
+    "Servidores en clúster de 5 nodos, cifrado, política de backups y múltiples medidas de seguridad física y lógica"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Dos CPD interconectados y redundantes, dimensionados para asumir la carga completa del otro, con seguridad física y lógica.",
+    "penaliza": "El documento no señala penalizaciones en este criterio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIfqkzofB2cS7pcxhTeWOg%3D%3D",
+   "doc": "2026-76b888ab-b380-4743-adf2-7b07c5759604"
+  },
+  {
+   "crit": "Existencia de un Plan de Recuperación ante Desastres, que contemple las medidas necesarias para garantizar la continuidad del servicio ante incidencias de carácter grave",
+   "max": 5,
+   "exp": "p:19964994",
+   "ref": "T26023001",
+   "title": "Servicio de venta de billetes mediante equipos automáticos en terminal Aeropuerto.",
+   "buyer": "Comisión Ejecutiva de Transportes Urbanos de Sevilla, SAM",
+   "nuts": "ES618",
+   "date": "2026-09-01",
+   "offers": 1,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Líneas de comunicaciones de distintos operadores y tecnologías independientes en cada CPD",
+    "Red eléctrica redundante con SAI o grupo electrógeno, refrigeración redundante y detección de incendios"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Redundancia geográfica, operadores de comunicaciones diferentes, alimentación eléctrica redundante y refrigeración redundante con detección y extinción de incendios.",
+    "penaliza": "El documento no señala penalizaciones en este criterio."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=iIfqkzofB2cS7pcxhTeWOg%3D%3D",
+   "doc": "2026-76b888ab-b380-4743-adf2-7b07c5759604"
+  }
+ ]
+}

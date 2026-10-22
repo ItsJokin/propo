@@ -1,0 +1,979 @@
+{
+ "cpv2": "72",
+ "generated": "2026-10-22T14:39:58.991Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Estrategia para la ejecución de los trabajos solicitados",
+   "max": 10,
+   "exp": "p:17393675",
+   "ref": "139/2025/CMA",
+   "title": "Servicio de mantenimiento del portal Transparencia, WEB Institucional y Tablón de Edictos (LOTE 1) Servicio de Información y Atención Telefó",
+   "buyer": "Consejería de Hacienda de la Ciudad Autónoma de Melilla",
+   "nuts": "ES640",
+   "date": "2026-09-21",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Estrategia altamente estructurada con principios rectores, cuatro fases y cronograma con hitos de validación",
+    "Modelo operativo de atención en cinco pasos claramente diagramado",
+    "Estrategia general y estructurada con palancas principales y fases operativas claras",
+    "Cumple todos los subapartados del pliego con gran nivel de detalle"
+   ],
+   "weak": [
+    "Se valora de forma óptima pero con menos aportación diferencial que la competidora"
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fz9teJShS1j%2Fa9DgO%2BoYKQ%3D%3D",
+   "doc": "2026-130d2251-c4bf-4c04-aa59-15aa09fc63d7"
+  },
+  {
+   "crit": "Aclaración de la solución técnica haciendo referencia a cada apartado del PPTP",
+   "max": 10,
+   "exp": "p:17393675",
+   "ref": "139/2025/CMA",
+   "title": "Servicio de mantenimiento del portal Transparencia, WEB Institucional y Tablón de Edictos (LOTE 1) Servicio de Información y Atención Telefó",
+   "buyer": "Consejería de Hacienda de la Ciudad Autónoma de Melilla",
+   "nuts": "ES640",
+   "date": "2026-09-21",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Matriz de trazabilidad con el PPTP bien estructurada y ordenada",
+    "Manual básico de conocimientos y asesoramiento en administración electrónica como mejora",
+    "Mapa de cobertura del PPTP con procedimientos, responsables y registros",
+    "Tratamiento individualizado y profundo de las once funciones encomendadas"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fz9teJShS1j%2Fa9DgO%2BoYKQ%3D%3D",
+   "doc": "2026-130d2251-c4bf-4c04-aa59-15aa09fc63d7"
+  },
+  {
+   "crit": "Abordar aspectos técnicos o soluciones por encima de lo exigido por el PPTP",
+   "max": 10,
+   "exp": "p:17393675",
+   "ref": "139/2025/CMA",
+   "title": "Servicio de mantenimiento del portal Transparencia, WEB Institucional y Tablón de Edictos (LOTE 1) Servicio de Información y Atención Telefó",
+   "buyer": "Consejería de Hacienda de la Ciudad Autónoma de Melilla",
+   "nuts": "ES640",
+   "date": "2026-09-21",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Horario reforzado, operadora adicional sin curva de aprendizaje y aplicación multicanal propia",
+    "Herramientas de indicadores en tiempo real para la DGAP sin coste adicional",
+    "Mejoras calificadas como la mejor solución",
+    "Oficina en Melilla de 100 m², muy superior a los 30 m² exigidos",
+    "Hoja de ruta de madurez y metodología de formación valoradas positivamente"
+   ],
+   "weak": [
+    "La auditoría interna no supone gran aporte, al exigir el PPTP un sistema de gestión de calidad",
+    "Se echan en falta otros aspectos por encima del PPTP"
+   ],
+   "hypothesis": {
+    "premia": "Mejoras concretas y medibles que superan el pliego sin coste para la Administración, como refuerzo horario, personal adicional, herramientas de seguimiento en tiempo real para la DGAP y aplicaciones propias.",
+    "penaliza": "Mejoras que replican lo exigido en el PPTP o que ya son obligatorias (sistema de gestión de calidad), así como la falta de aportaciones adicionales concretadas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fz9teJShS1j%2Fa9DgO%2BoYKQ%3D%3D",
+   "doc": "2026-130d2251-c4bf-4c04-aa59-15aa09fc63d7"
+  },
+  {
+   "crit": "Tareas incluidas en la tipología del servicio a prestar",
+   "max": 10,
+   "exp": "p:17393675",
+   "ref": "139/2025/CMA",
+   "title": "Servicio de mantenimiento del portal Transparencia, WEB Institucional y Tablón de Edictos (LOTE 1) Servicio de Información y Atención Telefó",
+   "buyer": "Consejería de Hacienda de la Ciudad Autónoma de Melilla",
+   "nuts": "ES640",
+   "date": "2026-09-21",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Detalle preciso de todas las tareas, incluido el CASAD y campañas informativas",
+    "Roles dinámicos del equipo para absorber la demanda",
+    "Descripción idónea y detallada de las tareas del servicio",
+    "Uso de guiones, checklists y procedimientos depurados para anticiparse a picos de demanda"
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fz9teJShS1j%2Fa9DgO%2BoYKQ%3D%3D",
+   "doc": "2026-130d2251-c4bf-4c04-aa59-15aa09fc63d7"
+  },
+  {
+   "crit": "Descripción del circuito de trabajo y comunicación con la Administración",
+   "max": 10,
+   "exp": "p:17393675",
+   "ref": "139/2025/CMA",
+   "title": "Servicio de mantenimiento del portal Transparencia, WEB Institucional y Tablón de Edictos (LOTE 1) Servicio de Información y Atención Telefó",
+   "buyer": "Consejería de Hacienda de la Ciudad Autónoma de Melilla",
+   "nuts": "ES640",
+   "date": "2026-09-21",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "Circuito operativo de ocho fases con evidencias documentales en cada paso",
+    "Fichas de conocimiento estructurado para incidencias recurrentes y gradación de prioridades",
+    "Flujos operativos con gran nivel de detalle y sistematización operativa",
+    "Medio adicional de comunicación con la Administración mediante herramientas de gestión en tiempo real"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Sistematización operativa, fases con evidencias, herramientas de comunicación adicionales con la Administración y priorización de incidencias.",
+    "penaliza": "No consta penalización específica en los comentarios; la diferencia de puntuación se explica por la menor valoración del valor añadido en la comunicación con la Administración."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fz9teJShS1j%2Fa9DgO%2BoYKQ%3D%3D",
+   "doc": "2026-130d2251-c4bf-4c04-aa59-15aa09fc63d7"
+  },
+  {
+   "crit": "Justificación de la elección de la solución propuesta frente a otras alternativas similares",
+   "max": 10,
+   "exp": "p:17393675",
+   "ref": "139/2025/CMA",
+   "title": "Servicio de mantenimiento del portal Transparencia, WEB Institucional y Tablón de Edictos (LOTE 1) Servicio de Información y Atención Telefó",
+   "buyer": "Consejería de Hacienda de la Ciudad Autónoma de Melilla",
+   "nuts": "ES640",
+   "date": "2026-09-21",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Integra elementos diferenciales no presentes en la oferta competidora ni exigidos en el pliego",
+    "Ampliación de cobertura horaria de 10 horas/puesto semanales sin incremento de precio",
+    "Matriz comparativa de alternativas y justificación fundamentada"
+   ],
+   "weak": [
+    "Aspectos considerados contemplados ya en el pliego, sin solución innovadora",
+    "No aporta medios innovadores de comunicación ni personal adicional sin coste",
+    "Bolsa de personal de sustitución sin concretar condiciones ni coste de activación"
+   ],
+   "hypothesis": {
+    "premia": "Elementos diferenciales frente a la competencia y no exigidos en el pliego, con cuantificación de la aportación (horas adicionales, medios de comunicación innovadores).",
+    "penaliza": "Argumentar con elementos ya contemplados en el pliego y no aportar soluciones innovadoras ni personal adicional sin coste; activaciones de personal sin condiciones concretas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=fz9teJShS1j%2Fa9DgO%2BoYKQ%3D%3D",
+   "doc": "2026-130d2251-c4bf-4c04-aa59-15aa09fc63d7"
+  },
+  {
+   "crit": "2.1 Metodología técnica para la ejecución del proyecto",
+   "max": 15,
+   "exp": "p:20287544",
+   "ref": "CG-2026/2815/0101",
+   "title": "Servicios profesionales especializados para llevar a cabo la adaptación de la plataforma Strategy (MicroStrategy) al nuevo Data Warehouse co",
+   "buyer": "Dirección General de IBERMUTUA, Mutua Colaboradora con la Seguridad Social nº 274",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 2,
+   "top": {
+    "pts": 14.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Nivel elevado de detalle metodológico, con fases, subfases, Quality Gates, trazabilidad y gobernanza.",
+    "Dedicación expresamente cuantificada en 1.620 horas, con mecanismos de co-ejecución y respaldo técnico.",
+    "Estructura de proyecto completa: cuatro fases, planificación de trece semanas, cinco hitos, organización, coordinación, seguimiento y documentación."
+   ],
+   "weak": [
+    "Metodología no determinada, al contemplar Agile o Waterfall según necesidades, lo que reduce la concreción del enfoque.",
+    "Sin cuantificación horaria por perfil, con menor detalle de dedicación que la oferta competidora.",
+    "Matriz de riesgos de adecuación insuficiente; el riesgo R07 señala posible falta de definición de planes de pruebas.",
+    "Inconsistencia temporal en la Fase 2 (referencias a semanas 4–7 y 4–8), que supone una reserva de 0,5 puntos."
+   ],
+   "hypothesis": {
+    "premia": "Metodología concreta y detallada, con dedicación horaria cuantificada por recursos, Quality Gates y gestión de riesgos sólida.",
+    "penaliza": "Enfoque metodológico no determinado, falta de cuantificación horaria por perfil y matriz de riesgos insuficiente."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kHuFfS%2F8wgp%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-73e8acce-ae32-43a6-9654-02c11a0691aa"
+  },
+  {
+   "crit": "2.2 Plan de validación, aseguramiento de la calidad y puesta en producción",
+   "max": 10,
+   "exp": "p:20287544",
+   "ref": "CG-2026/2815/0101",
+   "title": "Servicios profesionales especializados para llevar a cabo la adaptación de la plataforma Strategy (MicroStrategy) al nuevo Data Warehouse co",
+   "buyer": "Dirección General de IBERMUTUA, Mutua Colaboradora con la Seguridad Social nº 274",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Procedimiento completo con entorno espejo, Sandbox, regresión automatizada, controles de datos y rendimiento, y estrategia A/B.",
+    "Ventana de reversión inferior a 30 minutos y secuencia detallada ante un No-Go; alcanza el nivel máximo.",
+    "Procedimiento que incluye PostgreSQL como baseline, ejecución paralela, regresión, pruebas funcionales, integración, Go/No-Go, smoke tests y estabilización."
+   ],
+   "weak": [
+    "Criterio de rendimiento formulado como ausencia de degradaciones significativas, sin umbral cuantitativo.",
+    "El procedimiento de reversión no establece un tiempo máximo objetivo para el rollback."
+   ],
+   "hypothesis": {
+    "premia": "Objetivación con umbrales cuantitativos (ventana de reversión, entorno espejo, secuencia ante No-Go) y procedimiento de rollback concreto.",
+    "penaliza": "Criterios de rendimiento sin umbral cuantitativo y rollback sin tiempo máximo objetivo."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kHuFfS%2F8wgp%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-73e8acce-ae32-43a6-9654-02c11a0691aa"
+  },
+  {
+   "crit": "2.3 Adecuación de la propuesta al entorno tecnológico objeto del contrato",
+   "max": 15,
+   "exp": "p:20287544",
+   "ref": "CG-2026/2815/0101",
+   "title": "Servicios profesionales especializados para llevar a cabo la adaptación de la plataforma Strategy (MicroStrategy) al nuevo Data Warehouse co",
+   "buyer": "Dirección General de IBERMUTUA, Mutua Colaboradora con la Seguridad Social nº 274",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 2,
+   "top": {
+    "pts": 14.5,
+    "winner": true
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Desarrollo profundo de conectividad (ODBC 64 bits, parámetros DSN, caché, timeouts) y delegación de cómputo mediante VLDB y pushdown.",
+    "Estrategia detallada de convivencia PostgreSQL-Snowflake y mecanismos de transición y continuidad.",
+    "Conocimiento del entorno Strategy-Snowflake y arquitectura coherente, con RLS/CLSF, convivencia, pushdown, caché y monitorización."
+   ],
+   "weak": [
+    "Menor concreción en parámetros de conectividad, configuración VLDB, mecanismos de delegación, parametrización de caché y mecanismos FinOps.",
+    "Formulaciones excesivamente categóricas o prescriptivas que deberán contrastarse con la configuración real del entorno (reserva de 0,5 puntos)."
+   ],
+   "hypothesis": {
+    "premia": "Concreción de mecanismos técnicos de bajo nivel (ODBC, DSN, caché, VLDB, pushdown) y estrategia de convivencia detallada.",
+    "penaliza": "Menor concreción en parámetros de conectividad, configuración VLDB, delegación de procesamiento y FinOps."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kHuFfS%2F8wgp%2FP7lJ7Fu0SA%3D%3D",
+   "doc": "2026-73e8acce-ae32-43a6-9654-02c11a0691aa"
+  },
+  {
+   "crit": "Consultoría IA/Data",
+   "max": 25,
+   "exp": "p:19862241",
+   "ref": "21/26/S",
+   "title": "Servicio de consultoría para la arquitectura Data/IA on premise de la Comisión Nacional del Mercado de Valores.",
+   "buyer": "Comisión Nacional del Mercado de Valores",
+   "nuts": "ES300",
+   "date": "2026-09-02",
+   "offers": 4,
+   "top": {
+    "pts": 25,
+    "winner": false
+   },
+   "low": {
+    "pts": 13.75
+   },
+   "best": [
+    "Enfoque metodológico adecuado, visión estratégica coherente y evolución clara hacia la arquitectura objetivo con gobierno del dato.",
+    "Arquitectura objetivo completa, con alternativas tecnológicas, MLOps, gobierno del dato, interoperabilidad, seguridad y enfoque híbrido Cloud/On-Premise."
+   ],
+   "weak": [
+    "La definición de componentes arquitectónicos, escenarios de implantación y materialización técnica podría desarrollarse con más detalle.",
+    "Los componentes, escenarios de implantación y elementos para la evolución podrían detallarse más."
+   ],
+   "hypothesis": {
+    "premia": "Arquitectura objetivo completa y detallada, con alternativas tecnológicas, infraestructura de IA, MLOps, gobierno del dato, seguridad e integración híbrida Cloud/On-Premise.",
+    "penaliza": "Menor detalle en la justificación de decisiones, criterios de selección de tecnologías, dimensionamiento de infraestructura y definición de componentes."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=pK9PTHuO6QG5HQrHoP3G5A%3D%3D",
+   "doc": "2026-34ff15d6-288b-4239-b79c-277e8f7c1092"
+  },
+  {
+   "crit": "Venta de Entradas",
+   "max": 10,
+   "exp": "p:19886505",
+   "ref": "2026065_ASE",
+   "title": "Servicio de emisión y venta anticipada, telemática y presencial de entradas de los eventos y espectáculos organizados por la Concejalía de C",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Alcorcón",
+   "nuts": "ES300",
+   "date": "2026-09-01",
+   "offers": 8,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Solución muy completa, con configuración flexible de espectáculos, productos complementarios, descuentos y promociones.",
+    "Flexibilidad para configurar abonos, promociones y descuentos, con gestión sencilla que favorece la autonomía del personal municipal."
+   ],
+   "weak": [
+    "Menores posibilidades para configurar de forma autónoma promociones, descuentos o productos asociados."
+   ],
+   "hypothesis": {
+    "premia": "Flexibilidad para configurar promociones, descuentos, abonos y productos complementarios, con gestión autónoma por el personal municipal.",
+    "penaliza": "Configuración limitada de promociones y modalidades de venta, con mayor intervención manual del personal."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=1UhL4XRzwJQmMOlAXxDEjw%3D%3D",
+   "doc": "2026-a78ce900-8a81-4c3a-b36e-edaeba14d2a6"
+  },
+  {
+   "crit": "Portal Web y Venta Online",
+   "max": 10,
+   "exp": "p:19886505",
+   "ref": "2026065_ASE",
+   "title": "Servicio de emisión y venta anticipada, telemática y presencial de entradas de los eventos y espectáculos organizados por la Concejalía de C",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Alcorcón",
+   "nuts": "ES300",
+   "date": "2026-09-01",
+   "offers": 8,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Portal muy completo, compra sencilla e intuitiva desde cualquier dispositivo, con envío automático de entradas en distintos formatos.",
+    "Portal totalmente personalizable con imagen corporativa, con herramientas de selección de localidades y área privada de usuarios."
+   ],
+   "weak": [
+    "Operativa más básica y experiencia de usuario menos desarrollada; menos funcionalidades online."
+   ],
+   "hypothesis": {
+    "premia": "Personalización con imagen corporativa, compra sencilla y multidispositivo, envío automático de entradas y estabilidad en alta demanda.",
+    "penaliza": "Interfaz básica, experiencia de usuario más sencilla y menor capacidad de personalización."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=1UhL4XRzwJQmMOlAXxDEjw%3D%3D",
+   "doc": "2026-a78ce900-8a81-4c3a-b36e-edaeba14d2a6"
+  },
+  {
+   "crit": "Gestión de Aforos y Control de Accesos",
+   "max": 10,
+   "exp": "p:19886505",
+   "ref": "2026065_ASE",
+   "title": "Servicio de emisión y venta anticipada, telemática y presencial de entradas de los eventos y espectáculos organizados por la Concejalía de C",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Alcorcón",
+   "nuts": "ES300",
+   "date": "2026-09-01",
+   "offers": 8,
+   "top": {
+    "pts": 9,
+    "winner": false
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Validación ágil de entradas y operatividad ante incidencias de conexión, aportando seguridad y continuidad.",
+    "Integra el control de accesos con datos de usuarios y modalidades de entrada, identificando automáticamente abonados y colectivos."
+   ],
+   "weak": [
+    "Ofrece menores funcionalidades que otras propuestas analizadas."
+   ],
+   "hypothesis": {
+    "premia": "Integración del control de accesos con datos de usuarios y abonos, y operatividad ante incidencias de conexión.",
+    "penaliza": "Menores funcionalidades y automatización, con adecuación limitada a eventos de menor complejidad."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=1UhL4XRzwJQmMOlAXxDEjw%3D%3D",
+   "doc": "2026-a78ce900-8a81-4c3a-b36e-edaeba14d2a6"
+  },
+  {
+   "crit": "CRM y Herramienta de Email Marketing Integrada",
+   "max": 9,
+   "exp": "p:19886505",
+   "ref": "2026065_ASE",
+   "title": "Servicio de emisión y venta anticipada, telemática y presencial de entradas de los eventos y espectáculos organizados por la Concejalía de C",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Alcorcón",
+   "nuts": "ES300",
+   "date": "2026-09-01",
+   "offers": 8,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Integra Audience Management (SAM), automatización por disparadores en tiempo real y segmentación automática del público.",
+    "CRM nativo muy especializado en el sector cultural; base relacional que permite campañas hipersegmentadas y automatizadas."
+   ],
+   "weak": [
+    "No dispone de CRM nativo ni módulo propio de email marketing; depende de exportación CSV o de APIs de terceros."
+   ],
+   "hypothesis": {
+    "premia": "CRM nativo o integrado con segmentación avanzada y automatización de campañas basadas en comportamiento e historial.",
+    "penaliza": "Ausencia de CRM o email marketing propio, dependencia de exportaciones externas o automatización básica o limitada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=1UhL4XRzwJQmMOlAXxDEjw%3D%3D",
+   "doc": "2026-a78ce900-8a81-4c3a-b36e-edaeba14d2a6"
+  },
+  {
+   "crit": "Herramienta de Generar Informes, Análisis de Datos y BI",
+   "max": 9,
+   "exp": "p:19886505",
+   "ref": "2026065_ASE",
+   "title": "Servicio de emisión y venta anticipada, telemática y presencial de entradas de los eventos y espectáculos organizados por la Concejalía de C",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Alcorcón",
+   "nuts": "ES300",
+   "date": "2026-09-01",
+   "offers": 8,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Herramienta muy completa: cuadros de mando, informes de ventas, ocupación y asistencia, y seguimiento de públicos.",
+    "Amplias posibilidades de análisis: informes sobre perfiles de público, evolución de ventas, uso de abonos y comportamiento."
+   ],
+   "weak": [
+    "Funcionalidades limitadas en gestión de públicos; para segmentación o campañas recurre a herramientas externas."
+   ],
+   "hypothesis": {
+    "premia": "Cuadros de mando y análisis amplios (perfiles de público, evolución de ventas, uso de abonos, ocupación).",
+    "penaliza": "Posibilidades de análisis y representación gráfica limitadas, o necesidad de recurrir a herramientas externas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=1UhL4XRzwJQmMOlAXxDEjw%3D%3D",
+   "doc": "2026-a78ce900-8a81-4c3a-b36e-edaeba14d2a6"
+  },
+  {
+   "crit": "Plan de Mantenimiento y Continuidad Digital",
+   "max": 20,
+   "exp": "p:19697637",
+   "ref": "SE/012/26",
+   "title": "Estrategia de comunicación y difusión en medios online digitales",
+   "buyer": "Rectorado de la Universidad Jaume I",
+   "nuts": "ES522",
+   "date": "2026-08-27",
+   "offers": 4,
+   "top": {
+    "pts": 16,
+    "winner": false
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [],
+   "weak": [
+    "Enfoque tecnológico más simplificado en comparación con las otras ofertas."
+   ],
+   "hypothesis": {
+    "premia": "Propuestas tecnológicamente avanzadas y con enfoque en ciberseguridad y agilidad técnica.",
+    "penaliza": "Enfoque tecnológico simplificado y tiempos de resolución de incidencias más conservadores."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=54h58xb6rAFLAIVZdUs8KA%3D%3D",
+   "doc": "2026-7919717a-d858-4c01-9cba-6652e0665f21"
+  },
+  {
+   "crit": "Organización y Coordinación",
+   "max": 10,
+   "exp": "p:19697637",
+   "ref": "SE/012/26",
+   "title": "Estrategia de comunicación y difusión en medios online digitales",
+   "buyer": "Rectorado de la Universidad Jaume I",
+   "nuts": "ES522",
+   "date": "2026-08-27",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": null
+   },
+   "best": [
+    "Presencialidad e inmediatez en la coordinación."
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Presencialidad, inmediatez, orientación digital y adaptación al estilo institucional.",
+    "penaliza": "Control de horas tradicional, sin herramientas de consulta ni monitorización automatizada en tiempo real."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=54h58xb6rAFLAIVZdUs8KA%3D%3D",
+   "doc": "2026-7919717a-d858-4c01-9cba-6652e0665f21"
+  },
+  {
+   "crit": "MET a) Controles de calidad",
+   "max": 5,
+   "exp": "p:19569130",
+   "ref": "SGPRTL202503",
+   "title": "Servicio para la realización del estudio de movilidad de viajeros de ámbito nacional aplicando la tecnología Big Data",
+   "buyer": "Dirección General de Estrategias de Movilidad",
+   "nuts": "ES300",
+   "date": "2026-08-03",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 4
+   },
+   "best": [
+    "Controles automáticos a priori con alarmas y compromiso de resolución de incidencias en 48 horas",
+    "Control a posteriori con contraste externo y modelos de aprendizaje automático; calidad evaluada en cuatro dimensiones",
+    "Control a priori automatizado con alertas y cuadros de mando; control a posteriori con detección de anomalías en modo avión mediante IA",
+    "Evalúa la calidad en exactitud espacial, temporal y temática, y nivel de confianza de la muestra"
+   ],
+   "weak": [
+    "Cita seis métricas de más de 140 sin especificar de forma general su tipología"
+   ],
+   "hypothesis": {
+    "premia": "Controles a priori y a posteriori concretados, con plazos de resolución, alertas, contraste con fuentes externas y dimensiones de calidad explícitas",
+    "penaliza": "Citar métricas sin especificar su tipología o alcance general"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zzDFZGd3u0VLAIVZdUs8KA%3D%3D",
+   "doc": "2026-bcf2e64c-e90d-4d3b-82f0-887d4c884128"
+  },
+  {
+   "crit": "MET b) Definición de Zonificaciones, Aseguramiento de Protección de datos personales sin perder resolución espacial, Métodos de extrapolación de la muestra para residentes y extranjeros",
+   "max": 5,
+   "exp": "p:19569130",
+   "ref": "SGPRTL202503",
+   "title": "Servicio para la realización del estudio de movilidad de viajeros de ámbito nacional aplicando la tecnología Big Data",
+   "buyer": "Dirección General de Estrategias de Movilidad",
+   "nuts": "ES300",
+   "date": "2026-08-03",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Cuatro zonificaciones base con alta resolución por sección censal y subdivisión; incluye flujos con Marruecos según el pliego",
+    "Protección por seudonimización, umbrales y validación de la AEPD; elevación por distrito y estrato, con tratamiento de menores de 10 años",
+    "Zonificación base por sección censal agregable; anonimización con k-anonimidad (k=15) y medición de riesgo de reidentificación",
+    "Elevación diferenciada para residentes e internacionales, con FRONTUR y AENA y límites a los pesos"
+   ],
+   "weak": [
+    "Pernoctaciones solo a nivel municipal, no a nivel de sección censal",
+    "No incluye de forma expresa los pasos transfronterizos con Marruecos exigidos por el PPT",
+    "Zonificación de alta resolución limitada a secciones censales, sin mayor resolución"
+   ],
+   "hypothesis": {
+    "premia": "Cumplir expresamente los requisitos del PPT (flujos con Marruecos), zonificaciones de alta resolución y elevación diferenciada para residentes y no residentes",
+    "penaliza": "Pernoctaciones solo a nivel municipal, omitir los pasos transfronterizos con Marruecos y limitar la alta resolución a secciones censales"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zzDFZGd3u0VLAIVZdUs8KA%3D%3D",
+   "doc": "2026-bcf2e64c-e90d-4d3b-82f0-887d4c884128"
+  },
+  {
+   "crit": "MET c) Definición de algoritmos que generan indicadores de las matrices, de diferenciación modal y de depuración de datos",
+   "max": 25,
+   "exp": "p:19569130",
+   "ref": "SGPRTL202503",
+   "title": "Servicio para la realización del estudio de movilidad de viajeros de ámbito nacional aplicando la tecnología Big Data",
+   "buyer": "Dirección General de Estrategias de Movilidad",
+   "nuts": "ES300",
+   "date": "2026-08-03",
+   "offers": 2,
+   "top": {
+    "pts": 24,
+    "winner": true
+   },
+   "low": {
+    "pts": 21
+   },
+   "best": [
+    "Clasificación de actividades y paradas, y asignación modal por map matching complementado con oferta, demanda, picoceldas y GPS",
+    "Ajustes por par de terminales o paradas con billetaje y subidos/bajados; aprendizaje automático para ambigüedades",
+    "Fuentes de entrada muy amplias y algoritmos de residencia, trabajo, pernoctaciones, flickering y puntos de interés",
+    "Validación con OTLE, CNMC y OFE; colaboración con SICE para movilidad intraurbana"
+   ],
+   "weak": [
+    "Sin calibración con billetaje diario ni con conteos de subidos y bajados",
+    "Movilidad sobre redes con GraphHopper y OpenStreetMap, sin describir el paso al grafo RT del IGN",
+    "Describe el producto de movilidad sobre redes sin detallar su obtención"
+   ],
+   "hypothesis": {
+    "premia": "Calibración con billetaje y subidos/bajados, ajustes por par de terminales o paradas, uso de picoceldas y GPS, y detalle de la asignación modal",
+    "penaliza": "Falta de calibración con billetaje diario o conteos, y no describir el paso al grafo RT del IGN ni la obtención del producto de movilidad sobre redes"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zzDFZGd3u0VLAIVZdUs8KA%3D%3D",
+   "doc": "2026-bcf2e64c-e90d-4d3b-82f0-887d4c884128"
+  },
+  {
+   "crit": "Plan de trabajo",
+   "max": 10,
+   "exp": "p:19779232",
+   "ref": "2026000398",
+   "title": "Servicio de soporte avanzado de entornos POSTGRESQL del Principado de Asturias",
+   "buyer": "Consejería de Presidencia, Reto Demográfico, Igualdad y Turismo del Principado de Asturias",
+   "nuts": "ES120",
+   "date": "2026-08-03",
+   "offers": 1,
+   "top": {
+    "pts": 9,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Planificación claramente estructurada, con identificación precisa y ordenada de tareas.",
+    "Secuencia lógica: fase inicial de auditoría seguida de un programa de proyectos.",
+    "Alto grado de coherencia y consistencia interna en la planificación."
+   ],
+   "weak": [
+    "La desagregación de actividades no alcanza el nivel máximo de detalle.",
+    "No permite un ajuste plenamente exhaustivo de recursos y mecanismos de control."
+   ],
+   "hypothesis": {
+    "premia": "Planificación clara, ordenada y coherente, con secuencia lógica de tareas y desagregación detallada de actividades que permita ajustar recursos.",
+    "penaliza": "Desagregación de actividades y controles de recursos no exhaustivos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=BqUFkVBnv7zgL1BHd3qjQA%3D%3D",
+   "doc": "2026-0c1e1f28-6e9d-4413-888f-42191424eb6f"
+  },
+  {
+   "crit": "Aplicación de medidas para cumplimiento del ENS con las herramientas que proporcione la BD",
+   "max": 15,
+   "exp": "p:19779232",
+   "ref": "2026000398",
+   "title": "Servicio de soporte avanzado de entornos POSTGRESQL del Principado de Asturias",
+   "buyer": "Consejería de Presidencia, Reto Demográfico, Igualdad y Turismo del Principado de Asturias",
+   "nuts": "ES120",
+   "date": "2026-08-03",
+   "offers": 1,
+   "top": {
+    "pts": 12,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Identifica medidas ENS coherentes: seguridad de PostgreSQL, backup, alta disponibilidad y auditorías ENS.",
+    "Enfoque técnicamente sólido apoyado en funcionalidades nativas, con configuración segura y control de accesos.",
+    "Medidas aplicables al entorno y alineadas con la continuidad del servicio y la fiabilidad del dato."
+   ],
+   "weak": [
+    "No desarrolla de forma sistemática cifrado, gestión avanzada de privilegios, trazabilidad detallada ni gestión de vulnerabilidades.",
+    "Concreción de la adaptación a riesgos legales y técnicos concretos no plenamente detallada.",
+    "No alcanza una implementación óptima del ENS ni una cobertura integral frente a auditorías."
+   ],
+   "hypothesis": {
+    "premia": "Desarrollo sistemático de controles ENS (cifrado, privilegios, trazabilidad, vulnerabilidades) y adaptación detallada a riesgos concretos del entorno.",
+    "penaliza": "Controles ENS tratados de forma no sistemática y concreción limitada de la adaptación a riesgos legales y técnicos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=BqUFkVBnv7zgL1BHd3qjQA%3D%3D",
+   "doc": "2026-0c1e1f28-6e9d-4413-888f-42191424eb6f"
+  },
+  {
+   "crit": "Propuestas adicionales",
+   "max": 15,
+   "exp": "p:19779232",
+   "ref": "2026000398",
+   "title": "Servicio de soporte avanzado de entornos POSTGRESQL del Principado de Asturias",
+   "buyer": "Consejería de Presidencia, Reto Demográfico, Igualdad y Turismo del Principado de Asturias",
+   "nuts": "ES120",
+   "date": "2026-08-03",
+   "offers": 1,
+   "top": {
+    "pts": 11,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Propone monitorización adicional basada en Zabbix, con buena integración en el entorno de la Administración.",
+    "Mejora la detección de incidencias y degradaciones del rendimiento, con métricas y alertas.",
+    "Incluye auditorías de rendimiento, asistencia experta bajo demanda y soporte en auditorías ENS."
+   ],
+   "weak": [
+    "No identifica propuesta específica de cuadros de mando ni informes de reporting automatizados.",
+    "No concreta indicadores relevantes, estructuras de reporting ni actualización periódica.",
+    "Automatización y parametrización avanzada de alertas y explotación de la información insuficientes.",
+    "Condiciones, periodicidad y activación de los servicios adicionales poco concretas."
+   ],
+   "hypothesis": {
+    "premia": "Reporting automatizado con indicadores definidos, alertas parametrizadas y servicios adicionales con condiciones, periodicidad y activación detalladas.",
+    "penaliza": "Ausencia de cuadros de mando y reporting específico, y falta de definición de condiciones y periodicidad de servicios adicionales."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=BqUFkVBnv7zgL1BHd3qjQA%3D%3D",
+   "doc": "2026-0c1e1f28-6e9d-4413-888f-42191424eb6f"
+  },
+  {
+   "crit": "COBERTURA DE LA RED MÓVIL EN LA ZONA DE VALENCIA Y ALREDEDORES DONDE OPERE EMT VALENCIA",
+   "max": 5,
+   "exp": "p:19569142",
+   "ref": "2026-0021",
+   "title": "Contratación de las comunicaciones de los dispositivos embarcados para la Empresa Municipal de Transportes de Valencia S.A.U (Medio Propio)",
+   "buyer": "Consejo de Administración de la Empresa Municipal de Transportes de Valencia, S.A.U.",
+   "nuts": "ES523",
+   "date": "2026-07-30",
+   "offers": 3,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 1
+   },
+   "best": [
+    "Presenta una de las mejores coberturas 4G/5G, con ofertas muy similares entre sí."
+   ],
+   "weak": [
+    "El cambio de red no es inmediato ni rápido, lo que produce problemas de conexión en los dispositivos embarcados."
+   ],
+   "hypothesis": {
+    "premia": "Disponer de cobertura 4G/5G propia y fiable en la zona, sin depender de cambios a redes de terceros.",
+    "penaliza": "Depender del cambio a redes de otros operadores cuando no hay cobertura propia, por la lentitud y los problemas de conexión que genera."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vTE9I36HcpjyoM4us5k4vw%3D%3D",
+   "doc": "2026-ac9a6d39-c7d4-4521-b740-ddffa8a93b5e"
+  },
+  {
+   "crit": "SISTEMA DE SEGURIDAD Y DISEÑO",
+   "max": 20,
+   "exp": "p:19569142",
+   "ref": "2026-0021",
+   "title": "Contratación de las comunicaciones de los dispositivos embarcados para la Empresa Municipal de Transportes de Valencia S.A.U (Medio Propio)",
+   "buyer": "Consejo de Administración de la Empresa Municipal de Transportes de Valencia, S.A.U.",
+   "nuts": "ES523",
+   "date": "2026-07-30",
+   "offers": 3,
+   "top": {
+    "pts": 20,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "La autenticación RADIUS por SIM (IMSI/MSISDN) permite autenticación individual por dispositivo, con mayor control y seguridad.",
+    "Alta flexibilidad e integración con sistemas externos.",
+    "Solución de firewall totalmente escalable, similar en recursos a la de Movistar.",
+    "Plataforma de gestión de SIMs y consumos válida y muy similar a las demás ofertas.",
+    "Solución de firewall escalable y similar en recursos a la de Orange."
+   ],
+   "weak": [
+    "Modelo de autenticación basado únicamente en GGSN/PGW, sin autenticación individual por dispositivo.",
+    "Presenta las SIMs de peor calidad.",
+    "No indica la ubicación geográfica de instalación del firewall.",
+    "Limitación de caudal total de 600Mb."
+   ],
+   "hypothesis": {
+    "premia": "Autenticación RADIUS por SIM con control individual por dispositivo, alta integración con sistemas externos y firewall escalable.",
+    "penaliza": "Modelo de autenticación basado solo en GGSN/PGW, SIMs de peor calidad, firewall sin ubicación indicada y limitación de caudal."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=vTE9I36HcpjyoM4us5k4vw%3D%3D",
+   "doc": "2026-ac9a6d39-c7d4-4521-b740-ddffa8a93b5e"
+  },
+  {
+   "crit": "Calidad y adecuación técnica de la solución de centro de datos ofertada",
+   "max": 50,
+   "exp": "p:19829929",
+   "ref": "2026/A/ASC/0279",
+   "title": "Servicio de alojamiento (housing/colocation) en un Centro de Procesamiento de Datos (CPD) de respaldo para MAZ M.C.S.S.Nº 11",
+   "buyer": "Gerencia de MAZ Mútua de Accidentes de Trabajo y Enfermedades Profesionales de la Seguridad Social nº 11",
+   "nuts": "ES243",
+   "date": "2026-07-28",
+   "offers": 1,
+   "top": {
+    "pts": 48,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Describe de forma detallada y adecuada las instalaciones, infraestructura, distribución y características constructivas del centro de datos.",
+    "Incluye representación gráfica de la ubicación propuesta para los racks.",
+    "Acredita elevados niveles de redundancia y disponibilidad en alimentación eléctrica, climatización y seguridad física.",
+    "Características de racks y PDUs descritas con suficiente detalle y adecuadas a las necesidades del contrato.",
+    "Servicio de Remote Hands con funciones, horarios, tiempos de respuesta y cualificación del personal descritos."
+   ],
+   "weak": [
+    "No detalla la composición y dimensionamiento del equipo técnico de Remote Hands.",
+    "La monitorización podría desarrollarse más en indicadores, acceso del cliente y procedimientos de escalado.",
+    "El plan de continuidad es principalmente descriptivo; faltan procedimientos operativos, objetivos de recuperación y pruebas periódicas.",
+    "No incluye referencias de clientes actuales para valorar el aspecto solicitado."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ffU4PfmCnVGFQ%2FlhRK79lA%3D%3D",
+   "doc": "2026-a3508a47-b94e-4101-ac0b-6e95e80df67b"
+  },
+  {
+   "crit": "SUBCRITERIO 1.1.- MODELO DE PLANIFICACIÓN Y APLICACIÓN DE ESTÁNDARES",
+   "max": 12,
+   "exp": "p:19198106",
+   "ref": "04101/2025/249-SER",
+   "title": "Servicios informáticos de mantenimiento y soporte de los sistemas corporativos de gestión específica de ingresos, de gestión patrimonial, de",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-19",
+   "offers": 2,
+   "top": {
+    "pts": 11.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Modelo metodológico claro con fases bien definidas y perfiles por fase.",
+    "Aporta modelos, esquemas y ejemplos de la documentación de cada tipo de mantenimiento.",
+    "IA integrada en quality gates, métricas e indicadores verificables.",
+    "Marco metodológico amplio basado en MÉTRICA v3, ITIL, Kanban y DevOps.",
+    "Herramientas avanzadas (LegacIA, CENIA) descritas con alto nivel de detalle."
+   ],
+   "weak": [
+    "Planificación operativa con bajo detalle por fases y cronograma poco sintético.",
+    "No incluye modelos, plantillas ni ejemplos de la documentación.",
+    "Uso de la IA descrito de forma genérica, sin integración en quality gates."
+   ],
+   "hypothesis": {
+    "premia": "Fases y perfiles claros, modelos y ejemplos de entregables, e IA integrada de forma operativa en quality gates y métricas.",
+    "penaliza": "Planificación genérica, ausencia de modelos o plantillas y uso de la IA descrito de forma superficial."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kwP%2B87%2BAxEqTylGzYmBF9Q%3D%3D",
+   "doc": "2026-334b104f-56f5-46a0-a59a-e556cc03764d"
+  },
+  {
+   "crit": "SUBCRITERIO 1.2.- PLAN DE SEGUIMIENTO Y CONTROL",
+   "max": 12,
+   "exp": "p:19198106",
+   "ref": "04101/2025/249-SER",
+   "title": "Servicios informáticos de mantenimiento y soporte de los sistemas corporativos de gestión específica de ingresos, de gestión patrimonial, de",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-19",
+   "offers": 2,
+   "top": {
+    "pts": 12,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Modelo de cuadros de mando diferenciado del catálogo de indicadores.",
+    "Indicadores sin confusión entre métricas, umbrales y objetivos.",
+    "Matriz de priorización por probabilidad e impacto y contingencias concretas.",
+    "Incluye un amplio conjunto de indicadores de seguimiento.",
+    "Referencia expresa a MAGERIT como metodología de análisis de riesgos."
+   ],
+   "weak": [
+    "No desarrolla un cuadro de mando como instrumento estructural independiente.",
+    "Confusión entre métrica, umbral y nivel de servicio en los indicadores.",
+    "Herramientas de reporting propuestas sin especificar licenciamiento ni costes.",
+    "Estado de situación e informe de seguimiento poco definidos.",
+    "Riesgos genéricos, sin riesgos concretos, ejemplos ni matriz propia."
+   ],
+   "hypothesis": {
+    "premia": "Cuadro de mando diferenciado de los KPIs, indicadores bien definidos y matriz de riesgos con medidas de contingencia concretas.",
+    "penaliza": "Confusión entre métricas y umbrales, ausencia de cuadro de mando explícito, herramientas sin concretar y riesgos genéricos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kwP%2B87%2BAxEqTylGzYmBF9Q%3D%3D",
+   "doc": "2026-334b104f-56f5-46a0-a59a-e556cc03764d"
+  },
+  {
+   "crit": "SUBCRITERIO 1.3.- PLAN DE ASEGURAMIENTO DE LA CALIDAD",
+   "max": 8,
+   "exp": "p:19198106",
+   "ref": "04101/2025/249-SER",
+   "title": "Servicios informáticos de mantenimiento y soporte de los sistemas corporativos de gestión específica de ingresos, de gestión patrimonial, de",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-19",
+   "offers": 2,
+   "top": {
+    "pts": 7.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 5.5
+   },
+   "best": [
+    "Herramientas de calidad alineadas con el Anexo III del PPT y pipelines CI/CD.",
+    "Modelo de tres niveles de independencia con auditorías externas independientes.",
+    "Uso de herramientas estándar de análisis estático, pruebas y rendimiento.",
+    "Compromiso de mantener las reglas AyWebFwk en SonarQube."
+   ],
+   "weak": [
+    "Configuración y uso operativo de las herramientas descritos en términos muy generales.",
+    "Funciones de calidad realizadas íntegramente dentro de la propia organización, sin auditorías externas."
+   ],
+   "hypothesis": {
+    "premia": "Independencia de los análisis con auditorías externas y un servicio de calidad jerárquicamente independiente.",
+    "penaliza": "Funciones de calidad íntegramente internas y descripción general de la configuración de herramientas."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kwP%2B87%2BAxEqTylGzYmBF9Q%3D%3D",
+   "doc": "2026-334b104f-56f5-46a0-a59a-e556cc03764d"
+  },
+  {
+   "crit": "SUBCRITERIO 1.4.- PLAN DE TRANSFERENCIA DEL CONOCIMIENTO, FORMACIÓN Y SOPORTE",
+   "max": 12,
+   "exp": "p:19198106",
+   "ref": "04101/2025/249-SER",
+   "title": "Servicios informáticos de mantenimiento y soporte de los sistemas corporativos de gestión específica de ingresos, de gestión patrimonial, de",
+   "buyer": "Junta de Gobierno del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-19",
+   "offers": 2,
+   "top": {
+    "pts": 11.5,
+    "winner": false
+   },
+   "low": {
+    "pts": 6.5
+   },
+   "best": [
+    "Capacitación por perfiles que incluye expresamente al personal Java/SOA.",
+    "Plan de traspaso de seis meses y colaboración post-traspaso de 30 días.",
+    "Solución de IA para la gestión de incidencias con mejora de tiempos de respuesta.",
+    "Organización del equipo de soporte, protocolo y gestión de incidencias adecuados."
+   ],
+   "weak": [
+    "Plan de capacitación genérico, con baja segmentación de perfiles.",
+    "No identifica expresamente al personal de la infraestructura Java/SOA.",
+    "Plan de devolución de tres meses considerado claramente insuficiente.",
+    "Nivel de detalle insuficiente en las nuevas funcionalidades del mantenimiento evolutivo."
+   ],
+   "hypothesis": {
+    "premia": "Formación segmentada por perfiles incluyendo Java/SOA, traspaso de duración suficiente y compromisos post-traspaso.",
+    "penaliza": "Traspaso de duración insuficiente, perfiles formativos genéricos y falta de detalle en nuevas funcionalidades."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=kwP%2B87%2BAxEqTylGzYmBF9Q%3D%3D",
+   "doc": "2026-334b104f-56f5-46a0-a59a-e556cc03764d"
+  }
+ ]
+}

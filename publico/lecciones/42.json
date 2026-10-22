@@ -1,0 +1,255 @@
+{
+ "cpv2": "42",
+ "generated": "2026-10-22T14:39:58.993Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Adecuación de perfiles, funciones y responsabilidades",
+   "max": 6,
+   "exp": "p:20098500",
+   "ref": "SUM-26-0251-SIST",
+   "title": "Suministro e instalación de infraestructura técnica para sala de backup para umivale Activa",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES514",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 6,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Jefe de proyecto como único punto de contacto, con tres ingenieros y tres técnicos que cubren todas las necesidades técnicas, incluidas las eléctricas.",
+    "Los especialistas de HPE Startup se presentan como recursos complementarios que no sustituyen al equipo adscrito."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tupnPyPXUpOS81gZFETWmA%3D%3D",
+   "doc": "2026-ef5cec4b-eb32-4204-a0e6-fcaea35cb1a3"
+  },
+  {
+   "crit": "Experiencia específica del equipo en proyectos similares",
+   "max": 10,
+   "exp": "p:20098500",
+   "ref": "SUM-26-0251-SIST",
+   "title": "Suministro e instalación de infraestructura técnica para sala de backup para umivale Activa",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES514",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Experiencia amplia y detallada de los tres perfiles en proyectos similares de virtualización, LAN/SAN y almacenamiento.",
+    "Experiencia acreditada también de tres técnicos en instalaciones de networking."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tupnPyPXUpOS81gZFETWmA%3D%3D",
+   "doc": "2026-ef5cec4b-eb32-4204-a0e6-fcaea35cb1a3"
+  },
+  {
+   "crit": "Certificaciones y formación técnica vinculada al objeto del contrato",
+   "max": 7,
+   "exp": "p:20098500",
+   "ref": "SUM-26-0251-SIST",
+   "title": "Suministro e instalación de infraestructura técnica para sala de backup para umivale Activa",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES514",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Se aportan certificaciones de los técnicos y formación adecuadas a las prestaciones del contrato."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tupnPyPXUpOS81gZFETWmA%3D%3D",
+   "doc": "2026-ef5cec4b-eb32-4204-a0e6-fcaea35cb1a3"
+  },
+  {
+   "crit": "Dedicación, disponibilidad y continuidad del equipo",
+   "max": 5,
+   "exp": "p:20098500",
+   "ref": "SUM-26-0251-SIST",
+   "title": "Suministro e instalación de infraestructura técnica para sala de backup para umivale Activa",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES514",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Se indica la dedicación prevista del equipo asignado."
+   ],
+   "weak": [
+    "No se detallan las fases críticas ni los mecanismos de continuidad técnica."
+   ],
+   "hypothesis": {
+    "premia": "Definir la dedicación por perfiles y fases, detallar fases críticas y concretar mecanismos de sustitución, refuerzo y continuidad técnica.",
+    "penaliza": "Indicar la dedicación de forma general sin detallar fases críticas ni medidas de continuidad ante indisponibilidad."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tupnPyPXUpOS81gZFETWmA%3D%3D",
+   "doc": "2026-ef5cec4b-eb32-4204-a0e6-fcaea35cb1a3"
+  },
+  {
+   "crit": "Capacidad de coordinación técnica e interlocución con umivale Activa",
+   "max": 2,
+   "exp": "p:20098500",
+   "ref": "SUM-26-0251-SIST",
+   "title": "Suministro e instalación de infraestructura técnica para sala de backup para umivale Activa",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES514",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Modelo de coordinación claro con responsable técnico único como punto de contacto y gobierno adaptado a la duración del proyecto.",
+    "Combina seguimiento ejecutivo, coordinación operativa y trabajo técnico."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tupnPyPXUpOS81gZFETWmA%3D%3D",
+   "doc": "2026-ef5cec4b-eb32-4204-a0e6-fcaea35cb1a3"
+  },
+  {
+   "crit": "Metodología y enfoque técnico de implantación",
+   "max": 4,
+   "exp": "p:20098500",
+   "ref": "SUM-26-0251-SIST",
+   "title": "Suministro e instalación de infraestructura técnica para sala de backup para umivale Activa",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES514",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 4,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Material original del fabricante, nuevo y con garantía directa del fabricante, con partnumbers aportados.",
+    "Ejecución en ocho fases con actividades, responsables, evidencias y entregable verificable en cada una.",
+    "Planificación definitiva validada en reunión de lanzamiento y plazo máximo de tres meses."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tupnPyPXUpOS81gZFETWmA%3D%3D",
+   "doc": "2026-ef5cec4b-eb32-4204-a0e6-fcaea35cb1a3"
+  },
+  {
+   "crit": "Planificación, cronograma e hitos del proyecto",
+   "max": 2,
+   "exp": "p:20098500",
+   "ref": "SUM-26-0251-SIST",
+   "title": "Suministro e instalación de infraestructura técnica para sala de backup para umivale Activa",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES514",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 2,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Propone una duración máxima de tres meses con diagrama de Gantt y entrega de un Project para la planificación.",
+    "Se detallan los trabajos, tiempos y tareas a realizar."
+   ],
+   "weak": [
+    "Las fechas concretas de los trabajos se planifican después de la entrega del material."
+   ],
+   "hypothesis": {
+    "premia": "Presentar una planificación cerrada desde el inicio, con fases, actividades, hitos y dependencias ya definidos.",
+    "penaliza": "Diferir la planificación concreta de fechas y trabajos a una fase posterior a la entrega del material."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tupnPyPXUpOS81gZFETWmA%3D%3D",
+   "doc": "2026-ef5cec4b-eb32-4204-a0e6-fcaea35cb1a3"
+  },
+  {
+   "crit": "Gestión del proyecto, coordinación y seguimiento",
+   "max": 1.5,
+   "exp": "p:20098500",
+   "ref": "SUM-26-0251-SIST",
+   "title": "Suministro e instalación de infraestructura técnica para sala de backup para umivale Activa",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES514",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 1.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Gobierno adaptado a la duración del proyecto, con seguimiento ejecutivo, coordinación operativa y participantes y frecuencia de reuniones."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tupnPyPXUpOS81gZFETWmA%3D%3D",
+   "doc": "2026-ef5cec4b-eb32-4204-a0e6-fcaea35cb1a3"
+  },
+  {
+   "crit": "Plan de pruebas, validación y puesta en producción",
+   "max": 1.5,
+   "exp": "p:20098500",
+   "ref": "SUM-26-0251-SIST",
+   "title": "Suministro e instalación de infraestructura técnica para sala de backup para umivale Activa",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES514",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 1.5,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "La implantación se considera finalizada tras la validación de suministro, configuración, pruebas y documentación por umivale Activa.",
+    "Pruebas de conectividad, redundancia, failover, backup, restauración y recuperación, con entregables detallados."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tupnPyPXUpOS81gZFETWmA%3D%3D",
+   "doc": "2026-ef5cec4b-eb32-4204-a0e6-fcaea35cb1a3"
+  },
+  {
+   "crit": "Gestión de riesgos, transferencia de conocimiento y mejoras metodológicas",
+   "max": 1,
+   "exp": "p:20098500",
+   "ref": "SUM-26-0251-SIST",
+   "title": "Suministro e instalación de infraestructura técnica para sala de backup para umivale Activa",
+   "buyer": "Gerencia umivale Activa, Mutua Colaboradora con la Seguridad Social número 3",
+   "nuts": "ES514",
+   "date": "2026-08-28",
+   "offers": 1,
+   "top": {
+    "pts": 1,
+    "winner": true
+   },
+   "low": null,
+   "best": [
+    "Cambios con impacto sometidos a aprobación previa, con plan de reversión, y desviaciones comunicadas de inmediato con medidas correctoras.",
+    "Tabla de gestión de riesgos y continuidad, y transferencia de conocimiento basada en la configuración real instalada."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=tupnPyPXUpOS81gZFETWmA%3D%3D",
+   "doc": "2026-ef5cec4b-eb32-4204-a0e6-fcaea35cb1a3"
+  }
+ ]
+}

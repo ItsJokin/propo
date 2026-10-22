@@ -1,0 +1,170 @@
+{
+ "cpv2": "32",
+ "generated": "2026-10-22T14:39:58.993Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Calidad de la solución aportada descrita en la oferta técnica",
+   "max": 8,
+   "exp": "p:19693925",
+   "ref": "S-01576-2026",
+   "title": "Cabecera de emisión para América",
+   "buyer": "Compras de la Corporación de Radio y Televisión Española S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-24",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": false
+   },
+   "low": {
+    "pts": 7.7
+   },
+   "best": [
+    "Memoria con descripción clara y detallada de la solución técnica",
+    "Extensa información técnica mediante descripciones y catálogos del fabricante",
+    "Indica el cumplimiento de todos los requisitos exigidos",
+    "Incluye diagramas detallados, tabla de desglose de equipos y fichas técnicas de todo el equipamiento",
+    "Descripción clara y detallada de la solución técnica"
+   ],
+   "weak": [
+    "Menor detalle en la información sobre algún elemento"
+   ],
+   "hypothesis": {
+    "premia": "Memoria clara y detallada que indica el cumplimiento de todos los requisitos, con diagramas, tabla de desglose de equipos y fichas técnicas de todo el equipamiento.",
+    "penaliza": "Menor detalle en la información sobre algún elemento de la solución."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uSioaYV4Ppctm4eBPtV6eQ%3D%3D",
+   "doc": "2026-95b38e3e-818f-4653-8101-bb99888af1d8"
+  },
+  {
+   "crit": "Calidad de la oficina técnica del proyecto (Instalación)",
+   "max": 6,
+   "exp": "p:19693925",
+   "ref": "S-01576-2026",
+   "title": "Cabecera de emisión para América",
+   "buyer": "Compras de la Corporación de Radio y Televisión Española S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-24",
+   "offers": 2,
+   "top": {
+    "pts": 6,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Detalla todos los aspectos organizativos del proyecto",
+    "Incluye cronograma de implantación",
+    "Aporta perfiles profesionales con desglose de recursos humanos dedicados",
+    "Explica los servicios aportados por el fabricante",
+    "Incluye cronograma de implantación, perfiles profesionales, desglose de recursos humanos y explicación de servicios del fabricante"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Detallar todos los aspectos organizativos: cronograma, perfiles profesionales, desglose de recursos humanos y servicios aportados por el fabricante.",
+    "penaliza": "No consta en el informe ningún aspecto penalizado; ambas ofertas presentaron la documentación solicitada."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=uSioaYV4Ppctm4eBPtV6eQ%3D%3D",
+   "doc": "2026-95b38e3e-818f-4653-8101-bb99888af1d8"
+  },
+  {
+   "crit": "Calidad de la solución aportada descrita en la memoria técnica",
+   "max": 12,
+   "exp": "p:19744926",
+   "ref": "S-01583-2026",
+   "title": "Equipamiento técnico de enlaces y señales de radiofrecuencia",
+   "buyer": "Compras de la Corporación de Radio y Televisión Española S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 1,
+   "top": {
+    "pts": 12,
+    "winner": false
+   },
+   "low": null,
+   "best": [
+    "Oferta técnica muy completa",
+    "Memoria explicativa clara y minuciosa",
+    "Diagramas de bloques detallados",
+    "Tabla de desglose del material del suministro",
+    "Información técnica y referencias del fabricante de los equipos"
+   ],
+   "weak": [],
+   "hypothesis": {
+    "premia": "Memoria clara y minuciosa junto con diagramas o esquemas detallados, tabla de desglose del material e información técnica o referencias del fabricante; la oferta con diagramas de bloques y referencias del fabricante obtuvo 12 puntos",
+    "penaliza": "No aportar referencias de la implantación de la marca en el sector broadcast, lo que limita la puntuación a 10 puntos; la exclusión de una oferta por contaminación con criterios objetivos impide su valoración"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=F9tCklUkCdTL1rX3q%2FMAPA%3D%3D",
+   "doc": "2026-614ac5ac-69b2-40f4-8c1b-c5269cbdb29d"
+  },
+  {
+   "crit": "Calidad de la solución aportada descrita en la memoria técnica",
+   "max": 12,
+   "exp": "p:19744926",
+   "ref": "S-01583-2026",
+   "title": "Equipamiento técnico de enlaces y señales de radiofrecuencia",
+   "buyer": "Compras de la Corporación de Radio y Televisión Española S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 3,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Oferta técnica muy completa",
+    "Memoria explicativa clara y minuciosa",
+    "Esquemas detallados",
+    "Tabla de desglose del material del suministro",
+    "Información técnica del fabricante de los equipos"
+   ],
+   "weak": [
+    "No aporta referencias de la implantación de la marca en el sector broadcast"
+   ],
+   "hypothesis": {
+    "premia": "Memoria clara y minuciosa junto con diagramas o esquemas detallados, tabla de desglose del material e información técnica o referencias del fabricante; la oferta con diagramas de bloques y referencias del fabricante obtuvo 12 puntos",
+    "penaliza": "No aportar referencias de la implantación de la marca en el sector broadcast, lo que limita la puntuación a 10 puntos; la exclusión de una oferta por contaminación con criterios objetivos impide su valoración"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=F9tCklUkCdTL1rX3q%2FMAPA%3D%3D",
+   "doc": "2026-614ac5ac-69b2-40f4-8c1b-c5269cbdb29d"
+  },
+  {
+   "crit": "Calidad de la solución aportada descrita en la memoria técnica",
+   "max": 12,
+   "exp": "p:19744926",
+   "ref": "S-01583-2026",
+   "title": "Equipamiento técnico de enlaces y señales de radiofrecuencia",
+   "buyer": "Compras de la Corporación de Radio y Televisión Española S.A.",
+   "nuts": "ES300",
+   "date": "2026-07-23",
+   "offers": 2,
+   "top": {
+    "pts": 10,
+    "winner": false
+   },
+   "low": {
+    "pts": 10
+   },
+   "best": [
+    "Oferta técnica completa",
+    "Memoria explicativa clara y minuciosa",
+    "Fichas técnicas del fabricante",
+    "Tabla de desglose del material del suministro muy detallada"
+   ],
+   "weak": [
+    "No aporta referencias de la implantación de la marca en el sector broadcast"
+   ],
+   "hypothesis": {
+    "premia": "Memoria clara y minuciosa junto con diagramas o esquemas detallados, tabla de desglose del material e información técnica o referencias del fabricante; la oferta con diagramas de bloques y referencias del fabricante obtuvo 12 puntos",
+    "penaliza": "No aportar referencias de la implantación de la marca en el sector broadcast, lo que limita la puntuación a 10 puntos; la exclusión de una oferta por contaminación con criterios objetivos impide su valoración"
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=F9tCklUkCdTL1rX3q%2FMAPA%3D%3D",
+   "doc": "2026-614ac5ac-69b2-40f4-8c1b-c5269cbdb29d"
+  }
+ ]
+}

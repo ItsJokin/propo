@@ -1,0 +1,80 @@
+{
+ "cpv2": "48",
+ "generated": "2026-10-22T14:39:58.992Z",
+ "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
+ "items": [
+  {
+   "crit": "Subcriterio 1.1. Modelo de planificación y aplicación de estándares",
+   "max": 15,
+   "exp": "p:19361479",
+   "ref": "04101/2025/244-SU",
+   "title": "Cesión del derecho de uso y servicio de mantenimiento y formación de un software de “plataforma inscripción on-line (PIO)”.",
+   "buyer": "Concejalía Delegada de Contratación del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-18",
+   "offers": 4,
+   "top": {
+    "pts": 15,
+    "winner": true
+   },
+   "low": {
+    "pts": 9
+   },
+   "best": [
+    "La plataforma PIO ya probada en el Ayuntamiento reduce riesgos de instalación, parametrización e integración.",
+    "Equipo multidisciplinar con experiencia directa en PIO, Java, Oracle, Redmine y Métrica v3.",
+    "Identifica puntos críticos mediante gestión de riesgos, alertas, alcance, calidad, pruebas y soporte.",
+    "Siete fases, matriz de riesgos, contingencias y checkpoints go/no-go por fase.",
+    "Documentación abundante basada en Métrica v3, Scrum/Agile e ITIL v4."
+   ],
+   "weak": [
+    "Puntos críticos y medidas preventivas descritos de forma muy genérica.",
+    "Once semanas de duración, considerado excesivo para un producto ya desarrollado.",
+    "Herramientas técnicas poco concretas más allá de Redmine; mecanismos de calidad poco detallados.",
+    "Diagrama de Gantt muy reducido, por una implantación de ocho días.",
+    "La matriz de riesgos no es muy granular."
+   ],
+   "hypothesis": {
+    "premia": "Planificación detallada con fases, riesgos y checkpoints, documentación formalizada, herramientas justificadas con métricas y experiencia previa en la plataforma PIO.",
+    "penaliza": "Planteamientos genéricos en puntos críticos y herramientas, matrices de riesgo poco granulares y cronogramas considerados excesivos."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zyDQk0V284YkJPJS%2BPS9vg%3D%3D",
+   "doc": "2026-40c96e23-ef67-41ef-b743-1e5dd9cd81d2"
+  },
+  {
+   "crit": "Subcriterio 1.2. Calidad del Plan de Capacitación e Instrucción del personal municipal",
+   "max": 10,
+   "exp": "p:19361479",
+   "ref": "04101/2025/244-SU",
+   "title": "Cesión del derecho de uso y servicio de mantenimiento y formación de un software de “plataforma inscripción on-line (PIO)”.",
+   "buyer": "Concejalía Delegada de Contratación del Ajuntament de València",
+   "nuts": "ES523",
+   "date": "2026-06-18",
+   "offers": 4,
+   "top": {
+    "pts": 10,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Distingue perfiles (administrador de sistemas/BBDD, superadministrador, administrador y gestor) con contenidos diferenciados.",
+    "Ampliación adicional de 20 horas sobre la distribución inicial del PPT.",
+    "Prácticas adicionales, sesiones de refuerzo, metodología participativa y recursos didácticos variados.",
+    "Coordinador y dos personas adicionales, todos con titulación MECES 2 o superior.",
+    "Itinerarios independientes para Servicio de Mayores (35 h) y SerTIC (16 h), superando el mínimo del PPT."
+   ],
+   "weak": [
+    "Medios humanos y técnicos descritos de forma funcional más que nominal o cuantitativamente reforzada.",
+    "Recursos complementarios limitados a un videotutorial breve por perfil."
+   ],
+   "hypothesis": {
+    "premia": "Itinerarios diferenciados por perfil con horas por encima del mínimo del PPT, prácticas adicionales, refuerzos y personal formador cualificado y nominado.",
+    "penaliza": "Medios humanos y técnicos descritos de forma funcional, recursos complementarios escasos y horas próximas al mínimo exigido."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=zyDQk0V284YkJPJS%2BPS9vg%3D%3D",
+   "doc": "2026-40c96e23-ef67-41ef-b743-1e5dd9cd81d2"
+  }
+ ]
+}
