@@ -4,6 +4,7 @@ import { daysUntil, wordCount } from './util';
 import { obraChecks } from './obra';
 import { coherenceStale } from './coherence';
 import { getState } from './store';
+import { sectorCompleteness } from './sectorProfiles';
 const INFO = /\[(?:Información requerida|Information required)/;
 
 export type ProjectStatus = 'Analizando' | 'Error en el análisis' | 'En preparación' | 'Falta información' | 'Lista para revisar' | 'Lista para presentar';
@@ -165,10 +166,11 @@ export function knowledgeScore(s: Pick<AppState, 'company' | 'pastProjects' | 'c
   const infoFields = [c.legalName, c.taxId, c.address, c.industry, c.employees, c.revenue, c.website, c.description];
   const parts = [
     { label: 'Datos de empresa', weight: 20, value: infoFields.filter(Boolean).length / infoFields.length },
-    { label: 'Proyectos previos', weight: 25, value: Math.min(1, s.pastProjects.length / 4) },
+    { label: 'Proyectos previos', weight: 20, value: Math.min(1, s.pastProjects.length / 4) },
+    { label: 'Tu sector', weight: 10, value: sectorCompleteness(c) },
     { label: 'Certificaciones', weight: 15, value: Math.min(1, s.certifications.length / 2) },
     { label: 'Equipo', weight: 15, value: Math.min(1, s.team.length / 4) },
-    { label: 'Documentos', weight: 20, value: Math.min(1, s.vault.length / 10) },
+    { label: 'Documentos', weight: 15, value: Math.min(1, s.vault.length / 10) },
     { label: 'Capacidades', weight: 5, value: Math.min(1, c.capabilities.length / 3) },
   ];
   const score = Math.round(parts.reduce((a, p) => a + p.weight * p.value, 0));

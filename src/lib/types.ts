@@ -77,6 +77,7 @@ export interface CompanyInfo {
   rolece?: boolean;        // inscrita en el ROLECE o en el registro de su comunidad
   rera?: boolean;          // inscrita en el RERA (trabajos con amianto)
   maquinaria?: { id: string; nombre: string; cantidad: number; propia: boolean }[];
+  sectorData?: Record<string, Record<string, any>>;   // datos propios de cada sector (lib/sectorProfiles.ts); «comun» = compromisos sociales y ambientales
 }
 
 export interface PastProject {

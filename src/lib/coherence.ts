@@ -9,6 +9,7 @@ import type { Project, AppState } from './types';
 import { ai } from './ai/provider';
 import { nowIso } from './util';
 import { lessonsFor } from './data/lessons';
+import { sectorFacts } from './sectorProfiles';
 
 export type Severity = 'critical' | 'important';
 export interface CoherenceFix { section: string; before: string; after: string; applied: boolean }
@@ -74,6 +75,7 @@ function context(p: Project, f: Facts) {
 - Experiencia:
 ${f.pastProjects.map((x) => `  · ${x.title} (${x.client || 'cliente sin indicar'}, ${x.years || ''}, ${x.value || ''}${x.hasCertificate ? ', con certificado' : ''}): ${(x.description || '').replace(/\s+/g, ' ').slice(0, 400)}`).join('\n') || 'no consta'}
 - Certificaciones: ${f.certifications.map((x) => x.name).join(', ') || 'no consta'}
+- Datos de su sector: ${sectorFacts(c).map((x) => x.text).join('; ') || 'no constan'}
 Confirmado por la empresa para esta licitación (es un dato cierto aunque no esté en la ficha):
 ${said || '(nada)'}
 

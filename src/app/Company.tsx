@@ -1,4 +1,5 @@
-import { ObraTab } from './CompanyObra';
+import { SectorTab } from './CompanySector';
+import { companySectors, profileFor } from '../lib/sectorProfiles';
 import React, { useRef, useState } from 'react';
 import { LuPlus, LuTrash2, LuPencil, LuBriefcase, LuAward, LuUsers, LuBuilding2, LuWrench, LuHardHat, LuCircleCheck, LuTriangleAlert, LuSearch, LuCheck, LuUpload, LuLoaderCircle, LuExternalLink, LuLandmark } from 'react-icons/lu';
 import { SECTORS, REGIONS, cpvsForSectors } from '../lib/discovery/match';
@@ -21,11 +22,15 @@ const TABS: [string, string, React.ReactNode][] = [
   ['certifications', 'Certificaciones', <LuAward />],
   ['team', 'Equipo', <LuUsers />],
   ['capabilities', 'Capacidades', <LuWrench />],
-  ['obra', 'Construcción', <LuHardHat />],
 ];
 
-export function Company({ tab }: { tab: string }) {
+export function Company({ tab: raw, sub }: { tab: string; sub?: string }) {
   const s = useStore((x) => x);
+  // «Tu sector» solo existe con los sectores de la empresa (la antigua pestaña «Construcción» es la de las constructoras).
+  const tab = raw === 'obra' ? 'sector' : raw;
+  const sectors = companySectors(s.company);
+  const sectorLabel = sectors.length === 1 ? profileFor(sectors[0]).label : 'Tu sector';
+  const tabs: [string, string, React.ReactNode][] = [...TABS.slice(0, 2), ['sector', sectorLabel, sectors.includes('construccion') ? <LuHardHat /> : <LuWrench />], ...TABS.slice(2)];
   const ks = knowledgeScore(s);
   const empty = !s.pastProjects.length && !s.certifications.length && !s.team.length;
   return (
@@ -49,7 +54,7 @@ export function Company({ tab }: { tab: string }) {
       </div>
       <div className="two-col">
         <nav className="subnav" aria-label="Secciones de empresa">
-          {TABS.map(([k, l, ic]) => <button key={k} className={`nav-item ${tab === k ? 'on' : ''}`} onClick={() => navigate(`/app/company/${k}`)}>{ic}{l}</button>)}
+          {tabs.map(([k, l, ic]) => <button key={k} className={`nav-item ${tab === k ? 'on' : ''}`} onClick={() => navigate(`/app/company/${k}`)}>{ic}{l}</button>)}
           <button className="nav-item" onClick={() => navigate('/app/documents')}><LuPlus />Documentos</button>
         </nav>
         <div style={{ minWidth: 0 }}>
@@ -59,7 +64,7 @@ export function Company({ tab }: { tab: string }) {
           {tab === 'certifications' && <CertsTab />}
           {tab === 'team' && <TeamTab />}
           {tab === 'capabilities' && <CapabilitiesTab />}
-          {tab === 'obra' && <ObraTab />}
+          {tab === 'sector' && <SectorTab pick={raw === 'obra' ? 'construccion' : sub} />}
         </div>
       </div>
     </>

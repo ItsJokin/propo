@@ -4,6 +4,7 @@
 import type { AppState, Requirement, Evidence, ReqStatus } from '../types';
 import type { ExtractionResult } from './extractTypes';
 import { tokens, normalize } from '../util';
+import { sectorFacts } from '../sectorProfiles';
 
 export interface Knowledge {
   company: AppState['company'];
@@ -25,6 +26,8 @@ export function knowledgeIndex(k: Knowledge) {
   if (k.company.rolece) items.push({ id: 'co_rolece', kind: 'company', label: 'Inscripción en el ROLECE', text: 'Empresa inscrita en el Registro Oficial de Licitadores y Empresas Clasificadas del Sector Público (ROLECE).' });
   if (k.company.rera) items.push({ id: 'co_rera', kind: 'company', label: 'Inscripción en el RERA', text: 'Empresa inscrita en el Registro de Empresas con Riesgo de Amianto (RERA).' });
   (k.company.maquinaria ?? []).forEach((m) => items.push({ id: `mq_${m.id}`, kind: 'company', label: `Maquinaria: ${m.nombre}`, text: `${m.cantidad || 1} × ${m.nombre}, ${m.propia ? 'en propiedad' : 'alquilada o disponible'}` }));
+  // Datos propios del sector (cocina central, flota, habilitaciones, plan de igualdad…).
+  sectorFacts(k.company).forEach((f) => items.push({ id: f.id, kind: 'company', label: f.label, text: f.text }));
   return items;
 }
 
@@ -33,7 +36,8 @@ export function knowledgeForPrompt(k: Knowledge) {
   return {
     company: { legal_name: k.company.legalName, industry: k.company.industry, employees: k.company.employees, revenue: k.company.revenue, description: k.company.description, capabilities: k.company.capabilities, address: k.company.address,
       ...(k.company.clasificaciones?.length ? { contractor_classification: k.company.clasificaciones } : {}), ...(k.company.rolece ? { rolece: true } : {}), ...(k.company.rera ? { rera: true } : {}),
-      ...(k.company.maquinaria?.length ? { machinery: k.company.maquinaria.map((m) => ({ id: `mq_${m.id}`, name: m.nombre, units: m.cantidad, owned: m.propia })) } : {}) },
+      ...(k.company.maquinaria?.length ? { machinery: k.company.maquinaria.map((m) => ({ id: `mq_${m.id}`, name: m.nombre, units: m.cantidad, owned: m.propia })) } : {}),
+      ...(sectorFacts(k.company).length ? { sector_data: sectorFacts(k.company).map((f) => ({ id: f.id, fact: f.text })) } : {}) },
     past_projects: k.pastProjects.map((p) => ({ id: p.id, title: p.title, client: p.client, years: p.years, value: p.value, description: p.description, has_good_execution_certificate: p.hasCertificate })),
     certifications: k.certifications.map((c) => ({ id: c.id, name: c.name, valid_until: c.validUntil })),
     team: k.team.map((t) => ({ id: t.id, name: t.name, role: t.role, years: t.years, qualifications: t.qualifications })),

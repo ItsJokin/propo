@@ -94,7 +94,7 @@ export function App() {
     case 'tenders': page = <Tenders openId={seg[2] ? decodeURIComponent(seg[2]) : undefined} />; break;
     case 'projects': page = seg[2] ? <ProjectView id={seg[2]} tab={seg[3] || 'overview'} /> : <Projects openNew={params.get('new') === '1'} />; break;
     case 'analyze': page = <AnalysisScreen id={seg[2]} />; break;
-    case 'company': page = <Company tab={seg[2] || 'info'} />; break;
+    case 'company': page = <Company tab={seg[2] || 'info'} sub={seg[3]} />; break;
     case 'documents': page = <Vault />; break;
     case 'templates': page = <Templates />; break;
     case 'notifications': page = <Notifications />; break;
