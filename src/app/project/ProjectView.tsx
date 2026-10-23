@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { LuChevronRight, LuMessageSquare, LuCalendar, LuBuilding2, LuHash, LuEllipsis, LuTrash2, LuFileX, LuInfo, LuCpu } from 'react-icons/lu';
-import { useStore, navigate, updateProject, toast } from '../../lib/store';
+import { useStore, navigate, updateProject, toast, getState } from '../../lib/store';
 import { Empty, Menu, Modal, SampleBadge, Ring } from '../../components/ui';
 import { StatusBadge, SourceViewerHost } from '../common';
 import { readiness, reqCounts, deadlineLabel } from '../../lib/derive';
@@ -13,6 +13,7 @@ import { Criteria } from './Criteria';
 import { Pricing } from './Pricing';
 import { Obra } from './Obra';
 import { Planos } from './Planos';
+import { showsObraTools } from '../../lib/obra';
 import { Compliance } from './Compliance';
 import { Package } from './Package';
 import { Documents } from './Documents';
@@ -48,8 +49,8 @@ export function ProjectView({ id, tab }: { id: string; tab: string }) {
       case 'proposal': return <Proposal p={p} />;
       case 'criteria': return <Criteria p={p} />;
       case 'economic': return <Pricing p={p} />;
-      case 'obra': return <Obra p={p} />;
-      case 'planos': return <Planos p={p} />;
+      case 'obra': return showsObraTools(p, getState().company) ? <Obra p={p} /> : <Overview p={p} />;
+      case 'planos': return showsObraTools(p, getState().company) ? <Planos p={p} /> : <Overview p={p} />;
       case 'compliance': return <Compliance p={p} />;
       case 'package': return <Package p={p} />;
       case 'documents': return <Documents p={p} />;

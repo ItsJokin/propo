@@ -1,14 +1,15 @@
 import React from 'react';
 import { LuCheck, LuArrowRight } from 'react-icons/lu';
 import type { Project } from '../../lib/types';
-import { navigate } from '../../lib/store';
+import { navigate, useStore } from '../../lib/store';
 import { pendingQuestions, needsYou } from '../../lib/interview';
 import { sectionCounts, reqCounts, complianceChecks } from '../../lib/derive';
-import { isWorks } from '../../lib/obra';
+import { showsObraTools } from '../../lib/obra';
 
 // La ruta de la propuesta: cuatro pasos que son a la vez la navegación principal del proyecto.
 // Cada paso dice en qué estado está y cuánto falta; el resto de vistas quedan en una fila secundaria.
 export function GuideBar({ p, tab }: { p: Project; tab: string }) {
+  const company = useStore((s) => s.company);
   const pending = pendingQuestions(p).length;
   const rc = reqCounts(p);
   const open = p.requirements.filter(needsYou).length;
@@ -47,7 +48,7 @@ export function GuideBar({ p, tab }: { p: Project; tab: string }) {
   ];
   const cur = steps.find((s) => !s.done);
   const go = (to: string) => navigate(`/app/projects/${p.id}${to === 'overview' ? '' : '/' + to}`);
-  const more: [string, string, number?][] = [['overview', 'Resumen'], ...(isWorks(p) ? [['obra', 'Plan de obra'] as [string, string], ['planos', 'Planos de la oferta'] as [string, string]] : []), ['requirements', 'Todos los requisitos', rc.total || undefined], ['criteria', 'Criterios'], ['documents', 'Documentos del pliego', p.docs.length || undefined]];
+  const more: [string, string, number?][] = [['overview', 'Resumen'], ...(showsObraTools(p, company) ? [['obra', 'Plan de obra'] as [string, string], ['planos', 'Planos de la oferta'] as [string, string]] : []), ['requirements', 'Todos los requisitos', rc.total || undefined], ['criteria', 'Criterios'], ['documents', 'Documentos del pliego', p.docs.length || undefined]];
   return (
     <div className="journey-wrap">
       <nav className="journey" aria-label="Pasos de la propuesta">

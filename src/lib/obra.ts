@@ -6,8 +6,17 @@ import { ai } from './ai/provider';
 import { projectPages } from './ai/engine';
 import { readZip, writeZip, type ZipEntry } from './pipeline/zip';
 import { nowIso } from './util';
+import { companySectors } from './sectorProfiles';
 
 // ── ¿Es una obra? ───────────────────────────────────────────────────────────────────────────────────────────────────
+/** Herramientas de obra (plan de obra, planos de la oferta): solo para constructoras y en licitaciones de obra.
+ *  Si la empresa aún no ha elegido sus sectores, se muestran en las licitaciones de obra para no esconderle nada. */
+export function showsObraTools(p: Project, c: Pick<CompanyInfo, 'cpvs' | 'industry' | 'clasificaciones'>): boolean {
+  if (!isWorks(p)) return false;
+  const sectors = companySectors(c);
+  return !sectors.length || sectors.includes('construccion');
+}
+
 export function isWorks(p: Project): boolean {
   if (p.tender?.nature === 'works') return true;
   if ((p.tender?.cpv ?? []).some((c) => c.startsWith('45'))) return true;
