@@ -1,5 +1,6 @@
-import React from 'react';
-import { LuCheck, LuArrowRight, LuTriangleAlert, LuInfo } from 'react-icons/lu';
+import React, { useEffect, useState } from 'react';
+import { LuCheck, LuArrowRight, LuTriangleAlert, LuInfo, LuCircleCheck, LuCircleAlert } from 'react-icons/lu';
+import { bidDecision, type Decision } from '../../lib/decision';
 import type { Project } from '../../lib/types';
 import { navigate } from '../../lib/store';
 import { reqCounts, sectionCounts, complianceChecks, readiness } from '../../lib/derive';
@@ -47,6 +48,7 @@ export function Overview({ p }: { p: Project }) {
       </div>
       <div className="ov-grid">
         <div className="stack gap-20">
+          {!p.markedReady && <DecisionCard p={p} />}
           <div className="card">
             <div className="card-head"><h3>Resumen</h3><span className="spacer" /><span className="badge outline">{a.mode === 'ai' ? 'Análisis con IA' : a.mode === 'rules' ? 'Extracción básica' : 'Ejemplo'}</span></div>
             <div className="card-body stack">
@@ -113,6 +115,43 @@ export function Overview({ p }: { p: Project }) {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+/** ¿Me presento? Veredicto con los pliegos ya leídos: requisitos de solvencia, huecos y competencia esperable. */
+function DecisionCard({ p }: { p: Project }) {
+  const [d, setD] = useState<Decision | null>(null);
+  const key = p.requirements.map((r) => r.status).join('');
+  useEffect(() => { let on = true; bidDecision(p).then((x) => { if (on) setD(x); }).catch(() => {}); return () => { on = false; }; }, [p.id, key]);
+  if (!d) return null;
+  const top = (d.comp?.buyer ?? d.comp?.similar)?.top.slice(0, 3) ?? [];
+  return (
+    <div className={`verdict ${d.verdict}`}>
+      <div className="verdict-head">{d.verdict === 'yes' ? <LuCircleCheck /> : d.verdict === 'maybe' ? <LuInfo /> : <LuTriangleAlert />}<strong>¿Me presento? {d.title}</strong><span className="spacer" /><span className="xs muted">Encaje {d.score} %</span></div>
+      <div className="stack mt-12" style={{ gap: 8 }}>
+        {d.reasons.map((x) => (
+          <div key={x.text} className="row small" style={{ alignItems: 'flex-start' }}>
+            {x.ok === true ? <LuCheck style={{ width: 15, height: 15, color: 'var(--ok)', marginTop: 2, flex: 'none' }} /> : x.ok === false ? <LuCircleAlert style={{ width: 15, height: 15, color: 'var(--warn)', marginTop: 2, flex: 'none' }} /> : <LuInfo style={{ width: 15, height: 15, color: 'var(--fg-3)', marginTop: 2, flex: 'none' }} />}
+            <span>{x.text}</span>
+          </div>
+        ))}
+      </div>
+      {d.gaps.length > 0 && <>
+        <div className="eyebrow mt-16">Lo que te falta para presentarte</div>
+        <div className="stack mt-8" style={{ gap: 8 }}>
+          {d.gaps.slice(0, 5).map((g) => (
+            <div key={g.id} className="small">
+              <strong style={{ fontWeight: 500 }}>{g.text}</strong>{g.blocking && <span className="badge bad" style={{ marginLeft: 6 }}>Excluye</span>}
+              {g.how && <div className="xs muted">{g.how}</div>}
+            </div>
+          ))}
+          {d.gaps.length > 5 && <div className="xs muted">Y {d.gaps.length - 5} más.</div>}
+          <button className="link small" style={{ alignSelf: 'flex-start' }} onClick={() => navigate(`/app/projects/${p.id}/requirements`)}>Ver y resolver los requisitos <LuArrowRight style={{ verticalAlign: -2 }} /></button>
+        </div>
+      </>}
+      {top.length > 0 && <p className="xs muted mt-12">Quién suele ganar aquí: {top.map((t) => `${t.name} (${t.wins})`).join(' · ')}.</p>}
+      <p className="xs subtle mt-8">Recomendación orientativa calculada con los requisitos del pliego, los días que quedan y las adjudicaciones parecidas publicadas. La decisión es tuya.</p>
     </div>
   );
 }
