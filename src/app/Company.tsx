@@ -11,6 +11,7 @@ import { uid, fmtDate, daysUntil } from '../lib/util';
 import { SAMPLE_COMPANY, SAMPLE_PAST_PROJECTS, SAMPLE_CERTS, SAMPLE_TEAM, SAMPLE_VAULT } from '../lib/demoData';
 import type { PastProject, Certification, TeamMember } from '../lib/types';
 import { COVER_STYLES, type CoverStyle } from '../lib/design/theme';
+import { dominantColor } from '../lib/design/brand';
 
 const TABS: [string, string, React.ReactNode][] = [
   ['info', 'Datos de empresa', <LuBuilding2 />],
@@ -94,25 +95,6 @@ function InfoTab() {
     </div>
     </>
   );
-}
-
-/** Color dominante de un logo: el más saturado y frecuente, ignorando blancos, negros y transparencias. */
-function dominantColor(cv: HTMLCanvasElement): string | null {
-  try {
-    const { data } = cv.getContext('2d')!.getImageData(0, 0, cv.width, cv.height);
-    const bins = new Map<string, { n: number; r: number; g: number; b: number }>();
-    for (let i = 0; i < data.length; i += 16) {
-      const [r, g, b, a] = [data[i], data[i + 1], data[i + 2], data[i + 3]];
-      const mx = Math.max(r, g, b), mn = Math.min(r, g, b);
-      if (a < 128 || mx < 30 || (mx - mn) < 40 || mn > 225) continue;
-      const k = `${r >> 5}-${g >> 5}-${b >> 5}`; const e = bins.get(k) ?? { n: 0, r: 0, g: 0, b: 0 };
-      e.n++; e.r += r; e.g += g; e.b += b; bins.set(k, e);
-    }
-    const best = [...bins.values()].sort((a, b) => b.n - a.n)[0];
-    if (!best || best.n < 20) return null;
-    const hx = (v: number) => Math.round(v / best.n).toString(16).padStart(2, '0');
-    return `#${hx(best.r)}${hx(best.g)}${hx(best.b)}`;
-  } catch { return null; }
 }
 
 /** Logo y colores corporativos: personalizan la portada, la cabecera y las tablas de los PDF y Word de cada propuesta. */
@@ -425,7 +407,8 @@ function AutofillCard({ onDone }: { onDone: () => void }) {
               <input type="checkbox" checked={on.has(p.key)} onChange={() => { const n = new Set(on); if (n.has(p.key)) n.delete(p.key); else n.add(p.key); setOn(n); }} style={{ marginTop: 3 }} />
               <span className="grow" style={{ minWidth: 0 }}>
                 <span className="row" style={{ gap: 8 }}><strong style={{ fontWeight: 600 }}>{p.label}</strong><span className="badge outline">{p.source}</span></span>
-                <span style={{ display: 'block', marginTop: 2 }}>{p.value}</span>
+                {p.image ? <img src={p.image} alt="Logo encontrado" style={{ display: 'block', marginTop: 6, maxHeight: 56, maxWidth: 220, objectFit: 'contain', background: '#fff', border: '1px solid var(--border)', borderRadius: 6, padding: 6 }} /> : null}
+                {p.swatches ? <span className="row mt-4" style={{ gap: 6 }}>{p.swatches.map((c) => <span key={c} title={c} style={{ width: 22, height: 22, borderRadius: 6, background: c, border: '1px solid var(--border)' }} />)}<span className="xs muted">{p.value}</span></span> : !p.image && <span style={{ display: 'block', marginTop: 2 }}>{p.value}</span>}
                 {p.current && <span className="xs muted">Sustituiría: {p.current}</span>}
               </span>
             </label>
