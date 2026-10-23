@@ -125,7 +125,7 @@ export async function autofill(s: AppState, nifIn: string, siteIn: string, onPro
       sources.add('Tu web');
       P.push({ key: 'logo', label: 'Logo', value: 'Logo de tu web', image: logo.png, current: c.logo ? 'tu logo actual' : undefined, source: 'Tu web', on: !c.logo, apply: (st) => { st.company.logo = logo.png; } });
     }
-    const col = brandColors({ ...(web.brand ?? {}), logo: logo?.color ?? null });
+    const col = brandColors({ ...(web.brand ?? {}), logo: logo?.color ?? null, logoColors: logo?.colors ?? [] });
     if (col.primary) {
       const sw = [col.primary, ...(col.secondary ? [col.secondary] : [])];
       sources.add('Tu web');

@@ -1,7 +1,10 @@
 // Imagen de marca a partir de un logo o de la web de la empresa: logo en PNG reducido y colores corporativos.
 
 /** Color dominante de un logo: el más saturado y frecuente, ignorando blancos, negros y transparencias. */
-export function dominantColor(cv: HTMLCanvasElement): string | null {
+export function dominantColor(cv: HTMLCanvasElement): string | null { return logoColors(cv)[0] ?? null; }
+
+/** Colores de un logo, del más frecuente al menos (sin blancos, negros, grises ni transparencias). */
+export function logoColors(cv: HTMLCanvasElement): string[] {
   try {
     const { data } = cv.getContext('2d')!.getImageData(0, 0, cv.width, cv.height);
     const bins = new Map<string, { n: number; r: number; g: number; b: number }>();
@@ -12,15 +15,14 @@ export function dominantColor(cv: HTMLCanvasElement): string | null {
       const k = `${r >> 5}-${g >> 5}-${b >> 5}`; const e = bins.get(k) ?? { n: 0, r: 0, g: 0, b: 0 };
       e.n++; e.r += r; e.g += g; e.b += b; bins.set(k, e);
     }
-    const best = [...bins.values()].sort((a, b) => b.n - a.n)[0];
-    if (!best || best.n < 20) return null;
-    const hx = (v: number) => Math.round(v / best.n).toString(16).padStart(2, '0');
-    return `#${hx(best.r)}${hx(best.g)}${hx(best.b)}`;
-  } catch { return null; }
+    const all = [...bins.values()].sort((a, b) => b.n - a.n);
+    const min = Math.max(20, (all[0]?.n ?? 0) * 0.08);   // un color que apenas aparece no es de la marca
+    return all.filter((e) => e.n >= min).slice(0, 4).map((e) => { const hx = (v: number) => Math.round(v / e.n).toString(16).padStart(2, '0'); return `#${hx(e.r)}${hx(e.g)}${hx(e.b)}`; });
+  } catch { return []; }
 }
 
 /** Logo (cualquier formato que lea el navegador, también SVG) → PNG de como mucho 640×320 y su color dominante. */
-export function logoToPng(src: string): Promise<{ png: string; color: string | null } | null> {
+export function logoToPng(src: string): Promise<{ png: string; color: string | null; colors: string[] } | null> {
   return new Promise((resolve) => {
     const img = new Image();
     img.onload = () => {
@@ -31,7 +33,8 @@ export function logoToPng(src: string): Promise<{ png: string; color: string | n
         const k = Math.min(vector ? Infinity : 1, 640 / w, 320 / h) || 1;
         const cv = document.createElement('canvas'); cv.width = Math.max(1, Math.round(w * k)); cv.height = Math.max(1, Math.round(h * k));
         cv.getContext('2d')!.drawImage(img, 0, 0, cv.width, cv.height);
-        resolve({ png: cv.toDataURL('image/png'), color: dominantColor(cv) });
+        const colors = logoColors(cv);
+        resolve({ png: cv.toDataURL('image/png'), color: colors[0] ?? null, colors });
       } catch { resolve(null); }
     };
     img.onerror = () => resolve(null);
@@ -50,8 +53,9 @@ function hsl(h: string) {
 const far = (a: string, b: string) => { const x = hsl(a), y = hsl(b); const dh = Math.min(Math.abs(x.h - y.h), 360 - Math.abs(x.h - y.h)); return x.l < 0.85 && (dh >= 40 || Math.abs(x.l - y.l) >= 0.35); };
 
 /** Color principal y secundario: primero lo que la web declara como marca, luego el color del logo y los más usados. */
-export function brandColors(c: { theme?: string | null; vars?: string[]; css?: string[]; logo?: string | null }): { primary: string | null; secondary: string | null; all: string[] } {
-  const all = [...new Set([c.theme, ...(c.vars ?? []), c.logo, ...(c.css ?? [])].filter((x): x is string => !!x && /^#[0-9a-f]{6}$/i.test(x)).map((x) => x.toLowerCase()))];
+export function brandColors(c: { theme?: string | null; vars?: string[]; css?: string[]; logo?: string | null; logoColors?: string[] }): { primary: string | null; secondary: string | null; all: string[] } {
+  // Los colores del propio logo van antes que los de las hojas de estilo: son la marca seguro.
+  const all = [...new Set([c.theme, ...(c.vars ?? []), c.logo, ...(c.logoColors ?? []), ...(c.css ?? [])].filter((x): x is string => !!x && /^#[0-9a-f]{6}$/i.test(x)).map((x) => x.toLowerCase()))];
   const v = all.filter(vivid);
   const primary = v[0] ?? null;
   const secondary = primary ? v.find((x) => far(x, primary)) ?? null : null;
