@@ -278,7 +278,8 @@ export interface Project {
   pricing?: import('./pricing').Pricing; // paso «Precio»: cómo puntúa el pliego, el precio elegido y los criterios con fórmula
   obra?: import('./obra').Obra;
   coherence?: import('./coherence').Coherence;
-  annexes?: import('./annexes').Annexes;          // anexos del pliego rellenados por PROPO sobre el documento original   // revisión de coherencia de la oferta completa (comprobación final)          // solo obras: lo que exige el pliego a la constructora, plan de obra y presupuesto ofertado
+  annexes?: import('./annexes').Annexes;
+  simulation?: import('./simulator').Simulation & { fixed?: string[] };   // nota simulada del tribunal y puntos débiles ya arreglados          // anexos del pliego rellenados por PROPO sobre el documento original   // revisión de coherencia de la oferta completa (comprobación final)          // solo obras: lo que exige el pliego a la constructora, plan de obra y presupuesto ofertado
 }
 
 export interface GivenAnswer { label: string; kind: string; value: string; section: string; at: string }

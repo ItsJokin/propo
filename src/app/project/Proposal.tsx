@@ -4,11 +4,13 @@ import type { Project, Section } from '../../lib/types';
 import { runGenerate, stopGenerate, setSectionStatus, saveSectionContent, aiActionsLeft } from '../../lib/actions';
 import { RichText, SECTION_LABEL, SECTION_TONE, SourceChip, Bar } from '../../components/ui';
 import { openSource, useAIState } from '../common';
-import { update, toast, useStore, getState, navigate } from '../../lib/store';
+import { update, updateProject, toast, useStore, getState, navigate } from '../../lib/store';
 import { estimatePages, pageLimitNumber } from '../../lib/derive';
 import { uid, nowIso, wordCount, timeAgo } from '../../lib/util';
 import { InfoFixModal } from './InfoFix';
 import { planFor } from '../../lib/infoFix';
+import { simulateScore, simulationHash } from '../../lib/simulator';
+import { fixIssue } from '../../lib/coherence';
 
 const FLOW: Section['status'][] = ['draft', 'ai_generated', 'reviewed', 'approved'];
 
@@ -58,6 +60,7 @@ export function Proposal({ p }: { p: Project }) {
         {ai !== 'available' && <div className="callout neutral small mt-16"><LuInfo /><div>{getState().demo ? <>Estás en la demo: las secciones se redactan con la memoria de la empresa de ejemplo para que veas el resultado. Con la IA activada, PROPO las escribe a medida de cada pliego.</> : <>La redacción con IA no está disponible en esta vista. Al generar una sección se crea un <strong>borrador de plantilla</strong>: PROPO ordena los requisitos y las fuentes de empresa y marca lo que tu equipo tiene que escribir.</>}</div></div>}
         {!p.isSample && Number.isFinite(left) && left < 20 && <div className="callout warn small mt-8"><LuTriangleAlert /><div>Te quedan {left} acciones de IA para esta propuesta en tu plan.</div></div>}
       </div>
+      {p.sections.some((x) => x.content.trim()) && <ScoreCard p={p} />}
       <div className="prop-layout" id="rev-top">
         <nav className="outline" aria-label="Secciones">
           {p.sections.map((s, i) => (
@@ -200,3 +203,59 @@ function SectionCard({ p, s, n, total, onApproved, onPrev, onNext }: { p: Projec
   );
 }
 
+/** Nota simulada del tribunal, criterio por criterio, con los puntos débiles y un botón para que PROPO los arregle. */
+function ScoreCard({ p }: { p: Project }) {
+  const [busy, setBusy] = useState(false);
+  const [fixing, setFixing] = useState<string | null>(null);
+  const [open, setOpen] = useState(false);
+  const sim = p.simulation; const stale = !!sim && sim.hash !== simulationHash(p);
+  const run = async () => {
+    setBusy(true);
+    try { const r = await simulateScore(p, getState()); updateProject(p.id, (x) => { x.simulation = { ...r, fixed: [] }; }); setOpen(true); }
+    catch { toast('No se ha podido simular la nota ahora. Inténtalo de nuevo en unos minutos.', 'bad'); }
+    finally { setBusy(false); }
+  };
+  const improve = async (key: string, crit: string, text: string, section: string | null) => {
+    setFixing(key);
+    try {
+      const st = getState(); const cur = st.projects.find((x) => x.id === p.id) ?? p;
+      const r = await fixIssue(cur, st, { id: 'sim', severity: 'important', kind: 'lesson', title: text.slice(0, 60), problem: `${text} (criterio «${crit}» de la valoración)`, where: section ? [section] : [], fixes: [], question: null, fixed: false });
+      if (r.fixes.some((f) => f.applied)) {
+        updateProject(p.id, (x) => { for (const sec of x.sections) if (r.contents[sec.id] != null && r.contents[sec.id] !== sec.content) { sec.content = r.contents[sec.id]; sec.updatedAt = nowIso(); } if (x.simulation) x.simulation.fixed = [...(x.simulation.fixed ?? []), key]; });
+        toast('Mejorado. Vuelve a simular para ver la nueva nota.', 'ok');
+      } else toast(r.question ? `PROPO necesita un dato tuyo: ${r.question}` : 'PROPO no ha encontrado cómo mejorarlo sin datos nuevos de tu empresa.', 'warn');
+    } catch { toast('No se ha podido mejorar ahora. Inténtalo de nuevo.', 'bad'); }
+    finally { setFixing(null); }
+  };
+  const pct = sim && sim.max ? Math.round((sim.total / sim.max) * 100) : 0;
+  return (
+    <div className="card card-pad">
+      <div className="row-wrap" style={{ justifyContent: 'space-between', gap: 12 }}>
+        <div style={{ minWidth: 0, flex: 1 }}>
+          <div className="eyebrow">Simulador del tribunal</div>
+          {sim ? <h3 className="mt-4" style={{ fontSize: 20 }}>Nota estimada: <span className="num">{String(sim.total).replace('.', ',')}</span> <span className="muted" style={{ fontSize: 15 }}>de {sim.max} puntos técnicos ({pct} %)</span></h3>
+            : <h3 className="mt-4" style={{ fontSize: 18 }}>¿Qué nota le pondría el tribunal?</h3>}
+          <p className="small muted mt-4">{sim ? (stale ? 'Has cambiado la propuesta desde la última simulación.' : sim.summary) : 'PROPO puntúa tu memoria criterio por criterio como lo haría la mesa, con lo que han premiado y castigado tribunales reales en contratos parecidos, y te dice qué mejorar.'}</p>
+        </div>
+        <div className="row-wrap">
+          {sim && <button className="btn btn-ghost btn-sm" onClick={() => setOpen(!open)}>{open ? 'Ocultar detalle' : 'Ver detalle'}</button>}
+          <button className="btn btn-primary" disabled={busy} onClick={run}>{busy ? 'Simulando…' : sim ? 'Volver a simular' : 'Simular la nota'}</button>
+        </div>
+      </div>
+      {sim && <div className="mt-12"><Bar value={pct} /></div>}
+      {sim && open && <div className="stack gap-12 mt-16">{sim.criteria.map((c, ci) => (
+        <div key={ci} className="well small">
+          <div className="row" style={{ justifyContent: 'space-between', gap: 8 }}><strong>{c.criterion}</strong><span className="num">{String(c.points).replace('.', ',')} / {c.max}</span></div>
+          {c.strengths.length > 0 && <div className="mt-8">{c.strengths.map((t, k) => <div key={k}><LuCheck style={{ color: 'var(--ok)', verticalAlign: -2 }} /> {t}</div>)}</div>}
+          {c.weaknesses.map((w, k) => { const key = `${ci}:${k}`; const done = sim.fixed?.includes(key); return (
+            <div key={k} className="row mt-8" style={{ gap: 8, alignItems: 'flex-start' }}>
+              <LuTriangleAlert style={{ color: 'var(--warn-ink)', flex: 'none', marginTop: 2 }} />
+              <span className="grow">{w.text}</span>
+              {done ? <span className="xs" style={{ color: 'var(--ok)' }}>Mejorado</span> : <button className="btn btn-secondary btn-sm" disabled={!!fixing} onClick={() => improve(key, c.criterion, w.text, w.section)}>{fixing === key ? 'Mejorando…' : <><LuSparkles /> Que PROPO lo mejore</>}</button>}
+            </div>
+          ); })}
+        </div>
+      ))}</div>}
+    </div>
+  );
+}
