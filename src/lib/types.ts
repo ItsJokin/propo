@@ -60,6 +60,11 @@ export interface CompanyInfo {
   description: string;
   capabilities: string[];
   signer?: string;          // representante legal que firma las ofertas
+  signerId?: string;        // DNI/NIE del representante (anexos y declaraciones)
+  signerRole?: string;      // cargo del representante (administrador único, apoderado…)
+  phone?: string; email?: string;   // contacto para notificaciones (anexos)
+  revenueHistory?: string;  // facturación de los tres últimos ejercicios, como la escribe el cliente
+  roleceNumber?: string;    // nº de inscripción en el ROLECE
   sectors: string[];
   cpvs: string[];          // CPV prefixes the company bids for (discovery matching)
   regions: string[];       // NUTS prefixes where the company works, e.g. ES51
@@ -272,7 +277,8 @@ export interface Project {
   answers?: GivenAnswer[]; // datos que el cliente ha aportado al revisar la propuesta: se reutilizan en la comprobación final
   pricing?: import('./pricing').Pricing; // paso «Precio»: cómo puntúa el pliego, el precio elegido y los criterios con fórmula
   obra?: import('./obra').Obra;
-  coherence?: import('./coherence').Coherence;   // revisión de coherencia de la oferta completa (comprobación final)          // solo obras: lo que exige el pliego a la constructora, plan de obra y presupuesto ofertado
+  coherence?: import('./coherence').Coherence;
+  annexes?: import('./annexes').Annexes;          // anexos del pliego rellenados por PROPO sobre el documento original   // revisión de coherencia de la oferta completa (comprobación final)          // solo obras: lo que exige el pliego a la constructora, plan de obra y presupuesto ofertado
 }
 
 export interface GivenAnswer { label: string; kind: string; value: string; section: string; at: string }

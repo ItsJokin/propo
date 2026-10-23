@@ -67,6 +67,8 @@ export async function buildPackageZip(p: Project, s: AppState): Promise<Uint8Arr
   if (p.obra?.gantt) put('Plan de obra (Gantt).pdf', await ganttPdf(p, s));
   if (p.obra?.budget) { const b = await getFile(p.obra.budget.key); if (b) put(`Sobre de la oferta económica/${p.obra.budget.name}`, new Uint8Array(b)); }
   if (p.pricing?.approved && p.pricing.filled) { const b = await getFile(p.pricing.filled.key); if (b) put(`Sobre de la oferta económica/${p.pricing.filled.name}`, new Uint8Array(b)); }
+  // Anexos administrativos rellenados por PROPO sobre el documento original del organismo.
+  for (const a of p.annexes?.items ?? []) if (a.key && !a.economic) { const b = await getFile(a.key); if (b) put(`Anexos rellenados/${a.name}`, new Uint8Array(b)); }
   if (items.some((i) => i.id === 'justif')) put('_Interno — Justificación de la oferta (borrador, solo si la piden).pdf', await abnormalJustificationPdf(p, s));
   for (const it of items) {
     if (it.vaultKey) { const b = await getFile(it.vaultKey); if (b) put(`Documentos de empresa/${it.name}`, new Uint8Array(b)); }

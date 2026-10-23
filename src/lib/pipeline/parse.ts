@@ -108,6 +108,26 @@ async function parsePdf(name: string, buf: ArrayBuffer, sizeKb: number, onProgre
   return { name, kind: 'pdf', sizeKb, pages, status: 'parsed' };
 }
 
+/** Trozos de texto de unas páginas de un PDF con su posición (coordenadas PDF, origen abajo a la izquierda). */
+export interface PdfItem { page: number; str: string; x: number; y: number; w: number; h: number }
+export async function pdfItems(buf: ArrayBuffer, pages: number[]): Promise<PdfItem[]> {
+  const doc = await (pdfjs as any).getDocument({ data: new Uint8Array(buf), isEvalSupported: false, disableFontFace: true }).promise;
+  const out: PdfItem[] = [];
+  for (const n of pages) {
+    if (n < 1 || n > doc.numPages) continue;
+    const page = await doc.getPage(n);
+    const tc = await page.getTextContent();
+    for (const it of tc.items as any[]) {
+      if (typeof it.str !== 'string' || !it.str.trim()) continue;
+      const [, , c, d, e, f] = it.transform as number[];
+      out.push({ page: n, str: cleanText(it.str), x: e, y: f, w: it.width, h: Math.hypot(c, d) || it.height || 10 });
+    }
+    page.cleanup?.();
+  }
+  await doc.destroy?.();
+  return out;
+}
+
 function xmlText(s: string) {
   return s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&apos;/g, "'");
 }

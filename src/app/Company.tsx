@@ -78,6 +78,12 @@ function InfoTab() {
         <div className="grid-2">
           {fields.map(([k, l, h]) => <div key={k} className="field"><label htmlFor={`ci-${k}`}>{l}</label><input id={`ci-${k}`} className="input" value={f[k] as string} onChange={set(k)} />{h && <span className="hint">{h}</span>}</div>)}
         </div>
+        <div className="field"><label htmlFor="ci-revenueHistory">Facturación de los tres últimos años</label><input id="ci-revenueHistory" className="input" placeholder="p. ej. 2025: 2,4 M€ · 2024: 2,1 M€ · 2023: 1,9 M€" value={f.revenueHistory ?? ''} onChange={set('revenueHistory')} /><span className="hint">La piden muchos anexos de solvencia económica.</span></div>
+        <h4 className="mt-8" style={{ fontSize: 15 }}>Representante legal y contacto</h4>
+        <span className="hint" style={{ marginTop: -6 }}>Con estos datos PROPO rellena por ti las declaraciones responsables y el resto de anexos del pliego.</span>
+        <div className="grid-2">
+          {([['signer', 'Nombre y apellidos del representante'], ['signerId', 'DNI/NIE del representante'], ['signerRole', 'Cargo (administrador, apoderado…)'], ['roleceNumber', 'Nº de inscripción en el ROLECE (si la tiene)'], ['phone', 'Teléfono'], ['email', 'Correo para notificaciones']] as [keyof typeof f, string][]).map(([k, l]) => <div key={k} className="field"><label htmlFor={`ci-${k}`}>{l}</label><input id={`ci-${k}`} className="input" value={(f[k] as string) ?? ''} onChange={set(k)} /></div>)}
+        </div>
         <div className="field"><label htmlFor="ci-address">Dirección</label><input id="ci-address" className="input" value={f.address} onChange={set('address')} /></div>
         <div className="field"><label htmlFor="ci-desc">Descripción</label><textarea id="ci-desc" className="textarea" value={f.description} onChange={set('description')} /><span className="hint">Unas frases sobre lo que hacéis. PROPO las usa en la presentación de la empresa.</span></div>
         <div className="row"><button className="btn btn-primary" disabled={!dirty} onClick={() => { update((s) => { s.company = { ...f, logo: s.company.logo, brandColor: s.company.brandColor }; }); toast('Datos de empresa guardados', 'ok'); }}>Guardar cambios</button>{dirty && <button className="btn btn-ghost" onClick={() => setF(c)}>Descartar</button>}</div>

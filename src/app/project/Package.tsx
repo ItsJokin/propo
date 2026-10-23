@@ -8,7 +8,10 @@ import { Modal } from '../../components/ui';
 import { technicalProposalDocx } from '../../lib/docx';
 import { offerDownload } from '../../lib/services/download';
 import { complianceChecks } from '../../lib/derive';
-import { fmtDate } from '../../lib/util';
+import { fmtDate, nowIso } from '../../lib/util';
+import { detectAnnexes, fillAnnex, missingAnnexData, type AnnexItem } from '../../lib/annexes';
+import { getFile } from '../../lib/storage';
+import { updateProject, getState } from '../../lib/store';
 
 const ST: Record<PkgStatus, [string, string]> = { ready: ['ok', 'Listo'], draft: ['warn', 'Borrador'], manual: ['warn', 'Tu equipo'], pending: ['bad', 'Falta'], internal: ['', 'Interno'] };
 
@@ -74,6 +77,7 @@ export function Package({ p }: { p: Project }) {
           </div>
         </div>
       </div>
+      <AnnexesCard p={p} onView={setView} />
       <div className="card">
         {items.map((it) => (
           <div key={it.id} className="file-row">
@@ -97,6 +101,67 @@ export function Package({ p }: { p: Project }) {
       )}
       <div className="callout neutral small"><LuInfo /><div>PROPO no presenta ofertas. Descarga el paquete, firma los documentos con firma electrónica cualificada y preséntalos en la plataforma de contratación. <span className="subtle">La presentación automática está prevista donde sea legal y técnicamente posible.</span></div></div>
       <p className="xs subtle row"><LuExternalLink style={{ width: 12, height: 12 }} />El ZIP incluye los PDF generados, los documentos de empresa de tu biblioteca y los formularios del pliego por completar, además de un LÉEME con los pasos pendientes.</p>
+    </div>
+  );
+}
+
+/** Anexos del pliego (declaraciones responsables, adscripción de medios…): PROPO los rellena sobre el original. */
+function AnnexesCard({ p, onView }: { p: Project; onView: (v: { name: string; url: string; pages: number }) => void }) {
+  const s = useStore((x) => x);
+  const [prog, setProg] = useState<string | null>(null);
+  const missing = missingAnnexData(s);
+  const list = p.annexes?.items ?? [];
+  const run = async () => {
+    setProg('Buscando los anexos en los documentos del pliego…');
+    try {
+      const found = await detectAnnexes(p);
+      if (!found.length) { updateProject(p.id, (x) => { x.annexes = { at: nowIso(), items: [] }; }); toast('No he encontrado anexos con huecos que rellenar en los documentos del pliego.', 'neutral'); return; }
+      const done: AnnexItem[] = [];
+      for (const a of found) {
+        if (a.economic) { done.push(a); continue; }   // la oferta económica la rellena el paso «Fija el precio»
+        setProg(`Rellenando ${a.annex} (${done.length + 1} de ${found.length})…`);
+        const cur = getState().projects.find((x) => x.id === p.id) ?? p;
+        done.push(await fillAnnex(cur, getState(), a));
+        updateProject(p.id, (x) => { x.annexes = { at: nowIso(), items: [...done, ...found.slice(done.length)] }; });
+      }
+      updateProject(p.id, (x) => { x.annexes = { at: nowIso(), items: done }; x.activity.unshift({ at: nowIso(), text: `PROPO ha rellenado ${done.filter((d) => d.key).length} anexos del pliego` }); });
+      toast('Anexos rellenados. Revísalos y fírmalos antes de presentar.', 'ok');
+    } catch (e) { console.error(e); toast('No se han podido rellenar los anexos ahora. Inténtalo de nuevo en unos minutos.', 'bad'); }
+    finally { setProg(null); }
+  };
+  const open = async (a: AnnexItem) => {
+    const b = a.key ? await getFile(a.key) : null; if (!b) return;
+    if (a.ext === 'pdf') { const pages = (await PDFDocument.load(b)).getPageCount(); onView({ name: a.name ?? a.annex, url: URL.createObjectURL(new Blob([b], { type: 'application/pdf' })), pages }); }
+    else await offerDownload(a.name ?? `${a.annex}.docx`, new Uint8Array(b));
+  };
+  const save = async (a: AnnexItem) => { const b = a.key ? await getFile(a.key) : null; if (b) { const r = await offerDownload(a.name ?? a.annex, new Uint8Array(b)); if (r === 'saved') toast('Anexo descargado', 'ok'); } };
+  return (
+    <div className="card card-pad">
+      <div className="row-wrap" style={{ justifyContent: 'space-between', gap: 12 }}>
+        <div style={{ minWidth: 0, flex: 1 }}>
+          <div className="eyebrow">Anexos del pliego</div>
+          <h3 className="mt-4" style={{ fontSize: 18 }}>{list.length ? `${list.filter((a) => a.key).length} anexos rellenados por PROPO` : 'Declaraciones y anexos, rellenados por PROPO'}</h3>
+          <p className="small muted mt-4">PROPO busca en el pliego los anexos que hay que entregar (declaraciones responsables, compromiso de adscripción de medios, grupo empresarial, confidencialidad…) y los rellena sobre el documento original del organismo con los datos de tu empresa. Solo tienes que revisarlos y firmarlos.</p>
+        </div>
+        <button className="btn btn-primary" onClick={run} disabled={!!prog}>{prog ? <LuLoaderCircle className="spin" /> : <LuFileText />} {list.length ? 'Volver a rellenar' : 'Rellenar los anexos'}</button>
+      </div>
+      {prog && <div className="small mt-12"><LuLoaderCircle className="spin" /> {prog}</div>}
+      {missing.length > 0 && <div className="callout warn small mt-12"><LuCircleAlert /><div>Para dejarlos completos faltan estos datos de tu empresa: <strong>{missing.join(', ')}</strong>. <button className="link small" onClick={() => navigate('/app/company/info')}>Añadirlos en Empresa</button></div></div>}
+      {list.length > 0 && <div className="mt-12">{list.map((a) => (
+        <div key={a.id} className="file-row">
+          <span className={`file-ico ${a.ext}`}>{a.ext.toUpperCase()}</span>
+          <div className="grow" style={{ minWidth: 0 }}>
+            <div className="file-name">{a.annex} · {a.title}</div>
+            <div className="xs muted">
+              {a.economic ? <>Oferta económica: la rellena el paso «Fija el precio». <button className="link xs" onClick={() => navigate(`/app/projects/${p.id}/economic`)}>Ir</button></>
+                : a.error ? a.error
+                : `${a.filled} de ${a.total} huecos rellenados · ${a.docName}${a.pages.length ? `, p. ${a.pages.join('-')}` : ''}`}
+            </div>
+            {a.pending.length > 0 && !a.economic && <div className="xs mt-4" style={{ color: 'var(--warn-ink)' }}>Por completar a mano: {a.pending.slice(0, 4).join(' · ')}</div>}
+          </div>
+          {a.key && <><button className="btn btn-ghost btn-sm" onClick={() => open(a)}><LuEye /> Ver</button><button className="btn btn-ghost btn-sm" onClick={() => save(a)}><LuDownload /></button></>}
+        </div>
+      ))}</div>}
     </div>
   );
 }

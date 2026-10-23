@@ -72,14 +72,14 @@ function allowedNumbers(d: Data) {
 }
 const numbersIn = (t: string) => (t.match(/\d[\d.,]*\d|\d/g) || []).map((n) => n.replace(/[.,]$/, ''));
 /** ¿Todas las cifras nuevas de `next` vienen de la oferta o ya estaban en `before`? */
-function safe(before: string, next: string, ok: Set<string>) {
+export function safe(before: string, next: string, ok: Set<string>) {
   const had = new Set(numbersIn(before));
   return numbersIn(next).every((n) => had.has(n) || ok.has(n) || ok.has(n.replace(/\./g, '')));
 }
 
 /** Todo lo que se puede escribir, en una sola cadena para buscar dentro. */
-const flat = (t: string) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/€|\beuros?\b|\biva\b/g, ' ').replace(/[^a-z0-9ñ,.%]+/g, ' ').replace(/\s+/g, ' ').trim();
-function dataBlob(d: Data) {
+export const flat = (t: string) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/€|\beuros?\b|\biva\b/g, ' ').replace(/[^a-z0-9ñ,.%]+/g, ' ').replace(/\s+/g, ' ').trim();
+export function dataBlob(d: unknown) {
   const out: string[] = [];
   const walk = (v: unknown) => { if (v == null) return; if (typeof v === 'object') Object.values(v as object).forEach(walk); else out.push(flat(String(v))); };
   walk(d);
@@ -90,7 +90,7 @@ const FILLER = /\.{3,}|…+|_{3,}|-{4,}|\[[^\]]*\]|\(\s*\)|\s{6,}/g;
  * Lo que la IA ha metido en cada hueco tiene que salir de los datos: así no puede inventarse un nombre o un DNI.
  * Devuelve el texto con los huecos válidos rellenos (los dudosos se quedan como estaban), o null si no hay ninguno.
  */
-function onlyData(before: string, next: string, blob: string): string | null {
+export function onlyData(before: string, next: string, blob: string): string | null {
   const fillers = before.match(FILLER) || [];
   const parts = before.split(FILLER);
   if (!fillers.length) return !before.trim() && blob.includes(flat(next)) ? next : null;   // celda vacía: el valor entero debe ser un dato
@@ -119,7 +119,8 @@ const RULES = `Reglas:
 const xmlText = (x: string) => (x.match(/<w:t(?:\s[^>]*)?>[^<]*<\/w:t>/g) || []).map((t) => t.replace(/<[^>]+>/g, '')).join('').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&amp;/g, '&');
 const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-async function fillDocx(p: Project, data: Data, buf: ArrayBuffer): Promise<{ bytes: Uint8Array; fields: number } | null> {
+/** Rellena los huecos de un Word. `intro` describe el documento a la IA; `okNums`, las cifras que se pueden escribir. */
+export async function fillDocxWith(p: Project, data: unknown, buf: ArrayBuffer, intro: string, okNums: Set<string>, rules = RULES): Promise<{ bytes: Uint8Array; fields: number } | null> {
   const entries = await readZip(buf);
   const doc = entries.find((e) => e.name === 'word/document.xml');
   if (!doc) return null;
@@ -128,18 +129,18 @@ async function fillDocx(p: Project, data: Data, buf: ArrayBuffer): Promise<{ byt
   const paras = [...xml.matchAll(/<w:p[ >][\s\S]*?<\/w:p>/g)].map((m) => ({ raw: m[0], start: m.index!, text: /<w:(txbxContent|drawing|pict|object)\b/.test(m[0]) ? '' : xmlText(m[0]) }));
   const listed = paras.map((q, i) => ({ i, t: q.text })).filter((q) => q.t.trim());
   let block = ''; for (const q of listed) { const l = `[${q.i}] ${q.t}\n`; if (block.length + l.length > 24000) break; block += l; }
-  const j = await ai.json<{ edits: { p: number; text: string }[] }>(`Este es el modelo oficial de oferta económica de una licitación (cada línea es un párrafo con su número). Indica qué párrafos hay que completar y cómo quedan, con los datos de la oferta.
+  const j = await ai.json<{ edits: { p: number; text: string }[] }>(`${intro} (cada línea es un párrafo con su número). Indica qué párrafos hay que completar y cómo quedan, con los datos que te doy.
 
-Datos de la oferta:
+Datos:
 ${JSON.stringify(data, null, 1)}
 
-Modelo:
+Documento:
 ${block}
 
-${RULES}
+${rules}
 
 Devuelve SOLO JSON: {"edits": [{"p": número de párrafo, "text": "texto completo del párrafo ya rellenado"}]}`, { tier: 'default', project: p.isSample ? '' : p.id });
-  const ok = allowedNumbers(data); const blob = dataBlob(data);
+  const ok = okNums; const blob = dataBlob(data);
   const edits = (j?.edits || [])
     .filter((e) => paras[e.p]?.text && typeof e.text === 'string' && e.text.trim())
     .map((e) => ({ p: e.p, text: onlyData(paras[e.p].text, e.text, blob) ?? '' }))
@@ -266,7 +267,7 @@ export async function fillOfficialModel(p: Project, s: AppState): Promise<Filled
   if (!buf) return null;
   const ext = extOf(d.name) as FilledModel['ext'];
   const data = dataFor(p, s);
-  const r = ext === 'docx' ? await fillDocx(p, data, buf) : ext === 'xlsx' ? await fillXlsx(p, data, buf) : await fillPdf(p, data, buf);
+  const r = ext === 'docx' ? await fillDocxWith(p, data, buf, 'Este es el modelo oficial de oferta económica de una licitación', allowedNumbers(data)) : ext === 'xlsx' ? await fillXlsx(p, data, buf) : await fillPdf(p, data, buf);
   if (!r) return null;
   const key = `filled:${p.id}:${d.id}`;
   await putFile(key, r.bytes.buffer.slice(r.bytes.byteOffset, r.bytes.byteOffset + r.bytes.byteLength) as ArrayBuffer);
