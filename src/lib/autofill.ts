@@ -64,6 +64,8 @@ function sectorsFrom(f: Ficha): string[] {
 
 export async function autofill(s: AppState, nifIn: string, siteIn: string, onProgress?: (m: string) => void): Promise<Autofill> {
   const nif = cleanNif(nifIn); const c = s.company;
+  // NIF distinto del guardado: es otra empresa, así que lo encontrado sustituye por defecto a lo que había.
+  const other = NIF.test(nif) && !!c.taxId && cleanNif(c.taxId) !== nif;
   onProgress?.('Buscando tu empresa en las adjudicaciones y en el Registro Mercantil…');
   const f = await fichaByNif(nif).catch(() => null);
   const site = siteIn.trim() || (f?.bo?.web ?? '');
@@ -78,19 +80,18 @@ export async function autofill(s: AppState, nifIn: string, siteIn: string, onPro
     const cur = String(c[key] ?? '').trim();
     if (normalize(cur) === normalize(v)) return;
     sources.add(source);
-    P.push({ key, label, value: v, current: cur || undefined, source, on: !cur, apply: (st) => { (st.company as any)[key] = v; } });
+    P.push({ key, label, value: v, current: cur || undefined, source, on: !cur || other, apply: (st) => { (st.company as any)[key] = v; } });
   };
-  if (f) field('taxId', 'NIF', nif, 'Adjudicaciones');
   if (f) {
     field('legalName', 'Razón social', f.n, 'Adjudicaciones');
     if (f.bo?.dom) field('address', 'Domicilio social', title(f.bo.dom), 'Registro Mercantil');
     const ids = sectorsFrom(f);
-    if (ids.length && !c.cpvs.length) {
+    if (ids.length && (!c.cpvs.length || other)) {
       sources.add('Adjudicaciones');
       P.push({ key: 'sectors', label: 'Sectores en los que licitas', value: ids.map((id) => SECTORS.find((x) => x.id === id)!.label).join(', '), source: 'Adjudicaciones', on: true, apply: (st) => { st.company.cpvs = cpvsForSectors(ids); st.company.sectors = ids.map((id) => SECTORS.find((x) => x.id === id)!.label); } });
     }
     const regs = [...new Set(f.z.map(([z]) => z.slice(0, 4)).filter((z) => REGIONS.some((r) => r.id === z)))];
-    if (regs.length && !c.regions.length) P.push({ key: 'regions', label: 'Zonas donde trabajas', value: regs.map((z) => REGIONS.find((r) => r.id === z)!.label).join(', '), source: 'Adjudicaciones', on: true, apply: (st) => { st.company.regions = regs; } });
+    if (regs.length && (!c.regions.length || other)) P.push({ key: 'regions', label: 'Zonas donde trabajas', value: regs.map((z) => REGIONS.find((r) => r.id === z)!.label).join(', '), source: 'Adjudicaciones', on: true, apply: (st) => { st.company.regions = regs; } });
     const have = (t: string, b: string) => s.pastProjects.some((p) => normalize(p.title).slice(0, 60) === normalize(t).slice(0, 60) && normalize(p.client) === normalize(b));
     const fresh = f.a.filter(([, t, b, , , url]) => !s.pastProjects.some((p) => p.link && p.link === url) && !have(t, b));
     if (fresh.length) {
@@ -106,7 +107,6 @@ export async function autofill(s: AppState, nifIn: string, siteIn: string, onPro
   if (web) {
     field('tradeName', 'Nombre comercial', web.tradeName, 'Tu web');
     field('description', 'Descripción', web.description, 'Tu web');
-    field('website', 'Web', site, 'Tu web');
     if (!f?.bo?.dom) field('address', 'Dirección', web.address, 'Tu web');
     field('phone', 'Teléfono', web.phone, 'Tu web');
     field('email', 'Correo de contacto', web.email, 'Tu web');
@@ -123,17 +123,18 @@ export async function autofill(s: AppState, nifIn: string, siteIn: string, onPro
     const logo = web.brand?.logo ? await logoToPng(web.brand.logo) : null;
     if (logo) {
       sources.add('Tu web');
-      P.push({ key: 'logo', label: 'Logo', value: 'Logo de tu web', image: logo.png, current: c.logo ? 'tu logo actual' : undefined, source: 'Tu web', on: !c.logo, apply: (st) => { st.company.logo = logo.png; } });
+      P.push({ key: 'logo', label: 'Logo', value: 'Logo de tu web', image: logo.png, current: c.logo ? 'tu logo actual' : undefined, source: 'Tu web', on: !c.logo || other, apply: (st) => { st.company.logo = logo.png; } });
     }
     const col = brandColors({ ...(web.brand ?? {}), logo: logo?.color ?? null, logoColors: logo?.colors ?? [] });
     if (col.primary) {
       const sw = [col.primary, ...(col.secondary ? [col.secondary] : [])];
       sources.add('Tu web');
-      P.push({ key: 'colors', label: 'Colores corporativos', value: col.secondary ? 'Principal y secundario, para la portada, los títulos y las tablas' : 'Color principal, para la portada, los títulos y las tablas', swatches: sw, current: c.brandColor ? 'tus colores actuales' : undefined, source: 'Tu web', on: !c.brandColor,
+      P.push({ key: 'colors', label: 'Colores corporativos', value: col.secondary ? 'Principal y secundario, para la portada, los títulos y las tablas' : 'Color principal, para la portada, los títulos y las tablas', swatches: sw, current: c.brandColor ? 'tus colores actuales' : undefined, source: 'Tu web', on: !c.brandColor || other,
         apply: (st) => { st.company.brandColor = col.primary!; if (col.secondary) st.company.brandColor2 = col.secondary; } });
     }
   } else if (!site && f?.bo?.web) field('website', 'Web', f.bo.web, 'Registro Mercantil');
   const warnings: string[] = [];
+  if (other) warnings.push(`Has cambiado el NIF (antes ${cleanNif(c.taxId)}): lo encontrado sustituye a los datos de la empresa anterior. Revisa en «Datos de empresa» lo que no aparezca aquí.`);
   if (f?.bo?.ext) warnings.push(`El Registro Mercantil publicó la extinción de la sociedad el ${day(f.bo.ext)}. Compruébalo: una sociedad extinguida no puede licitar.`);
   else if (f?.bo?.dis) warnings.push(`El Registro Mercantil publicó la disolución de la sociedad el ${day(f.bo.dis)}.`);
   if (f?.bo?.conc) warnings.push(`El Registro Mercantil publicó una situación concursal el ${day(f.bo.conc)}. Revisa si afecta a tu capacidad para contratar.`);

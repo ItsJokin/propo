@@ -4,7 +4,7 @@ import { LuPlus, LuTrash2, LuPencil, LuBriefcase, LuAward, LuUsers, LuBuilding2,
 import { SECTORS, REGIONS, cpvsForSectors } from '../lib/discovery/match';
 import { useStore, update, navigate, toast, getState } from '../lib/store';
 import { findOwnAwards, importCertificates, type Found } from '../lib/experience';
-import { autofill, validNif, type Autofill } from '../lib/autofill';
+import { autofill, validNif, cleanNif, type Autofill } from '../lib/autofill';
 import { importCompanyDocs, DOC_ACCEPT } from '../lib/companyDocs';
 import { knowledgeScore } from '../lib/derive';
 import { Ring, Bar, Empty, Modal } from '../components/ui';
@@ -373,6 +373,9 @@ function AutofillCard({ onDone }: { onDone: () => void }) {
     setBusy('Buscando…');
     try {
       const r = await autofill(getState(), nif, web, setBusy);
+      // El NIF y la web que escribe el cliente se guardan siempre: son suyos, no una suposición de PROPO.
+      update((s) => { if (validNif(nif)) s.company.taxId = cleanNif(nif); if (web.trim()) s.company.website = web.trim(); });
+      onDone();
       if (!r.proposals.length) {
         toast(r.found ? 'Tu ficha ya tiene todo lo que he encontrado.' : web.trim() ? (r.webError ? 'No he podido leer tu web. Sube los documentos de tu empresa y lo relleno con ellos.' : 'Tu ficha ya tiene todo lo que dice tu web.') : 'Aún no has ganado contratos públicos, así que no hay datos tuyos publicados: no pasa nada. Pon tu web o sube los documentos de tu empresa y lo relleno yo.', r.found ? 'ok' : 'neutral');
         return;
