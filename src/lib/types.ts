@@ -88,6 +88,8 @@ export interface PastProject {
   value: string;
   description: string;
   hasCertificate: boolean;
+  link?: string;             // ficha oficial de la adjudicación (si se importó de los contratos ganados)
+  vaultId?: string;          // certificado de buena ejecución guardado en Documentos
 }
 
 export interface Certification {

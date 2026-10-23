@@ -1,8 +1,9 @@
 import { ObraTab } from './CompanyObra';
-import React, { useState } from 'react';
-import { LuPlus, LuTrash2, LuPencil, LuBriefcase, LuAward, LuUsers, LuBuilding2, LuWrench, LuHardHat, LuCircleCheck, LuTriangleAlert, LuSearch, LuCheck } from 'react-icons/lu';
+import React, { useRef, useState } from 'react';
+import { LuPlus, LuTrash2, LuPencil, LuBriefcase, LuAward, LuUsers, LuBuilding2, LuWrench, LuHardHat, LuCircleCheck, LuTriangleAlert, LuSearch, LuCheck, LuUpload, LuLoaderCircle, LuExternalLink, LuLandmark } from 'react-icons/lu';
 import { SECTORS, REGIONS, cpvsForSectors } from '../lib/discovery/match';
-import { useStore, update, navigate, toast } from '../lib/store';
+import { useStore, update, navigate, toast, getState } from '../lib/store';
+import { findOwnAwards, importCertificates, type Found } from '../lib/experience';
 import { knowledgeScore } from '../lib/derive';
 import { Ring, Bar, Empty, Modal } from '../components/ui';
 import { uid, fmtDate, daysUntil } from '../lib/util';
@@ -180,13 +181,14 @@ function ExperienceTab() {
   return (
     <div className="card">
       <div className="card-head"><h3>Proyectos previos</h3><span className="spacer" /><button className="btn btn-secondary btn-sm" onClick={() => setEdit(blank)}><LuPlus /> Añadir proyecto</button></div>
+      <AutoExperience />
       {list.length === 0 ? <Empty icon={<LuBriefcase />} title="Todavía no hay proyectos previos" body="La mayoría de pliegos piden contratos similares de los últimos 3–5 años. Añádelos una vez y PROPO acreditará tu experiencia automáticamente." action={<button className="btn btn-primary" onClick={() => setEdit(blank)}><LuPlus /> Añadir proyecto</button>} /> : list.map((p) => (
         <div key={p.id} className="entity">
           <div style={{ minWidth: 0 }}>
             <div style={{ fontWeight: 600 }}>{p.title}</div>
             <div className="small muted">{[p.client, p.years, p.value].filter(Boolean).join(' · ')}</div>
             {p.description && <p className="small mt-4">{p.description}</p>}
-            <div className="mt-8">{p.hasCertificate ? <span className="badge ok"><LuCircleCheck />Certificado de buena ejecución</span> : <span className="badge warn">Sin certificado guardado</span>}</div>
+            <div className="row-wrap mt-8">{p.hasCertificate ? <span className="badge ok"><LuCircleCheck />Certificado de buena ejecución</span> : <span className="badge warn">Sin certificado guardado</span>}{p.link && <a className="link xs" href={p.link} target="_blank" rel="noreferrer"><LuExternalLink style={{ verticalAlign: -2 }} /> Ficha oficial</a>}</div>
           </div>
           <div className="row"><button className="btn btn-ghost btn-sm btn-icon" aria-label="Editar" onClick={() => setEdit(p)}><LuPencil /></button><button className="btn btn-ghost btn-sm btn-icon" aria-label="Eliminar" onClick={() => update((s) => { s.pastProjects = s.pastProjects.filter((x) => x.id !== p.id); })}><LuTrash2 /></button></div>
         </div>
@@ -307,6 +309,68 @@ function SearchTab() {
         </div>
         <div><button className="btn btn-primary" onClick={() => navigate('/app/tenders')}><LuSearch /> Ver licitaciones compatibles</button></div>
       </div>
+    </div>
+  );
+}
+
+/** Experiencia sin teclear: contratos ganados (adjudicaciones publicadas) y certificados de buena ejecución leídos por PROPO. */
+function AutoExperience() {
+  const company = useStore((s) => s.company);
+  const [busy, setBusy] = useState<string | null>(null);
+  const [found, setFound] = useState<Found[] | null>(null);
+  const [pick, setPick] = useState<Set<string>>(new Set());
+  const file = useRef<HTMLInputElement>(null);
+  const search = async () => {
+    if (!company.taxId && !company.legalName) { toast('Añade primero el nombre y el NIF de tu empresa en «Datos de empresa».', 'warn'); return; }
+    setBusy('Buscando tus contratos adjudicados…');
+    try {
+      const f = await findOwnAwards(getState());
+      if (!f.length) { toast(company.cpvs.length ? 'No he encontrado contratos nuevos adjudicados a tu empresa en tus sectores.' : 'No he encontrado contratos. Elige tus sectores en «Perfil de búsqueda» para buscar mejor.', 'neutral'); return; }
+      setFound(f); setPick(new Set(f.filter((x) => x.byNif).map((x) => x.award.id)));
+    } catch { toast('No se ha podido consultar las adjudicaciones ahora. Inténtalo más tarde.', 'bad'); }
+    finally { setBusy(null); }
+  };
+  const addPicked = () => {
+    const add = (found ?? []).filter((x) => pick.has(x.award.id)).map((x) => x.project);
+    update((s) => { s.pastProjects.push(...add); });
+    toast(`${add.length} contrato${add.length === 1 ? '' : 's'} añadido${add.length === 1 ? '' : 's'} a tu experiencia`, 'ok'); setFound(null);
+  };
+  const upload = async (files: File[]) => {
+    if (!files.length) return;
+    setBusy('Guardando los certificados…');
+    try {
+      const r = await importCertificates(files, getState(), setBusy);
+      if (r.added.length) update((s) => { s.pastProjects.push(...r.added); });
+      const parts = [r.added.length && `${r.added.length} contrato${r.added.length === 1 ? '' : 's'} añadido${r.added.length === 1 ? '' : 's'}`, r.updated && `${r.updated} ya existente${r.updated === 1 ? '' : 's'} marcado${r.updated === 1 ? '' : 's'} con certificado`].filter(Boolean);
+      toast(parts.length ? `${parts.join(' y ')}. Los certificados quedan guardados en Documentos.` : 'No he podido sacar ningún contrato de esos documentos.', parts.length ? 'ok' : 'warn');
+      if (r.failed.length) toast(`No he podido leer: ${r.failed.join(', ')}. Añádelos a mano.`, 'warn');
+    } catch { toast('No se han podido leer los certificados ahora. Inténtalo de nuevo.', 'bad'); }
+    finally { setBusy(null); if (file.current) file.current.value = ''; }
+  };
+  return (
+    <div className="card-body" style={{ borderBottom: '1px solid var(--border)' }}>
+      <p className="small muted">No hace falta teclearlos: PROPO busca los contratos que has ganado en las adjudicaciones publicadas, o lee tus certificados de buena ejecución y saca de cada uno el contrato.</p>
+      <div className="row-wrap mt-12">
+        <button className="btn btn-primary btn-sm" disabled={!!busy} onClick={search}><LuLandmark /> Buscar mis contratos ganados</button>
+        <button className="btn btn-secondary btn-sm" disabled={!!busy} onClick={() => file.current?.click()}><LuUpload /> Subir certificados de buena ejecución</button>
+        <input ref={file} type="file" multiple accept=".pdf,.docx" hidden onChange={(e) => upload([...(e.target.files ?? [])])} />
+      </div>
+      {busy && <div className="small mt-12"><LuLoaderCircle className="spin" /> {busy}</div>}
+      {found && <Modal wide title={`He encontrado ${found.length} contrato${found.length === 1 ? '' : 's'} adjudicado${found.length === 1 ? '' : 's'} a tu empresa`} sub="Marca los que quieres añadir a tu experiencia. Los que coinciden con tu NIF ya vienen marcados." onClose={() => setFound(null)}
+        footer={<><button className="btn btn-ghost" onClick={() => setFound(null)}>Cancelar</button><button className="btn btn-primary" disabled={!pick.size} onClick={addPicked}>Añadir {pick.size}</button></>}>
+        <div className="stack" style={{ gap: 4 }}>
+          {found.map((x) => (
+            <label key={x.award.id} className="row small" style={{ gap: 10, alignItems: 'flex-start', padding: '8px 0', borderBottom: '1px solid var(--border)', cursor: 'pointer' }}>
+              <input type="checkbox" checked={pick.has(x.award.id)} onChange={() => { const n = new Set(pick); if (n.has(x.award.id)) n.delete(x.award.id); else n.add(x.award.id); setPick(n); }} style={{ marginTop: 3 }} />
+              <span className="grow" style={{ minWidth: 0 }}>
+                <span style={{ display: 'block', fontWeight: 500 }}>{x.award.title}</span>
+                <span className="xs muted">{x.award.buyer} · {fmtDate(x.award.date, { day: 'numeric', month: 'short', year: 'numeric' })}{x.project.value ? ` · ${x.project.value}` : ''}{x.byNif ? '' : ' · coincide por nombre, compruébalo'}</span>
+              </span>
+              {x.award.url && <a className="link xs" href={x.award.url} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>Ficha</a>}
+            </label>
+          ))}
+        </div>
+      </Modal>}
     </div>
   );
 }

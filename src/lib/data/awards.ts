@@ -10,7 +10,7 @@ export interface Award {
   offers: number;          // ofertas recibidas (0 = no consta)
   budget: number; amount: number;
   baja: number | null;     // rebaja sobre el presupuesto base, 0–1 (null si no se puede calcular)
-  winners: { name: string; sme: number }[];
+  winners: { name: string; nif: string; sme: number }[];
   url: string;
 }
 export interface CompStats {
@@ -47,7 +47,7 @@ function partition(key: string): Promise<Award[]> {
           id: r[A.id], date: r[A.date] || '', title: r[A.title] || '', buyer: buyers[r[A.buyer]] ?? '', cpv: r[A.cpv] || '', nuts: r[A.nuts] || '', proc: r[A.proc] || '',
           offers: Number(r[A.offers]) || 0, budget, amount,
           baja: baja != null && baja < 0.8 ? baja : null,   // rebajas mayores suelen ser cánones o importes unitarios, no ofertas comparables
-          winners: ((r[A.winners] as number[]) ?? []).map((i) => ({ name: winners[i]?.[W.name] ?? '', sme: winners[i]?.[W.sme] ?? -1 })).filter((w) => w.name),
+          winners: ((r[A.winners] as number[]) ?? []).map((i) => ({ name: winners[i]?.[W.name] ?? '', nif: winners[i]?.[W.nif] ?? '', sme: winners[i]?.[W.sme] ?? -1 })).filter((w) => w.name),
           url: awardUrl(r[A.id], r[A.link]),
         };
       });
@@ -129,4 +129,23 @@ export async function sectorAwards(prefixes: string[], inZone: (nuts: string) =>
   const rows = (await Promise.all(divs.map(division))).flat().filter((r) => prefixes.some((c) => r.cpv.startsWith(c)) && inZone(r.nuts || ''));
   const dates = rows.map((r) => r.date).filter(Boolean).sort();
   return { n: rows.length, amount: rows.reduce((a, r) => a + (r.amount || 0), 0), from: dates[0] ?? '' };
+}
+
+// Formas societarias y palabras que no distinguen a una empresa de otra al comparar nombres.
+const FORM = /\b(s ?l ?u?|s ?a ?u?|s ?l ?l|s ?coop|sociedad (limitada|anonima)( unipersonal)?|slu|sau|sll)\b/g;
+const bare = (s: string) => normalize(s).replace(FORM, ' ').replace(/\s+/g, ' ').trim();
+
+/** Contratos ganados por una empresa (por NIF; si no, por nombre exacto sin la forma societaria) en las divisiones CPV indicadas. */
+export async function awardsWonBy(name: string, nif: string, cpvPrefixes: string[]): Promise<{ award: Award; byNif: boolean }[]> {
+  const id = (nif || '').toUpperCase().replace(/[^A-Z0-9]/g, ''); const n = bare(name || '');
+  if (!id && n.length < 4) return [];
+  const idx = await index();
+  const divs = cpvPrefixes.length ? [...new Set(cpvPrefixes.map((c) => c.slice(0, 2)))] : [...new Set(Object.keys(idx).map((k) => k.slice(0, 2)))];
+  const out: { award: Award; byNif: boolean }[] = [];
+  for (const d of divs) for (const a of await division(d)) {
+    const w = a.winners.find((x) => (id && x.nif.toUpperCase() === id) || (n.length >= 4 && bare(x.name) === n));
+    if (w) out.push({ award: a, byNif: !!id && w.nif.toUpperCase() === id });
+  }
+  const seen = new Set<string>();
+  return out.filter((r) => !seen.has(r.award.id) && !!seen.add(r.award.id)).sort((a, b) => b.award.date.localeCompare(a.award.date));
 }
