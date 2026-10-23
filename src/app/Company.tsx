@@ -4,6 +4,7 @@ import { LuPlus, LuTrash2, LuPencil, LuBriefcase, LuAward, LuUsers, LuBuilding2,
 import { SECTORS, REGIONS, cpvsForSectors } from '../lib/discovery/match';
 import { useStore, update, navigate, toast, getState } from '../lib/store';
 import { findOwnAwards, importCertificates, type Found } from '../lib/experience';
+import { autofill, validNif, type Autofill } from '../lib/autofill';
 import { knowledgeScore } from '../lib/derive';
 import { Ring, Bar, Empty, Modal } from '../components/ui';
 import { uid, fmtDate, daysUntil } from '../lib/util';
@@ -72,6 +73,7 @@ function InfoTab() {
   const fields: [keyof typeof f, string, string?][] = [['legalName', 'Razón social'], ['tradeName', 'Nombre comercial'], ['taxId', 'NIF'], ['country', 'País'], ['industry', 'Sector'], ['employees', 'Empleados'], ['revenue', 'Facturación anual', 'Se usa para la solvencia económica y la compatibilidad. PROPO nunca la estima.'], ['website', 'Web']];
   return (
     <>
+    <AutofillCard onDone={() => setF(getState().company)} />
     <BrandCard />
     <div className="card">
       <div className="card-head"><h3>Datos de empresa</h3></div>
@@ -367,6 +369,65 @@ function AutoExperience() {
                 <span className="xs muted">{x.award.buyer} · {fmtDate(x.award.date, { day: 'numeric', month: 'short', year: 'numeric' })}{x.project.value ? ` · ${x.project.value}` : ''}{x.byNif ? '' : ' · coincide por nombre, compruébalo'}</span>
               </span>
               {x.award.url && <a className="link xs" href={x.award.url} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>Ficha</a>}
+            </label>
+          ))}
+        </div>
+      </Modal>}
+    </div>
+  );
+}
+
+/** Rellenar la empresa poniendo solo el NIF (y la web): PROPO busca y el cliente confirma cada dato. */
+function AutofillCard({ onDone }: { onDone: () => void }) {
+  const c = useStore((s) => s.company);
+  const [nif, setNif] = useState(c.taxId);
+  const [web, setWeb] = useState(c.website);
+  const [busy, setBusy] = useState<string | null>(null);
+  const [res, setRes] = useState<Autofill | null>(null);
+  const [on, setOn] = useState<Set<string>>(new Set());
+  const run = async () => {
+    if (!validNif(nif)) { toast('Escribe el NIF de la sociedad (una letra y ocho cifras, p. ej. B12345678).', 'warn'); return; }
+    setBusy('Buscando…');
+    try {
+      const r = await autofill(getState(), nif, web, setBusy);
+      if (!r.proposals.length) {
+        toast(r.found ? 'Tu ficha ya tiene todo lo que he encontrado.' : `No he encontrado tu NIF entre los adjudicatarios publicados${web ? (r.webError ? ' y no he podido leer tu web' : '') : '. Pon también tu web para que la lea'}.`, r.found ? 'ok' : 'warn');
+        return;
+      }
+      setRes(r); setOn(new Set(r.proposals.filter((p) => p.on).map((p) => p.key)));
+      if (r.webError) toast(r.webError === 'no_endpoint' ? 'Todavía no puedo leer webs: falta actualizar el servidor de pliegos.' : 'No he podido leer tu web; sigo con lo demás.', 'warn');
+    } catch { toast('No se ha podido buscar ahora. Inténtalo de nuevo en unos minutos.', 'bad'); }
+    finally { setBusy(null); }
+  };
+  const apply = () => {
+    const chosen = res!.proposals.filter((p) => on.has(p.key));
+    update((s) => { for (const p of chosen) p.apply(s); s.events.unshift({ at: new Date().toISOString(), name: 'company.autofill', props: { fields: chosen.map((p) => p.key) } }); });
+    toast(`${chosen.length} dato${chosen.length === 1 ? '' : 's'} añadido${chosen.length === 1 ? '' : 's'} a tu empresa`, 'ok');
+    setRes(null); onDone();
+  };
+  return (
+    <div className="card card-pad">
+      <div className="eyebrow">Sin teclear</div>
+      <h3 className="mt-4" style={{ fontSize: 18 }}>Rellena tu empresa con el NIF</h3>
+      <p className="small muted mt-4">PROPO busca tu empresa en las adjudicaciones publicadas y en el Registro Mercantil, y lee tu web: nombre legal, domicilio, a qué te dedicas, contratos que has ganado, sectores, zonas, certificaciones y contacto. Tú solo confirmas lo que quieres guardar.</p>
+      <div className="row-wrap mt-12" style={{ alignItems: 'flex-end' }}>
+        <div className="field" style={{ width: 170 }}><label htmlFor="af-nif">NIF</label><input id="af-nif" className="input" value={nif} placeholder="B12345678" onChange={(e) => setNif(e.target.value)} /></div>
+        <div className="field grow" style={{ minWidth: 200 }}><label htmlFor="af-web">Web (opcional)</label><input id="af-web" className="input" value={web} placeholder="www.tuempresa.es" onChange={(e) => setWeb(e.target.value)} /></div>
+        <button className="btn btn-primary" disabled={!!busy} onClick={run}>{busy ? <LuLoaderCircle className="spin" /> : <LuSearch />} Rellenar mi empresa</button>
+      </div>
+      {busy && <div className="small mt-12"><LuLoaderCircle className="spin" /> {busy}</div>}
+      {res && <Modal wide title={`He encontrado ${res.proposals.length} dato${res.proposals.length === 1 ? '' : 's'}${res.name ? ` de ${res.name}` : ''}`} sub={`Fuentes: ${res.sources.join(', ')}. Desmarca lo que no quieras guardar. Lo que sustituiría un dato tuyo viene sin marcar.`} onClose={() => setRes(null)}
+        footer={<><button className="btn btn-ghost" onClick={() => setRes(null)}>Cancelar</button><button className="btn btn-primary" disabled={!on.size} onClick={apply}>Guardar {on.size}</button></>}>
+        {res.warnings.map((w) => <div key={w} className="callout warn small" style={{ marginBottom: 12 }}><LuTriangleAlert /><div>{w}</div></div>)}
+        <div className="stack" style={{ gap: 0 }}>
+          {res.proposals.map((p) => (
+            <label key={p.key} className="row small" style={{ gap: 10, alignItems: 'flex-start', padding: '10px 0', borderBottom: '1px solid var(--border)', cursor: 'pointer' }}>
+              <input type="checkbox" checked={on.has(p.key)} onChange={() => { const n = new Set(on); if (n.has(p.key)) n.delete(p.key); else n.add(p.key); setOn(n); }} style={{ marginTop: 3 }} />
+              <span className="grow" style={{ minWidth: 0 }}>
+                <span className="row" style={{ gap: 8 }}><strong style={{ fontWeight: 600 }}>{p.label}</strong><span className="badge outline">{p.source}</span></span>
+                <span style={{ display: 'block', marginTop: 2 }}>{p.value}</span>
+                {p.current && <span className="xs muted">Sustituiría: {p.current}</span>}
+              </span>
             </label>
           ))}
         </div>

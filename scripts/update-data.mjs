@@ -8,14 +8,17 @@
 import fs from 'fs';
 import { Store } from './lib/store.mjs';
 import { FEEDS, syncFeed, syncTedTenders, syncTedAwards, dedupeTenders, today, ymd, monthsBack } from './lib/pipeline.mjs';
+import { syncBorme, buildCompanies } from './lib/companies.mjs';
 
 const DATA_DIR = process.env.DATA_DIR || './data';
-const SOURCES = (process.env.SOURCES || 'placsp,agregadas,ted').split(',').map((s) => s.trim());
+const SOURCES = (process.env.SOURCES || 'placsp,agregadas,ted,borme').split(',').map((s) => s.trim());
 const MAX_FILES = Number(process.env.MAX_FILES || 40);            // tope de ficheros del feed por ejecución
 const FIRST_RUN_FILES = Number(process.env.FIRST_RUN_FILES || 20); // histórico que trae la primera ejecución
 const TED_TENDERS_EVERY_H = Number(process.env.TED_TENDERS_EVERY_H || 3);
 const TED_AWARDS_EVERY_H = Number(process.env.TED_AWARDS_EVERY_H || 12);
 const KEEP_MONTHS = Number(process.env.KEEP_MONTHS || 24);
+const COMPANIES_EVERY_H = Number(process.env.COMPANIES_EVERY_H || 3);   // fichas de empresa por NIF (data/empresas/)
+const BORME_BACK_DAYS = Number(process.env.BORME_BACK_DAYS || 4);       // días antiguos del BORME por ejecución
 
 const hoursSince = (iso) => iso ? (Date.now() - new Date(iso).getTime()) / 36e5 : Infinity;
 const log = (...a) => console.log(...a);
@@ -56,6 +59,22 @@ if (SOURCES.includes('ted')) {
 store.pruneTenders(today());
 const dup = dedupeTenders(store);
 store.prune(monthsBack(KEEP_MONTHS));
-const changed = store.save({ sources, repo: process.env.GITHUB_REPOSITORY || store.meta.repo || '', keepMonths: KEEP_MONTHS });
+// BORME (Registro Mercantil) y fichas de empresa por NIF. Fallan por separado: no frenan las licitaciones.
+if (SOURCES.includes('borme')) {
+  const label = 'BORME (Registro Mercantil)';
+  try {
+    log('→ BORME');
+    sources.borme = { label, ...(await syncBorme(DATA_DIR, { backDays: BORME_BACK_DAYS, log })), at: new Date().toISOString() };
+  } catch (e) {
+    log(`  ✗ BORME: ${e.message}`);
+    sources.borme = { ...(sources.borme || {}), label, ok: false, error: String(e.message).slice(0, 200), failedAt: new Date().toISOString() };
+  }
+}
+let companies = false;
+if (hoursSince(store.state.companiesAt) >= COMPANIES_EVERY_H) {
+  try { companies = store.save({ sources }); buildCompanies(DATA_DIR, { log }); store.state.companiesAt = new Date().toISOString(); companies = true; }
+  catch (e) { log(`  ✗ Fichas de empresa: ${e.message}`); }
+}
+const changed = store.save({ sources, repo: process.env.GITHUB_REPOSITORY || store.meta.repo || '', keepMonths: KEEP_MONTHS }) || companies;
 log(`Licitaciones abiertas: ${store.tenders.size} (${dup} duplicadas con TED retiradas) · adjudicaciones: ${store.meta.counts.awards} · cambios: ${changed}`);
 if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `changed=${changed}\n`);
