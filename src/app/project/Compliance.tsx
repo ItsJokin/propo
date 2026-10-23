@@ -67,7 +67,7 @@ function buildCards(p: Project, checks: CheckItem[]): Card[] {
   // Coherencia: mientras PROPO relee la oferta, una tarjeta de espera; después, una tarjeta por incoherencia real.
   if (p.sections.some((x) => x.content.trim())) {
     if (coherenceStale(p)) cards.push({ id: 'coherence-run', tone: 'warn', kicker: 'Coherencia', title: 'PROPO está comprobando que todo encaje', why: 'Relee la oferta entera como un jefe de licitaciones: que la memoria, el plan de obra, el precio y los compromisos no se contradigan, que se respete lo que fija el pliego y que no se cuele en la memoria nada del sobre económico.', icon: <LuSparkles /> });
-    else for (const i of openIssues(p)) cards.push({ id: `co:${i.id}`, tone: i.severity === 'critical' ? 'fail' : 'warn', kicker: 'Coherencia', title: i.title || 'Algo no encaja', why: i.problem, icon: <LuSparkles />, issue: i });
+    else for (const i of openIssues(p)) cards.push({ id: `co:${i.id}`, tone: i.severity === 'critical' ? 'fail' : 'warn', kicker: i.kind === 'lesson' ? 'Lo penalizan los tribunales' : 'Coherencia', title: i.title || 'Algo no encaja', why: i.problem, icon: <LuSparkles />, issue: i });
   }
   for (const id of ['technical', 'criteria', 'pages', 'price', 'formats', 'sources']) {
     const c = by(id);
