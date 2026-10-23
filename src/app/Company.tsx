@@ -1,7 +1,7 @@
 import { SectorTab } from './CompanySector';
 import { companySectors, profileFor } from '../lib/sectorProfiles';
 import React, { useRef, useState } from 'react';
-import { LuPlus, LuTrash2, LuPencil, LuBriefcase, LuAward, LuUsers, LuBuilding2, LuWrench, LuHardHat, LuCircleCheck, LuTriangleAlert, LuSearch, LuCheck, LuUpload, LuLoaderCircle, LuExternalLink, LuLandmark } from 'react-icons/lu';
+import { LuPlus, LuTrash2, LuPencil, LuBriefcase, LuAward, LuUsers, LuBuilding2, LuWrench, LuHardHat, LuCircleCheck, LuTriangleAlert, LuSearch, LuCheck, LuInfo, LuUpload, LuLoaderCircle, LuExternalLink, LuLandmark } from 'react-icons/lu';
 import { SECTORS, REGIONS, cpvsForSectors } from '../lib/discovery/match';
 import { useStore, update, navigate, toast, getState } from '../lib/store';
 import { findOwnAwards, importCertificates, type Found } from '../lib/experience';
@@ -58,6 +58,7 @@ export function Company({ tab: raw, sub }: { tab: string; sub?: string }) {
           <button className="nav-item" onClick={() => navigate('/app/documents')}><LuPlus />Documentos</button>
         </nav>
         <div style={{ minWidth: 0 }}>
+          <div className="callout neutral small" style={{ marginBottom: 16 }}><LuInfo /><div><strong>Responde solo lo que sepas.</strong> Si algo no lo sabes o no lo tienes a mano, déjalo en blanco: PROPO nunca se lo inventa y, si una licitación lo necesita, te lo preguntará en ese momento.</div></div>
           {tab === 'info' && <InfoTab />}
           {tab === 'search' && <SearchTab />}
           {tab === 'experience' && <ExperienceTab />}
