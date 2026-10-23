@@ -30,7 +30,7 @@ const SRC_LABEL = { ted: 'TED', placsp: 'Plataforma del Estado', agregadas: 'Pla
 
 type Row = { t: TedNotice; m: Match };
 
-export function Tenders() {
+export function Tenders({ openId }: { openId?: string } = {}) {
   const s = useStore((x) => x);
   const all = useMatches();
   const [q, setQ] = useState('');
@@ -51,6 +51,8 @@ export function Tenders() {
   const [source, setSource] = useState('');
   const live = useLive();
   useEffect(() => { setShown(PAGE); }, [query, sector, region, prov, loose, size, tab, sort, source]);
+  // Enlace desde el correo de alertas: abre la ficha de esa licitación en cuanto está cargada.
+  useEffect(() => { if (!openId || open) return; const r = all.find((x) => x.t.id === openId || `t:${x.t.id}` === openId); if (r) setOpen(r); }, [openId, all]);
 
   const words = normalize(query).split(' ').filter(Boolean);
   const filtered = useMemo(() => all.filter(({ t }) => {
