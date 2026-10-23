@@ -132,20 +132,20 @@ export async function restorePending(id: string): Promise<boolean> {
 }
 
 // Análisis en marcha: si se sale de la pantalla y se vuelve, se engancha al mismo en vez de empezar otro.
-const running = new Map<string, { last: AnalysisProgress; subs: Set<(p: AnalysisProgress) => void>; ctl: AbortController }>();
-export function isAnalyzing(id: string) { return running.has(id); }
+const analyses = new Map<string, { last: AnalysisProgress; subs: Set<(p: AnalysisProgress) => void>; ctl: AbortController }>();
+export function isAnalyzing(id: string) { return analyses.has(id); }
 export function watchAnalysis(id: string, fn: (p: AnalysisProgress) => void) {
-  const r = running.get(id); if (!r) return () => {};
+  const r = analyses.get(id); if (!r) return () => {};
   r.subs.add(fn); fn(r.last); return () => { r.subs.delete(fn); };
 }
-export function stopAnalysis(id: string) { running.get(id)?.ctl.abort(); }
+export function stopAnalysis(id: string) { analyses.get(id)?.ctl.abort(); }
 /** Empieza el análisis (si no está ya en marcha) y avisa del progreso a quien esté mirando. */
 export function startAnalysis(id: string, onProgress: (p: AnalysisProgress) => void, forceRules = false) {
-  if (running.has(id)) return watchAnalysis(id, onProgress);
+  if (analyses.has(id)) return watchAnalysis(id, onProgress);
   const r = { last: { stage: 'read', detail: {} } as AnalysisProgress, subs: new Set([onProgress]), ctl: new AbortController() };
-  running.set(id, r);
+  analyses.set(id, r);
   const emit = (p: AnalysisProgress) => { r.last = p; r.subs.forEach((f) => f(p)); };
-  void runAnalysis(id, emit, r.ctl.signal, forceRules).finally(() => running.delete(id));
+  void runAnalysis(id, emit, r.ctl.signal, forceRules).finally(() => analyses.delete(id));
   return () => { r.subs.delete(onProgress); };
 }
 

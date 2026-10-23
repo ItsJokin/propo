@@ -53,7 +53,7 @@ jobs:
             mkdir conocimiento && cd conocimiento && git init -q -b conocimiento && git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           fi
       - name: Herramientas
-        run: sudo apt-get install -y -qq poppler-utils >/dev/null && npm install --no-save --no-audit --no-fund @anthropic-ai/sdk >/dev/null
+        run: (sudo apt-get install -y -qq poppler-utils || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)) >/dev/null && npm install --no-save --no-audit --no-fund @anthropic-ai/sdk >/dev/null
       - name: Catálogo de expedientes adjudicados
         run: node --max-old-space-size=6000 scripts/knowledge/catalog.mjs
         env:
