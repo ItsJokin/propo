@@ -4,6 +4,7 @@
 import * as pdfjs from 'pdfjs-dist/build/pdf.mjs';
 import * as pdfWorker from 'pdfjs-dist/build/pdf.worker.mjs';
 import { readZip } from './zip';
+import { sniff, readCfb, docText, xlsText, rtfText, htmlText, odtText, decodeText } from './legacy';
 import { cleanText } from '../util';
 
 // pdf.js "fake worker": parse on the main thread (artifact pages cannot load worker files by URL).
@@ -32,7 +33,9 @@ export function kindOf(name: string): ParsedDoc['kind'] {
   return 'other';
 }
 
-export const ACCEPTED = '.pdf,.docx,.xlsx,.zip,.txt,.md,.csv';
+export const ACCEPTED = '.pdf,.docx,.xlsx,.zip,.txt,.md,.csv,.doc,.xls,.rtf,.odt,.ods,.htm,.html';
+/** Extensiones que se leen con lib/pipeline/legacy.ts (formatos antiguos o alternativos). */
+const LEGACY = ['doc', 'dot', 'xls', 'rtf', 'odt', 'ods', 'htm', 'html', 'wps'];
 
 export async function parseFile(file: File, onProgress?: (msg: string) => void): Promise<ParsedDoc[]> {
   const name = file.name;
@@ -71,13 +74,35 @@ export async function parseBuffer(name: string, buf: ArrayBuffer, sizeKb: number
       const text = new TextDecoder().decode(buf);
       return { name, kind, sizeKb, pages: paginate(text, 3000), status: text.trim() ? 'parsed' : 'unreadable', pagesEstimated: true, note: text.trim() ? undefined : 'El archivo está vacío.' };
     }
-    const legacy = name.toLowerCase().endsWith('.doc') || name.toLowerCase().endsWith('.xls');
-    return { name, kind, sizeKb, pages: [], status: 'unsupported', note: legacy ? 'Los formatos antiguos de Word y Excel (.doc, .xls) no son compatibles. Guarda el archivo como .docx o .xlsx y vuelve a subirlo.' : 'Este tipo de archivo no es compatible. Sube archivos PDF, DOCX, XLSX o ZIP.' };
+    const ext = name.toLowerCase().split('.').pop() || '';
+    if (LEGACY.includes(ext)) return await parseLegacy(name, ext, buf, sizeKb, onProgress);
+    return { name, kind, sizeKb, pages: [], status: 'unsupported', note: 'Este tipo de archivo no es compatible. Sube archivos PDF, Word, Excel, RTF, OpenDocument o ZIP.' };
   } catch (e: any) {
     const msg = String(e?.name || e?.message || '');
     const pw = /password/i.test(msg);
     return { name, kind, sizeKb, pages: [], status: 'unreadable', note: pw ? 'Este PDF está protegido con contraseña. Quítale la contraseña y vuelve a subirlo.' : 'PROPO no ha podido leer este archivo. Puede estar dañado. Prueba a exportarlo de nuevo desde la aplicación original.' };
   }
+}
+
+/** .doc, .xls, .rtf, .odt, .html… Se mira el contenido: muchos «.doc» son RTF, HTML o incluso .docx renombrados. */
+async function parseLegacy(name: string, ext: string, buf: ArrayBuffer, sizeKb: number, onProgress?: (m: string) => void): Promise<ParsedDoc> {
+  const b = new Uint8Array(buf); const kindIs = sniff(b);
+  if (kindIs === 'pdf') return parsePdf(name, buf, sizeKb, onProgress);
+  if (kindIs === 'zip' && !/^od[ts]$/.test(ext)) return ext === 'xls' ? parseXlsx(name, buf, sizeKb) : parseDocx(name, buf, sizeKb);
+  let pages: string[] = [];
+  if (kindIs === 'cfb') {
+    const st = readCfb(buf);
+    if (st.has('WordDocument')) pages = docText(st).split('\n\f\n');
+    else if (st.has('Workbook') || st.has('Book')) pages = xlsText(st);
+    else if (st.has('EncryptedPackage')) return { name, kind: 'other', sizeKb, pages: [], status: 'unreadable', note: 'Este documento está protegido con contraseña. Quítale la contraseña y vuelve a subirlo.' };
+  } else if (kindIs === 'rtf') pages = rtfText(new TextDecoder('latin1').decode(buf)).split('\n\f\n');
+  else if (kindIs === 'html') pages = [htmlText(decodeText(buf))];
+  else if (kindIs === 'zip') pages = [await odtText(buf)];
+  else pages = [decodeText(buf)];
+  pages = pages.flatMap((t) => (t.length > 6000 ? paginate(t, 3000) : [t])).map((t) => cleanText(t).trim()).filter(Boolean);
+  const chars = pages.reduce((a, t) => a + t.length, 0);
+  if (chars < 20) return { name, kind: 'other', sizeKb, pages: [], status: 'unreadable', note: 'No se ha encontrado texto en este documento. Ábrelo y guárdalo como PDF o como Word (.docx).' };
+  return { name, kind: ext === 'xls' || ext === 'ods' ? 'xlsx' : 'other', sizeKb, pages, status: 'parsed', pagesEstimated: true, note: 'Leído de un formato antiguo o alternativo: los números de página son aproximados.' };
 }
 
 async function parsePdf(name: string, buf: ArrayBuffer, sizeKb: number, onProgress?: (m: string) => void): Promise<ParsedDoc> {

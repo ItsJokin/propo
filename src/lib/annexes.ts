@@ -9,6 +9,7 @@ import { ai } from './ai/provider';
 import { getFile, getPages, putFile } from './storage';
 import { fmtDate, nowIso, isUnknown, normalize } from './util';
 import { PDFDocument, PDFTextField, StandardFonts, rgb } from 'pdf-lib';
+import { textToDocx } from './pipeline/legacy';
 import { fillDocxWith, dataBlob, flat, onlyData } from './offerModel';
 
 export interface AnnexItem {
@@ -24,19 +25,20 @@ const HEAD = /(?:^|\n)\s*(ANEXO|ANNEX|MODELO)\s*(?:N[ºo°.]\s*)?([IVXLC]{1,6}|\
 const GAP = /\.{4,}|…{2,}|_{4,}/g;
 const ECON = /oferta econ[oó]mica|proposici[oó]n econ[oó]mica|modelo de oferta|precio ofertado|importe ofertado/i;
 const extOf = (n: string) => (n.toLowerCase().split('.').pop() || '');
+const WORDISH = ['doc', 'rtf', 'odt'];   // formatos de Word antiguos o alternativos: se rellenan sobre un .docx con su texto
 
 /** Encuentra los anexos con huecos que rellenar en los documentos de la licitación. */
 export async function detectAnnexes(p: Project): Promise<AnnexItem[]> {
   const out: AnnexItem[] = [];
-  for (const d of p.docs.filter((x) => x.textKey && ['pdf', 'docx'].includes(extOf(x.name)))) {
+  for (const d of p.docs.filter((x) => x.textKey && ['pdf', 'docx', ...WORDISH].includes(extOf(x.name)))) {
     const pages = (await getPages(d.textKey!)) || [];
-    const ext = extOf(d.name) as 'pdf' | 'docx';
+    const ext = (extOf(d.name) === 'pdf' ? 'pdf' : 'docx') as 'pdf' | 'docx';   // .doc, .rtf y .odt se rellenan como Word
     if (ext === 'docx') {
       const text = pages.join('\n');
       const gaps = (text.match(GAP) || []).length;
       const heads = [...text.matchAll(new RegExp(HEAD.source, 'g'))].map((m) => `${m[1][0].toUpperCase()}${m[1].slice(1).toLowerCase()} ${m[2].toUpperCase()}`);
       if (gaps >= 2 && (heads.length || /anexo|modelo|declaraci/i.test(d.name))) {
-        out.push({ id: `${d.id}:all`, annex: heads.length ? [...new Set(heads)].slice(0, 4).join(', ') : 'Anexo', title: d.name.replace(/\.docx$/i, ''), docId: d.id, docName: d.name, ext, pages: [], economic: ECON.test(text) && !/declaraci/i.test(text.slice(0, 2000)), filled: 0, total: gaps, pending: [] });
+        out.push({ id: `${d.id}:all`, annex: heads.length ? [...new Set(heads)].slice(0, 4).join(', ') : 'Anexo', title: d.name.replace(/\.(docx?|rtf|odt)$/i, ''), docId: d.id, docName: d.name, ext, pages: [], economic: ECON.test(text) && !/declaraci/i.test(text.slice(0, 2000)), filled: 0, total: gaps, pending: [] });
       }
       continue;
     }
@@ -197,7 +199,10 @@ export async function fillAnnex(p: Project, s: AppState, a: AnnexItem): Promise<
   let r: { bytes: Uint8Array; filled: number; total: number; pending: string[] } | null = null;
   try {
     if (a.ext === 'docx') {
-      const x = await fillDocxWith(p, data, buf, 'Este documento contiene anexos administrativos de una licitación española (declaraciones responsables, compromisos, autorizaciones…)', numsOf(data), RULES);
+      // Si el original es .doc, .rtf u .odt, se rellena un Word moderno con el mismo texto (el formato puede cambiar).
+      const legacy = WORDISH.includes(extOf(d!.name)) ? textToDocx(((await getPages(d!.textKey!)) ?? []).join('\n')) : null;
+      const src = legacy ? legacy.buffer.slice(legacy.byteOffset, legacy.byteOffset + legacy.byteLength) as ArrayBuffer : buf;
+      const x = await fillDocxWith(p, data, src, 'Este documento contiene anexos administrativos de una licitación española (declaraciones responsables, compromisos, autorizaciones…)', numsOf(data), RULES);
       if (x) r = { bytes: x.bytes, filled: x.fields, total: a.total, pending: [] };
     } else {
       r = (await fillFormPdf(p, data, buf.slice(0), a.pages)) ?? (await fillFlatPdf(p, data, buf, a.pages));
