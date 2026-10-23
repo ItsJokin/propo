@@ -47,7 +47,7 @@ export function GuideBar({ p, tab }: { p: Project; tab: string }) {
   ];
   const cur = steps.find((s) => !s.done);
   const go = (to: string) => navigate(`/app/projects/${p.id}${to === 'overview' ? '' : '/' + to}`);
-  const more: [string, string, number?][] = [['overview', 'Resumen'], ...(isWorks(p) ? [['obra', 'Plan de obra'] as [string, string]] : []), ['requirements', 'Todos los requisitos', rc.total || undefined], ['criteria', 'Criterios'], ['documents', 'Documentos del pliego', p.docs.length || undefined]];
+  const more: [string, string, number?][] = [['overview', 'Resumen'], ...(isWorks(p) ? [['obra', 'Plan de obra'] as [string, string], ['planos', 'Planos de la oferta'] as [string, string]] : []), ['requirements', 'Todos los requisitos', rc.total || undefined], ['criteria', 'Criterios'], ['documents', 'Documentos del pliego', p.docs.length || undefined]];
   return (
     <div className="journey-wrap">
       <nav className="journey" aria-label="Pasos de la propuesta">

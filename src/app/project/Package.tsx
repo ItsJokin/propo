@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { LuDownload, LuEye, LuFileText, LuShieldCheck, LuCircleCheck, LuCircleAlert, LuInfo, LuLoaderCircle, LuExternalLink } from 'react-icons/lu';
 import type { Project } from '../../lib/types';
 import { useStore, navigate, toast, track } from '../../lib/store';
-import { packageItems, buildPackageZip, technicalProposalPdf, declarationPdf, experiencePdf, companyIndexPdf, complianceReportPdf, economicOfferPdf, abnormalJustificationPdf, ganttPdf, type PkgStatus } from '../../lib/package';
+import { packageItems, buildPackageZip, technicalProposalPdf, declarationPdf, experiencePdf, companyIndexPdf, complianceReportPdf, economicOfferPdf, abnormalJustificationPdf, ganttPdf, deucPdf, sobres, type PkgStatus, type Sobre } from '../../lib/package';
+import { planosPdf } from '../../lib/planos';
 import { PDFDocument } from 'pdf-lib';
 import { Modal } from '../../components/ui';
 import { technicalProposalDocx } from '../../lib/docx';
@@ -47,7 +48,7 @@ export function Package({ p }: { p: Project }) {
   const [view, setView] = useState<{ name: string; url: string; pages: number } | null>(null);
   const [opening, setOpening] = useState<string | null>(null);
   const GEN: Record<string, () => Promise<Uint8Array>> = {
-    tech: () => technicalProposalPdf(p, s), decl: () => declarationPdf(p, s), exp: () => experiencePdf(p, s),
+    tech: () => technicalProposalPdf(p, s), decl: () => declarationPdf(p, s), deuc: () => deucPdf(p, s), exp: () => experiencePdf(p, s), ...(p.planos?.items?.length ? { planos: () => planosPdf(p, s) } : {}),
     company: () => companyIndexPdf(p, s), report: () => complianceReportPdf(p, s), ...(p.obra?.gantt ? { gantt: () => ganttPdf(p, s) } : {}), ...(p.pricing?.choice ? { fin: () => economicOfferPdf(p, s), justif: () => abnormalJustificationPdf(p, s) } : {}),
   };
   const preview = async (id: string, name: string) => {
@@ -78,8 +79,10 @@ export function Package({ p }: { p: Project }) {
         </div>
       </div>
       <AnnexesCard p={p} onView={setView} />
-      <div className="card">
-        {items.map((it) => (
+      {(['admin', 'tecnico', 'economico', 'completar', 'interno'] as Sobre[]).filter((k) => items.some((it) => it.sobre === k)).map((k) => (
+      <div key={k} className="card">
+        <div className="card-head"><h3 style={{ fontSize: 14.5 }}>{sobres(p)[k]}</h3><span className="spacer" /><span className="xs muted">{k === 'economico' ? 'Solo aquí van el precio y los valores de criterios de fórmula' : k === 'interno' ? 'Para tu equipo: no se presenta' : k === 'completar' ? 'Van en el sobre que indique el pliego' : ''}</span></div>
+        {items.filter((it) => it.sobre === k).map((it) => (
           <div key={it.id} className="file-row">
             <span className={`file-ico ${it.ext}`}>{it.ext === 'other' ? 'ARCH' : it.ext.toUpperCase()}</span>
             <div className="grow" style={{ minWidth: 0 }}>
@@ -93,6 +96,7 @@ export function Package({ p }: { p: Project }) {
           </div>
         ))}
       </div>
+      ))}
       {view && (
         <Modal wide title={view.name} sub={`${view.pages} ${view.pages === 1 ? 'página' : 'páginas'} · con el logo y el color de Empresa → Datos de empresa`} onClose={closeView}
           footer={<><button className="btn btn-ghost" onClick={() => { closeView(); navigate('/app/company/info'); }}>Cambiar logo y color</button><a className="btn btn-secondary" href={view.url} target="_blank" rel="noopener noreferrer">Abrir en una pestaña</a><button className="btn btn-primary" onClick={closeView}>Cerrar</button></>}>

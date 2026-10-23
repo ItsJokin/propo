@@ -96,8 +96,8 @@ export async function declarationPdf(p: Project, s: AppState) {
   h2(w, 'Datos del procedimiento');
   facts(w, [['Objeto del contrato', fullTitle(p)], ['Órgano de contratación', p.organization], ['Expediente', reference(p)]]);
   h2(w, 'Datos del licitador');
-  facts(w, [['Razón social', c.legalName || '[razón social]'], ['NIF', c.taxId || '[NIF]'], ['Domicilio', c.address || '[domicilio social]'], ['Representante legal', '[nombre y apellidos]'], ['DNI del representante', '[número]'], ['En calidad de', '[administrador / apoderado]']]);
-  text(w, `D./D.ª [nombre del representante legal], en nombre y representación de **${c.legalName || '[razón social]'}**, en relación con el procedimiento arriba indicado,`, { gap: 10 });
+  facts(w, [['Razón social', c.legalName || '[razón social]'], ['NIF', c.taxId || '[NIF]'], ['Domicilio', c.address || '[domicilio social]'], ['Representante legal', c.signer || '[nombre y apellidos]'], ['DNI del representante', c.signerId || '[número]'], ['En calidad de', c.signerRole || '[administrador / apoderado]']]);
+  text(w, `D./D.ª ${c.signer || '[nombre del representante legal]'}, en nombre y representación de **${c.legalName || '[razón social]'}**, en relación con el procedimiento arriba indicado,`, { gap: 10 });
   text(w, 'DECLARA BAJO SU RESPONSABILIDAD:', { bold: true, gap: 8 });
   [
     'Que la empresa está válidamente constituida, que su objeto social comprende las prestaciones del contrato y que quien firma tiene poder bastante para representarla.',
@@ -266,3 +266,34 @@ export async function ganttPdf(p: Project, s: AppState) {
 }
 
 export { addPage };
+
+/** DEUC prellenado: los datos del perfil y del pliego ordenados como las partes del formulario oficial, para copiarlos
+ *  en el servicio DEUC electrónico. Las declaraciones sobre motivos de exclusión las responde siempre la empresa. */
+export async function deucPdf(p: Project, s: AppState) {
+  const c = s.company; const no = (x?: string | null) => (x && x.trim() ? x : '[completar]');
+  const w = await newDoc(`DEUC prellenado — ${p.name}`, c, { project: p });
+  h1(w, 'DEUC: datos listos para copiar');
+  note(w, 'El Documento Europeo Único de Contratación se cumplimenta en el servicio DEUC electrónico (visor.registrodelicitadores.gob.es/espd-web). Si el órgano de contratación ha publicado el DEUC en XML, impórtalo allí como «operador económico» y copia estos datos en cada parte. Revisa cada respuesta: el DEUC es una declaración responsable que firma el representante legal.', { label: 'Cómo usarlo' });
+  h2(w, 'Parte I · Información sobre el procedimiento');
+  facts(w, [['Poder adjudicador', p.organization || '[completar]'], ['Objeto del contrato', fullTitle(p)], ['Número de expediente', reference(p)]]);
+  h2(w, 'Parte II · Información sobre el operador económico');
+  facts(w, [['Nombre', no(c.legalName)], ['NIF', no(c.taxId)], ['Dirección postal', no(c.address)], ['Persona de contacto', no(c.signer)], ['Teléfono', no(c.phone)], ['Correo electrónico', no(c.email)], ['Sitio web', c.website || '—'],
+    ['¿Es una microempresa, pequeña o mediana empresa?', c.employees ? `[confirmar] · plantilla declarada: ${c.employees}` : '[completar]'],
+    ['¿Inscrito en una lista oficial de operadores autorizados (ROLECE o registro autonómico)?', c.rolece || c.roleceNumber ? `Sí${c.roleceNumber ? ` · n.º ${c.roleceNumber}` : ''}` : '[completar]'],
+    ['Clasificación de contratista', (c.clasificaciones ?? []).map((x) => `${x.grupo}-${x.subgrupo}, categoría ${x.categoria}`).join('; ') || '—'],
+    ['¿Participa junto con otros (UTE)?', '[completar]'], ['¿Recurre a la capacidad de otras entidades?', '[completar]']]);
+  h2(w, 'Parte II · Representación');
+  facts(w, [['Nombre y apellidos', no(c.signer)], ['DNI', no(c.signerId)], ['Cargo o capacidad', no(c.signerRole)], ['Dirección y contacto', c.address ? `${c.address}${c.email ? ` · ${c.email}` : ''}` : '[completar]']]);
+  h2(w, 'Parte III · Motivos de exclusión');
+  text(w, 'Condenas penales, pago de impuestos y cotizaciones, insolvencia, falta profesional grave, conflictos de intereses y demás motivos. Las responde la empresa en el servicio DEUC: PROPO no puede declararlas por ti.', { gap: 6 });
+  h2(w, 'Parte IV · Criterios de selección');
+  const solv = p.requirements.filter((r) => ['financial', 'experience', 'certification', 'team'].includes(r.category) && r.mandatory).slice(0, 8);
+  facts(w, [['Indicación global (α)', 'Si el pliego lo permite, basta con marcar que se cumplen todos los criterios de selección.'],
+    ['Volumen anual de negocios', c.revenueHistory || c.revenue || '[completar]'],
+    ['Obras de tipo similar ejecutadas', s.pastProjects.length ? s.pastProjects.slice(0, 5).map((x) => `${x.title}${x.years ? ` (${x.years})` : ''}${x.value ? ` · ${x.value}` : ''}`).join('; ') : '[completar]'],
+    ['Certificados de sistemas de gestión', s.certifications.map((x) => x.name).join(', ') || '—']]);
+  if (solv.length) { text(w, 'Lo que exige este pliego (comprueba que la respuesta lo cubre):', { bold: true, gap: 4 }); solv.forEach((r) => bullet(w, `${r.title}${r.source?.page ? ` (${r.source.docName}, pág. ${r.source.page})` : ''}`)); }
+  h2(w, 'Parte VI · Declaraciones finales');
+  text(w, 'Firma electrónica del representante legal en el propio servicio o en el PDF que genera.', { gap: 6 });
+  return finish(w);
+}

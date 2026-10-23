@@ -236,3 +236,17 @@ export function paginate(text: string, size: number): string[] {
   if (cur.trim()) out.push(cur.trim());
   return out.length ? out : [''];
 }
+
+/** Una página de un PDF como imagen PNG (para usarla de base de un plano). */
+export async function renderPdfPage(buf: ArrayBuffer, page: number, width = 2400): Promise<{ png: Uint8Array; w: number; h: number; pages: number; page: number }> {
+  const doc = await (pdfjs as any).getDocument({ data: new Uint8Array(buf.slice(0)), isEvalSupported: false }).promise;
+  const n = Math.min(Math.max(1, page), doc.numPages);
+  const pg = await doc.getPage(n);
+  const v1 = pg.getViewport({ scale: 1 }); const vp = pg.getViewport({ scale: Math.min(4, width / v1.width) });
+  const cv = document.createElement('canvas'); cv.width = Math.round(vp.width); cv.height = Math.round(vp.height);
+  const ctx = cv.getContext('2d')!; ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, cv.width, cv.height);
+  await pg.render({ canvasContext: ctx, viewport: vp }).promise;
+  const blob = await new Promise<Blob>((r) => cv.toBlob((b) => r(b!), 'image/png'));
+  const pages = doc.numPages; await doc.destroy?.();
+  return { png: new Uint8Array(await blob.arrayBuffer()), w: cv.width, h: cv.height, pages, page: n };
+}
