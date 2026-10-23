@@ -16,7 +16,11 @@ export interface SectorProfile { id: string; label: string; intro: string; group
 
 const VEHICLES: SField = { id: 'vehiculos', label: 'Vehículos', type: 'list', help: 'Muchos pliegos puntúan la flota de bajas emisiones: indica la etiqueta ambiental de la DGT.', columns: [{ id: 'tipo', label: 'Tipo', width: 2 }, { id: 'unidades', label: 'Unidades', numeric: true }, { id: 'etiqueta', label: 'Etiqueta (CERO, ECO, C…)' }] };
 const MACHINES = (ph: string): SField => ({ id: 'maquinaria', label: 'Maquinaria y equipos', type: 'list', help: 'PROPO la cita en la memoria como medios propios; nunca inventa máquinas que no estén aquí.', columns: [{ id: 'nombre', label: `Equipo (p. ej. ${ph})`, width: 3 }, { id: 'unidades', label: 'Unidades', numeric: true }] });
-const STAFF = (ph: string): SField => ({ id: 'plantilla', label: 'Plantilla por puesto', type: 'list', help: 'Sirve para la adscripción de medios y para justificar la capacidad de respuesta.', columns: [{ id: 'puesto', label: `Puesto (p. ej. ${ph})`, width: 3 }, { id: 'personas', label: 'Personas', numeric: true }] });
+const STAFF = (ph: string): SField => ({ id: 'plantilla', label: 'Plantilla fija por puesto', type: 'list', help: 'Sirve para la adscripción de medios y para justificar la capacidad de respuesta.', columns: [{ id: 'puesto', label: `Puesto (p. ej. ${ph})`, width: 3 }, { id: 'personas', label: 'Personas', numeric: true }] });
+/** Personal que no es fijo pero se puede llamar: refuerzos por horas, bolsas de sustitución, colaboradores habituales.
+ *  En la memoria cuenta como capacidad de refuerzo, nunca como plantilla fija. */
+const EXTRA = (label: string, ph: string, how: string, help: string): SField => ({ id: 'refuerzo', label, type: 'list', help,
+  columns: [{ id: 'perfil', label: `Quiénes (p. ej. ${ph})`, width: 3 }, { id: 'personas', label: 'Personas', numeric: true }, { id: 'aviso', label: `Cómo se activan (p. ej. ${how})`, width: 2 }] });
 const RESPONSE: SField = { id: 'respuesta', label: 'Tiempo de respuesta ante una incidencia', type: 'number', unit: 'horas', help: 'Es una mejora que se puntúa a menudo por fórmula: PROPO te avisará de no ponerla en la memoria técnica si va en el sobre automático.' };
 
 // Bloque común: lo que puntúan casi todos los pliegos como criterios sociales y ambientales.
@@ -48,11 +52,11 @@ const P: SectorProfile[] = [
       { id: 'appcc', label: 'Sistema de seguridad alimentaria', type: 'chips', options: ['APPCC', 'ISO 22000', 'IFS', 'BRC', 'FSSC 22000'] },
       { id: 'desperdicio', label: 'Plan contra el desperdicio alimentario', type: 'textarea', placeholder: 'p. ej. donación de excedentes a un banco de alimentos, medición de sobras por comedor' },
     ] },
-    { title: 'Medios', fields: [VEHICLES, STAFF('cocinero/a, ayudante, monitor/a de comedor')] },
+    { title: 'Medios', fields: [VEHICLES, STAFF('cocinero/a, ayudante, monitor/a de comedor'), EXTRA('Personal de refuerzo por horas o eventos', 'camareros/as para eventos', 'con 48 h de aviso', 'Camareros, cocineros o monitores que llamáis cuando hace falta. Sirve para justificar que podéis atender eventos grandes, picos y sustituciones sin perder calidad.')] },
   ] },
   { id: 'limpieza', label: 'Limpieza', intro: 'En limpieza se puntúan la organización del servicio, la maquinaria, los productos ecológicos y el control de calidad.', groups: [
     { title: 'Servicio', fields: [
-      STAFF('limpiador/a, especialista, encargado/a'),
+      STAFF('limpiador/a, especialista, encargado/a'), EXTRA('Bolsa de sustitución y refuerzo', 'limpiadores/as para bajas y vacaciones', 'en el mismo día', 'Personas a las que llamáis para cubrir bajas, vacaciones o limpiezas extraordinarias. Los pliegos de limpieza puntúan mucho cubrir las ausencias sin que se note.'),
       { id: 'horarios', label: 'Servicio que podéis cubrir', type: 'chips', options: ['Horario diurno', 'Horario nocturno', 'Fines de semana', '24 horas', 'Servicio de urgencias'] },
       RESPONSE,
       { id: 'especialidades', label: 'Limpiezas especiales', type: 'chips', options: ['Cristales en altura', 'Fin de obra', 'Hospitalaria', 'Desinfección', 'Moquetas y tapicerías', 'Pulido y abrillantado de suelos', 'Grafitis'] },
@@ -68,7 +72,7 @@ const P: SectorProfile[] = [
     { title: 'Oficios y habilitaciones', fields: [
       { id: 'oficios', label: 'Oficios con personal propio', type: 'chips', options: ['Electricidad', 'Fontanería', 'Climatización', 'Calefacción', 'Carpintería', 'Pintura', 'Cerrajería', 'Albañilería', 'Ascensores', 'Protección contra incendios', 'Jardinería'] },
       { id: 'habilitaciones', label: 'Habilitaciones de la empresa', type: 'chips', options: ['Instalador RITE (térmicas)', 'Baja tensión', 'Alta tensión', 'Gas', 'Protección contra incendios (RIPCI)', 'Frigorista', 'Legionela', 'Productos petrolíferos'] },
-      STAFF('oficial electricista, técnico de climatización'),
+      STAFF('oficial electricista, técnico de climatización'), EXTRA('Gremios y colaboradores habituales', 'empresa de ascensores colaboradora', 'contrato marco, 24 h', 'Oficios que no tenéis en plantilla pero cubrís con colaboradores de confianza. Si el pliego lo permite, se presentan como subcontratación prevista.'),
     ] },
     { title: 'Servicio', fields: [
       { id: 'guardia', label: 'Servicio de guardia 24 horas', type: 'yesno' }, RESPONSE,
@@ -82,7 +86,7 @@ const P: SectorProfile[] = [
       { id: 'registro', label: 'N.º de inscripción en el Registro Nacional de Seguridad Privada', type: 'text' },
       { id: 'cra', label: 'Central receptora de alarmas propia', type: 'yesno' },
       { id: 'servicios', label: 'Servicios', type: 'chips', options: ['Vigilancia sin arma', 'Vigilancia con arma', 'Acudas', 'Rondas', 'Escolta', 'Auxiliares de servicios', 'Sistemas de seguridad'] },
-      STAFF('vigilante, jefe de equipo, auxiliar'), VEHICLES, RESPONSE,
+      STAFF('vigilante, jefe de equipo, auxiliar'), EXTRA('Vigilantes de refuerzo', 'vigilantes para eventos y picos', 'con 24 h de aviso', 'Personal habilitado que podéis sumar para eventos, refuerzos puntuales o sustituciones.'), VEHICLES, RESPONSE,
     ] },
   ] },
   { id: 'it', label: 'Tecnología e IT', intro: 'En tecnología se valoran las certificaciones, la metodología, el equipo por perfiles y los niveles de servicio.', groups: [
@@ -90,7 +94,7 @@ const P: SectorProfile[] = [
       { id: 'certs', label: 'Certificaciones', type: 'chips', options: ['ISO 27001', 'ENS nivel básico', 'ENS nivel medio', 'ENS nivel alto', 'ISO 20000', 'ISO 9001', 'CMMI', 'ISO 22301'] },
       { id: 'tecnologias', label: 'Tecnologías en las que sois expertos', type: 'textarea', placeholder: 'p. ej. Java, .NET, Drupal, SAP, Microsoft 365, AWS, Azure' },
       { id: 'metodologia', label: 'Metodología', type: 'chips', options: ['Scrum', 'Kanban', 'ITIL', 'PMBOK', 'Métrica v3', 'DevOps'] },
-      STAFF('jefe de proyecto, analista, desarrollador sénior'),
+      STAFF('jefe de proyecto, analista, desarrollador sénior'), EXTRA('Colaboradores y profesionales externos', 'desarrolladores freelance, partner de ciberseguridad', 'en 1 semana', 'Perfiles que incorporáis cuando un proyecto crece. Sirve para justificar la escalabilidad del equipo.'),
     ] },
     { title: 'Soporte', fields: [
       { id: 'soporte', label: 'Horario de soporte', type: 'chips', options: ['Laborables 8–18 h', '24×7', 'Guardias', 'Soporte in situ'] },
@@ -100,7 +104,7 @@ const P: SectorProfile[] = [
   ] },
   { id: 'jardineria', label: 'Jardinería y zonas verdes', intro: 'En jardinería puntúan la maquinaria (sobre todo eléctrica), el personal técnico, el riego eficiente y el control de plagas sostenible.', groups: [
     { title: 'Medios', fields: [
-      MACHINES('desbrozadora eléctrica, plataforma elevadora, biotrituradora'), VEHICLES, STAFF('oficial jardinero, peón, técnico'),
+      MACHINES('desbrozadora eléctrica, plataforma elevadora, biotrituradora'), VEHICLES, STAFF('oficial jardinero, peón, técnico'), EXTRA('Personal de temporada o refuerzo', 'peones para la campaña de primavera', 'por campaña', 'Personas que contratáis en temporada alta (podas, siegas, plantaciones).'),
       { id: 'ropo', label: 'Carné de aplicador de fitosanitarios (ROPO)', type: 'yesno' },
       { id: 'vivero', label: 'Vivero propio', type: 'yesno' },
       { id: 'tecnicas', label: 'Técnicas sostenibles', type: 'chips', options: ['Lucha biológica', 'Riego por goteo', 'Telegestión del riego', 'Compostaje de restos', 'Especies autóctonas', 'Sin glifosato'] },
@@ -113,7 +117,7 @@ const P: SectorProfile[] = [
       { id: 'autorizaciones', label: 'Autorizaciones', type: 'chips', options: ['VD (viajeros discrecional)', 'MDP (mercancías)', 'Transporte escolar', 'Transporte sanitario', 'ADR (mercancías peligrosas)'] },
       { id: 'gps', label: 'Seguimiento por GPS', type: 'yesno' },
       { id: 'cocheras', label: 'Cocheras o bases', type: 'text', placeholder: 'p. ej. Alcalá de Henares y Guadalajara' },
-      STAFF('conductor/a, acompañante, jefe de tráfico'),
+      STAFF('conductor/a, acompañante, jefe de tráfico'), EXTRA('Conductores y vehículos de refuerzo', 'conductores de refuerzo, autocares de empresas colaboradoras', 'con 24 h de aviso', 'Conductores o vehículos que podéis sumar ante averías, picos o excursiones. Los pliegos de transporte valoran mucho el vehículo de sustitución.'),
     ] },
   ] },
   { id: 'formacion', label: 'Formación', intro: 'En formación cuentan la acreditación del centro, las instalaciones, la plataforma online y los docentes.', groups: [
@@ -122,7 +126,8 @@ const P: SectorProfile[] = [
       { id: 'aulas', label: 'Aulas e instalaciones', type: 'textarea', placeholder: 'p. ej. 4 aulas de 20 plazas y 1 aula informática en Sevilla' },
       { id: 'modalidad', label: 'Modalidades', type: 'chips', options: ['Presencial', 'Online', 'Aula virtual', 'Mixta'] },
       { id: 'plataforma', label: 'Plataforma online', type: 'text', placeholder: 'p. ej. Moodle propio' },
-      { id: 'docentes', label: 'Docentes', type: 'number', unit: 'personas' },
+      { id: 'docentes', label: 'Docentes en plantilla', type: 'number', unit: 'personas' },
+      EXTRA('Docentes colaboradores', 'formadores expertos por horas', 'según calendario del curso', 'Profesionales que imparten módulos concretos. Se presentan como equipo docente colaborador.'),
       { id: 'materias', label: 'Materias en las que sois especialistas', type: 'textarea' },
     ] },
   ] },
@@ -130,7 +135,7 @@ const P: SectorProfile[] = [
     { title: 'Entidad y equipo', fields: [
       { id: 'registro', label: 'Inscripción en el registro de entidades de servicios sociales', type: 'text', placeholder: 'p. ej. n.º E-1234 de la Comunidad de Madrid' },
       { id: 'servicios', label: 'Servicios', type: 'chips', options: ['Ayuda a domicilio', 'Teleasistencia', 'Centro de día', 'Residencia', 'Atención a la infancia', 'Inserción laboral', 'Atención a personas sin hogar'] },
-      STAFF('trabajador/a social, auxiliar SAD, psicólogo/a'),
+      STAFF('trabajador/a social, auxiliar SAD, psicólogo/a'), EXTRA('Bolsa de profesionales para sustituciones', 'auxiliares de ayuda a domicilio', 'en menos de 24 h', 'Profesionales que cubren bajas y vacaciones sin cambiar de persona de referencia más de lo necesario.'),
       { id: 'voluntariado', label: 'Programa de voluntariado', type: 'yesno' },
       { id: 'calidad', label: 'Sistema de calidad o evaluación de la satisfacción', type: 'textarea' },
     ] },
@@ -138,6 +143,7 @@ const P: SectorProfile[] = [
   { id: 'construccion', label: 'Construcción y obras', intro: 'Además de la clasificación y la maquinaria (arriba), en obras se valoran los medios técnicos, la gestión ambiental de la obra y el control de calidad.', groups: [
     { title: 'Medios técnicos', fields: [
       { id: 'tecnicos', label: 'Técnicos propios', type: 'list', columns: [{ id: 'puesto', label: 'Puesto (p. ej. jefe de obra, ingeniero, topógrafo)', width: 3 }, { id: 'personas', label: 'Personas', numeric: true }] },
+      EXTRA('Subcontratas y cuadrillas habituales', 'cuadrilla de encofradores, empresa de demoliciones', 'contrato marco', 'Gremios con los que trabajáis siempre. En obras se declaran como subcontratación prevista, con su porcentaje si el pliego lo pide.'),
       { id: 'instalaciones', label: 'Instalaciones', type: 'textarea', placeholder: 'p. ej. nave y parque de maquinaria en Tudela; laboratorio de control de calidad concertado' },
       { id: 'software', label: 'Software de obra', type: 'chips', options: ['Presto', 'Arquímedes', 'BIM (Revit)', 'MS Project', 'AutoCAD', 'Civil 3D'] },
       { id: 'residuos', label: 'Gestión de residuos de obra', type: 'textarea', placeholder: 'p. ej. gestor autorizado propio; reutilización de tierras en la propia obra' },
@@ -148,7 +154,7 @@ const P: SectorProfile[] = [
 // Sectores sin perfil propio: datos generales de medios y servicio.
 const GENERIC = (id: string, label: string): SectorProfile => ({ id, label, intro: `Datos de tu actividad que suelen puntuar en los pliegos de ${label.toLowerCase()}.`, groups: [
   { title: 'Medios y servicio', fields: [
-    STAFF('técnico, coordinador/a'), MACHINES('equipo principal'), VEHICLES, RESPONSE,
+    STAFF('técnico, coordinador/a'), EXTRA('Personal de refuerzo o colaboradores', 'técnicos externos por horas', 'con 48 h de aviso', 'Personas que no están en plantilla pero podéis llamar cuando hace falta.'), MACHINES('equipo principal'), VEHICLES, RESPONSE,
     { id: 'instalaciones', label: 'Instalaciones', type: 'textarea' },
     { id: 'metodo', label: 'Cómo organizáis el servicio', type: 'textarea', placeholder: 'p. ej. coordinador único para el cliente, reunión mensual de seguimiento, informe trimestral' },
   ] },
@@ -172,7 +178,7 @@ const shown = (f: SField, v: any): string | null => {
   if (v == null || v === '' || (Array.isArray(v) && !v.length)) return null;
   if (f.type === 'yesno') return v ? 'sí' : 'no';
   if (f.type === 'chips') return (v as string[]).join(', ');
-  if (f.type === 'list') return (v as Record<string, string>[]).filter((r) => Object.values(r).some(Boolean)).map((r) => f.columns!.map((col) => r[col.id]).filter(Boolean).join(' · ')).join('; ') || null;
+  if (f.type === 'list') { const t = (v as Record<string, string>[]).filter((r) => Object.values(r).some(Boolean)).map((r) => f.columns!.map((col) => r[col.id]).filter(Boolean).join(' · ')).join('; '); return t ? (f.id === 'refuerzo' ? `${t} (personal no fijo: se presenta como capacidad de refuerzo o colaboración, nunca como plantilla propia)` : t) : null; }
   return `${v}${f.unit ? ` ${f.unit}` : ''}`;
 };
 
