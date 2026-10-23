@@ -4,6 +4,7 @@ import { useStore, update, navigate, toast, track, getState } from '../lib/store
 import { type TedNotice } from '../lib/discovery/tedSnapshot';
 import { useLive, dataAgeMinutes, type LiveState } from '../lib/data/live';
 import { competitionFor, goNoGo, type Competition, type CompStats } from '../lib/data/awards';
+import { alertHits, haystack } from '../lib/alerts';
 import { demoPliegoFile } from '../lib/demo/demoPliego';
 import { matchTender, SECTORS, REGIONS, PROVINCES, inProvince, noProvince, regionLabel, sectorLabel, type Match } from '../lib/discovery/match';
 import { Drawer, Empty } from '../components/ui';
@@ -25,8 +26,6 @@ export function useMatches() {
   return useMemo(() => tenders.map((t) => ({ t, m: matchTender(t, company) })), [company, tenders]);
 }
 const PAGE = 40;
-const hay = new WeakMap<TedNotice, string>();
-const haystack = (t: TedNotice) => { let h = hay.get(t); if (!h) { h = normalize(`${t.title} ${t.buyer} ${t.desc} ${t.kind} ${t.city} ${t.live?.ref ?? ''} ${t.cpv.join(' ')}`); hay.set(t, h); } return h; };
 const SRC_LABEL = { ted: 'TED', placsp: 'Plataforma del Estado', agregadas: 'Plataforma autonómica' } as const;
 
 type Row = { t: TedNotice; m: Match };
@@ -102,7 +101,7 @@ export function Tenders() {
     if (s.alerts.length >= plan.alerts) { toast(`Tu plan incluye ${plan.alerts} alerta${plan.alerts === 1 ? '' : 's'}. Mejora tu plan para crear más.`, 'warn'); return; }
     const name = [sector && sectorLabel(sector), region && (provLabel ? `${provLabel} (${REGIONS.find((r) => r.id === region)?.label})` : REGIONS.find((r) => r.id === region)?.label), query && `«${query}»`].filter(Boolean).join(' · ') || 'Todas las licitaciones compatibles';
     update((st) => { st.alerts.unshift({ id: uid('al'), name, query, sector, region, province: prov || undefined, createdAt: nowIso() }); });
-    toast('Alerta creada. PROPO la comprueba cada vez que abres la página.', 'ok');
+    toast(s.settings.emailNotifications ? 'Alerta creada. Cada mañana te mandaremos por correo las licitaciones nuevas que la cumplan.' : 'Alerta creada. Activa «Avisos por correo» en Ajustes para recibirlas cada mañana.', 'ok');
     track('alert_created');
   };
   const noProfile = !s.company.cpvs.length;
@@ -179,8 +178,7 @@ export function Tenders() {
         <div className="card mt-32">
           <div className="card-head"><LuBell style={{ width: 16, height: 16, color: 'var(--accent)' }} /><h3>Tus alertas</h3><span className="spacer" /><span className="xs subtle">{s.alerts.length} de {plan.alerts >= 999 ? 'ilimitadas' : plan.alerts}</span></div>
           {s.alerts.map((a) => {
-            const aw = normalize(a.query || '').split(' ').filter(Boolean);
-            const hits = all.filter(({ t }) => (!t.deadline || (daysUntil(t.deadline) ?? -1) >= 0) && (!a.sector || t.sector === a.sector) && (!a.region || t.nuts.startsWith(a.region)) && (!a.province || inProvince(t.nuts, a.region, a.province)) && aw.every((w) => haystack(t).includes(w)));
+            const hits = alertHits(a, all);
             const n = hits.length; const fresh = hits.filter(({ t }) => t.pub >= a.createdAt.slice(0, 10)).length;
             return (
               <div key={a.id} className="entity">

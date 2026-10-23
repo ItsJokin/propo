@@ -42,7 +42,7 @@ const natureOf = (n: string, cpv: string[]): TedNotice['nature'] =>
   n === 'services' || n === 'supplies' || n === 'works' ? n : cpv[0]?.startsWith('45') ? 'works' : Number(cpv[0]?.slice(0, 2)) < 45 ? 'supplies' : 'services';
 
 /** Fila compacta del robot → licitación de la web. Los anuncios de TED conservan su n.º (así enlazan con pliegos y resúmenes incluidos). */
-function toNotice(r: any[]): TedNotice {
+export function toNotice(r: any[]): TedNotice {
   const raw: string = r[T.id];
   const src = raw.startsWith('t:') ? 'ted' : raw.startsWith('a:') ? 'agregadas' : 'placsp';
   const cpv: string[] = Array.isArray(r[T.cpv]) ? r[T.cpv] : [];

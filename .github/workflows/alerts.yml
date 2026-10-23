@@ -1,0 +1,47 @@
+# Correo diario de alertas de licitaciones (scripts/alerts/send.ts), cada mañana a las 7:30 (hora peninsular en invierno).
+# Necesita en Settings → Secrets and variables → Actions: SUPABASE_SECRET_KEY y RESEND_API_KEY (secretos);
+# la dirección de Supabase se toma de la variable PROPO_SUPABASE_URL que ya usa la web.
+name: PROPO · alertas por correo
+
+on:
+  schedule:
+    - cron: '30 6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry:
+        description: 'Prueba: no envía nada, solo cuenta los correos'
+        type: boolean
+        default: true
+      day:
+        description: 'Día de publicación (AAAA-MM-DD); vacío = ayer'
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: propo-alerts
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci --no-audit --no-fund
+      - name: Preparar el script
+        run: npx esbuild scripts/alerts/send.ts --bundle --platform=node --format=esm --outfile=alerts.mjs --log-level=warning
+      - name: Enviar alertas
+        run: node alerts.mjs
+        env:
+          SITE: https://propo.es
+          SUPABASE_URL: ${{ vars.PROPO_SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DRY: ${{ github.event_name == 'workflow_dispatch' && inputs.dry && '1' || '0' }}
+          DAY: ${{ inputs.day }}
