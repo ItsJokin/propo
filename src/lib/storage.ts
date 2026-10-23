@@ -136,6 +136,14 @@ export async function putFile(key: string, data: ArrayBuffer, fromCloud = false)
   });
 }
 
+/** Borra un archivo original (aquí y en el servidor). */
+export async function deleteFile(key: string) {
+  if (cloudFiles) cloud.removeObjects([remoteFile(key)]).catch(() => { /* sin conexión */ });
+  const db = await openDb();
+  if (!db) return;
+  try { db.transaction(STORE, 'readwrite').objectStore(STORE).delete('file:' + key); } catch { /* ignore */ }
+}
+
 /** Archivo original: de este navegador o, si no está, del servidor. */
 export async function getFile(key: string): Promise<ArrayBuffer | null> {
   const here = await localFile(key);

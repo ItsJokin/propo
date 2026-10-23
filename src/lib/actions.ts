@@ -4,7 +4,7 @@ import type { AppState, Project, ProjectType, SourceDoc, VaultCategory, VaultDoc
 import { getState, update, updateProject, navigate, track, notify, toast } from './store';
 import { PLANS } from './plans';
 import { parseFile, type ParsedDoc } from './pipeline/parse';
-import { putPages, deletePages, putFile, getFile } from './storage';
+import { putPages, deletePages, putFile, getFile, deleteFile } from './storage';
 import { analyzeDocuments, generateSection, projectPages, STAGES, type StageId } from './ai/engine';
 import { AIError, friendlyAIError, ai, aiState, getSample } from './ai/provider';
 import { estimatePages, pageLimitNumber } from './derive';
@@ -100,12 +100,59 @@ export function createProject(meta: { name: string; organization: string; type: 
   };
   pendingFiles.set(id, files);
   update((st) => { st.projects.unshift(project); st.usage.proposalsCreated++; });
+  void savePending(id, files);
   track('project_created', { type: meta.type, files: files.length, ...(meta.tenderId ? { tenderId: meta.tenderId } : {}) });
   navigate(`/app/analyze/${id}`);
   return { ok: true as const, id };
 }
 
 export function hasPendingFiles(id: string) { return pendingFiles.has(id); }
+
+// Los documentos por analizar se guardan también en disco (y en la nube): si la página se recarga o se cierra a mitad,
+// el análisis se retoma solo al volver, sin subir nada otra vez ni gastar otra propuesta.
+const pendingKey = (id: string, i: number) => `pending:${id}:${i}`;
+async function savePending(id: string, files: File[]) {
+  for (const [i, f] of files.entries()) await putFile(pendingKey(id, i), await f.arrayBuffer());
+  updateProject(id, (pr) => { pr.pendingDocs = files.map((f) => f.name); });
+}
+async function clearPending(id: string) {
+  const n = getState().projects.find((x) => x.id === id)?.pendingDocs?.length ?? 0;
+  for (let i = 0; i < n; i++) void deleteFile(pendingKey(id, i));
+  updateProject(id, (pr) => { delete pr.pendingDocs; });
+}
+/** Recupera los documentos de un análisis interrumpido. Devuelve true si se pueden volver a analizar. */
+export async function restorePending(id: string): Promise<boolean> {
+  if (pendingFiles.has(id)) return true;
+  const names = getState().projects.find((x) => x.id === id)?.pendingDocs ?? [];
+  if (!names.length) return false;
+  const files: File[] = [];
+  for (const [i, n] of names.entries()) { const b = await getFile(pendingKey(id, i)); if (!b) return false; files.push(new File([b], n)); }
+  pendingFiles.set(id, files);
+  return true;
+}
+
+// Análisis en marcha: si se sale de la pantalla y se vuelve, se engancha al mismo en vez de empezar otro.
+const running = new Map<string, { last: AnalysisProgress; subs: Set<(p: AnalysisProgress) => void>; ctl: AbortController }>();
+export function isAnalyzing(id: string) { return running.has(id); }
+export function watchAnalysis(id: string, fn: (p: AnalysisProgress) => void) {
+  const r = running.get(id); if (!r) return () => {};
+  r.subs.add(fn); fn(r.last); return () => { r.subs.delete(fn); };
+}
+export function stopAnalysis(id: string) { running.get(id)?.ctl.abort(); }
+/** Empieza el análisis (si no está ya en marcha) y avisa del progreso a quien esté mirando. */
+export function startAnalysis(id: string, onProgress: (p: AnalysisProgress) => void, forceRules = false) {
+  if (running.has(id)) return watchAnalysis(id, onProgress);
+  const r = { last: { stage: 'read', detail: {} } as AnalysisProgress, subs: new Set([onProgress]), ctl: new AbortController() };
+  running.set(id, r);
+  const emit = (p: AnalysisProgress) => { r.last = p; r.subs.forEach((f) => f(p)); };
+  void runAnalysis(id, emit, r.ctl.signal, forceRules).finally(() => running.delete(id));
+  return () => { r.subs.delete(onProgress); };
+}
+
+/** Propuesta que ya existe para una licitación (para no analizarla dos veces). */
+export function projectForTender(tenderId: string) {
+  return getState().projects.find((p) => p.tenderId === tenderId && p.stage !== 'failed');
+}
 
 /** Añade documentos a un proyecto ya analizado (p. ej. los pliegos tras empezar con la ficha) y lo vuelve a analizar. */
 export async function addDocumentsAndReanalyze(id: string, files: File[]) {
@@ -119,6 +166,7 @@ export async function addDocumentsAndReanalyze(id: string, files: File[]) {
   }
   const names = new Set(files.map((f) => f.name));
   pendingFiles.set(id, [...existing.filter((f) => !names.has(f.name)), ...files]);
+  void savePending(id, pendingFiles.get(id)!);
   updateProject(id, (pr) => { pr.stage = 'analyzing'; pr.activity.unshift({ at: nowIso(), text: `${files.length} documento${files.length === 1 ? '' : 's'} añadido${files.length === 1 ? '' : 's'}; nuevo análisis` }); });
   track('project_documents_added', { files: files.length });
   navigate(`/app/analyze/${id}`);
@@ -178,7 +226,7 @@ export async function runAnalysis(id: string, onProgress: (p: AnalysisProgress) 
       pr.activity.unshift({ at: nowIso(), text: `Análisis completado: ${out.requirements.length} requisitos y ${out.criteria.length} criterios de adjudicación (${out.analysis.mode === 'ai' ? 'IA' : 'extracción básica'})` });
     });
     update((s) => { s.usage.pagesAnalyzed += totalPages; s.usage.aiActions += out.aiActions; });
-    pendingFiles.delete(id);
+    pendingFiles.delete(id); void clearPending(id);
     track('analysis_completed', { mode: out.analysis.mode, requirements: out.requirements.length, pages: totalPages });
     if (out.aiError && out.aiError !== 'unavailable') toast(friendlyAIError(out.aiError), 'warn');
     notify({ kind: 'ai_done', title: 'Análisis completado', body: `${out.requirements.length} requisitos encontrados en ${getState().projects.find((p) => p.id === id)?.name}.`, projectId: id });
@@ -195,6 +243,7 @@ export async function runAnalysis(id: string, onProgress: (p: AnalysisProgress) 
 export function deleteProject(id: string) {
   const p = getState().projects.find((x) => x.id === id);
   p?.docs.forEach((d) => d.textKey && deletePages(d.textKey));
+  void clearPending(id);
   pendingFiles.delete(id);
   update((s) => { s.projects = s.projects.filter((x) => x.id !== id); s.events.unshift({ at: nowIso(), name: 'audit.project_deleted', props: { name: p?.name } }); });
 }

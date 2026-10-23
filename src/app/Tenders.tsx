@@ -5,6 +5,7 @@ import { type TedNotice } from '../lib/discovery/tedSnapshot';
 import { useLive, dataAgeMinutes, type LiveState } from '../lib/data/live';
 import { competitionFor, goNoGo, type Competition, type CompStats } from '../lib/data/awards';
 import { alertHits, haystack } from '../lib/alerts';
+import { projectForTender } from '../lib/actions';
 import { demoPliegoFile } from '../lib/demo/demoPliego';
 import { matchTender, SECTORS, REGIONS, PROVINCES, inProvince, noProvince, regionLabel, sectorLabel, type Match } from '../lib/discovery/match';
 import { Drawer, Empty } from '../components/ui';
@@ -84,6 +85,8 @@ export function Tenders({ openId }: { openId?: string } = {}) {
   };
   const [busy, setBusy] = useState<string | null>(null);
   const analyze = async (t: TedNotice) => {
+    const had = projectForTender(t.id);
+    if (had) { setOpen(null); navigate(had.stage === 'analyzing' ? `/app/analyze/${had.id}` : `/app/projects/${had.id}`); return; }
     const c = canCreateProposal(getState());
     if (!c.ok) { setPaywall(c.reason); return; }
     track('tender_analyze_clicked', { id: t.id, included: hasPliegos(t.id) });
@@ -255,6 +258,7 @@ export function TenderRow({ r, saved, onOpen, onSave, compact }: { r: Row; saved
 
 function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; saved: boolean; busy: string | null; onClose: () => void; onSave: () => void; onAnalyze: () => void }) {
   const { t, m } = r;
+  const mine = useStore((x) => x.projects.find((p) => p.tenderId === t.id && p.stage !== 'failed'));   // ya analizada: se abre, no se repite
   const d = t.deadline ? daysUntil(t.deadline) ?? -1 : 0;
   const v = useMemo(() => tenderView(t), [t]);
   const [tab, setTab] = useState<'summary' | 'docs' | 'comp' | 'fit'>('summary');
@@ -267,7 +271,7 @@ function TenderDrawer({ r, saved, busy, onClose, onSave, onAnalyze }: { r: Row; 
   return (
     <Drawer wide title="Detalle de la licitación" onClose={onClose}
       footer={<>
-        <button className="btn btn-primary grow" onClick={onAnalyze} disabled={d < 0 || !!busy}>{busy ? <><LuLoaderCircle className="spin" /> {busy}</> : <>{PLIEGO_FILES[t.id] || canFetchDocs(t.live?.docs) ? 'Analizar los pliegos con PROPO' : 'Analizar licitación'} <LuArrowRight /></>}</button>
+        <button className="btn btn-primary grow" onClick={onAnalyze} disabled={(d < 0 && !mine) || !!busy}>{busy ? <><LuLoaderCircle className="spin" /> {busy}</> : mine ? <>{mine.stage === 'analyzing' ? 'Ver el análisis en curso' : 'Abrir mi propuesta'} <LuArrowRight /></> : <>{PLIEGO_FILES[t.id] || canFetchDocs(t.live?.docs) ? 'Analizar los pliegos con PROPO' : 'Analizar licitación'} <LuArrowRight /></>}</button>
         <button className={`btn btn-secondary bookmark ${saved ? 'on' : ''}`} onClick={onSave}><LuBookmark /> {saved ? 'Guardada' : 'Guardar'}</button>
       </>}>
       <div className="row-wrap"><span className={`score-pill ${scoreTone(m.score)}`}>{m.score}%</span>{!t.deadline ? <span className="badge ok">Abierta</span> : d >= 0 ? <span className="badge ok">Abierta · {d} días</span> : <span className="badge">Cerrada</span>}<span className="badge outline">{nature}</span><span className="badge outline">{sectorLabel(t.sector)}</span></div>

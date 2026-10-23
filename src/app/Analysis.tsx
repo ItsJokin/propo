@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { LuCircleCheck, LuLoaderCircle, LuCircle, LuTriangleAlert, LuArrowRight, LuFileX, LuCpu, LuCircleStop, LuInfo, LuClock } from 'react-icons/lu';
 import { useStore, navigate, update, getState } from '../lib/store';
 import { pendingQuestions } from '../lib/interview';
-import { runAnalysis, runGenerate, hasPendingFiles, deleteProject, STAGES, type AnalysisProgress } from '../lib/actions';
+import { runGenerate, hasPendingFiles, deleteProject, startAnalysis, isAnalyzing, watchAnalysis, stopAnalysis, restorePending, STAGES, type AnalysisProgress } from '../lib/actions';
 import { Empty } from '../components/ui';
 import { fmtDate } from '../lib/util';
 import { useAIState } from './common';
@@ -21,17 +21,22 @@ export function AnalysisScreen({ id }: { id: string }) {
     setWriting(null);
     navigate(`/app/projects/${id}/proposal`);
   };
-  const ctl = useRef<AbortController | null>(null);
+  const unwatch = useRef<() => void>(() => {});
+  const [resuming, setResuming] = useState(false);
   const start = (forceRules = false) => {
     started.current = true;
-    ctl.current = new AbortController();
     setProg({ stage: 'read', detail: {} });
-    runAnalysis(id, setProg, ctl.current.signal, forceRules);
+    unwatch.current = startAnalysis(id, setProg, forceRules);
   };
   useEffect(() => {
     if (!project || started.current) return;
-    if (project.stage === 'analyzing' && hasPendingFiles(id)) start();
+    if (isAnalyzing(id)) { started.current = true; unwatch.current = watchAnalysis(id, setProg); return; }   // ya en marcha: se sigue el mismo
+    if (project.stage !== 'analyzing') return;
+    if (hasPendingFiles(id)) { start(); return; }
+    setResuming(true);   // tras recargar: los documentos están guardados, se retoma solo
+    restorePending(id).then((ok) => { setResuming(false); if (ok) start(); });
   }, [project?.id]);
+  useEffect(() => () => unwatch.current(), []);
 
   if (!project) return <Empty icon={<LuFileX />} title="Proyecto no encontrado" body="Puede que se haya eliminado." action={<button className="btn btn-primary" onClick={() => navigate('/app/projects')}>Volver a mis proyectos</button>} />;
 
@@ -41,6 +46,7 @@ export function AnalysisScreen({ id }: { id: string }) {
     navigate('/app/projects?new=1');
   };
 
+  if (resuming) return <div className="analysis"><Empty icon={<LuLoaderCircle className="spin" />} title="Retomando el análisis" body="Recuperando los documentos que habías subido…" /></div>;
   if (project.stage === 'analyzing' && !hasPendingFiles(id) && !started.current) {
     return (
       <div className="analysis">
@@ -87,7 +93,7 @@ export function AnalysisScreen({ id }: { id: string }) {
           <LuCpu style={{ width: 14, height: 14 }} />
           {ai === 'available' ? 'Análisis con IA: PROPO está leyendo los pliegos' : 'Extracción básica: la IA no está disponible en esta vista'}
           <span className="spacer" />
-          {ai === 'available' && <button className="btn btn-ghost btn-sm" onClick={() => ctl.current?.abort()}><LuCircleStop /> Detener</button>}
+          {ai === 'available' && <button className="btn btn-ghost btn-sm" onClick={() => stopAnalysis(id)}><LuCircleStop /> Detener</button>}
         </div>
       )}
       <div className={done ? 'mt-24' : 'an-cols mt-24'}>
