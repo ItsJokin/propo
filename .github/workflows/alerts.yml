@@ -33,7 +33,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm ci --no-audit --no-fund
+      - run: npm install --omit=dev --no-audit --no-fund
       - name: Preparar el script
         run: npx esbuild scripts/alerts/send.ts --bundle --platform=node --format=esm --outfile=alerts.mjs --log-level=warning
       - name: Enviar alertas
