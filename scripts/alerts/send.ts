@@ -48,7 +48,7 @@ async function main() {
     const d = w.data ?? {}; const alerts: TenderAlert[] = Array.isArray(d.alerts) ? d.alerts : [];
     const to = d.user?.email; if (!alerts.length || !to || d.settings?.emailNotifications === false || d.demo) continue;
     users++;
-    const groups = alerts.map((a) => ({ a, hits: alertHits(a, rows).map((x) => x.t) })).filter((g) => g.hits.length);
+    const groups = alerts.map((a) => ({ a, hits: alertHits(a, rows, d.company).map((x) => x.t) })).filter((g) => g.hits.length);
     if (!groups.length) continue;
     const m = mail(String(d.user?.name || '').split(' ')[0], groups);
     if (DRY) { console.log(`(prueba) ${w.user_id}: ${m.subject}`); sent++; continue; }

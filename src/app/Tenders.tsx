@@ -178,7 +178,7 @@ export function Tenders() {
         <div className="card mt-32">
           <div className="card-head"><LuBell style={{ width: 16, height: 16, color: 'var(--accent)' }} /><h3>Tus alertas</h3><span className="spacer" /><span className="xs subtle">{s.alerts.length} de {plan.alerts >= 999 ? 'ilimitadas' : plan.alerts}</span></div>
           {s.alerts.map((a) => {
-            const hits = alertHits(a, all);
+            const hits = alertHits(a, all, s.company);
             const n = hits.length; const fresh = hits.filter(({ t }) => t.pub >= a.createdAt.slice(0, 10)).length;
             return (
               <div key={a.id} className="entity">
