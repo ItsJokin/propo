@@ -5,6 +5,8 @@ import * as pdfjs from 'pdfjs-dist/build/pdf.mjs';
 import * as pdfWorker from 'pdfjs-dist/build/pdf.worker.mjs';
 import { readZip } from './zip';
 import { sniff, readCfb, docText, xlsText, rtfText, htmlText, odtText, decodeText } from './legacy';
+import { ocrPages, MAX_OCR_PAGES } from './ocr';
+import { getSample } from '../ai/provider';
 import { cleanText } from '../util';
 
 // pdf.js "fake worker": parse on the main thread (artifact pages cannot load worker files by URL).
@@ -67,7 +69,7 @@ export async function parseFile(file: File, onProgress?: (msg: string) => void):
 export async function parseBuffer(name: string, buf: ArrayBuffer, sizeKb: number, onProgress?: (msg: string) => void): Promise<ParsedDoc> {
   const kind = kindOf(name);
   try {
-    if (kind === 'pdf') return await parsePdf(name, buf, sizeKb, onProgress);
+    if (kind === 'pdf') { const copy = buf.slice(0); return await withOcr(await parsePdf(name, buf, sizeKb, onProgress), copy, onProgress); }
     if (kind === 'docx') return await parseDocx(name, buf, sizeKb);
     if (kind === 'xlsx') return await parseXlsx(name, buf, sizeKb);
     if (kind === 'txt') {
@@ -87,7 +89,7 @@ export async function parseBuffer(name: string, buf: ArrayBuffer, sizeKb: number
 /** .doc, .xls, .rtf, .odt, .html… Se mira el contenido: muchos «.doc» son RTF, HTML o incluso .docx renombrados. */
 async function parseLegacy(name: string, ext: string, buf: ArrayBuffer, sizeKb: number, onProgress?: (m: string) => void): Promise<ParsedDoc> {
   const b = new Uint8Array(buf); const kindIs = sniff(b);
-  if (kindIs === 'pdf') return parsePdf(name, buf, sizeKb, onProgress);
+  if (kindIs === 'pdf') { const copy = buf.slice(0); return withOcr(await parsePdf(name, buf, sizeKb, onProgress), copy, onProgress); }
   if (kindIs === 'zip' && !/^od[ts]$/.test(ext)) return ext === 'xls' ? parseXlsx(name, buf, sizeKb) : parseDocx(name, buf, sizeKb);
   let pages: string[] = [];
   if (kindIs === 'cfb') {
@@ -103,6 +105,20 @@ async function parseLegacy(name: string, ext: string, buf: ArrayBuffer, sizeKb: 
   const chars = pages.reduce((a, t) => a + t.length, 0);
   if (chars < 20) return { name, kind: 'other', sizeKb, pages: [], status: 'unreadable', note: 'No se ha encontrado texto en este documento. Ábrelo y guárdalo como PDF o como Word (.docx).' };
   return { name, kind: ext === 'xls' || ext === 'ods' ? 'xlsx' : 'other', sizeKb, pages, status: 'parsed', pagesEstimated: true, note: 'Leído de un formato antiguo o alternativo: los números de página son aproximados.' };
+}
+
+/** Páginas escaneadas (sin texto): las lee la IA. Si la IA no está disponible, el documento queda como estaba. */
+async function withOcr(r: ParsedDoc, buf: ArrayBuffer, onProgress?: (m: string) => void): Promise<ParsedDoc> {
+  if (r.kind !== 'pdf' || (r.status !== 'unreadable' && r.status !== 'partial')) return r;
+  const empty = r.pages.map((t, i) => (t.length < 25 ? i + 1 : 0)).filter(Boolean);
+  if (!empty.length || !(await getSample().catch(() => null))) return r;
+  let read: Map<number, string>;
+  try { read = await ocrPages(buf, empty, (d, t) => onProgress?.(`Leyendo las páginas escaneadas de ${r.name} con IA (${Math.min(d + 1, t)} de ${t})…`)); } catch { return r; }
+  if (!read.size) return r;
+  const pages = r.pages.map((t, i) => read.get(i + 1) ?? t);
+  const still = pages.filter((t) => t.length < 25).length;
+  const over = empty.length > MAX_OCR_PAGES ? ` Solo se han leído las ${MAX_OCR_PAGES} primeras páginas escaneadas.` : '';
+  return { ...r, pages, status: still > pages.length * 0.3 ? 'partial' : 'parsed', note: `${read.size} página${read.size === 1 ? '' : 's'} escaneada${read.size === 1 ? '' : 's'} leída${read.size === 1 ? '' : 's'} con reconocimiento de texto por IA: revisa en el original las cifras y fechas importantes.${still ? ` ${still} página${still === 1 ? '' : 's'} sin texto (en blanco o ilegibles).` : ''}${over}` };
 }
 
 async function parsePdf(name: string, buf: ArrayBuffer, sizeKb: number, onProgress?: (m: string) => void): Promise<ParsedDoc> {
@@ -125,7 +141,7 @@ async function parsePdf(name: string, buf: ArrayBuffer, sizeKb: number, onProgre
   const chars = pages.reduce((a, p) => a + p.length, 0);
   const empty = pages.filter((p) => p.length < 25).length;
   if (chars < 40 * pages.length && empty > pages.length * 0.7) {
-    return { name, kind: 'pdf', sizeKb, pages, status: 'unreadable', note: 'Este PDF parece escaneado: contiene imágenes en lugar de texto. El reconocimiento de texto (OCR) funciona en la versión de producción; en esta versión, sube un PDF con texto.' };
+    return { name, kind: 'pdf', sizeKb, pages, status: 'unreadable', note: 'Este PDF parece escaneado: contiene imágenes en lugar de texto y no se ha podido leer con la IA ahora. Vuelve a subirlo en unos minutos o súbelo en una versión con texto.' };
   }
   if (empty > 0) {
     return { name, kind: 'pdf', sizeKb, pages, status: 'partial', note: `${empty} de ${pages.length} páginas no tienen texto legible (probablemente imágenes escaneadas o páginas en blanco). Revísalas a mano.` };
