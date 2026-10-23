@@ -19,8 +19,8 @@ export interface Ficha {
 }
 export interface WebBrand { logo?: string | null; theme?: string | null; vars?: string[]; css?: string[] }
 export interface WebInfo { brand?: WebBrand | null; description?: string; tradeName?: string; services?: string[]; certifications?: { name: string; issuer?: string }[]; phone?: string; email?: string; address?: string; employees?: string }
-export type Source = 'Adjudicaciones' | 'Registro Mercantil' | 'Tu web';
-export interface Proposal { key: string; label: string; value: string; current?: string; source: Source; on: boolean; apply: (s: AppState) => void; image?: string; swatches?: string[] }
+export type Source = 'Adjudicaciones' | 'Registro Mercantil' | 'Tu web' | 'Tus documentos';
+export interface Proposal { key: string; label: string; value: string; current?: string; source: Source; on: boolean; apply: (s: AppState) => void; image?: string; swatches?: string[]; detail?: string }
 export interface Autofill { found: boolean; name: string; proposals: Proposal[]; warnings: string[]; sources: Source[]; webError?: string }
 
 export const cleanNif = (s: string) => s.toUpperCase().replace(/[^A-Z0-9]/g, '').replace(/^ES/, '');

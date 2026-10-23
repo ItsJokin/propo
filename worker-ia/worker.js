@@ -10,6 +10,8 @@
 //   Sin SUPABASE_URL el Worker funciona como antes (sin cuentas ni topes), para poder cambiarlo sin cortar el servicio.
 //
 //   POST /v1/generate   { input: string | {role, content}[], tier?: 'quick' | 'default' | 'complex', project?: string }
+//                       content es texto o, para leer documentos escaneados, una lista de bloques: {type:'text', text},
+//                       {type:'document', source:{type:'base64', media_type:'application/pdf', data}} o {type:'image', …}
 //   → el flujo de eventos de la API de Claude (SSE), sin modificar; los errores llegan como {"error": "código"}
 //   GET  /health        → {"ok": true, "key": true|false, "accounts": true|false}
 
@@ -19,6 +21,8 @@ const ORIGINS = ['https://propo.es', 'https://www.propo.es'];
 const MODELS = { quick: 'claude-haiku-5-5', default: 'claude-sonnet-5-5', complex: 'claude-sonnet-5-5' };
 const MAX_TOKENS = { quick: 4000, default: 32000, complex: 32000 };
 const MAX_INPUT_CHARS = 600000;
+const MAX_FILE_B64 = 24 * 1024 * 1024;   // PDF o imágenes por petición (en base64)
+const IMAGE_TYPES = ['image/png', 'image/jpeg', 'image/webp', 'image/gif'];
 const PER_MINUTE = 40;                    // peticiones por minuto y dirección IP (freno de emergencia; el real va por cuenta)
 const EFFORT = { quick: 'low', default: 'medium', complex: 'high' };
 
@@ -29,8 +33,18 @@ function parseInput(input) {
   if (!Array.isArray(input) || !input.length) return null;
   const out = [];
   for (const m of input) {
-    if (!m || (m.role !== 'user' && m.role !== 'assistant') || typeof m.content !== 'string') return null;
-    out.push({ role: m.role, content: m.content });
+    if (!m || (m.role !== 'user' && m.role !== 'assistant')) return null;
+    if (typeof m.content === 'string') { out.push({ role: m.role, content: m.content }); continue; }
+    if (m.role !== 'user' || !Array.isArray(m.content) || !m.content.length || m.content.length > 20) return null;
+    const blocks = [];
+    for (const b of m.content) {   // solo los tipos de bloque que usa PROPO, reconstruidos campo a campo
+      if (b && b.type === 'text' && typeof b.text === 'string') blocks.push({ type: 'text', text: b.text });
+      else if (b && (b.type === 'document' || b.type === 'image') && b.source && b.source.type === 'base64' && typeof b.source.data === 'string'
+        && (b.type === 'document' ? b.source.media_type === 'application/pdf' : IMAGE_TYPES.includes(b.source.media_type))) {
+        blocks.push({ type: b.type, source: { type: 'base64', media_type: b.source.media_type, data: b.source.data } });
+      } else return null;
+    }
+    out.push({ role: 'user', content: blocks });
   }
   return out[out.length - 1].role === 'user' ? out : null;
 }
@@ -112,7 +126,8 @@ export default {
     try { body = await req.json(); } catch { return json({ error: 'bad_request' }, 400, cors); }
     const messages = parseInput(body && body.input);
     if (!messages) return json({ error: 'bad_request' }, 400, cors);
-    if (messages.reduce((n, m) => n + m.content.length, 0) > MAX_INPUT_CHARS) return json({ error: 'prompt_too_large' }, 413, cors);
+    const size = (m, kind) => typeof m.content === 'string' ? (kind === 'text' ? m.content.length : 0) : m.content.reduce((n, b) => n + (b.type === 'text' ? (kind === 'text' ? b.text.length : 0) : (kind === 'file' ? b.source.data.length : 0)), 0);
+    if (messages.reduce((n, m) => n + size(m, 'text'), 0) > MAX_INPUT_CHARS || messages.reduce((n, m) => n + size(m, 'file'), 0) > MAX_FILE_B64) return json({ error: 'prompt_too_large' }, 413, cors);
     const tier = body.tier === 'quick' || body.tier === 'complex' ? body.tier : 'default';
 
     // Cuentas y topes: solo cuentas de PROPO y dentro de las propuestas de su plan.

@@ -142,6 +142,12 @@ async function call<T>(fn: (s: SampleFn) => Promise<T>): Promise<T> {
 }
 
 export const ai = {
+  /** Lee un archivo (PDF o imagen, también escaneados) y responde en JSON. Necesita el servidor de IA con bloques de archivo. */
+  jsonFile<T>(prompt: string, file: { mediaType: string; base64: string }, opts: { tier?: 'quick' | 'default' | 'complex'; signal?: AbortSignal; project?: string } = {}) {
+    const block = { type: file.mediaType === 'application/pdf' ? 'document' : 'image', source: { type: 'base64', media_type: file.mediaType, data: file.base64 } };
+    const input = [{ role: 'user', content: [block, { type: 'text', text: prompt }] }] as any;
+    return call((s) => s.json<T>(input, { modelTier: opts.tier ?? 'default', signal: opts.signal, cache: false, project: opts.project }));
+  },
   json<T>(prompt: string, opts: { tier?: 'quick' | 'default' | 'complex'; signal?: AbortSignal; cache?: boolean; project?: string } = {}) {
     return call((s) => s.json<T>(prompt, { modelTier: opts.tier ?? 'default', signal: opts.signal, cache: opts.cache ?? false, project: opts.project }));
   },
