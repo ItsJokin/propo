@@ -35,7 +35,8 @@ export function SectorTab({ pick }: { pick?: string }) {
 }
 
 function Group({ title, fields, sector, note }: { title: string; fields: SField[]; sector: string; note?: string }) {
-  const data = useStore((s) => s.company.sectorData?.[sector] ?? {});
+  const all = useStore((s) => s.company.sectorData);   // el objeto guardado, no uno nuevo en cada lectura (eso hace que React entre en bucle)
+  const data = all?.[sector] ?? {};
   const set = (id: string, v: any) => update((s) => { const all = (s.company.sectorData ??= {}); (all[sector] ??= {})[id] = v; });
   return (
     <div className="card">
