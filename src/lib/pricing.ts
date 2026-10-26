@@ -52,6 +52,8 @@ export interface Pricing {
   fillNote?: string;              // por qué no se ha podido rellenar (p. ej. PDF sin campos)
   unitDraft?: Record<string, string>;   // precios por concepto que el cliente está escribiendo (y conceptos que añade él)
   extraUnits?: { id: string; label: string; unit: string }[];
+  unitInfo?: Record<string, UnitInfo> | null;   // qué pide el pliego en cada concepto, explicado en claro
+  unitInfoError?: boolean;
 }
 
 export const emptyPricing = (): Pricing => ({ rule: null, floor: null, choice: null, others: {}, approved: null });
@@ -425,4 +427,63 @@ export function unitText(unit: string): string { const u = unit.trim(); return /
 export function isSingleDiscount(rule: PriceRule): boolean {
   if (rule.singleDiscount != null) return rule.singleDiscount && rule.units.some((u) => u.max);
   return rule.units.some((u) => u.max) && /(porcentaje|%)\s+de\s+(baja|descuento)\s+(único|uniforme|lineal)|(baja|descuento)\s+(único|única|uniforme|lineal)/i.test(`${rule.formulaText} ${rule.plain}`);
+}
+
+// ── Qué pide el pliego en cada concepto, explicado en claro ─────────────────────────────────────────────────────────
+export interface UnitInfo { plain: string; includes: string[]; watch: string | null; doc: string; page: number | null }
+const STOP = new Set(['para', 'por', 'con', 'del', 'los', 'las', 'una', 'uno', 'que', 'sin', 'menu', 'servicio', 'precio', 'comensal', 'persona', 'unidad']);
+async function unitPages(p: Project, rule: PriceRule): Promise<string> {
+  const pages = await projectPages(p);
+  const words = [...new Set(rule.units.flatMap((u) => normalize(u.label).split(/[^a-z0-9]+/)).filter((w) => w.length > 3 && !STOP.has(w)))];
+  const scored: { doc: string; page: number; text: string; score: number }[] = [];
+  for (const d of p.docs) {
+    (pages.get(d.id) ?? []).forEach((t, i) => {
+      if (!t || t.length < 60) return;
+      const n = normalize(t); let score = 0;
+      for (const w of words) if (n.includes(w)) score += 2;
+      score += Math.min(6, (n.match(/incluye|compuest|consistir|debera contener|como minimo|bebida|racion|piezas|menu/g) || []).length);
+      if (/prescripciones|ppt|tecnic/i.test(d.name)) score += 3;
+      if (score > 4) scored.push({ doc: d.name, page: i + 1, text: t, score });
+    });
+  }
+  scored.sort((a, b) => b.score - a.score);
+  let out = ''; let k = 0;
+  for (const s of scored) {
+    const block = `\n\n=== ${s.doc} · página ${s.page} ===\n${s.text.slice(0, 6000)}`;
+    if (out.length + block.length > 70000 || k >= 14) break;
+    out += block; k++;
+  }
+  return out;
+}
+/** Lee en los pliegos qué incluye cada concepto con precio (menú, servicio, pack…) y lo explica para el dueño de la empresa. */
+export async function explainUnits(p: Project, rule: PriceRule): Promise<Record<string, UnitInfo>> {
+  const pages = await unitPages(p, rule);
+  const list = rule.units.map((u) => `- ${u.id}: ${u.label}${u.unit ? ` (${u.unit})` : ''}${u.max != null ? ` · máximo ${u.max} €` : ''}`).join('\n');
+  const j = await ai.json<any>(`Eres un experto en contratación pública española. Una pyme va a poner precio a cada uno de estos conceptos de una licitación y necesita saber EXACTAMENTE qué tiene que dar en cada uno.
+
+Licitación: ${p.name}
+
+Conceptos:
+${list}
+
+Extractos de los pliegos:
+${pages}
+
+Para cada concepto, busca en los extractos qué pide el pliego (composición, cantidades, número de piezas o platos, bebidas, duración, personal, material, montaje, horarios…) y explícalo con palabras sencillas, sin jerga, como se lo contarías al dueño de la empresa. No inventes nada: si el pliego no lo detalla, dilo.
+Devuelve SOLO un objeto JSON con esta forma, con una clave por cada id de concepto:
+{
+  "u0": {
+    "plain": "1 o 2 frases: qué es este servicio y qué tienes que dar",
+    "includes": ["cada cosa concreta que exige el pliego, con cantidades si las da"],
+    "watch": "lo que hay que tener en cuenta para el precio (personal incluido, mínimo de comensales, transporte, alergias…) o null",
+    "doc": "documento donde lo has leído (o '' si no aparece)",
+    "page": número o null
+  }
+}`, { tier: 'default', project: p.isSample ? '' : p.id });
+  const out: Record<string, UnitInfo> = {};
+  for (const u of rule.units) {
+    const x = j?.[u.id]; if (!x?.plain) continue;
+    out[u.id] = { plain: String(x.plain), includes: (Array.isArray(x.includes) ? x.includes : []).map(String).filter(Boolean).slice(0, 12), watch: x.watch ? String(x.watch) : null, doc: String(x.doc || ''), page: x.page == null || x.page === '' ? null : num(x.page) || null };
+  }
+  return out;
 }

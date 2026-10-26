@@ -10,7 +10,7 @@ import { getFile } from '../../lib/storage';
 import { offerDownload } from '../../lib/services/download';
 import {
   emptyPricing, readPriceRule, marketFor, priceOptions, choose, readOwnPrices, formalCommitment, priceWarnings, eurosInWords, eur2, pct1, num, pointsFor,
-  otherAdvice, otherPoints, commitmentText, unitLines, unitChoice, unitText, isSingleDiscount,
+  otherAdvice, otherPoints, commitmentText, unitLines, unitChoice, unitText, isSingleDiscount, explainUnits,
   type Pricing as PricingState, type Market, type Option,
 } from '../../lib/pricing';
 import { Economic } from './Economic';
@@ -335,11 +335,21 @@ function OtherCriteria({ p, pr }: { p: Project; pr: PricingState }) {
 }
 
 /** Tabla para poner el precio de cada concepto (menú, servicio, hora…): máximo del pliego, cantidad estimada y subtotal. */
+const explaining = new Set<string>();   // proyectos cuya explicación de conceptos ya se está pidiendo
+
 function UnitPrices({ p, pr, save }: { p: Project; pr: PricingState; save: (fn: (x: PricingState) => void) => void }) {
   const rule = pr.rule!;
   const draft = pr.unitDraft ?? {}; const extra = pr.extraUnits ?? [];
   const [totalTxt, setTotalTxt] = useState('');
   const [newLabel, setNewLabel] = useState('');
+  const [open, setOpen] = useState<string | null>(null);
+  const info = pr.unitInfo; const loadingInfo = rule.units.length > 0 && info == null && !pr.unitInfoError;
+  const fetchInfo = () => {
+    if (explaining.has(p.id)) return; explaining.add(p.id);
+    save((x) => { x.unitInfoError = false; });
+    explainUnits(p, rule).then((r) => save((x) => { x.unitInfo = r; }), () => save((x) => { x.unitInfoError = true; })).finally(() => explaining.delete(p.id));
+  };
+  useEffect(() => { if (loadingInfo) fetchInfo(); }, [p.id]);   // una sola vez por proyecto: queda guardado
   const lines = unitLines(rule, draft, extra);
   const single = isSingleDiscount(rule);
   const pctTxt = draft.__pct ?? ''; const pct = pctTxt.trim() ? Number(pctTxt.replace(',', '.')) / 100 : null;
@@ -363,9 +373,11 @@ function UnitPrices({ p, pr, save }: { p: Project; pr: PricingState; save: (fn: 
       <div style={{ overflowX: 'auto' }}>
         <table className="pr-units mt-12" style={{ minWidth: 560 }}>
           <thead><tr><th>Concepto</th><th style={{ textAlign: 'right' }}>Máximo del pliego</th>{anyQty && <th style={{ textAlign: 'right' }}>Cantidad estimada</th>}<th style={{ textAlign: 'right', width: 150 }}>{single ? 'Queda en (sin IVA)' : 'Tu precio (sin IVA)'}</th>{anyQty && <th style={{ textAlign: 'right' }}>Subtotal</th>}<th /></tr></thead>
-          <tbody>{shown.map((l) => (
-            <tr key={l.id}>
-              <td>{l.label}{l.unit && l.unit.toLowerCase() !== l.label.toLowerCase() && <span className="xs muted"> · {unitText(l.unit)}</span>}</td>
+          <tbody>{shown.map((l) => { const inf = info?.[l.id]; const isUnit = rule.units.some((u) => u.id === l.id); return (
+            <React.Fragment key={l.id}>
+            <tr>
+              <td>{l.label}{l.unit && l.unit.toLowerCase() !== l.label.toLowerCase() && <span className="xs muted"> · {unitText(l.unit)}</span>}
+                {isUnit && <button className={`btn btn-ghost btn-sm btn-icon pr-info${open === l.id ? ' on' : ''}`} aria-label={`Qué pide el pliego en ${l.label}`} aria-expanded={open === l.id} title="Qué pide el pliego en este concepto" onClick={() => setOpen(open === l.id ? null : l.id)}>{loadingInfo && open === l.id ? <LuLoaderCircle className="spin" /> : <LuInfo />}</button>}</td>
               <td className="num" style={{ textAlign: 'right' }}>{l.max != null ? eur2(l.max) : <span className="muted">—</span>}</td>
               {anyQty && <td className="num" style={{ textAlign: 'right' }}>{l.qty != null ? l.qty.toLocaleString('es-ES') : <span className="muted">—</span>}</td>}
               <td style={{ textAlign: 'right' }}>{single ? <span className="num">{l.price != null ? eur2(l.price) : <span className="muted">—</span>}</span> : <><div className="row" style={{ gap: 4, justifyContent: 'flex-end' }}>
@@ -374,7 +386,21 @@ function UnitPrices({ p, pr, save }: { p: Project; pr: PricingState; save: (fn: 
               {anyQty && <td className="num" style={{ textAlign: 'right' }}>{l.subtotal != null ? eur2(l.subtotal) : <span className="muted">—</span>}</td>}
               <td>{extra.some((x) => x.id === l.id) && <button className="btn btn-ghost btn-sm btn-icon" aria-label="Quitar concepto" onClick={() => save((x) => { x.extraUnits = (x.extraUnits ?? []).filter((y) => y.id !== l.id); const d = { ...(x.unitDraft ?? {}) }; delete d[l.id]; x.unitDraft = d; })}><LuTrash2 /></button>}</td>
             </tr>
-          ))}</tbody>
+            {open === l.id && <tr className="pr-info-row"><td colSpan={99}>
+              <div className="pr-info-box">
+                {inf ? <>
+                  <div className="xs muted" style={{ fontWeight: 600, letterSpacing: '.02em' }}>QUÉ PIDE EL PLIEGO</div>
+                  <p className="mt-4">{inf.plain}</p>
+                  {inf.includes.length > 0 && <ul className="mt-8">{inf.includes.map((x, i) => <li key={i}>{x}</li>)}</ul>}
+                  {inf.watch && <p className="small mt-8"><LuTriangleAlert style={{ verticalAlign: '-2px', color: 'var(--warn)' }} /> <strong>Para el precio:</strong> {inf.watch}</p>}
+                  {inf.doc && <p className="xs muted mt-8">Fuente: {inf.doc}{inf.page ? `, pág. ${inf.page}` : ''}. Explicado por la IA de PROPO: compruébalo en el pliego antes de presentar.</p>}
+                </> : loadingInfo ? <p className="small muted"><LuLoaderCircle className="spin" style={{ verticalAlign: '-2px' }} /> PROPO está leyendo el pliego para explicarte cada concepto…</p>
+                  : pr.unitInfoError ? <p className="small">No se ha podido leer ahora. <button className="btn btn-ghost btn-sm" onClick={fetchInfo}><LuRotateCcw /> Reintentar</button></p>
+                  : <p className="small muted">El pliego no detalla qué incluye este concepto. Si tienes dudas, puedes preguntarlo al órgano de contratación antes de que acabe el plazo.</p>}
+              </div>
+            </td></tr>}
+            </React.Fragment>
+          ); })}</tbody>
         </table>
       </div>
       {!single && <div className="row-wrap mt-8" style={{ gap: 6 }}>
