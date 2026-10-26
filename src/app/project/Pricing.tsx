@@ -1,7 +1,8 @@
 // Paso «El precio»: PROPO explica cómo puntúa el precio este pliego, propone tres precios a partir del mínimo que le
 // compensa al cliente (o ordena los que él escriba con sus palabras) y, al confirmarlo, prepara la oferta económica.
 import React, { useEffect, useState } from 'react';
-import { LuInfo, LuTriangleAlert, LuCircleCheck, LuSparkles, LuPencil, LuRotateCcw, LuArrowRight, LuShieldCheck, LuLoaderCircle, LuPlus, LuTrash2 } from 'react-icons/lu';
+import { LuInfo, LuTriangleAlert, LuCircleCheck, LuSparkles, LuPencil, LuRotateCcw, LuArrowRight, LuShieldCheck, LuLoaderCircle, LuPlus, LuTrash2, LuMinus, LuCheck, LuChevronLeft, LuChevronRight, LuFileText } from 'react-icons/lu';
+import { Drawer } from '../../components/ui';
 import { uid } from '../../lib/util';
 import type { Project } from '../../lib/types';
 import { updateProject, navigate, toast, getState } from '../../lib/store';
@@ -334,8 +335,17 @@ function OtherCriteria({ p, pr }: { p: Project; pr: PricingState }) {
   );
 }
 
-/** Tabla para poner el precio de cada concepto (menú, servicio, hora…): máximo del pliego, cantidad estimada y subtotal. */
+/** Precio de cada concepto (menú, servicio, hora…) en tarjetas agrupadas, con lo que pide el pliego explicado en claro. */
 const explaining = new Set<string>();   // proyectos cuya explicación de conceptos ya se está pidiendo
+
+/** «Desayuno · Coffe break» → grupo «Desayuno», nombre «Coffe break». */
+function splitLabel(label: string): { group: string; name: string } {
+  const i = label.indexOf(' · ');
+  if (i > 0) return { group: label.slice(0, i).trim(), name: label.slice(i + 3).trim() };
+  const w = label.split(/\s+/)[0];
+  return { group: /^packs?$/i.test(w) ? 'Packs' : 'Otros conceptos', name: label };
+}
+const firstSentence = (t: string) => { const m = t.match(/^.+?[.!?](\s|$)/); return (m ? m[0] : t).trim(); };
 
 function UnitPrices({ p, pr, save }: { p: Project; pr: PricingState; save: (fn: (x: PricingState) => void) => void }) {
   const rule = pr.rule!;
@@ -353,71 +363,115 @@ function UnitPrices({ p, pr, save }: { p: Project; pr: PricingState; save: (fn: 
   const lines = unitLines(rule, draft, extra);
   const single = isSingleDiscount(rule);
   const pctTxt = draft.__pct ?? ''; const pct = pctTxt.trim() ? Number(pctTxt.replace(',', '.')) / 100 : null;
-  const shown = single ? lines.map((l) => { const price = pct != null && l.max ? Math.round(l.max * (1 - pct) * 100) / 100 : null; return { ...l, price, over: false, subtotal: price != null && l.qty ? Math.round(price * l.qty * 100) / 100 : null }; }) : lines;
+  const pctOk = pct != null && pct > 0 && pct < 1;
+  const shown = single ? lines.map((l) => { const price = pctOk && l.max ? Math.round(l.max * (1 - pct!) * 100) / 100 : null; return { ...l, price, over: false, subtotal: price != null && l.qty ? Math.round(price * l.qty * 100) / 100 : null }; }) : lines;
   const ch = unitChoice(rule, lines, totalTxt, single ? pct : undefined);
   const set = (id: string, v: string) => save((x) => { x.unitDraft = { ...(x.unitDraft ?? {}), [id]: v.replace(/[^\d.,]/g, '') }; });
-  const anyQty = lines.some((l) => l.qty); const allPricedQty = lines.filter((l) => l.price).every((l) => l.qty);
+  const setPct = (v: number) => set('__pct', String(Math.max(0, Math.min(99, Math.round(v * 10) / 10))).replace('.', ','));
+  const allPricedQty = lines.filter((l) => l.price).every((l) => l.qty);
   const over = lines.filter((l) => l.over);
+  const done = shown.filter((l) => l.price != null).length;
   const use = () => { if (!ch) return; save((x) => { x.choice = ch; x.approved = null; }); toast('Precios guardados. Revísalos y confírmalos.', 'ok'); };
+  const groups: { name: string; items: (typeof shown[number] & { short: string })[] }[] = [];
+  for (const l of shown) {
+    const { group, name } = extra.some((x) => x.id === l.id) ? { group: 'Conceptos que has añadido', name: l.label } : splitLabel(l.label);
+    let g = groups.find((x) => x.name === group); if (!g) groups.push(g = { name: group, items: [] });
+    g.items.push({ ...l, short: name });
+  }
+  const order = shown.map((l) => l.id); const idx = open ? order.indexOf(open) : -1;
+  const cur = open ? shown.find((l) => l.id === open) : null; const inf = open ? info?.[open] : null;
+
   return (
     <div className="card card-pad">
-      <h3 style={{ fontSize: 18 }}>{single ? 'Tu % de baja sobre los precios máximos' : 'Pon tu precio a cada concepto'}</h3>
-      {single ? <>
-        <p className="muted mt-4">Este pliego no pide un precio por cada concepto: pide <strong>un único porcentaje de baja</strong> que se aplica a todos los precios máximos. Escribe tu % y verás cómo queda cada concepto.</p>
-        <div className="row-wrap mt-12" style={{ gap: 8, alignItems: 'center' }}>
-          <span className="small">Baja que ofreces:</span>
-          <div className="pr-money"><input className="input" inputMode="decimal" style={{ width: 110 }} placeholder="p. ej. 8" aria-label="Porcentaje de baja único" value={pctTxt} onChange={(e) => set('__pct', e.target.value)} /><span>%</span></div>
-          {pct != null && (pct <= 0 || pct >= 1) && <span className="xs" style={{ color: 'var(--bad)' }}>Escribe un % entre 0 y 100</span>}
+      <h3 style={{ fontSize: 18 }}>{single ? 'Elige tu baja' : 'Pon tu precio a cada servicio'}</h3>
+      <p className="muted mt-4">{single
+        ? <>En esta licitación no se pone un precio a cada servicio: se ofrece <strong>un único % de rebaja</strong> sobre todos los precios máximos. Elige el tuyo y mira cómo queda cada uno.</>
+        : <>Escribe tu precio, sin IVA, en cada servicio. Ninguno puede pasar de su máximo: si uno se pasa, te excluyen aunque el resto esté bien.</>}
+        {' '}Toca cualquier servicio para ver qué tienes que dar.</p>
+
+      {single && <div className="uc-hero mt-16">
+        <div className="uc-hero-in">
+          <button className="btn btn-secondary btn-icon" aria-label="Bajar medio punto" onClick={() => setPct((pct ?? 0) * 100 - 0.5)}><LuMinus /></button>
+          <div className="uc-pct"><input inputMode="decimal" placeholder="0" aria-label="Porcentaje de baja único" value={pctTxt} onChange={(e) => set('__pct', e.target.value)} /><span>%</span></div>
+          <button className="btn btn-secondary btn-icon" aria-label="Subir medio punto" onClick={() => setPct((pct ?? 0) * 100 + 0.5)}><LuPlus /></button>
         </div>
-      </> : <p className="muted mt-4">Este pliego pide un precio por cada concepto. Escribe el tuyo, sin IVA, en cada línea. Ninguno puede superar su precio máximo: si uno lo supera, la oferta se excluye aunque el total esté por debajo.</p>}
-      <div style={{ overflowX: 'auto' }}>
-        <table className="pr-units mt-12" style={{ minWidth: 560 }}>
-          <thead><tr><th>Concepto</th><th style={{ textAlign: 'right' }}>Máximo del pliego</th>{anyQty && <th style={{ textAlign: 'right' }}>Cantidad estimada</th>}<th style={{ textAlign: 'right', width: 150 }}>{single ? 'Queda en (sin IVA)' : 'Tu precio (sin IVA)'}</th>{anyQty && <th style={{ textAlign: 'right' }}>Subtotal</th>}<th /></tr></thead>
-          <tbody>{shown.map((l) => { const inf = info?.[l.id]; const isUnit = rule.units.some((u) => u.id === l.id); return (
-            <React.Fragment key={l.id}>
-            <tr>
-              <td>{l.label}{l.unit && l.unit.toLowerCase() !== l.label.toLowerCase() && <span className="xs muted"> · {unitText(l.unit)}</span>}
-                {isUnit && <button className={`btn btn-ghost btn-sm btn-icon pr-info${open === l.id ? ' on' : ''}`} aria-label={`Qué pide el pliego en ${l.label}`} aria-expanded={open === l.id} title="Qué pide el pliego en este concepto" onClick={() => setOpen(open === l.id ? null : l.id)}>{loadingInfo && open === l.id ? <LuLoaderCircle className="spin" /> : <LuInfo />}</button>}</td>
-              <td className="num" style={{ textAlign: 'right' }}>{l.max != null ? eur2(l.max) : <span className="muted">—</span>}</td>
-              {anyQty && <td className="num" style={{ textAlign: 'right' }}>{l.qty != null ? l.qty.toLocaleString('es-ES') : <span className="muted">—</span>}</td>}
-              <td style={{ textAlign: 'right' }}>{single ? <span className="num">{l.price != null ? eur2(l.price) : <span className="muted">—</span>}</span> : <><div className="row" style={{ gap: 4, justifyContent: 'flex-end' }}>
-                <input className="input" inputMode="decimal" style={{ width: 110, height: 34, textAlign: 'right', borderColor: l.over ? 'var(--bad)' : undefined }} aria-label={`Precio de ${l.label}`} placeholder={l.max != null ? String(Math.round(l.max * 0.9 * 100) / 100).replace('.', ',') : '0,00'} value={draft[l.id] ?? ''} onChange={(e) => set(l.id, e.target.value)} /><span className="small">€</span></div>
-                {l.over && <div className="xs" style={{ color: 'var(--bad)' }}>Supera el máximo</div>}</>}</td>
-              {anyQty && <td className="num" style={{ textAlign: 'right' }}>{l.subtotal != null ? eur2(l.subtotal) : <span className="muted">—</span>}</td>}
-              <td>{extra.some((x) => x.id === l.id) && <button className="btn btn-ghost btn-sm btn-icon" aria-label="Quitar concepto" onClick={() => save((x) => { x.extraUnits = (x.extraUnits ?? []).filter((y) => y.id !== l.id); const d = { ...(x.unitDraft ?? {}) }; delete d[l.id]; x.unitDraft = d; })}><LuTrash2 /></button>}</td>
-            </tr>
-            {open === l.id && <tr className="pr-info-row"><td colSpan={99}>
-              <div className="pr-info-box">
-                {inf ? <>
-                  <div className="xs muted" style={{ fontWeight: 600, letterSpacing: '.02em' }}>QUÉ PIDE EL PLIEGO</div>
-                  <p className="mt-4">{inf.plain}</p>
-                  {inf.includes.length > 0 && <ul className="mt-8">{inf.includes.map((x, i) => <li key={i}>{x}</li>)}</ul>}
-                  {inf.watch && <p className="small mt-8"><LuTriangleAlert style={{ verticalAlign: '-2px', color: 'var(--warn)' }} /> <strong>Para el precio:</strong> {inf.watch}</p>}
-                  {inf.doc && <p className="xs muted mt-8">Fuente: {inf.doc}{inf.page ? `, pág. ${inf.page}` : ''}. Explicado por la IA de PROPO: compruébalo en el pliego antes de presentar.</p>}
-                </> : loadingInfo ? <p className="small muted"><LuLoaderCircle className="spin" style={{ verticalAlign: '-2px' }} /> PROPO está leyendo el pliego para explicarte cada concepto. Tarda alrededor de un minuto y solo se hace una vez.</p>
-                  : pr.unitInfoError ? <p className="small">No se ha podido leer ahora. <button className="btn btn-ghost btn-sm" onClick={fetchInfo}><LuRotateCcw /> Reintentar</button></p>
-                  : <p className="small muted">El pliego no detalla qué incluye este concepto. Si tienes dudas, puedes preguntarlo al órgano de contratación antes de que acabe el plazo.</p>}
-              </div>
-            </td></tr>}
-            </React.Fragment>
-          ); })}</tbody>
-        </table>
-      </div>
-      {!single && <div className="row-wrap mt-8" style={{ gap: 6 }}>
-        <input className="input" style={{ maxWidth: 280, height: 34 }} placeholder="¿Falta un concepto? Escríbelo aquí" value={newLabel} onChange={(e) => setNewLabel(e.target.value)} />
-        <button className="btn btn-ghost btn-sm" disabled={!newLabel.trim()} onClick={() => { save((x) => { x.extraUnits = [...(x.extraUnits ?? []), { id: uid('cu'), label: newLabel.trim(), unit: '' }]; }); setNewLabel(''); }}><LuPlus /> Añadir concepto</button>
+        <div className="uc-chips">{[3, 5, 8, 10].map((v) => <button key={v} className={`uc-chip${pct != null && Math.abs(pct * 100 - v) < 0.01 ? ' on' : ''}`} onClick={() => setPct(v)}>{v} %</button>)}</div>
+        <div className="small muted" style={{ textAlign: 'center' }}>{pct != null && !pctOk ? <span style={{ color: 'var(--bad)' }}>Escribe un % entre 0 y 100</span>
+          : ch?.points != null ? <>Con un {pct1(ch.baja)} de rebaja te llevarías unos <strong style={{ color: 'var(--fg)' }}>{pts(ch.points)} de {pts(rule.points)} puntos</strong></>
+          : 'Escribe el % de rebaja que ofreces'}</div>
       </div>}
-      {!single && !allPricedQty && <div className="row-wrap mt-12" style={{ gap: 8, alignItems: 'center' }}>
+
+      {loadingInfo && <div className="uc-note mt-16"><LuLoaderCircle className="spin" /> PROPO está leyendo el pliego para explicarte cada servicio. Tarda un minuto y solo se hace una vez.</div>}
+      {pr.unitInfoError && <div className="uc-note mt-16">No se ha podido leer el pliego ahora. <button className="btn btn-ghost btn-sm" onClick={fetchInfo}><LuRotateCcw /> Reintentar</button></div>}
+
+      {groups.map((g) => (
+        <section key={g.name} className="mt-20">
+          <div className="uc-group"><span>{g.name}</span><span className="uc-count">{g.items.length}</span></div>
+          <div className="uc-grid">
+            {g.items.map((l) => { const i = info?.[l.id]; const isUnit = rule.units.some((u) => u.id === l.id); return (
+              <div key={l.id} className={`uc${l.over ? ' bad' : ''}${l.price != null && !l.over ? ' ok' : ''}`}>
+                <button className="uc-top" disabled={!isUnit} onClick={() => setOpen(l.id)} aria-label={`Qué incluye ${l.label}`}>
+                  <div className="uc-name">{l.short}</div>
+                  {l.unit && l.unit.toLowerCase() !== l.label.toLowerCase() && <div className="uc-unit">{unitText(l.unit)}</div>}
+                  {isUnit && (i ? <p className="uc-desc">{firstSentence(i.plain)}</p> : loadingInfo ? <div className="uc-skel"><span /><span /></div> : null)}
+                  {isUnit && <span className="uc-more">Qué incluye <LuChevronRight /></span>}
+                </button>
+                <div className="uc-foot">
+                  <div className="uc-max"><span>Máximo</span>{l.max != null ? <strong className={single && l.price != null ? 'strike' : ''}>{eur2(l.max)}</strong> : <strong className="muted">—</strong>}</div>
+                  {single
+                    ? <div className="uc-res"><span>Te queda en</span><strong>{l.price != null ? eur2(l.price) : '—'}</strong></div>
+                    : <div className="uc-in"><input inputMode="decimal" aria-label={`Precio de ${l.label}`} placeholder={l.max != null ? String(Math.round(l.max * 0.9 * 100) / 100).replace('.', ',') : '0,00'} value={draft[l.id] ?? ''} onChange={(e) => set(l.id, e.target.value)} /><span>€</span></div>}
+                </div>
+                {l.over && <div className="uc-warn"><LuTriangleAlert /> Pasa del máximo: bájalo</div>}
+                {l.qty != null && l.subtotal != null && <div className="xs muted" style={{ padding: '0 14px 10px' }}>{l.qty.toLocaleString('es-ES')} previstos · {eur2(l.subtotal)}</div>}
+                {!isUnit && <button className="uc-del" aria-label="Quitar concepto" onClick={() => save((x) => { x.extraUnits = (x.extraUnits ?? []).filter((y) => y.id !== l.id); const d = { ...(x.unitDraft ?? {}) }; delete d[l.id]; x.unitDraft = d; })}><LuTrash2 /></button>}
+              </div>
+            ); })}
+          </div>
+        </section>
+      ))}
+
+      {!single && <div className="row-wrap mt-16" style={{ gap: 6 }}>
+        <input className="input" style={{ maxWidth: 280, height: 36 }} placeholder="¿Falta un servicio? Escríbelo aquí" value={newLabel} onChange={(e) => setNewLabel(e.target.value)} />
+        <button className="btn btn-ghost btn-sm" disabled={!newLabel.trim()} onClick={() => { save((x) => { x.extraUnits = [...(x.extraUnits ?? []), { id: uid('cu'), label: newLabel.trim(), unit: '' }]; }); setNewLabel(''); }}><LuPlus /> Añadir</button>
+      </div>}
+      {!single && !allPricedQty && done > 0 && <div className="row-wrap mt-12" style={{ gap: 8, alignItems: 'center' }}>
         <span className="small">Importe total del contrato, si el modelo de oferta lo pide:</span>
         <div className="pr-money"><input className="input" inputMode="decimal" placeholder={rule.budget ? `máx. ${rule.budget.toLocaleString('es-ES')}` : 'opcional'} value={totalTxt} onChange={(e) => setTotalTxt(e.target.value)} aria-label="Importe total sin IVA" /><span>€ sin IVA</span></div>
       </div>}
-      {ch && <div className="pr-sum mt-12">
-        <div><span>{ch.total ? 'Total sin IVA' : 'Total'}</span><strong className="num">{ch.total ? eur2(ch.total) : 'solo precios por concepto'}</strong></div>
-        <div><span>Rebaja {single ? 'única sobre los máximos' : ch.total && rule.budget ? 'sobre el presupuesto' : 'media sobre los máximos'}</span><strong className="num">{pct1(ch.baja)}</strong></div>
-        {ch.points != null && <div className="tot"><span>Puntos del precio (estimados)</span><strong className="num">{pts(ch.points)} de {pts(rule.points)}</strong></div>}
-      </div>}
-      {over.length > 0 && <div className="callout bad small mt-8"><LuTriangleAlert /><div>{over.map((l) => l.label).join(', ')} {over.length === 1 ? 'supera' : 'superan'} el precio máximo del pliego. Bájalo para poder presentar la oferta.</div></div>}
-      <button className="btn btn-primary mt-12" disabled={!ch || over.length > 0} onClick={use}>{single ? 'Usar esta baja' : 'Usar estos precios'}</button>
+
+      <div className="uc-bar mt-20">
+        <div className="uc-bar-txt">
+          {single ? (ch ? <><strong>{pct1(ch.baja)}</strong> de rebaja en los {shown.filter((l) => l.max).length} servicios</> : 'Elige tu % de rebaja')
+            : <><strong>{done} de {shown.length}</strong> servicios con precio{ch ? <> · rebaja media {pct1(ch.baja)}</> : null}</>}
+          {ch?.points != null && <> · <strong>{pts(ch.points)}</strong> de {pts(rule.points)} puntos</>}
+          {over.length > 0 && <div className="xs" style={{ color: 'var(--bad)' }}>{over.length === 1 ? '1 servicio pasa' : `${over.length} servicios pasan`} del máximo</div>}
+        </div>
+        <button className="btn btn-primary" disabled={!ch || over.length > 0} onClick={use}>{single ? 'Usar esta rebaja' : 'Usar estos precios'} <LuArrowRight /></button>
+      </div>
+
+      {cur && <Drawer title={splitLabel(cur.label).name} onClose={() => setOpen(null)}
+        footer={<div className="row" style={{ width: '100%', justifyContent: 'space-between' }}>
+          <button className="btn btn-ghost btn-sm" disabled={idx <= 0} onClick={() => setOpen(order[idx - 1])}><LuChevronLeft /> Anterior</button>
+          <button className="btn btn-ghost btn-sm" disabled={idx >= order.length - 1 || !rule.units.some((u) => u.id === order[idx + 1])} onClick={() => setOpen(order[idx + 1])}>Siguiente <LuChevronRight /></button>
+        </div>}>
+        <div className="xs muted">{splitLabel(cur.label).group}{cur.unit ? ` · ${unitText(cur.unit)}` : ''}</div>
+        <div className="uc-dprice mt-12">
+          <div><span>Máximo del pliego</span><strong>{cur.max != null ? eur2(cur.max) : '—'}</strong></div>
+          <div><span>{single ? 'Con tu rebaja' : 'Tu precio'}</span>{single || cur.price != null ? <strong className="ok">{cur.price != null ? eur2(cur.price) : '—'}</strong>
+            : <div className="uc-in"><input inputMode="decimal" aria-label={`Precio de ${cur.label}`} value={draft[cur.id] ?? ''} onChange={(e) => set(cur.id, e.target.value)} /><span>€</span></div>}</div>
+        </div>
+        {inf ? <>
+          <p className="mt-16" style={{ fontSize: 15, lineHeight: 1.6 }}>{inf.plain}</p>
+          {inf.includes.length > 0 && <>
+            <h4 className="mt-20" style={{ fontSize: 13, color: 'var(--fg-3)', fontWeight: 600 }}>LO QUE TIENES QUE DAR</h4>
+            <ul className="uc-list mt-8">{inf.includes.map((x, k) => <li key={k}><LuCheck />{x}</li>)}</ul>
+          </>}
+          {inf.watch && <div className="uc-watch mt-16"><LuTriangleAlert /><div><strong>Tenlo en cuenta en el precio</strong><br />{inf.watch}</div></div>}
+          {inf.doc && <p className="xs muted mt-16"><LuFileText style={{ verticalAlign: '-2px' }} /> {inf.doc}{inf.page ? `, página ${inf.page}` : ''}. Lo ha resumido la IA de PROPO: compruébalo en el pliego antes de presentar.</p>}
+        </> : loadingInfo ? <div className="uc-note mt-16"><LuLoaderCircle className="spin" /> PROPO está leyendo el pliego. En un momento aparece aquí.</div>
+          : <p className="muted mt-16">El pliego no detalla qué incluye este servicio. Si tienes dudas, puedes preguntarlo al órgano de contratación antes de que acabe el plazo.</p>}
+      </Drawer>}
     </div>
   );
 }
