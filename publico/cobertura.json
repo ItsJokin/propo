@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25T19:43:52.834Z",
+ "generated": "2026-10-26T02:02:27.351Z",
  "expedientes": 34023,
  "lotesAdjudicados": 56310,
  "porClase": {
@@ -123,10 +123,10 @@
   }
  },
  "textos": {
-  "ok": 5283,
-  "scan": 308,
+  "ok": 5776,
+  "scan": 320,
   "dup": 23,
-  "error": 151,
+  "error": 168,
   "formato": 18
  },
  "extraccion": {
