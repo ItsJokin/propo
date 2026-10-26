@@ -444,7 +444,7 @@ function UnitPrices({ p, pr, save }: { p: Project; pr: PricingState; save: (fn: 
         <div className="uc-bar-txt">
           {single ? (ch ? <><strong>{pct1(ch.baja)}</strong> de rebaja en los {shown.filter((l) => l.max).length} servicios</> : 'Elige tu % de rebaja')
             : <><strong>{done} de {shown.length}</strong> servicios con precio{ch ? <> · rebaja media {pct1(ch.baja)}</> : null}</>}
-          {ch?.points != null && <> · <strong>{pts(ch.points)}</strong> de {pts(rule.points)} puntos</>}
+          {ch?.points != null && <> · hasta <strong>{pts(ch.points)}</strong> puntos</>}
           {over.length > 0 && <div className="xs" style={{ color: 'var(--bad)' }}>{over.length === 1 ? '1 servicio pasa' : `${over.length} servicios pasan`} del máximo</div>}
         </div>
         <button className="btn btn-primary" disabled={!ch || over.length > 0} onClick={use}>{single ? 'Usar esta rebaja' : 'Usar estos precios'} <LuArrowRight /></button>
