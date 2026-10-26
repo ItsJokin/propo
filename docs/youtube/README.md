@@ -2,11 +2,14 @@
 
 Informe completo para decidir y ejecutar un negocio de YouTube sin rostro con base en España (fecha de investigación: 26-10-2026).
 
-**Decisión:** canal en español centrado en España de **IA y automatización práctica para autónomos y pymes** (nombre propuesto: **Mano Extra**, pendiente de comprobar la marca). Alternativa: documentales de empresas españolas e hispanas. Presupuesto recomendado de 1.000 € y límite de 1.500 € antes de validar.
+> **Actualización (v2, 26-10-2026):** a petición del propietario (nicho para el espectador medio de YouTube), la recomendación principal pasa a ser **"Código de Barras": historias de marcas y productos cotidianos** → [20_nicho_publico_general.md](20_nicho_publico_general.md) y `Informe_v2_Publico_General_Codigo_de_Barras.pdf`. La decisión de abajo (v1) queda como alternativa de nicho profesional.
+
+**Decisión v1:** canal en español centrado en España de **IA y automatización práctica para autónomos y pymes** (nombre propuesto: **Mano Extra**, pendiente de comprobar la marca). Alternativa: documentales de empresas españolas e hispanas. Presupuesto recomendado de 1.000 € y límite de 1.500 € antes de validar.
 
 ## Índice
 | Archivo | Contenido (secciones del encargo) |
 |---|---|
+| [20_nicho_publico_general.md](20_nicho_publico_general.md) | **v2**: nicho de público general (decisión, marca, 100 ideas, 10 fichas, 2 guiones, calendario, finanzas, riesgos y plan) |
 | [01_resumen_y_metodologia.md](01_resumen_y_metodologia.md) | Portada, resumen ejecutivo, conclusiones, metodología y limitaciones |
 | [02_mercado_y_matriz.md](02_mercado_y_matriz.md) | 24 nichos, matriz ponderada, rankings de 90 días y de 10.000 €/mes |
 | [03_top10_nichos.md](03_top10_nichos.md) | Investigación profunda de los 10 mejores y protocolo de competidores |
@@ -23,12 +26,15 @@ Informe completo para decidir y ejecutar un negocio de YouTube sin rostro con ba
 | [14_escalado_y_plan_de_accion.md](14_escalado_y_plan_de_accion.md) | Escalado a 24 meses y plan de 24 h, 7, 14, 30 y 90 días |
 | [15_fuentes.md](15_fuentes.md) | Fuentes con enlaces y verificaciones pendientes |
 | `Informe_YouTube_Mano_Extra.pdf` | Todo lo anterior en un PDF con índice |
+| `Informe_v2_Publico_General_Codigo_de_Barras.pdf` | PDF de la v2 con los capítulos generales que siguen siendo válidos |
+| `Modelo_YouTube_masivo.xlsx` | Modelo y banco de ideas de la v2 |
 | `Modelo_YouTube.xlsx` | Matriz (con fórmulas), escenarios, sensibilidad y banco de ideas filtrable |
 | `modelo/modelo.py`, `modelo/ideas.py` | Fuente reproducible del modelo y del banco de ideas |
 
 ## Regenerar
 ```bash
 python3 docs/youtube/modelo/modelo.py   # recalcula la matriz, los escenarios y el Excel
-bash docs/youtube/build_pdf.sh          # recompone el PDF
+bash docs/youtube/build_pdf.sh          # recompone el PDF (v1)
+python3 docs/youtube/modelo/masivo.py && python3 docs/youtube/modelo/componer_v2.py && bash docs/youtube/build_pdf.sh v2   # v2
 ```
 Después de cambiar hipótesis en `modelo.py`, actualiza a mano las cifras citadas en el texto de `10_modelo_financiero.md` y del resumen.

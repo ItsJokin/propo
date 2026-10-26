@@ -7,6 +7,8 @@
 
 > Todas las cifras de ingresos de este documento son **simulaciones con hipótesis declaradas**, no predicciones ni promesas. Uso estas etiquetas: **[DATO]** = observado en una fuente citada; **[EST]** = estimación de terceros o propia; **[HIP]** = hipótesis de trabajo; **[OPI]** = opinión razonada del equipo.
 
+> **Actualización v2:** el propietario ha pedido un nicho para el espectador medio de YouTube. La recomendación principal es ahora **historias de marcas y productos cotidianos ("Código de Barras")**, en el capítulo 20. Este capítulo y los siguientes describen la v1 (IA para pymes), que queda como alternativa de nicho profesional.
+
 ---
 
 ## 1. Resumen ejecutivo

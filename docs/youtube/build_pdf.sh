@@ -27,13 +27,17 @@ header#title-block-header .subtitle { font-size: 14pt; color: #FF7A1A; }
 header#title-block-header .date { font-size: 12pt; }
 a { color: #1F3A5F; word-break: break-all; }
 CSS
-pandoc 01_resumen_y_metodologia.md 02_mercado_y_matriz.md 03_top10_nichos.md 04_formatos_y_recomendacion.md \
-  05_marca.md 06_banco_ideas.md 07_diez_videos_y_guiones.md 08_sistema_produccion.md 09_calendario_y_crecimiento.md \
-  10_modelo_financiero.md 11_monetizacion_acelerada.md 12_politicas_y_legal.md 13_medicion_y_decisiones.md \
-  14_escalado_y_plan_de_accion.md 15_fuentes.md \
+if [ "${1:-}" = "v2" ]; then
+  CAPS="20_nicho_publico_general.md 02_mercado_y_matriz.md 04_formatos_y_recomendacion.md 12_politicas_y_legal.md 13_medicion_y_decisiones.md 15_fuentes.md"
+  SALIDA="Informe_v2_Publico_General_Codigo_de_Barras.pdf"; SUB="Versión 2: nicho de público general (Código de Barras)"
+else
+  CAPS="01_resumen_y_metodologia.md 02_mercado_y_matriz.md 03_top10_nichos.md 04_formatos_y_recomendacion.md 05_marca.md 06_banco_ideas.md 07_diez_videos_y_guiones.md 08_sistema_produccion.md 09_calendario_y_crecimiento.md 10_modelo_financiero.md 11_monetizacion_acelerada.md 12_politicas_y_legal.md 13_medicion_y_decisiones.md 14_escalado_y_plan_de_accion.md 15_fuentes.md"
+  SALIDA="Informe_YouTube_Mano_Extra.pdf"; SUB="Estudio de mercado, decisión y plan de ejecución: Mano Extra"
+fi
+pandoc $CAPS \
   -f gfm -t html5 -s --toc --toc-depth=2 --embed-resources --css "$TMP/estilo.css" \
   --metadata title="Negocio de YouTube sin rostro" \
-  --metadata subtitle="Estudio de mercado, decisión y plan de ejecución: Mano Extra" \
+  --metadata subtitle="$SUB" \
   --metadata date="Investigación: 26 de octubre de 2026" --metadata lang=es \
   -o "$TMP/informe.html"
 node -e '
@@ -43,9 +47,9 @@ const { chromium } = require("playwright");
   await p.goto("file://" + process.argv[1]);
   await p.pdf({ path: process.argv[2], format: "A4", landscape: true, printBackground: true,
     displayHeaderFooter: true, headerTemplate: "<span></span>",
-    footerTemplate: "<div style=\"font-size:7pt;width:100%;text-align:center;color:#777\">Mano Extra · estudio de negocio · <span class=pageNumber></span>/<span class=totalPages></span></div>",
+    footerTemplate: "<div style=\"font-size:7pt;width:100%;text-align:center;color:#777\">Estudio de negocio YouTube · <span class=pageNumber></span>/<span class=totalPages></span></div>",
     margin: { top: "12mm", bottom: "14mm", left: "10mm", right: "10mm" } });
   await b.close();
-})();' "$TMP/informe.html" "$PWD/Informe_YouTube_Mano_Extra.pdf"
+})();' "$TMP/informe.html" "$PWD/$SALIDA"
 rm -rf "$TMP"
-echo "PDF generado: $PWD/Informe_YouTube_Mano_Extra.pdf"
+echo "PDF generado: $PWD/$SALIDA"
