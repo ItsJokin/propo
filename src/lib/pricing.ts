@@ -54,6 +54,7 @@ export interface Pricing {
   extraUnits?: { id: string; label: string; unit: string }[];
   unitInfo?: Record<string, UnitInfo> | null;   // qué pide el pliego en cada concepto, explicado en claro
   unitInfoError?: boolean;
+  unitInfoV?: number;
 }
 
 export const emptyPricing = (): Pricing => ({ rule: null, floor: null, choice: null, others: {}, approved: null });
@@ -442,7 +443,7 @@ async function unitPages(p: Project, rule: PriceRule): Promise<string> {
       const n = normalize(t); let score = 0;
       for (const w of words) if (n.includes(w)) score += 2;
       score += Math.min(6, (n.match(/incluye|compuest|consistir|debera contener|como minimo|bebida|racion|piezas|menu/g) || []).length);
-      if (/prescripciones|ppt|tecnic/i.test(d.name)) score += 3;
+      if (/prescripci|ppt|t[eé]cnic/i.test(d.name)) score += 12;   // la composición de cada servicio suele estar en el pliego técnico
       if (score > 4) scored.push({ doc: d.name, page: i + 1, text: t, score });
     });
   }
@@ -450,11 +451,12 @@ async function unitPages(p: Project, rule: PriceRule): Promise<string> {
   let out = ''; let k = 0;
   for (const s of scored) {
     const block = `\n\n=== ${s.doc} · página ${s.page} ===\n${s.text.slice(0, 6000)}`;
-    if (out.length + block.length > 70000 || k >= 14) break;
+    if (out.length + block.length > 110000 || k >= 26) break;
     out += block; k++;
   }
   return out;
 }
+export const UNIT_INFO_V = 2;
 /** Lee en los pliegos qué incluye cada concepto con precio (menú, servicio, pack…) y lo explica para el dueño de la empresa. */
 export async function explainUnits(p: Project, rule: PriceRule): Promise<Record<string, UnitInfo>> {
   const pages = await unitPages(p, rule);
@@ -469,7 +471,9 @@ ${list}
 Extractos de los pliegos:
 ${pages}
 
-Para cada concepto, busca en los extractos qué pide el pliego (composición, cantidades, número de piezas o platos, bebidas, duración, personal, material, montaje, horarios…) y explícalo con palabras sencillas, sin jerga, como se lo contarías al dueño de la empresa. No inventes nada: si el pliego no lo detalla, dilo.
+Para cada concepto, busca qué pide el pliego (composición, cantidades, número de piezas o platos, bebidas, duración, personal, material, montaje, horarios…) y explícalo con palabras sencillas, sin jerga, como se lo contarías al dueño de la empresa. Un concepto combinado (p. ej. «Pausa café + Almuerzo») incluye lo de cada parte: dilo.
+No inventes nada: si el pliego no lo detalla, escribe «El pliego no detalla…». Nunca hables de «extractos» ni de «fragmentos».
+En «watch» pon solo lo propio de ESE concepto que cambie el coste (personal de servicio, mínimo de comensales, menaje, bebidas incluidas…), en una frase; no repitas cosas generales de toda la licitación (lotes, fórmula de puntos, % de baja).
 Devuelve SOLO un objeto JSON con esta forma, con una clave por cada id de concepto:
 {
   "u0": {

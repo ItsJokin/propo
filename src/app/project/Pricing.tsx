@@ -10,7 +10,7 @@ import { getFile } from '../../lib/storage';
 import { offerDownload } from '../../lib/services/download';
 import {
   emptyPricing, readPriceRule, marketFor, priceOptions, choose, readOwnPrices, formalCommitment, priceWarnings, eurosInWords, eur2, pct1, num, pointsFor,
-  otherAdvice, otherPoints, commitmentText, unitLines, unitChoice, unitText, isSingleDiscount, explainUnits,
+  otherAdvice, otherPoints, commitmentText, unitLines, unitChoice, unitText, isSingleDiscount, explainUnits, UNIT_INFO_V,
   type Pricing as PricingState, type Market, type Option,
 } from '../../lib/pricing';
 import { Economic } from './Economic';
@@ -343,11 +343,11 @@ function UnitPrices({ p, pr, save }: { p: Project; pr: PricingState; save: (fn: 
   const [totalTxt, setTotalTxt] = useState('');
   const [newLabel, setNewLabel] = useState('');
   const [open, setOpen] = useState<string | null>(null);
-  const info = pr.unitInfo; const loadingInfo = rule.units.length > 0 && info == null && !pr.unitInfoError;
+  const info = pr.unitInfoV === UNIT_INFO_V ? pr.unitInfo : null; const loadingInfo = rule.units.length > 0 && info == null && !pr.unitInfoError;
   const fetchInfo = () => {
     if (explaining.has(p.id)) return; explaining.add(p.id);
     save((x) => { x.unitInfoError = false; });
-    explainUnits(p, rule).then((r) => save((x) => { x.unitInfo = r; }), () => save((x) => { x.unitInfoError = true; })).finally(() => explaining.delete(p.id));
+    explainUnits(p, rule).then((r) => save((x) => { x.unitInfo = r; x.unitInfoV = UNIT_INFO_V; }), () => save((x) => { x.unitInfoError = true; })).finally(() => explaining.delete(p.id));
   };
   useEffect(() => { if (loadingInfo) fetchInfo(); }, [p.id]);   // una sola vez por proyecto: queda guardado
   const lines = unitLines(rule, draft, extra);
@@ -394,7 +394,7 @@ function UnitPrices({ p, pr, save }: { p: Project; pr: PricingState; save: (fn: 
                   {inf.includes.length > 0 && <ul className="mt-8">{inf.includes.map((x, i) => <li key={i}>{x}</li>)}</ul>}
                   {inf.watch && <p className="small mt-8"><LuTriangleAlert style={{ verticalAlign: '-2px', color: 'var(--warn)' }} /> <strong>Para el precio:</strong> {inf.watch}</p>}
                   {inf.doc && <p className="xs muted mt-8">Fuente: {inf.doc}{inf.page ? `, pág. ${inf.page}` : ''}. Explicado por la IA de PROPO: compruébalo en el pliego antes de presentar.</p>}
-                </> : loadingInfo ? <p className="small muted"><LuLoaderCircle className="spin" style={{ verticalAlign: '-2px' }} /> PROPO está leyendo el pliego para explicarte cada concepto…</p>
+                </> : loadingInfo ? <p className="small muted"><LuLoaderCircle className="spin" style={{ verticalAlign: '-2px' }} /> PROPO está leyendo el pliego para explicarte cada concepto. Tarda alrededor de un minuto y solo se hace una vez.</p>
                   : pr.unitInfoError ? <p className="small">No se ha podido leer ahora. <button className="btn btn-ghost btn-sm" onClick={fetchInfo}><LuRotateCcw /> Reintentar</button></p>
                   : <p className="small muted">El pliego no detalla qué incluye este concepto. Si tienes dudas, puedes preguntarlo al órgano de contratación antes de que acabe el plazo.</p>}
               </div>
