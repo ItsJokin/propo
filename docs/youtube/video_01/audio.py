@@ -1,86 +1,137 @@
-"""Genera la narración (Kokoro TTS), el pitido de capítulo, la música de fondo propia y los tiempos.
+"""Narración (Piper, voz es_ES «davefx», datos CC0), efectos de sonido, música propia y tiempos de escena.
 
-Uso: <python con kokoro-onnx> audio.py <dir_modelos> <dir_trabajo>
-Salida en <dir_trabajo>: narracion.wav, musica.wav, tiempos.json, subtitulos.srt
+Uso: <python con onnxruntime+phonemizer> audio.py <voz.onnx> <dir_trabajo>
+Salida en <dir_trabajo>: narracion.wav, sfx.wav, musica.wav, tiempos.json, subtitulos.srt
+Todo el audio que no es voz se sintetiza aquí: no hay material de terceros.
 """
 import json, os, sys
 import numpy as np
 import soundfile as sf
-from kokoro_onnx import Kokoro
 from guion import SEGMENTOS
+from piper_tts import Piper
 
-VOZ, VELOCIDAD, SR = "em_alex", 1.0, 24000
-PAUSA_FRASE, PAUSA_SEGMENTO = 0.35, 0.6
+SR = 48000
+LONGITUD = 1.04          # >1 = algo más pausado (ritmo documental)
+PAUSAS = {".": 0.34, "?": 0.42, "!": 0.38, ":": 0.28, "…": 0.45}
+rng = np.random.default_rng(7)
 
-def pitido(sr=SR):
-    # "pitido de escáner": dos tonos cortos, firma sonora de cada capítulo
-    t = np.linspace(0, 0.09, int(sr * 0.09), False)
-    tono = lambda f: 0.25 * np.sin(2 * np.pi * f * t) * np.hanning(len(t))
-    return np.concatenate([tono(1850), np.zeros(int(sr * 0.04)), tono(2350), np.zeros(int(sr * 0.25))])
+def remuestrear(x, sr_in):
+    n = int(len(x) * SR / sr_in)
+    return np.interp(np.linspace(0, len(x) - 1, n), np.arange(len(x)), x).astype(np.float32)
 
-def musica(segundos, sr=SR):
-    # Fondo ambiental generado aquí (sin derechos de terceros): acordes La m - Fa - Do - Sol, 8 s cada uno
-    acordes = [(220.0, 261.63, 329.63), (174.61, 220.0, 261.63), (130.81, 196.0, 261.63), (196.0, 246.94, 293.66)]
-    n = int(segundos * sr); out = np.zeros(n)
-    dur = 8.0; m = int(dur * sr); env = np.sin(np.linspace(0, np.pi, m)) ** 0.6
-    t = np.arange(m) / sr
-    for i in range(0, n, m // 2):           # solapamiento del 50 % para que el pad sea continuo
-        a = acordes[(i // (m // 2)) % 4]
-        voz = sum(np.sin(2 * np.pi * f * t) + 0.3 * np.sin(4 * np.pi * f * t) for f in a) / 6
-        voz += 0.15 * np.sin(2 * np.pi * (a[0] / 2) * t)   # bajo suave
-        seg = voz * env
-        fin = min(n, i + m); out[i:fin] += seg[:fin - i]
-    # pulso muy suave cada 0,5 s para dar movimiento
-    pulso = np.zeros(n); k = int(0.5 * sr); click = np.exp(-np.linspace(0, 40, int(0.08 * sr)))
-    for i in range(0, n - len(click), k): pulso[i:i + len(click)] += 0.05 * click * np.sin(2 * np.pi * 880 * np.arange(len(click)) / sr)
-    out = out + pulso
-    return 0.9 * out / np.max(np.abs(out))
+def env(n, a=0.005, r=0.1):
+    e = np.ones(n); ka, kr = int(a * SR), int(r * SR)
+    e[:ka] = np.linspace(0, 1, ka); e[-kr:] *= np.linspace(1, 0, kr); return e
+
+def lp(x, k):   # paso bajo simple por media móvil
+    return np.convolve(x, np.ones(k) / k, mode="same")
+
+# ---------- efectos ----------
+def whoosh(d=0.55):
+    n = int(d * SR); ruido = rng.standard_normal(n)
+    t = np.linspace(0, 1, n); forma = np.sin(np.pi * t) ** 2
+    suave = lp(ruido, 6) * (0.4 + 0.6 * t) + lp(ruido, 40) * (1 - t)
+    return 0.35 * suave * forma
+def pitido():
+    out = []
+    for f in (1850, 2350):
+        n = int(0.08 * SR); t = np.arange(n) / SR
+        out += [0.22 * np.sin(2 * np.pi * f * t) * np.hanning(n), np.zeros(int(0.035 * SR))]
+    return np.concatenate(out)
+def ding():
+    n = int(1.2 * SR); t = np.arange(n) / SR
+    return 0.25 * (np.sin(2 * np.pi * 1320 * t) + 0.5 * np.sin(2 * np.pi * 1980 * t)) * np.exp(-4 * t)
+def pop():
+    n = int(0.09 * SR); t = np.arange(n) / SR
+    return 0.25 * np.sin(2 * np.pi * (600 + 900 * np.exp(-30 * t)) * t) * np.exp(-35 * t)
+
+# ---------- música: lo-fi a 88 ppm (La m7 - Fa maj7 - Do maj7 - Sol) ----------
+def musica(seg):
+    n = int(seg * SR); out = np.zeros(n + SR * 4); bpm = 88; beat = 60 / bpm; b = int(beat * SR)
+    def kick():
+        m = int(0.35 * SR); t = np.arange(m) / SR
+        return 0.9 * np.sin(2 * np.pi * (45 + 80 * np.exp(-25 * t)) * t) * np.exp(-9 * t)
+    def snare():
+        m = int(0.2 * SR); return 0.35 * lp(rng.standard_normal(m), 3) * np.exp(-np.arange(m) / SR * 22)
+    def hat():
+        m = int(0.05 * SR); r = rng.standard_normal(m); return 0.12 * (r - lp(r, 4)) * np.exp(-np.arange(m) / SR * 70)
+    acordes = [(220, 261.63, 329.63, 392), (174.61, 220, 261.63, 329.63), (130.81, 164.81, 196, 246.94), (196, 246.94, 293.66, 392)]
+    compas = 4 * b
+    for i, ini in enumerate(range(0, n, compas)):
+        a = acordes[i % 4]; m = compas; t = np.arange(m) / SR
+        pad = sum(np.sin(2 * np.pi * f * t + np.sin(2 * np.pi * 0.3 * t)) for f in a) / 8
+        pad = lp(pad, 8) * env(m, 0.3, 0.4)
+        bajo = 0.35 * np.sin(2 * np.pi * a[0] / 2 * t) * env(m, 0.02, 0.2)
+        out[ini:ini + m] += 0.5 * pad + bajo
+        if ini > 8 * b:        # la percusión entra a los dos compases
+            for k in range(4):
+                p = ini + k * b
+                if k in (0, 2): out[p:p + int(0.35 * SR)] += kick()
+                if k in (1, 3): out[p:p + int(0.2 * SR)] += snare()
+                for h in (0, b // 2):
+                    q = p + h + int(0.012 * SR * (k % 2)); out[q:q + int(0.05 * SR)] += hat()
+    out = out[:n]
+    return (0.8 * out / np.max(np.abs(out))).astype(np.float32)
 
 def srt_t(s):
     h, r = divmod(s, 3600); m, r = divmod(r, 60); ms = int(round((r - int(r)) * 1000))
+    if ms == 1000: r, ms = r + 1, 0
     return f"{int(h):02d}:{int(m):02d}:{int(r):02d},{ms:03d}"
 
 def main():
-    modelos, trabajo = sys.argv[1], sys.argv[2]
+    voz_path, trabajo = sys.argv[1], sys.argv[2]
     os.makedirs(trabajo, exist_ok=True)
-    k = Kokoro(os.path.join(modelos, "kokoro-v1.0.onnx"), os.path.join(modelos, "voices-v1.0.bin"))
-    pista, t, tiempos, subs = [], 0.0, [], []
-    pista.append(np.zeros(int(SR * 0.4))); t += 0.4
-    for capitulo, frases, escenas in SEGMENTOS:
-        seg = {"capitulo": capitulo, "inicio": t, "escenas": escenas, "frases": []}
-        if capitulo not in ("Introducción",):
-            b = pitido(); pista.append(b); t += len(b) / SR
+    tts = Piper(voz_path)
+    voz, efectos, t = [np.zeros(int(0.5 * SR))], [], 0.5
+    segs, subs, escenas = [], [], []
+    for si, (capitulo, frases, esc) in enumerate(SEGMENTOS):
+        inicio_seg = t
+        if si > 0:
+            efectos.append((t, pitido())); hueco = np.zeros(int(0.5 * SR)); voz.append(hueco); t += 0.5
+        ini_frases = []
         for fr in frases:
-            audio, sr = k.create(fr, voice=VOZ, speed=VELOCIDAD, lang="es")
-            assert sr == SR
-            seg["frases"].append({"texto": fr, "inicio": t, "fin": t + len(audio) / SR})
-            subs.append((t, t + len(audio) / SR, fr))
-            pista.append(audio); t += len(audio) / SR
-            pista.append(np.zeros(int(SR * PAUSA_FRASE))); t += PAUSA_FRASE
-        pista.append(np.zeros(int(SR * PAUSA_SEGMENTO))); t += PAUSA_SEGMENTO
-        seg["fin"] = t
-        tiempos.append(seg)
-    pista.append(np.zeros(int(SR * 2.0))); t += 2.0
-    voz = np.concatenate(pista).astype(np.float32)
-    sf.write(os.path.join(trabajo, "narracion.wav"), voz, SR)
-    sf.write(os.path.join(trabajo, "musica.wav"), musica(t).astype(np.float32), SR)
-    json.dump({"duracion": t, "segmentos": tiempos}, open(os.path.join(trabajo, "tiempos.json"), "w"), ensure_ascii=False, indent=1)
+            a, _ = tts.speak(fr, length=LONGITUD, noise=0.6, noise_w=0.85)
+            a = remuestrear(a, tts.sr)
+            a = a / (np.max(np.abs(a)) + 1e-9) * 0.9
+            ini_frases.append(t); subs.append((t, t + len(a) / SR, fr))
+            voz.append(a); t += len(a) / SR
+            p = PAUSAS.get(fr.strip()[-1], 0.3)
+            voz.append(np.zeros(int(p * SR))); t += p
+        voz.append(np.zeros(int(0.45 * SR))); t += 0.45
+        for k, (nombre, idx, off) in enumerate(esc):
+            ini = inicio_seg if k == 0 else ini_frases[idx] + off
+            escenas.append({"nombre": nombre, "inicio": round(ini, 3), "capitulo": k == 0 and si > 0})
+        segs.append({"capitulo": capitulo, "inicio": inicio_seg, "fin": t})
+    voz.append(np.zeros(int(1.5 * SR))); t += 1.5
+    for i, e in enumerate(escenas):
+        e["fin"] = escenas[i + 1]["inicio"] if i + 1 < len(escenas) else t
+        if i > 0:
+            efectos.append((max(0, e["inicio"] - 0.25), whoosh()))
+        if e["nombre"] == "cta_suscribe":
+            efectos.append((e["inicio"] + 1.6, pop())); efectos.append((e["inicio"] + 1.7, ding()))
+    pista = np.concatenate(voz).astype(np.float32)
+    fx = np.zeros(len(pista) + SR)
+    for a, s in efectos:
+        i = int(a * SR); fx[i:i + len(s)] += s
+    sf.write(os.path.join(trabajo, "narracion.wav"), pista, SR)
+    sf.write(os.path.join(trabajo, "sfx.wav"), fx[:len(pista)].astype(np.float32), SR)
+    sf.write(os.path.join(trabajo, "musica.wav"), musica(t), SR)
+    json.dump({"duracion": t, "segmentos": segs, "escenas": escenas,
+               "frases": [{"inicio": a, "fin": b, "texto": x} for a, b, x in subs]},
+              open(os.path.join(trabajo, "tiempos.json"), "w"), ensure_ascii=False, indent=1)
     with open(os.path.join(trabajo, "subtitulos.srt"), "w") as f:
         n = 0
         for a, b, txt in subs:
-            # trocear frases largas en líneas de ~42 caracteres y repartir el tiempo
             palabras, lineas, actual = txt.split(), [], ""
             for p in palabras:
-                if len(actual) + len(p) + 1 > 84 and actual:
-                    lineas.append(actual); actual = p
-                else:
-                    actual = (actual + " " + p).strip()
+                if len(actual) + len(p) + 1 > 84 and actual: lineas.append(actual); actual = p
+                else: actual = (actual + " " + p).strip()
             lineas.append(actual)
             total = sum(len(x) for x in lineas); ini = a
             for x in lineas:
                 fin = ini + (b - a) * len(x) / total
                 n += 1; f.write(f"{n}\n{srt_t(ini)} --> {srt_t(fin)}\n{x}\n\n"); ini = fin
-    print(f"Duración: {t:.1f} s")
+    print(f"Duración: {t:.1f} s · {len(escenas)} escenas")
 
 if __name__ == "__main__":
     main()
