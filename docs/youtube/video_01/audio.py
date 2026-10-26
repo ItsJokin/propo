@@ -1,6 +1,9 @@
 """Narración (Piper, voz es_ES «davefx», datos CC0), efectos de sonido, música propia y tiempos de escena.
 
-Uso: <python con onnxruntime+phonemizer> audio.py <voz.onnx> <dir_trabajo>
+Uso: <python> audio.py <voz> <dir_trabajo>
+  <voz> = elevenlabs  (API; variables ELEVENLABS_API_KEY y ELEVENLABS_VOICE_ID)
+        | locucion.mp3 (locución completa del guion, se trocea por frases)
+        | modelo.onnx  (Piper local, respaldo)
 Salida en <dir_trabajo>: narracion.wav, sfx.wav, musica.wav, tiempos.json, subtitulos.srt
 Todo el audio que no es voz se sintetiza aquí: no hay material de terceros.
 """
@@ -8,7 +11,7 @@ import json, os, sys
 import numpy as np
 import soundfile as sf
 from guion import SEGMENTOS
-from piper_tts import Piper
+from voces import motor
 
 SR = 48000
 LONGITUD = 1.04          # >1 = algo más pausado (ritmo documental)
@@ -81,7 +84,9 @@ def srt_t(s):
 def main():
     voz_path, trabajo = sys.argv[1], sys.argv[2]
     os.makedirs(trabajo, exist_ok=True)
-    tts = Piper(voz_path)
+    todas = [fr for _, frases, _ in SEGMENTOS for fr in frases]
+    tts = motor(voz_path, todas)
+    n_frase = 0
     voz, efectos, t = [np.zeros(int(0.5 * SR))], [], 0.5
     segs, subs, escenas = [], [], []
     for si, (capitulo, frases, esc) in enumerate(SEGMENTOS):
@@ -90,8 +95,10 @@ def main():
             efectos.append((t, pitido())); hueco = np.zeros(int(0.5 * SR)); voz.append(hueco); t += 0.5
         ini_frases = []
         for fr in frases:
-            a, _ = tts.speak(fr, length=LONGITUD, noise=0.6, noise_w=0.85)
-            a = remuestrear(a, tts.sr)
+            ant = todas[n_frase - 1] if n_frase > 0 else ""
+            sig = todas[n_frase + 1] if n_frase + 1 < len(todas) else ""
+            a, sr_voz = tts.speak(fr, ant, sig); n_frase += 1
+            a = remuestrear(a, sr_voz)
             a = a / (np.max(np.abs(a)) + 1e-9) * 0.9
             ini_frases.append(t); subs.append((t, t + len(a) / SR, fr))
             voz.append(a); t += len(a) / SR
