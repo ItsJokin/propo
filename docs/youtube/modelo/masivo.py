@@ -45,9 +45,17 @@ OPTIMISTA = dict(BASE, nombre="Optimista",
     otros=[100,10,10,150,150,150,150,150,150,150,150,150],
 )
 
+# Producción 100 % con IA a coste casi cero: herramientas gratuitas los 3 primeros meses, una suscripción de IA
+# desde el mes 4, sin editor ni licencias de pago (fotos propias, stock gratuito, biblioteca de audio de YouTube).
+COSTE_CERO = dict(BASE, nombre="IA coste casi cero",
+    herramientas=[0,0,0,22,22,22,22,22,22,22,22,22],
+    edicion_por_video=[0]*12, guion_por_video=[0]*12,
+    otros=[0,0,0,0,0,0,150,150,150,150,150,150],   # cuota de autónomo + gestoría al empezar a cobrar
+)
+
 def main():
     out = []
-    escenarios = [CONSERVADOR, BASE, OPTIMISTA]
+    escenarios = [CONSERVADOR, BASE, OPTIMISTA, COSTE_CERO]
     res = {}
     for p in escenarios:
         fs = simular(p); r = resumen(fs); res[p["nombre"]] = (fs, r)
@@ -57,6 +65,9 @@ def main():
     sens = [
         ("Base", {}),
         ("Base con edición propia todo el año (sin externalizar)", dict(edicion_por_video=[0]*12)),
+        ("IA coste casi cero (mismas vistas que la base)", {k: COSTE_CERO[k] for k in ("herramientas","edicion_por_video","guion_por_video","otros")}),
+        ("IA coste casi cero con −30 % de vistas (voz y estética IA retienen menos)", dict({k: COSTE_CERO[k] for k in ("herramientas","edicion_por_video","guion_por_video","otros")}, factor_vistas=0.7)),
+        ("IA coste casi cero con −60 % de vistas (sin diferenciación)", dict({k: COSTE_CERO[k] for k in ("herramientas","edicion_por_video","guion_por_video","otros")}, factor_vistas=0.4)),
         ("Visualizaciones −50 %", dict(factor_vistas=0.5)),
         ("RPM a la mitad", dict(factor_rpm=0.5)),
         ("Producción al doble de coste", dict(factor_coste=2.0)),

@@ -59,12 +59,35 @@ Resumen: ingresos 12m 1.481 €, costes 10.125 €, BAI -8.644 €, caja mínima
 Resumen: ingresos 12m 12.195 €, costes 20.625 €, BAI -8.430 €, caja mínima -9.926 €, YPP desde Abr-27, primer mes con beneficio: Sep-27, ingresos mes 12 3.495 €, BAI mes 12 1.175 €, vistas largas mes 12 573.694, suscriptores mes 12 21.649.
 
 
+### Escenario IA coste casi cero
+
+| Mes | Vídeos | Shorts | Vistas estreno | Vistas catálogo | Vistas largos | Vistas Shorts | Horas 12m | Subs | Estado YPP | Anuncios € | Afiliación € | Patrocinio € | Producto € | Servicios € | Ingresos € | Herram. € | Edición € | Otros € | BAI € | Caja acum. € |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Nov-26 | 4 | 8 | 3.200 | 0 | 3.200 | 6.400 | 320 | 29 | No elegible | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Dic-26 | 4 | 8 | 4.093 | 800 | 4.893 | 9.600 | 809 | 73 | No elegible | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Ene-27 | 4 | 8 | 5.236 | 1.791 | 7.027 | 12.800 | 1.512 | 135 | No elegible | 0 | 2 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 2 | 2 |
+| Feb-27 | 5 | 10 | 8.372 | 3.029 | 11.400 | 20.000 | 2.652 | 237 | No elegible | 0 | 3 | 0 | 0 | 0 | 3 | 22 | 0 | 0 | -19 | -16 |
+| Mar-27 | 5 | 10 | 10.709 | 5.000 | 15.709 | 25.000 | 4.223 | 375 | No elegible | 0 | 5 | 0 | 0 | 0 | 5 | 22 | 0 | 0 | -17 | -34 |
+| Abr-27 | 5 | 10 | 13.698 | 7.478 | 21.175 | 30.000 | 6.340 | 559 | No elegible | 0 | 6 | 0 | 0 | 0 | 6 | 22 | 0 | 0 | -16 | -49 |
+| May-27 | 6 | 12 | 21.025 | 10.603 | 31.628 | 42.000 | 9.503 | 833 | No elegible | 0 | 9 | 0 | 0 | 0 | 9 | 22 | 0 | 150 | -163 | -212 |
+| Jun-27 | 6 | 12 | 26.894 | 15.435 | 42.330 | 48.000 | 13.736 | 1.196 | Elegible-revisión | 0 | 13 | 54 | 0 | 0 | 66 | 22 | 0 | 150 | -106 | -317 |
+| Jul-27 | 6 | 12 | 34.402 | 21.541 | 55.943 | 54.000 | 19.331 | 1.670 | Monetizado | 140 | 17 | 69 | 0 | 0 | 225 | 22 | 0 | 150 | 53 | -264 |
+| Ago-27 | 6 | 12 | 44.005 | 29.280 | 73.285 | 60.000 | 26.659 | 2.287 | Monetizado | 183 | 22 | 88 | 0 | 0 | 293 | 22 | 0 | 150 | 121 | -143 |
+| Sep-27 | 6 | 12 | 56.288 | 39.110 | 95.398 | 66.000 | 36.199 | 3.083 | Monetizado | 238 | 29 | 113 | 0 | 0 | 380 | 22 | 0 | 150 | 208 | 65 |
+| Oct-27 | 6 | 12 | 72.000 | 51.618 | 123.618 | 72.000 | 48.561 | 4.108 | Monetizado | 309 | 37 | 144 | 0 | 0 | 490 | 22 | 0 | 150 | 318 | 383 |
+
+Resumen: ingresos 12m 1.481 €, costes 1.098 €, BAI 383 €, caja mínima -317 €, YPP desde Jul-27, primer mes con beneficio: Ene-27, ingresos mes 12 490 €, BAI mes 12 318 €, vistas largas mes 12 123.618, suscriptores mes 12 4.108.
+
+
 ### Sensibilidad (escenario base)
 
 | Caso | Ingresos 12m € | Costes 12m € | BAI 12m € | Caja mínima € | YPP | Ingresos mes 12 € | BAI mes 12 € |
 |---|---|---|---|---|---|---|---|
 | Base | 1.481 | 10.125 | -8.644 | -8.644 | Jul-27 | 490 | -780 |
 | Base con edición propia todo el año (sin externalizar) | 1.481 | 3.225 | -1.744 | -1.874 | Jul-27 | 490 | 120 |
+| IA coste casi cero (mismas vistas que la base) | 1.481 | 1.098 | 383 | -317 | Jul-27 | 490 | 318 |
+| IA coste casi cero con −30 % de vistas (voz y estética IA retienen menos) | 939 | 1.098 | -159 | -457 | Ago-27 | 343 | 171 |
+| IA coste casi cero con −60 % de vistas (sin diferenciación) | 368 | 1.098 | -730 | -754 | Oct-27 | 196 | 24 |
 | Visualizaciones −50 % | 579 | 10.125 | -9.546 | -9.546 | Sep-27 | 245 | -1.025 |
 | RPM a la mitad | 1.046 | 10.125 | -9.079 | -9.079 | Jul-27 | 336 | -934 |
 | Producción al doble de coste | 1.481 | 17.970 | -16.489 | -16.489 | Jul-27 | 490 | -1.770 |

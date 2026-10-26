@@ -383,10 +383,70 @@ Mismo motor y fórmulas que el capítulo 10 (`modelo/masivo.py` → `Modelo_YouT
 **Herramientas:** contratar ya un asistente de IA (~22 €/mes) y un micrófono (~80 €) · desde el mes 3, una suscripción de stock y archivo (Storyblocks o Envato) si hace falta · **no pagar todavía** Epidemic Sound (usar la biblioteca de YouTube), vidIQ ni Midjourney.
 **Presupuesto:** 1.500 € (límite de 2.000 € antes del día 180), con una reserva de hasta 3.000 € condicionada a la validación.
 
+## V2.13 Producción 100 % con IA a coste casi cero (petición del propietario)
+
+**Respuesta corta: sí se puede, a ~0 € de coste variable por vídeo y 0-22 €/mes de coste fijo.** Pero hay **tres tareas que no puedes delegar en la IA** si quieres que el canal se monetice y no te meta en problemas. Quedan unas **4-6 horas tuyas por documental** (frente a 15-25 h haciéndolo a mano).
+
+### Por qué no se puede automatizar el 100 %
+1. **Política de contenido no auténtico (desde el 15-07-2025):** YouTube no penaliza la IA en sí, sino el contenido **"producido en masa o repetitivo"**: vídeos hechos con plantilla y poca variación, o fáciles de replicar a escala [DATO; AIR Media-Tech, eWeek]. Una persona de enlace con los creadores de YouTube declaró que los canales que usan IA siguen siendo elegibles [EST, declaración recogida por medios]. Los canales cerrados en 2025-2026 eran justo los de diapositivas narradas casi idénticas.
+2. **Este nicho habla de empresas y personas reales:** un dato inventado por la IA ("X quebró en 1998", "Y defraudó") puede ser difamatorio y destruye la credibilidad. **La IA inventa fechas y cifras con total seguridad.**
+3. **Derechos:** las imágenes de IA "realistas" de personas reales (un falso retrato de Amancio Ortega) o los productos y logotipos generados son engañosos y arriesgados (marcas, contenido sintético, AI Act art. 50).
+
+### Las 3 tareas humanas obligatorias (≈4-6 h por vídeo)
+| Tarea | Tiempo | Por qué |
+|---|---|---|
+| **1. Verificar los datos del guion** con 2 fuentes reales (enlaces en la descripción) | 2-3 h | Evitar errores y difamación; es tu diferencia frente al "AI slop" |
+| **2. Reescribir el gancho, el giro y el cierre** del guion de la IA, con tu estilo | 1 h | Es lo que hace que cada vídeo sea distinto y no "de plantilla" |
+| **3. Control final** (verlo entero, miniatura, título, casillas de divulgación y publicación) | 1-2 h | Calidad y cumplimiento |
+
+### Pila de herramientas gratuitas (verifica las condiciones de uso comercial de cada una el día que la uses)
+
+| Fase | Herramienta gratuita | Qué hace la IA | Cuidado |
+|---|---|---|---|
+| Ideas y búsqueda de temas | Búsqueda predictiva de YouTube, Google Trends, asistente de IA gratuito | Propone y agrupa temas | – |
+| Investigación | Asistente de IA con búsqueda + **Hemeroteca Digital de la BNE** (gratis) + webs corporativas e informes anuales | Resume fuentes y crea una cronología | **Pide siempre la fuente de cada dato** y ábrela tú |
+| Guion | Claude, ChatGPT o Gemini (versión gratuita; suscripción de ~5-22 €/mes opcional desde el mes 4) | Borrador completo con estructura de V2.5 | Reescribe el gancho y el cierre |
+| Voz | Opción 0 €: **Kokoro TTS** (modelo abierto, licencia Apache 2.0 según terceros, con voces en español; **verificar la licencia y la calidad en el repositorio oficial**), en local o en Google Colab · Opción 0 € alternativa: **tu propia voz con el móvil** · Opción de ~0,5 €/vídeo: ElevenLabs Starter (6 USD/mes, uso comercial) | Locución completa | **El plan gratuito de ElevenLabs no permite uso comercial.** No clonar voces de terceros |
+| Imágenes | **Fotos de los productos hechas por ti con el móvil** (0 €; la mejor miniatura), Pexels o Pixabay (gratis), mapas de OpenStreetMap (con atribución) · IA de imagen gratuita **solo para ilustraciones no realistas** (estilo dibujo o collage) | Ilustraciones de época, fondos, escenas "estilizadas" | Nada de fotos falsas de personas reales ni logotipos generados. Revisar los términos comerciales de cada generador |
+| Animación y edición | **DaVinci Resolve** (gratis, sin marca de agua, con Fusion para motion graphics). Plantilla propia reutilizable con la identidad del canal | Subtítulos automáticos; la IA puede generar la lista de planos (EDL/guion visual) | CapCut gratis: sus términos de 2026 otorgan una licencia amplia sobre tu contenido y **su música integrada no está licenciada para monetizar** [EST]; si lo usas, sin su música |
+| Música | **Biblioteca de audio de YouTube** (gratis y segura para monetizar) | – | Evita la música de apps "gratuitas" (reclamaciones de Content ID) |
+| Miniaturas | Canva gratis o Photopea + foto propia del producto | Variantes de texto y composición | 2-4 palabras; nada engañoso |
+| Metadatos | IA para descripción, capítulos y etiquetas | Todo | Pegar las fuentes reales |
+| Publicación | YouTube Studio (programar) | – | Casilla de **"contenido alterado o sintético"** si hay voz o imagen realista que pueda confundir; la voz de narrador evidente y las ilustraciones no realistas normalmente no lo requieren (revisar la ayuda oficial) |
+
+### Reglas para que un canal hecho con IA no parezca "producido en masa"
+- **Máximo 2 documentales por semana.** Ritmo humano; nada de varios vídeos al día.
+- **Cada vídeo, una investigación distinta** con fuentes enlazadas en la descripción.
+- **Estructuras variadas:** alterna "origen", "guerra de marcas", "auge y caída", "explicador" y "lista". No uses el mismo guion con otra marca.
+- **Elementos propios en cada vídeo:** fotos de producto hechas por ti, mapas y líneas de tiempo con tu plantilla y una opinión o conclusión propia al final.
+- **Voz con personalidad:** una sola voz de marca, con pausas y entonación revisadas (regenera las frases que suenen robóticas).
+- **Sin imágenes "realistas" falsas.** Ilustración estilizada, archivo real o foto propia.
+- **Responde comentarios tú** (no con IA automática).
+
+### Coste por vídeo y efecto en el modelo financiero (escenario base V2, 12 meses)
+
+| Variante | Coste fijo/mes | Coste variable/vídeo | Ingresos 12m | Costes 12m | BAI 12m | Caja mínima | YPP | BAI mes 12 |
+|---|---|---|---|---|---|---|---|---|
+| Base anterior (editor externo desde el mes 5) | 60-130 € | 150 € + 15 € | 1.481 € | 10.125 € | −8.644 € | −8.644 € | jul-27 | −780 € |
+| **IA a coste casi cero, mismas vistas** | 0 € (meses 1-3) → 22 € | **~0 €** | 1.481 € | 1.098 € | **+383 €** | −317 € | jul-27 | +318 € |
+| IA a coste casi cero, −30 % de vistas | igual | ~0 € | 939 € | 1.098 € | −159 € | −457 € | ago-27 | +171 € |
+| IA a coste casi cero, −60 % de vistas (sin diferenciación) | igual | ~0 € | 368 € | 1.098 € | −730 € | −754 € | oct-27 | +24 € |
+
+(Los costes de 12 meses incluyen ~150 €/mes de cuota de autónomo y gestoría desde que empiezas a cobrar. **No es coste de producción.**)
+
+**Lectura:**
+- Con coste ~0, **casi no se puede perder dinero**: el peor caso razonable ronda los −750 € en el año, sobre todo autónomo y gestoría. **Lo que arriesgas es tiempo, no dinero.**
+- La variable que decide el resultado pasa a ser **cuántas vistas consigue un vídeo hecho con IA**. Si la voz y la estética de IA retienen peor (hipótesis −30 %), el YPP se retrasa un mes. Si el canal no se diferencia (−60 %), tarda hasta el mes 12 y apenas gana dinero.
+- **Recomendación:** empieza con IA a coste cero, pero haz una **prueba A/B de voz** en los vídeos 1-6: 3 con voz IA y 3 con tu voz grabada con el móvil (también 0 €). Quédate con la que tenga mejor retención media a los 7 días.
+
+**Presupuesto con esta variante:** **≈100-300 € en el año 1** (una suscripción de IA opcional, ElevenLabs Starter si la voz gratuita no convence y, como mucho, una caja de luz de ~30 € para las fotos). **Límite antes de validar: 300 €.**
+
 ## V2.12 Fuentes añadidas en esta versión
 - [Fórmula TV: serie "Grandes marcas de España" (Odisea)](https://www.formulatv.com/noticias/25209/curiosidades-grandes-marcas-de-espana/)
 - [Puro Marketing: documental de Coca-Cola en España](https://www.puromarketing.com/45/13340/cola-chispa-vida-nuevo-capitulo-serie)
 - [Just Retail: Kantar, Zara y Mercadona](https://www.justretail.news/noticias-temas/kantar/)
 - [Shopify: Amazon Afiliados](https://www.shopify.com/es/blog/amazon-afiliados) · [Tiendanube: Amazon Afiliados](https://www.tiendanube.com/blog/amazon-afiliados)
 - [Yoola: nichos sin rostro que siguen funcionando en 2026](https://yoola.com/blog/best-faceless-youtube-niches-that-still-work-in-2026) · [Vozo: nichos sin rostro rentables](https://www.vozo.ai/blogs/youtube/profitable-faceless-youtube-niches)
+- [AIR Media-Tech: cronología de cambios de monetización 2026](https://air.io/en/monetization/youtube-monetization-policy-changes-2026-a-complete-dated-timeline) · [eWeek: YouTube y la IA "auténtica"](https://www.eweek.com/de/news/youtube-responds-to-ai-concerns/) · [YTGrowth: política de IA de YouTube](https://ytgrowth.io/blog/youtube-ai-policy)
+- [tts.ai: Kokoro (licencia y voces, fuente de terceros)](https://tts.ai/voices/kokoro/) · [Podcastle: términos de CapCut](https://podcastle.ai/blog/capcut-terms-of-service) · [Eesel: precios de CapCut 2026](https://www.eesel.ai/en/blog/capcut-pricing)
 - Datos de canales (MagnatesMedia, Modern MBA, VisualPolitik, Academia Play, Memorias de Pez): ver el capítulo 15.
