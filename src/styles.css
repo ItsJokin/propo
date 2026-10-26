@@ -1353,6 +1353,7 @@ a.comp-award-t:hover { color: var(--accent); }
 .uc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .uc-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: var(--fg-2); }
 .uc-list svg { flex: none; width: 18px; height: 18px; margin-top: 1px; padding: 3px; border-radius: 50%; background: var(--ok-soft); color: var(--ok-ink); }
+.uc-list li.no svg { background: var(--surface-2); color: var(--fg-3); }
 .uc-watch { display: flex; gap: 10px; padding: 12px 14px; border-radius: 12px; background: var(--warn-soft); font-size: 13.5px; line-height: 1.5; color: var(--fg-2); }
 .uc-watch > svg { flex: none; width: 18px; height: 18px; color: var(--warn); margin-top: 1px; }
 .uc-watch strong { color: var(--warn-ink); }

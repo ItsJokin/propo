@@ -396,8 +396,8 @@ function UnitPrices({ p, pr, save }: { p: Project; pr: PricingState; save: (fn: 
           <button className="btn btn-secondary btn-icon" aria-label="Subir medio punto" onClick={() => setPct((pct ?? 0) * 100 + 0.5)}><LuPlus /></button>
         </div>
         <div className="uc-chips">{[3, 5, 8, 10].map((v) => <button key={v} className={`uc-chip${pct != null && Math.abs(pct * 100 - v) < 0.01 ? ' on' : ''}`} onClick={() => setPct(v)}>{v} %</button>)}</div>
-        <div className="small muted" style={{ textAlign: 'center' }}>{pct != null && !pctOk ? <span style={{ color: 'var(--bad)' }}>Escribe un % entre 0 y 100</span>
-          : ch?.points != null ? <>Con un {pct1(ch.baja)} de rebaja te llevarías unos <strong style={{ color: 'var(--fg)' }}>{pts(ch.points)} de {pts(rule.points)} puntos</strong></>
+        <div className="small muted" style={{ textAlign: 'center' }}>{pct != null && (isNaN(pct) || pct >= 1) ? <span style={{ color: 'var(--bad)' }}>Escribe un % entre 0 y 100</span>
+          : ch?.points != null ? <>Si nadie ofrece más rebaja que tú, te llevas los <strong style={{ color: 'var(--fg)' }}>{pts(rule.points)} puntos</strong> del precio; si otro rebaja el doble, la mitad.</>
           : 'Escribe el % de rebaja que ofreces'}</div>
       </div>}
 
@@ -465,7 +465,7 @@ function UnitPrices({ p, pr, save }: { p: Project; pr: PricingState; save: (fn: 
           <p className="mt-16" style={{ fontSize: 15, lineHeight: 1.6 }}>{inf.plain}</p>
           {inf.includes.length > 0 && <>
             <h4 className="mt-20" style={{ fontSize: 13, color: 'var(--fg-3)', fontWeight: 600 }}>LO QUE TIENES QUE DAR</h4>
-            <ul className="uc-list mt-8">{inf.includes.map((x, k) => <li key={k}><LuCheck />{x}</li>)}</ul>
+            <ul className="uc-list mt-8">{inf.includes.map((x, k) => /^(sin|no)/i.test(x) ? <li key={k} className="no"><LuMinus />{x}</li> : <li key={k}><LuCheck />{x}</li>)}</ul>
           </>}
           {inf.watch && <div className="uc-watch mt-16"><LuTriangleAlert /><div><strong>Tenlo en cuenta en el precio</strong><br />{inf.watch}</div></div>}
           {inf.doc && <p className="xs muted mt-16"><LuFileText style={{ verticalAlign: '-2px' }} /> {inf.doc}{inf.page ? `, página ${inf.page}` : ''}. Lo ha resumido la IA de PROPO: compruébalo en el pliego antes de presentar.</p>}
