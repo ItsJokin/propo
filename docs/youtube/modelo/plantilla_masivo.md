@@ -213,16 +213,16 @@ Normas comunes: voz real del propietario o de un locutor contratado (preferible 
 > La idea de Bernat no es inventar un sabor nuevo. Es inventar una forma de comerlo: poner el caramelo en un palo. Un "caramelo con tenedor", como se suele contar que lo describía él [VERIFICAR].
 >
 > **[1:30 – Línea de tiempo animada: 1958]**
-> Hacia 1958 [VERIFICAR] lanza el producto. Al principio no se llama Chupa Chups: el primer nombre fue otro [VERIFICAR: "Gol"]. La idea era buena, pero el nombre no enganchaba.
+> En 1958 lanza el producto [fuente: Wikipedia "Chupa Chups"; Gran Enciclopèdia Catalana]. Al principio no se llamaba Chupa Chups: según algunos medios se llamó primero "Gol", porque el caramelo con palo recordaba a un balón entrando en la portería [fuente: emprendedor.com; las versiones varían]. La idea era buena, pero el nombre no enganchaba.
 >
 > **[2:10 – CAPÍTULO 2 · EL NOMBRE]**
-> Aquí entra la publicidad. Una cuña de radio repetía "chupa, chupa…" y el público empezó a llamarlo así. La marca hizo lo más inteligente que puede hacer una empresa: escuchar a sus clientes. Y se quedó con Chupa Chups [VERIFICAR la secuencia del cambio de nombre].
+> Después llegó "Chups", del verbo chupar. Pero en las tiendas la gente no pedía "un Chups": pedía "un Chupa Chups". Y la marca hizo lo más inteligente que puede hacer una empresa: escuchar a sus clientes. Ese fue el nombre que se registró [fuente: Gran Enciclopèdia Catalana, que sitúa el registro en 1962; otras fuentes cuentan la secuencia de forma algo distinta: decirlo en pantalla].
 >
 > **[3:00 – Mapa: el caramelo junto a la caja registradora]**
 > Pero la jugada maestra no fue el nombre. Fue **dónde** se vendía. Se cuenta que Bernat insistió en que sus expositores estuvieran junto a la caja de las tiendas, a la altura de los ojos de un niño [VERIFICAR]. Piénsalo: es la última decisión antes de pagar, y la toma alguien de un metro de altura. Hoy esa zona de los supermercados tiene nombre propio en marketing: la zona de compra por impulso. Bernat la entendió sin necesidad de un máster.
 >
 > **[4:10 – CAPÍTULO 3 · DALÍ]**
-> Año 1969 [VERIFICAR]. La marca ya funciona en España y quiere salir fuera. Necesita una imagen que se reconozca en cualquier país, sin depender del idioma. Y Bernat recurre a Salvador Dalí, que vivía a pocos kilómetros, en el Empordà.
+> Año 1969 [fuente: Print Magazine, Steven Heller; Gran Enciclopèdia Catalana]. La marca ya funciona en España y quiere salir fuera. Necesita una imagen que se reconozca en cualquier país, sin depender del idioma. Y Bernat recurre a Salvador Dalí, que vivía a pocos kilómetros, en el Empordà.
 > La versión más repetida dice que Dalí lo resolvió en menos de una hora, dibujando sobre papel de periódico en un café [VERIFICAR: es la versión popular; presentarla como tal]. Lo que sí se suele documentar es su consejo más valioso: poner el logotipo **encima** del caramelo, no en un lateral, para que se viera entero desde cualquier ángulo [VERIFICAR].
 >
 > **[5:20 – Comparativa: logotipo en el lateral frente a arriba]**
@@ -236,7 +236,7 @@ Normas comunes: voz real del propietario o de un locutor contratado (preferible 
 > Pero ninguna marca vive solo de un producto. Los gustos cambian, aparecen la preocupación por el azúcar y nuevos competidores, y el negocio de los caramelos se concentra en manos de grandes grupos internacionales. Chupa Chups intentó diversificar con otros productos [VERIFICAR ejemplos concretos], con resultados desiguales.
 >
 > **[8:40 – CAPÍTULO 6 · LA VENTA]**
-> En 2006 [VERIFICAR], la familia vende la empresa al grupo italo-neerlandés Perfetti Van Melle, el mismo de marcas como Mentos [VERIFICAR la cartera]. El caramelo más famoso de España ya no es de propiedad española. Pero el producto sigue siendo, para medio mundo, un símbolo de Barcelona.
+> En 2006, la familia vende la empresa al grupo italo-neerlandés Perfetti Van Melle [fuente: Wikipedia "Chupa Chups"; no citar el precio, las fuentes no coinciden], el mismo de marcas como Mentos [VERIFICAR la cartera]. El caramelo más famoso de España ya no es de propiedad española. Pero el producto sigue siendo, para medio mundo, un símbolo de Barcelona.
 >
 > **[9:40 – CAPÍTULO 7 · LO QUE NOS ENSEÑA]**
 > ¿Qué nos enseña esta historia? Tres cosas.
