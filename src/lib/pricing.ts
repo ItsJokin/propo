@@ -49,6 +49,8 @@ export interface Pricing {
   approved: string | null;        // fecha de confirmación
   filled?: import('./offerModel').FilledModel | null;   // el modelo oficial del pliego, ya rellenado
   fillNote?: string;              // por qué no se ha podido rellenar (p. ej. PDF sin campos)
+  unitDraft?: Record<string, string>;   // precios por concepto que el cliente está escribiendo (y conceptos que añade él)
+  extraUnits?: { id: string; label: string; unit: string }[];
 }
 
 export const emptyPricing = (): Pricing => ({ rule: null, floor: null, choice: null, others: {}, approved: null });
@@ -386,3 +388,26 @@ export function eurosInWords(x: number) {
 }
 export const eur2 = (n: number) => n.toLocaleString('es-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2, maximumFractionDigits: 2, useGrouping: 'always' } as Intl.NumberFormatOptions);
 export const pct1 = (x: number) => String(Math.round(x * 1000) / 10).replace('.', ',') + ' %';
+
+// ── Precio de cada concepto, puesto por el cliente ──────────────────────────────────────────────────────────────────
+export interface UnitLine { id: string; label: string; unit: string; max: number | null; qty: number | null; price: number | null; over: boolean; subtotal: number | null }
+/** Líneas de precio por concepto (las del pliego y las que añade el cliente), con lo que ha escrito en cada una. */
+export function unitLines(rule: PriceRule, draft: Record<string, string>, extra: { id: string; label: string; unit: string }[] = []): UnitLine[] {
+  return [...rule.units, ...extra.map((x) => ({ ...x, max: null, qty: null }))].map((u) => {
+    const raw = (draft[u.id] ?? '').trim(); const price = raw ? num(raw) : null;
+    return { id: u.id, label: u.label, unit: u.unit, max: u.max, qty: u.qty, price, over: price != null && u.max != null && price > u.max + 0.005, subtotal: price != null && u.qty ? r2(price * u.qty) : null };
+  });
+}
+/** Oferta a partir de los precios de cada concepto. El total es la suma por las cantidades estimadas del pliego; si el
+ *  pliego no las da, el total lo escribe el cliente (o se queda sin total si solo se ofertan precios unitarios). */
+export function unitChoice(rule: PriceRule, lines: UnitLine[], totalTxt: string): PriceChoice | null {
+  const priced = lines.filter((l) => l.price != null && l.price > 0);
+  if (!priced.length) return null;
+  const allQty = priced.every((l) => l.qty);
+  const sum = r2(priced.reduce((a, l) => a + (l.subtotal ?? 0), 0));
+  const total = num(totalTxt) || (allQty ? sum : 0);
+  let b = 0;
+  if (rule.budget && total) b = 1 - total / rule.budget;
+  else { const w = priced.filter((l) => l.max); if (w.length) b = w.reduce((a, l) => a + (1 - l.price! / l.max!), 0) / w.length; }   // sin total: rebaja media sobre los máximos
+  return { mode: 'own', baja: b, total, points: pointsFor(rule, b, b), units: priced.map((l) => ({ id: l.id, label: `${l.label}${l.unit && l.unit.toLowerCase() !== l.label.toLowerCase() ? ` (${l.unit})` : ''}`, price: r2(l.price!) })) };
+}

@@ -1,7 +1,8 @@
 // Paso «El precio»: PROPO explica cómo puntúa el precio este pliego, propone tres precios a partir del mínimo que le
 // compensa al cliente (o ordena los que él escriba con sus palabras) y, al confirmarlo, prepara la oferta económica.
 import React, { useEffect, useState } from 'react';
-import { LuInfo, LuTriangleAlert, LuCircleCheck, LuSparkles, LuPencil, LuRotateCcw, LuArrowRight, LuShieldCheck, LuLoaderCircle } from 'react-icons/lu';
+import { LuInfo, LuTriangleAlert, LuCircleCheck, LuSparkles, LuPencil, LuRotateCcw, LuArrowRight, LuShieldCheck, LuLoaderCircle, LuPlus, LuTrash2 } from 'react-icons/lu';
+import { uid } from '../../lib/util';
 import type { Project } from '../../lib/types';
 import { updateProject, navigate, toast, getState } from '../../lib/store';
 import { fillOfficialModel } from '../../lib/offerModel';
@@ -9,7 +10,7 @@ import { getFile } from '../../lib/storage';
 import { offerDownload } from '../../lib/services/download';
 import {
   emptyPricing, readPriceRule, marketFor, priceOptions, choose, readOwnPrices, formalCommitment, priceWarnings, eurosInWords, eur2, pct1, num, pointsFor,
-  otherAdvice, otherPoints, commitmentText,
+  otherAdvice, otherPoints, commitmentText, unitLines, unitChoice,
   type Pricing as PricingState, type Market, type Option,
 } from '../../lib/pricing';
 import { Economic } from './Economic';
@@ -159,6 +160,9 @@ export function Pricing({ p }: { p: Project }) {
         {rule.mode === 'rules' && <div className="callout neutral small mt-12"><LuInfo /><div>No hemos podido leer la fórmula exacta con la IA: estos datos salen del análisis general. Compruébalos en el apartado de criterios de adjudicación del pliego.</div></div>}
       </div>
 
+      {/* 2 · Precio de cada concepto (catering con varios menús, tarifas por hora, etc.) */}
+      {!ch && (rule.units.length > 0 || (pr.extraUnits ?? []).length > 0) && <UnitPrices p={p} pr={pr} save={save} />}
+
       {/* 2 · Tus números */}
       {!!rule.budget && !ch && (
         <div className="card card-pad">
@@ -223,12 +227,14 @@ export function Pricing({ p }: { p: Project }) {
             <h3 style={{ fontSize: 18 }}>{pr.approved ? <><LuCircleCheck style={{ color: 'var(--ok)', verticalAlign: -3 }} /> Precio confirmado</> : 'Tu oferta económica'}</h3>
             <span className="badge">{ch.mode === 'own' ? 'Tus precios' : `Opción ${MODE[ch.mode].t.toLowerCase()}`}</span>
           </div>
+          {ch.total > 0 ? <>
           <div className="pr-sum mt-12">
             <div><span>Importe sin IVA</span><strong className="num">{eur2(ch.total)}</strong></div>
             <div><span>IVA ({vat} %)</span><strong className="num">{eur2(ch.total * vat / 100)}</strong></div>
             <div className="tot"><span>Total con IVA</span><strong className="num">{eur2(ch.total * (1 + vat / 100))}</strong></div>
           </div>
           <p className="small muted mt-8">En letra: <em>{eurosInWords(Math.round(ch.total * 100) / 100)}</em> (sin IVA).</p>
+          </> : <p className="small muted mt-8">Oferta por precios unitarios: el importe final dependerá de los servicios que se pidan.</p>}
           {ch.units.length > 0 && (
             <table className="pr-units mt-12"><thead><tr><th>Precio unitario</th><th style={{ textAlign: 'right' }}>Sin IVA</th></tr></thead>
               <tbody>{ch.units.map((u) => <tr key={u.id}><td>{u.label}</td><td className="num" style={{ textAlign: 'right' }}>{eur2(u.price)}</td></tr>)}</tbody></table>
@@ -259,6 +265,7 @@ export function Pricing({ p }: { p: Project }) {
           <div className="row mt-16" style={{ gap: 8, flexWrap: 'wrap' }}>
             {!pr.approved && <button className="btn btn-primary" disabled={warns.some((w) => w.level === 'bad')} onClick={confirm}><LuShieldCheck /> Confirmar el precio</button>}
             {pr.approved && <button className="btn btn-primary" onClick={() => navigate(`/app/projects/${p.id}/compliance`)}>Seguir a la comprobación final <LuArrowRight /></button>}
+            {!pr.approved && ch.units.length > 0 && <button className="btn btn-secondary" onClick={() => save((x) => { x.unitDraft = Object.fromEntries(ch.units.map((u) => [u.id, String(u.price).replace('.', ',')])); x.choice = null; x.approved = null; })}><LuPencil /> Cambiar los precios de cada concepto</button>}
             <button className="btn btn-ghost" onClick={reset}><LuRotateCcw /> Borrar y poner otro precio</button>
           </div>
         </div>
@@ -323,6 +330,58 @@ function OtherCriteria({ p, pr }: { p: Project; pr: PricingState }) {
           );
         })}
       </div>
+    </div>
+  );
+}
+
+/** Tabla para poner el precio de cada concepto (menú, servicio, hora…): máximo del pliego, cantidad estimada y subtotal. */
+function UnitPrices({ p, pr, save }: { p: Project; pr: PricingState; save: (fn: (x: PricingState) => void) => void }) {
+  const rule = pr.rule!;
+  const draft = pr.unitDraft ?? {}; const extra = pr.extraUnits ?? [];
+  const [totalTxt, setTotalTxt] = useState('');
+  const [newLabel, setNewLabel] = useState('');
+  const lines = unitLines(rule, draft, extra);
+  const ch = unitChoice(rule, lines, totalTxt);
+  const set = (id: string, v: string) => save((x) => { x.unitDraft = { ...(x.unitDraft ?? {}), [id]: v.replace(/[^\d.,]/g, '') }; });
+  const anyQty = lines.some((l) => l.qty); const allPricedQty = lines.filter((l) => l.price).every((l) => l.qty);
+  const over = lines.filter((l) => l.over);
+  const use = () => { if (!ch) return; save((x) => { x.choice = ch; x.approved = null; }); toast('Precios guardados. Revísalos y confírmalos.', 'ok'); };
+  return (
+    <div className="card card-pad">
+      <h3 style={{ fontSize: 18 }}>Pon tu precio a cada concepto</h3>
+      <p className="muted mt-4">Este pliego pide un precio por cada concepto. Escribe el tuyo, sin IVA, en cada línea. Ninguno puede superar su precio máximo: si uno lo supera, la oferta se excluye aunque el total esté por debajo.</p>
+      <div style={{ overflowX: 'auto' }}>
+        <table className="pr-units mt-12" style={{ minWidth: 560 }}>
+          <thead><tr><th>Concepto</th><th style={{ textAlign: 'right' }}>Máximo del pliego</th>{anyQty && <th style={{ textAlign: 'right' }}>Cantidad estimada</th>}<th style={{ textAlign: 'right', width: 150 }}>Tu precio (sin IVA)</th>{anyQty && <th style={{ textAlign: 'right' }}>Subtotal</th>}<th /></tr></thead>
+          <tbody>{lines.map((l) => (
+            <tr key={l.id}>
+              <td>{l.label}{l.unit && l.unit.toLowerCase() !== l.label.toLowerCase() && <span className="xs muted"> · por {l.unit}</span>}</td>
+              <td className="num" style={{ textAlign: 'right' }}>{l.max != null ? eur2(l.max) : <span className="muted">—</span>}</td>
+              {anyQty && <td className="num" style={{ textAlign: 'right' }}>{l.qty != null ? l.qty.toLocaleString('es-ES') : <span className="muted">—</span>}</td>}
+              <td style={{ textAlign: 'right' }}><div className="row" style={{ gap: 4, justifyContent: 'flex-end' }}>
+                <input className="input" inputMode="decimal" style={{ width: 110, height: 34, textAlign: 'right', borderColor: l.over ? 'var(--bad)' : undefined }} aria-label={`Precio de ${l.label}`} placeholder={l.max != null ? String(Math.round(l.max * 0.9 * 100) / 100).replace('.', ',') : '0,00'} value={draft[l.id] ?? ''} onChange={(e) => set(l.id, e.target.value)} /><span className="small">€</span></div>
+                {l.over && <div className="xs" style={{ color: 'var(--bad)' }}>Supera el máximo</div>}</td>
+              {anyQty && <td className="num" style={{ textAlign: 'right' }}>{l.subtotal != null ? eur2(l.subtotal) : <span className="muted">—</span>}</td>}
+              <td>{extra.some((x) => x.id === l.id) && <button className="btn btn-ghost btn-sm btn-icon" aria-label="Quitar concepto" onClick={() => save((x) => { x.extraUnits = (x.extraUnits ?? []).filter((y) => y.id !== l.id); const d = { ...(x.unitDraft ?? {}) }; delete d[l.id]; x.unitDraft = d; })}><LuTrash2 /></button>}</td>
+            </tr>
+          ))}</tbody>
+        </table>
+      </div>
+      <div className="row-wrap mt-8" style={{ gap: 6 }}>
+        <input className="input" style={{ maxWidth: 280, height: 34 }} placeholder="¿Falta un concepto? Escríbelo aquí" value={newLabel} onChange={(e) => setNewLabel(e.target.value)} />
+        <button className="btn btn-ghost btn-sm" disabled={!newLabel.trim()} onClick={() => { save((x) => { x.extraUnits = [...(x.extraUnits ?? []), { id: uid('cu'), label: newLabel.trim(), unit: '' }]; }); setNewLabel(''); }}><LuPlus /> Añadir concepto</button>
+      </div>
+      {!allPricedQty && <div className="row-wrap mt-12" style={{ gap: 8, alignItems: 'center' }}>
+        <span className="small">Importe total del contrato, si el modelo de oferta lo pide:</span>
+        <div className="pr-money"><input className="input" inputMode="decimal" placeholder={rule.budget ? `máx. ${rule.budget.toLocaleString('es-ES')}` : 'opcional'} value={totalTxt} onChange={(e) => setTotalTxt(e.target.value)} aria-label="Importe total sin IVA" /><span>€ sin IVA</span></div>
+      </div>}
+      {ch && <div className="pr-sum mt-12">
+        <div><span>{ch.total ? 'Total sin IVA' : 'Total'}</span><strong className="num">{ch.total ? eur2(ch.total) : 'solo precios por concepto'}</strong></div>
+        <div><span>Rebaja {ch.total && rule.budget ? 'sobre el presupuesto' : 'media sobre los máximos'}</span><strong className="num">{pct1(ch.baja)}</strong></div>
+        {ch.points != null && <div className="tot"><span>Puntos del precio (estimados)</span><strong className="num">{pts(ch.points)} de {pts(rule.points)}</strong></div>}
+      </div>}
+      {over.length > 0 && <div className="callout bad small mt-8"><LuTriangleAlert /><div>{over.map((l) => l.label).join(', ')} {over.length === 1 ? 'supera' : 'superan'} el precio máximo del pliego. Bájalo para poder presentar la oferta.</div></div>}
+      <button className="btn btn-primary mt-12" disabled={!ch || over.length > 0} onClick={use}>Usar estos precios</button>
     </div>
   );
 }

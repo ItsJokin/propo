@@ -180,22 +180,26 @@ export async function economicOfferPdf(p: Project, s: AppState) {
   h2(w, 'Datos del procedimiento');
   facts(w, [['Objeto del contrato', fullTitle(p)], ['Órgano de contratación', p.organization], ['Expediente', reference(p)]]);
   h2(w, 'Datos del licitador');
-  facts(w, [['Razón social', c.legalName || '[razón social]'], ['NIF', c.taxId || '[NIF]'], ['Domicilio', c.address || '[domicilio social]'], ['Representante legal', '[nombre y apellidos]'], ['DNI del representante', '[número]']]);
+  facts(w, [['Razón social', c.legalName || '[razón social]'], ['NIF', c.taxId || '[NIF]'], ['Domicilio', c.address || '[domicilio social]'], ['Representante legal', c.signer || '[nombre y apellidos]'], ['DNI del representante', c.signerId || '[número]']]);
   if (!ch) { text(w, 'Todavía no se ha fijado el precio de la oferta.', { gap: 10 }); return finish(w); }
   const vat = rule?.vat ?? 21;
   const iva = Math.round(ch.total * vat) / 100;
   const tot = Math.round((ch.total + iva) * 100) / 100;
-  text(w, `D./D.ª [nombre del representante legal], en nombre y representación de **${c.legalName || '[razón social]'}**, enterado/a del anuncio y de los pliegos que rigen la contratación arriba indicada, cuyo contenido acepta íntegramente, se compromete a ejecutar el contrato con estricta sujeción a ellos por el siguiente precio:`, { gap: 10 });
-  table(w, [{ title: 'Concepto', w: 52, bold: true }, { title: 'Importe', w: 48, align: 'right' }], [
-    ['Precio sin IVA', eur2(ch.total)],
-    [`IVA (${vat} %)`, eur2(iva)],
-    ['Precio total, IVA incluido', eur2(tot)],
-  ]);
-  text(w, `Precio sin IVA, en letra: **${eurosInWords(Math.round(ch.total * 100) / 100)}**.`, { gap: 4 });
-  text(w, `Precio total con IVA, en letra: **${eurosInWords(tot)}**.`, { gap: 10 });
+  const onlyUnits = !ch.total && ch.units.length > 0;   // contratos por precios unitarios sin importe total
+  text(w, `D./D.ª ${c.signer || '[nombre del representante legal]'}, en nombre y representación de **${c.legalName || '[razón social]'}**, enterado/a del anuncio y de los pliegos que rigen la contratación arriba indicada, cuyo contenido acepta íntegramente, se compromete a ejecutar el contrato con estricta sujeción a ellos por ${onlyUnits ? 'los siguientes precios unitarios' : 'el siguiente precio'}:`, { gap: 10 });
+  if (!onlyUnits) {
+    table(w, [{ title: 'Concepto', w: 52, bold: true }, { title: 'Importe', w: 48, align: 'right' }], [
+      ['Precio sin IVA', eur2(ch.total)],
+      [`IVA (${vat} %)`, eur2(iva)],
+      ['Precio total, IVA incluido', eur2(tot)],
+    ]);
+    text(w, `Precio sin IVA, en letra: **${eurosInWords(Math.round(ch.total * 100) / 100)}**.`, { gap: 4 });
+    text(w, `Precio total con IVA, en letra: **${eurosInWords(tot)}**.`, { gap: 10 });
+  }
   if (ch.units.length) {
     h2(w, 'Precios unitarios');
-    table(w, [{ title: 'Concepto', w: 64 }, { title: 'Precio sin IVA', w: 36, align: 'right' }], ch.units.map((u) => [u.label, eur2(u.price)]));
+    table(w, [{ title: 'Concepto', w: 46 }, { title: 'Precio sin IVA', w: 18, align: 'right' }, { title: `IVA (${vat} %)`, w: 16, align: 'right' }, { title: 'Con IVA', w: 20, align: 'right' }],
+      ch.units.map((u) => { const i = Math.round(u.price * vat) / 100; return [u.label, eur2(u.price), eur2(i), eur2(Math.round((u.price + i) * 100) / 100)]; }));
   }
   const others = (rule?.others ?? []).filter((o) => pr?.others?.[o.id]?.formal);
   if (others.length) {
