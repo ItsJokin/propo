@@ -31,6 +31,7 @@ export interface PriceRule {
   abnormalOfBudget: number | null;  // rebaja (%) sobre el presupuesto a partir de la cual es anormal
   plain: string;                  // explicación en claro
   units: UnitPrice[];
+  singleDiscount?: boolean;       // el pliego pide un único % de baja que se aplica a todos los precios máximos
   lots: { label: string; budget: number | null }[];
   others: OtherCriterion[];
   model: { doc: string; page: number | null; name: string } | null;
@@ -39,7 +40,7 @@ export interface PriceRule {
   source: { doc: string; page: number | null; quote: string } | null;
   mode: 'ai' | 'rules';
 }
-export interface PriceChoice { mode: 'prudent' | 'recommended' | 'aggressive' | 'own'; baja: number; total: number; points: number | null; units: { id: string; label: string; price: number }[]; vatIncluded?: boolean; doubts?: string }
+export interface PriceChoice { mode: 'prudent' | 'recommended' | 'aggressive' | 'own'; baja: number; total: number; points: number | null; units: { id: string; label: string; price: number }[]; vatIncluded?: boolean; doubts?: string; discount?: number }
 export interface Pricing {
   rule: PriceRule | null;
   floor: number | null;           // precio total mínimo que le compensa al cliente, sin IVA
@@ -123,6 +124,7 @@ Devuelve SOLO un objeto JSON con esta forma exacta:
   "abnormal_of_budget": número o null,    // si es anormal la rebaja superior a X % del presupuesto
   "plain": "2 o 3 frases para el dueño de una pyme sin jerga: cuántos puntos da el precio, cómo se calculan y un ejemplo con números de esta licitación",
   "unit_prices": [{"label": "concepto", "unit": "unidad (menú, hora…)", "max_price": número o null, "qty": número o null}],
+  "single_discount": true | false,    // true si el licitador NO pone un precio a cada concepto sino un único % de baja que se aplica a todos los precios máximos
   "lots": [{"label": "Lote 1 · …", "budget": número o null}],
   "other_formula": [{"label": "criterio", "points": número o null, "rule": "cómo se puntúa, breve", "ask": "pregunta clara al licitador para saber qué ofrece (p. ej. ¿Cuántos años de garantía adicional ofreces?)",
                     "unit": "años | meses | días | horas | … o null si no se oferta una cifra", "points_per_unit": número o null, "max_value": número o null (cifra que ya da el máximo),
@@ -165,6 +167,7 @@ export async function readPriceRule(p: Project): Promise<PriceRule> {
       abnormalBelowMean: n(j.abnormal_below_mean) ?? (j.abnormal_of_budget ? null : 10), abnormalOfBudget: n(j.abnormal_of_budget),
       plain: String(j.plain || base.plain),
       units: (Array.isArray(j.unit_prices) ? j.unit_prices : []).filter((u: any) => u?.label).slice(0, 30).map((u: any, i: number) => ({ id: `u${i}`, label: String(u.label), unit: String(u.unit || ''), max: n(u.max_price), qty: n(u.qty) })),
+      singleDiscount: j.single_discount === true,
       lots: (Array.isArray(j.lots) ? j.lots : []).filter((l: any) => l?.label).slice(0, 20).map((l: any) => ({ label: String(l.label), budget: n(l.budget) })),
       others: (Array.isArray(j.other_formula) ? j.other_formula : []).filter((o: any) => o?.label).slice(0, 10).map((o: any, i: number) => ({ id: `o${i}`, label: String(o.label), points: n(o.points), rule: String(o.rule || ''), ask: String(o.ask || `¿Qué ofreces en «${o.label}»?`),
         unit: o.unit ? String(o.unit) : null, perUnit: n(o.points_per_unit), maxValue: n(o.max_value), better: o.better === 'less' ? 'less' : 'more',
@@ -400,7 +403,12 @@ export function unitLines(rule: PriceRule, draft: Record<string, string>, extra:
 }
 /** Oferta a partir de los precios de cada concepto. El total es la suma por las cantidades estimadas del pliego; si el
  *  pliego no las da, el total lo escribe el cliente (o se queda sin total si solo se ofertan precios unitarios). */
-export function unitChoice(rule: PriceRule, lines: UnitLine[], totalTxt: string): PriceChoice | null {
+export function unitChoice(rule: PriceRule, lines: UnitLine[], totalTxt: string, discount?: number | null): PriceChoice | null {
+  if (discount != null) {   // un único % de baja sobre todos los máximos: el precio de cada concepto sale solo
+    const us = lines.filter((l) => l.max).map((l) => ({ id: l.id, label: `${l.label}${l.unit && l.unit.toLowerCase() !== l.label.toLowerCase() ? ` (${unitText(l.unit)})` : ''}`, price: r2(l.max! * (1 - discount)) }));
+    if (!us.length || discount <= 0 || discount >= 1) return null;
+    return { mode: 'own', baja: discount, total: 0, points: pointsFor(rule, discount, discount), units: us, discount };
+  }
   const priced = lines.filter((l) => l.price != null && l.price > 0);
   if (!priced.length) return null;
   const allQty = priced.every((l) => l.qty);
@@ -409,5 +417,12 @@ export function unitChoice(rule: PriceRule, lines: UnitLine[], totalTxt: string)
   let b = 0;
   if (rule.budget && total) b = 1 - total / rule.budget;
   else { const w = priced.filter((l) => l.max); if (w.length) b = w.reduce((a, l) => a + (1 - l.price! / l.max!), 0) / w.length; }   // sin total: rebaja media sobre los máximos
-  return { mode: 'own', baja: b, total, points: pointsFor(rule, b, b), units: priced.map((l) => ({ id: l.id, label: `${l.label}${l.unit && l.unit.toLowerCase() !== l.label.toLowerCase() ? ` (${l.unit})` : ''}`, price: r2(l.price!) })) };
+  return { mode: 'own', baja: b, total, points: pointsFor(rule, b, b), units: priced.map((l) => ({ id: l.id, label: `${l.label}${l.unit && l.unit.toLowerCase() !== l.label.toLowerCase() ? ` (${unitText(l.unit)})` : ''}`, price: r2(l.price!) })) };
+}
+/** «comensal» → «por comensal»; «por comensal» se queda igual. */
+export function unitText(unit: string): string { const u = unit.trim(); return /^(por|cada|\/)\b/i.test(u) || u.startsWith('/') ? u : `por ${u}`; }
+/** ¿Pide el pliego un único % de baja para todos los precios unitarios? (también en reglas leídas antes de existir el campo) */
+export function isSingleDiscount(rule: PriceRule): boolean {
+  if (rule.singleDiscount != null) return rule.singleDiscount && rule.units.some((u) => u.max);
+  return rule.units.some((u) => u.max) && /(porcentaje|%)\s+de\s+(baja|descuento)\s+(único|uniforme|lineal)|(baja|descuento)\s+(único|única|uniforme|lineal)/i.test(`${rule.formulaText} ${rule.plain}`);
 }

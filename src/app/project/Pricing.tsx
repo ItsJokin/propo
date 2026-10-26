@@ -10,7 +10,7 @@ import { getFile } from '../../lib/storage';
 import { offerDownload } from '../../lib/services/download';
 import {
   emptyPricing, readPriceRule, marketFor, priceOptions, choose, readOwnPrices, formalCommitment, priceWarnings, eurosInWords, eur2, pct1, num, pointsFor,
-  otherAdvice, otherPoints, commitmentText, unitLines, unitChoice,
+  otherAdvice, otherPoints, commitmentText, unitLines, unitChoice, unitText, isSingleDiscount,
   type Pricing as PricingState, type Market, type Option,
 } from '../../lib/pricing';
 import { Economic } from './Economic';
@@ -265,7 +265,7 @@ export function Pricing({ p }: { p: Project }) {
           <div className="row mt-16" style={{ gap: 8, flexWrap: 'wrap' }}>
             {!pr.approved && <button className="btn btn-primary" disabled={warns.some((w) => w.level === 'bad')} onClick={confirm}><LuShieldCheck /> Confirmar el precio</button>}
             {pr.approved && <button className="btn btn-primary" onClick={() => navigate(`/app/projects/${p.id}/compliance`)}>Seguir a la comprobación final <LuArrowRight /></button>}
-            {!pr.approved && ch.units.length > 0 && <button className="btn btn-secondary" onClick={() => save((x) => { x.unitDraft = Object.fromEntries(ch.units.map((u) => [u.id, String(u.price).replace('.', ',')])); x.choice = null; x.approved = null; })}><LuPencil /> Cambiar los precios de cada concepto</button>}
+            {!pr.approved && ch.units.length > 0 && <button className="btn btn-secondary" onClick={() => save((x) => { x.unitDraft = ch.discount != null ? { __pct: String(Math.round(ch.discount * 10000) / 100).replace('.', ',') } : Object.fromEntries(ch.units.map((u) => [u.id, String(u.price).replace('.', ',')])); x.choice = null; x.approved = null; })}><LuPencil /> {ch.discount != null ? 'Cambiar el % de baja' : 'Cambiar los precios de cada concepto'}</button>}
             <button className="btn btn-ghost" onClick={reset}><LuRotateCcw /> Borrar y poner otro precio</button>
           </div>
         </div>
@@ -341,47 +341,57 @@ function UnitPrices({ p, pr, save }: { p: Project; pr: PricingState; save: (fn: 
   const [totalTxt, setTotalTxt] = useState('');
   const [newLabel, setNewLabel] = useState('');
   const lines = unitLines(rule, draft, extra);
-  const ch = unitChoice(rule, lines, totalTxt);
+  const single = isSingleDiscount(rule);
+  const pctTxt = draft.__pct ?? ''; const pct = pctTxt.trim() ? Number(pctTxt.replace(',', '.')) / 100 : null;
+  const shown = single ? lines.map((l) => { const price = pct != null && l.max ? Math.round(l.max * (1 - pct) * 100) / 100 : null; return { ...l, price, over: false, subtotal: price != null && l.qty ? Math.round(price * l.qty * 100) / 100 : null }; }) : lines;
+  const ch = unitChoice(rule, lines, totalTxt, single ? pct : undefined);
   const set = (id: string, v: string) => save((x) => { x.unitDraft = { ...(x.unitDraft ?? {}), [id]: v.replace(/[^\d.,]/g, '') }; });
   const anyQty = lines.some((l) => l.qty); const allPricedQty = lines.filter((l) => l.price).every((l) => l.qty);
   const over = lines.filter((l) => l.over);
   const use = () => { if (!ch) return; save((x) => { x.choice = ch; x.approved = null; }); toast('Precios guardados. Revísalos y confírmalos.', 'ok'); };
   return (
     <div className="card card-pad">
-      <h3 style={{ fontSize: 18 }}>Pon tu precio a cada concepto</h3>
-      <p className="muted mt-4">Este pliego pide un precio por cada concepto. Escribe el tuyo, sin IVA, en cada línea. Ninguno puede superar su precio máximo: si uno lo supera, la oferta se excluye aunque el total esté por debajo.</p>
+      <h3 style={{ fontSize: 18 }}>{single ? 'Tu % de baja sobre los precios máximos' : 'Pon tu precio a cada concepto'}</h3>
+      {single ? <>
+        <p className="muted mt-4">Este pliego no pide un precio por cada concepto: pide <strong>un único porcentaje de baja</strong> que se aplica a todos los precios máximos. Escribe tu % y verás cómo queda cada concepto.</p>
+        <div className="row-wrap mt-12" style={{ gap: 8, alignItems: 'center' }}>
+          <span className="small">Baja que ofreces:</span>
+          <div className="pr-money"><input className="input" inputMode="decimal" style={{ width: 110 }} placeholder="p. ej. 8" aria-label="Porcentaje de baja único" value={pctTxt} onChange={(e) => set('__pct', e.target.value)} /><span>%</span></div>
+          {pct != null && (pct <= 0 || pct >= 1) && <span className="xs" style={{ color: 'var(--bad)' }}>Escribe un % entre 0 y 100</span>}
+        </div>
+      </> : <p className="muted mt-4">Este pliego pide un precio por cada concepto. Escribe el tuyo, sin IVA, en cada línea. Ninguno puede superar su precio máximo: si uno lo supera, la oferta se excluye aunque el total esté por debajo.</p>}
       <div style={{ overflowX: 'auto' }}>
         <table className="pr-units mt-12" style={{ minWidth: 560 }}>
-          <thead><tr><th>Concepto</th><th style={{ textAlign: 'right' }}>Máximo del pliego</th>{anyQty && <th style={{ textAlign: 'right' }}>Cantidad estimada</th>}<th style={{ textAlign: 'right', width: 150 }}>Tu precio (sin IVA)</th>{anyQty && <th style={{ textAlign: 'right' }}>Subtotal</th>}<th /></tr></thead>
-          <tbody>{lines.map((l) => (
+          <thead><tr><th>Concepto</th><th style={{ textAlign: 'right' }}>Máximo del pliego</th>{anyQty && <th style={{ textAlign: 'right' }}>Cantidad estimada</th>}<th style={{ textAlign: 'right', width: 150 }}>{single ? 'Queda en (sin IVA)' : 'Tu precio (sin IVA)'}</th>{anyQty && <th style={{ textAlign: 'right' }}>Subtotal</th>}<th /></tr></thead>
+          <tbody>{shown.map((l) => (
             <tr key={l.id}>
-              <td>{l.label}{l.unit && l.unit.toLowerCase() !== l.label.toLowerCase() && <span className="xs muted"> · por {l.unit}</span>}</td>
+              <td>{l.label}{l.unit && l.unit.toLowerCase() !== l.label.toLowerCase() && <span className="xs muted"> · {unitText(l.unit)}</span>}</td>
               <td className="num" style={{ textAlign: 'right' }}>{l.max != null ? eur2(l.max) : <span className="muted">—</span>}</td>
               {anyQty && <td className="num" style={{ textAlign: 'right' }}>{l.qty != null ? l.qty.toLocaleString('es-ES') : <span className="muted">—</span>}</td>}
-              <td style={{ textAlign: 'right' }}><div className="row" style={{ gap: 4, justifyContent: 'flex-end' }}>
+              <td style={{ textAlign: 'right' }}>{single ? <span className="num">{l.price != null ? eur2(l.price) : <span className="muted">—</span>}</span> : <><div className="row" style={{ gap: 4, justifyContent: 'flex-end' }}>
                 <input className="input" inputMode="decimal" style={{ width: 110, height: 34, textAlign: 'right', borderColor: l.over ? 'var(--bad)' : undefined }} aria-label={`Precio de ${l.label}`} placeholder={l.max != null ? String(Math.round(l.max * 0.9 * 100) / 100).replace('.', ',') : '0,00'} value={draft[l.id] ?? ''} onChange={(e) => set(l.id, e.target.value)} /><span className="small">€</span></div>
-                {l.over && <div className="xs" style={{ color: 'var(--bad)' }}>Supera el máximo</div>}</td>
+                {l.over && <div className="xs" style={{ color: 'var(--bad)' }}>Supera el máximo</div>}</>}</td>
               {anyQty && <td className="num" style={{ textAlign: 'right' }}>{l.subtotal != null ? eur2(l.subtotal) : <span className="muted">—</span>}</td>}
               <td>{extra.some((x) => x.id === l.id) && <button className="btn btn-ghost btn-sm btn-icon" aria-label="Quitar concepto" onClick={() => save((x) => { x.extraUnits = (x.extraUnits ?? []).filter((y) => y.id !== l.id); const d = { ...(x.unitDraft ?? {}) }; delete d[l.id]; x.unitDraft = d; })}><LuTrash2 /></button>}</td>
             </tr>
           ))}</tbody>
         </table>
       </div>
-      <div className="row-wrap mt-8" style={{ gap: 6 }}>
+      {!single && <div className="row-wrap mt-8" style={{ gap: 6 }}>
         <input className="input" style={{ maxWidth: 280, height: 34 }} placeholder="¿Falta un concepto? Escríbelo aquí" value={newLabel} onChange={(e) => setNewLabel(e.target.value)} />
         <button className="btn btn-ghost btn-sm" disabled={!newLabel.trim()} onClick={() => { save((x) => { x.extraUnits = [...(x.extraUnits ?? []), { id: uid('cu'), label: newLabel.trim(), unit: '' }]; }); setNewLabel(''); }}><LuPlus /> Añadir concepto</button>
-      </div>
-      {!allPricedQty && <div className="row-wrap mt-12" style={{ gap: 8, alignItems: 'center' }}>
+      </div>}
+      {!single && !allPricedQty && <div className="row-wrap mt-12" style={{ gap: 8, alignItems: 'center' }}>
         <span className="small">Importe total del contrato, si el modelo de oferta lo pide:</span>
         <div className="pr-money"><input className="input" inputMode="decimal" placeholder={rule.budget ? `máx. ${rule.budget.toLocaleString('es-ES')}` : 'opcional'} value={totalTxt} onChange={(e) => setTotalTxt(e.target.value)} aria-label="Importe total sin IVA" /><span>€ sin IVA</span></div>
       </div>}
       {ch && <div className="pr-sum mt-12">
         <div><span>{ch.total ? 'Total sin IVA' : 'Total'}</span><strong className="num">{ch.total ? eur2(ch.total) : 'solo precios por concepto'}</strong></div>
-        <div><span>Rebaja {ch.total && rule.budget ? 'sobre el presupuesto' : 'media sobre los máximos'}</span><strong className="num">{pct1(ch.baja)}</strong></div>
+        <div><span>Rebaja {single ? 'única sobre los máximos' : ch.total && rule.budget ? 'sobre el presupuesto' : 'media sobre los máximos'}</span><strong className="num">{pct1(ch.baja)}</strong></div>
         {ch.points != null && <div className="tot"><span>Puntos del precio (estimados)</span><strong className="num">{pts(ch.points)} de {pts(rule.points)}</strong></div>}
       </div>}
       {over.length > 0 && <div className="callout bad small mt-8"><LuTriangleAlert /><div>{over.map((l) => l.label).join(', ')} {over.length === 1 ? 'supera' : 'superan'} el precio máximo del pliego. Bájalo para poder presentar la oferta.</div></div>}
-      <button className="btn btn-primary mt-12" disabled={!ch || over.length > 0} onClick={use}>Usar estos precios</button>
+      <button className="btn btn-primary mt-12" disabled={!ch || over.length > 0} onClick={use}>{single ? 'Usar esta baja' : 'Usar estos precios'}</button>
     </div>
   );
 }
