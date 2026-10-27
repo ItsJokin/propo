@@ -325,7 +325,7 @@ def escenas():
     E["cta_suscribe"] = f'''<div class="fondo"></div><div class="rayos"></div>
       <div class="pos" style="left:50%;top:40%"><div class="boton"><span class="b1">SUSCRIBIRSE</span><span class="b2">SUSCRITO ✔</span></div></div>
       <div class="raton">{cursor(90)}</div>
-      {txt(kt("Próximo jueves:", "l", 2.4), 50, 66, 80)}{txt(kt("el día que Coca-Cola *cambió su fórmula*", "xl", 2.9), 50, 80, 95)}'''
+      {txt(kt("En el próximo vídeo:", "l", 2.4), 50, 66, 80)}{txt(kt("el día que Coca-Cola *cambió su fórmula*", "xl", 2.9), 50, 80, 95)}'''
     return E
 
 def envoltorio(tipo, px=420):

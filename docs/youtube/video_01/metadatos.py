@@ -33,7 +33,7 @@ Algunas partes de la historia (como que Dalí lo resolvió en menos de una hora 
 🤖 Guion elaborado con asistencia de IA y revisado por una persona. Narración con voz sintética de ElevenLabs.
 🎨 Ilustraciones 3D: Fluent Emoji © Microsoft (licencia MIT). Música y efectos: creación propia.
 
-Código de Barras: la historia que no conoces de lo que tienes en casa. Un jueves, una marca.
+Código de Barras: la historia que no conoces de lo que tienes en casa. Nuevas historias cada semana.
 💬 ¿Qué marca quieres que investiguemos? Déjala en los comentarios.
 
 #ChupaChups #HistoriaDeMarcas #Dalí
@@ -50,7 +50,7 @@ chupa chups, historia de chupa chups, dalí logotipo, salvador dalí chupa chups
 - **Idioma del vídeo y de los subtítulos:** Español (España). Sube `subtitulos_es.srt` en Subtítulos.
 - **Pantalla final (últimos 15-20 s):** botón de suscripción + "Vídeo más reciente".
 - **Lista de reproducción:** "Hecho en España".
-- **Programar:** jueves 5 de noviembre de 2026, 18:00 (hora peninsular).
+- **Programar:** a las 18:00 (hora peninsular), según el calendario de 3 vídeos por semana (lunes, miércoles y viernes).
 - **Comentario fijado:** "¿Qué marca investigamos el mes que viene? Las 3 más votadas entran en la encuesta 👇"
 
 ## Revisión humana antes de publicar (5 minutos)

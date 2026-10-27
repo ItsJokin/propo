@@ -91,7 +91,7 @@ SEGMENTOS = [
         "Detrás hay un empresario de Barcelona, un pintor surrealista y una pregunta sobre dedos pegajosos.",
         "Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.",
         "Si quieres que investiguemos otra marca, déjala en los comentarios: cada mes elegimos una de las más votadas.",
-        "Y si te ha gustado, suscríbete. El próximo jueves: el día que Coca-Cola cambió su fórmula… y tuvo que pedir perdón.",
+        "Y si te ha gustado, suscríbete. En el próximo vídeo: el día que Coca-Cola cambió su fórmula… y tuvo que pedir perdón.",
     ], [("resumen_final", 0, 0), ("marca_canal", 2, 0), ("cta_comentarios", 3, 0), ("cta_suscribe", 4, 0)]),
 ]
 
