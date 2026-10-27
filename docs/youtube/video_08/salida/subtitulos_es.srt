@@ -1,240 +1,240 @@
 1
-00:00:00,500 --> 00:00:02,834
+00:00:00,500 --> 00:00:03,389
 Mario, Zelda, Pokémon, la Switch.
 
 2
-00:00:03,174 --> 00:00:07,446
+00:00:03,729 --> 00:00:07,684
 Nintendo es probablemente la empresa de videojuegos más famosa del mundo.
 
 3
-00:00:07,786 --> 00:00:12,562
+00:00:08,024 --> 00:00:12,618
 Pero cuando nació, no existían los videojuegos. Ni la televisión. Ni siquiera la
 
 4
-00:00:12,562 --> 00:00:14,949
+00:00:12,618 --> 00:00:14,916
 electricidad en la mayoría de las casas.
 
 5
-00:00:15,289 --> 00:00:18,250
+00:00:15,256 --> 00:00:18,536
 Nintendo tiene más de cien años de historia antes de Mario.
 
 6
-00:00:18,590 --> 00:00:22,978
+00:00:18,876 --> 00:00:23,727
 Y en ese siglo vendió cartas, montó una empresa de taxis y llegó a comercializar
 
 7
-00:00:22,978 --> 00:00:23,965
+00:00:23,727 --> 00:00:24,818
 arroz instantáneo.
 
 8
-00:00:25,255 --> 00:00:29,644
+00:00:26,108 --> 00:00:30,730
 Kioto, Japón. Veintitrés de septiembre de mil ochocientos ochenta y nueve.
 
 9
-00:00:29,984 --> 00:00:34,600
+00:00:31,070 --> 00:00:35,605
 Un artesano llamado Fusajiro Yamauchi abre un pequeño negocio para fabricar
 
 10
-00:00:34,600 --> 00:00:38,784
+00:00:35,605 --> 00:00:39,717
 hanafuda: unas cartas japonesas tradicionales, decoradas con flores.
 
 11
-00:00:39,124 --> 00:00:43,596
+00:00:40,057 --> 00:00:44,438
 El nombre de la empresa se suele traducir como algo parecido a «deja la suerte en
 
 12
-00:00:43,596 --> 00:00:44,535
+00:00:44,438 --> 00:00:45,358
 manos del cielo».
 
 13
-00:00:44,875 --> 00:00:48,021
+00:00:45,698 --> 00:00:48,631
 Aunque el significado exacto nunca se ha aclarado del todo.
 
 14
-00:00:48,361 --> 00:00:52,982
+00:00:48,971 --> 00:00:53,674
 Las cartas de Nintendo se hicieron populares, y durante décadas ese fue su negocio.
 
 15
-00:00:54,272 --> 00:00:59,224
+00:00:54,964 --> 00:00:59,372
 En mil novecientos cuarenta y nueve, el presidente de la empresa sufre un derrame
 
 16
-00:00:59,224 --> 00:00:59,775
+00:00:59,372 --> 00:00:59,862
 cerebral.
 
 17
-00:01:00,115 --> 00:01:04,720
+00:01:00,202 --> 00:01:04,906
 Y llama a su nieto, Hiroshi Yamauchi, para que deje sus estudios de Derecho y se
 
 18
-00:01:04,720 --> 00:01:05,641
+00:01:04,906 --> 00:01:05,846
 ponga al frente.
 
 19
-00:01:05,981 --> 00:01:07,490
+00:01:06,186 --> 00:01:07,648
 Tenía veintidós años.
 
 20
-00:01:07,830 --> 00:01:12,552
+00:01:07,988 --> 00:01:12,808
 Unos años después, Yamauchi visita en Estados Unidos la sede del mayor fabricante de
 
 21
-00:01:12,552 --> 00:01:13,508
+00:01:12,808 --> 00:01:13,783
 naipes del mundo.
 
 22
-00:01:13,848 --> 00:01:17,354
+00:01:14,123 --> 00:01:17,341
 Y se lleva una sorpresa: era una oficina modesta.
 
 23
-00:01:17,694 --> 00:01:22,383
+00:01:17,681 --> 00:01:22,521
 Si el líder mundial de las cartas era así de pequeño, Nintendo nunca llegaría lejos
 
 24
-00:01:22,383 --> 00:01:23,627
+00:01:22,521 --> 00:01:23,805
 vendiendo solo cartas.
 
 25
-00:01:24,917 --> 00:01:27,947
+00:01:25,095 --> 00:01:28,291
 Así que Nintendo empezó a probar suerte en otros negocios.
 
 26
-00:01:28,287 --> 00:01:29,924
+00:01:28,631 --> 00:01:30,150
 Tuvo una empresa de taxis.
 
 27
-00:01:30,264 --> 00:01:31,785
+00:01:30,490 --> 00:01:32,062
 Vendió arroz instantáneo.
 
 28
-00:01:32,125 --> 00:01:34,447
+00:01:32,402 --> 00:01:34,752
 La mayoría de estos experimentos fracasaron.
 
 29
-00:01:34,787 --> 00:01:37,643
+00:01:35,092 --> 00:01:37,914
 Y la empresa llegó a estar en una situación muy delicada.
 
 30
-00:01:37,983 --> 00:01:42,487
+00:01:38,254 --> 00:01:43,313
 Pero entre tanto intento fallido había una idea que sí funcionaba: los juguetes.
 
 31
-00:01:43,777 --> 00:01:48,431
+00:01:44,603 --> 00:01:49,143
 La historia cuenta que Yamauchi vio a un joven empleado de mantenimiento jugando con
 
 32
-00:01:48,431 --> 00:01:51,312
+00:01:49,143 --> 00:01:51,954
 un brazo extensible que se había fabricado él mismo.
 
 33
-00:01:51,652 --> 00:01:53,057
+00:01:52,294 --> 00:01:54,054
 Se llamaba Gunpei Yokoi.
 
 34
-00:01:53,397 --> 00:01:57,491
+00:01:54,394 --> 00:01:59,320
 Yamauchi le pidió que lo convirtiera en un producto. Se llamó Ultra Hand, y se
 
 35
-00:01:57,491 --> 00:01:58,331
+00:01:59,320 --> 00:02:00,331
 vendió muy bien.
 
 36
-00:01:58,671 --> 00:02:03,651
+00:02:00,671 --> 00:02:05,847
 Yokoi pasó de mantenimiento a crear juguetes. Y más adelante inventaría las Game and
 
 37
-00:02:03,651 --> 00:02:04,836
+00:02:05,847 --> 00:02:07,079
 Watch y la Game Boy.
 
 38
-00:02:05,176 --> 00:02:08,891
+00:02:07,419 --> 00:02:10,986
 Nintendo había encontrado su camino: el entretenimiento.
 
 39
-00:02:10,181 --> 00:02:15,009
+00:02:12,276 --> 00:02:16,676
 En mil novecientos ochenta y uno, Nintendo lanza una máquina recreativa llamada
 
 40
-00:02:15,009 --> 00:02:15,742
+00:02:16,676 --> 00:02:17,344
 Donkey Kong.
 
 41
-00:02:16,082 --> 00:02:20,777
+00:02:17,684 --> 00:02:22,375
 Su protagonista era un hombrecillo con bigote que saltaba barriles. En la versión
 
 42
-00:02:20,777 --> 00:02:23,675
+00:02:22,375 --> 00:02:25,271
 original no se llamaba Mario: le llamaban Jumpman.
 
 43
-00:02:24,015 --> 00:02:28,484
+00:02:25,611 --> 00:02:29,667
 El nombre de Mario se lo pusieron en la filial estadounidense, y viene de Mario
 
 44
-00:02:28,484 --> 00:02:32,444
+00:02:29,667 --> 00:02:33,260
 Segale, el dueño del almacén que Nintendo alquilaba en Estados Unidos.
 
 45
-00:02:32,784 --> 00:02:36,813
+00:02:33,600 --> 00:02:37,313
 El propio creador del personaje, Shigeru Miyamoto, lo ha confirmado.
 
 46
-00:02:37,153 --> 00:02:41,902
+00:02:37,653 --> 00:02:42,256
 Dos años después, en mil novecientos ochenta y tres, Nintendo lanza en Japón su
 
 47
-00:02:41,902 --> 00:02:45,268
+00:02:42,256 --> 00:02:45,519
 consola Famicom, que en Occidente conocimos como la NES.
 
 48
-00:02:45,608 --> 00:02:49,519
+00:02:45,859 --> 00:02:49,609
 La empresa de las cartas de flores acababa de cambiar la historia de los
 
 49
-00:02:49,519 --> 00:02:50,171
+00:02:49,609 --> 00:02:50,235
 videojuegos.
 
 50
-00:02:51,461 --> 00:02:54,015
+00:02:51,525 --> 00:02:54,218
 ¿Qué nos enseña esta historia? Tres cosas.
 
 51
-00:02:54,355 --> 00:02:58,811
+00:02:54,558 --> 00:02:59,309
 Una: a veces hay que ver a tu mayor competidor de cerca para entender que tu mercado
 
 52
-00:02:58,811 --> 00:03:00,137
+00:02:59,309 --> 00:03:00,723
 se te ha quedado pequeño.
 
 53
-00:03:00,477 --> 00:03:05,829
+00:03:01,063 --> 00:03:06,055
 Dos: fracasar en muchas cosas no es un problema, si sigues buscando la que funciona.
 
 54
-00:03:06,169 --> 00:03:11,057
+00:03:06,395 --> 00:03:11,342
 Y tres: las buenas ideas pueden venir de cualquier parte. Incluso de un empleado de
 
 55
-00:03:11,057 --> 00:03:11,881
+00:03:11,342 --> 00:03:12,176
 mantenimiento.
 
 56
-00:03:13,171 --> 00:03:17,852
+00:03:13,466 --> 00:03:19,180
 Cartas de flores, taxis, arroz instantáneo y un fontanero con bigote. Todo eso es
 
 57
-00:03:17,852 --> 00:03:18,372
+00:03:19,180 --> 00:03:19,815
 Nintendo.
 
 58
-00:03:18,712 --> 00:03:22,915
+00:03:20,155 --> 00:03:24,637
 Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
 
 59
-00:03:23,255 --> 00:03:26,657
+00:03:24,977 --> 00:03:28,123
 ¿Cuál fue tu primera consola? Cuéntanoslo en los comentarios.
 
 60
-00:03:26,997 --> 00:03:28,913
+00:03:28,463 --> 00:03:30,228
 Y si te ha gustado, suscríbete.
 

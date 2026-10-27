@@ -1,6 +1,6 @@
 # Zara: cómo una tienda de A Coruña cambió la forma de vestir del mundo: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_07_Zara.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:12 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_07_Zara.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:15 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,12 +14,12 @@ En mayo de 1975, Amancio Ortega abrió la primera tienda Zara en la calle Juan F
 
 ⏱ Capítulos
 00:00 Introducción
-00:19 1. El origen
+00:20 1. El origen
 00:46 2. La velocidad
-01:23 3. La conquista del mundo
-01:50 4. El otro lado
-02:16 5. Lo que nos enseña
-02:35 Final
+01:25 3. La conquista del mundo
+01:53 4. El otro lado
+02:18 5. Lo que nos enseña
+02:38 Final
 
 📚 Fuentes
 - Modaes, «Zara Turns 50: The Story Behind Inditex's Fashion Revolution»: https://www.modaes.com/global/companies/zara-turns-50-the-story-of-the-inditex-revolution

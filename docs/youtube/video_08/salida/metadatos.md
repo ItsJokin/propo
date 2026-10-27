@@ -1,6 +1,6 @@
 # Nintendo: los 100 años antes de Mario: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_08_Nintendo.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:45 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_08_Nintendo.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:47 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,12 +14,12 @@ Nintendo nació en Kioto en 1889 fabricando hanafuda, cartas japonesas decoradas
 
 ⏱ Capítulos
 00:00 Introducción
-00:24 1. Las cartas
-00:53 2. El nieto de veintidós años
+00:25 1. Las cartas
+00:54 2. El nieto de veintidós años
 01:24 3. Probarlo todo
-01:43 4. El brazo extensible
-02:09 5. Llega Mario
-02:50 6. Lo que nos enseña
+01:44 4. El brazo extensible
+02:11 5. Llega Mario
+02:51 6. Lo que nos enseña
 03:12 Final
 
 📚 Fuentes

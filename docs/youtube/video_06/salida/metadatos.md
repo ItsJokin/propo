@@ -1,6 +1,6 @@
 # Nokia: de dominar el mundo a desaparecer de tu bolsillo: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_06_Nokia.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:41 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_06_Nokia.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:47 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -15,12 +15,12 @@ Nokia empezó en 1865 como una fábrica de pasta de papel en Finlandia. Un siglo
 ⏱ Capítulos
 00:00 Introducción
 00:23 1. Papel, caucho y cables
-00:53 2. La apuesta por los móviles
-01:22 3. El iPhone
-01:49 4. La plataforma en llamas
-02:17 5. El final de una era
-02:45 6. Lo que nos enseña
-03:06 Final
+00:55 2. La apuesta por los móviles
+01:26 3. El iPhone
+01:53 4. La plataforma en llamas
+02:23 5. El final de una era
+02:52 6. Lo que nos enseña
+03:13 Final
 
 📚 Fuentes
 - Wikipedia, «History of Nokia»: https://en.wikipedia.org/wiki/History_of_Nokia

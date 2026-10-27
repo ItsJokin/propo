@@ -13,6 +13,7 @@ Siempre que se genere o se vuelva a montar un vídeo, se entregan juntos al prop
 - Nunca mencionar ni anunciar el siguiente vídeo dentro de un vídeo. El cierre es: marca del canal → pregunta a los comentarios → "Y si te ha gustado, suscríbete."
 - Cada dato con fuente; lo no confirmado se presenta como "según se cuenta" o "según la propia marca".
 - Sin día fijo de publicación en ningún texto. Ritmo objetivo: 3 vídeos largos por semana + Shorts.
+- Formato largo desde el vídeo 15: 9-12 minutos (unas 1.400-1.800 palabras, 8.500-11.000 caracteres), 8-11 capítulos, giros de tensión para retener. Sin relleno: solo temas que den para 10 minutos. Los vídeos 1-14 son el formato corto anterior.
 
 ## Voz
 - Por defecto, la voz de ElevenLabs del propietario. Él genera la locución completa a partir del guion en un solo texto y envía el MP3, que `voces.py` trocea por frases.
