@@ -1,6 +1,6 @@
 # LEGO: la empresa de juguetes que estuvo a punto de quebrar: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_05_LEGO.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:47 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_05_LEGO.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:52 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,14 +14,14 @@ LEGO nació en 1932 en la carpintería de Ole Kirk Christiansen, en Billund (Din
 
 ⏱ Capítulos
 00:00 Introducción
-00:21 1. El carpintero
-00:45 2. El ladrillo
-01:18 3. Demasiadas cosas
-01:44 4. Al borde del abismo
-02:07 5. Volver al ladrillo
-02:36 6. De ladrillos a películas
-02:54 7. Lo que nos enseña
-03:13 Final
+00:23 1. El carpintero
+00:47 2. El ladrillo
+01:21 3. Demasiadas cosas
+01:48 4. Al borde del abismo
+02:10 5. Volver al ladrillo
+02:39 6. De ladrillos a películas
+02:58 7. Lo que nos enseña
+03:18 Final
 
 📚 Fuentes
 - Entrepreneur, «How Lego Came Back From the Brink of Bankruptcy»: https://www.entrepreneur.com/article/231447
