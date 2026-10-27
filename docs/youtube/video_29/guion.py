@@ -1,0 +1,132 @@
+"""Guion del vídeo 29 de Código de Barras (formato largo): Bimbo."""
+TITULO = "Bimbo: el pan de molde que nació de unos catalanes en México"
+TITULOS_ALT = ["La historia de Bimbo (y por qué se llama así)", "Cómo Bimbo se convirtió en la panificadora más grande del mundo"]
+MARCA = "Bimbo"
+SEGMENTOS = [
+    ("Introducción", [
+        "Un pan blanco, blandito, en rebanadas iguales, que dura días en su bolsa.",
+        "En España, durante décadas, pedir pan de molde era casi lo mismo que pedir Bimbo.",
+        "Pero la marca no nació en España, sino en México. Y la crearon hijos de emigrantes catalanes.",
+        "Su nombre salió de una mezcla de un juego de azar y un personaje de dibujos animados.",
+        "Y la marca española y la mexicana estuvieron separadas durante décadas, hasta que volvieron a unirse.",
+        "Esta es la historia de Bimbo. Hoy, según la propia empresa, la panificadora más grande del mundo.",
+    ], [("bi_pan", 0, 0), ("bi_molde", 1, 0), ("bi_mexico", 2, 0), ("bi_nombre", 3, 0), ("bi_separadas", 4, 0), ("bi_historia", 5, 0)]),
+    ("1. Una pastelería en México", [
+        "A principios del siglo veinte, muchos catalanes emigraron a América buscando una vida mejor.",
+        "Uno de ellos, Juan Servitje, llegó a México y acabó montando una pastelería en la capital, llamada El Molino.",
+        "Su hijo, Lorenzo Servitje, creció entre hornos, masas y repartos.",
+        "Cuando su padre murió, Lorenzo, todavía muy joven, tuvo que ponerse al frente del negocio familiar.",
+        "Y empezó a darle vueltas a una idea: el pan que se vendía en México se ponía duro enseguida, y no había casi pan de molde envasado.",
+        "En Estados Unidos, en cambio, el pan de molde en rebanadas ya era habitual.",
+    ], [("cap1", 0, -0.6), ("bi_emigran", 0, 1.0), ("bi_molino", 1, 0), ("bi_lorenzo", 2, 0), ("bi_frente", 3, 0), ("bi_duro", 4, 0), ("bi_eeuu", 5, 0)]),
+    ("2. El mejor invento desde…", [
+        "Antes de seguir, una pregunta: ¿quién inventó el pan de molde en rebanadas?",
+        "El pan de molde existía desde hacía mucho, pero cortarlo en rebanadas iguales era otra cosa.",
+        "En mil novecientos veintiocho, en un pequeño pueblo de Misuri, en Estados Unidos, una panadería empezó a vender pan cortado con una máquina inventada por un joyero llamado Otto Rohwedder.",
+        "La máquina cortaba la barra entera en rebanadas idénticas y después la envolvía para que no se secara.",
+        "Al principio mucha gente desconfiaba: pensaban que el pan cortado se pondría duro enseguida.",
+        "Pero tuvo tanto éxito que, en pocos años, la mayor parte del pan que se vendía en Estados Unidos ya venía en rebanadas.",
+        "De ahí viene una expresión muy popular en inglés para decir que algo es fantástico: es lo mejor desde el pan de molde en rebanadas.",
+        "Y esa era la idea que Lorenzo Servitje quería llevar a México.",
+    ], [("cap2", 0, -0.6), ("bi_quien", 0, 1.0), ("bi_rebanadas", 1, 0), ("bi_rohwedder", 2, 0), ("bi_maquina", 3, 0), ("bi_desconfian", 4, 0), ("bi_exito_us", 5, 0), ("bi_expresion", 6, 0), ("bi_llevar", 7, 0)]),
+    ("3. Seis socios", [
+        "Lorenzo reunió a un grupo de socios: su hermano Roberto, y amigos y familiares, varios de ellos también de origen catalán, como Jaime Jorba o Jaime Sendra.",
+        "El dos de diciembre de mil novecientos cuarenta y cinco, en Ciudad de México, nació su empresa de panificación.",
+        "Tenían un solo camión de reparto, unas pocas decenas de trabajadores y una fábrica modesta.",
+        "Y una idea clara: un pan de calidad, envasado, que se mantuviera fresco varios días y llegara a todas las tiendas.",
+        "Los primeros productos fueron el pan de molde blanco, el pan negro y el pan tostado.",
+    ], [("cap3", 0, -0.6), ("bi_socios", 0, 1.0), ("bi_1945", 1, 0), ("bi_camion", 2, 0), ("bi_idea", 3, 0), ("bi_productos", 4, 0)]),
+    ("4. Bingo más Bambi", [
+        "Faltaba el nombre.",
+        "Se barajaron opciones como Pan Rex, Pan Lirio, Pan Nieve o Pan Azteca.",
+        "Pero ninguna convencía del todo.",
+        "Según la historia más repetida, el nombre final salió de mezclar dos palabras muy populares entonces: Bingo, el juego, y Bambi, el cervatillo de la película de dibujos animados que se había estrenado pocos años antes.",
+        "De ahí salió Bimbo: corto, sonoro, fácil de recordar y fácil de pronunciar.",
+        "Y además sonaba simpático, infantil, perfecto para un pan pensado para toda la familia.",
+    ], [("cap4", 0, -0.6), ("bi_faltaba", 0, 1.0), ("bi_opciones", 1, 0), ("bi_noconvence", 2, 0), ("bi_bingo_bambi", 3, 0), ("bi_bimbo", 4, 0), ("bi_simpatico", 5, 0)]),
+    ("5. El osito", [
+        "La marca necesitaba también una imagen.",
+        "Y la encontraron en una felicitación de Navidad: el dibujo de un pequeño oso, con gorro de cocinero y delantal.",
+        "Las fuentes no coinciden en quién dibujó aquella felicitación. Pero el osito se convirtió en la imagen de la marca.",
+        "Representaba lo que querían transmitir: un pan blandito, tierno, para los niños.",
+        "Con los años, el osito ha cambiado de estilo muchas veces, pero sigue ahí, en millones de bolsas.",
+    ], [("cap5", 0, -0.6), ("bi_imagen", 0, 1.0), ("bi_felicitacion", 1, 0), ("bi_autor", 2, 0), ("bi_tierno", 3, 0), ("bi_sigue", 4, 0)]),
+    ("6. La conquista de México", [
+        "La clave del éxito de Bimbo no fue solo el pan. Fue la distribución.",
+        "La empresa organizó una red de repartidores que visitaban cada día miles de tiendas pequeñas, las misceláneas de barrio.",
+        "Retiraban el pan que no se había vendido y dejaban pan fresco. Así, el cliente siempre encontraba un producto en buen estado.",
+        "Ese sistema de reparto directo se convirtió en una de sus grandes ventajas frente a la competencia.",
+        "Bimbo fue añadiendo pastelitos, magdalenas y bollería. Y empezó a crecer por todo México.",
+    ], [("cap6", 0, -0.6), ("bi_distribucion", 0, 1.0), ("bi_repartidores", 1, 0), ("bi_retiran", 2, 0), ("bi_ventaja", 3, 0), ("bi_bolleria", 4, 0)]),
+    ("7. El Bimbo español", [
+        "Y aquí la historia da un salto al otro lado del Atlántico.",
+        "Jaime Jorba, uno de los socios fundadores, había trabajado durante años como responsable de ventas de la empresa en México.",
+        "A principios de los años sesenta volvió a España. Y con dos socios decidió fabricar allí el mismo tipo de pan, con el mismo nombre.",
+        "La primera fábrica se instaló en Granollers, cerca de Barcelona, y empezó a producir a mediados de los sesenta.",
+        "En una España donde el pan se compraba cada día en la panadería, la idea de un pan envasado que duraba varios días era toda una novedad.",
+        "Y para muchas familias se convirtió en el pan de los bocadillos del colegio y de las tostadas del desayuno.",
+        "Pero ojo: aquella empresa española era independiente de la mexicana. Compartían nombre y origen, pero no eran la misma compañía.",
+    ], [("cap7", 0, -0.6), ("bi_atlantico", 0, 1.0), ("bi_jorba", 1, 0), ("bi_vuelve", 2, 0), ("bi_granollers", 3, 0), ("bi_novedad", 4, 0), ("bi_bocadillos", 5, 0), ("bi_independiente", 6, 0)]),
+    ("8. Caminos separados", [
+        "Durante décadas, las dos empresas siguieron caminos distintos.",
+        "La española pasó por varios dueños. Primero se asoció con una gran panificadora estadounidense, que acabó haciéndose con ella.",
+        "Más tarde, la filial pasó a manos del grupo estadounidense Sara Lee.",
+        "Mientras tanto, la mexicana se convirtió en un gigante en toda Latinoamérica.",
+        "Y en dos mil ocho dio un gran salto: compró uno de los principales negocios de panificación de Estados Unidos.",
+        "La hija mexicana del pan de molde ya era más grande que muchas de las empresas que la habían inspirado.",
+    ], [("cap8", 0, -0.6), ("bi_caminos", 0, 1.0), ("bi_duenos", 1, 0), ("bi_saralee", 2, 0), ("bi_latam", 3, 0), ("bi_2008", 4, 0), ("bi_hija", 5, 0)]),
+    ("9. La guerra de la merienda", [
+        "Para entender el final de esta historia hay que hablar de otro gran nombre de la bollería española.",
+        "A principios de los años sesenta, un empresario catalán, Andreu Costafreda, viajó a Estados Unidos y descubrió los dónuts, aquellos bollos redondos con un agujero en el centro.",
+        "A su vuelta creó en España la empresa Panrico, y empezó a fabricar dónuts envasados, que se vendían en las tiendas de barrio.",
+        "Con los años, Panrico lanzó otros bollos que se convirtieron en clásicos de la merienda infantil.",
+        "Durante décadas, Bimbo y Panrico fueron grandes rivales en los lineales españoles: el pan de molde contra los dónuts, y una competencia feroz en la bollería.",
+        "Panrico vivió después años muy difíciles, con cambios de dueño, deudas y fuertes conflictos laborales.",
+    ], [("cap9", 0, -0.6), ("bi_otro", 0, 1.0), ("bi_costafreda", 1, 0), ("bi_panrico", 2, 0), ("bi_clasicos", 3, 0), ("bi_rivales", 4, 0), ("bi_dificiles", 5, 0)]),
+    ("10. La reunificación", [
+        "Y entonces, el círculo se cerró.",
+        "A principios de la década de dos mil diez, el Grupo Bimbo mexicano compró los negocios de panadería de Sara Lee.",
+        "Entre ellos estaba el Bimbo de España y Portugal.",
+        "Casi cincuenta años después de que Jaime Jorba volviera de México, las dos marcas Bimbo volvían a estar bajo el mismo techo.",
+        "Y la historia tenía un último giro español.",
+        "En dos mil dieciséis, Grupo Bimbo compró también a su gran rival en España: Panrico, la empresa de los famosos dónuts.",
+        "Las dos marcas de la merienda de varias generaciones de españoles acabaron en la misma empresa mexicana.",
+    ], [("cap10", 0, -0.6), ("bi_circulo", 0, 1.0), ("bi_compra_sl", 1, 0), ("bi_iberia", 2, 0), ("bi_techo", 3, 0), ("bi_giro", 4, 0), ("bi_donuts", 5, 0), ("bi_merienda", 6, 0)]),
+    ("11. El gigante del pan", [
+        "Hoy Grupo Bimbo está presente en decenas de países de América, Europa, Asia y África.",
+        "Tiene cientos de fábricas y más de cien mil trabajadores.",
+        "Y, según la propia empresa, es la panificadora más grande del mundo.",
+        "La familia Servitje sigue vinculada a su dirección.",
+        "Lorenzo Servitje murió en dos mil diecisiete, con noventa y ocho años. Había empezado con un solo camión de reparto.",
+    ], [("cap11", 0, -0.6), ("bi_paises", 0, 1.0), ("bi_fabricas", 1, 0), ("bi_mayor", 2, 0), ("bi_familia", 3, 0), ("bi_muere", 4, 0)]),
+    ("12. Lo que nos enseña", [
+        "¿Qué nos enseña esta historia? Tres cosas.",
+        "Una: a veces la oportunidad está en algo tan sencillo como que el pan no se ponga duro.",
+        "Dos: el producto importa, pero la distribución puede importar todavía más. Bimbo ganó México tienda a tienda.",
+        "Y tres: las marcas también emigran y vuelven. Un pan nacido de catalanes en México regresó a España… y acabó reuniéndose con su hermano.",
+    ], [("cap12", 0, -0.6), ("leccion1", 1, 0), ("leccion2", 2, 0), ("leccion3", 3, 0)]),
+    ("Final", [
+        "Unos emigrantes catalanes, una pastelería en México, un juego de bingo, un cervatillo de película y un osito con gorro de cocinero.",
+        "La próxima vez que hagas una tostada, ya sabes de dónde viene.",
+        "Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.",
+        "¿Cuál era tu bocadillo del colegio? Cuéntanoslo en los comentarios.",
+        "Y si te ha gustado, suscríbete.",
+    ], [("bi_final", 0, 0), ("bi_tostada", 1, 0), ("marca_canal", 2, 0), ("cta_comentarios", 3, 0), ("cta_suscribe", 4, 0)]),
+]
+FUENTES = [
+    ("Grupo Bimbo, «Historia» (web oficial)", "https://grupobimbo.com/en/about-us/history"),
+    ("Grupo Bimbo, «Jaime Jorba» (fundadores)", "https://grupobimbo.com/en/about-us/founders/jaime-jorba"),
+    ("Wikipedia, «Grupo Bimbo»", "https://en.wikipedia.org/wiki/Grupo_Bimbo"),
+    ("Wikipedia, «Lorenzo Servitje»", "https://en.wikipedia.org/wiki/Lorenzo_Servitje"),
+    ("El CEO, «La historia de Bimbo en España»", "https://elceo.com/negocios/la-historia-de-bimbo-en-espana/"),
+    ("Vozpópuli, «Bimbo y Panrico: así nació el dónut español»", "https://www.vozpopuli.com/economia/empresas/bimbo-y-panrico-asi-nacio-el-donut-espanol.html"),
+    ("Forbes Colombia, «La historia de Bimbo, el imperio mexicano que nació de la emigración española»", "https://forbes.co/empresas/la-historia-de-bimbo-el-imperio-mexicano-que-nacio-de-la-emigracion-espanola"),
+]
+DESCRIPCION = ("Bimbo nació el 2 de diciembre de 1945 en Ciudad de México, fundada por Lorenzo Servitje y otros socios, varios de origen catalán. Su nombre "
+               "mezcla «Bingo» y «Bambi». Uno de los fundadores, Jaime Jorba, volvió a España y creó el Bimbo español en Granollers. Durante décadas fueron "
+               "empresas distintas… hasta que volvieron a unirse. Esta es la historia de Bimbo.")
+ETIQUETAS = "bimbo, historia de bimbo, pan bimbo, grupo bimbo, lorenzo servitje, jaime jorba, osito bimbo, pan de molde, granollers, historia de marcas, código de barras"
+HASHTAGS = "#Bimbo #HistoriaDeMarcas #PanDeMolde"
+LISTA = "Marcas de Latinoamérica"
+NOTA = "Nota: el origen del nombre (Bingo + Bambi) es la versión más repetida; las fuentes no coinciden en quién dibujó el osito ni en el año exacto de arranque de la fábrica de Granollers (entre 1963 y 1965)."
+PREGUNTA = "¿TU BOCADILLO *DEL COLEGIO*?"
