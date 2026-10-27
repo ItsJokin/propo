@@ -1,0 +1,236 @@
+1
+00:00:00,500 --> 00:00:04,940
+Viernes por la noche. Vas al videoclub, eliges una película y rezas para que no esté
+
+2
+00:00:04,940 --> 00:00:05,469
+alquilada.
+
+3
+00:00:05,809 --> 00:00:09,025
+Durante años, el rey de los videoclubs fue Blockbuster.
+
+4
+00:00:09,365 --> 00:00:13,925
+En el año dos mil, le ofrecieron comprar una pequeña empresa que enviaba DVD por
+
+5
+00:00:13,925 --> 00:00:16,319
+correo. Por cincuenta millones de dólares.
+
+6
+00:00:16,659 --> 00:00:18,726
+Esa empresa se llamaba Netflix.
+
+7
+00:00:19,066 --> 00:00:20,668
+Y Blockbuster dijo que no.
+
+8
+00:00:21,958 --> 00:00:26,532
+Blockbuster abrió su primera tienda en mil novecientos ochenta y cinco, en Dallas,
+
+9
+00:00:26,532 --> 00:00:27,368
+Estados Unidos.
+
+10
+00:00:27,708 --> 00:00:32,236
+Su idea era sencilla: tiendas grandes, luminosas y con miles de películas.
+
+11
+00:00:32,576 --> 00:00:37,253
+Creció a una velocidad enorme, y llegó a tener unas nueve mil tiendas en todo el
+
+12
+00:00:37,253 --> 00:00:37,603
+mundo.
+
+13
+00:00:37,943 --> 00:00:42,686
+Pero tenía un negocio escondido que los clientes odiaban: los recargos por devolver
+
+14
+00:00:42,686 --> 00:00:43,029
+tarde.
+
+15
+00:00:43,369 --> 00:00:47,803
+Según algunas estimaciones, llegaron a suponer una parte muy importante de sus
+
+16
+00:00:47,803 --> 00:00:48,314
+ingresos.
+
+17
+00:00:49,604 --> 00:00:54,535
+En mil novecientos noventa y siete, Reed Hastings y Marc Randolph fundan Netflix en
+
+18
+00:00:54,535 --> 00:00:55,189
+California.
+
+19
+00:00:55,529 --> 00:01:00,007
+Según la versión que Hastings ha contado muchas veces, la idea surgió tras pagar una
+
+20
+00:01:00,007 --> 00:01:03,098
+multa de cuarenta dólares por devolver tarde una película.
+
+21
+00:01:03,438 --> 00:01:08,100
+Randolph, el otro fundador, ha dicho que la historia real fue bastante menos
+
+22
+00:01:08,100 --> 00:01:09,081
+cinematográfica.
+
+23
+00:01:09,421 --> 00:01:14,818
+Sea como sea, el modelo era nuevo: alquilar DVD por internet y recibirlos en casa
+
+24
+00:01:14,818 --> 00:01:15,551
+por correo.
+
+25
+00:01:15,891 --> 00:01:19,467
+Y después, una suscripción mensual. Sin recargos por retraso.
+
+26
+00:01:20,757 --> 00:01:23,148
+En el año dos mil, Netflix perdía dinero.
+
+27
+00:01:23,488 --> 00:01:28,201
+Sus fundadores viajaron a Dallas para reunirse con el director de Blockbuster, John
+
+28
+00:01:28,201 --> 00:01:28,655
+Antioco.
+
+29
+00:01:28,995 --> 00:01:33,392
+La propuesta: Blockbuster compraba Netflix por cincuenta millones de dólares, y
+
+30
+00:01:33,392 --> 00:01:36,007
+Netflix se encargaba de su negocio en internet.
+
+31
+00:01:36,347 --> 00:01:40,364
+Antioco no se interesó. Para él, Netflix era un negocio de nicho.
+
+32
+00:01:40,704 --> 00:01:45,233
+Según contó años después el entonces director financiero de Netflix, en Blockbuster
+
+33
+00:01:45,233 --> 00:01:46,869
+casi se les rieron en la cara.
+
+34
+00:01:48,159 --> 00:01:51,131
+Pero aquí la historia tiene un giro que casi nadie cuenta.
+
+35
+00:01:51,471 --> 00:01:54,095
+Unos años después, Blockbuster sí reaccionó.
+
+36
+00:01:54,435 --> 00:01:59,488
+Lanzó su propio alquiler por internet, eliminó los recargos por retraso y permitía
+
+37
+00:01:59,488 --> 00:02:01,459
+devolver los DVD en sus tiendas.
+
+38
+00:02:01,799 --> 00:02:05,944
+Y empezó a ganar clientes muy deprisa. Netflix lo pasó realmente mal.
+
+39
+00:02:06,284 --> 00:02:10,522
+Pero en Blockbuster hubo choques internos por el coste de aquella estrategia, y
+
+40
+00:02:10,522 --> 00:02:12,507
+Antioco acabó saliendo de la empresa.
+
+41
+00:02:12,847 --> 00:02:15,622
+Su sucesor volvió a centrarse en las tiendas.
+
+42
+00:02:16,912 --> 00:02:21,190
+Mientras tanto, en dos mil siete, Netflix lanzó algo que lo cambió todo: ver
+
+43
+00:02:21,190 --> 00:02:23,216
+películas directamente por internet.
+
+44
+00:02:23,556 --> 00:02:27,271
+Ya no hacía falta ir a ninguna tienda. Ni esperar al cartero.
+
+45
+00:02:27,611 --> 00:02:30,281
+En dos mil diez, Blockbuster se declaró en quiebra.
+
+46
+00:02:30,621 --> 00:02:33,988
+Hoy Netflix tiene cientos de millones de suscriptores en todo el mundo.
+
+47
+00:02:34,328 --> 00:02:38,934
+¿Y Blockbuster? Queda una sola tienda, en la ciudad de Bend, en Oregón, convertida
+
+48
+00:02:38,934 --> 00:02:39,889
+casi en un museo.
+
+49
+00:02:41,179 --> 00:02:43,803
+¿Qué nos enseña esta historia? Tres cosas.
+
+50
+00:02:44,143 --> 00:02:48,481
+Una: si tu negocio depende de algo que tus clientes odian, alguien acabará
+
+51
+00:02:48,481 --> 00:02:50,064
+ofreciéndoles lo contrario.
+
+52
+00:02:50,404 --> 00:02:54,259
+Dos: lo que hoy parece un nicho puede ser el mercado entero de mañana.
+
+53
+00:02:54,599 --> 00:02:59,287
+Y tres: Blockbuster no perdió por no reaccionar. Perdió porque, cuando reaccionó, no
+
+54
+00:02:59,287 --> 00:03:01,240
+se atrevió a llegar hasta el final.
+
+55
+00:03:02,530 --> 00:03:07,082
+Cincuenta millones de dólares. Probablemente, la oportunidad perdida más famosa de
+
+56
+00:03:07,082 --> 00:03:08,637
+la historia de los negocios.
+
+57
+00:03:08,977 --> 00:03:13,110
+Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
+
+58
+00:03:13,450 --> 00:03:16,573
+¿Llegaste a ir a un videoclub? Cuéntanoslo en los comentarios.
+
+59
+00:03:16,913 --> 00:03:18,852
+Y si te ha gustado, suscríbete.
+

@@ -64,4 +64,4 @@ def miniatura():
       <div style="position:absolute;left:40px;top:130px;transform:rotate(-12deg)">{carta(230, ROJO)}</div>
       <div style="position:absolute;left:220px;top:160px;transform:rotate(8deg)">{carta(230, "#c2185b")}</div>
       <div style="position:absolute;left:140px;top:470px">{vicon("video-game", 170)}</div>
-      <div class="big" style="top:100px"><div class="s">NINTENDO ANTES DE MARIO</div><div class="q" style="font-size:170px;margin-top:22px">VENDÍA CARTAS</div><div class="y">100 AÑOS DE HISTORIA</div></div>'''
+      <div class="big" style="top:100px"><div class="s">NINTENDO ANTES DE MARIO</div><div class="q" style="font-size:135px;margin-top:22px">VENDÍA CARTAS</div><div class="y">100 AÑOS DE HISTORIA</div></div>'''
