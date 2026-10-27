@@ -1,6 +1,6 @@
 # Mercadona: de unas carnicerías de Valencia a gigante de España: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_16_Mercadona.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 09:28 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_16_Mercadona.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 09:22 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,19 +14,19 @@ Mercadona nació en 1977 de unas carnicerías familiares en Valencia. En 1981, J
 
 ⏱ Capítulos
 00:00 Introducción
-00:32 1. Las carnicerías
-01:13 2. El hijo que compró la empresa
-01:49 3. Un código de barras
-02:34 4. Adiós a las ofertas
-03:31 5. El Jefe
-04:13 6. Hacendado
-05:05 7. La guerra de las marcas
-06:00 8. ¿Quién fabrica Hacendado?
-06:43 9. Sin anuncios
-07:11 10. El gigante de hoy
-07:40 11. Más allá del supermercado
-08:27 12. Lo que nos enseña
-08:52 Final
+00:34 1. Las carnicerías
+01:14 2. El hijo que compró la empresa
+01:50 3. Un código de barras
+02:33 4. Adiós a las ofertas
+03:32 5. El Jefe
+04:14 6. Hacendado
+05:06 7. La guerra de las marcas
+05:58 8. ¿Quién fabrica Hacendado?
+06:41 9. Sin anuncios
+07:07 10. El gigante de hoy
+07:34 11. Más allá del supermercado
+08:21 12. Lo que nos enseña
+08:46 Final
 
 📚 Fuentes
 - Wikipedia, «Mercadona»: https://en.wikipedia.org/wiki/Mercadona
