@@ -1,564 +1,564 @@
 1
-00:00:00,500 --> 00:00:03,437
+00:00:00,500 --> 00:00:03,636
 Es probablemente la marca más conocida del planeta.
 
 2
-00:00:03,777 --> 00:00:07,851
+00:00:03,976 --> 00:00:08,015
 Se vende en más de doscientos países, y su nombre se entiende en casi cualquier
 
 3
-00:00:07,851 --> 00:00:08,212
+00:00:08,015 --> 00:00:08,373
 idioma.
 
 4
-00:00:08,552 --> 00:00:12,662
+00:00:08,713 --> 00:00:12,854
 Pero el primer año, Coca-Cola vendía, de media, unos nueve vasos al día.
 
 5
-00:00:13,002 --> 00:00:17,170
+00:00:13,194 --> 00:00:17,544
 Nació en una farmacia. La inventó un farmacéutico que buscaba un remedio.
 
 6
-00:00:17,510 --> 00:00:22,035
+00:00:17,884 --> 00:00:22,341
 Su creador vendió la fórmula por muy poco dinero y murió sin imaginar lo que había
 
 7
-00:00:22,035 --> 00:00:22,421
+00:00:22,341 --> 00:00:22,721
 creado.
 
 8
-00:00:22,761 --> 00:00:27,096
+00:00:23,061 --> 00:00:27,634
 Y por el camino hubo una botella diseñada por error, un acuerdo de un dólar que
 
 9
-00:00:27,096 --> 00:00:30,168
+00:00:27,634 --> 00:00:30,875
 valió una fortuna, y hasta un Papá Noel vestido de rojo.
 
 10
-00:00:30,508 --> 00:00:34,734
+00:00:31,215 --> 00:00:34,875
 Esta es la historia completa de cómo un jarabe de Atlanta conquistó el mundo.
 
 11
-00:00:36,024 --> 00:00:38,822
+00:00:36,165 --> 00:00:39,155
 Para entender Coca-Cola hay que conocer a John Pemberton.
 
 12
-00:00:39,162 --> 00:00:44,264
+00:00:39,495 --> 00:00:44,353
 Era farmacéutico en el sur de Estados Unidos, y en mil ochocientos sesenta y cinco,
 
 13
-00:00:44,264 --> 00:00:48,566
+00:00:44,353 --> 00:00:48,450
 al final de la Guerra Civil estadounidense, resultó gravemente herido.
 
 14
-00:00:48,906 --> 00:00:52,784
+00:00:48,790 --> 00:00:52,455
 Como tantos heridos de aquella época, le trataron el dolor con morfina.
 
 15
-00:00:53,124 --> 00:00:57,785
+00:00:52,795 --> 00:00:57,216
 Y, según sus biógrafos, acabó desarrollando una dependencia de la que le costó años
 
 16
-00:00:57,785 --> 00:00:58,627
+00:00:57,216 --> 00:00:58,015
 intentar salir.
 
 17
-00:00:58,967 --> 00:01:04,039
+00:00:58,355 --> 00:01:03,824
 Esa experiencia marcó su trabajo: Pemberton se obsesionó con encontrar tónicos y
 
 18
-00:01:04,039 --> 00:01:04,610
+00:01:03,824 --> 00:01:04,439
 remedios.
 
 19
-00:01:04,950 --> 00:01:09,398
+00:01:04,779 --> 00:01:09,201
 En aquel tiempo no existían los controles que hay hoy sobre los medicamentos.
 
 20
-00:01:09,398 --> 00:01:14,193
+00:01:09,201 --> 00:01:13,968
 Cualquier farmacéutico podía preparar un jarabe y anunciarlo como remedio para casi
 
 21
-00:01:14,193 --> 00:01:14,481
+00:01:13,968 --> 00:01:14,255
 todo.
 
 22
-00:01:15,772 --> 00:01:19,737
+00:01:15,545 --> 00:01:19,593
 A principios de la década de mil ochocientos ochenta, Pemberton se instala en
 
 23
-00:01:19,737 --> 00:01:20,148
+00:01:19,593 --> 00:01:20,014
 Atlanta.
 
 24
-00:01:20,488 --> 00:01:25,060
+00:01:20,354 --> 00:01:24,995
 Allí vende un tónico con vino y extracto de hoja de coca, inspirado en un vino muy
 
 25
-00:01:25,060 --> 00:01:26,119
+00:01:24,995 --> 00:01:26,070
 popular en Francia.
 
 26
-00:01:26,459 --> 00:01:31,196
+00:01:26,410 --> 00:01:30,751
 Lo anunciaba como un remedio para los nervios, el cansancio y el dolor de cabeza.
 
 27
-00:01:31,536 --> 00:01:36,047
+00:01:31,091 --> 00:01:35,566
 Pero en mil ochocientos ochenta y seis, Atlanta aprueba restricciones a la venta de
 
 28
-00:01:36,047 --> 00:01:36,482
+00:01:35,566 --> 00:01:35,997
 alcohol.
 
 29
-00:01:36,822 --> 00:01:39,295
+00:01:36,337 --> 00:01:38,688
 Su tónico con vino tenía los días contados.
 
 30
-00:01:39,635 --> 00:01:44,173
+00:01:39,028 --> 00:01:43,742
 Así que Pemberton se pone a experimentar con una versión sin alcohol: un jarabe
 
 31
-00:01:44,173 --> 00:01:47,274
+00:01:43,742 --> 00:01:46,965
 dulce, con extracto de hoja de coca y de nuez de cola.
 
 32
-00:01:48,564 --> 00:01:53,402
+00:01:48,255 --> 00:01:52,780
 El ocho de mayo de mil ochocientos ochenta y seis, Pemberton lleva una jarra de su
 
 33
-00:01:53,402 --> 00:01:56,529
+00:01:52,780 --> 00:01:55,704
 jarabe a la farmacia Jacobs, en el centro de Atlanta.
 
 34
-00:01:56,869 --> 00:02:01,475
+00:01:56,044 --> 00:02:01,690
 Allí lo mezclan con agua con gas en el surtidor de refrescos, y lo venden por cinco
 
 35
-00:02:01,475 --> 00:02:02,418
+00:02:01,690 --> 00:02:02,847
 centavos el vaso.
 
 36
-00:02:02,758 --> 00:02:07,538
+00:02:03,187 --> 00:02:07,726
 Las farmacias de la época eran un punto de encuentro, y tenían surtidores donde se
 
 37
-00:02:07,538 --> 00:02:08,470
+00:02:07,726 --> 00:02:08,612
 servían bebidas.
 
 38
-00:02:08,810 --> 00:02:13,441
+00:02:08,952 --> 00:02:12,983
 Pocos días después apareció el primer anuncio en un periódico de Atlanta, invitando
 
 39
-00:02:13,441 --> 00:02:14,836
+00:02:12,983 --> 00:02:14,198
 a probar la nueva bebida.
 
 40
-00:02:15,176 --> 00:02:17,138
+00:02:14,538 --> 00:02:16,096
 Pero el éxito no fue inmediato.
 
 41
-00:02:17,478 --> 00:02:22,440
+00:02:16,436 --> 00:02:22,284
 Según la propia compañía, el primer año se vendieron, de media, unos nueve vasos al
 
 42
-00:02:22,440 --> 00:02:22,679
+00:02:22,284 --> 00:02:22,566
 día.
 
 43
-00:02:23,019 --> 00:02:27,581
+00:02:22,906 --> 00:02:27,876
 Nueve. Hoy se sirven miles de millones de bebidas de la compañía cada día en todo el
 
 44
-00:02:27,581 --> 00:02:27,907
+00:02:27,876 --> 00:02:28,231
 mundo.
 
 45
-00:02:29,197 --> 00:02:33,783
+00:02:29,521 --> 00:02:34,124
 El nombre no se le ocurrió a Pemberton, sino a su socio y contable, Frank Robinson.
 
 46
-00:02:34,123 --> 00:02:38,337
+00:02:34,464 --> 00:02:39,981
 Coca, por la hoja de coca. Cola, por la nuez de cola, que aportaba cafeína.
 
 47
-00:02:38,677 --> 00:02:41,545
+00:02:40,321 --> 00:02:43,098
 Robinson pensó que las dos C quedarían bien en los anuncios.
 
 48
-00:02:41,885 --> 00:02:46,344
+00:02:43,438 --> 00:02:48,105
 Y fue él quien escribió el nombre con esa letra cursiva tan característica, un
 
 49
-00:02:46,344 --> 00:02:50,117
+00:02:48,105 --> 00:02:52,054
 estilo de caligrafía muy habitual entre los contables de la época.
 
 50
-00:02:50,457 --> 00:02:54,323
+00:02:52,394 --> 00:02:55,972
 Más de un siglo después, esa letra sigue siendo, en esencia, la misma.
 
 51
-00:02:54,663 --> 00:02:59,145
+00:02:56,312 --> 00:03:01,095
 Y sí: en sus primeros años, la bebida llevaba extracto de hoja de coca. Ese
 
 52
-00:02:59,145 --> 00:03:02,732
+00:03:01,095 --> 00:03:04,921
 ingrediente se fue eliminando a principios del siglo veinte.
 
 53
-00:03:04,022 --> 00:03:06,785
+00:03:06,211 --> 00:03:08,847
 Pemberton estaba enfermo, y necesitaba dinero.
 
 54
-00:03:07,125 --> 00:03:11,789
+00:03:09,187 --> 00:03:13,783
 Así que fue vendiendo participaciones de su invento a distintos socios, a veces de
 
 55
-00:03:11,789 --> 00:03:13,324
+00:03:13,783 --> 00:03:15,296
 forma bastante desordenada.
 
 56
-00:03:13,664 --> 00:03:17,647
+00:03:15,636 --> 00:03:19,286
 Durante un tiempo, varias personas decían tener derechos sobre la fórmula.
 
 57
-00:03:17,987 --> 00:03:22,124
+00:03:19,626 --> 00:03:24,210
 Y aquí aparece el hombre que lo cambiaría todo: Asa Candler, un empresario
 
 58
-00:03:22,124 --> 00:03:23,467
+00:03:24,210 --> 00:03:25,696
 farmacéutico de Atlanta.
 
 59
-00:03:23,807 --> 00:03:28,287
+00:03:26,036 --> 00:03:31,248
 Candler fue comprando las distintas partes hasta hacerse con el control de la
 
 60
-00:03:28,287 --> 00:03:32,709
+00:03:31,248 --> 00:03:36,392
 fórmula y de la marca. Según la cifra más citada, pagó en total unos dos mil
 
 61
-00:03:32,709 --> 00:03:33,872
+00:03:36,392 --> 00:03:37,746
 trescientos dólares.
 
 62
-00:03:34,212 --> 00:03:38,821
+00:03:38,086 --> 00:03:42,820
 John Pemberton murió en agosto de mil ochocientos ochenta y ocho. No llegó a ver el
 
 63
-00:03:38,821 --> 00:03:40,598
+00:03:42,820 --> 00:03:44,645
 éxito de lo que había inventado.
 
 64
-00:03:41,888 --> 00:03:45,290
+00:03:45,935 --> 00:03:50,917
 Candler no era inventor. Era vendedor. Y uno muy bueno.
 
 65
-00:03:45,630 --> 00:03:48,230
+00:03:51,257 --> 00:03:53,578
 Repartió cupones para probar la bebida gratis.
 
 66
-00:03:48,570 --> 00:03:52,994
+00:03:53,918 --> 00:03:58,685
 Llenó las tiendas de relojes, calendarios, abanicos y carteles con la marca.
 
 67
-00:03:53,334 --> 00:03:57,188
+00:03:59,025 --> 00:04:02,354
 Quería que fuera imposible pasar un día sin ver el nombre de Coca-Cola.
 
 68
-00:03:57,528 --> 00:04:02,202
+00:04:02,694 --> 00:04:07,456
 Funcionó: en mil ochocientos noventa y cinco, Candler ya presumía de que la bebida
 
 69
-00:04:02,202 --> 00:04:04,482
+00:04:07,456 --> 00:04:09,778
 se vendía en todos los estados del país.
 
 70
-00:04:04,822 --> 00:04:08,480
+00:04:10,118 --> 00:04:13,819
 Pero su decisión más famosa fue, en realidad, un despiste.
 
 71
-00:04:08,820 --> 00:04:13,085
+00:04:14,159 --> 00:04:18,031
 En mil ochocientos noventa y nueve, dos abogados de Tennessee le pidieron los
 
 72
-00:04:13,085 --> 00:04:16,796
+00:04:18,031 --> 00:04:21,400
 derechos para embotellar la bebida en gran parte de Estados Unidos.
 
 73
-00:04:17,136 --> 00:04:21,215
+00:04:21,740 --> 00:04:26,557
 Candler, que pensaba que el negocio estaba en los surtidores de las farmacias, se
 
 74
-00:04:21,215 --> 00:04:24,891
+00:04:26,557 --> 00:04:30,899
 los cedió por un dólar. Y, según se cuenta, ni siquiera llegó a cobrarlo.
 
 75
-00:04:25,231 --> 00:04:29,360
+00:04:31,239 --> 00:04:35,562
 Aquel acuerdo dio origen al sistema de embotelladores que llevó la bebida a
 
 76
-00:04:29,360 --> 00:04:32,499
+00:04:35,562 --> 00:04:38,848
 cualquier rincón. Fue uno de los motores de su expansión.
 
 77
-00:04:33,789 --> 00:04:37,829
+00:04:40,138 --> 00:04:44,218
 Con el éxito llegaron las imitaciones, con nombres y botellas muy parecidos.
 
 78
-00:04:38,169 --> 00:04:42,877
+00:04:44,558 --> 00:04:49,428
 En mil novecientos quince, los embotelladores convocaron un concurso: querían una
 
 79
-00:04:42,877 --> 00:04:47,237
+00:04:49,428 --> 00:04:53,936
 botella que se reconociera al tacto, incluso a oscuras, o rota en el suelo.
 
 80
-00:04:47,577 --> 00:04:50,920
+00:04:54,276 --> 00:04:57,322
 Lo ganó una fábrica de vidrio de Terre Haute, en Indiana.
 
 81
-00:04:51,260 --> 00:04:55,800
+00:04:57,662 --> 00:05:02,262
 Su equipo buscó inspiración en los ingredientes de la bebida: la hoja de coca y la
 
 82
-00:04:55,800 --> 00:04:56,519
+00:05:02,262 --> 00:05:02,991
 nuez de cola.
 
 83
-00:04:56,859 --> 00:05:01,410
+00:05:03,331 --> 00:05:07,683
 Pero, según la versión más extendida, la ilustración que encontraron en la
 
 84
-00:05:01,410 --> 00:05:06,206
+00:05:07,683 --> 00:05:12,271
 biblioteca no era de coca… sino de una vaina de cacao, alargada y con estrías.
 
 85
-00:05:06,546 --> 00:05:08,113
+00:05:12,611 --> 00:05:14,014
 Y en esa vaina se basaron.
 
 86
-00:05:08,453 --> 00:05:13,025
+00:05:14,354 --> 00:05:18,819
 El primer prototipo era demasiado inestable y hubo que estilizarlo. Pero de aquel
 
 87
-00:05:13,025 --> 00:05:16,243
+00:05:18,819 --> 00:05:21,960
 error nació una de las formas más reconocibles del mundo.
 
 88
-00:05:16,583 --> 00:05:21,351
+00:05:22,300 --> 00:05:27,028
 Tan reconocible que, en mil novecientos sesenta, la forma de la botella quedó
 
 89
-00:05:21,351 --> 00:05:26,243
+00:05:27,028 --> 00:05:31,879
 registrada como marca en Estados Unidos. Algo muy poco habitual para un envase.
 
 90
-00:05:27,533 --> 00:05:32,342
+00:05:33,169 --> 00:05:37,904
 En mil novecientos diecinueve, la familia Candler vendió la compañía a un grupo de
 
 91
-00:05:32,342 --> 00:05:35,393
+00:05:37,904 --> 00:05:40,906
 inversores liderado por el banquero Ernest Woodruff.
 
 92
-00:05:35,733 --> 00:05:38,449
+00:05:41,246 --> 00:05:44,547
 El precio: veinticinco millones de dólares.
 
 93
-00:05:38,789 --> 00:05:43,631
+00:05:44,887 --> 00:05:49,657
 Recuerda: unos treinta años antes, Candler había pagado unos dos mil trescientos.
 
 94
-00:05:43,971 --> 00:05:48,522
+00:05:49,997 --> 00:05:54,298
 Poco después, el hijo del banquero, Robert Woodruff, se puso al frente de la
 
 95
-00:05:48,522 --> 00:05:50,797
+00:05:54,298 --> 00:05:56,448
 empresa, y la dirigió durante décadas.
 
 96
-00:05:51,137 --> 00:05:56,176
+00:05:56,788 --> 00:06:01,061
 Su gran idea fue convertir Coca-Cola en algo más que un refresco: en un símbolo.
 
 97
-00:05:56,516 --> 00:06:01,220
+00:06:01,401 --> 00:06:05,653
 En mil novecientos veintinueve, la marca estrenó uno de sus eslóganes más
 
 98
-00:06:01,220 --> 00:06:03,540
+00:06:05,653 --> 00:06:07,750
 recordados: «la pausa que refresca».
 
 99
-00:06:03,880 --> 00:06:08,626
+00:06:08,090 --> 00:06:12,166
 Durante la Segunda Guerra Mundial prometió que cualquier soldado estadounidense,
 
 100
-00:06:08,626 --> 00:06:13,075
+00:06:12,166 --> 00:06:15,988
 estuviera donde estuviera, podría comprar una Coca-Cola por cinco centavos.
 
 101
-00:06:13,415 --> 00:06:18,666
+00:06:16,328 --> 00:06:21,017
 Para cumplirlo, se montaron plantas embotelladoras cerca de los frentes. Y cuando la
 
 102
-00:06:18,666 --> 00:06:22,854
+00:06:21,017 --> 00:06:24,757
 guerra terminó, esas plantas ya estaban repartidas por medio mundo.
 
 103
-00:06:24,144 --> 00:06:29,043
+00:06:26,047 --> 00:06:30,548
 Hay un mito muy extendido: que Coca-Cola inventó a Papá Noel vestido de rojo.
 
 104
-00:06:29,383 --> 00:06:33,145
+00:06:30,888 --> 00:06:34,188
 No es cierto. Papá Noel ya aparecía con ropa roja antes.
 
 105
-00:06:33,485 --> 00:06:38,178
+00:06:34,528 --> 00:06:39,099
 Pero en mil novecientos treinta y uno, la compañía encargó al ilustrador Haddon
 
 106
-00:06:38,178 --> 00:06:40,614
+00:06:39,099 --> 00:06:41,472
 Sundblom una serie de anuncios navideños.
 
 107
-00:06:40,954 --> 00:06:45,738
+00:06:41,812 --> 00:06:46,247
 Sundblom pintó un Papá Noel bonachón, cálido y sonriente, y lo siguió pintando
 
 108
-00:06:45,738 --> 00:06:47,455
+00:06:46,247 --> 00:06:47,839
 durante más de treinta años.
 
 109
-00:06:47,795 --> 00:06:52,126
+00:06:48,179 --> 00:06:52,015
 Esos anuncios aparecían cada Navidad en las revistas más leídas del país.
 
 110
-00:06:52,466 --> 00:06:57,111
+00:06:52,355 --> 00:06:56,890
 Coca-Cola no inventó a Papá Noel. Pero sí ayudó a fijar la imagen que hoy tenemos
 
 111
-00:06:57,111 --> 00:06:58,201
+00:06:56,890 --> 00:06:57,954
 todos en la cabeza.
 
 112
-00:06:59,491 --> 00:07:00,315
+00:06:59,244 --> 00:07:00,211
 ¿Y en España?
 
 113
-00:07:00,735 --> 00:07:05,573
+00:07:00,631 --> 00:07:05,023
 La primera botella de Coca-Cola fabricada en la península salió el treinta y uno de
 
 114
-00:07:05,573 --> 00:07:10,177
+00:07:05,023 --> 00:07:09,203
 marzo de mil novecientos cincuenta y tres de una fábrica de Barcelona, la de la
 
 115
-00:07:10,177 --> 00:07:12,450
+00:07:09,203 --> 00:07:11,267
 empresa Cobega, de la familia Daurella.
 
 116
-00:07:12,790 --> 00:07:17,662
+00:07:11,607 --> 00:07:16,264
 Aunque en Canarias la historia empezó antes: la compañía sitúa allí sus inicios en
 
 117
-00:07:17,662 --> 00:07:19,860
+00:07:16,264 --> 00:07:18,365
 España, a finales de los años veinte.
 
 118
-00:07:20,200 --> 00:07:24,403
+00:07:18,705 --> 00:07:22,682
 Después llegaron embotelladoras en Madrid, Sevilla, Valencia y otras ciudades.
 
 119
-00:07:24,743 --> 00:07:28,891
+00:07:23,022 --> 00:07:27,162
 Y en pocos años, aquella bebida americana se convirtió en parte del paisaje de
 
 120
-00:07:28,891 --> 00:07:30,060
+00:07:27,162 --> 00:07:28,329
 cualquier bar español.
 
 121
-00:07:31,350 --> 00:07:33,916
+00:07:29,619 --> 00:07:32,347
 Y llegamos al gran misterio: la fórmula.
 
 122
-00:07:34,256 --> 00:07:38,879
+00:07:32,687 --> 00:07:37,569
 Es uno de los secretos comerciales más famosos de la historia, y la compañía nunca
 
 123
-00:07:38,879 --> 00:07:43,614
+00:07:37,569 --> 00:07:42,570
 la ha patentado. Una patente obligaría a hacerla pública, y con el tiempo caducaría.
 
 124
-00:07:43,954 --> 00:07:47,297
+00:07:42,910 --> 00:07:46,487
 Durante décadas se guardó en la cámara acorazada de un banco de Atlanta.
 
 125
-00:07:47,637 --> 00:07:51,668
+00:07:46,827 --> 00:07:50,872
 Hoy está en una cámara dentro del museo de la marca, en Atlanta, donde los
 
 126
-00:07:51,668 --> 00:07:54,882
+00:07:50,872 --> 00:07:54,097
 visitantes pueden ver la puerta… pero no lo que hay dentro.
 
 127
-00:07:55,222 --> 00:07:59,324
+00:07:54,437 --> 00:07:58,800
 Ese misterio también es marketing: una receta que, según la marca, nadie puede
 
 128
-00:07:59,324 --> 00:07:59,692
+00:07:58,800 --> 00:07:59,191
 copiar.
 
 129
-00:08:00,982 --> 00:08:03,559
+00:08:00,481 --> 00:08:02,922
 ¿Qué nos enseña esta historia? Tres cosas.
 
 130
-00:08:03,899 --> 00:08:08,268
+00:08:03,262 --> 00:08:09,597
 Una: inventar algo no basta. Pemberton creó la bebida, pero fueron otros quienes
 
 131
-00:08:08,268 --> 00:08:09,251
+00:08:09,597 --> 00:08:11,023
 supieron venderla.
 
 132
-00:08:09,591 --> 00:08:14,180
+00:08:11,363 --> 00:08:16,319
 Dos: lo que regalas por un dólar puede ser lo que más vale. Candler cedió el
 
 133
-00:08:14,180 --> 00:08:16,232
+00:08:16,319 --> 00:08:18,536
 embotellado porque no creía en él.
 
 134
-00:08:16,572 --> 00:08:21,619
+00:08:18,876 --> 00:08:24,842
 Y tres: una marca no se construye solo con un producto. Se construye con un nombre,
 
 135
-00:08:21,619 --> 00:08:24,537
+00:08:24,842 --> 00:08:28,292
 una forma, una historia… y muchísima constancia.
 
 136
-00:08:25,827 --> 00:08:30,538
+00:08:29,582 --> 00:08:34,164
 Un farmacéutico herido, un contable con buena letra, un vendedor incansable y una
 
 137
-00:08:30,538 --> 00:08:32,108
+00:08:34,164 --> 00:08:35,691
 botella nacida de un error.
 
 138
-00:08:32,448 --> 00:08:36,291
+00:08:36,031 --> 00:08:39,361
 La próxima vez que abras una, ya sabes todo lo que hay detrás.
 
 139
-00:08:36,631 --> 00:08:40,845
+00:08:39,701 --> 00:08:44,062
 Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
 
 140
-00:08:41,185 --> 00:08:44,552
+00:08:44,402 --> 00:08:48,901
 ¿Sabías que nació en una farmacia? Cuéntanoslo en los comentarios.
 
 141
-00:08:44,892 --> 00:08:46,784
+00:08:49,241 --> 00:08:50,831
 Y si te ha gustado, suscríbete.
 
