@@ -68,7 +68,7 @@ def escenas():
 
 def miniatura():
     return f'''<div class="fondo" style="inset:0"></div>
-      <div style="position:absolute;left:70px;top:70px;transform:rotate(-10deg)">{lata(ROJO, "CLÁSICA", 230)}</div>
-      <div style="position:absolute;left:300px;top:110px;transform:rotate(8deg)">{lata("#8f0f22", "NUEVA", 230)}</div>
-      <div style="position:absolute;left:250px;top:560px">{vicon("hourglass-not-done", 110)}</div>
-      <div class="big" style="top:110px"><div class="s">COCA-COLA CAMBIÓ</div><div class="q">SU FÓRMULA</div><div class="y">79 DÍAS DESPUÉS…</div></div>'''
+      <div style="position:absolute;left:50px;top:90px;transform:rotate(-10deg)">{lata(ROJO, "CLÁSICA", 200)}</div>
+      <div style="position:absolute;left:250px;top:120px;transform:rotate(8deg)">{lata("#8f0f22", "NUEVA", 200)}</div>
+      <div style="position:absolute;left:190px;top:530px">{vicon("hourglass-not-done", 110)}</div>
+      <div class="big" style="top:100px"><div class="s">COCA-COLA CAMBIÓ</div><div class="q" style="font-size:165px;margin-top:22px">SU FÓRMULA</div><div class="y">79 DÍAS DESPUÉS…</div></div>'''

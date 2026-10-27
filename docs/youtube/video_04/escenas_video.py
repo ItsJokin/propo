@@ -69,7 +69,7 @@ def escenas():
 
 def miniatura():
     return f'''<div class="fondo" style="inset:0"></div>
-      <div style="position:absolute;left:40px;top:160px;transform:rotate(-14deg)">{vicon("running-shoe", 300)}</div>
-      <div style="position:absolute;left:340px;top:200px;transform:scaleX(-1) rotate(-14deg)">{vicon("running-shoe", 300)}</div>
-      <div style="position:absolute;left:265px;top:120px;font-family:Bebas;font-size:140px;color:#D7263D;text-shadow:5px 5px 0 #151515">VS</div>
-      <div class="big" style="top:110px"><div class="s">DOS HERMANOS</div><div class="q">ENEMIGOS</div><div class="y">ADIDAS · PUMA</div></div>'''
+      <div style="position:absolute;left:20px;top:200px;transform:rotate(-14deg)">{vicon("running-shoe", 250)}</div>
+      <div style="position:absolute;left:270px;top:240px;transform:scaleX(-1) rotate(-14deg)">{vicon("running-shoe", 250)}</div>
+      <div style="position:absolute;left:215px;top:120px;font-family:Bebas;font-size:140px;color:#D7263D;text-shadow:5px 5px 0 #151515">VS</div>
+      <div class="big" style="top:110px"><div class="s">DOS HERMANOS</div><div class="q" style="font-size:175px">ENEMIGOS</div><div class="y">ADIDAS · PUMA</div></div>'''
