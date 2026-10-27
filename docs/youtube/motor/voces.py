@@ -1,13 +1,13 @@
 """Motores de voz intercambiables para audio.py. Todos devuelven (audio float32 mono, sample rate) por frase.
 
-1) ElevenLabs por API (recomendado): necesita las variables de entorno ELEVENLABS_API_KEY y ELEVENLABS_VOICE_ID
-   y que el entorno permita conectar con api.elevenlabs.io. Usa previous_text/next_text para que la entonación
+1) ElevenLabs por API (recomendado): necesita ELEVENLABS_VOICE_ID y la clave, bien como secreto de red del entorno
+   (cabecera xi-api-key para api.elevenlabs.io, la añade el proxy) o bien en la variable ELEVENLABS_API_KEY. Usa previous_text/next_text para que la entonación
    fluya de una frase a otra. Coste: ~1 crédito por carácter (un vídeo de 5 min ≈ 5.000 caracteres).
 2) Locución manual: un único MP3/WAV con todo el guion leído (por ejemplo, generado en la web de ElevenLabs o
    grabado por ti). Se trocea por frases detectando los silencios y alineándolos con la longitud de cada frase.
 3) Piper (local, gratis): voz de respaldo.
 """
-import json, os, re, subprocess, urllib.request
+import hashlib, json, os, re, subprocess, urllib.request
 import numpy as np
 
 def decodificar(ruta_o_bytes, sr=48000):
@@ -27,7 +27,7 @@ def recortar_silencio(a, sr, umbral=0.02):
 class ElevenLabs:
     URL = "https://api.elevenlabs.io/v1/text-to-speech/{voz}?output_format=mp3_44100_192"
     def __init__(self, modelo="eleven_multilingual_v2", estabilidad=0.45, similitud=0.8, estilo=0.25):
-        self.clave = os.environ["ELEVENLABS_API_KEY"]
+        self.clave = os.environ.get("ELEVENLABS_API_KEY", "")   # vacío: la añade el proxy del entorno (secreto de red)
         self.voz = os.environ["ELEVENLABS_VOICE_ID"]
         self.modelo, self.ajustes = modelo, {"stability": estabilidad, "similarity_boost": similitud,
                                              "style": estilo, "use_speaker_boost": True}
@@ -36,10 +36,10 @@ class ElevenLabs:
     def speak(self, texto, anterior="", siguiente=""):
         cuerpo = {"text": texto, "model_id": self.modelo, "voice_settings": self.ajustes,
                   "previous_text": anterior, "next_text": siguiente}
-        clave_cache = os.path.join(self.cache, f"{abs(hash(json.dumps([self.voz, cuerpo], sort_keys=True)))}.mp3")
+        clave_cache = os.path.join(self.cache, hashlib.sha1(json.dumps([self.voz, cuerpo], sort_keys=True).encode()).hexdigest() + ".mp3")
         if not os.path.exists(clave_cache):        # no se paga dos veces por la misma frase
             req = urllib.request.Request(self.URL.format(voz=self.voz), data=json.dumps(cuerpo).encode(),
-                                         headers={"xi-api-key": self.clave, "Content-Type": "application/json", "Accept": "audio/mpeg"})
+                                         headers={**({"xi-api-key": self.clave} if self.clave else {}), "Content-Type": "application/json", "Accept": "audio/mpeg"})
             with urllib.request.urlopen(req, timeout=120) as r:
                 open(clave_cache, "wb").write(r.read())
         a, sr = decodificar(clave_cache)
