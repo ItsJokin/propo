@@ -1,6 +1,6 @@
 # Apple estuvo a 90 días de quebrar: así se salvó: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_17_Apple.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 09:14 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_17_Apple.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 09:21 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,18 +14,18 @@ En 1997, Apple estaba al borde de la quiebra: según Steve Jobs, le quedaban uno
 
 ⏱ Capítulos
 00:00 Introducción
-00:28 1. Un garaje en California
-01:30 2. Despedido de su propia empresa
-02:27 3. Pixar
-03:19 4. La caída
-03:59 5. El regreso
-04:39 6. Microsoft al rescate
-05:26 7. Cortar, cortar, cortar
-06:09 8. Un ordenador de colores
-06:49 9. Mil canciones en el bolsillo
-07:35 10. De noventa días a billones
-08:13 11. Lo que nos enseña
-08:38 Final
+00:26 1. Un garaje en California
+01:32 2. Despedido de su propia empresa
+02:29 3. Pixar
+03:23 4. La caída
+04:03 5. El regreso
+04:43 6. Microsoft al rescate
+05:33 7. Cortar, cortar, cortar
+06:13 8. Un ordenador de colores
+06:53 9. Mil canciones en el bolsillo
+07:40 10. De noventa días a billones
+08:18 11. Lo que nos enseña
+08:45 Final
 
 📚 Fuentes
 - InformationWeek, «August, 1997: Microsoft Rescues Apple?»: https://www.informationweek.com/it-leadership/august-1997-microsoft-rescues-apple-
