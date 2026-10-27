@@ -1,6 +1,6 @@
 # Fanta: el refresco que nació en la Alemania nazi: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_09_Fanta.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:31 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_09_Fanta.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:34 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,13 +14,13 @@ Fanta nació en Alemania durante la Segunda Guerra Mundial, cuando la filial de 
 
 ⏱ Capítulos
 00:00 Introducción
-00:19 1. Coca-Cola en Alemania
-00:40 2. Los restos de los restos
-01:13 3. Un tema incómodo
-01:42 4. El regreso
-02:09 5. El anuncio retirado
-02:35 6. Lo que nos enseña
-02:56 Final
+00:20 1. Coca-Cola en Alemania
+00:41 2. Los restos de los restos
+01:15 3. Un tema incómodo
+01:44 4. El regreso
+02:11 5. El anuncio retirado
+02:37 6. Lo que nos enseña
+02:59 Final
 
 📚 Fuentes
 - Wikipedia, «Fanta»: https://en.wikipedia.org/wiki/Fanta

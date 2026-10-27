@@ -1,6 +1,6 @@
 # IKEA: por qué sus muebles tienen esos nombres tan raros: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_11_IKEA.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:49 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_11_IKEA.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:58 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,13 +14,13 @@ IKEA nació en 1943, cuando Ingvar Kamprad tenía 17 años. Su nombre son sus in
 
 ⏱ Capítulos
 00:00 Introducción
-00:18 1. Un chico de diecisiete años
-00:49 2. La mesa que no cabía
-01:24 3. El cliente trabaja
-01:47 4. Los nombres
-02:17 5. El laberinto
-02:51 6. Lo que nos enseña
-03:13 Final
+00:19 1. Un chico de diecisiete años
+00:54 2. La mesa que no cabía
+01:30 3. El cliente trabaja
+01:55 4. Los nombres
+02:25 5. El laberinto
+02:59 6. Lo que nos enseña
+03:21 Final
 
 📚 Fuentes
 - Dezeen, «Five key furniture designs launched by IKEA founder Ingvar Kamprad» (2018): https://www.dezeen.com/2018/01/29/five-key-furniture-designs-ikea-founder-ingvar-kamprad-launched/

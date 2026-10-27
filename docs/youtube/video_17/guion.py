@@ -51,7 +51,7 @@ SEGMENTOS = [
         "Lo que se encontró era una empresa en estado crítico.",
         "Según contaría años después, a Apple le quedaban unos noventa días para quedarse sin dinero.",
     ], [("cap4", 0, -0.6), ("ap_sistema", 0, 1.0), ("ap_be", 1, 0), ("ap_compra_next", 2, 0), ("ap_asesor", 3, 0), ("ap_provisional", 4, 0), ("ap_critico", 5, 0), ("ap_90dias", 6, 0)]),
-    ("5. El día que Microsoft salvó a Apple", [
+    ("5. Microsoft al rescate", [
         "Agosto de mil novecientos noventa y siete. Una feria de Apple en Boston.",
         "Jobs sube al escenario y anuncia un acuerdo que nadie esperaba: Microsoft, el gran rival, va a invertir ciento cincuenta millones de dólares en Apple.",
         "Y se compromete a seguir haciendo su paquete de oficina para los ordenadores Mac durante al menos cinco años.",
