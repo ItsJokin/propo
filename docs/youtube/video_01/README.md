@@ -21,7 +21,8 @@ El texto está en `guion.py` y las escenas en `escenas.py`. Para el siguiente v�
 ## Voz de ElevenLabs (recomendada)
 La voz se elige en `montar.sh` con el segundo argumento:
 - `elevenlabs`: genera cada frase por la API con tu voz (entonación encadenada con la frase anterior y la siguiente; las frases ya generadas se guardan en caché y no se vuelven a pagar). Necesita en el entorno las variables **`ELEVENLABS_API_KEY`** y **`ELEVENLABS_VOICE_ID`**, y que la red permita **`api.elevenlabs.io`**.
-- `ruta/locucion.mp3`: una locución completa generada en la web de ElevenLabs (o grabada por ti) a partir de `salida/guion_para_elevenlabs.txt`. Se trocea por frases automáticamente (prueba interna: 57 de 60 cortes exactos sin marcas de pausa; con las pausas `<break>` del texto exportado deberían ser exactos todos).
+- `ruta/carpeta/`: **un audio por capítulo** (01_….mp3, 02_….mp3…) generado en ElevenLabs a partir de `salida/elevenlabs_capitulos/*.txt`. Es la opción más fiable sin API: cada archivo se trocea solo con sus frases (prueba interna: desfase medio de 0,12 s).
+- `ruta/locucion.mp3`: una locución completa generada en la web de ElevenLabs (o grabada por ti) (por ejemplo, exportada desde ElevenLabs Studio). Se trocea por frases automáticamente (prueba interna: 57 de 60 cortes exactos).
 - `modelo.onnx`: Piper local (respaldo gratuito).
 
 Un vídeo de 5 minutos son unos 5.000 caracteres (≈5.000 créditos de ElevenLabs).

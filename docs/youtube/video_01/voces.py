@@ -93,10 +93,30 @@ class LocucionManual:
         t = self.trozos[self.i]; self.i += 1
         return t, self.sr
 
+class LocucionPorCapitulos:
+    """Una carpeta con un audio por capítulo (01_….mp3, 02_….mp3…, en el orden del guion).
+    Cada archivo se trocea solo con las frases de su capítulo, así los cortes son mucho más fiables."""
+    def __init__(self, carpeta, segmentos):
+        exts = (".mp3", ".wav", ".m4a", ".flac", ".ogg")
+        archivos = sorted(f for f in os.listdir(carpeta) if f.lower().endswith(exts))
+        if len(archivos) != len(segmentos):
+            raise SystemExit(f"Hay {len(archivos)} audios en {carpeta} y el guion tiene {len(segmentos)} capítulos.")
+        self.trozos = []
+        for f, frases in zip(archivos, segmentos):
+            self.trozos += LocucionManual(os.path.join(carpeta, f), frases).trozos if len(frases) > 1 else \
+                [recortar_silencio(*decodificar(os.path.join(carpeta, f)))]
+        self.i, self.sr = 0, 48000
+    def speak(self, texto, anterior="", siguiente=""):
+        t = self.trozos[self.i]; self.i += 1
+        return t, self.sr
+
 def motor(voz, frases):
-    """voz = 'elevenlabs' | ruta a una locución completa (.mp3/.wav/.m4a) | ruta a un modelo Piper (.onnx)."""
+    """voz = 'elevenlabs' | carpeta con un audio por capítulo | locución completa (.mp3/.wav/.m4a) | modelo Piper (.onnx)."""
     if voz == "elevenlabs":
         return ElevenLabs()
+    if os.path.isdir(voz):
+        from guion import SEGMENTOS
+        return LocucionPorCapitulos(voz, [f for _, f, _ in SEGMENTOS])
     if voz.lower().endswith((".mp3", ".wav", ".m4a", ".flac", ".ogg")):
         return LocucionManual(voz, frases)
     from piper_tts import Piper
