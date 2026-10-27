@@ -1,6 +1,6 @@
 # Vídeo 1: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_01_Chupa_Chups.mp4` · 1920×1080 · 25 fps · voz Piper es_ES «davefx» · 05:03 · audio AAC normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_01_Chupa_Chups.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 05:07 · audio AAC normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (elige uno; recomendado el primero)
@@ -14,14 +14,14 @@
 
 ⏱ Capítulos
 00:00 Introducción
-00:30 1. El problema
-01:00 2. El nombre
-01:40 3. El lugar
-02:15 4. Dalí
-03:03 5. El mundo
-03:34 6. La venta
-04:02 7. Lo que nos enseña
-04:29 Final
+00:29 1. El problema
+01:01 2. El nombre
+01:42 3. El lugar
+02:17 4. Dalí
+03:06 5. El mundo
+03:37 6. La venta
+04:04 7. Lo que nos enseña
+04:33 Final
 
 📚 Fuentes
 - Wikipedia, «Chupa Chups»: https://en.wikipedia.org/wiki/Chupa_Chups
@@ -37,7 +37,7 @@
 Algunas partes de la historia (como que Dalí lo resolvió en menos de una hora o el viaje a la estación Mir) se presentan como la versión popular o la que cuenta la propia marca, tal y como indican las fuentes.
 
 ℹ️ Este vídeo no está patrocinado por ninguna de las marcas mencionadas. Las ilustraciones son propias; no se usa el logotipo original.
-🤖 Guion elaborado con asistencia de IA y revisado por una persona. Narración con voz sintética (Piper, voz «davefx»).
+🤖 Guion elaborado con asistencia de IA y revisado por una persona. Narración con voz sintética de ElevenLabs.
 🎨 Ilustraciones 3D: Fluent Emoji © Microsoft (licencia MIT). Música y efectos: creación propia.
 
 Código de Barras: la historia que no conoces de lo que tienes en casa. Un jueves, una marca.

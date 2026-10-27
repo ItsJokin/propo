@@ -9,7 +9,7 @@ caps = "\n".join(f"{'00:00' if i == 0 else mmss(seg['inicio'])} {seg['capitulo']
 fuentes = "\n".join(f"- {n}: {u}" for n, u in FUENTES)
 md = f"""# Vídeo 1: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_01_Chupa_Chups.mp4` · 1920×1080 · 25 fps · voz Piper es_ES «davefx» · {mmss(t['duracion'])} · audio AAC normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_01_Chupa_Chups.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · {mmss(t['duracion'])} · audio AAC normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (elige uno; recomendado el primero)
@@ -30,7 +30,7 @@ md = f"""# Vídeo 1: metadatos para subir a YouTube
 Algunas partes de la historia (como que Dalí lo resolvió en menos de una hora o el viaje a la estación Mir) se presentan como la versión popular o la que cuenta la propia marca, tal y como indican las fuentes.
 
 ℹ️ Este vídeo no está patrocinado por ninguna de las marcas mencionadas. Las ilustraciones son propias; no se usa el logotipo original.
-🤖 Guion elaborado con asistencia de IA y revisado por una persona. Narración con voz sintética (Piper, voz «davefx»).
+🤖 Guion elaborado con asistencia de IA y revisado por una persona. Narración con voz sintética de ElevenLabs.
 🎨 Ilustraciones 3D: Fluent Emoji © Microsoft (licencia MIT). Música y efectos: creación propia.
 
 Código de Barras: la historia que no conoces de lo que tienes en casa. Un jueves, una marca.

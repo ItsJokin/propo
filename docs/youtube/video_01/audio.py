@@ -99,7 +99,6 @@ def main():
             sig = todas[n_frase + 1] if n_frase + 1 < len(todas) else ""
             a, sr_voz = tts.speak(fr, ant, sig); n_frase += 1
             a = remuestrear(a, sr_voz)
-            a = a / (np.max(np.abs(a)) + 1e-9) * 0.9
             ini_frases.append(t); subs.append((t, t + len(a) / SR, fr))
             voz.append(a); t += len(a) / SR
             p = PAUSAS.get(fr.strip()[-1], 0.3)
@@ -117,6 +116,7 @@ def main():
         if e["nombre"] == "cta_suscribe":
             efectos.append((e["inicio"] + 1.6, pop())); efectos.append((e["inicio"] + 1.7, ding()))
     pista = np.concatenate(voz).astype(np.float32)
+    pista = pista / (np.max(np.abs(pista)) + 1e-9) * 0.9      # normalización global: respeta la dinámica natural de la voz
     fx = np.zeros(len(pista) + SR)
     for a, s in efectos:
         i = int(a * SR); fx[i:i + len(s)] += s
