@@ -1,6 +1,6 @@
 # McDonald's: los hermanos a los que les quitaron su apellido: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_13_McDonalds.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:53 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_13_McDonalds.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 03:56 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -17,10 +17,10 @@ McDonald's no lo fundó Ray Kroc: lo crearon los hermanos Richard y Maurice McDo
 00:19 1. Los hermanos
 00:51 2. El vendedor de batidoras
 01:21 3. El verdadero negocio
-01:50 4. La compra
-02:31 5. El imperio
-02:58 6. Lo que nos enseña
-03:18 Final
+01:49 4. La compra
+02:32 5. El imperio
+02:59 6. Lo que nos enseña
+03:20 Final
 
 📚 Fuentes
 - Wikipedia, «History of McDonald's»: https://en.wikipedia.org/wiki/History_of_McDonald%27s
