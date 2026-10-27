@@ -5,3 +5,4 @@ _site/
 test/shots/
 test/*.zip
 .DS_Store
+docs/youtube/video_*/salida/*.mp4

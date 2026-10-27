@@ -81,3 +81,12 @@ FUENTES = [
     ("J. Weekly, «Dannon yogurt magnate dies» (2009)", "https://jweekly.com/2009/05/29/dannon-yogurt-magnate-dies/"),
     ("6sqft, «Dannon Yogurt's fruity history in the Bronx»", "https://www.6sqft.com/dannon-yogurts-fruity-history-in-the-bronx/"),
 ]
+
+DESCRIPCION = ("Danone, una de las mayores empresas de alimentación del mundo, no nació en Francia: nació en Barcelona en 1919. "
+               "Esta es la historia de Isaac Carasso, del yogur que se vendía en farmacias, del niño que dio nombre a la marca y de cómo "
+               "Danone pasó de Barcelona a París y a Nueva York.")
+ETIQUETAS = "danone, historia de danone, danone barcelona, isaac carasso, daniel carasso, dannon, historia del yogur, marcas españolas, historia de marcas, código de barras"
+HASHTAGS = "#Danone #HistoriaDeMarcas #Barcelona"
+LISTA = "Hecho en España"
+NOTA = "Algunas fechas (la llegada de la familia a Barcelona o la fundación de Dannon en Nueva York) varían ligeramente según la fuente; damos el periodo aproximado."
+PREGUNTA = "¿SABÍAS QUE DANONE *NACIÓ EN ESPAÑA*?"

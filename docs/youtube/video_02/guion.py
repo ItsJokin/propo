@@ -87,3 +87,12 @@ FUENTES = [
     ("Fortune, «Roger Enrico, PepsiCo»", "https://fortune.com/2016/06/03/roger-enrico-pepsico"),
     ("EBSCO Research Starters, «Coca-Cola Introduces a New Formula»", "https://ebsco.com/research-starters/history/coca-cola-introduces-new-formula"),
 ]
+
+DESCRIPCION = ("En 1985, Coca-Cola cambió su fórmula por primera vez en 99 años. Setenta y nueve días después tuvo que pedir perdón y "
+               "devolver la de siempre. Esta es la historia de New Coke: el Desafío Pepsi, las catas con casi 200.000 personas, la rebelión "
+               "de los consumidores y la vuelta de Coca-Cola Classic. ¿Fue el mayor error de marketing de la historia… o le salió bien?")
+ETIQUETAS = "new coke, coca-cola, coca cola classic, historia de coca-cola, desafío pepsi, pepsi challenge, error de marketing, historia de marcas, guerra de las colas, 1985, código de barras"
+HASHTAGS = "#CocaCola #NewCoke #HistoriaDeMarcas"
+LISTA = "Auge y caída (y también Guerras de marcas)"
+NOTA = "Las cifras de cartas y llamadas de protesta varían según la fuente, por eso no damos una cifra exacta. La compañía siempre ha negado que el cambio fuera una maniobra planeada."
+PREGUNTA = "¿QUÉ CAMBIO DE UNA MARCA *NO PERDONAS*?"

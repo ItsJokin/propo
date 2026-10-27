@@ -51,7 +51,7 @@ SEGMENTOS = [
         "Y ganó la final, bajo la lluvia, contra la gran favorita, Hungría.",
         "Años después llegó otra anécdota famosa: según se cuenta, antes del Mundial de mil novecientos setenta, las dos marcas pactaron no fichar a Pelé, para no arruinarse pujando por él.",
         "Y, siempre según esa historia, Puma rompió el pacto.",
-    ], [("cap5", 0, -0.6), ("a_estadios", 0, 1.0), ("a_1954", 1, 0), ("a_final", 2, 0), ("a_pele", 3, 0), ("a_pacto_roto", 4, 0)]),
+    ], [("cap5", 0, -0.6), ("a_estadios", 0, 1.0), ("a_1954", 1, 0), ("a_final_lluvia", 2, 0), ("a_pele", 3, 0), ("a_pacto_roto", 4, 0)]),
 
     ("6. Hasta el final", [
         "Los hermanos nunca se reconciliaron.",
@@ -84,3 +84,12 @@ FUENTES = [
     ("Footwear Magazine, «10 moments that defined the adidas vs. Puma rivalry»", "https://footwearmagazine.com/adidas-vs-puma-rivalry/"),
     ("Today I Found Out, «The Fascinating Family Feud that Led to Adidas and Puma»", "https://www.todayifoundout.com/?p=53103"),
 ]
+
+DESCRIPCION = ("Adidas y Puma nacieron en el mismo pueblo alemán, de la misma familia: los hermanos Adi y Rudolf Dassler. Juntos calzaron a "
+               "Jesse Owens en Berlín 1936; separados, dividieron Herzogenaurach en dos bandos durante décadas. Esta es la historia de la "
+               "rivalidad entre hermanos más famosa del deporte.")
+ETIQUETAS = "adidas, puma, adidas vs puma, hermanos dassler, adi dassler, rudolf dassler, herzogenaurach, historia de adidas, historia de puma, guerras de marcas, código de barras"
+HASHTAGS = "#Adidas #Puma #HistoriaDeMarcas"
+LISTA = "Guerras de marcas"
+NOTA = "Nadie sabe con certeza por qué se pelearon los hermanos; contamos las versiones más citadas. El pacto sobre Pelé de 1970 se presenta como la historia que se cuenta, no como un hecho documentado."
+PREGUNTA = "¿ERES MÁS DE *ADIDAS O DE PUMA*?"
