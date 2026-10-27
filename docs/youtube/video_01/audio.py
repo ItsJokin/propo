@@ -15,6 +15,7 @@ from voces import motor
 
 SR = 48000
 LONGITUD = 1.04          # >1 = algo más pausado (ritmo documental)
+FINAL = 15.0           # segundos de pantalla final
 PAUSAS = {".": 0.34, "?": 0.42, "!": 0.38, ":": 0.28, "…": 0.45}
 rng = np.random.default_rng(7)
 
@@ -74,7 +75,9 @@ def musica(seg):
                 for h in (0, b // 2):
                     q = p + h + int(0.012 * SR * (k % 2)); out[q:q + int(0.05 * SR)] += hat()
     out = out[:n]
-    return (0.8 * out / np.max(np.abs(out))).astype(np.float32)
+    out = 0.8 * out / np.max(np.abs(out))
+    k = int(3.0 * SR); out[-k:] *= np.linspace(1, 0, k)      # fundido final de 3 s
+    return out.astype(np.float32)
 
 def srt_t(s):
     h, r = divmod(s, 3600); m, r = divmod(r, 60); ms = int(round((r - int(r)) * 1000))
@@ -108,7 +111,10 @@ def main():
             ini = inicio_seg if k == 0 else ini_frases[idx] + off
             escenas.append({"nombre": nombre, "inicio": round(ini, 3), "capitulo": k == 0 and si > 0})
         segs.append({"capitulo": capitulo, "inicio": inicio_seg, "fin": t})
-    voz.append(np.zeros(int(1.5 * SR))); t += 1.5
+    # 1 s de cierre y 15 s de pantalla final (solo música) para los elementos de pantalla final de YouTube
+    voz.append(np.zeros(int(1.0 * SR))); t += 1.0
+    escenas.append({"nombre": "pantalla_final", "inicio": round(t, 3), "capitulo": False})
+    voz.append(np.zeros(int(FINAL * SR))); t += FINAL
     for i, e in enumerate(escenas):
         e["fin"] = escenas[i + 1]["inicio"] if i + 1 < len(escenas) else t
         if i > 0:

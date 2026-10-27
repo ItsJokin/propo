@@ -48,7 +48,7 @@ chupa chups, historia de chupa chups, dalí logotipo, salvador dalí chupa chups
 - **Promoción pagada:** No.
 - **Categoría:** Educación (alternativa: Entretenimiento).
 - **Idioma del vídeo y de los subtítulos:** Español (España). Sube `subtitulos_es.srt` en Subtítulos.
-- **Pantalla final (últimos 15-20 s):** botón de suscripción + "Vídeo más reciente".
+- **Pantalla final:** el vídeo termina con 15 s de pantalla final (solo música). En Studio → Pantalla final, coloca un elemento **"Vídeo más reciente"** sobre el rectángulo de la izquierda y el **botón de suscripción** sobre el círculo de la derecha.
 - **Lista de reproducción:** "Hecho en España".
 - **Programar:** a las 18:00 (hora peninsular), según el calendario de 3 vídeos por semana (lunes, miércoles y viernes).
 - **Comentario fijado:** "¿Qué marca investigamos el mes que viene? Las 3 más votadas entran en la encuesta 👇"

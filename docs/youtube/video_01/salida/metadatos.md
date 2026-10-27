@@ -1,6 +1,6 @@
 # Vídeo 1: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_01_Chupa_Chups.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 05:07 · audio AAC normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_01_Chupa_Chups.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 05:17 · audio AAC normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (elige uno; recomendado el primero)
@@ -15,7 +15,7 @@
 ⏱ Capítulos
 00:00 Introducción
 00:29 1. El problema
-01:01 2. El nombre
+01:00 2. El nombre
 01:42 3. El lugar
 02:17 4. Dalí
 03:06 5. El mundo
@@ -40,7 +40,7 @@ Algunas partes de la historia (como que Dalí lo resolvió en menos de una hora 
 🤖 Guion elaborado con asistencia de IA y revisado por una persona. Narración con voz sintética de ElevenLabs.
 🎨 Ilustraciones 3D: Fluent Emoji © Microsoft (licencia MIT). Música y efectos: creación propia.
 
-Código de Barras: la historia que no conoces de lo que tienes en casa. Un jueves, una marca.
+Código de Barras: la historia que no conoces de lo que tienes en casa. Nuevas historias cada semana.
 💬 ¿Qué marca quieres que investiguemos? Déjala en los comentarios.
 
 #ChupaChups #HistoriaDeMarcas #Dalí
@@ -55,9 +55,9 @@ chupa chups, historia de chupa chups, dalí logotipo, salvador dalí chupa chups
 - **Promoción pagada:** No.
 - **Categoría:** Educación (alternativa: Entretenimiento).
 - **Idioma del vídeo y de los subtítulos:** Español (España). Sube `subtitulos_es.srt` en Subtítulos.
-- **Pantalla final (últimos 15-20 s):** botón de suscripción + "Vídeo más reciente".
+- **Pantalla final:** el vídeo termina con 15 s de pantalla final (solo música). En Studio → Pantalla final, coloca un elemento **"Vídeo más reciente"** sobre el rectángulo de la izquierda y el **botón de suscripción** sobre el círculo de la derecha.
 - **Lista de reproducción:** "Hecho en España".
-- **Programar:** jueves 5 de noviembre de 2026, 18:00 (hora peninsular).
+- **Programar:** a las 18:00 (hora peninsular), según el calendario de 3 vídeos por semana (lunes, miércoles y viernes).
 - **Comentario fijado:** "¿Qué marca investigamos el mes que viene? Las 3 más votadas entran en la encuesta 👇"
 
 ## Revisión humana antes de publicar (5 minutos)

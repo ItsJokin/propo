@@ -325,7 +325,14 @@ def escenas():
     E["cta_suscribe"] = f'''<div class="fondo"></div><div class="rayos"></div>
       <div class="pos" style="left:50%;top:40%"><div class="boton"><span class="b1">SUSCRIBIRSE</span><span class="b2">SUSCRITO ✔</span></div></div>
       <div class="raton">{cursor(90)}</div>
-      {txt(kt("En el próximo vídeo:", "l", 2.4), 50, 66, 80)}{txt(kt("el día que Coca-Cola *cambió su fórmula*", "xl", 2.9), 50, 80, 95)}'''
+      {txt(kt("nuevas historias *cada semana*", "l", 2.0), 50, 68, 80)}'''
+    # pantalla final de 15 s: zonas libres para los elementos de pantalla final de YouTube (vídeo y suscripción)
+    E["pantalla_final"] = f'''<div class="fondo dark"></div><div class="rayos oscuro"></div>
+      {obj(barras(90, HUESO, NARANJA, True, .1), 50, 14, "none")}
+      {txt(kt("CÓDIGO DE BARRAS", "xl hueso", .4, .1), 50, 27, 80)}
+      <div class="pos hueco" style="left:30%;top:63%;width:820px;height:462px"></div>
+      <div class="pos hueco redondo" style="left:76%;top:63%;width:300px;height:300px"></div>
+      {txt(kt("sigue viendo", "m gris", 1.0), 30, 93, 40)}{txt(kt("suscríbete", "m gris", 1.2), 76, 93, 30)}'''
     return E
 
 def envoltorio(tipo, px=420):
@@ -463,6 +470,7 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:KRAFT}
 .carro{position:absolute;left:0;top:0;animation:carro 1.2s cubic-bezier(.2,1,.3,1) var(--d) both}
 .carro .lineas{position:absolute;left:250px;top:90px;width:180px;height:80px;background:repeating-linear-gradient(0deg,transparent 0 16px,rgba(255,255,255,.5) 16px 22px)}
 @keyframes carro{from{transform:translate(2100px,160px)}to{transform:translate(830px,160px)}}
+.hueco{border:4px dashed rgba(250,247,240,.18);border-radius:18px}.hueco.redondo{border-radius:50%}
 .hito{font-family:Bebas;font-size:72px;background:TINTA;color:HUESO;padding:6px 26px;border-radius:10px}
 .hito.gris{background:GRIS}
 .num{font-family:Bebas;font-size:420px;color:NARANJA;line-height:1;text-shadow:10px 10px 0 TINTA}
