@@ -27,4 +27,8 @@ ffmpeg -y -loglevel error -i "$W/imagen.mp4" -i "$W/narracion.wav" -i "$W/musica
   [3:a]volume=-6dB[fx];[voz][musd][fx]amix=inputs=3:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]" \
  -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k -ar 48000 -movflags +faststart "$OUT/Codigo_de_Barras_01_Chupa_Chups.mp4"
 cp "$W/subtitulos.srt" "$OUT/subtitulos_es.srt"
-echo "OK: $OUT/Codigo_de_Barras_01_Chupa_Chups.mp4"
+# entregables obligatorios de cada vídeo: miniatura, título y descripción
+python3 miniatura.py "$FUE" "$OUT/miniatura.png"
+python3 metadatos.py "$W" "$OUT"
+rm -rf __pycache__
+echo "OK: $OUT/Codigo_de_Barras_01_Chupa_Chups.mp4 + miniatura.png + titulo.txt + descripcion.txt + metadatos.md + subtitulos_es.srt"

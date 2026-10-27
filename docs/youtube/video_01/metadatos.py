@@ -60,4 +60,9 @@ chupa chups, historia de chupa chups, dalí logotipo, salvador dalí chupa chups
 - [ ] Previsualizar la miniatura en tamaño móvil.
 """
 open(os.path.join(OUT, "metadatos.md"), "w").write(md)
+# copias listas para pegar en YouTube Studio
+titulo = md.split("## Título")[1].split("\n1. ")[1].split("\n")[0].strip()
+descripcion = md.split("## Descripción")[1].split("```")[1].strip("\n")
+open(os.path.join(OUT, "titulo.txt"), "w").write(titulo + "\n")
+open(os.path.join(OUT, "descripcion.txt"), "w").write(descripcion + "\n")
 print("ok")
