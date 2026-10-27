@@ -26,7 +26,7 @@ def recortar_silencio(a, sr, umbral=0.02):
 
 class ElevenLabs:
     URL = "https://api.elevenlabs.io/v1/text-to-speech/{voz}?output_format=mp3_44100_192"
-    def __init__(self, modelo="eleven_multilingual_v2", estabilidad=0.45, similitud=0.8, estilo=0.25):
+    def __init__(self, modelo="eleven_multilingual_v2", estabilidad=0.5, similitud=0.75, estilo=0.0):
         self.clave = os.environ.get("ELEVENLABS_API_KEY", "")   # vacío: la añade el proxy del entorno (secreto de red)
         self.voz = os.environ["ELEVENLABS_VOICE_ID"]
         self.modelo, self.ajustes = modelo, {"stability": estabilidad, "similarity_boost": similitud,
