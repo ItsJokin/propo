@@ -58,7 +58,16 @@ SEGMENTOS = [
         "Antes de lanzar algo, la pregunta era siempre la misma: ¿le gustaría esto a Valeria?",
         "Cuando murió, en dos mil quince, era considerado el hombre más rico de Italia.",
     ], [("cap5", 0, -0.6), ("nu_crece", 0, 1.0), ("nu_nosolo", 1, 0), ("nu_kinder", 2, 0), ("nu_sorpresa", 3, 0), ("nu_rocher", 4, 0), ("nu_discreto", 5, 0), ("nu_valeria", 6, 0), ("nu_pregunta", 7, 0), ("nu_rico", 8, 0)]),
-    ("6. El huevo prohibido", [
+    ("6. La empresa más discreta", [
+        "Ferrero se ha ganado fama de ser una de las empresas más discretas del mundo de la alimentación.",
+        "Rara vez abre sus fábricas a visitas, y guarda sus recetas con muchísimo secreto.",
+        "Durante décadas, la familia apenas concedió entrevistas, y la empresa casi nunca anunciaba sus resultados a bombo y platillo.",
+        "Aun así, o quizá por eso, su reputación es enorme. En dos mil nueve, un conocido estudio internacional de reputación corporativa la colocó en el primer puesto del mundo.",
+        "En Alba creó una fundación dedicada a sus antiguos trabajadores, con actividades culturales y atención para los jubilados de la empresa.",
+        "Y algunos de sus anuncios se hicieron legendarios. En el Reino Unido, uno de los bombones dorados, ambientado en una elegante recepción de embajadores, se volvió tan famoso que todavía se parodia.",
+        "Discreta por dentro, omnipresente por fuera.",
+    ], [("cap6", 0, -0.6), ("nu_discreta", 0, 1.0), ("nu_secreto", 1, 0), ("nu_entrevistas", 2, 0), ("nu_reputacion", 3, 0), ("nu_fundacion", 4, 0), ("nu_embajador", 5, 0), ("nu_omnipresente", 6, 0)]),
+    ("7. El huevo prohibido", [
         "De todos esos productos, hay uno con una historia especialmente curiosa: Kinder Sorpresa.",
         "La idea era sencilla: un huevo de chocolate con una cápsula de plástico dentro, y dentro de la cápsula, un pequeño juguete para montar.",
         "Se convirtió en un éxito enorme en Europa, y hay quien colecciona sus juguetes desde hace décadas.",
@@ -66,23 +75,23 @@ SEGMENTOS = [
         "Una ley de mil novecientos treinta y ocho no permite vender dulces que lleven dentro un objeto que no se puede comer, salvo que tenga una función.",
         "Las autoridades estadounidenses han llegado a confiscar estos huevos en la frontera.",
         "La solución de Ferrero fue otro producto: un huevo partido en dos mitades, una con el dulce y otra con el juguete, separadas. Así sí se puede vender.",
-    ], [("cap6", 0, -0.6), ("nu_huevo", 0, 1.0), ("nu_capsula", 1, 0), ("nu_coleccion", 2, 0), ("nu_prohibido", 3, 0), ("nu_ley", 4, 0), ("nu_frontera", 5, 0), ("nu_mitades", 6, 0)]),
-    ("7. La guerra de las avellanas", [
+    ], [("cap7", 0, -0.6), ("nu_huevo", 0, 1.0), ("nu_capsula", 1, 0), ("nu_coleccion", 2, 0), ("nu_prohibido", 3, 0), ("nu_ley", 4, 0), ("nu_frontera", 5, 0), ("nu_mitades", 6, 0)]),
+    ("8. La guerra de las avellanas", [
         "Para hacer tanta Nutella hacen falta muchísimas avellanas.",
         "Según diversas estimaciones, Ferrero compra en torno a una cuarta parte de todas las avellanas del mundo.",
         "Y la mayoría de las avellanas del planeta se cultivan en un solo país: Turquía.",
         "Eso convierte a la empresa en un actor enorme en ese mercado, y la hace muy sensible al clima, a las heladas y a las cosechas de una sola región.",
         "Una mala cosecha en Turquía puede hacer subir el precio de las avellanas en todo el mundo.",
         "Por eso Ferrero ha comprado empresas de avellanas y ha impulsado nuevas plantaciones en otros países, para no depender de un solo lugar.",
-    ], [("cap7", 0, -0.6), ("nu_avellanas", 0, 1.0), ("nu_cuarta", 1, 0), ("nu_turquia", 2, 0), ("nu_sensible", 3, 0), ("nu_cosecha", 4, 0), ("nu_plantaciones", 5, 0)]),
-    ("8. Las compras", [
+    ], [("cap8", 0, -0.6), ("nu_avellanas", 0, 1.0), ("nu_cuarta", 1, 0), ("nu_turquia", 2, 0), ("nu_sensible", 3, 0), ("nu_cosecha", 4, 0), ("nu_plantaciones", 5, 0)]),
+    ("9. Las compras", [
         "En los últimos años, Ferrero ha pasado de crecer solo con sus propias marcas a comprar las de otros.",
         "En dos mil dieciocho compró el negocio de golosinas de Nestlé en Estados Unidos, por unos dos mil ochocientos millones de dólares.",
         "Y al año siguiente, varias marcas de galletas de Kellogg's.",
         "Así, una empresa nacida en una pastelería de Alba se convirtió en uno de los mayores grupos de dulces del mundo.",
         "Y, a pesar de su tamaño, sigue siendo una empresa controlada por la familia Ferrero.",
-    ], [("cap8", 0, -0.6), ("nu_compras", 0, 1.0), ("nu_nestle", 1, 0), ("nu_kelloggs", 2, 0), ("nu_mayores", 3, 0), ("nu_familia", 4, 0)]),
-    ("9. Las polémicas", [
+    ], [("cap9", 0, -0.6), ("nu_compras", 0, 1.0), ("nu_nestle", 1, 0), ("nu_kelloggs", 2, 0), ("nu_mayores", 3, 0), ("nu_familia", 4, 0)]),
+    ("10. Las polémicas", [
         "Ser tan famoso también trae problemas.",
         "En dos mil doce, en Estados Unidos, una madre demandó a Ferrero porque, según ella, la publicidad presentaba la Nutella como parte de un desayuno saludable.",
         "La empresa llegó a un acuerdo para cerrar el caso, de unos tres millones de dólares, y cambió sus anuncios.",
@@ -90,20 +99,20 @@ SEGMENTOS = [
         "En dos mil quince, la ministra francesa de Ecología, Ségolène Royal, llegó a pedir en televisión que se dejara de comer Nutella.",
         "Italia reaccionó como si le hubieran atacado un símbolo nacional. Un ministro italiano respondió que esa noche cenaría pan con Nutella.",
         "Al final, la ministra francesa pidió disculpas. Ferrero defendió que su aceite de palma tiene certificación de sostenibilidad.",
-    ], [("cap9", 0, -0.6), ("nu_problemas", 0, 1.0), ("nu_demanda", 1, 0), ("nu_acuerdo", 2, 0), ("nu_palma", 3, 0), ("nu_royal", 4, 0), ("nu_italia", 5, 0), ("nu_disculpas", 6, 0)]),
-    ("10. Un día mundial", [
+    ], [("cap10", 0, -0.6), ("nu_problemas", 0, 1.0), ("nu_demanda", 1, 0), ("nu_acuerdo", 2, 0), ("nu_palma", 3, 0), ("nu_royal", 4, 0), ("nu_italia", 5, 0), ("nu_disculpas", 6, 0)]),
+    ("11. Un día mundial", [
         "La relación de la gente con Nutella es tan intensa que tiene hasta su propio día.",
         "En dos mil siete, una aficionada estadounidense que vivía en Italia, Sara Rosso, propuso celebrar el Día Mundial de la Nutella cada cinco de febrero.",
         "La idea se hizo popular en internet.",
         "Años después, la empresa llegó a enviarle una carta legal por el uso de la marca… pero ante la reacción de los fans, dio marcha atrás.",
         "Hoy es la propia marca la que celebra ese día.",
-    ], [("cap10", 0, -0.6), ("nu_dia", 0, 1.0), ("nu_rosso", 1, 0), ("nu_internet", 2, 0), ("nu_carta", 3, 0), ("nu_hoy", 4, 0)]),
-    ("11. Lo que nos enseña", [
+    ], [("cap11", 0, -0.6), ("nu_dia", 0, 1.0), ("nu_rosso", 1, 0), ("nu_internet", 2, 0), ("nu_carta", 3, 0), ("nu_hoy", 4, 0)]),
+    ("12. Lo que nos enseña", [
         "¿Qué nos enseña esta historia? Tres cosas.",
         "Una: la escasez puede ser el origen de una gran idea. Nutella nació porque no había chocolate.",
         "Dos: el nombre importa. Supercrema funcionaba en Italia, pero Nutella podía funcionar en el mundo.",
         "Y tres: cuando una marca se convierte en parte de la vida de la gente, cualquier ataque se vive como algo personal.",
-    ], [("cap11", 0, -0.6), ("leccion1", 1, 0), ("leccion2", 2, 0), ("leccion3", 3, 0)]),
+    ], [("cap12", 0, -0.6), ("leccion1", 1, 0), ("leccion2", 2, 0), ("leccion3", 3, 0)]),
     ("Final", [
         "Un pastelero de Alba, un bloque de chocolate barato, un tarro para untar y un nombre pensado para el mundo.",
         "La próxima vez que metas la cuchara, ya sabes de dónde viene.",

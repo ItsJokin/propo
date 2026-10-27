@@ -1,8 +1,7 @@
 """Escenas del vídeo 19 (Pepsi, formato largo). Motor común; sin logotipos: latas, chapas y barcos genéricos dibujados."""
 from base import *
 
-CAP_ICONOS = {1: "1f3e5", 2: "1f36c", 3: "1f91d", 4: "1fa99", 5: "1f1f7-1f1fa", 6: "1f943", 7: "1f6a2", 8: "1f522", 9: "1f3a4",
-              10: "1f35f", 11: "1f9e0"}
+CAP_ICONOS = {1: '1f3e5', 2: '1f36c', 3: '1f91d', 4: '1fa99', 5: '1f1f7-1f1fa', 6: '1f943', 7: '1f6a2', 8: '1f522', 9: '1f3a4', 10: '1f47b', 11: '1f35f', 12: '1f9e0'}
 
 def lata(color=AZUL, etiqueta="COLA", px=200):
     return (f'<svg width="{px}" height="{px*1.75:.0f}" viewBox="0 0 100 175"><defs><linearGradient id="b{color[1:]}" x1="0" x2="1">'
@@ -96,6 +95,14 @@ def escenas():
     E["pe_estrellas"] = titular("LAS ESTRELLAS *MÁS GRANDES*", "años ochenta", "", ("2b50", "1f3a4", "1f3b8", "1f31f"))
     E["pe_mj"] = f'''{F("dark", True)}{obj(spr("1f3a4", 240), 26, 46, "pop", "", .2)}{obj(spr("1f525", 200), 42, 34, "pop", "pulse", .9)}{txt(kt("1984: UN ACCIDENTE *EN UN RODAJE*", "xl hueso", .7), 70, 40, 52)}{txt(kt("un efecto pirotécnico quemó el pelo de Michael Jackson", "l naranja", 1.4), 70, 58, 52)}'''
     E["pe_epoca"] = icono_texto("1f4fa", "ASOCIADA A UNA *ÉPOCA*", "la de las grandes estrellas", "", "der", "", True, "zoom", "")
+    E["pe_noexito"] = impacto("no todas sus ideas", "FUERON *UN ÉXITO*", "", "1f62c")
+    E["pe_crystal"] = f'''{F("", True)}<div class="pos" style="left:30%;top:48%;width:200px;height:350px;border-radius:20px;background:rgba(255,255,255,.35);border:6px solid {TINTA}"></div>
+      {txt(kt("1992: UNA COLA *TRANSPARENTE*", "xl", .7), 70, 40, 52)}{txt(kt("algo nunca visto", "l", 1.4), 70, 56, 52)}'''
+    E["pe_puro"] = comparar("1f4a7", "transparente", "2728", "= puro y ligero (la moda de entonces)", "=")
+    E["pe_lanzamiento"] = icono_texto("1f4fa", "UN LANZAMIENTO *ENORME*", "anuncios en los grandes eventos deportivos", "", "izq", "", True, "zoom", "bob")
+    E["pe_sabor"] = comparar("1f914", "esperaban que supiera distinto", "1f964", "y sabía a cola", "…")
+    E["pe_desaparece"] = icono_texto("1f47b", "DESAPARECE *EN POCO MÁS DE UN AÑO*", "uno de los fracasos más curiosos de la industria", "", "der", "dark", True, "pop", "fuera")
+    E["pe_nostalgia"] = icono_texto("1f504", "VUELVE *POR NOSTALGIA*", "de vez en cuando, en ediciones limitadas", "", "izq", "calido", True, "spin", "bob")
     E["pe_movimiento"] = impacto("su mayor movimiento", "NO FUE *UN REFRESCO*", "", "1f35f")
     E["pe_fritolay"] = comparar("1f964", "Pepsi", "1f35f", "Frito-Lay", "+", "1965: NACE PEPSICO")
     E["pe_picar"] = bocadillos("1f60b", ["¿Un refresco?", "¿Y algo para picar?"], "la idea era sencilla")

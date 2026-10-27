@@ -91,20 +91,29 @@ SEGMENTOS = [
         "En mil novecientos ochenta y cuatro, durante el rodaje de un anuncio con Michael Jackson, un efecto pirotécnico le quemó el pelo al cantante.",
         "El accidente dio la vuelta al mundo, y la marca acabó asociada para siempre a aquella época de grandes estrellas.",
     ], [("cap9", 0, -0.6), ("pe_juventud", 0, 1.0), ("pe_nuevo", 1, 0), ("pe_desafio", 2, 0), ("pe_estrellas", 3, 0), ("pe_mj", 4, 0), ("pe_epoca", 5, 0)]),
-    ("10. Mucho más que un refresco", [
+    ("10. Una cola transparente", [
+        "Pero no todas las ideas de Pepsi fueron un éxito.",
+        "En mil novecientos noventa y dos lanzó algo nunca visto: una cola completamente transparente.",
+        "La moda de entonces asociaba lo transparente con lo puro y lo ligero, y la marca quiso aprovecharla.",
+        "El lanzamiento fue enorme, con anuncios en los grandes eventos deportivos de Estados Unidos.",
+        "Al principio, la curiosidad hizo que se vendiera bien. Pero mucha gente esperaba que supiera distinto… y sabía a cola.",
+        "En poco más de un año desapareció de las tiendas, y hoy se recuerda como uno de los fracasos más curiosos de la industria.",
+        "Eso sí: tantos años después, la nostalgia ha hecho que vuelva de vez en cuando en ediciones limitadas.",
+    ], [("cap10", 0, -0.6), ("pe_noexito", 0, 1.0), ("pe_crystal", 1, 0), ("pe_puro", 2, 0), ("pe_lanzamiento", 3, 0), ("pe_sabor", 4, 0), ("pe_desaparece", 5, 0), ("pe_nostalgia", 6, 0)]),
+    ("11. Mucho más que un refresco", [
         "Pero el mayor movimiento de Pepsi no tuvo nada que ver con los refrescos.",
         "En mil novecientos sesenta y cinco, la compañía se fusionó con Frito-Lay, un fabricante de patatas fritas y aperitivos. Así nació PepsiCo.",
         "La idea era sencilla: si alguien toma un refresco, probablemente le apetezca algo para picar.",
         "Hoy PepsiCo es uno de los mayores grupos de alimentación del mundo, y buena parte de su negocio no son las bebidas, sino los aperitivos.",
         "En España, por ejemplo, marcas como las patatas Lay's o los refrescos Kas forman parte del grupo. Kas nació en Vitoria, y PepsiCo la compró a principios de los noventa.",
         "Así que, aunque Pepsi siga siendo el eterno segundo en los refrescos, la empresa que hay detrás es un gigante.",
-    ], [("cap10", 0, -0.6), ("pe_movimiento", 0, 1.0), ("pe_fritolay", 1, 0), ("pe_picar", 2, 0), ("pe_gigante", 3, 0), ("pe_espana", 4, 0), ("pe_segundo2", 5, 0)]),
-    ("11. Lo que nos enseña", [
+    ], [("cap11", 0, -0.6), ("pe_movimiento", 0, 1.0), ("pe_fritolay", 1, 0), ("pe_picar", 2, 0), ("pe_gigante", 3, 0), ("pe_espana", 4, 0), ("pe_segundo2", 5, 0)]),
+    ("12. Lo que nos enseña", [
         "¿Qué nos enseña esta historia? Tres cosas.",
         "Una: una mala apuesta puede hundirte, aunque tengas un buen producto. A Bradham lo arruinó el azúcar, no su refresco.",
         "Dos: si no puedes ser el primero, sé el diferente. Más barato, más joven, más atrevido.",
         "Y tres: en una promoción, un solo error puede costar más que toda la campaña.",
-    ], [("cap11", 0, -0.6), ("leccion1", 1, 0), ("leccion2", 2, 0), ("leccion3", 3, 0)]),
+    ], [("cap12", 0, -0.6), ("leccion1", 1, 0), ("leccion2", 2, 0), ("leccion3", 3, 0)]),
     ("Final", [
         "Dos quiebras, una oferta rechazada, un vaso en Moscú, una flota de submarinos y un número maldito.",
         "Todo eso es Pepsi.",

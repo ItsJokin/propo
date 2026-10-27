@@ -1,8 +1,7 @@
 """Escenas del vídeo 20 (Nike, formato largo). Motor común; sin logotipos (no se dibuja el símbolo real): zapatillas y objetos genéricos."""
 from base import *
 
-CAP_ICONOS = {1: "1f4dd", 2: "1f3c3", 3: "1f697", 4: "1f494", 5: "270f-fe0f", 6: "1f9c7", 7: "1f3c0", 8: "1f4e2", 9: "2696-fe0f",
-              10: "1f30d", 11: "1f9e0"}
+CAP_ICONOS = {1: '1f4dd', 2: '1f3c3', 3: '1f697', 4: '1f494', 5: '270f-fe0f', 6: '1f9c7', 7: '1f4a8', 8: '1f3c0', 9: '1f4e2', 10: '2696-fe0f', 11: '1f30d', 12: '1f9e0'}
 
 def caja_zapas(px=200, color=NARANJA):
     return (f'<svg width="{px}" height="{px*0.6:.0f}" viewBox="0 0 200 120"><rect x="10" y="30" width="180" height="80" fill="{color}" stroke="{TINTA}" stroke-width="4"/>'
@@ -69,6 +68,16 @@ def escenas():
     E["ni_goma"] = f'''{F("dark", True)}{obj(spr("1f9c7", 230), 30, 46, "pop", "shake", .2)}{obj(spr("1f4a5", 200), 46, 34, "pop", "", 1.0)}{txt(kt("GOMA LÍQUIDA → *GOFRERA DESTROZADA*", "xl hueso", .8), 70, 48, 52)}'''
     E["ni_waffle"] = f'''{F("", True)}{obj(suela(420), 32, 48, "flip", "float", .2)}{txt(kt("LA SUELA *TIPO GOFRE*", "xl", .8), 74, 40, 46)}{txt(kt("de las primeras zapatillas de éxito", "l", 1.4), 74, 56, 46)}'''
     E["ni_reliquia"] = icono_texto("1f3c6", "HOY, CASI *UNA RELIQUIA*", "aquella gofrera estropeada", "", "der", "calido", True, "zoom", "glow")
+    E["ni_aire"] = impacto("una idea extraña:", "METER *AIRE* EN LAS ZAPATILLAS", "", "1f4a8")
+    E["ni_rudy"] = icono_texto("1f9d1-200d-1f680", "FRANK *RUDY*", "un inventor que había trabajado en la industria aeroespacial", "", "izq", "espacio", True, "up", "float")
+    E["ni_camara"] = f'''{F()}{obj(suela(400), 32, 50, "pop", "", .2)}<div class="pos" style="left:32%;top:50%;width:160px;height:60px;border-radius:30px;background:rgba(120,200,255,.7);border:4px solid {TINTA}"></div>
+      {txt(kt("GAS A PRESIÓN *DENTRO DE LA SUELA*", "xl", .9), 74, 44, 46)}{txt(kt("para amortiguar cada paso", "l", 1.5), 74, 60, 46)}'''
+    E["ni_1978"] = comparar("1f645", "otras marcas la rechazaron", "1f45f", "1978: la primera Nike con aire", "→")
+    E["ni_escondido"] = icono_texto("1f648", "EL AIRE *NO SE VEÍA*", "estaba escondido dentro de la suela", "", "der", "", False, "pop", "")
+    E["ni_hatfield"] = icono_texto("1f3db-fe0f", "TINKER *HATFIELD*", "un edificio de París que enseña sus tuberías por fuera le dio la idea", "1987", "izq", "", True, "rise", "bob", 340, (("1f1eb-1f1f7", 86, 22),))
+    E["ni_ventana"] = f'''{F("", True)}{obj(suela(420), 32, 50, "flip", "", .2)}<div class="pos" style="left:32%;top:50%;width:150px;height:56px;border-radius:28px;background:rgba(120,200,255,.85);border:4px solid {TINTA};box-shadow:0 0 30px #7fd0ff"></div>
+      {txt(kt("UNA *VENTANA* EN LA SUELA", "xl", 1.0), 74, 46, 46)}'''
+    E["ni_airmax"] = titular("NACEN LAS *AIR MAX*", "de las más vendidas e imitadas de la historia", "", ("1f45f", "1f4a8", "2b50", "1f525"))
     E["ni_baloncesto"] = comparar("1f4c8", "en los ochenta, ya era grande", "1f3c0", "pero en baloncesto no mandaba", "…")
     E["ni_1984"] = f'''{F("", True)}{obj(spr("1f3c0", 260), 26, 46, "drop", "jump", .2)}{txt(kt("1984", "mega rojo", .6, .1, "slam"), 66, 30, 56)}{txt(kt("*MICHAEL JORDAN*", "xl", 1.0), 66, 50, 56)}{txt(kt("aún no había jugado en la NBA", "l", 1.6), 66, 64, 56)}'''
     E["ni_otra"] = icono_texto("1f914", "PREFERÍA *OTRA MARCA*", "y su entorno le convenció para escuchar a Nike, según se ha contado", "", "izq", "", False, "pop", "swing")

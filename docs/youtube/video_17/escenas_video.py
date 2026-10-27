@@ -1,7 +1,7 @@
 """Escenas del vídeo 17 (Apple, formato largo). Motor común; sin logotipos (ni manzanas): ordenadores y móviles genéricos dibujados."""
 from base import *
 
-CAP_ICONOS = {1: "1f527", 2: "1f6aa", 3: "1f4c9", 4: "1f501", 5: "1f91d", 6: "2702-fe0f", 7: "1f308", 8: "1f3b5", 9: "1f4b0", 10: "1f9e0"}
+CAP_ICONOS = {1: '1f527', 2: '1f6aa', 3: '1f3ac', 4: '1f4c9', 5: '1f501', 6: '1f91d', 7: '2702-fe0f', 8: '1f308', 9: '1f3b5', 10: '1f4b0', 11: '1f9e0'}
 
 def ordenador(px=360, pantalla="#3a7bd5", color="#e8e4da"):
     return (f'<svg width="{px}" height="{px*1.05:.0f}" viewBox="0 0 200 210"><rect x="20" y="10" width="160" height="150" rx="16" fill="{color}" stroke="{TINTA}" stroke-width="5"/>'
@@ -52,6 +52,14 @@ def escenas():
     E["ap_enfrentados"] = comparar("1f468-200d-1f4bc", "Jobs", "1f468-200d-1f4bc", "Sculley", "VS", "ACABARON ENFRENTADOS")
     E["ap_fuera"] = f'''{F("dark", True)}{obj(spr("1f6aa", 260), 26, 46, "pop", "", .2)}{obj(spr("1f6b6", 200), 42, 54, "left", "", .7)}{txt(kt("1985", "l naranja", .5), 68, 30, 56)}{txt(kt("JOBS SE MARCHA *DE SU PROPIA EMPRESA*", "xl hueso", .9), 68, 50, 58)}'''
     E["ap_next"] = comparar("1f4bb", "funda NeXT", "1f3ac", "compra el estudio que será Pixar", "+", "FUERA DE APPLE")
+    E["ap_apuesta"] = impacto("una apuesta", "QUE CASI NADIE *ENTENDIÓ*", "", "1f3b2")
+    E["ap_lucasfilm"] = icono_texto("1f3a5", "LOS GRÁFICOS DE *LUCASFILM*", "la empresa del creador de La guerra de las galaxias", "1986: compra", "izq", "espacio", True, "pop", "float")
+    E["ap_pixar"] = cifra("≈10 M$", "NACE PIXAR", "1f3ac", "entre compra e inversión inicial:")
+    E["ap_pierde_pixar"] = icono_texto("1f4b8", "AÑOS *PERDIENDO DINERO*", "Jobs puso mucho más de su bolsillo", "", "der", "", False, "pop", "")
+    E["ap_toystory"] = f'''{F("calido", True)}{obj(spr("1f9f8", 260), 26, 46, "drop", "jump", .2)}{txt(kt("1995: *TOY STORY*", "xl", .6), 66, 36, 56)}{txt(kt("el primer largometraje hecho completamente por ordenador", "l", 1.3), 66, 54, 56)}'''
+    E["ap_exito_pixar"] = icono_texto("1f4c8", "ÉXITO ENORME *Y SALIDA A BOLSA*", "", "", "izq", "", True, "zoom", "bob")
+    E["ap_disney"] = cifra("≈7.400 M$", "DISNEY COMPRA PIXAR (2006)", "1f3f0", "Jobs, mayor accionista individual de Disney")
+    E["ap_juguetes"] = impacto("el fundador despedido se hizo rico", "CON UNA PELÍCULA *DE JUGUETES*", "", "1f9f8")
     E["ap_sinjobs"] = icono_texto("1f4b5", "SIN JOBS, *SIGUE GANANDO*", "durante unos años", "", "izq", "", False, "pop", "bob")
     E["ap_cambio"] = impacto("en los noventa", "EL MUNDO *CAMBIA*", "", "1f30e")
     E["ap_windows"] = f'''{F()}{obj(spr("1fa9f", 230), 18, 44, "pop", "bob", .2)}{"".join(obj(ordenador(140, "#3a7bd5", "#cfd3da"), 40 + i * 14, 46, "drop", "", .4 + i * .15) for i in range(4))}

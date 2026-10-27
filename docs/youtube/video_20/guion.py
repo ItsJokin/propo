@@ -65,7 +65,17 @@ SEGMENTOS = [
         "Pero la idea funcionó. Así nació la suela de tacos tipo gofre, que dio lugar a algunas de las primeras zapatillas de éxito de Nike.",
         "Aquella gofrera estropeada hoy se considera casi una reliquia de la marca.",
     ], [("cap6", 0, -0.6), ("ni_experimenta", 0, 1.0), ("ni_suela", 1, 0), ("ni_gofrera", 2, 0), ("ni_cuadricula", 3, 0), ("ni_goma", 4, 0), ("ni_waffle", 5, 0), ("ni_reliquia", 6, 0)]),
-    ("7. Michael Jordan", [
+    ("7. Aire en la suela", [
+        "A finales de los años setenta llegó a Nike un inventor con una idea extraña: meter aire dentro de las zapatillas.",
+        "Se llamaba Frank Rudy, y había trabajado en la industria aeroespacial.",
+        "Su propuesta era una pequeña cámara de gas a presión dentro de la suela, para amortiguar cada paso.",
+        "Otras marcas la habían rechazado. Nike decidió probarla, y en mil novecientos setenta y ocho lanzó su primera zapatilla con aire.",
+        "Pero el aire no se veía. Estaba escondido dentro de la suela.",
+        "Hasta que, en mil novecientos ochenta y siete, un arquitecto convertido en diseñador de Nike, Tinker Hatfield, tuvo una idea inspirada en un edificio de París que muestra por fuera sus tuberías y estructuras.",
+        "¿Y si la zapatilla también enseñara lo que lleva dentro? Abrió una ventana en la suela para que se viera la cámara de aire.",
+        "Así nacieron las Air Max, una de las zapatillas más vendidas e imitadas de la historia.",
+    ], [("cap7", 0, -0.6), ("ni_aire", 0, 1.0), ("ni_rudy", 1, 0), ("ni_camara", 2, 0), ("ni_1978", 3, 0), ("ni_escondido", 4, 0), ("ni_hatfield", 5, 0), ("ni_ventana", 6, 0), ("ni_airmax", 7, 0)]),
+    ("8. Michael Jordan", [
         "En los años ochenta, Nike ya era grande. Pero en el baloncesto no mandaba.",
         "En mil novecientos ochenta y cuatro apostó por un jugador que todavía no había jugado ni un partido en la NBA: Michael Jordan.",
         "Según se ha contado muchas veces, Jordan prefería otra marca, y fue su entorno el que le convenció para escuchar la oferta de Nike.",
@@ -73,34 +83,34 @@ SEGMENTOS = [
         "En mil novecientos ochenta y cinco llegaron las primeras Air Jordan.",
         "Nike aprovechó incluso una polémica: la marca hizo publicidad presumiendo de que la liga había prohibido sus zapatillas por sus colores.",
         "Las ventas superaron todas las expectativas. Y la línea Jordan acabó convirtiéndose en un negocio enorme por sí sola.",
-    ], [("cap7", 0, -0.6), ("ni_baloncesto", 0, 1.0), ("ni_1984", 1, 0), ("ni_otra", 2, 0), ("ni_linea", 3, 0), ("ni_airjordan", 4, 0), ("ni_prohibidas", 5, 0), ("ni_ventas", 6, 0)]),
-    ("8. Just Do It", [
+    ], [("cap8", 0, -0.6), ("ni_baloncesto", 0, 1.0), ("ni_1984", 1, 0), ("ni_otra", 2, 0), ("ni_linea", 3, 0), ("ni_airjordan", 4, 0), ("ni_prohibidas", 5, 0), ("ni_ventas", 6, 0)]),
+    ("9. Just Do It", [
         "En mil novecientos ochenta y ocho, Nike estrenó el eslogan que hoy conoce todo el mundo: Just Do It. Simplemente, hazlo.",
         "Lo creó Dan Wieden, de la agencia de publicidad de la marca.",
         "Y su origen es sorprendente. Según contó el propio Wieden, se inspiró en las últimas palabras de un condenado a muerte en Estados Unidos, que antes de su ejecución dijo: hagámoslo.",
         "Wieden cambió una palabra, y aquella frase oscura se convirtió en un mensaje de motivación para millones de personas.",
         "La campaña no hablaba de zapatillas. Hablaba de superarse.",
-    ], [("cap8", 0, -0.6), ("ni_justdoit", 0, 1.0), ("ni_wieden", 1, 0), ("ni_origen", 2, 0), ("ni_palabra", 3, 0), ("ni_superarse", 4, 0)]),
-    ("9. El lado oscuro", [
+    ], [("cap9", 0, -0.6), ("ni_justdoit", 0, 1.0), ("ni_wieden", 1, 0), ("ni_origen", 2, 0), ("ni_palabra", 3, 0), ("ni_superarse", 4, 0)]),
+    ("10. El lado oscuro", [
         "Pero en los años noventa, la marca vivió su peor crisis de imagen.",
         "Nike, como muchas marcas, fabricaba sus productos en países con salarios muy bajos, a través de fábricas de otras empresas.",
         "Varias investigaciones periodísticas denunciaron malas condiciones de trabajo en algunas de esas fábricas.",
         "Hubo protestas, boicots y campañas en universidades.",
         "En mil novecientos noventa y ocho, el propio Phil Knight reconoció públicamente que la marca se había asociado a los salarios de miseria, y anunció cambios en sus fábricas proveedoras.",
         "Desde entonces, la empresa publica información sobre sus fábricas. El debate sobre la industria textil, sin embargo, sigue abierto.",
-    ], [("cap9", 0, -0.6), ("ni_crisis", 0, 1.0), ("ni_fabricas", 1, 0), ("ni_denuncias", 2, 0), ("ni_boicots", 3, 0), ("ni_reconoce", 4, 0), ("ni_debate", 5, 0)]),
-    ("10. El gigante", [
+    ], [("cap10", 0, -0.6), ("ni_crisis", 0, 1.0), ("ni_fabricas", 1, 0), ("ni_denuncias", 2, 0), ("ni_boicots", 3, 0), ("ni_reconoce", 4, 0), ("ni_debate", 5, 0)]),
+    ("11. El gigante", [
         "Hoy Nike es la mayor empresa de ropa y calzado deportivo del mundo.",
         "Patrocina a atletas, equipos y selecciones de casi todos los deportes.",
         "Phil Knight dejó la presidencia en dos mil dieciséis, y ese mismo año publicó sus memorias, donde cuenta los primeros años de la empresa con todas sus dudas y apuros.",
         "Y aquel garabato de treinta y cinco dólares se ha convertido en uno de los símbolos más reconocidos del planeta. Tanto, que muchas veces aparece solo, sin el nombre.",
-    ], [("cap10", 0, -0.6), ("ni_mayor", 0, 1.0), ("ni_patrocina", 1, 0), ("ni_memorias", 2, 0), ("ni_simbolo", 3, 0)]),
-    ("11. Lo que nos enseña", [
+    ], [("cap11", 0, -0.6), ("ni_mayor", 0, 1.0), ("ni_patrocina", 1, 0), ("ni_memorias", 2, 0), ("ni_simbolo", 3, 0)]),
+    ("12. Lo que nos enseña", [
         "¿Qué nos enseña esta historia? Tres cosas.",
         "Una: depender de un solo proveedor es peligroso. Perder a Onitsuka obligó a Nike a crear su propia marca… y eso fue lo mejor que le pudo pasar.",
         "Dos: un símbolo no vale por lo que cuesta, sino por lo que llega a significar.",
         "Y tres: las grandes ideas pueden salir de cualquier sitio. De un trabajo de clase, de un sueño… o de una gofrera.",
-    ], [("cap11", 0, -0.6), ("leccion1", 1, 0), ("leccion2", 2, 0), ("leccion3", 3, 0)]),
+    ], [("cap12", 0, -0.6), ("leccion1", 1, 0), ("leccion2", 2, 0), ("leccion3", 3, 0)]),
     ("Final", [
         "Un trabajo de clase, un viaje a Japón, un maletero lleno de cajas, un garabato de treinta y cinco dólares y una gofrera rota.",
         "Así nació Nike.",

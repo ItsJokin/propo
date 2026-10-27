@@ -1,8 +1,7 @@
 """Escenas del vídeo 18 (Nutella, formato largo). Motor común; sin logotipos: tarros y huevos genéricos dibujados."""
 from base import *
 
-CAP_ICONOS = {1: "1f330", 2: "1f36b", 3: "1f35e", 4: "1f3f7-fe0f", 5: "1f3ed", 6: "1f95a", 7: "1f1f9-1f1f7", 8: "1f6d2",
-              9: "2696-fe0f", 10: "1f4c5", 11: "1f9e0"}
+CAP_ICONOS = {1: '1f330', 2: '1f36b', 3: '1f35e', 4: '1f3f7-fe0f', 5: '1f3ed', 6: '1f92b', 7: '1f95a', 8: '1f1f9-1f1f7', 9: '1f6d2', 10: '2696-fe0f', 11: '1f4c5', 12: '1f9e0'}
 MARRON = "#5b3a1e"
 
 def tarro(px=200, texto="CREMA", d=0.0):
@@ -68,6 +67,14 @@ def escenas():
     E["nu_valeria"] = icono_texto("1f469", "LA SEÑORA *VALERIA*", "su clienta imaginaria: una madre de familia corriente", "según se ha contado,", "der", "calido", True, "pop", "bob")
     E["nu_pregunta"] = f'''{F("", True)}{obj(spr("1f914", 250), 26, 46, "pop", "swing", .2)}{txt(kt("«¿LE GUSTARÍA ESTO *A VALERIA*?»", "xl", .7), 66, 46, 58)}'''
     E["nu_rico"] = icono_texto("1f4b0", "EL HOMBRE MÁS RICO *DE ITALIA*", "así se le consideraba cuando murió, en 2015", "", "izq", "dark", True, "zoom", "glow")
+    E["nu_discreta"] = impacto("una de las empresas", "MÁS *DISCRETAS*", "del mundo de la alimentación", "1f92b")
+    E["nu_secreto"] = comparar("1f3ed", "fábricas casi sin visitas", "1f510", "recetas guardadas en secreto", "+")
+    E["nu_entrevistas"] = icono_texto("1f399-fe0f", "APENAS *ENTREVISTAS*", "durante décadas, ni la familia ni la empresa hacían ruido", "", "izq", "", False, "pop", "")
+    E["nu_reputacion"] = cifra("Nº 1", "EN REPUTACIÓN, SEGÚN UN ESTUDIO INTERNACIONAL (2009)", "1f3c6")
+    E["nu_fundacion"] = icono_texto("1f474", "UNA FUNDACIÓN *PARA SUS JUBILADOS*", "en Alba: cultura y atención para antiguos trabajadores", "", "der", "calido", True, "pop", "bob")
+    E["nu_embajador"] = f'''{F("dark", True)}{"".join(obj(spr("1f7e1", 120), 14 + i * 9, 30, "drop", "glow", .1 + i * .12) for i in range(5))}{obj(spr("1f935", 220), 76, 44, "pop", "bob", .8)}
+      {txt(kt("UNA RECEPCIÓN *DE EMBAJADORES*", "xl hueso", 1.0), 40, 60, 70)}{txt(kt("un anuncio británico que todavía se parodia", "l naranja", 1.6), 40, 76, 70)}'''
+    E["nu_omnipresente"] = comparar("1f92b", "discreta por dentro", "1f30d", "omnipresente por fuera", "·")
     E["nu_huevo"] = impacto("un producto con una historia curiosa:", "*KINDER SORPRESA*", "", "1f95a")
     E["nu_capsula"] = f'''{F("", True)}{obj(huevo(260, True), 30, 50, "zoom", "", .2)}{obj(spr("1f9f8", 150), 52, 34, "pop", "jump", 1.0)}{txt(kt("CHOCOLATE · CÁPSULA · *JUGUETE*", "xl", .8), 74, 52, 46)}'''
     E["nu_coleccion"] = f'''{F()}{"".join(obj(spr(c, 130), 12 + i * 12.5, 44, "pop", "bob", .1 + i * .15) for i, c in enumerate(["1f9f8", "1f996", "1f697", "1f6f8", "1f99b", "1f9e9", "1f47e"]))}{txt(kt("HAY QUIEN COLECCIONA *SUS JUGUETES*", "xl", 1.3), 50, 80, 90)}'''

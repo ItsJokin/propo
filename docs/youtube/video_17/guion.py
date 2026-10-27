@@ -33,7 +33,17 @@ SEGMENTOS = [
         "En mil novecientos ochenta y cinco, tras perder la batalla en el consejo, Steve Jobs se marchó de Apple. La empresa que había fundado.",
         "Fuera de Apple, Jobs fundó una nueva compañía de ordenadores, NeXT. Y compró un pequeño estudio de animación que acabaría llamándose Pixar.",
     ], [("cap2", 0, -0.6), ("ap_mac", 0, 1.0), ("ap_anuncio", 1, 0), ("ap_caro", 2, 0), ("ap_tension", 3, 0), ("ap_sculley", 4, 0), ("ap_agua", 5, 0), ("ap_enfrentados", 6, 0), ("ap_fuera", 7, 0), ("ap_next", 8, 0)]),
-    ("3. La caída", [
+    ("3. Pixar", [
+        "Mientras Apple seguía sin él, Steve Jobs hizo una apuesta que casi nadie entendió.",
+        "En mil novecientos ochenta y seis compró la división de gráficos por ordenador de Lucasfilm, la empresa del creador de La guerra de las galaxias.",
+        "Entre la compra y la inversión inicial, puso unos diez millones de dólares. La empresa pasó a llamarse Pixar.",
+        "Durante años, Pixar perdió dinero, y Jobs tuvo que poner mucho más de su bolsillo para mantenerla.",
+        "Pero en mil novecientos noventa y cinco se estrenó Toy Story, el primer largometraje hecho completamente por ordenador.",
+        "Fue un éxito enorme, y Pixar salió a bolsa poco después.",
+        "Años más tarde, en dos mil seis, Disney compró Pixar por unos siete mil cuatrocientos millones de dólares en acciones. Y Jobs se convirtió en el mayor accionista individual de Disney.",
+        "El fundador despedido de Apple se había hecho rico… con una película de juguetes.",
+    ], [("cap3", 0, -0.6), ("ap_apuesta", 0, 1.0), ("ap_lucasfilm", 1, 0), ("ap_pixar", 2, 0), ("ap_pierde_pixar", 3, 0), ("ap_toystory", 4, 0), ("ap_exito_pixar", 5, 0), ("ap_disney", 6, 0), ("ap_juguetes", 7, 0)]),
+    ("4. La caída", [
         "Sin Jobs, Apple siguió ganando dinero durante unos años.",
         "Pero en los noventa, el mundo de los ordenadores cambió.",
         "Microsoft dominaba con Windows, que funcionaba en ordenadores de muchos fabricantes distintos y mucho más baratos.",
@@ -41,8 +51,8 @@ SEGMENTOS = [
         "Incluso llegó a permitir que otras empresas fabricaran clones de sus ordenadores, lo que le quitaba ventas a sus propios equipos.",
         "Pasaron varios directores, uno detrás de otro. Ninguno encontraba la salida.",
         "A mediados de los noventa, Apple perdía cientos de millones de dólares, y su cuota de mercado se desplomaba.",
-    ], [("cap3", 0, -0.6), ("ap_sinjobs", 0, 1.0), ("ap_cambio", 1, 0), ("ap_windows", 2, 0), ("ap_modelos", 3, 0), ("ap_clones", 4, 0), ("ap_directores", 5, 0), ("ap_pierde", 6, 0)]),
-    ("4. El regreso", [
+    ], [("cap4", 0, -0.6), ("ap_sinjobs", 0, 1.0), ("ap_cambio", 1, 0), ("ap_windows", 2, 0), ("ap_modelos", 3, 0), ("ap_clones", 4, 0), ("ap_directores", 5, 0), ("ap_pierde", 6, 0)]),
+    ("5. El regreso", [
         "Apple necesitaba desesperadamente un nuevo sistema operativo para sus ordenadores.",
         "Estudió varias opciones, entre ellas comprar otra pequeña empresa de software, Be.",
         "Pero al final eligió comprar NeXT, la empresa de Steve Jobs, por unos cuatrocientos millones de dólares.",
@@ -50,8 +60,8 @@ SEGMENTOS = [
         "En pocos meses, el consejo destituyó al director, y Jobs se puso al frente de forma provisional.",
         "Lo que se encontró era una empresa en estado crítico.",
         "Según contaría años después, a Apple le quedaban unos noventa días para quedarse sin dinero.",
-    ], [("cap4", 0, -0.6), ("ap_sistema", 0, 1.0), ("ap_be", 1, 0), ("ap_compra_next", 2, 0), ("ap_asesor", 3, 0), ("ap_provisional", 4, 0), ("ap_critico", 5, 0), ("ap_90dias", 6, 0)]),
-    ("5. Microsoft al rescate", [
+    ], [("cap5", 0, -0.6), ("ap_sistema", 0, 1.0), ("ap_be", 1, 0), ("ap_compra_next", 2, 0), ("ap_asesor", 3, 0), ("ap_provisional", 4, 0), ("ap_critico", 5, 0), ("ap_90dias", 6, 0)]),
+    ("6. Microsoft al rescate", [
         "Agosto de mil novecientos noventa y siete. Una feria de Apple en Boston.",
         "Jobs sube al escenario y anuncia un acuerdo que nadie esperaba: Microsoft, el gran rival, va a invertir ciento cincuenta millones de dólares en Apple.",
         "Y se compromete a seguir haciendo su paquete de oficina para los ordenadores Mac durante al menos cinco años.",
@@ -60,8 +70,8 @@ SEGMENTOS = [
         "Para muchos fans, aquello era como si su equipo pactara con el enemigo.",
         "Jobs pidió calma, y vino a decir que había que acabar con la idea de que, para que Apple ganara, Microsoft tenía que perder.",
         "Pero el acuerdo daba a Apple algo que necesitaba más que el dinero: confianza. El mensaje era que Apple no iba a desaparecer.",
-    ], [("cap5", 0, -0.6), ("ap_boston", 0, 1.0), ("ap_150", 1, 0), ("ap_office", 2, 0), ("ap_gates", 3, 0), ("ap_abucheo", 4, 0), ("ap_enemigo", 5, 0), ("ap_calma", 6, 0), ("ap_confianza", 7, 0)]),
-    ("6. Cortar, cortar, cortar", [
+    ], [("cap6", 0, -0.6), ("ap_boston", 0, 1.0), ("ap_150", 1, 0), ("ap_office", 2, 0), ("ap_gates", 3, 0), ("ap_abucheo", 4, 0), ("ap_enemigo", 5, 0), ("ap_calma", 6, 0), ("ap_confianza", 7, 0)]),
+    ("7. Cortar, cortar, cortar", [
         "Jobs tomó otra decisión radical: eliminar la mayor parte de los productos de Apple.",
         "Se cancelaron proyectos enteros, y alrededor del setenta por ciento del catálogo desapareció.",
         "Su idea se resumía en un cuadro de cuatro casillas: ordenadores para el gran público y para profesionales, de sobremesa y portátiles.",
@@ -69,16 +79,16 @@ SEGMENTOS = [
         "También canceló el programa de clones: si alguien quería un Mac, tendría que comprárselo a Apple.",
         "Al mismo tiempo, lanzó una campaña de publicidad que se hizo legendaria, con el lema «Piensa diferente», protagonizada por figuras históricas que habían cambiado el mundo.",
         "No anunciaba ningún producto. Anunciaba una idea de lo que era Apple.",
-    ], [("cap6", 0, -0.6), ("ap_eliminar", 0, 1.0), ("ap_70", 1, 0), ("ap_cuadro", 2, 0), ("ap_cuatro", 3, 0), ("ap_sinclones", 4, 0), ("ap_think", 5, 0), ("ap_idea", 6, 0)]),
-    ("7. Un ordenador de colores", [
+    ], [("cap7", 0, -0.6), ("ap_eliminar", 0, 1.0), ("ap_70", 1, 0), ("ap_cuadro", 2, 0), ("ap_cuatro", 3, 0), ("ap_sinclones", 4, 0), ("ap_think", 5, 0), ("ap_idea", 6, 0)]),
+    ("8. Un ordenador de colores", [
         "En agosto de mil novecientos noventa y ocho llegó el producto que necesitaba la empresa: el iMac.",
         "Un ordenador todo en uno, con una carcasa de plástico translúcido de color azul verdoso, en una época en que todos los ordenadores eran cajas grises.",
         "Detrás del diseño estaba un joven diseñador británico que acabaría siendo una leyenda: Jony Ive.",
         "La «i» del nombre venía de internet: era un ordenador pensado para conectarse a la red de forma sencilla, en plena expansión de internet en las casas.",
         "El iMac se vendió muy bien, y Apple volvió a tener beneficios.",
         "Por primera vez en años, la gente volvía a hablar de Apple con entusiasmo.",
-    ], [("cap7", 0, -0.6), ("ap_imac", 0, 1.0), ("ap_color", 1, 0), ("ap_ive", 2, 0), ("ap_i", 3, 0), ("ap_beneficios", 4, 0), ("ap_entusiasmo", 5, 0)]),
-    ("8. Mil canciones en el bolsillo", [
+    ], [("cap8", 0, -0.6), ("ap_imac", 0, 1.0), ("ap_color", 1, 0), ("ap_ive", 2, 0), ("ap_i", 3, 0), ("ap_beneficios", 4, 0), ("ap_entusiasmo", 5, 0)]),
+    ("9. Mil canciones en el bolsillo", [
         "Pero lo mejor estaba por llegar.",
         "En dos mil uno, Apple abrió sus primeras tiendas propias, algo que muchos expertos consideraron un error carísimo. Acabaron siendo algunas de las tiendas más rentables del mundo.",
         "Ese mismo año, Apple presentó el iPod, con una promesa muy sencilla: mil canciones en el bolsillo.",
@@ -86,21 +96,21 @@ SEGMENTOS = [
         "Y en enero de dos mil siete, Jobs subió a otro escenario y presentó el iPhone.",
         "Aquel teléfono cambió no solo a Apple, sino a toda la industria.",
         "Steve Jobs murió en octubre de dos mil once. Pero la empresa que él había salvado ya era otra.",
-    ], [("cap8", 0, -0.6), ("ap_mejor", 0, 1.0), ("ap_stores", 1, 0), ("ap_ipod", 2, 0), ("ap_tienda", 3, 0), ("ap_iphone", 4, 0), ("ap_industria", 5, 0), ("ap_jobs_muere", 6, 0)]),
-    ("9. De noventa días a billones", [
+    ], [("cap9", 0, -0.6), ("ap_mejor", 0, 1.0), ("ap_stores", 1, 0), ("ap_ipod", 2, 0), ("ap_tienda", 3, 0), ("ap_iphone", 4, 0), ("ap_industria", 5, 0), ("ap_jobs_muere", 6, 0)]),
+    ("10. De noventa días a billones", [
         "En agosto de dos mil dieciocho, Apple se convirtió en la primera empresa estadounidense en valer en bolsa un billón de dólares.",
         "Y unos años después, superó los tres billones.",
         "Piénsalo: la empresa que en mil novecientos noventa y siete tenía dinero para unos noventa días, se convirtió en una de las más valiosas de la historia.",
         "Hoy vende teléfonos, ordenadores, relojes, auriculares y servicios en casi todo el mundo.",
         "¿Y los ciento cincuenta millones de Microsoft? Microsoft acabó vendiendo aquellas acciones unos años después.",
         "Y aquellos dos rivales que parecían enemigos irreconciliables acabaron conviviendo durante décadas.",
-    ], [("cap9", 0, -0.6), ("ap_billon", 0, 1.0), ("ap_tres", 1, 0), ("ap_piensalo", 2, 0), ("ap_productos", 3, 0), ("ap_ms_vende", 4, 0), ("ap_rivales", 5, 0)]),
-    ("10. Lo que nos enseña", [
+    ], [("cap10", 0, -0.6), ("ap_billon", 0, 1.0), ("ap_tres", 1, 0), ("ap_piensalo", 2, 0), ("ap_productos", 3, 0), ("ap_ms_vende", 4, 0), ("ap_rivales", 5, 0)]),
+    ("11. Lo que nos enseña", [
         "¿Qué nos enseña esta historia? Tres cosas.",
         "Una: a veces, para salvarte, tienes que hacer menos cosas, no más. Apple pasó de decenas de productos a cuatro.",
         "Dos: aceptar la ayuda de un rival no es rendirse. Puede ser la forma más inteligente de seguir en pie.",
         "Y tres: una empresa no vende solo productos. Vende una idea. Y cuando recupera esa idea, puede volver a ganar.",
-    ], [("cap10", 0, -0.6), ("leccion1", 1, 0), ("leccion2", 2, 0), ("leccion3", 3, 0)]),
+    ], [("cap11", 0, -0.6), ("leccion1", 1, 0), ("leccion2", 2, 0), ("leccion3", 3, 0)]),
     ("Final", [
         "Un garaje, un fundador despedido, noventa días de dinero, un rival que ayuda y un ordenador de colores.",
         "Así se salvó Apple.",

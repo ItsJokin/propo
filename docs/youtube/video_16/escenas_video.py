@@ -1,8 +1,8 @@
 """Escenas del vídeo 16 (Mercadona, formato largo). Motor común; sin logotipos: tiendas, carros y envases genéricos."""
 from base import *
 
-CAP_ICONOS = {1: "1f969", 2: "1f91d", 3: "1f4e0", 4: "1f3f7-fe0f", 5: "1f451", 6: "1f6d2", 7: "1f3ed", 8: "1f4fa",
-              9: "1f4c8", 10: "1f3c0", 11: "1f9e0"}
+CAP_ICONOS = {1: "1f969", 2: "1f91d", 3: "1f4e0", 4: "1f3f7-fe0f", 5: "1f451", 6: "1f6d2", 7: "2694-fe0f", 8: "1f3ed", 9: "1f4fa",
+              10: "1f4c8", 11: "1f3c0", 12: "1f9e0"}
 
 def super_(px=560, rotulo="SUPERMERCADO", color=VERDE):
     return (f'<svg width="{px}" height="{px*0.62:.0f}" viewBox="0 0 400 250"><rect x="20" y="60" width="360" height="180" fill="#f2efe6" stroke="{TINTA}" stroke-width="5"/>'
@@ -71,6 +71,14 @@ def escenas():
       {txt(kt("PRODUCTOS QUE SE HACEN *VIRALES*", "xl", .8), 70, 46, 52)}'''
     E["me_expresamente"] = icono_texto("1f4f0", "SI UNO DESAPARECE, *ES NOTICIA*", "hay quien va a por un producto concreto de Hacendado", "", "der", "", True, "drop", "swing")
     E["me_mitad"] = cifra("≈50 %", "DE LO QUE VENDE, DE SUS MARCAS PROPIAS", "1f6d2", "hoy, cerca del")
+    E["me_estanterias"] = icono_texto("1f6d2", "LO NOTARON *EN LAS ESTANTERÍAS*", "una consecuencia del crecimiento de Hacendado", "", "izq", "", True, "pop", "bob")
+    E["me_800"] = f'''{F("dark", True)}{"".join(obj(envase(90, [VERDE, ROJO, AZUL, NARANJA][i % 4], "MARCA"), 8 + (i % 10) * 9.4, 24 + (i // 10) * 22, "none", "fuera", .2 + i * .05) for i in range(20))}
+      {txt(kt("2009: ≈800 PRODUCTOS *RETIRADOS*", "xl naranja", .8), 50, 84, 90)}'''
+    E["me_conocidas"] = icono_texto("2b50", "MARCAS *MUY CONOCIDAS*", "que de repente dejaron de estar en sus lineales", "", "der", "", False, "pop", "")
+    E["me_justifica"] = lista([("1f4c9", "se vendían poco"), ("1f465", "duplicados"), ("1f4b8", "encarecían la compra")], "LA EXPLICACIÓN DE LA EMPRESA")
+    E["me_fabricantes"] = comparar("1f3ed", "los fabricantes", "1f6d2", "«más espacio para su marca propia»", "→")
+    E["me_desleal"] = icono_texto("2696-fe0f", "«COMPETENCIA *DESLEAL*»", "acusaron los fabricantes de marcas; algunos clientes protestaron", "", "izq", "dark", True, "drop", "swing")
+    E["me_deciden"] = titular("LAS ESTANTERÍAS *LAS DECIDE MERCADONA*", "algunas marcas volvieron con el tiempo", "", ("1f6d2", "1f4e6", "1f451", "1f3f7-fe0f"), "", True, "xl")
     E["me_nofabrica"] = impacto("pero Mercadona", "NO FABRICA *HACENDADO*", "", "1f3ed")
     E["me_inter"] = titular("*INTERPROVEEDORES*", "otras empresas que fabrican para la cadena", "así los llama:", ("1f3ed", "1f91d", "1f4e6", "1f69a"), "", True, "xl")
     E["me_acuerdos"] = comparar("1f4dc", "acuerdos largos, a menudo en exclusiva", "1f6d2", "a cambio, un cliente enorme", "⇄")
