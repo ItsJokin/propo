@@ -70,7 +70,8 @@ CODIGOS = ["1f36d", "1f36c", "1f9d2", "270b", "26bd", "1f3ea", "1f3ec", "1f9fe",
            "1f355", "1f3d3", "1f47d", "1f4a9", "1f573-fe0f", "265f-fe0f", "26aa",
            "1f0cf", "1f41b", "1f41e", "1f42d", "1f438", "1f45c", "1f634", "1f635-200d-1f4ab", "1f691", "1f945", "1f997", "1fab2",
            "1f3c7", "1f3f3-fe0f", "1f44b", "1f6e0-fe0f", "1f6fb", "1f920", "1fa93", "26fa",
-           "1f3d6-fe0f", "1f698"]
+           "1f3d6-fe0f", "1f698",
+           "1f1e8-1f1f1", "1f1f5-1f1f1", "1f35b", "1f363", "1f396-fe0f", "1f4cd", "1f4ec", "1f6b2", "1f6f5", "1f957"]
 CODIGOS = list(dict.fromkeys(CODIGOS))
 LADO, COLS = 200, 10
 
