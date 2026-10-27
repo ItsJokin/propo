@@ -18,7 +18,7 @@ if (salida === "preview") {
 } else {
   const ini = +a, fin = b ? +b : +durS;
   const ff = spawn("ffmpeg", ["-y", "-loglevel", "error", "-f", "image2pipe", "-framerate", String(fps), "-c:v", "mjpeg", "-i", "-",
-    "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p", "-r", String(fps), salida], { stdio: ["pipe", "inherit", "inherit"] });
+    "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-maxrate", "4300k", "-bufsize", "8600k", "-pix_fmt", "yuv420p", "-r", String(fps), salida], { stdio: ["pipe", "inherit", "inherit"] });
   const n0 = Math.round(ini * fps), n1 = Math.round(fin * fps);
   for (let i = n0; i < n1; i++) {
     await page.evaluate((t) => setTime(t), i / fps);
