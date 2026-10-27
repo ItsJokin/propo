@@ -6,3 +6,4 @@ test/shots/
 test/*.zip
 .DS_Store
 docs/youtube/video_*/salida/*.mp4
+__pycache__/

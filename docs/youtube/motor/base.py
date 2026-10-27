@@ -112,8 +112,8 @@ def capitulo(n, titulo, icono):
 def anio(desde, hasta, sub, icono):
     return f'''<div class="fondo"></div><div class="rayos"></div>
       {txt(odometro(desde, hasta, .1), 50, 42, 60)}
-      {txt(kt(sub, "l", 1.6), 50, 66, 70)}
-      {obj(spr(icono, 190), 20, 72, "left", "bob", 1.0)}{obj(spr("2728", 140), 80, 25, "pop", "spin-slow", 1.4)}'''
+      {txt(kt(sub, "l", 1.6), 54, 66, 56)}
+      {obj(spr(icono, 190), 14, 74, "left", "bob", 1.0)}{obj(spr("2728", 140), 80, 25, "pop", "spin-slow", 1.4)}'''
 
 # ---------------------------------------------------------------- escenas
 

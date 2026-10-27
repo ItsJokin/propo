@@ -7,7 +7,7 @@ import guion as G
 t = json.load(open(os.path.join(W, "tiempos.json")))
 def mmss(s): s = int(s); return f"{s//60:02d}:{s%60:02d}"
 caps = "\n".join(f"{'00:00' if i == 0 else mmss(seg['inicio'])} {seg['capitulo']}" for i, seg in enumerate(t["segmentos"]))
-fuentes = "\n".join(f"- {n}: {u}" for n, u in G.FUENTES)
+fuentes = "\n".join((f"- {n}: {u}" if u else f"- {n}") for n, u in G.FUENTES)
 nota = f"\n{G.NOTA}\n" if getattr(G, "NOTA", "") else ""
 descripcion = f"""{G.DESCRIPCION}
 
