@@ -1,0 +1,568 @@
+1
+00:00:00,500 --> 00:00:04,713
+Hubo un tiempo en que llevar un móvil con un pequeño teclado lleno de botones era
+
+2
+00:00:04,713 --> 00:00:05,806
+señal de importancia.
+
+3
+00:00:06,146 --> 00:00:10,776
+Lo llevaban ejecutivos, periodistas, políticos… y hasta el presidente de los Estados
+
+4
+00:00:10,776 --> 00:00:11,162
+Unidos.
+
+5
+00:00:11,502 --> 00:00:15,663
+Era tan adictivo que le pusieron un mote que un diccionario eligió como palabra del
+
+6
+00:00:15,663 --> 00:00:15,864
+año.
+
+7
+00:00:16,204 --> 00:00:20,465
+Su nombre nació, según la agencia que lo creó, de una fresa que parecía demasiado
+
+8
+00:00:20,465 --> 00:00:20,781
+lenta.
+
+9
+00:00:21,121 --> 00:00:24,662
+Y en pocos años pasó de dominar el mercado a casi desaparecer.
+
+10
+00:00:25,002 --> 00:00:26,568
+Esta es la historia de BlackBerry.
+
+11
+00:00:27,858 --> 00:00:33,699
+Waterloo, en la provincia canadiense de Ontario, mil novecientos ochenta y cuatro.
+
+12
+00:00:34,039 --> 00:00:39,094
+Mike Lazaridis era un estudiante de ingeniería eléctrica. Había nacido en Estambul,
+
+13
+00:00:39,094 --> 00:00:43,419
+en una familia de origen griego que emigró a Canadá cuando él era niño.
+
+14
+00:00:43,759 --> 00:00:47,942
+Desde pequeño desmontaba aparatos. De adolescente ya construía sus propios
+
+15
+00:00:47,942 --> 00:00:48,507
+circuitos.
+
+16
+00:00:48,847 --> 00:00:54,316
+Junto a un amigo de la infancia, Douglas Fregin, fundó una pequeña empresa con un
+
+17
+00:00:54,316 --> 00:00:58,773
+nombre muy serio: Research In Motion. Investigación en movimiento.
+
+18
+00:00:59,113 --> 00:01:03,556
+Al principio hacían un poco de todo: pantallas para fábricas, sistemas para leer
+
+19
+00:01:03,556 --> 00:01:05,888
+códigos en películas de cine, consultoría.
+
+20
+00:01:06,228 --> 00:01:11,264
+Pero a Lazaridis le obsesionaba una idea: enviar datos sin cables.
+
+21
+00:01:12,554 --> 00:01:16,950
+Research In Motion tenía buenos ingenieros. Lo que no tenía era alguien que supiera
+
+22
+00:01:16,950 --> 00:01:17,321
+vender.
+
+23
+00:01:17,661 --> 00:01:21,710
+Ese alguien fue Jim Balsillie, un canadiense con formación en negocios y mucha
+
+24
+00:01:21,710 --> 00:01:22,177
+ambición.
+
+25
+00:01:22,517 --> 00:01:27,524
+En mil novecientos noventa y dos entró en la empresa, puso dinero de su bolsillo, y,
+
+26
+00:01:27,524 --> 00:01:30,862
+según se cuenta, llegó a hipotecar su casa para hacerlo.
+
+27
+00:01:31,202 --> 00:01:36,371
+Desde entonces la dirigieron entre los dos, como consejeros delegados a la vez.
+
+28
+00:01:36,711 --> 00:01:42,761
+Lazaridis se ocupaba de la tecnología. Balsillie, del dinero, los contratos y las
+
+29
+00:01:42,761 --> 00:01:43,582
+operadoras.
+
+30
+00:01:43,922 --> 00:01:47,912
+Era una pareja extraña. Pero durante años funcionó como un reloj.
+
+31
+00:01:49,202 --> 00:01:54,974
+En los noventa, el correo electrónico se leía en el ordenador de la oficina. Si
+
+32
+00:01:54,974 --> 00:01:57,385
+salías, te quedabas desconectado.
+
+33
+00:01:57,725 --> 00:02:02,179
+Research In Motion empezó fabricando buscapersonas que podían enviar y recibir
+
+34
+00:02:02,179 --> 00:02:03,378
+mensajes de dos vías.
+
+35
+00:02:03,718 --> 00:02:07,968
+Y en mil novecientos noventa y nueve lanzó un aparato que cambió todo: un
+
+36
+00:02:07,968 --> 00:02:12,450
+buscapersonas que recibía tu correo de empresa, al instante, estuvieras donde
+
+37
+00:02:12,450 --> 00:02:13,090
+estuvieras.
+
+38
+00:02:13,430 --> 00:02:17,454
+No tenías que ir a buscar los mensajes. Te llegaban solos, empujados desde el
+
+39
+00:02:17,454 --> 00:02:17,924
+servidor.
+
+40
+00:02:18,264 --> 00:02:22,552
+Tenía un teclado diminuto para escribir con los pulgares, una batería que duraba
+
+41
+00:02:22,552 --> 00:02:24,106
+días y un sistema muy seguro.
+
+42
+00:02:24,446 --> 00:02:27,583
+Para un ejecutivo, era como llevar la oficina en el bolsillo.
+
+43
+00:02:28,873 --> 00:02:31,233
+Pero aquel aparato necesitaba un nombre.
+
+44
+00:02:31,573 --> 00:02:35,973
+La empresa contrató a Lexicon, una agencia de California especializada en crear
+
+45
+00:02:35,973 --> 00:02:39,871
+nombres de marcas, la misma que había bautizado al procesador Pentium.
+
+46
+00:02:40,211 --> 00:02:44,312
+Según contó la propia agencia, alguien se fijó en que las teclas pequeñitas del
+
+47
+00:02:44,312 --> 00:02:46,544
+aparato parecían las semillas de una fresa.
+
+48
+00:02:46,884 --> 00:02:52,024
+Escribieron fresa en la pizarra. Pero a alguien le pareció una palabra lenta,
+
+49
+00:02:52,024 --> 00:02:56,229
+pesada. Y en un producto que prometía rapidez, eso no encajaba.
+
+50
+00:02:56,569 --> 00:03:01,771
+Entonces alguien propuso otra fruta: la mora. En inglés, blackberry.
+
+51
+00:03:02,111 --> 00:03:06,390
+Según el fundador de la agencia, a los directivos al principio les pareció una
+
+52
+00:03:06,390 --> 00:03:08,145
+locura. Pero el nombre se quedó.
+
+53
+00:03:08,485 --> 00:03:13,093
+Una fruta. Simpática, fácil de recordar, y muy distinta de los nombres fríos y
+
+54
+00:03:13,093 --> 00:03:14,688
+técnicos de la competencia.
+
+55
+00:03:15,978 --> 00:03:20,035
+En dos mil dos llegaron los primeros BlackBerry que también eran teléfono.
+
+56
+00:03:20,375 --> 00:03:24,540
+Y la marca empezó a extenderse por bancos, despachos de abogados, redacciones y
+
+57
+00:03:24,540 --> 00:03:25,067
+gobiernos.
+
+58
+00:03:25,407 --> 00:03:29,360
+La gente lo miraba en las reuniones, en la cena, en la cama. Era casi imposible
+
+59
+00:03:29,360 --> 00:03:29,810
+soltarlo.
+
+60
+00:03:30,150 --> 00:03:35,122
+Por eso le pusieron un mote: CrackBerry, mezclando el nombre de la marca con el de
+
+61
+00:03:35,122 --> 00:03:36,517
+una droga muy adictiva.
+
+62
+00:03:36,857 --> 00:03:41,515
+La palabra tuvo tanto éxito que un diccionario estadounidense la eligió como palabra
+
+63
+00:03:41,515 --> 00:03:42,845
+del año en dos mil seis.
+
+64
+00:03:43,185 --> 00:03:47,805
+Tener un BlackBerry era señal de que eras alguien importante. Alguien a quien había
+
+65
+00:03:47,805 --> 00:03:49,697
+que poder localizar a todas horas.
+
+66
+00:03:50,987 --> 00:03:56,113
+Pero en plena euforia, BlackBerry estuvo a punto de apagarse en Estados Unidos. Y no
+
+67
+00:03:56,113 --> 00:03:58,860
+por culpa de la competencia, sino de un juez.
+
+68
+00:03:59,200 --> 00:04:03,660
+Una pequeña empresa llamada NTP, que casi no fabricaba nada, aseguraba tener
+
+69
+00:04:03,660 --> 00:04:06,300
+patentes sobre el envío de correo sin cables.
+
+70
+00:04:06,640 --> 00:04:10,121
+Llevó a Research In Motion a los tribunales. Y ganó.
+
+71
+00:04:10,461 --> 00:04:14,424
+Durante meses, existió la posibilidad real de que un juez ordenara cortar el
+
+72
+00:04:14,424 --> 00:04:16,457
+servicio de BlackBerry en todo el país.
+
+73
+00:04:16,797 --> 00:04:21,295
+Los usuarios, entre ellos muchos empleados del gobierno, empezaron a ponerse
+
+74
+00:04:21,295 --> 00:04:21,887
+nerviosos.
+
+75
+00:04:22,227 --> 00:04:27,197
+En marzo de dos mil seis, la empresa decidió zanjar el asunto: pagó a NTP más de
+
+76
+00:04:27,197 --> 00:04:29,185
+seiscientos millones de dólares.
+
+77
+00:04:29,525 --> 00:04:32,271
+Fue carísimo. Pero BlackBerry siguió funcionando.
+
+78
+00:04:33,561 --> 00:04:36,170
+El ejemplo más famoso llegó en dos mil nueve.
+
+79
+00:04:36,510 --> 00:04:40,707
+Barack Obama, recién elegido presidente de Estados Unidos, era un usuario muy
+
+80
+00:04:40,707 --> 00:04:42,179
+aficionado a su BlackBerry.
+
+81
+00:04:42,519 --> 00:04:47,782
+Y los servicios de seguridad no querían que el presidente usara un aparato así.
+
+82
+00:04:47,782 --> 00:04:50,048
+Temían que pudieran interceptarlo.
+
+83
+00:04:50,388 --> 00:04:55,530
+Según contó la prensa estadounidense, Obama insistió tanto que acabó consiguiendo
+
+84
+00:04:55,530 --> 00:04:59,529
+quedarse con uno, adaptado con medidas de seguridad especiales.
+
+85
+00:04:59,869 --> 00:05:04,511
+No había mejor anuncio posible: el hombre más poderoso del mundo no quería separarse
+
+86
+00:05:04,511 --> 00:05:05,450
+de su BlackBerry.
+
+87
+00:05:06,740 --> 00:05:11,184
+Y entonces pasó algo que la empresa no había planeado: los adolescentes también lo
+
+88
+00:05:11,184 --> 00:05:11,617
+querían.
+
+89
+00:05:11,957 --> 00:05:16,725
+La razón tenía nombre: BlackBerry Messenger, una aplicación para enviar mensajes
+
+90
+00:05:16,725 --> 00:05:18,752
+gratis entre aparatos de la marca.
+
+91
+00:05:19,092 --> 00:05:23,337
+Años antes de que WhatsApp se hiciera popular, podías chatear sin pagar por cada
+
+92
+00:05:23,337 --> 00:05:27,688
+mensaje, ver cuándo lo habían leído y compartir tu código personal con los amigos.
+
+93
+00:05:28,028 --> 00:05:32,085
+En muchos países, pedir el PIN del BlackBerry se volvió una forma de ligar.
+
+94
+00:05:32,425 --> 00:05:36,602
+Hacia dos mil nueve, BlackBerry tenía alrededor de una quinta parte de todo el
+
+95
+00:05:36,602 --> 00:05:38,852
+mercado mundial de teléfonos inteligentes.
+
+96
+00:05:39,192 --> 00:05:40,234
+Parecía imparable.
+
+97
+00:05:41,524 --> 00:05:45,945
+Pero en enero de dos mil siete, en San Francisco, Steve Jobs presentó el iPhone.
+
+98
+00:05:46,285 --> 00:05:50,155
+No tenía teclado físico. Toda la parte delantera era una pantalla táctil.
+
+99
+00:05:50,495 --> 00:05:55,776
+Según se cuenta, en Research In Motion muchos no se lo tomaron en serio: la batería
+
+100
+00:05:55,776 --> 00:06:00,992
+duraba poco, escribir en un cristal parecía incómodo y la seguridad no convencía a
+
+101
+00:06:00,992 --> 00:06:01,819
+las empresas.
+
+102
+00:06:02,159 --> 00:06:05,996
+Además, ellos tenían a los clientes que importaban: los profesionales y los
+
+103
+00:06:05,996 --> 00:06:06,508
+gobiernos.
+
+104
+00:06:06,848 --> 00:06:11,579
+Lo que no vieron venir es que el iPhone no iba dirigido a las empresas. Iba dirigido
+
+105
+00:06:11,579 --> 00:06:12,424
+a las personas.
+
+106
+00:06:12,764 --> 00:06:16,740
+Y cuando las personas tuvieron un iPhone, empezaron a pedir que les dejaran usarlo
+
+107
+00:06:16,740 --> 00:06:17,807
+también en el trabajo.
+
+108
+00:06:18,147 --> 00:06:24,253
+Al año siguiente, además, apareció el primer móvil con Android. La competencia ya no
+
+109
+00:06:24,253 --> 00:06:25,562
+era una. Eran dos.
+
+110
+00:06:26,852 --> 00:06:28,453
+BlackBerry intentó reaccionar.
+
+111
+00:06:28,793 --> 00:06:33,336
+Lanzó su propio móvil con pantalla táctil, pero recibió muchas críticas: era lento y
+
+112
+00:06:33,336 --> 00:06:36,419
+tenía una pantalla que había que presionar como un botón.
+
+113
+00:06:36,759 --> 00:06:41,352
+En dos mil once sacó una tableta, la PlayBook, para competir con el iPad. Al
+
+114
+00:06:41,352 --> 00:06:44,917
+principio ni siquiera traía su propia aplicación de correo.
+
+115
+00:06:45,257 --> 00:06:49,969
+Y ese mismo año, en octubre, su red sufrió una caída que dejó a millones de usuarios
+
+116
+00:06:49,969 --> 00:06:53,334
+de todo el mundo sin correo ni mensajes durante varios días.
+
+117
+00:06:53,674 --> 00:06:57,808
+Para una marca cuya gran promesa era estar siempre conectado, fue un golpe durísimo.
+
+118
+00:06:59,098 --> 00:07:03,272
+En dos mil doce, Lazaridis y Balsillie dejaron la dirección de la empresa.
+
+119
+00:07:03,612 --> 00:07:08,463
+Al año siguiente, Research In Motion cambió su nombre por el de su producto
+
+120
+00:07:08,463 --> 00:07:09,821
+estrella: BlackBerry.
+
+121
+00:07:10,161 --> 00:07:15,877
+Lanzó un sistema operativo nuevo y teléfonos modernos. Pero llegaban años tarde. Los
+
+122
+00:07:15,877 --> 00:07:19,552
+usuarios ya se habían ido, y las aplicaciones también.
+
+123
+00:07:19,892 --> 00:07:23,763
+La cuota de mercado cayó sin parar, hasta quedarse prácticamente en cero.
+
+124
+00:07:24,103 --> 00:07:28,541
+En dos mil dieciséis, la empresa anunció que dejaría de diseñar sus propios
+
+125
+00:07:28,541 --> 00:07:29,133
+teléfonos.
+
+126
+00:07:29,473 --> 00:07:34,451
+Y en enero de dos mil veintidós apagó los servicios de sus antiguos sistemas. Los
+
+127
+00:07:34,451 --> 00:07:37,646
+BlackBerry clásicos dejaron de funcionar como antes.
+
+128
+00:07:37,986 --> 00:07:42,171
+Hoy la empresa sigue existiendo, pero se dedica al software y a la ciberseguridad.
+
+129
+00:07:43,461 --> 00:07:45,733
+¿Qué nos enseña esta historia? Tres cosas.
+
+130
+00:07:46,073 --> 00:07:52,684
+Una: un buen nombre puede venir de un detalle tonto. Unas teclas que parecían
+
+131
+00:07:52,684 --> 00:07:53,457
+semillas.
+
+132
+00:07:53,797 --> 00:07:59,589
+Dos: lo que te hace fuerte puede atarte. El teclado y los clientes de empresa fueron
+
+133
+00:07:59,589 --> 00:08:01,106
+su éxito… y su trampa.
+
+134
+00:08:01,446 --> 00:08:06,255
+Y tres: el peligro no siempre viene de tu competencia directa. A BlackBerry no la
+
+135
+00:08:06,255 --> 00:08:10,946
+hundió otro móvil para ejecutivos, sino un teléfono pensado para todo el mundo.
+
+136
+00:08:12,236 --> 00:08:18,180
+Dos amigos de Waterloo, un vendedor que hipotecó su casa, una fresa demasiado lenta,
+
+137
+00:08:18,180 --> 00:08:22,213
+un presidente que no lo soltaba y un teléfono sin teclas.
+
+138
+00:08:22,553 --> 00:08:26,515
+La próxima vez que escribas en la pantalla de tu móvil, acuérdate de cuando los
+
+139
+00:08:26,515 --> 00:08:27,819
+pulgares pulsaban botones.
+
+140
+00:08:28,159 --> 00:08:32,137
+Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
+
+141
+00:08:32,477 --> 00:08:37,751
+¿Tuviste un BlackBerry? ¿Te acuerdas de tu PIN? Cuéntanoslo en los comentarios.
+
+142
+00:08:38,091 --> 00:08:39,741
+Y si te ha gustado, suscríbete.
+

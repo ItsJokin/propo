@@ -1,0 +1,580 @@
+1
+00:00:00,500 --> 00:00:05,039
+Cada día, miles de millones de veces, alguien escribe algo en una caja blanca y
+
+2
+00:00:05,039 --> 00:00:05,729
+pulsa intro.
+
+3
+00:00:06,069 --> 00:00:10,776
+Hoy buscar en Google es tan normal que se ha convertido en un verbo: googlear.
+
+4
+00:00:11,116 --> 00:00:15,654
+Pero hubo un momento en que sus creadores quisieron venderla. Pidieron menos de un
+
+5
+00:00:15,654 --> 00:00:17,867
+millón de dólares. Y les dijeron que no.
+
+6
+00:00:18,207 --> 00:00:22,411
+Su nombre salió de un número gigantesco… y, según se cuenta, de una errata.
+
+7
+00:00:22,751 --> 00:00:26,612
+Y su primer inversor firmó un cheque a nombre de una empresa que todavía no existía.
+
+8
+00:00:26,952 --> 00:00:28,287
+Esta es la historia de Google.
+
+9
+00:00:29,577 --> 00:00:33,922
+Universidad de Stanford, California, mil novecientos noventa y cinco.
+
+10
+00:00:34,262 --> 00:00:38,859
+Sergey Brin, un estudiante de doctorado nacido en Moscú, hacía de guía para los
+
+11
+00:00:38,859 --> 00:00:41,128
+alumnos nuevos que visitaban el campus.
+
+12
+00:00:41,468 --> 00:00:46,295
+Uno de esos alumnos era Larry Page, hijo de dos profesores de informática de
+
+13
+00:00:46,295 --> 00:00:46,867
+Míchigan.
+
+14
+00:00:47,207 --> 00:00:51,994
+Según se cuenta, aquel primer día discutieron sobre casi todo. No se cayeron
+
+15
+00:00:51,994 --> 00:00:53,190
+especialmente bien.
+
+16
+00:00:53,530 --> 00:00:58,393
+Pero acabaron trabajando juntos. Y de aquella pareja tan poco prometedora salió una
+
+17
+00:00:58,393 --> 00:01:00,913
+de las empresas más grandes de la historia.
+
+18
+00:01:02,203 --> 00:01:06,459
+A mediados de los noventa, internet crecía sin control, y encontrar algo útil era un
+
+19
+00:01:06,459 --> 00:01:07,321
+pequeño infierno.
+
+20
+00:01:07,661 --> 00:01:11,817
+Los buscadores de entonces se fijaban sobre todo en cuántas veces aparecía una
+
+21
+00:01:11,817 --> 00:01:12,990
+palabra en una página.
+
+22
+00:01:13,330 --> 00:01:18,124
+Así que bastaba con repetir una palabra cien veces para colarse arriba en los
+
+23
+00:01:18,124 --> 00:01:18,809
+resultados.
+
+24
+00:01:19,149 --> 00:01:23,885
+Larry Page tuvo otra idea, inspirada en el mundo académico: un artículo científico
+
+25
+00:01:23,885 --> 00:01:26,715
+es importante si muchos otros artículos lo citan.
+
+26
+00:01:27,055 --> 00:01:32,191
+¿Y si con las páginas web pasara lo mismo? Cada enlace que recibe una página sería
+
+27
+00:01:32,191 --> 00:01:33,005
+como un voto.
+
+28
+00:01:33,345 --> 00:01:37,940
+Y no todos los votos valdrían igual: un enlace desde una página importante contaría
+
+29
+00:01:37,940 --> 00:01:40,486
+más que uno desde una página que nadie visita.
+
+30
+00:01:40,826 --> 00:01:45,467
+A ese sistema de puntuación lo llamaron PageRank. Un juego de palabras: es la
+
+31
+00:01:45,467 --> 00:01:48,902
+clasificación de páginas… y también el apellido de Larry.
+
+32
+00:01:50,192 --> 00:01:55,328
+Su primer buscador no se llamaba Google. Se llamaba BackRub, que en inglés significa
+
+33
+00:01:55,328 --> 00:01:56,612
+masaje en la espalda.
+
+34
+00:01:56,952 --> 00:02:01,130
+El nombre venía de los enlaces de vuelta, los que apuntan hacia una página.
+
+35
+00:02:01,470 --> 00:02:06,656
+Funcionaba en los ordenadores de la universidad, y llegó a consumir tanta conexión
+
+36
+00:02:06,656 --> 00:02:11,020
+que, según se cuenta, a veces dejaba sin internet a parte del campus.
+
+37
+00:02:11,360 --> 00:02:15,152
+No tenían dinero para equipos, así que reunían piezas como podían.
+
+38
+00:02:15,492 --> 00:02:21,030
+Una de sus primeras cajas de discos duros estaba construida con piezas de Lego. Hoy
+
+39
+00:02:21,030 --> 00:02:23,565
+se conserva como una pequeña reliquia.
+
+40
+00:02:24,855 --> 00:02:26,996
+BackRub necesitaba un nombre mejor.
+
+41
+00:02:27,336 --> 00:02:32,350
+Según el relato de un compañero de Stanford, en una sesión de ideas alguien propuso
+
+42
+00:02:32,350 --> 00:02:34,645
+googolplex, y Larry lo acortó: googol.
+
+43
+00:02:34,985 --> 00:02:39,741
+Un googol es un número: un uno seguido de cien ceros. Una forma de decir que querían
+
+44
+00:02:39,741 --> 00:02:42,345
+organizar una cantidad inmensa de información.
+
+45
+00:02:42,685 --> 00:02:47,646
+Al comprobar si el dominio estaba libre, según ese mismo relato, lo escribieron mal:
+
+46
+00:02:47,646 --> 00:02:50,777
+no googol, sino google, con dos oes y una e al final.
+
+47
+00:02:51,117 --> 00:02:56,214
+Ese estaba libre. A Larry le gustó, y el quince de septiembre de mil novecientos
+
+48
+00:02:56,214 --> 00:02:59,081
+noventa y siete se registró google punto com.
+
+49
+00:02:59,421 --> 00:03:03,796
+Así que, si la historia es cierta, la marca más famosa de internet nació de una
+
+50
+00:03:03,796 --> 00:03:04,183
+errata.
+
+51
+00:03:05,473 --> 00:03:08,046
+Aquí llega el giro que pocos conocen.
+
+52
+00:03:08,386 --> 00:03:12,433
+Brin y Page no querían montar una empresa. Querían terminar sus doctorados.
+
+53
+00:03:12,773 --> 00:03:17,751
+Así que intentaron vender su buscador. Y se lo ofrecieron, entre otros, a Excite,
+
+54
+00:03:17,751 --> 00:03:20,209
+uno de los grandes portales de la época.
+
+55
+00:03:20,549 --> 00:03:25,580
+Según se cuenta, pidieron un millón de dólares. El consejero delegado de Excite,
+
+56
+00:03:25,580 --> 00:03:27,152
+George Bell, dijo que no.
+
+57
+00:03:27,492 --> 00:03:32,375
+Uno de los inversores de Excite consiguió rebajar el precio a setecientos cincuenta
+
+58
+00:03:32,375 --> 00:03:34,846
+mil dólares. Y Bell volvió a decir que no.
+
+59
+00:03:35,186 --> 00:03:39,789
+Hoy la empresa que nació de aquel buscador vale cientos de miles de millones de
+
+60
+00:03:39,789 --> 00:03:41,945
+dólares. Excite casi ha desaparecido.
+
+61
+00:03:43,235 --> 00:03:46,148
+Como nadie la compraba, decidieron seguir adelante solos.
+
+62
+00:03:46,488 --> 00:03:50,988
+En agosto de mil novecientos noventa y ocho, le enseñaron su buscador a Andy
+
+63
+00:03:50,988 --> 00:03:53,652
+Bechtolsheim, cofundador de Sun Microsystems.
+
+64
+00:03:53,992 --> 00:03:58,317
+Según se cuenta, le bastó una demostración rápida. Sacó el talonario y firmó un
+
+65
+00:03:58,317 --> 00:04:01,053
+cheque de cien mil dólares a nombre de Google Inc.
+
+66
+00:04:01,393 --> 00:04:06,340
+El problema era que Google Inc. no existía. No había empresa, ni cuenta bancaria
+
+67
+00:04:06,340 --> 00:04:07,391
+donde ingresarlo.
+
+68
+00:04:07,731 --> 00:04:12,259
+Así que el cheque se quedó guardado unas semanas, hasta que el cuatro de septiembre
+
+69
+00:04:12,259 --> 00:04:16,078
+de mil novecientos noventa y ocho registraron oficialmente la empresa.
+
+70
+00:04:16,418 --> 00:04:20,796
+Con ese dinero y el de otros inversores, dejaron la universidad y se buscaron una
+
+71
+00:04:20,796 --> 00:04:21,228
+oficina.
+
+72
+00:04:22,518 --> 00:04:25,400
+La oficina fue un garaje en Menlo Park, en California.
+
+73
+00:04:25,740 --> 00:04:30,197
+Era de una amiga, Susan Wojcicki, que se lo alquiló, según se cuenta, por unos mil
+
+74
+00:04:30,197 --> 00:04:31,664
+setecientos dólares al mes.
+
+75
+00:04:32,004 --> 00:04:36,665
+Allí pusieron los ordenadores, unas mesas y poco más. Y contrataron a su primer
+
+76
+00:04:36,665 --> 00:04:37,196
+empleado.
+
+77
+00:04:37,536 --> 00:04:42,449
+Susan Wojcicki acabaría trabajando en Google. Años después llegaría a dirigir
+
+78
+00:04:42,449 --> 00:04:42,959
+YouTube.
+
+79
+00:04:43,299 --> 00:04:47,581
+A principios de mil novecientos noventa y nueve ya no cabían, y se mudaron a una
+
+80
+00:04:47,581 --> 00:04:48,705
+oficina en Palo Alto.
+
+81
+00:04:49,995 --> 00:04:55,084
+Mientras los demás portales llenaban su portada de noticias, horóscopos, el tiempo y
+
+82
+00:04:55,084 --> 00:04:57,204
+anuncios, Google hizo lo contrario.
+
+83
+00:04:57,544 --> 00:05:02,365
+Su página era casi blanca: el logotipo, una caja para escribir y dos botones.
+
+84
+00:05:02,705 --> 00:05:07,190
+Según se cuenta, parte de esa sencillez venía de que ninguno de los dos sabía mucho
+
+85
+00:05:07,190 --> 00:05:07,946
+de diseño web.
+
+86
+00:05:08,286 --> 00:05:13,220
+Pero funcionó. La página cargaba rápido y los resultados eran mejores. Y la gente
+
+87
+00:05:13,220 --> 00:05:15,535
+empezó a recomendarla de boca en boca.
+
+88
+00:05:15,875 --> 00:05:20,294
+En el verano de mil novecientos noventa y ocho apareció además el primer doodle: un
+
+89
+00:05:20,294 --> 00:05:24,659
+dibujo en el logotipo para avisar de que se habían ido al festival Burning Man, en
+
+90
+00:05:24,659 --> 00:05:25,830
+el desierto de Nevada.
+
+91
+00:05:26,170 --> 00:05:30,591
+Si algo fallaba, ese era el aviso de que no había nadie en la oficina.
+
+92
+00:05:31,881 --> 00:05:36,059
+Google tenía millones de usuarios. Pero no ganaba dinero.
+
+93
+00:05:36,399 --> 00:05:41,082
+Brin y Page desconfiaban de la publicidad. Pensaban que podía estropear la calidad
+
+94
+00:05:41,082 --> 00:05:42,110
+de los resultados.
+
+95
+00:05:42,450 --> 00:05:47,341
+La solución llegó en el año dos mil: anuncios de texto, pequeños, separados de los
+
+96
+00:05:47,341 --> 00:05:50,561
+resultados y relacionados con lo que estabas buscando.
+
+97
+00:05:50,901 --> 00:05:56,250
+Si buscabas zapatillas de correr, veías anuncios de zapatillas de correr. No
+
+98
+00:05:56,250 --> 00:05:57,799
+pancartas parpadeando.
+
+99
+00:05:58,139 --> 00:06:02,340
+Más tarde, los anunciantes empezaron a pujar por cada palabra, y a pagar solo cuando
+
+100
+00:06:02,340 --> 00:06:03,291
+alguien hacía clic.
+
+101
+00:06:03,631 --> 00:06:08,265
+Aquel sistema se convirtió en una de las máquinas de hacer dinero más eficaces de la
+
+102
+00:06:08,265 --> 00:06:12,790
+historia. Todavía hoy, la publicidad es la mayor fuente de ingresos de la empresa.
+
+103
+00:06:14,080 --> 00:06:18,682
+El uno de abril de dos mil cuatro, el día de las bromas en Estados Unidos, Google
+
+104
+00:06:18,682 --> 00:06:21,295
+anunció un servicio de correo gratuito: Gmail.
+
+105
+00:06:21,635 --> 00:06:26,264
+Ofrecía un gigabyte de espacio. Los correos de la competencia daban unos pocos
+
+106
+00:06:26,264 --> 00:06:28,044
+megas, cientos de veces menos.
+
+107
+00:06:28,384 --> 00:06:32,251
+Mucha gente pensó que era una broma del uno de abril. No lo era.
+
+108
+00:06:32,591 --> 00:06:36,864
+Al principio solo se podía entrar con invitación, y las invitaciones se llegaron a
+
+109
+00:06:36,864 --> 00:06:37,906
+vender por internet.
+
+110
+00:06:38,246 --> 00:06:42,778
+Ese mismo año, en agosto, Google salió a bolsa a ochenta y cinco dólares por acción,
+
+111
+00:06:42,778 --> 00:06:45,152
+con un sistema de subasta muy poco habitual.
+
+112
+00:06:45,492 --> 00:06:50,441
+Aquel día, la empresa que nadie quiso por setecientos cincuenta mil dólares pasó a
+
+113
+00:06:50,441 --> 00:06:52,433
+valer más de veinte mil millones.
+
+114
+00:06:53,723 --> 00:06:56,290
+Con el dinero de la bolsa, Google empezó a comprar.
+
+115
+00:06:56,630 --> 00:07:01,641
+En dos mil cinco compró una pequeña empresa que preparaba un sistema operativo para
+
+116
+00:07:01,641 --> 00:07:03,331
+móviles. Se llamaba Android.
+
+117
+00:07:03,671 --> 00:07:08,219
+Pasó casi desapercibido. Hoy Android está en la gran mayoría de los teléfonos del
+
+118
+00:07:08,219 --> 00:07:08,556
+mundo.
+
+119
+00:07:08,896 --> 00:07:13,640
+En dos mil seis compró YouTube, que tenía poco más de un año, por mil seiscientos
+
+120
+00:07:13,640 --> 00:07:18,208
+cincuenta millones de dólares en acciones. Muchos pensaron que era una locura.
+
+121
+00:07:18,548 --> 00:07:23,231
+Y en dos mil ocho lanzó su propio navegador, Chrome, que acabaría siendo el más
+
+122
+00:07:23,231 --> 00:07:23,587
+usado.
+
+123
+00:07:23,927 --> 00:07:29,006
+Mapas, traductor, fotos, documentos… Google ya no era solo un buscador.
+
+124
+00:07:30,296 --> 00:07:35,590
+En dos mil quince, la empresa se reorganizó por completo. Nació Alphabet, una matriz
+
+125
+00:07:35,590 --> 00:07:38,110
+que agrupa a Google y a otros proyectos.
+
+126
+00:07:38,450 --> 00:07:43,649
+Sundar Pichai, un ingeniero nacido en la India, pasó a dirigir Google, y años
+
+127
+00:07:43,649 --> 00:07:45,337
+después también Alphabet.
+
+128
+00:07:45,677 --> 00:07:50,391
+Brin y Page se apartaron de la gestión del día a día, aunque siguen siendo grandes
+
+129
+00:07:50,391 --> 00:07:51,081
+accionistas.
+
+130
+00:07:51,421 --> 00:07:55,720
+Y la palabra google entró en los diccionarios de inglés como verbo: buscar algo en
+
+131
+00:07:55,720 --> 00:07:56,192
+internet.
+
+132
+00:07:56,532 --> 00:08:00,291
+Es el sueño de cualquier marca: que su nombre se convierta en la acción misma.
+
+133
+00:08:01,581 --> 00:08:04,272
+¿Qué nos enseña esta historia? Tres cosas.
+
+134
+00:08:04,612 --> 00:08:09,697
+Una: las grandes ideas a veces vienen de otro mundo. Google nació de copiar cómo se
+
+135
+00:08:09,697 --> 00:08:11,658
+citan los artículos científicos.
+
+136
+00:08:11,998 --> 00:08:18,341
+Dos: la sencillez vende. En una época de portadas abarrotadas, ganó una página casi
+
+137
+00:08:18,341 --> 00:08:18,799
+vacía.
+
+138
+00:08:19,139 --> 00:08:25,013
+Y tres: que alguien rechace tu idea no significa que no valga. Excite pudo comprar
+
+139
+00:08:25,013 --> 00:08:29,310
+Google por setecientos cincuenta mil dólares… y dijo que no.
+
+140
+00:08:30,600 --> 00:08:35,049
+Dos estudiantes que discutían, un buscador llamado masaje en la espalda, un número
+
+141
+00:08:35,049 --> 00:08:38,034
+con cien ceros, un cheque sin destinatario y un garaje.
+
+142
+00:08:38,374 --> 00:08:41,914
+La próxima vez que busques algo, ya sabes de dónde viene esa caja blanca.
+
+143
+00:08:42,254 --> 00:08:46,197
+Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
+
+144
+00:08:46,537 --> 00:08:50,220
+¿Qué es lo más raro que has buscado en Google? Cuéntanoslo en los comentarios.
+
+145
+00:08:50,560 --> 00:08:52,246
+Y si te ha gustado, suscríbete.
+
