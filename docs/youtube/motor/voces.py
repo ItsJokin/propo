@@ -40,8 +40,15 @@ class ElevenLabs:
         if not os.path.exists(clave_cache):        # no se paga dos veces por la misma frase
             req = urllib.request.Request(self.URL.format(voz=self.voz), data=json.dumps(cuerpo).encode(),
                                          headers={**({"xi-api-key": self.clave} if self.clave else {}), "Content-Type": "application/json", "Accept": "audio/mpeg"})
-            with urllib.request.urlopen(req, timeout=120) as r:
-                open(clave_cache, "wb").write(r.read())
+            for intento in range(5):                 # cortes de red puntuales: reintentar con espera creciente
+                try:
+                    with urllib.request.urlopen(req, timeout=120) as r:
+                        datos = r.read()
+                    break
+                except (OSError, urllib.error.URLError) as e:
+                    if intento == 4: raise
+                    print("  reintento ElevenLabs:", e); import time; time.sleep(2 ** (intento + 1))
+            open(clave_cache, "wb").write(datos)
         a, sr = decodificar(clave_cache)
         return recortar_silencio(a, sr), sr
 
