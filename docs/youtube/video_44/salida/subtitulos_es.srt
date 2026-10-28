@@ -1,0 +1,528 @@
+1
+00:00:00,500 --> 00:00:05,009
+Es, desde hace años, el mayor fabricante de coches del mundo por número de vehículos
+
+2
+00:00:05,009 --> 00:00:05,492
+vendidos.
+
+3
+00:00:05,832 --> 00:00:10,129
+Su método de trabajo se estudia en escuelas de negocios de todo el planeta. Y su
+
+4
+00:00:10,129 --> 00:00:13,727
+modelo más famoso es uno de los coches más vendidos de la historia.
+
+5
+00:00:14,067 --> 00:00:17,933
+Pero Toyota no empezó fabricando coches. Empezó fabricando telares.
+
+6
+00:00:18,273 --> 00:00:22,348
+Su nombre no es el apellido de su fundador, sino una versión cambiada, según la
+
+7
+00:00:22,348 --> 00:00:24,566
+propia empresa, por un número de la suerte.
+
+8
+00:00:24,906 --> 00:00:29,356
+Y su famoso sistema de producción se inspiró, en parte, en los supermercados
+
+9
+00:00:29,356 --> 00:00:30,293
+estadounidenses.
+
+10
+00:00:30,633 --> 00:00:32,502
+Esta es la historia de Toyota.
+
+11
+00:00:33,792 --> 00:00:38,500
+Sakichi Toyoda nació en mil ochocientos sesenta y siete, en un pueblo del centro de
+
+12
+00:00:38,500 --> 00:00:40,259
+Japón. Su padre era carpintero.
+
+13
+00:00:40,599 --> 00:00:45,081
+Como muchas mujeres de la época, su madre tejía en casa, en un telar de madera
+
+14
+00:00:45,081 --> 00:00:47,379
+manual. Era un trabajo lento y agotador.
+
+15
+00:00:47,719 --> 00:00:51,132
+Sakichi decidió que inventaría una máquina para hacerlo más fácil.
+
+16
+00:00:51,472 --> 00:00:56,348
+En mil ochocientos noventa y uno patentó su primer telar de madera. Y después siguió
+
+17
+00:00:56,348 --> 00:00:57,974
+mejorándolo durante décadas.
+
+18
+00:00:58,314 --> 00:01:01,507
+Se convirtió en uno de los grandes inventores de Japón.
+
+19
+00:01:02,797 --> 00:01:07,854
+En mil novecientos veinticuatro, Sakichi presentó su obra maestra: un telar
+
+20
+00:01:07,854 --> 00:01:09,472
+automático, el modelo G.
+
+21
+00:01:09,812 --> 00:01:14,723
+Tenía una función muy especial: si un hilo se rompía, la máquina se detenía sola.
+
+22
+00:01:15,063 --> 00:01:19,588
+Así no se fabricaba tela defectuosa, y una sola persona podía vigilar muchas
+
+23
+00:01:19,588 --> 00:01:20,659
+máquinas a la vez.
+
+24
+00:01:20,999 --> 00:01:25,807
+Esta idea, que una máquina se pare en cuanto detecta un problema, tiene un nombre en
+
+25
+00:01:25,807 --> 00:01:26,723
+japonés: jidoka.
+
+26
+00:01:27,063 --> 00:01:30,813
+Y décadas después se convertiría en uno de los pilares del método Toyota.
+
+27
+00:01:32,103 --> 00:01:36,612
+El telar de Sakichi era tan bueno que llamó la atención en Inglaterra, la cuna de la
+
+28
+00:01:36,612 --> 00:01:37,525
+industria textil.
+
+29
+00:01:37,865 --> 00:01:42,206
+Según la historia que cuenta la propia Toyota, en mil novecientos veintinueve una
+
+30
+00:01:42,206 --> 00:01:46,708
+empresa británica, Platt Brothers, le compró los derechos de la patente por cien mil
+
+31
+00:01:46,708 --> 00:01:47,083
+libras.
+
+32
+00:01:47,423 --> 00:01:48,874
+Era muchísimo dinero.
+
+33
+00:01:49,214 --> 00:01:53,793
+Y Sakichi tenía claro en qué quería gastarlo. Según se cuenta, le dijo a su hijo
+
+34
+00:01:53,793 --> 00:01:57,399
+Kiichiro que usara ese dinero para algo nuevo: los automóviles.
+
+35
+00:01:57,739 --> 00:02:02,146
+Sakichi murió en mil novecientos treinta. No llegó a ver ni un solo coche de su
+
+36
+00:02:02,146 --> 00:02:02,592
+familia.
+
+37
+00:02:03,882 --> 00:02:08,590
+Kiichiro Toyoda era ingeniero y había viajado por Estados Unidos y Europa. Había
+
+38
+00:02:08,590 --> 00:02:11,591
+visto cómo los coches empezaban a cambiar el mundo.
+
+39
+00:02:11,931 --> 00:02:16,214
+En mil novecientos treinta y tres creó una división de automóviles dentro de la
+
+40
+00:02:16,214 --> 00:02:18,003
+empresa de telares de la familia.
+
+41
+00:02:18,343 --> 00:02:23,056
+Empezó desmontando coches estadounidenses, pieza a pieza, para entender cómo
+
+42
+00:02:23,056 --> 00:02:23,800
+funcionaban.
+
+43
+00:02:24,140 --> 00:02:28,312
+Fabricó primero un motor. Después, un prototipo. Y en mil novecientos treinta y
+
+44
+00:02:28,312 --> 00:02:30,688
+seis, su primer coche de serie, el modelo AA.
+
+45
+00:02:31,028 --> 00:02:35,454
+Era evidente que estaba inspirado en los coches americanos de la época. Pero lo
+
+46
+00:02:35,454 --> 00:02:36,798
+habían construido ellos.
+
+47
+00:02:38,088 --> 00:02:40,724
+Faltaba decidir el nombre de la marca de coches.
+
+48
+00:02:41,064 --> 00:02:45,701
+Según la propia empresa, se organizó un concurso público para elegir un logotipo, y
+
+49
+00:02:45,701 --> 00:02:47,600
+se recibieron miles de propuestas.
+
+50
+00:02:47,940 --> 00:02:53,138
+Y se tomó una decisión curiosa: cambiar ligeramente el apellido familiar. De Toyoda,
+
+51
+00:02:53,138 --> 00:02:54,686
+con de, a Toyota, con te.
+
+52
+00:02:55,026 --> 00:03:00,284
+Según la explicación oficial, Toyota sonaba más claro y limpio. Pero hay otra razón:
+
+53
+00:03:00,284 --> 00:03:05,355
+escrita en katakana, uno de los alfabetos japoneses, la palabra Toyota se escribe
+
+54
+00:03:05,355 --> 00:03:06,357
+con ocho trazos.
+
+55
+00:03:06,697 --> 00:03:11,409
+Y el ocho se considera en Japón un número de la suerte, porque su forma se ensancha
+
+56
+00:03:11,409 --> 00:03:13,907
+hacia abajo, como algo que crece y prospera.
+
+57
+00:03:14,247 --> 00:03:18,375
+Además, el nombre separaba el negocio de los coches de la vida privada de la
+
+58
+00:03:18,375 --> 00:03:18,809
+familia.
+
+59
+00:03:19,149 --> 00:03:23,015
+En mil novecientos treinta y siete nació oficialmente Toyota Motor Company.
+
+60
+00:03:24,305 --> 00:03:29,245
+Durante la Segunda Guerra Mundial, la empresa tuvo que fabricar camiones para el
+
+61
+00:03:29,245 --> 00:03:34,000
+ejército japonés. Y al final de la guerra, sus fábricas sufrieron bombardeos.
+
+62
+00:03:34,340 --> 00:03:38,421
+En la posguerra, Japón estaba arruinado. Y en mil novecientos cincuenta, Toyota
+
+63
+00:03:38,421 --> 00:03:39,971
+estuvo al borde de la quiebra.
+
+64
+00:03:40,311 --> 00:03:44,734
+Hubo que despedir a muchos trabajadores, lo que provocó huelgas muy duras.
+
+65
+00:03:45,074 --> 00:03:49,074
+Kiichiro, que había prometido no despedir a nadie, dimitió para asumir la
+
+66
+00:03:49,074 --> 00:03:49,950
+responsabilidad.
+
+67
+00:03:50,290 --> 00:03:55,085
+Murió dos años después, en mil novecientos cincuenta y dos. Tampoco él llegó a ver
+
+68
+00:03:55,085 --> 00:03:56,722
+el gran éxito de su empresa.
+
+69
+00:03:57,062 --> 00:04:01,564
+Ese mismo año, los pedidos de camiones del ejército estadounidense para la guerra de
+
+70
+00:04:01,564 --> 00:04:03,494
+Corea salvaron a Toyota de la ruina.
+
+71
+00:04:04,784 --> 00:04:09,485
+En la posguerra, Toyota no tenía dinero para grandes almacenes llenos de piezas,
+
+72
+00:04:09,485 --> 00:04:11,483
+como las fábricas estadounidenses.
+
+73
+00:04:11,823 --> 00:04:15,677
+Un ingeniero de la empresa, Taiichi Ohno, buscó otra forma de trabajar.
+
+74
+00:04:16,017 --> 00:04:19,721
+Según contó él mismo, se inspiró en los supermercados de Estados Unidos.
+
+75
+00:04:20,061 --> 00:04:24,704
+En un supermercado, el cliente coge lo que necesita, y solo entonces se repone la
+
+76
+00:04:24,704 --> 00:04:26,481
+estantería. No se acumula nada.
+
+77
+00:04:26,821 --> 00:04:31,751
+Ohno aplicó esa idea a la fábrica: cada sección pedía a la anterior solo las piezas
+
+78
+00:04:31,751 --> 00:04:36,086
+que necesitaba, cuando las necesitaba, con unas tarjetas llamadas kanban.
+
+79
+00:04:36,426 --> 00:04:40,965
+Lo llamaron producción justo a tiempo. Junto a la idea del telar que se para solo,
+
+80
+00:04:40,965 --> 00:04:43,566
+formó la base del sistema de producción Toyota.
+
+81
+00:04:44,856 --> 00:04:48,281
+Hay un detalle de ese sistema que sorprendía mucho a los visitantes.
+
+82
+00:04:48,621 --> 00:04:52,847
+A lo largo de la línea de montaje había una cuerda. Cualquier trabajador que viera
+
+83
+00:04:52,847 --> 00:04:54,496
+un problema podía tirar de ella.
+
+84
+00:04:54,836 --> 00:04:56,078
+Y la línea se paraba.
+
+85
+00:04:56,418 --> 00:05:01,780
+En muchas fábricas de otros países, parar la línea era casi impensable. En Toyota
+
+86
+00:05:01,780 --> 00:05:06,612
+era una obligación: los problemas se arreglan en el momento, no al final.
+
+87
+00:05:06,952 --> 00:05:11,120
+Era la misma idea del telar de Sakichi: detenerse en cuanto algo falla.
+
+88
+00:05:11,460 --> 00:05:16,830
+Además, los trabajadores proponían constantemente pequeñas mejoras. En japonés, a
+
+89
+00:05:16,830 --> 00:05:19,482
+eso se le llama kaizen: mejora continua.
+
+90
+00:05:20,772 --> 00:05:24,983
+En mil novecientos cincuenta y siete, Toyota intentó vender sus coches en Estados
+
+91
+00:05:24,983 --> 00:05:25,346
+Unidos.
+
+92
+00:05:25,686 --> 00:05:30,440
+Fue un fracaso. Su modelo no tenía potencia suficiente para las largas autopistas
+
+93
+00:05:30,440 --> 00:05:33,198
+americanas. Se recalentaba y hacía mucho ruido.
+
+94
+00:05:33,538 --> 00:05:38,577
+Toyota tomó nota. Y en mil novecientos sesenta y seis lanzó un coche pequeño, fiable
+
+95
+00:05:38,577 --> 00:05:40,016
+y económico: el Corolla.
+
+96
+00:05:40,356 --> 00:05:45,210
+Llegó en el momento perfecto. En los años setenta, la crisis del petróleo disparó el
+
+97
+00:05:45,210 --> 00:05:50,006
+precio de la gasolina, y los estadounidenses empezaron a buscar coches que gastaran
+
+98
+00:05:50,006 --> 00:05:50,294
+poco.
+
+99
+00:05:50,634 --> 00:05:54,661
+El Corolla se convirtió en uno de los coches más vendidos de la historia, con
+
+100
+00:05:54,661 --> 00:05:56,335
+decenas de millones de unidades.
+
+101
+00:05:57,625 --> 00:06:02,521
+En mil novecientos ochenta y nueve, Toyota quiso entrar en el lujo. Pero sabía que
+
+102
+00:06:02,521 --> 00:06:05,566
+su nombre se asociaba a coches baratos y prácticos.
+
+103
+00:06:05,906 --> 00:06:09,923
+Así que creó una marca nueva, con otro nombre: Lexus.
+
+104
+00:06:10,263 --> 00:06:15,076
+Y en mil novecientos noventa y siete lanzó en Japón el Prius, el primer coche
+
+105
+00:06:15,076 --> 00:06:19,888
+híbrido fabricado en serie: combinaba un motor de gasolina con uno eléctrico.
+
+106
+00:06:20,228 --> 00:06:24,563
+Muchos lo miraron con escepticismo. Pero con los años, el híbrido se convirtió en
+
+107
+00:06:24,563 --> 00:06:26,544
+una de las grandes bazas de la marca.
+
+108
+00:06:26,884 --> 00:06:30,924
+Hoy, en las ciudades de medio mundo, es habitual ver taxis híbridos de Toyota.
+
+109
+00:06:31,264 --> 00:06:36,557
+Y la marca ha seguido explorando otros caminos: coches eléctricos e incluso un coche
+
+110
+00:06:36,557 --> 00:06:40,842
+de hidrógeno, el Mirai, que solo expulsa agua por el tubo de escape.
+
+111
+00:06:42,132 --> 00:06:45,882
+Pero en dos mil nueve y dos mil diez llegó su peor crisis de imagen.
+
+112
+00:06:46,222 --> 00:06:50,080
+Varios casos de aceleraciones repentinas obligaron a Toyota a llamar a revisión a
+
+113
+00:06:50,080 --> 00:06:51,795
+millones de coches en todo el mundo.
+
+114
+00:06:52,135 --> 00:06:56,916
+Akio Toyoda, nieto de Kiichiro y presidente de la empresa, tuvo que comparecer ante
+
+115
+00:06:56,916 --> 00:06:59,681
+el Congreso de Estados Unidos y pedir disculpas.
+
+116
+00:07:00,021 --> 00:07:04,131
+Para una marca construida sobre la fiabilidad, fue un golpe durísimo.
+
+117
+00:07:04,471 --> 00:07:09,195
+Toyota reforzó sus controles de calidad. Y pocos años después había vuelto a lo más
+
+118
+00:07:09,195 --> 00:07:10,845
+alto de las ventas mundiales.
+
+119
+00:07:12,135 --> 00:07:14,678
+¿Qué nos enseña esta historia? Tres cosas.
+
+120
+00:07:15,018 --> 00:07:19,281
+Una: lo que sabes hacer en un sector puede servirte en otro. Toyota llevó a los
+
+121
+00:07:19,281 --> 00:07:21,763
+coches lo que había aprendido con los telares.
+
+122
+00:07:22,103 --> 00:07:26,615
+Dos: pararse a tiempo ahorra mucho más que seguir adelante con un error. Esa es la
+
+123
+00:07:26,615 --> 00:07:28,431
+lección del telar y de la cuerda.
+
+124
+00:07:28,771 --> 00:07:33,811
+Y tres: las buenas ideas pueden venir de sitios inesperados. Una fábrica de coches
+
+125
+00:07:33,811 --> 00:07:36,700
+aprendió a organizarse mirando un supermercado.
+
+126
+00:07:37,990 --> 00:07:42,433
+Una madre tejiendo, un telar que se para solo, una patente vendida a Inglaterra, un
+
+127
+00:07:42,433 --> 00:07:45,003
+número de la suerte y un supermercado americano.
+
+128
+00:07:45,343 --> 00:07:49,417
+La próxima vez que veas un Toyota, acuérdate de que todo empezó con un telar de
+
+129
+00:07:49,417 --> 00:07:49,778
+madera.
+
+130
+00:07:50,118 --> 00:07:54,495
+Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
+
+131
+00:07:54,835 --> 00:07:58,701
+¿Cuál ha sido el coche más fiable que has tenido? Cuéntanoslo en los comentarios.
+
+132
+00:07:59,041 --> 00:08:00,980
+Y si te ha gustado, suscríbete.
+
