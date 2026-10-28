@@ -1,6 +1,6 @@
 # Pokémon: el niño que coleccionaba insectos y creó la saga más rentable del mundo: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_38_Pokemon.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:30 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_38_Pokemon.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:41 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -15,18 +15,18 @@ Pokémon nació de los recuerdos de Satoshi Tajiri, un niño que cazaba insectos
 ⏱ Capítulos
 00:00 Introducción
 00:35 1. El cazador de insectos
-01:12 2. Una revista de videojuegos
-01:50 3. Un cable entre dos consolas
-02:26 4. Al borde de la ruina
-03:08 5. Rojo y verde
-03:37 6. El secreto de Mew
-04:10 7. Pika y chu
-04:55 8. El episodio prohibido
-05:39 9. Pokémanía
-06:13 10. Un negocio de tres
-06:52 11. Todos a la calle
-07:27 12. Lo que nos enseña
-07:51 Final
+01:13 2. Una revista de videojuegos
+01:51 3. Un cable entre dos consolas
+02:27 4. Al borde de la ruina
+03:09 5. Rojo y verde
+03:39 6. El secreto de Mew
+04:17 7. Pika y chu
+05:02 8. El episodio prohibido
+05:47 9. Pokémanía
+06:19 10. Un negocio de tres
+07:00 11. Todos a la calle
+07:34 12. Lo que nos enseña
+08:01 Final
 
 📚 Fuentes
 - Wikipedia, «Pokémon»: https://en.wikipedia.org/wiki/Pok%C3%A9mon
