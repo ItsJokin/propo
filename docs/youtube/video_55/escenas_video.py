@@ -39,7 +39,7 @@ def escenas():
     E["ca_1872"] = cifra("1872", "JOSEP RAVENTÓS: LOS PRIMEROS ESPUMOSOS CON EL MÉTODO TRADICIONAL", "1f37e")
     E["ca_metodo"] = f'''{F()}<div style="position:absolute;left:12%;top:16%">{botella("#1f5a3a", 230, .2)}</div>{burbujas(14, 9)}{txt(kt("SEGUNDA FERMENTACIÓN *EN LA BOTELLA*", "xl", .6), 66, 36, 56)}{txt(kt("el gas se queda dentro… y luego se giran boca abajo", "l naranja", 1.3), 66, 52, 56)}'''
     E["ca_lento"] = comparar("23f3", "lento y caro, meses en bodega", "2b50", "un espumoso de calidad, hecho en España", "→", "")
-    E["ca_bodegas"] = icono_texto("1f311", "BODEGAS *ENORMES*", "frescas y oscuras, para criar durante meses", "", "izq", "dark", False, "pop", "")
+    E["ca_bodegas"] = icono_texto("1f37e", "BODEGAS *ENORMES*", "frescas y oscuras, para criar durante meses", "", "izq", "dark", False, "pop", "")
     E["ca_puig"] = icono_texto("1f3db-fe0f", "JOSEP *PUIG I CADAFALCH*", "uno de los grandes arquitectos del modernismo", "las nuevas bodegas de Codorníu", "der", "sepia", False, "pop", "bob")
     E["ca_catedral"] = lista([("26ea", "parece una catedral"), ("1f9f1", "arcos y ladrillo"), ("1f37e", "millones de botellas bajo tierra")], "UNA CATEDRAL DEL CAVA")
     E["ca_monumento"] = icono_texto("1f3db-fe0f", "MONUMENTO *HISTÓRICO-ARTÍSTICO*", "y visitas de todo el mundo", "", "izq", "calido", True, "pop", "bob")
@@ -65,7 +65,7 @@ def escenas():
     E["ca_francia"] = icono_texto("1f1eb-1f1f7", "CHAMPÁN = *UNA REGIÓN FRANCESA*", "solo el vino de Champaña puede llamarse así", "", "der", "", False, "pop", "")
     E["ca_nombre_cava"] = f'''{F("navidad", True)}{txt(kt("*CAVA*", "mega hueso", .3), 50, 40, 90)}{txt(kt("en catalán, «bodega»", "l naranja", 1.2), 50, 60, 80)}'''
     E["ca_reglas"] = icono_texto("1f4cb", "UNA DENOMINACIÓN *CON REGLAS*", "por ejemplo, un tiempo mínimo de crianza en botella", "", "izq", "", True, "pop", "bob")
-    E["ca_guerra_cava"] = comparar("1f3ed", "bodegas grandes", "1f3e1", "bodegas pequeñas", "VS", "LA «GUERRA DEL CAVA»: ¿SE RESPETA LA CRIANZA?")
+    E["ca_guerra_cava"] = comparar("1f3ed", "bodegas grandes", "1f3e1", "bodegas pequeñas", "VS", "LA «GUERRA DEL CAVA»")
     E["ca_enfrentados"] = comparar("1f37e", "Codorníu", "1f37e", "Freixenet", "VS", "PRECIOS Y LIDERAZGO, AÑO TRAS AÑO")
     E["ca_final_parecido"] = impacto("el final es muy parecido", "PARA LAS *DOS FAMILIAS*", "", "1f914")
     E["ca_carlyle"] = icono_texto("1f1fa-1f1f8", "CARLYLE COMPRA *LA MAYORÍA DE CODORNÍU*", "tras años de desacuerdos en la familia Raventós", "2018", "izq", "dark", False, "pop", "")
