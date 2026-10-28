@@ -22,9 +22,9 @@ def grupo(n=5, w=140, y=62, d=.2):
 def escenas():
     E = {}
     E["pl_especial"] = titular("ESPECIAL *NAVIDAD*", "Código de Barras", "bienvenido al", ("1f384", "1f381", "2744-fe0f", "1f3f0"), "navidad", True, "mega")
-    E["pl_figura"] = f'''{F("calido", True)}{obj(munequito(260), 28, 52, "none", "bob", 0)}{txt(kt("7,5 CM *Y UNA SONRISA*", "xl", .6), 68, 42, 56)}{txt(kt("manos en forma de C y pelo intercambiable", "l naranja", 1.3), 68, 58, 56)}'''
+    E["pl_figura"] = f'''{F("calido", True)}{obj(munequito(400), 26, 52, "none", "bob", 0)}{txt(kt("7,5 CM *Y UNA SONRISA*", "xl", .6), 66, 42, 50)}{txt(kt("manos en forma de C y pelo intercambiable", "l naranja", 1.3), 66, 58, 50)}'''
     E["pl_tuviste"] = lista([("1f6e1-fe0f", "un caballero"), ("1f3f4-200d-2620-fe0f", "un pirata"), ("1f692", "un bombero"), ("1f920", "un vaquero")], "SEGURO QUE TUVISTE ALGUNO")
-    E["pl_clicks"] = f'''{F("navidad", True)}{grupo(5, 150, 66)}{txt(kt("LOS *CLICKS* DE FAMOBIL", "xl hueso", .4), 50, 20, 90)}'''
+    E["pl_clicks"] = f'''{F("navidad", True)}{grupo(5, 210, 62)}{txt(kt("LOS *CLICKS* DE FAMOBIL", "xl hueso", .4), 50, 20, 90)}'''
     E["pl_petroleo"] = impacto("y todo empieza con", "UNA CRISIS *DEL PETRÓLEO*", "", "1f6e2-fe0f")
     E["pl_historia"] = titular("LA HISTORIA *DE PLAYMOBIL*", "", "", ("1f3f0", "1f6e2-fe0f", "1fa9a", "1f1ea-1f1f8"), "navidad", True, "xl")
     E["pl_geobra"] = icono_texto("1f3ed", "GEOBRA *BRANDSTÄTTER*", "una empresa familiar de Zirndorf, cerca de Núremberg", "Alemania", "izq", "", False, "pop", "bob", 380, (("1f1e9-1f1ea", 84, 20),))
@@ -37,7 +37,7 @@ def escenas():
     E["pl_aviones"] = comparar("1fa9a", "ebanista de formación", "2708-fe0f", "aficionado al modelismo", "+", "")
     E["pl_ninos"] = bocadillos("1f468-200d-1f4bc", ["¿Aviones?", "…mejor figuras para niños"], "según se cuenta")
     E["pl_observa"] = lista([("1f590-fe0f", "que quepan en la mano"), ("270a", "fáciles de agarrar"), ("1f4ad", "para inventar historias")], "OBSERVANDO A LOS NIÑOS")
-    E["pl_diseno"] = f'''{F()}{obj(munequito(280, "#D7263D", "#e2b13c"), 28, 52, "none", "bob", 0)}{txt(kt("CABEZA GRANDE, *SIN NARIZ*", "xl", .6), 68, 42, 56)}{txt(kt("manos en pinza para sujetar cualquier cosa", "l naranja", 1.3), 68, 58, 56)}'''
+    E["pl_diseno"] = f'''{F()}{obj(munequito(400, "#D7263D", "#e2b13c"), 26, 52, "none", "bob", 0)}{txt(kt("CABEZA GRANDE, *SIN NARIZ*", "xl", .6), 66, 42, 50)}{txt(kt("manos en pinza para sujetar cualquier cosa", "l naranja", 1.3), 66, 58, 50)}'''
     E["pl_cualquiera"] = titular("UNA FIGURA *QUE PODÍA SER CUALQUIERA*", "brazos y piernas que se mueven, pelo y sombreros que se cambian", "", ("1f477", "1f46e", "1f9d1-200d-1f692", "1f478"))
     E["pl_1974"] = cifra("1974", "SE PRESENTA EN LA FERIA DEL JUGUETE DE NÚREMBERG", "1f3aa")
     E["pl_sets"] = lista([("1f6e1-fe0f", "caballeros"), ("1fab6", "nativos americanos"), ("1f477", "obreros")], "LOS TRES PRIMEROS SETS")
@@ -48,7 +48,7 @@ def escenas():
     E["pl_1976"] = cifra("1976", "LLEGA A ESPAÑA DE LA MANO DE FAMOSA, DE ONIL", "1f69a")
     E["pl_famobil"] = f'''{F("navidad", True)}{txt(kt("*FAMO*SA + PLAY*MOBIL*", "xl hueso", .3), 50, 38, 90)}{txt(kt("= *FAMOBIL*", "mega hueso", 1.4), 50, 60, 90)}'''
     E["pl_onil"] = icono_texto("1f3d8-fe0f", "FABRICADOS *EN ONIL*", "en el Valle del Juguete… y llamados «clicks»", "Alicante", "izq", "calido", True, "pop", "bob")
-    E["pl_generacion"] = f'''{F("calido", True)}{grupo(4, 150, 64)}{txt(kt("TODA UNA GENERACIÓN *DE LOS CLICKS*", "xl", .4), 50, 20, 90)}'''
+    E["pl_generacion"] = f'''{F("calido", True)}{grupo(4, 220, 62)}{txt(kt("TODA UNA GENERACIÓN *DE LOS CLICKS*", "xl", .4), 50, 20, 90)}'''
     E["pl_iberica"] = cifra("1983", "NACE PLAYMOBIL IBÉRICA Y FAMOBIL VA DESAPARECIENDO", "1f504")
     E["pl_mundos"] = impacto("con los años,", "MUNDOS *ENTEROS*", "", "1f30d")
     E["pl_lista"] = lista([("1f3f4-200d-2620-fe0f", "piratas"), ("1f3f0", "castillos"), ("1f693", "comisarías"), ("1f69c", "granjas"), ("1f680", "el espacio")], "UN MUNDO PARA CADA NIÑO")
@@ -63,7 +63,7 @@ def escenas():
     E["pl_navidad"] = titular("SI HAY UNA ÉPOCA EN QUE BRILLA, *ES LA NAVIDAD*", "", "", ("1f384", "1f381", "1f3f0", "2728"), "navidad", True, "xl")
     E["pl_cajas"] = lista([("1f4e6", "cajas grandes y coloridas"), ("1f30d", "un mundo dentro"), ("1f4b6", "de pequeñas a enormes")], "PERFECTO PARA REGALAR")
     E["pl_adviento"] = icono_texto("1f4c5", "CALENDARIOS *DE ADVIENTO*", "una sorpresa cada día de diciembre", "", "izq", "navidad", True, "pop", "bob")
-    E["pl_belen"] = f'''{F("navidad", True)}{obj(spr("1f6d6", 220), 50, 40, "pop", "bob", .2)}{grupo(3, 120, 70, .6)}{txt(kt("¡HASTA *SU PROPIO BELÉN*!", "xl hueso", .4), 50, 14, 90)}'''
+    E["pl_belen"] = f'''{F("navidad", True)}{obj(spr("1f6d6", 220), 50, 40, "pop", "bob", .2)}{grupo(3, 170, 70, .6)}{txt(kt("¡HASTA *SU PROPIO BELÉN*!", "xl hueso", .4), 50, 14, 90)}'''
     E["pl_reyes"] = cifra("6 DE ENERO", "EN ESPAÑA, LA TEMPORADA FUERTE SE ALARGA", "1f451")
     E["pl_moda"] = comparar("1f468", "jugaba con un barco pirata en los 80", "1f9d2", "se lo regala a su hijo 30 años después", "→", "NO PASA DE MODA")
     E["pl_inmortal"] = impacto("pero ningún juguete", "ES *INMORTAL*", "", "23f3")
@@ -76,7 +76,7 @@ def escenas():
     E["leccion2"] = leccion(2, "un sistema vale más", "*QUE UN PRODUCTO SUELTO*", "1f9e9")
     E["leccion3"] = leccion(3, "observar a tus clientes", "*ES LA MEJOR INVESTIGACIÓN*", "1f440")
     E["pl_final"] = lista([("2b55", "un hula hoop"), ("1f6e2-fe0f", "una crisis"), ("1fa9a", "un ebanista"), ("1f3aa", "una feria"), ("1f3d8-fe0f", "un pueblo de Alicante")], "")
-    E["pl_sonrisa"] = f'''{F("navidad", True)}{obj(munequito(260, "#2BB673", "#222"), 28, 52, "none", "bob", 0)}{txt(kt("YA SABES DE DÓNDE VIENE *ESA SONRISA*", "xl hueso", .6), 68, 46, 56)}'''
+    E["pl_sonrisa"] = f'''{F("navidad", True)}{obj(munequito(400, "#2BB673", "#222"), 26, 52, "none", "bob", 0)}{txt(kt("YA SABES DE DÓNDE VIENE *ESA SONRISA*", "xl hueso", .6), 66, 46, 50)}'''
     return E
 
 def miniatura():
