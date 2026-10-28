@@ -6,6 +6,7 @@ import { normalize } from './util';
 import { ai } from './ai/provider';
 import { projectPages } from './ai/engine';
 import { competitionFor, type Competition } from './data/awards';
+import { samplePriceRule } from './samplePricing';
 
 export type Formula = 'inverse' | 'linear' | 'threshold' | 'other';
 export interface UnitPrice { id: string; label: string; unit: string; max: number | null; qty: number | null }
@@ -164,6 +165,8 @@ function fromRules(p: Project): PriceRule {
 /** Lee del pliego cómo se puntúa el precio (con IA; si no hay, con lo que ya se sabe del análisis). */
 export async function readPriceRule(p: Project): Promise<PriceRule> {
   const base = fromRules(p);
+  const sample = p.isSample ? samplePriceRule(p.id, base) : null;
+  if (sample) return sample;
   let pages = '';
   try { pages = await pricePages(p); } catch { /* sin textos */ }
   if (!pages) return base;

@@ -16,6 +16,7 @@ import {
 } from '../../lib/pricing';
 import { offerType, priceStrategy, OFFER, type OfferType, type Strategy } from '../../lib/priceStrategy';
 import { Economic } from './Economic';
+import { samplePriceRule } from '../../lib/samplePricing';
 
 const pts = (x: number | null) => (x == null ? '—' : String(Math.round(x * 10) / 10).replace('.', ','));
 
@@ -51,6 +52,8 @@ export function Pricing({ p }: { p: Project }) {
     if (!rule && !reading) {
       setReading(true);
       readPriceRule(p).then((r) => { if (on) save((x) => { x.rule = r; }); }).finally(() => { if (on) setReading(false); });
+    } else if (rule && p.isSample && !rule.offerType && !pr.choice) {   // ejemplos guardados antes de tener su propia regla de precio
+      const s = samplePriceRule(p.id, rule); if (s) save((x) => { x.rule = s; });
     }
     return () => { on = false; };
   }, [p.id]);
@@ -320,7 +323,7 @@ function PriceStudio({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingSta
     <div className="card card-pad ps-studio">
       <div className="eyebrow"><LuTarget style={{ verticalAlign: '-2px' }} /> Tu precio ideal</div>
       <h3 className="mt-8" style={{ fontSize: 22 }}>PROPO te recomienda una rebaja del <span className="ps-accent">{pct1(s.rec)}</span></h3>
-      <p className="muted mt-4" style={{ lineHeight: 1.6 }}>{s.P ? <>Es el punto donde consigues casi todos los puntos del precio ({pts(s.exp(s.rec))} de {pts(s.P)}) sin regalar dinero y lejos de la baja temeraria. </> : null}Puedes moverla tú: la curva te enseña lo que ganas y lo que arriesgas.</p>
+      <p className="muted mt-4" style={{ lineHeight: 1.6 }}>{s.P ? <>Es el punto donde consigues casi todos los puntos del precio ({pts(s.exp(s.rec))} de {pts(s.P)}) sin regalar dinero y sin entrar en la baja temeraria. </> : null}Puedes moverla tú: la curva te enseña lo que ganas y lo que arriesgas.</p>
 
       {s.P != null && <PointsCurve s={s} b={eff} onPick={go} />}
 
