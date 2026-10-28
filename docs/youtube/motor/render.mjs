@@ -10,6 +10,12 @@ const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1920, height: 1080 } });
 await page.goto("file://" + html);
 await page.evaluate(() => document.fonts.ready);
+// Precarga todas las imágenes de fondo (sprites) para que ninguna escena salga sin iconos.
+await page.evaluate(async () => {
+  const urls = new Set();
+  for (const el of document.querySelectorAll("[style*='url(']")) { const m = el.style.backgroundImage.match(/url\(["']?([^"')]+)/); if (m) urls.add(m[1]); }
+  await Promise.all([...urls].map((u) => { const i = new Image(); i.src = u; return i.decode().catch(() => {}); }));
+});
 if (salida === "preview") {
   for (const t of a.split(",").map(Number)) {
     await page.evaluate((t) => setTime(t), t);

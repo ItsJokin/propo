@@ -37,7 +37,7 @@ def escenas():
     E["pn_guerra"] = cifra("AÑOS 1860", "SANTA CLAUS CADA NAVIDAD, EN PLENA GUERRA CIVIL", "1f385")
     E["pn_detalles"] = lista([("1f9d4-200d-2642-fe0f", "barba blanca"), ("1f3ed", "taller en el Polo Norte"), ("1f4cb", "lista de niños buenos")], "PERFILANDO AL PERSONAJE")
     E["pn_rojo"] = f'''{F("navidad", True)}{obj(spr("1f385", 300), 28, 50, "pop", "bob", .2)}{txt(kt("YA DE ROJO, *DÉCADAS ANTES*", "xl hueso", .8), 70, 42, 54)}{txt(kt("ribetes blancos y cinturón negro", "l naranja", 1.4), 70, 58, 54)}'''
-    E["pn_colores"] = f'''{F()}{"".join(f'<div class="pos" style="left:{20 + i*20}%;top:44%;width:180px;height:180px;border-radius:50%;background:{c};border:6px solid {TINTA};animation:wPop .4s ease {.2 + i*.25}s both"></div>' for i, c in enumerate(["#D7263D", "#2BB673", "#2E6BD6", "#8a5a3b"]))}{txt(kt("ROJO… PERO TAMBIÉN *VERDE, AZUL O MARRÓN*", "xl", 1.3), 50, 78, 90)}'''
+    E["pn_colores"] = f'''{F()}{"".join(f'<div class="pos" style="left:{20 + i*20}%;top:44%;width:180px;height:180px;border-radius:50%;background:{c};border:6px solid {TINTA};animation:ePop .4s ease {.2 + i*.25}s both"></div>' for i, c in enumerate(["#D7263D", "#2BB673", "#2E6BD6", "#8a5a3b"]))}{txt(kt("ROJO… PERO TAMBIÉN *VERDE, AZUL O MARRÓN*", "xl", 1.3), 50, 78, 90)}'''
     E["pn_entra"] = impacto("y ahora sí, entra en escena", "*COCA-COLA*", "", "1f964")
     E["pn_verano"] = icono_texto("2600-fe0f", "UNA BEBIDA *DE VERANO*", "la gente la asociaba al calor", "principios de los años treinta", "izq", "calido", True, "pop", "spin-slow")
     E["pn_invierno"] = comparar("2600-fe0f", "verano: muchas ventas", "2744-fe0f", "invierno: muchas menos", "VS")
