@@ -53,7 +53,7 @@ export function Pricing({ p }: { p: Project }) {
       setReading(true);
       readPriceRule(p).then((r) => { if (on) save((x) => { x.rule = r; }); }).finally(() => { if (on) setReading(false); });
     } else if (rule && p.isSample && !rule.offerType && !pr.choice) {   // ejemplos guardados antes de tener su propia regla de precio
-      const s = samplePriceRule(p.id, rule); if (s) save((x) => { x.rule = s; });
+      const s = samplePriceRule(p.id, rule); if (s) save((x) => { x.rule = s; x.studio = {}; });
     }
     return () => { on = false; };
   }, [p.id]);
@@ -72,6 +72,7 @@ export function Pricing({ p }: { p: Project }) {
   const ch = pr.choice;
   const warns = ch ? priceWarnings(rule, ch, market) : [];
   const vat = rule.vat ?? 21;
+  const expPts = ch && rule.points ? priceStrategy(rule, m, pr.floor).exp(ch.baja) : null;   // con lo que suelen rebajar los demás, no solo si fueras la mejor oferta
   const share = rule.points && rule.totalPoints ? Math.min(1, rule.points / rule.totalPoints) : null;
 
   // Al confirmar, PROPO rellena él solo el modelo oficial del pliego con estos importes (si el pliego tiene uno rellenable).
@@ -177,7 +178,7 @@ export function Pricing({ p }: { p: Project }) {
                 <tbody>{ch.units.map((u) => <tr key={u.id}><td>{u.label}</td><td className="num" style={{ textAlign: 'right' }}>{eur2(u.price)}</td></tr>)}</tbody></table>
             </details>
           )}
-          <p className="small mt-12">{ch.discount == null && <>Rebaja sobre el precio máximo: <strong>{pct1(ch.baja)}</strong> · </>}{ch.points != null && <>Puntos del precio que esperas: <strong>{pts(ch.points)} de {pts(rule.points)}</strong></>}</p>
+          <p className="small mt-12">{ch.discount == null && <>Rebaja sobre el precio máximo: <strong>{pct1(ch.baja)}</strong> · </>}{expPts != null && <>Puntos del precio que esperas: <strong>{pts(expPts)} de {pts(rule.points)}</strong></>}</p>
           {warns.map((w, i) => <div key={i} className={`callout ${w.level} small mt-8`}><LuTriangleAlert /><div>{w.text}</div></div>)}
           {!pr.approved && (
             <div className="pr-next mt-12 small">
@@ -285,7 +286,7 @@ function PriceStudio({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingSta
   const [own, setOwn] = useState(pr.ownText ?? '');
   const [ordering, setOrdering] = useState(false);
   useEffect(() => { const t = setTimeout(() => { if (pr.studio?.b !== b) save((x) => { x.studio = { ...(x.studio ?? {}), b }; }); }, 500); return () => clearTimeout(t); }, [b]);
-  const go = (v: number) => { setB(Math.max(0, Math.min(s.hi, Math.round(v * 400) / 400))); setPctTxt(null); };
+  const go = (v: number) => { setB(Math.max(0, Math.min(s.hi, Math.round(v * 200) / 200))); setPctTxt(null); };
 
   // El precio en el formato de esta licitación
   const auto = (max: number | null) => (max != null ? r2(max * (1 - b)) : null);
@@ -440,7 +441,7 @@ function PointsCurve({ s, b, onPick }: { s: Strategy; b: number; onPick: (b: num
         <line x1={x(b)} x2={x(b)} y1={y(cur)} y2={H - B} className="ps-cur-l" />
         <circle cx={x(b)} cy={y(cur)} r={7} className="ps-cur" />
       </svg>
-      <input type="range" className="ps-range" min={0} max={Math.round(s.hi * 400)} step={1} value={Math.round(b * 400)} onChange={(e) => onPick(Number(e.target.value) / 400)} aria-label="Rebaja" style={{ marginLeft: L - 9, width: `calc(100% - ${L + R - 18}px)` }} />
+      <input type="range" className="ps-range" min={0} max={Math.round(s.hi * 200)} step={1} value={Math.round(b * 200)} onChange={(e) => onPick(Number(e.target.value) / 200)} aria-label="Rebaja" style={{ marginLeft: L - 9, width: `calc(100% - ${L + R - 18}px)` }} />
     </div>
   );
 }
@@ -471,7 +472,7 @@ function ServiceCards({ p, pr, save, lines, editable, edited, auto }: { p: Proje
   useEffect(() => { if (loadingInfo) fetchInfo(); }, [p.id]);   // una sola vez por proyecto: queda guardado
   const set = (id: string, v: string) => save((x) => { x.unitDraft = { ...(x.unitDraft ?? {}), [id]: v.replace(/[^\d.,]/g, '') }; });
   const unset = (id: string) => save((x) => { const d = { ...(x.unitDraft ?? {}) }; delete d[id]; x.unitDraft = d; });
-  const shown = (l: UnitLine) => (draft[l.id] != null && edited.includes(l.id) ? draft[l.id] : l.price != null ? String(l.price).replace('.', ',') : '');
+  const shown = (l: UnitLine) => (draft[l.id] != null && edited.includes(l.id) ? draft[l.id] : l.price != null ? l.price.toFixed(2).replace('.', ',') : '');
   const groups: { name: string; items: (UnitLine & { short: string })[] }[] = [];
   for (const l of lines) {
     const { group, name } = extra.some((x) => x.id === l.id) ? { group: 'Servicios que has añadido', name: l.label } : splitLabel(l.label);

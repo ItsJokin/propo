@@ -38,7 +38,7 @@ export interface Strategy {
   exp: (b: number) => number | null;   // puntos esperados con una rebaja b
   why: string[];
 }
-const q4 = (x: number) => Math.round(x * 400) / 400;   // a cuartos de punto
+const q4 = (x: number) => Math.round(x * 200) / 200;   // a medios puntos
 const pt = (x: number | null) => (x == null ? '—' : String(Math.round(x * 10) / 10).replace('.', ','));
 
 export function priceStrategy(rule: PriceRule, m: Market, floor: number | null): Strategy {
@@ -50,14 +50,14 @@ export function priceStrategy(rule: PriceRule, m: Market, floor: number | null):
   const base = Math.max(m.best, m.mean, 0.02);
   const scen = [0.5, 0.75, 1, 1.25, 1.5, 2].map((k) => Math.min(base * k, Math.max(0.005, abn - 0.005)));
   const exp = (b: number) => (P ? scen.reduce((a, s) => a + (pointsFor(rule, b, s) ?? 0), 0) / scen.length : null);
-  const safe = Math.floor(Math.max(0, Math.min(sat ?? 1, abn - 0.01, floorCap ?? 1, 0.6)) * 400 + 1e-6) / 400;
+  const safe = Math.floor(Math.max(0, Math.min(sat ?? 1, abn - 0.01, floorCap ?? 1, 0.6)) * 200 + 1e-6) / 200;
   const hi = Math.min(0.6, Math.max(abn + 0.04, (sat ?? 0) + 0.03, safe + 0.03, 0.1));
   let rec = safe;
   if (sat != null && sat <= safe + 1e-9) rec = sat;
   else if (!P) rec = Math.min(safe, base);
   else {
     const top = exp(safe)!; const tol = Math.max(0.2, P * 0.01);   // casi todos los puntos posibles, sin regalar dinero
-    for (let b = 0; b <= safe + 1e-9; b += 0.0025) if (exp(b)! >= top - tol) { rec = b; break; }
+    for (let b = 0; b <= safe + 1e-9; b += 0.005) if (exp(b)! >= top - tol) { rec = b; break; }
   }
   rec = Math.min(q4(rec), safe);
 
