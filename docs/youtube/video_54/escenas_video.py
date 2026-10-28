@@ -18,7 +18,7 @@ def mantecado(w=200, papel=True, d=.2, forma="redondo"):
     return f'<svg width="{w}" height="{w}" viewBox="0 0 200 200" style="{an}">{dentro}</svg>'
 
 def bandeja(d=.2):
-    return "".join(obj(mantecado(150, i % 2 == 0, d + i * .15, "redondo" if i % 3 else "oval"), 18 + i * 13, 60 + (i % 2) * 6, "none", "bob", 0) for i in range(6))
+    return "".join(obj(mantecado(230, i % 2 == 0, d + i * .15, "redondo" if i % 3 else "oval"), 18 + i * 13, 60 + (i % 2) * 6, "none", "bob", 0) for i in range(6))
 
 def escenas():
     E = {}
@@ -50,22 +50,22 @@ def escenas():
     E["ma_otros"] = lista([("1f3d8-fe0f", "Rute (Córdoba)"), ("1f3d8-fe0f", "Antequera (Málaga)")], "OTROS PUEBLOS MANTECADEROS")
     E["ma_duda"] = comparar("1f36a", "mantecado", "1f36a", "polvorón", "¿=?", "UNA DUDA CLÁSICA")
     E["ma_primos"] = impacto("los dos llevan harina, azúcar y manteca…", "SON PRIMOS, *NO GEMELOS*", "", "1f46f")
-    E["ma_polvoron"] = f'''{F()}<div class="pos" style="left:28%;top:52%">{mantecado(380, False, .3, "oval")}</div>{txt(kt("EL *POLVORÓN*", "xl", .6), 72, 40, 50)}{txt(kt("con almendra, ovalado… y se deshace en polvo", "l naranja", 1.3), 72, 56, 50)}'''
+    E["ma_polvoron"] = f'''{F()}<div class="pos" style="left:26%;top:52%">{mantecado(520, False, .3, "oval")}</div>{txt(kt("EL *POLVORÓN*", "xl", .6), 70, 40, 46)}{txt(kt("con almendra, ovalado… y se deshace en polvo", "l naranja", 1.3), 70, 56, 46)}'''
     E["ma_mantecado"] = lista([("1f342", "canela"), ("1f34b", "limón"), ("1f36b", "cacao"), ("1f965", "coco")], "EL MANTECADO: REDONDO Y DE MIL SABORES")
-    E["ma_apretar"] = f'''{F("calido", True)}<div class="pos" style="left:28%;top:52%">{mantecado(360, True, .3)}</div>{obj(spr("270a", 160), 42, 34, "drop", "shake", 1.0)}{txt(kt("EL TRUCO: *APRETARLO ANTES*", "xl", .6), 72, 46, 50)}'''
+    E["ma_apretar"] = f'''{F("calido", True)}<div class="pos" style="left:26%;top:52%">{mantecado(500, True, .3)}</div>{obj(spr("270a", 160), 42, 34, "drop", "shake", 1.0)}{txt(kt("EL TRUCO: *APRETARLO ANTES*", "xl", .6), 70, 46, 46)}'''
     E["ma_reto"] = bocadillos("1f633", ["Di una palabra difícil…", "…con un polvorón en la boca"], "un viejo reto navideño")
     E["ma_mujeres"] = impacto("detrás de cada mantecado hay,", "SOBRE TODO, *MUJERES*", "", "1f469")
     E["ma_mantecaeras"] = lista([("1f469-200d-1f373", "elaborar"), ("1f52a", "cortar"), ("1f381", "envolver"), ("1f4e6", "empaquetar")], "LAS «MANTECAERAS»")
     E["ma_familias"] = lista([("1f475", "la abuela"), ("1f469", "la madre"), ("1f467", "la hija")], "GENERACIONES EN LA CAMPAÑA")
     E["ma_estudio"] = icono_texto("1f393", "PARTE DE LA *IDENTIDAD DEL PUEBLO*", "una tradición que pasa de unas a otras", "un estudio publicado por la Complutense", "der", "", True, "pop", "bob")
-    E["ma_papel"] = f'''{F("calido", True)}<div class="pos" style="left:30%;top:52%">{mantecado(380, True, .3)}</div>{txt(kt("PAPEL DE SEDA, *A MANO*", "xl", .6), 72, 44, 50)}{txt(kt("y parte del proceso sigue siendo manual", "l naranja", 1.3), 72, 58, 50)}'''
+    E["ma_papel"] = f'''{F("calido", True)}<div class="pos" style="left:26%;top:52%">{mantecado(500, True, .3)}</div>{txt(kt("PAPEL DE SEDA, *A MANO*", "xl", .6), 70, 38, 46)}{txt(kt("y parte del proceso sigue siendo manual", "l naranja", 1.3), 70, 62, 46)}'''
     E["ma_reto2"] = icono_texto("1f4c5", "POCOS MESES, *MUCHO TRABAJO*", "encontrar trabajadoras para esas semanas es un gran reto", "", "izq", "", False, "pop", "shake")
     E["ma_entiendes"] = impacto("ahora entenderás por qué", "LA NAVIDAD EMPIEZA *EN SEPTIEMBRE*", "", "1f4c5")
     E["ma_antes"] = flecha("2600-fe0f", "1f6d2", "FINALES DEL VERANO → *TIENDAS EN NOVIEMBRE*", "")
     E["ma_tresmeses"] = cifra("3 MESES", "A PLENO RENDIMIENTO: HORNO, CANELA Y ALMENDRA", "1f525")
     E["ma_octubre"] = comparar("1f455", "octubre, manga corta", "1f384", "y ya es Navidad", "+", "LLEGAR A ESTEPA EN OTOÑO")
     E["ma_turismo"] = lista([("1f6b6", "rutas por obradores"), ("1f3ea", "tiendas de fábrica"), ("1f4bc", "miles de empleos")], "EL PUEBLO LO APROVECHA")
-    E["ma_termina"] = comparar("1f389", "el país empieza a celebrar", "1f3c1", "en Estepa, la campaña acaba", "MIENTRAS", "DICIEMBRE")
+    E["ma_termina"] = comparar("1f389", "el país empieza a celebrar", "1f3c1", "en Estepa, la campaña acaba", "Y", "DICIEMBRE")
     E["ma_imitaciones"] = icono_texto("1f46f", "«DE ESTEPA»… *DE CUALQUIER SITIO*", "también aparecieron imitaciones", "", "izq", "", False, "pop", "shake")
     E["ma_2011"] = cifra("2011", "IGP PARA LOS MANTECADOS DE ESTEPA (Y DESPUÉS, LOS POLVORONES)", "1f6e1-fe0f")
     E["ma_garantiza"] = icono_texto("1f3f7-fe0f", "UN SELLO *QUE GARANTIZA*", "hecho en Estepa y su comarca, con reglas concretas", "", "der", "calido", True, "pop", "bob")
