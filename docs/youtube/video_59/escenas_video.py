@@ -16,7 +16,7 @@ def escenas():
     E = {}
     E["tr_especial"] = titular("ESPECIAL *NAVIDAD*", "Código de Barras", "bienvenido al", ("1f384", "1f992", "2744-fe0f", "1f381"), "navidad", True, "mega")
     E["tr_taller"] = lista([("1f6e3-fe0f", "pasillos enormes"), ("1f5c4-fe0f", "estanterías hasta el techo"), ("1f9f8", "juguetes hasta donde alcanza la vista")], "COMO EL TALLER DE PAPÁ NOEL")
-    E["tr_catalogo"] = f'''{F("calido", True)}<div class="pos" style="left:28%;top:52%">{catalogo(400)}</div>{obj(spr("1f58a-fe0f", 140), 44, 34, "drop", "swing", 1.0)}{txt(kt("EL CATÁLOGO, *MARCADO CON ROTULADOR*", "xl", .6), 70, 44, 50)}'''
+    E["tr_catalogo"] = f'''{F("calido", True)}<div class="pos" style="left:26%;top:52%">{catalogo(560)}</div>{obj(spr("1f58a-fe0f", 140), 44, 34, "drop", "swing", 1.0)}{txt(kt("EL CATÁLOGO, *MARCADO CON ROTULADOR*", "xl", .6), 70, 44, 50)}'''
     E["tr_grande"] = titular("LA JUGUETERÍA *MÁS GRANDE DEL MUNDO*", "durante décadas", "", ("1f9f8", "1f30d", "1f992", "1f451"), "navidad", True, "xl")
     E["tr_2018"] = comparar("1f4bb", "no solo por internet", "1f4b8", "sobre todo, por una deuda", "→", "2018: CIERRA EN EE. UU.")
     E["tr_historia"] = titular("LA HISTORIA DE *TOYS R US*", "", "", ("1f992", "1f9f8", "1f6d2", "1f4b8"), "navidad", True, "xl")
@@ -30,7 +30,7 @@ def escenas():
     E["tr_autoservicio"] = lista([("1f3ec", "tiendas enormes"), ("1f6d2", "autoservicio con carrito"), ("1f3f7-fe0f", "precios bajos")], "LA FÓRMULA")
     E["tr_1957"] = cifra("1957", "LA PRIMERA TIENDA SOLO DE JUGUETES, EN MARYLAND", "1f3ec")
     E["tr_juego"] = bocadillos("1f9d2", ["Toys R Us…", "…«los juguetes somos nosotros»"], "un juego de palabras en inglés")
-    E["tr_r"] = f'''{F("navidad", True)}<div class="pos" style="left:30%;top:50%;font-family:Bebas;font-size:420px;color:#ffd166;transform:translate(-50%,-50%) scaleX(-1);text-shadow:8px 8px 0 #111;animation:ePop .5s ease .2s both">R</div>{txt(kt("UNA R *AL REVÉS*", "xl hueso", .6), 70, 42, 50)}{txt(kt("como si la hubiera escrito un niño", "l naranja", 1.3), 70, 58, 50)}'''
+    E["tr_r"] = f'''{F("navidad", True)}<div class="pos" style="left:30%;top:50%;font-family:Bebas;font-size:560px;color:#ffd166;transform:translate(-50%,-50%) scaleX(-1);text-shadow:8px 8px 0 #111;animation:ePop .5s ease .2s both">R</div>{txt(kt("UNA R *AL REVÉS*", "xl hueso", .6), 70, 42, 50)}{txt(kt("como si la hubiera escrito un niño", "l naranja", 1.3), 70, 58, 50)}'''
     E["tr_perfecto"] = lista([("2702-fe0f", "corto"), ("1f602", "divertido"), ("1f9e0", "fácil de recordar"), ("1f476", "y repetido para bebés")], "EL NOMBRE PERFECTO")
     E["tr_mascota"] = impacto("toda marca para niños necesita", "UNA *MASCOTA*", "", "1f992")
     E["tr_graffe"] = flecha("1f4f0", "1f992", "«DR. G. RAFFE» → *GEOFFREY*", "de los anuncios de cunas a la jirafa de la tienda")
@@ -40,7 +40,7 @@ def escenas():
     E["tr_gigante"] = impacto("años setenta y ochenta:", "EL GIGANTE *DEL JUGUETE*", "", "1f451")
     E["tr_1978"] = cifra("1978", "SALE A BOLSA… Y A CONQUISTAR EL MUNDO, HASTA JAPÓN", "1f30d")
     E["tr_ventas"] = cifra("NOV. + DIC.", "UNA PARTE ENORME DE LAS VENTAS DEL AÑO", "1f384")
-    E["tr_catalogo2"] = f'''{F("navidad", True)}<div class="pos" style="left:28%;top:52%">{catalogo(400, .2)}</div>{txt(kt("CASI UNA *LISTA DE LA COMPRA*", "xl hueso", .6), 70, 42, 50)}{txt(kt("semanas eligiendo", "l naranja", 1.3), 70, 58, 50)}'''
+    E["tr_catalogo2"] = f'''{F("navidad", True)}<div class="pos" style="left:26%;top:52%">{catalogo(560, .2)}</div>{txt(kt("CASI UNA *LISTA DE LA COMPRA*", "xl hueso", .6), 70, 42, 50)}{txt(kt("semanas eligiendo", "l naranja", 1.3), 70, 58, 50)}'''
     E["tr_colas"] = icono_texto("1f4f0", "COLAS *EN LAS NOTICIAS*", "cada vez que salía un juguete de moda", "", "der", "", False, "pop", "shake")
     E["tr_poder"] = icono_texto("1f3ed", "LOS FABRICANTES *PENSABAN EN ÉL*", "al diseñar sus campañas", "tanto poder tenía", "izq", "", True, "pop", "bob")
     E["tr_espana"] = impacto("y en España", "TAMBIÉN SE HIZO *UN HUECO*", "", "1f1ea-1f1f8")
@@ -54,11 +54,11 @@ def escenas():
     E["tr_2000"] = cifra("2000", "UN ACUERDO PARA VENDER SUS JUGUETES… EN AMAZON", "1f91d")
     E["tr_tribunales"] = flecha("1f91d", "2696-fe0f", "DEL ACUERDO *A LOS TRIBUNALES*", "y la juguetería se quedó atrás en internet")
     E["tr_amazon"] = titular("SU SOCIO *APRENDIÓ A VENDER JUGUETES*", "y se convirtió en su gran competidor", "", ("1f4bb", "1f4e6", "1f9f8", "1f62c"))
-    E["tr_pantallas"] = lista([("1f3ae", "videojuegos"), ("1f4f1", "tabletas"), ("1f4f2", "móviles")], "PROBLEMA TRES: LOS NIÑOS DEJABAN ANTES LOS JUGUETES")
+    E["tr_pantallas"] = lista([("1f3ae", "videojuegos"), ("1f4f1", "tabletas"), ("1f4f2", "móviles")], "PROBLEMA TRES: LAS PANTALLAS")
     E["tr_dentro"] = impacto("el golpe definitivo", "VINO *DE DENTRO*", "", "1f4a3")
     E["tr_2005"] = cifra("2005", "TRES FONDOS DE INVERSIÓN COMPRAN TOYS R US", "1f3e6", "entre 6.500 y 7.500 millones de dólares, según la fuente")
     E["tr_formula"] = flecha("1f3e6", "1f3ec", "LA DEUDA DE LA COMPRA *PASA A LA EMPRESA*", "una fórmula muy habitual")
-    E["tr_intereses"] = lista([("1f3ec", "renovar tiendas"), ("1f4bb", "mejorar la web"), ("1f3f7-fe0f", "bajar precios")], "CIENTOS DE MILLONES EN INTERESES, EN VEZ DE…")
+    E["tr_intereses"] = lista([("1f3ec", "renovar tiendas"), ("1f4bb", "mejorar la web"), ("1f3f7-fe0f", "bajar precios")], "INTERESES EN LUGAR DE…")
     E["tr_quiebra"] = cifra("+5.000 MILLONES $", "DE DEUDA: QUIEBRA EN 2017 Y CIERRE EN EE. UU. EN 2018", "1f4c9")
     E["tr_lazarus_muere"] = icono_texto("1f56f-fe0f", "MUERE CHARLES *LAZARUS*", "una semana después de anunciarse la liquidación, a los 94 años", "", "izq", "dark", False, "pop", "glow")
     E["tr_espana2"] = impacto("¿y en España?", "LA HISTORIA FUE *DISTINTA*", "", "1f1ea-1f1f8")
@@ -71,7 +71,7 @@ def escenas():
     E["leccion2"] = leccion(2, "la deuda puede matar", "*A UNA EMPRESA QUE VENDE MUCHO*", "1f4b8")
     E["leccion3"] = leccion(3, "una marca querida", "*VALE MÁS QUE SUS TIENDAS*", "1f992")
     E["tr_final"] = lista([("1f6cf-fe0f", "una tienda de cunas"), ("1f6d2", "un supermercado"), ("1f992", "una jirafa"), ("1f58a-fe0f", "un catálogo"), ("1f4b8", "una deuda")], "")
-    E["tr_rotulador"] = f'''{F("navidad", True)}<div class="pos" style="left:28%;top:52%">{catalogo(380, .2)}</div>{txt(kt("YA SABES *CÓMO TERMINÓ*", "xl hueso", .6), 70, 46, 50)}'''
+    E["tr_rotulador"] = f'''{F("navidad", True)}<div class="pos" style="left:26%;top:52%">{catalogo(540, .2)}</div>{txt(kt("YA SABES *CÓMO TERMINÓ*", "xl hueso", .6), 70, 46, 50)}'''
     return E
 
 def miniatura():

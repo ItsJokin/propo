@@ -18,19 +18,19 @@ def doce(px=90, y=74, d=.3):
     return "".join(obj(spr("1f347", px), 8 + i * 7.6, y + (i % 2) * 3, "pop", "bob", d + i * .12) for i in range(12))
 
 def bolsas(n=7, d=.2):
-    return "".join(f'<div class="pos" style="left:{10 + i * 13}%;top:{58 + (i % 2) * 6}%;width:120px;height:150px;background:#f3ead7;border:4px solid {TINTA};border-radius:10px 10px 40px 40px;'
+    return "".join(f'<div class="pos" style="left:{10 + i * 13}%;top:{58 + (i % 2) * 6}%;width:170px;height:210px;background:#f3ead7;border:4px solid {TINTA};border-radius:10px 10px 40px 40px;'
                    f'box-shadow:0 10px 20px rgba(0,0,0,.2);animation:ePop .4s ease {d + i*.12:.2f}s both"></div>' for i in range(n))
 
 def escenas():
     E = {}
     E["uv_especial"] = titular("ESPECIAL *NAVIDAD*", "Código de Barras · último capítulo", "bienvenido al", ("1f384", "1f347", "2744-fe0f", "1f386"), "navidad", True, "mega")
-    E["uv_reloj"] = f'''{F("espacio", True)}<div class="pos" style="left:26%;top:56%">{reloj(360)}</div>{txt(kt("31 DE DICIEMBRE, *A PUNTO DE DAR LAS DOCE*", "xl hueso", .6), 68, 42, 56)}{txt(kt("doce uvas en la mano", "l naranja", 1.3), 68, 58, 56)}'''
+    E["uv_reloj"] = f'''{F("espacio", True)}<div class="pos" style="left:24%;top:56%">{reloj(500)}</div>{txt(kt("31 DE DICIEMBRE, *A PUNTO DE DAR LAS DOCE*", "xl hueso", .6), 68, 42, 56)}{txt(kt("doce uvas en la mano", "l naranja", 1.3), 68, 58, 56)}'''
     E["uv_campanadas"] = lista([("1f570-fe0f", "primero, los cuartos"), ("1f514", "luego, las campanadas"), ("1f347", "una uva por cada una")], "EL RITUAL")
     E["uv_pregunta"] = comparar("1f914", "¿quién la inventó?", "2744-fe0f", "¿uvas en diciembre?", "Y", "UNA DE LAS TRADICIONES MÁS ESPAÑOLAS")
     E["uv_respuesta"] = lista([("1f602", "una burla"), ("1f9d1-200d-1f33e", "unos agricultores de Alicante"), ("1f6cd-fe0f", "unas bolsas de papel")], "LA RESPUESTA TIENE QUE VER CON…")
     E["uv_historia"] = titular("LA HISTORIA DE *LAS UVAS DE LA SUERTE*", "", "", ("1f347", "1f570-fe0f", "1f6cd-fe0f", "1f386"), "navidad", True, "xl")
     E["uv_madrid"] = icono_texto("1f3db-fe0f", "LA *PUERTA DEL SOL*", "el centro de Madrid, con su reloj desde 1866", "finales del siglo XIX", "izq", "sepia", False, "pop", "bob")
-    E["uv_francia"] = comparar("1f347", "uvas", "1f37e", "champán", "+", "LA MODA DE LAS FAMILIAS ACOMODADAS, SEGÚN VARIAS FUENTES")
+    E["uv_francia"] = comparar("1f347", "uvas", "1f37e", "champán", "+", "LA MODA DE LA BURGUESÍA")
     E["uv_burla"] = icono_texto("1f602", "UNA BURLA *EN PLENA CALLE*", "comiendo uvas al ritmo de las campanadas", "según se cuenta", "der", "calido", True, "pop", "shake")
     E["uv_1882"] = cifra("1882", "LOS PERIÓDICOS YA HABLAN DE COMER UVAS EN NOCHEVIEJA", "1f4f0")
     E["uv_broma"] = impacto("pero era algo pequeño,", "CASI *UNA BROMA*", "", "1f609")
@@ -52,7 +52,7 @@ def escenas():
     E["uv_millones"] = cifra("DECENAS DE MILLONES", "DE KILOS EN UNA BUENA CAMPAÑA, SEGÚN LA PRENSA", "2696-fe0f")
     E["uv_comarca"] = titular("12 SEGUNDOS *SOSTIENEN UNA COMARCA*", "", "", ("1f347", "1f570-fe0f", "1f3d8-fe0f", "2728"), "navidad", True, "xl")
     E["uv_otro"] = impacto("el otro protagonista:", "EL *RELOJ*", "", "1f570-fe0f")
-    E["uv_1866"] = f'''{F("sepia", True)}<div class="pos" style="left:26%;top:56%">{reloj(340)}</div>{txt(kt("1866: *UN REGALO A LA CIUDAD*", "xl", .6), 68, 42, 56)}{txt(kt("del relojero José Rodríguez de Losada", "l naranja", 1.3), 68, 58, 56)}'''
+    E["uv_1866"] = f'''{F("sepia", True)}<div class="pos" style="left:24%;top:56%">{reloj(500)}</div>{txt(kt("1866: *UN REGALO A LA CIUDAD*", "xl", .6), 68, 42, 56)}{txt(kt("del relojero José Rodríguez de Losada", "l naranja", 1.3), 68, 58, 56)}'''
     E["uv_correos"] = icono_texto("1f3db-fe0f", "LA REAL *CASA DE CORREOS*", "hoy, sede de la presidencia de la Comunidad de Madrid", "", "izq", "", False, "pop", "bob")
     E["uv_cuartos"] = comparar("1f7e1", "baja la bola y suenan los cuartos", "1f605", "¡alguien empieza antes de tiempo!", "→", "")
     E["uv_tele"] = cifra("AÑOS 60", "LA TELEVISIÓN EMPIEZA A RETRANSMITIR LAS CAMPANADAS", "1f4fa")

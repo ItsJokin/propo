@@ -12,7 +12,7 @@ SEGMENTOS = [
         "La respuesta tiene que ver con una burla, con unos agricultores de Alicante y con unas bolsas de papel.",
         "Hoy te contamos la historia de las uvas de la suerte.",
     ], [("uv_especial", 0, 0), ("uv_reloj", 1, 0), ("uv_campanadas", 2, 0), ("uv_pregunta", 3, 0), ("uv_respuesta", 4, 0), ("uv_historia", 5, 0)]),
-    ("1. Una burla en la Puerta del Sol", [
+    ("1. Una burla en Sol", [
         "La primera pista nos lleva al Madrid de finales del siglo diecinueve. La Puerta del Sol ya era el centro de la ciudad, y desde mil ochocientos sesenta y seis tenía un reloj que marcaba la hora oficial.",
         "Según varias fuentes, las familias acomodadas de la época habían copiado una costumbre de Francia: en la cena de Nochevieja, tomaban uvas y champán. Y la uva fresca en pleno invierno era casi un capricho de lujo.",
         "Y, según se cuenta, un grupo de madrileños decidió reírse de aquella moda. Se fueron a la Puerta del Sol y se comieron las uvas al ritmo de las campanadas del reloj, en plena calle.",
@@ -42,7 +42,7 @@ SEGMENTOS = [
         "En una buena campaña, según la prensa valenciana, se recogen decenas de millones de kilos de uva embolsada.",
         "Para estos agricultores, las semanas antes de Nochevieja son las más importantes del año. Una tradición de doce segundos sostiene buena parte de la economía de una comarca. Y si un año el tiempo estropea la cosecha, se nota en toda la zona.",
     ], [("cap4", 0, -0.6), ("uv_imagina", 0, 1.0), ("uv_farolillos", 1, 0), ("uv_cosecha2", 2, 0), ("uv_millones", 3, 0), ("uv_comarca", 4, 0)]),
-    ("5. El reloj de la Puerta del Sol", [
+    ("5. El reloj de Sol", [
         "Y luego está el otro protagonista de la noche: el reloj.",
         "El reloj de la Puerta del Sol se inauguró en mil ochocientos sesenta y seis. Lo construyó y lo regaló a la ciudad un relojero español, José Rodríguez de Losada.",
         "Está en lo alto de la Real Casa de Correos, hoy sede de la presidencia de la Comunidad de Madrid.",
