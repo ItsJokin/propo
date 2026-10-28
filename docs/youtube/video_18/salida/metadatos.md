@@ -1,6 +1,6 @@
 # Nutella nació porque no había chocolate: la historia completa: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_18_Nutella.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:51 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_18_Nutella.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:54 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,19 +14,19 @@ Nutella nació de la escasez: en 1946, en Alba (Italia), el pastelero Pietro Fer
 
 ⏱ Capítulos
 00:00 Introducción
-00:31 1. Un pastelero en Alba
-01:11 2. Un chocolate que se cortaba
-01:54 3. Supercrema
-02:28 4. Nace Nutella
-03:04 5. El imperio Ferrero
-03:51 6. La empresa más discreta
-04:45 7. El huevo prohibido
-05:30 8. La guerra de las avellanas
-06:07 9. Las compras
-06:35 10. Las polémicas
-07:23 11. Un día mundial
-07:51 12. Lo que nos enseña
-08:14 Final
+00:29 1. Un pastelero en Alba
+01:09 2. Un chocolate que se cortaba
+01:51 3. Supercrema
+02:26 4. Nace Nutella
+02:58 5. El imperio Ferrero
+03:46 6. La empresa más discreta
+04:42 7. El huevo prohibido
+05:31 8. La guerra de las avellanas
+06:06 9. Las compras
+06:36 10. Las polémicas
+07:26 11. Un día mundial
+07:54 12. Lo que nos enseña
+08:16 Final
 
 📚 Fuentes
 - Wikipedia, «Nutella»: https://en.wikipedia.org/wiki/Nutella

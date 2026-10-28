@@ -1,0 +1,536 @@
+1
+00:00:00,500 --> 00:00:06,539
+Un ratón amarillo con las mejillas rojas. Una bola mitad roja, mitad blanca. Y una
+
+2
+00:00:06,539 --> 00:00:08,232
+frase: hazte con todos.
+
+3
+00:00:08,572 --> 00:00:13,039
+Pokémon es, según muchas estimaciones, la franquicia de entretenimiento que más
+
+4
+00:00:13,039 --> 00:00:17,280
+dinero ha generado de la historia. Más que Star Wars, más que Mickey Mouse.
+
+5
+00:00:17,620 --> 00:00:21,801
+Pero nació de los recuerdos de un niño japonés que cazaba insectos en los charcos de
+
+6
+00:00:21,801 --> 00:00:22,299
+su barrio.
+
+7
+00:00:22,639 --> 00:00:26,905
+Su primer juego tardó seis años en hacerse y estuvo a punto de arruinar a la pequeña
+
+8
+00:00:26,905 --> 00:00:27,921
+empresa que lo creó.
+
+9
+00:00:28,261 --> 00:00:32,708
+Y uno de sus episodios de dibujos animados mandó a cientos de niños al hospital.
+
+10
+00:00:33,048 --> 00:00:34,847
+Esta es la historia de Pokémon.
+
+11
+00:00:36,137 --> 00:00:41,097
+Satoshi Tajiri nació en mil novecientos sesenta y cinco en Machida, una ciudad de
+
+12
+00:00:41,097 --> 00:00:42,383
+las afueras de Tokio.
+
+13
+00:00:42,723 --> 00:00:47,756
+Entonces Machida todavía tenía campos, estanques y bosques. Y el pequeño Satoshi
+
+14
+00:00:47,756 --> 00:00:49,643
+pasaba horas cazando insectos.
+
+15
+00:00:49,983 --> 00:00:55,506
+Escarabajos, renacuajos, grillos. Los buscaba, los estudiaba, los coleccionaba y los
+
+16
+00:00:55,506 --> 00:00:57,413
+intercambiaba con sus amigos.
+
+17
+00:00:57,753 --> 00:01:00,911
+Sus compañeros lo llamaban, según se cuenta, el doctor bicho.
+
+18
+00:01:01,251 --> 00:01:05,607
+Pero Tokio creció. Los campos se llenaron de edificios y de asfalto. Y los insectos
+
+19
+00:01:05,607 --> 00:01:06,394
+desaparecieron.
+
+20
+00:01:06,734 --> 00:01:11,285
+Tajiri nunca olvidó aquella sensación de descubrir criaturas y coleccionarlas.
+
+21
+00:01:12,575 --> 00:01:17,374
+De adolescente, Tajiri cambió los insectos por las máquinas recreativas. Le
+
+22
+00:01:17,374 --> 00:01:18,206
+obsesionaban.
+
+23
+00:01:18,546 --> 00:01:22,626
+Era tan mal estudiante que, según se cuenta, estuvo a punto de no terminar el
+
+24
+00:01:22,626 --> 00:01:23,155
+instituto.
+
+25
+00:01:23,495 --> 00:01:29,126
+En mil novecientos ochenta y dos fundó una revista hecha a mano sobre videojuegos,
+
+26
+00:01:29,126 --> 00:01:34,687
+con trucos y análisis. La llamó Game Freak: algo así como el friki de los juegos.
+
+27
+00:01:35,027 --> 00:01:39,056
+Un joven ilustrador, Ken Sugimori, empezó a dibujar para ella.
+
+28
+00:01:39,396 --> 00:01:44,720
+Unos años después, Tajiri y Sugimori decidieron dejar de escribir sobre videojuegos…
+
+29
+00:01:44,720 --> 00:01:49,346
+y empezar a hacerlos. La revista se convirtió en una empresa: Game Freak.
+
+30
+00:01:50,636 --> 00:01:55,000
+En mil novecientos ochenta y nueve, Nintendo lanzó la Game Boy, una consola
+
+31
+00:01:55,000 --> 00:01:55,524
+portátil.
+
+32
+00:01:55,864 --> 00:02:00,510
+Venía con un accesorio: un cable para conectar dos consolas y jugar entre dos
+
+33
+00:02:00,510 --> 00:02:01,053
+personas.
+
+34
+00:02:01,393 --> 00:02:05,654
+Casi todos los juegos lo usaban para competir. Pero Tajiri vio otra cosa.
+
+35
+00:02:05,994 --> 00:02:11,142
+Imaginó pequeñas criaturas viajando por el cable de una consola a otra. Imaginó a
+
+36
+00:02:11,142 --> 00:02:15,909
+los niños intercambiándolas, como él intercambiaba insectos con sus amigos.
+
+37
+00:02:16,249 --> 00:02:20,232
+Un juego en el que hubiera que buscar, capturar, coleccionar e intercambiar
+
+38
+00:02:20,232 --> 00:02:21,984
+monstruos. Monstruos de bolsillo.
+
+39
+00:02:22,324 --> 00:02:25,273
+En japonés: Poketto Monsutā. Pocket Monsters.
+
+40
+00:02:26,563 --> 00:02:31,488
+Tajiri presentó la idea a Nintendo. Y, aunque no la entendieron del todo, le dieron
+
+41
+00:02:31,488 --> 00:02:32,438
+una oportunidad.
+
+42
+00:02:32,778 --> 00:02:37,212
+Pero el proyecto se hizo eterno. Game Freak era una empresa pequeña, y tenía que
+
+43
+00:02:37,212 --> 00:02:39,152
+hacer otros juegos para sobrevivir.
+
+44
+00:02:39,492 --> 00:02:44,218
+Según se cuenta, el dinero se acabó varias veces. Varios empleados se marcharon. Y
+
+45
+00:02:44,218 --> 00:02:46,063
+Tajiri dejó de cobrar su sueldo.
+
+46
+00:02:46,403 --> 00:02:50,443
+Algunos días trabajaba veinticuatro horas seguidas y luego dormía doce.
+
+47
+00:02:50,783 --> 00:02:55,855
+Shigeru Miyamoto, el creador de Mario, lo apoyó dentro de Nintendo. Y, según varias
+
+48
+00:02:55,855 --> 00:03:00,865
+fuentes, le sugirió una idea clave: sacar el juego en dos versiones distintas, con
+
+49
+00:03:00,865 --> 00:03:02,881
+criaturas diferentes en cada una.
+
+50
+00:03:03,221 --> 00:03:07,505
+Así los jugadores tendrían que intercambiar entre ellos para conseguirlas todas.
+
+51
+00:03:08,795 --> 00:03:13,791
+El veintisiete de febrero de mil novecientos noventa y seis, después de seis años,
+
+52
+00:03:13,791 --> 00:03:17,630
+salieron en Japón Pocket Monsters Rojo y Pocket Monsters Verde.
+
+53
+00:03:17,970 --> 00:03:22,301
+No fue un lanzamiento espectacular. La Game Boy ya tenía siete años, y muchos la
+
+54
+00:03:22,301 --> 00:03:23,276
+daban por acabada.
+
+55
+00:03:23,616 --> 00:03:28,291
+Pero el juego se fue extendiendo de boca en boca entre los niños. En los patios de
+
+56
+00:03:28,291 --> 00:03:32,567
+los colegios, todos hablaban de qué criaturas tenían y cuáles les faltaban.
+
+57
+00:03:32,907 --> 00:03:36,355
+Había ciento cincuenta oficiales. Y una más, escondida.
+
+58
+00:03:37,645 --> 00:03:42,471
+Según contó uno de sus programadores, en el último momento metió en el juego una
+
+59
+00:03:42,471 --> 00:03:43,799
+criatura secreta: Mew.
+
+60
+00:03:44,139 --> 00:03:48,494
+No aparecía en ningún sitio. No se podía capturar de forma normal. Era casi un
+
+61
+00:03:48,494 --> 00:03:48,829
+rumor.
+
+62
+00:03:49,169 --> 00:03:53,628
+Pero algunos jugadores la encontraron gracias a fallos del juego. Y el rumor se
+
+63
+00:03:53,628 --> 00:03:54,080
+disparó.
+
+64
+00:03:54,420 --> 00:03:59,338
+Una revista japonesa de cómics infantiles organizó un concurso: veinte ganadores
+
+65
+00:03:59,338 --> 00:04:01,305
+recibirían a Mew en su cartucho.
+
+66
+00:04:01,645 --> 00:04:04,617
+Según se cuenta, se presentaron setenta y ocho mil niños.
+
+67
+00:04:04,957 --> 00:04:09,450
+El misterio funcionó como el mejor anuncio posible. Y las ventas se dispararon.
+
+68
+00:04:10,740 --> 00:04:14,984
+Entre aquellas criaturas había un pequeño ratón eléctrico, dibujado por la
+
+69
+00:04:14,984 --> 00:04:16,475
+diseñadora Atsuko Nishida.
+
+70
+00:04:16,815 --> 00:04:21,674
+Su nombre era una mezcla de dos sonidos japoneses: pika, el chisporroteo de la
+
+71
+00:04:21,674 --> 00:04:24,478
+electricidad, y chu, el chillido de un ratón.
+
+72
+00:04:24,818 --> 00:04:28,382
+Pikachu no era, al principio, la criatura principal del juego.
+
+73
+00:04:28,722 --> 00:04:33,650
+Pero en mil novecientos noventa y siete llegó la serie de dibujos animados. Y, según
+
+74
+00:04:33,650 --> 00:04:38,285
+se cuenta, los responsables eligieron a Pikachu como compañero del protagonista
+
+75
+00:04:38,285 --> 00:04:40,808
+porque gustaba a niños y a niñas por igual.
+
+76
+00:04:41,148 --> 00:04:46,165
+Y hay un guiño escondido: en la versión japonesa, el protagonista se llama Satoshi,
+
+77
+00:04:46,165 --> 00:04:50,517
+como Tajiri. Y su gran rival se llama Shigeru, como Miyamoto, su mentor.
+
+78
+00:04:50,857 --> 00:04:54,967
+Fue la decisión que convirtió a un ratón amarillo en una estrella mundial.
+
+79
+00:04:56,257 --> 00:05:01,171
+El dieciséis de diciembre de mil novecientos noventa y siete, la televisión japonesa
+
+80
+00:05:01,171 --> 00:05:05,383
+emitió un episodio de la serie dedicado a una criatura virtual, Porygon.
+
+81
+00:05:05,723 --> 00:05:11,076
+En una escena había una explosión con destellos rojos y azules, que parpadeaban muy
+
+82
+00:05:11,076 --> 00:05:11,528
+rápido.
+
+83
+00:05:11,868 --> 00:05:17,146
+Esa noche, cientos de niños de todo Japón empezaron a sentirse mal: mareos, náuseas,
+
+84
+00:05:17,146 --> 00:05:17,963
+convulsiones.
+
+85
+00:05:18,303 --> 00:05:22,637
+Según las autoridades japonesas, seiscientas ochenta y cinco personas fueron
+
+86
+00:05:22,637 --> 00:05:26,743
+llevadas al hospital en ambulancia. La prensa lo llamó el shock Pokémon.
+
+87
+00:05:27,083 --> 00:05:31,663
+La serie se suspendió durante cuatro meses. Aquel episodio no se ha vuelto a emitir
+
+88
+00:05:31,663 --> 00:05:31,994
+nunca.
+
+89
+00:05:32,334 --> 00:05:37,008
+Y desde entonces, las cadenas japonesas siguen normas estrictas sobre los destellos
+
+90
+00:05:37,008 --> 00:05:38,360
+en los dibujos animados.
+
+91
+00:05:39,650 --> 00:05:41,647
+Ni siquiera aquello frenó a Pokémon.
+
+92
+00:05:41,987 --> 00:05:46,807
+En mil novecientos noventa y ocho los juegos llegaron a Estados Unidos, con un
+
+93
+00:05:46,807 --> 00:05:51,379
+nombre más corto: Pokémon. Y en mil novecientos noventa y nueve, a Europa.
+
+94
+00:05:51,719 --> 00:05:57,062
+Llegó todo a la vez: los videojuegos, la serie, las cartas coleccionables, los
+
+95
+00:05:57,062 --> 00:05:58,569
+peluches, la película.
+
+96
+00:05:58,909 --> 00:06:03,347
+En los colegios de medio mundo hubo que prohibir las cartas, porque los niños no
+
+97
+00:06:03,347 --> 00:06:05,399
+hacían otra cosa que intercambiarlas.
+
+98
+00:06:05,739 --> 00:06:10,785
+Pokémon hizo realidad el sueño de Tajiri: millones de niños buscando, coleccionando
+
+99
+00:06:10,785 --> 00:06:12,426
+e intercambiando criaturas.
+
+100
+00:06:13,716 --> 00:06:18,197
+Para gestionar aquel fenómeno, en mil novecientos noventa y ocho se creó una empresa
+
+101
+00:06:18,197 --> 00:06:20,810
+específica, que hoy se llama The Pokémon Company.
+
+102
+00:06:21,150 --> 00:06:26,043
+Sus dueños son tres: Nintendo, Game Freak y Creatures, la empresa que se encargaba
+
+103
+00:06:26,043 --> 00:06:28,429
+de las cartas y de parte del desarrollo.
+
+104
+00:06:28,769 --> 00:06:33,234
+Y aquí viene un dato que sorprende a mucha gente: la mayor parte del dinero de
+
+105
+00:06:33,234 --> 00:06:35,294
+Pokémon no viene de los videojuegos.
+
+106
+00:06:35,634 --> 00:06:40,267
+Viene de todo lo demás: peluches, camisetas, mochilas, cartas, juguetes. Lo que se
+
+107
+00:06:40,267 --> 00:06:41,567
+llama el merchandising.
+
+108
+00:06:41,907 --> 00:06:46,471
+Algunas cartas antiguas se han vendido en subastas por cifras de varios millones de
+
+109
+00:06:46,471 --> 00:06:46,911
+dólares.
+
+110
+00:06:47,251 --> 00:06:51,135
+Un juego que nació casi sin dinero acabó convirtiéndose en una máquina de
+
+111
+00:06:51,135 --> 00:06:51,721
+imprimirlo.
+
+112
+00:06:53,011 --> 00:06:57,724
+Veinte años después, en julio de dos mil dieciséis, llegó Pokémon Go, un juego para
+
+113
+00:06:57,724 --> 00:06:58,235
+el móvil.
+
+114
+00:06:58,575 --> 00:07:03,766
+Usaba el mapa del mundo real: para capturar criaturas había que salir a la calle,
+
+115
+00:07:03,766 --> 00:07:06,586
+caminar e ir a parques, plazas y monumentos.
+
+116
+00:07:06,926 --> 00:07:11,274
+Fue un fenómeno inmediato. En pocas semanas lo habían descargado cientos de millones
+
+117
+00:07:11,274 --> 00:07:11,895
+de personas.
+
+118
+00:07:12,235 --> 00:07:17,066
+Las calles se llenaron de gente mirando el móvil, y hubo de todo: amistades nuevas,
+
+119
+00:07:17,066 --> 00:07:21,024
+ejercicio… y algún que otro accidente por no mirar por dónde se iba.
+
+120
+00:07:21,364 --> 00:07:26,186
+Era, en cierto modo, volver al principio: a un niño que salía a buscar bichos por el
+
+121
+00:07:26,186 --> 00:07:26,530
+campo.
+
+122
+00:07:27,820 --> 00:07:30,444
+¿Qué nos enseña esta historia? Tres cosas.
+
+123
+00:07:30,784 --> 00:07:35,787
+Una: los recuerdos de la infancia pueden ser una mina. Pokémon nació de un niño que
+
+124
+00:07:35,787 --> 00:07:36,752
+cazaba insectos.
+
+125
+00:07:37,092 --> 00:07:42,313
+Dos: mira las herramientas de otra forma. Todos usaban el cable de la Game Boy para
+
+126
+00:07:42,313 --> 00:07:44,766
+competir. Tajiri lo usó para compartir.
+
+127
+00:07:45,106 --> 00:07:49,712
+Y tres: un secreto bien guardado vende más que mil anuncios. Mew demostró que el
+
+128
+00:07:49,712 --> 00:07:50,748
+misterio engancha.
+
+129
+00:07:52,038 --> 00:07:56,809
+Un niño cazando insectos, una revista hecha a mano, un cable entre dos consolas,
+
+130
+00:07:56,809 --> 00:07:59,910
+seis años al borde de la ruina y un ratón eléctrico.
+
+131
+00:08:00,250 --> 00:08:03,477
+La próxima vez que veas a Pikachu, acuérdate del doctor bicho.
+
+132
+00:08:03,817 --> 00:08:08,020
+Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
+
+133
+00:08:08,360 --> 00:08:11,646
+¿Cuál era tu Pokémon favorito? Cuéntanoslo en los comentarios.
+
+134
+00:08:11,986 --> 00:08:13,913
+Y si te ha gustado, suscríbete.
+
