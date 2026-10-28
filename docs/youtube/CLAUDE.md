@@ -15,5 +15,8 @@ Siempre que se genere o se vuelva a montar un vídeo, se entregan juntos al prop
 - Sin día fijo de publicación en ningún texto. Ritmo objetivo: 3 vídeos largos por semana + Shorts.
 - Formato largo desde el vídeo 15: 9-12 minutos (unas 1.400-1.800 palabras, 8.500-11.000 caracteres), 8-11 capítulos, giros de tensión para retener. Sin relleno: solo temas que den para 10 minutos. Los vídeos 1-14 son el formato corto anterior.
 
+## Especiales (Navidad, etc.)
+- Del vídeo 46 al 60: especial de Navidad (publicación prevista del 15 al 31 de diciembre). En `guion.py`, `ESPECIAL = "NAVIDAD"` añade la etiqueta fija «★ ESPECIAL NAVIDAD» y nieve en pantalla; el título empieza por «Especial Navidad:», la intro dice que es el especial de Navidad, la miniatura lleva `cinta_especial()` y la lista es «Especial Navidad». Fondo `F("navidad")` para escenas destacadas.
+
 ## Voz
 - Por defecto, la voz de ElevenLabs del propietario. Él genera la locución completa a partir del guion en un solo texto y envía el MP3, que `voces.py` trocea por frases.

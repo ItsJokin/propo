@@ -136,6 +136,8 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:KRAFT}
 .fondo.calido{background:#f2c98a;background-image:radial-gradient(circle at 30% 30%,#ffe3b0,#e9a65a 85%)}
 .fondo.cesped{background:#2f8f4e;background-image:repeating-linear-gradient(90deg,#2f8f4e 0 120px,#35a058 120px 240px)}
 .fondo.espacio{background:#0b1026;background-image:radial-gradient(circle at 70% 30%,#27306b,#0b1026 70%)}
+.fondo.navidad{background:#123d2a;background-image:radial-gradient(circle at 30% 30%,#1f6b45,#0e2f20 75%),radial-gradient(circle at 85% 90%,rgba(215,38,61,.35),transparent 55%)}
+.fondo.nieve{background:#eef3f7;background-image:radial-gradient(circle at 30% 25%,#ffffff,#d6e2ec 85%)}
 .viñeta{position:absolute;inset:0;box-shadow:inset 0 0 260px rgba(60,30,0,.55);pointer-events:none}
 .rayos{position:absolute;left:50%;top:50%;width:3000px;height:3000px;margin:-1500px;background:repeating-conic-gradient(rgba(255,255,255,.22) 0 8deg,transparent 8deg 16deg);animation:girar 60s linear infinite}
 .rayos.oscuro{background:repeating-conic-gradient(rgba(255,140,26,.08) 0 8deg,transparent 8deg 16deg)}
@@ -311,6 +313,8 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:KRAFT}
 @keyframes c3{from{transform:scale(1.04) translate(-20px,10px) rotate(-.6deg)}to{transform:scale(1.1) translate(20px,-10px) rotate(.6deg)}}
 #grano{position:absolute;inset:0;z-index:900;pointer-events:none;opacity:.05;mix-blend-mode:multiply}
 #marca{position:absolute;right:46px;top:36px;z-index:901;opacity:.8}
+#nieve{position:absolute;inset:0;z-index:899;pointer-events:none;opacity:.7;background-image:radial-gradient(circle,#fff 0 3px,transparent 4px),radial-gradient(circle,#fff 0 2px,transparent 3px);background-size:180px 180px,110px 110px}
+#especial{position:absolute;left:40px;top:34px;z-index:901;background:#D7263D;color:#fff;font-family:Bebas;font-size:40px;letter-spacing:2px;padding:4px 18px 2px;border-radius:8px;box-shadow:4px 4px 0 #151515}
 #barra{position:absolute;left:0;bottom:0;height:8px;background:NARANJA;z-index:902}
 """
 for k, v in dict(KRAFT=KRAFT, TINTA=TINTA, ROJO=ROJO, NARANJA=NARANJA, HUESO=HUESO, GRIS=GRIS).items():
@@ -339,18 +343,20 @@ function setTime(t){
   const g=document.getElementById('grano'); const k=Math.floor(t*6);
   g.style.backgroundPosition=`${(k*137)%400}px ${(k*251)%300}px`;
   document.getElementById('barra').style.width=(100*t/DUR)+'%';
+  const nv=document.getElementById('nieve'); if(nv) nv.style.backgroundPosition=`${Math.sin(t*0.6)*25}px ${t*70}px, ${Math.sin(t*0.4+1)*35}px ${t*42}px`;
 }
 document.getElementById('grano').style.backgroundImage=`url(${hacerGrano()})`;
 """
 
 
 # ======================================================================= constructores genéricos de escenas
+OSCUROS = ("dark", "espacio", "navidad")
 def F(tipo="", rayos=False):
-    return f'<div class="fondo {tipo}"></div>' + (f'<div class="rayos{" oscuro" if tipo in ("dark", "espacio") else ""}"></div>' if rayos else "")
+    return f'<div class="fondo {tipo}"></div>' + (f'<div class="rayos{" oscuro" if tipo in OSCUROS else ""}"></div>' if rayos else "")
 
 def icono_texto(icono, titulo, sub="", kicker="", lado="izq", fondo="", rayos=False, entrada="pop", bucle="bob", px=380, extras=()):
     xi, xt, al = (26, 64, "left") if lado == "izq" else (74, 36, "left")
-    claro = fondo in ("dark", "espacio")
+    claro = fondo in OSCUROS
     h = F(fondo, rayos) + obj(spr(icono, px), xi, 50, entrada, bucle)
     if kicker: h += txt(kt(kicker, "m " + ("gris" if not claro else "gris dark"), .2), xt, 30, 52, al)
     h += txt(kt(titulo, "xl" + (" hueso" if claro else ""), .4), xt, 46, 52, al)
@@ -360,7 +366,7 @@ def icono_texto(icono, titulo, sub="", kicker="", lado="izq", fondo="", rayos=Fa
     return h
 
 def titular(titulo, sub="", kicker="", iconos=(), fondo="", rayos=True, cls="mega"):
-    claro = fondo in ("dark", "espacio")
+    claro = fondo in OSCUROS
     h = F(fondo, rayos)
     if kicker: h += txt(kt(kicker, "l" + (" hueso" if claro else ""), .1), 50, 30, 85)
     cls = tam(titulo) if cls == "mega" else cls
@@ -491,8 +497,10 @@ def main():
         tr = "tr-iris" if e["capitulo"] else ("" if i == 0 else trans[i % len(trans)])
         html.append(f'<div class="escena {tr}" id="e{i}"><div class="cam c{i % 4}" style="--dur:{b - a + 0.7:.2f}s">{cat[e["nombre"]]}</div></div>')
         esc.append({"a": a, "b": b})
+    esp = getattr(G, "ESPECIAL", "")    # p. ej. «NAVIDAD»: etiqueta fija en pantalla (y nieve en el de Navidad)
+    EXTRA = (f"<div id='especial'>★ ESPECIAL {esp}</div>" + ("<div id='nieve'></div>" if esp == "NAVIDAD" else "")) if esp else ""
     pagina = (f"<!doctype html><html lang=es><head><meta charset=utf-8><style>{CSS.replace('FUENTES', 'file://' + os.path.abspath(fuentes))}</style></head>"
-              f"<body>{''.join(html)}<div id='grano'></div><div id='marca'>{barras(34)}</div><div id='barra'></div>"
+              f"<body>{''.join(html)}{EXTRA}<div id='grano'></div><div id='marca'>{barras(34)}</div><div id='barra'></div>"
               f"<script>const ESC={json.dumps(esc)};{JS.replace('__DUR__', str(t['duracion']))}setTime(0);</script></body></html>")
     open(os.path.join(trabajo, "timeline.html"), "w").write(pagina)
     print(len(esc), "escenas")
@@ -512,3 +520,15 @@ def vicon(nombre, px=400, extra=""):
         _ICONOS = json.load(open(os.environ["ICONIFY_JSON"]))["icons"]
     body = _ICONOS[nombre]["body"].replace('id="', f'id="{nombre}-').replace("url(#", f"url(#{nombre}-")
     return f'<svg xmlns="http://www.w3.org/2000/svg" width="{px}" height="{px}" viewBox="0 0 32 32" style="{extra}">{body}</svg>'
+
+def cinta_especial(texto="ESPECIAL NAVIDAD"):
+    """Etiqueta para miniaturas de especiales (arriba a la izquierda)."""
+    return (f'<div style="position:absolute;left:36px;top:30px;background:#D7263D;color:#fff;font-family:Bebas;font-size:64px;'
+            f'letter-spacing:3px;padding:6px 26px 2px;border-radius:12px;box-shadow:6px 6px 0 #151515;transform:rotate(-3deg)">★ {texto}</div>')
+
+def copos(n=40, semilla=7):
+    """Copos de nieve estáticos (SVG) para fondos de miniatura."""
+    import random
+    r = random.Random(semilla)
+    c = "".join(f'<circle cx="{r.randint(0,1280)}" cy="{r.randint(0,720)}" r="{r.choice([3,4,5,7])}" fill="#fff" opacity="{r.choice([.5,.7,.9])}"/>' for _ in range(n))
+    return f'<svg style="position:absolute;inset:0" width="1280" height="720">{c}</svg>'
