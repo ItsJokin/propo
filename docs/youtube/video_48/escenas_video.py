@@ -1,7 +1,7 @@
 """Escenas del vídeo 48 (especial Navidad: el árbol de Navidad artificial). Motor común; sin logotipos ni personajes con derechos."""
 from base import *
 
-CAP_ICONOS = {1: "1f1e9-1f1ea", 2: "1f1ea-1f1f8", 3: "1fab6", 4: "1faa5", 5: "1f948", 6: "1f4fa", 7: "1f4e6", 8: "1f30d", 9: "1f9e0"}
+CAP_ICONOS = {1: "1f1e9-1f1ea", 2: "1f1ea-1f1f8", 3: "1fab6", 4: "1faa5", 5: "1fa9e", 6: "1f4fa", 7: "1f4e6", 8: "1f30d", 9: "1f9e0"}
 
 def arbol_plata(px=300, d=.2):
     capas = "".join(f'<path d="M{100 - 18 - i*14},{30 + i*34} L100,{i*34} L{100 + 18 + i*14},{30 + i*34}Z" fill="url(#plata)" stroke="#9aa3ad" stroke-width="2"/>' for i in range(5))
@@ -18,7 +18,7 @@ def escenas():
     E["ar_especial"] = titular("ESPECIAL *NAVIDAD*", "Código de Barras", "bienvenido al", ("1f384", "1f381", "2744-fe0f", "2b50"), "navidad", True, "mega")
     E["ar_caja"] = icono_texto("1f4e6", "UNA CAJA *DEL ALTILLO*", "millones de familias, cada diciembre", "", "izq", "calido", True, "drop", "bob", 380, (("1f384", 84, 24),))
     E["ar_plastico"] = lista([("1f331", "no crece"), ("1f342", "no se seca"), ("1f9f9", "no suelta hojas")], "UN ÁRBOL QUE…")
-    E["ar_viaje"] = lista([("1fab6", "plumas de ganso"), ("1faa5", "una fábrica de cepillos"), ("1f948", "aluminio brillante"), ("1f4fa", "un dibujo animado")], "CASI DOS SIGLOS DE HISTORIA")
+    E["ar_viaje"] = lista([("1fab6", "plumas de ganso"), ("1faa5", "una fábrica de cepillos"), ("1fa9e", "aluminio brillante"), ("1f4fa", "un dibujo animado")], "CASI DOS SIGLOS DE HISTORIA")
     E["ar_historia"] = titular("EL ÁRBOL DE NAVIDAD *ARTIFICIAL*", "la historia completa", "", ("1f384", "1fab6", "1faa5", "1f4e6"), "navidad", True, "xl")
     E["ar_alemania"] = icono_texto("1f332", "UN ABETO *DECORADO*", "una costumbre nacida en Alemania, hace siglos", "", "izq", "navidad", True, "pop", "bob", 380, (("1f1e9-1f1ea", 84, 20),))
     E["ar_adornos"] = lista([("1f34e", "manzanas"), ("1f330", "nueces"), ("1f36a", "galletas"), ("1f56f-fe0f", "velas")], "LOS PRIMEROS ADORNOS")
@@ -53,10 +53,10 @@ def escenas():
     E["ar_millones"] = cifra("MILLONES", "DE HOGARES DE EE. UU. TUVIERON UNO", "1f3e0")
     E["ar_apaga"] = impacto("y de repente…", "LA MODA *SE APAGÓ*", "", "1f4a1")
     E["ar_1965"] = cifra("1965", "UN ESPECIAL DE DIBUJOS ANIMADOS EN LA TELE", "1f4fa")
-    E["ar_arbolito"] = comparar("1f948", "aluminio brillante", "1f331", "un arbolito de verdad, casi sin hojas", "VS", "EL PROTAGONISTA ELIGE")
+    E["ar_arbolito"] = comparar("1fa9e", "aluminio brillante", "1f331", "un arbolito de verdad, casi sin hojas", "VS", "EL PROTAGONISTA ELIGE")
     E["ar_simbolo"] = icono_texto("1f6cd-fe0f", "¿UNA NAVIDAD *FALSA Y CONSUMISTA*?", "así empezó a ver mucha gente el aluminio", "según se cuenta", "der", "", False, "pop", "")
     E["ar_complicada"] = lista([("1f971", "la moda ya cansaba"), ("1f4c9", "las ventas cayeron"), ("1f3ed", "la fábrica cerró la línea")], "LA REALIDAD, MÁS COMPLICADA")
-    E["ar_vintage"] = icono_texto("1f4b0", "HOY, *DE COLECCIONISTA*", "algunos alcanzan precios muy altos", "", "izq", "calido", True, "pop", "bob", 380, (("1f948", 84, 24),))
+    E["ar_vintage"] = icono_texto("1f4b0", "HOY, *DE COLECCIONISTA*", "algunos alcanzan precios muy altos", "", "izq", "calido", True, "pop", "bob", 380, (("1fa9e", 84, 24),))
     E["ar_plastico2"] = impacto("el relevo:", "EL *PLÁSTICO*", "más barato y versátil", "1f4e6")
     E["ar_pvc"] = cifra("AÑOS 60 Y 70", "ÁRBOLES DE PVC: AGUJAS DE PLÁSTICO VERDE", "1f384")
     E["ar_ventajas"] = icono_texto("1f4e6", "DE LA CAJA *AL SALÓN*", "un mismo árbol, muchas Navidades", "", "der", "", False, "pop", "bob")
@@ -73,8 +73,8 @@ def escenas():
     E["ar_cuidarlo"] = titular("SI YA TIENES UNO, *CUÍDALO*", "y úsalo todo lo posible", "", ("1f384", "2764-fe0f", "267b-fe0f", "1f4e6"), "navidad", True, "xl")
     E["leccion1"] = leccion(1, "muchos inventos nacen de", "*REAPROVECHAR LO QUE TIENES*", "1faa5")
     E["leccion2"] = leccion(2, "un producto puede pasar de moda", "*POR ALGO QUE NO CONTROLA*", "1f4fa")
-    E["leccion3"] = leccion(3, "lo pasado de moda, mañana", "*PUEDE SER DE COLECCIONISTA*", "1f948")
-    E["ar_final"] = lista([("1fab6", "plumas de ganso"), ("1faa5", "cerdas de cepillo"), ("1f948", "aluminio plateado"), ("1f4e6", "plástico verde")], "")
+    E["leccion3"] = leccion(3, "lo pasado de moda, mañana", "*PUEDE SER DE COLECCIONISTA*", "1fa9e")
+    E["ar_final"] = lista([("1fab6", "plumas de ganso"), ("1faa5", "cerdas de cepillo"), ("1fa9e", "aluminio plateado"), ("1f4e6", "plástico verde")], "")
     E["ar_dossiglos"] = f'''{F("navidad", True)}{obj(spr("1f384", 320), 30, 50, "drop", "bob", .2)}{txt(kt("CASI *DOS SIGLOS* DE HISTORIA", "xl hueso", .9), 70, 42, 52)}{txt(kt("en esa caja del altillo", "l naranja", 1.4), 70, 58, 52)}'''
     return E
 
