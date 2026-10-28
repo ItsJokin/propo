@@ -1,6 +1,6 @@
 # Pepsi tuvo una flota de submarinos: la historia más loca de un refresco: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_19_Pepsi.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:55 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_19_Pepsi.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 09:01 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,19 +14,19 @@ Pepsi nació en 1893 en una farmacia de Carolina del Norte, quebró en 1923 por 
 
 ⏱ Capítulos
 00:00 Introducción
-00:28 1. El farmacéutico de New Bern
-01:13 2. Arruinado por el azúcar
-01:52 3. Casi se vende a Coca-Cola
-02:26 4. El doble de refresco
-03:02 5. Un vaso para Jrushchov
-03:42 6. Refrescos a cambio de vodka
-04:15 7. La flota de Pepsi
-05:07 8. El número maldito
-05:52 9. La generación Pepsi
-06:30 10. Una cola transparente
-07:12 11. Mucho más que un refresco
-07:57 12. Lo que nos enseña
-08:19 Final
+00:27 1. El farmacéutico de New Bern
+01:15 2. Arruinado por el azúcar
+01:55 3. Casi se vende a Coca-Cola
+02:27 4. El doble de refresco
+03:03 5. Un vaso para Jrushchov
+03:45 6. Refrescos a cambio de vodka
+04:18 7. La flota de Pepsi
+05:11 8. El número maldito
+05:59 9. La generación Pepsi
+06:38 10. Una cola transparente
+07:19 11. Mucho más que un refresco
+08:03 12. Lo que nos enseña
+08:26 Final
 
 📚 Fuentes
 - NCpedia / North Carolina History, «Caleb Bradham (1867–1934)»: https://northcarolinahistory.org/encyclopedia/caleb-bradham-1867-1934/
