@@ -1,6 +1,6 @@
 # Nike empezó vendiendo zapatillas desde un coche: la historia completa: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_20_Nike.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 09:01 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_20_Nike.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 09:14 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,19 +14,19 @@ Nike nació en 1964 como Blue Ribbon Sports: Phil Knight vendía zapatillas japo
 
 ⏱ Capítulos
 00:00 Introducción
-00:28 1. Un trabajo de clase
-01:24 2. El entrenador obsesionado
+00:27 1. Un trabajo de clase
+01:23 2. El entrenador obsesionado
 02:01 3. Desde el maletero
 02:37 4. La ruptura con Japón
-03:09 5. Un nombre y un garabato
-03:59 6. Una gofrera en la cocina
-04:32 7. Aire en la suela
-05:25 8. Michael Jordan
-06:14 9. Just Do It
-06:48 10. El lado oscuro
-07:30 11. El gigante
-07:59 12. Lo que nos enseña
-08:24 Final
+03:10 5. Un nombre y un garabato
+04:03 6. Una gofrera en la cocina
+04:40 7. Aire en la suela
+05:33 8. Michael Jordan
+06:20 9. Just Do It
+06:57 10. El lado oscuro
+07:40 11. El gigante
+08:09 12. Lo que nos enseña
+08:35 Final
 
 📚 Fuentes
 - Phil Knight, «Shoe Dog» (memorias, 2016)

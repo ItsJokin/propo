@@ -1,564 +1,564 @@
 1
-00:00:00,500 --> 00:00:05,062
+00:00:00,500 --> 00:00:05,904
 Probablemente llevas, o has llevado, unas zapatillas con un símbolo muy concreto en
 
 2
-00:00:05,062 --> 00:00:05,666
+00:00:05,904 --> 00:00:06,620
 el lateral.
 
 3
-00:00:06,006 --> 00:00:08,665
+00:00:06,960 --> 00:00:09,438
 Nike es la marca deportiva más grande del mundo.
 
 4
-00:00:09,005 --> 00:00:13,546
+00:00:09,778 --> 00:00:13,854
 Pero empezó con un trabajo de clase, un viaje a Japón y un joven que vendía
 
 5
-00:00:13,546 --> 00:00:16,029
+00:00:13,854 --> 00:00:16,082
 zapatillas desde el maletero de su coche.
 
 6
-00:00:16,369 --> 00:00:20,902
+00:00:16,422 --> 00:00:20,935
 Su logotipo costó treinta y cinco dólares. Su primera suela se hizo en una gofrera
 
 7
-00:00:20,902 --> 00:00:21,454
+00:00:20,935 --> 00:00:21,485
 de cocina.
 
 8
-00:00:21,794 --> 00:00:24,720
+00:00:21,825 --> 00:00:24,430
 Y estuvo a punto de llamarse de una forma muy distinta.
 
 9
-00:00:25,060 --> 00:00:27,266
+00:00:24,770 --> 00:00:26,582
 Esta es la historia completa de Nike.
 
 10
-00:00:28,556 --> 00:00:32,225
+00:00:27,872 --> 00:00:32,304
 Todo empieza con Phil Knight, un corredor de la Universidad de Oregón.
 
 11
-00:00:32,565 --> 00:00:37,596
+00:00:32,644 --> 00:00:37,442
 No era una estrella, pero le apasionaba el atletismo. Y conocía bien un problema:
 
 12
-00:00:37,596 --> 00:00:41,075
+00:00:37,442 --> 00:00:40,759
 las mejores zapatillas de correr eran alemanas, y caras.
 
 13
-00:00:41,415 --> 00:00:46,468
+00:00:41,099 --> 00:00:45,512
 Más tarde, estudiando en la Universidad de Stanford, escribió un trabajo de clase
 
 14
-00:00:46,468 --> 00:00:48,090
+00:00:45,512 --> 00:00:46,929
 con una idea muy concreta.
 
 15
-00:00:48,430 --> 00:00:52,973
+00:00:47,269 --> 00:00:51,602
 Las zapatillas japonesas podían hacer con el calzado deportivo lo mismo que las
 
 16
-00:00:52,973 --> 00:00:57,574
+00:00:51,602 --> 00:00:55,990
 cámaras japonesas estaban haciendo con las alemanas: ofrecer calidad a un precio
 
 17
-00:00:57,574 --> 00:00:58,264
+00:00:55,990 --> 00:00:56,648
 mucho menor.
 
 18
-00:00:58,604 --> 00:01:00,949
+00:00:56,988 --> 00:00:59,128
 Y Knight decidió comprobarlo en persona.
 
 19
-00:01:01,289 --> 00:01:06,550
+00:00:59,468 --> 00:01:04,464
 En mil novecientos sesenta y dos viajó a Japón y visitó la fábrica de una marca de
 
 20
-00:01:06,550 --> 00:01:08,859
+00:01:04,464 --> 00:01:06,657
 zapatillas japonesa: Onitsuka Tiger.
 
 21
-00:01:09,199 --> 00:01:13,683
+00:01:06,997 --> 00:01:12,162
 Según cuenta en sus memorias, cuando le preguntaron qué empresa representaba, se
 
 22
-00:01:13,683 --> 00:01:16,989
+00:01:12,162 --> 00:01:15,972
 inventó un nombre sobre la marcha: Blue Ribbon. Cinta azul.
 
 23
-00:01:17,329 --> 00:01:21,788
+00:01:16,312 --> 00:01:21,054
 Consiguió el derecho a vender aquellas zapatillas en el oeste de Estados Unidos. Su
 
 24
-00:01:21,788 --> 00:01:23,239
+00:01:21,054 --> 00:01:22,597
 empresa todavía no existía.
 
 25
-00:01:24,529 --> 00:01:28,941
+00:01:23,887 --> 00:01:29,072
 Knight envió unas muestras a su antiguo entrenador en Oregón, Bill Bowerman.
 
 26
-00:01:29,281 --> 00:01:34,257
+00:01:29,412 --> 00:01:33,689
 Bowerman era un entrenador legendario, y estaba obsesionado con el calzado de sus
 
 27
-00:01:34,257 --> 00:01:34,749
+00:01:33,689 --> 00:01:34,111
 atletas.
 
 28
-00:01:35,089 --> 00:01:40,090
+00:01:34,451 --> 00:01:39,954
 Creía que cada gramo de peso en una zapatilla era energía perdida en una carrera. Y
 
 29
-00:01:40,090 --> 00:01:44,307
+00:01:39,954 --> 00:01:44,595
 él mismo desmontaba y fabricaba zapatillas a mano para sus corredores.
 
 30
-00:01:44,647 --> 00:01:48,281
+00:01:44,935 --> 00:01:48,532
 Le gustaron las muestras. Y le propuso a Knight ser su socio.
 
 31
-00:01:48,621 --> 00:01:53,149
+00:01:48,872 --> 00:01:53,269
 En enero de mil novecientos sesenta y cuatro, cada uno puso unos quinientos dólares
 
 32
-00:01:53,149 --> 00:01:54,786
+00:01:53,269 --> 00:01:54,858
 y fundaron Blue Ribbon Sports.
 
 33
-00:01:55,126 --> 00:01:59,835
+00:01:55,198 --> 00:01:59,866
 Uno ponía el olfato para los negocios. El otro, la obsesión por mejorar cada
 
 34
-00:01:59,835 --> 00:02:00,455
+00:01:59,866 --> 00:02:00,480
 zapatilla.
 
 35
-00:02:01,745 --> 00:02:04,380
+00:02:01,770 --> 00:02:03,892
 Al principio no había tiendas ni oficinas.
 
 36
-00:02:04,720 --> 00:02:09,087
+00:02:04,232 --> 00:02:08,611
 Knight cargaba las cajas de zapatillas en su coche y se iba a las competiciones de
 
 37
-00:02:09,087 --> 00:02:09,620
+00:02:08,611 --> 00:02:09,145
 atletismo.
 
 38
-00:02:09,960 --> 00:02:13,559
+00:02:09,485 --> 00:02:12,804
 Allí las vendía directamente a los corredores, desde el maletero.
 
 39
-00:02:13,899 --> 00:02:18,148
+00:02:13,144 --> 00:02:17,467
 Mientras tanto, seguía trabajando como contable para poder pagar las facturas.
 
 40
-00:02:18,488 --> 00:02:23,029
+00:02:17,807 --> 00:02:22,746
 Poco a poco llegaron los primeros empleados. El primero fue Jeff Johnson, un
 
 41
-00:02:23,029 --> 00:02:27,033
+00:02:22,746 --> 00:02:27,101
 vendedor apasionado que escribía cartas larguísimas a los clientes.
 
 42
-00:02:27,373 --> 00:02:32,109
+00:02:27,441 --> 00:02:32,428
 Johnson llegó a abrir la primera tienda de la empresa. Y hacía algo que entonces era
 
 43
-00:02:32,109 --> 00:02:36,394
+00:02:32,428 --> 00:02:36,941
 poco habitual: guardaba los datos de cada cliente para saber qué le gustaba.
 
 44
-00:02:37,684 --> 00:02:42,369
+00:02:38,231 --> 00:02:42,723
 El negocio funcionaba. Pero dependía por completo de un proveedor: la marca
 
 45
-00:02:42,369 --> 00:02:42,932
+00:02:42,723 --> 00:02:43,262
 japonesa.
 
 46
-00:02:43,272 --> 00:02:46,488
+00:02:43,602 --> 00:02:47,614
 Y a principios de los años setenta, la relación se rompió.
 
 47
-00:02:46,828 --> 00:02:51,841
+00:02:47,954 --> 00:02:52,874
 Según la versión de Knight, la empresa japonesa estaba buscando otros distribuidores
 
 48
-00:02:51,841 --> 00:02:54,467
+00:02:52,874 --> 00:02:55,452
 en Estados Unidos y planeaba dejarlos fuera.
 
 49
-00:02:54,807 --> 00:02:59,315
+00:02:55,792 --> 00:03:00,240
 Blue Ribbon tenía clientes, tenía vendedores… pero se iba a quedar sin zapatillas
 
 50
-00:02:59,315 --> 00:02:59,927
+00:03:00,240 --> 00:03:00,844
 que vender.
 
 51
-00:03:00,267 --> 00:03:04,330
+00:03:01,184 --> 00:03:05,265
 Así que tomaron la decisión más arriesgada: fabricar su propia marca.
 
 52
-00:03:04,670 --> 00:03:08,815
+00:03:05,605 --> 00:03:09,600
 Hubo una batalla legal entre las dos empresas, y Blue Ribbon la acabó ganando.
 
 53
-00:03:10,105 --> 00:03:13,449
+00:03:10,890 --> 00:03:13,638
 Una marca nueva necesitaba un nombre. Y un símbolo.
 
 54
-00:03:13,789 --> 00:03:18,824
+00:03:13,978 --> 00:03:20,259
 Knight quería llamarla Dimension Six. Dimensión seis. Según cuentan, a casi nadie le
 
 55
-00:03:18,824 --> 00:03:19,304
+00:03:20,259 --> 00:03:20,857
 gustaba.
 
 56
-00:03:19,644 --> 00:03:24,102
+00:03:21,197 --> 00:03:26,702
 La propuesta ganadora la trajo Jeff Johnson. Según contó Knight, a Johnson se le
 
 57
-00:03:24,102 --> 00:03:25,216
+00:03:26,702 --> 00:03:28,079
 ocurrió en un sueño.
 
 58
-00:03:25,556 --> 00:03:29,969
+00:03:28,419 --> 00:03:34,525
 Nike, el nombre de la diosa griega de la victoria. Corto, fácil de recordar, y con
 
 59
-00:03:29,969 --> 00:03:31,152
+00:03:34,525 --> 00:03:36,163
 una K que daba fuerza.
 
 60
-00:03:31,492 --> 00:03:36,147
+00:03:36,503 --> 00:03:41,024
 Para el símbolo, Knight recurrió a Carolyn Davidson, una estudiante de diseño de
 
 61
-00:03:36,147 --> 00:03:36,670
+00:03:41,024 --> 00:03:41,532
 Portland.
 
 62
-00:03:37,010 --> 00:03:41,387
+00:03:41,872 --> 00:03:46,670
 Ella dibujó una forma curva que sugería movimiento. La llamaron el swoosh.
 
 63
-00:03:41,727 --> 00:03:43,457
+00:03:47,010 --> 00:03:48,487
 Cobró treinta y cinco dólares.
 
 64
-00:03:43,797 --> 00:03:48,302
+00:03:48,827 --> 00:03:53,655
 A Knight no le convenció del todo. Se le atribuye esta frase: no me encanta, pero
 
 65
-00:03:48,302 --> 00:03:49,637
+00:03:53,655 --> 00:03:55,086
 quizá me acabe gustando.
 
 66
-00:03:49,977 --> 00:03:54,875
+00:03:55,426 --> 00:03:59,852
 Años después, en mil novecientos ochenta y tres, la empresa le regaló a Davidson un
 
 67
-00:03:54,875 --> 00:03:58,534
+00:03:59,852 --> 00:04:03,158
 anillo de oro con el símbolo y un paquete de acciones de Nike.
 
 68
-00:03:59,824 --> 00:04:02,308
+00:04:04,448 --> 00:04:07,237
 Mientras tanto, Bowerman seguía experimentando.
 
 69
-00:04:02,648 --> 00:04:06,758
+00:04:07,577 --> 00:04:11,832
 Buscaba una suela que agarrara bien en cualquier superficie, sin pesar demasiado.
 
 70
-00:04:07,098 --> 00:04:11,584
+00:04:12,172 --> 00:04:17,186
 Un día, según la historia de la propia marca, mientras desayunaba, se fijó en la
 
 71
-00:04:11,584 --> 00:04:12,706
+00:04:17,186 --> 00:04:18,440
 gofrera de su mujer.
 
 72
-00:04:13,046 --> 00:04:15,820
+00:04:18,780 --> 00:04:21,808
 Aquella cuadrícula de pequeños bloques le dio una idea.
 
 73
-00:04:16,160 --> 00:04:19,863
+00:04:22,148 --> 00:04:26,333
 Llenó la gofrera de goma líquida para hacer una suela… y la gofrera quedó
 
 74
-00:04:19,863 --> 00:04:20,421
+00:04:26,333 --> 00:04:26,963
 destrozada.
 
 75
-00:04:20,761 --> 00:04:25,226
+00:04:27,303 --> 00:04:31,882
 Pero la idea funcionó. Así nació la suela de tacos tipo gofre, que dio lugar a
 
 76
-00:04:25,226 --> 00:04:28,203
+00:04:31,882 --> 00:04:34,935
 algunas de las primeras zapatillas de éxito de Nike.
 
 77
-00:04:28,543 --> 00:04:32,154
+00:04:35,275 --> 00:04:39,400
 Aquella gofrera estropeada hoy se considera casi una reliquia de la marca.
 
 78
-00:04:33,444 --> 00:04:38,213
+00:04:40,690 --> 00:04:45,312
 A finales de los años setenta llegó a Nike un inventor con una idea extraña: meter
 
 79
-00:04:38,213 --> 00:04:39,957
+00:04:45,312 --> 00:04:47,003
 aire dentro de las zapatillas.
 
 80
-00:04:40,297 --> 00:04:44,198
+00:04:47,343 --> 00:04:51,328
 Se llamaba Frank Rudy, y había trabajado en la industria aeroespacial.
 
 81
-00:04:44,538 --> 00:04:48,497
+00:04:51,668 --> 00:04:55,585
 Su propuesta era una pequeña cámara de gas a presión dentro de la suela, para
 
 82
-00:04:48,497 --> 00:04:49,577
+00:04:55,585 --> 00:04:56,653
 amortiguar cada paso.
 
 83
-00:04:49,917 --> 00:04:54,610
+00:04:56,993 --> 00:05:01,557
 Otras marcas la habían rechazado. Nike decidió probarla, y en mil novecientos
 
 84
-00:04:54,610 --> 00:04:57,719
+00:05:01,557 --> 00:05:04,579
 setenta y ocho lanzó su primera zapatilla con aire.
 
 85
-00:04:58,059 --> 00:05:01,797
+00:05:04,919 --> 00:05:08,316
 Pero el aire no se veía. Estaba escondido dentro de la suela.
 
 86
-00:05:02,137 --> 00:05:06,772
+00:05:08,656 --> 00:05:13,416
 Hasta que, en mil novecientos ochenta y siete, un arquitecto convertido en diseñador
 
 87
-00:05:06,772 --> 00:05:11,020
+00:05:13,416 --> 00:05:17,779
 de Nike, Tinker Hatfield, tuvo una idea inspirada en un edificio de París que
 
 88
-00:05:11,020 --> 00:05:13,503
+00:05:17,779 --> 00:05:20,329
 muestra por fuera sus tuberías y estructuras.
 
 89
-00:05:13,843 --> 00:05:17,756
+00:05:20,669 --> 00:05:25,365
 ¿Y si la zapatilla también enseñara lo que lleva dentro? Abrió una ventana en la
 
 90
-00:05:17,756 --> 00:05:19,811
+00:05:25,365 --> 00:05:27,830
 suela para que se viera la cámara de aire.
 
 91
-00:05:20,151 --> 00:05:24,600
+00:05:28,170 --> 00:05:32,581
 Así nacieron las Air Max, una de las zapatillas más vendidas e imitadas de la
 
 92
-00:05:24,600 --> 00:05:25,120
+00:05:32,581 --> 00:05:33,096
 historia.
 
 93
-00:05:26,410 --> 00:05:30,949
+00:05:34,386 --> 00:05:38,588
 En los años ochenta, Nike ya era grande. Pero en el baloncesto no mandaba.
 
 94
-00:05:31,289 --> 00:05:36,614
+00:05:38,928 --> 00:05:43,299
 En mil novecientos ochenta y cuatro apostó por un jugador que todavía no había
 
 95
-00:05:36,614 --> 00:05:39,823
+00:05:43,299 --> 00:05:45,932
 jugado ni un partido en la NBA: Michael Jordan.
 
 96
-00:05:40,163 --> 00:05:44,857
+00:05:46,272 --> 00:05:51,574
 Según se ha contado muchas veces, Jordan prefería otra marca, y fue su entorno el
 
 97
-00:05:44,857 --> 00:05:47,698
+00:05:51,574 --> 00:05:54,781
 que le convenció para escuchar la oferta de Nike.
 
 98
-00:05:48,038 --> 00:05:53,111
+00:05:55,121 --> 00:05:59,547
 Nike le ofreció algo poco habitual: su propia línea de zapatillas, con su nombre.
 
 99
-00:05:53,451 --> 00:05:57,178
+00:05:59,887 --> 00:06:03,931
 En mil novecientos ochenta y cinco llegaron las primeras Air Jordan.
 
 100
-00:05:57,518 --> 00:06:02,564
+00:06:04,271 --> 00:06:09,496
 Nike aprovechó incluso una polémica: la marca hizo publicidad presumiendo de que la
 
 101
-00:06:02,564 --> 00:06:05,726
+00:06:09,496 --> 00:06:12,769
 liga había prohibido sus zapatillas por sus colores.
 
 102
-00:06:06,066 --> 00:06:11,291
+00:06:13,109 --> 00:06:17,796
 Las ventas superaron todas las expectativas. Y la línea Jordan acabó convirtiéndose
 
 103
-00:06:11,291 --> 00:06:13,369
+00:06:17,796 --> 00:06:19,659
 en un negocio enorme por sí sola.
 
 104
-00:06:14,659 --> 00:06:19,574
+00:06:20,949 --> 00:06:27,020
 En mil novecientos ochenta y ocho, Nike estrenó el eslogan que hoy conoce todo el
 
 105
-00:06:19,574 --> 00:06:21,880
+00:06:27,020 --> 00:06:29,868
 mundo: Just Do It. Simplemente, hazlo.
 
 106
-00:06:22,220 --> 00:06:25,459
+00:06:30,208 --> 00:06:33,380
 Lo creó Dan Wieden, de la agencia de publicidad de la marca.
 
 107
-00:06:25,799 --> 00:06:30,966
+00:06:33,720 --> 00:06:38,870
 Y su origen es sorprendente. Según contó el propio Wieden, se inspiró en las últimas
 
 108
-00:06:30,966 --> 00:06:36,133
+00:06:38,870 --> 00:06:44,020
 palabras de un condenado a muerte en Estados Unidos, que antes de su ejecución dijo:
 
 109
-00:06:36,133 --> 00:06:36,748
+00:06:44,020 --> 00:06:44,633
 hagámoslo.
 
 110
-00:06:37,088 --> 00:06:41,436
+00:06:44,973 --> 00:06:50,005
 Wieden cambió una palabra, y aquella frase oscura se convirtió en un mensaje de
 
 111
-00:06:41,436 --> 00:06:43,473
+00:06:50,005 --> 00:06:52,362
 motivación para millones de personas.
 
 112
-00:06:43,813 --> 00:06:47,273
+00:06:52,702 --> 00:06:56,386
 La campaña no hablaba de zapatillas. Hablaba de superarse.
 
 113
-00:06:48,563 --> 00:06:52,301
+00:06:57,676 --> 00:07:01,865
 Pero en los años noventa, la marca vivió su peor crisis de imagen.
 
 114
-00:06:52,641 --> 00:06:57,799
+00:07:02,205 --> 00:07:07,418
 Nike, como muchas marcas, fabricaba sus productos en países con salarios muy bajos,
 
 115
-00:06:57,799 --> 00:07:00,223
+00:07:07,418 --> 00:07:09,868
 a través de fábricas de otras empresas.
 
 116
-00:07:00,563 --> 00:07:05,419
+00:07:10,208 --> 00:07:14,215
 Varias investigaciones periodísticas denunciaron malas condiciones de trabajo en
 
 117
-00:07:05,419 --> 00:07:06,936
+00:07:14,215 --> 00:07:15,467
 algunas de esas fábricas.
 
 118
-00:07:07,276 --> 00:07:10,504
+00:07:15,807 --> 00:07:18,837
 Hubo protestas, boicots y campañas en universidades.
 
 119
-00:07:10,844 --> 00:07:16,054
+00:07:19,177 --> 00:07:24,477
 En mil novecientos noventa y ocho, el propio Phil Knight reconoció públicamente que
 
 120
-00:07:16,054 --> 00:07:20,950
+00:07:24,477 --> 00:07:29,458
 la marca se había asociado a los salarios de miseria, y anunció cambios en sus
 
 121
-00:07:20,950 --> 00:07:22,268
+00:07:29,458 --> 00:07:30,799
 fábricas proveedoras.
 
 122
-00:07:22,608 --> 00:07:27,273
+00:07:31,139 --> 00:07:36,394
 Desde entonces, la empresa publica información sobre sus fábricas. El debate sobre
 
 123
-00:07:27,273 --> 00:07:30,004
+00:07:36,394 --> 00:07:39,470
 la industria textil, sin embargo, sigue abierto.
 
 124
-00:07:31,294 --> 00:07:35,055
+00:07:40,760 --> 00:07:44,059
 Hoy Nike es la mayor empresa de ropa y calzado deportivo del mundo.
 
 125
-00:07:35,395 --> 00:07:39,296
+00:07:44,399 --> 00:07:48,288
 Patrocina a atletas, equipos y selecciones de casi todos los deportes.
 
 126
-00:07:39,636 --> 00:07:44,281
+00:07:48,628 --> 00:07:53,384
 Phil Knight dejó la presidencia en dos mil dieciséis, y ese mismo año publicó sus
 
 127
-00:07:44,281 --> 00:07:49,098
+00:07:53,384 --> 00:07:58,315
 memorias, donde cuenta los primeros años de la empresa con todas sus dudas y apuros.
 
 128
-00:07:49,438 --> 00:07:54,063
+00:07:58,655 --> 00:08:03,582
 Y aquel garabato de treinta y cinco dólares se ha convertido en uno de los símbolos
 
 129
-00:07:54,063 --> 00:07:58,575
+00:08:03,582 --> 00:08:08,389
 más reconocidos del planeta. Tanto, que muchas veces aparece solo, sin el nombre.
 
 130
-00:07:59,865 --> 00:08:02,431
+00:08:09,679 --> 00:08:12,584
 ¿Qué nos enseña esta historia? Tres cosas.
 
 131
-00:08:02,771 --> 00:08:07,800
+00:08:12,924 --> 00:08:18,571
 Una: depender de un solo proveedor es peligroso. Perder a Onitsuka obligó a Nike a
 
 132
-00:08:07,800 --> 00:08:11,479
+00:08:18,571 --> 00:08:22,702
 crear su propia marca… y eso fue lo mejor que le pudo pasar.
 
 133
-00:08:11,819 --> 00:08:15,952
+00:08:23,042 --> 00:08:27,869
 Dos: un símbolo no vale por lo que cuesta, sino por lo que llega a significar.
 
 134
-00:08:16,292 --> 00:08:21,392
+00:08:28,209 --> 00:08:33,315
 Y tres: las grandes ideas pueden salir de cualquier sitio. De un trabajo de clase,
 
 135
-00:08:21,392 --> 00:08:23,258
+00:08:33,315 --> 00:08:35,183
 de un sueño… o de una gofrera.
 
 136
-00:08:24,548 --> 00:08:29,439
+00:08:36,473 --> 00:08:42,152
 Un trabajo de clase, un viaje a Japón, un maletero lleno de cajas, un garabato de
 
 137
-00:08:29,439 --> 00:08:32,036
+00:08:42,152 --> 00:08:45,168
 treinta y cinco dólares y una gofrera rota.
 
 138
-00:08:32,376 --> 00:08:33,502
+00:08:45,508 --> 00:08:46,524
 Así nació Nike.
 
 139
-00:08:33,842 --> 00:08:37,987
+00:08:46,864 --> 00:08:50,923
 Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
 
 140
-00:08:38,327 --> 00:08:42,286
+00:08:51,263 --> 00:08:55,419
 ¿Cuáles han sido tus zapatillas favoritas? Cuéntanoslo en los comentarios.
 
 141
-00:08:42,626 --> 00:08:44,507
+00:08:55,759 --> 00:08:57,516
 Y si te ha gustado, suscríbete.
 
