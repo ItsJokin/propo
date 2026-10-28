@@ -1,568 +1,568 @@
 1
-00:00:00,500 --> 00:00:04,986
+00:00:00,500 --> 00:00:04,782
 Dos de los coches más deseados del planeta nacieron a pocos kilómetros el uno del
 
 2
-00:00:04,986 --> 00:00:06,537
+00:00:04,782 --> 00:00:06,262
 otro, en el norte de Italia.
 
 3
-00:00:06,877 --> 00:00:09,606
+00:00:06,602 --> 00:00:09,646
 Uno lleva un caballo. El otro, un toro.
 
 4
-00:00:09,946 --> 00:00:14,079
+00:00:09,986 --> 00:00:13,453
 Y según la leyenda, la segunda marca existe por culpa de una discusión.
 
 5
-00:00:14,419 --> 00:00:18,995
+00:00:13,793 --> 00:00:18,519
 Un fabricante de tractores se quejó a Enzo Ferrari del embrague de su coche. Y la
 
 6
-00:00:18,995 --> 00:00:23,683
+00:00:18,519 --> 00:00:23,361
 respuesta que recibió le ofendió tanto que decidió fabricar sus propios deportivos.
 
 7
-00:00:24,023 --> 00:00:28,854
+00:00:23,701 --> 00:00:28,368
 Por el camino hay un viaje a una ganadería de Sevilla, toros españoles que dieron
 
 8
-00:00:28,854 --> 00:00:31,895
+00:00:28,368 --> 00:00:31,305
 nombre a coches legendarios… y un final inesperado.
 
 9
-00:00:32,235 --> 00:00:34,661
+00:00:31,645 --> 00:00:33,952
 Esta es la historia de Ferrari contra Lamborghini.
 
 10
-00:00:35,951 --> 00:00:40,559
+00:00:35,242 --> 00:00:40,016
 Ferruccio Lamborghini nació en mil novecientos dieciséis en un pueblo de la región
 
 11
-00:00:40,559 --> 00:00:43,312
+00:00:40,016 --> 00:00:42,868
 de Emilia-Romaña, en una familia de agricultores.
 
 12
-00:00:43,652 --> 00:00:48,228
+00:00:43,208 --> 00:00:47,539
 Pero a él no le interesaba el campo. Le interesaban las máquinas que trabajaban el
 
 13
-00:00:48,228 --> 00:00:48,563
+00:00:47,539 --> 00:00:47,856
 campo.
 
 14
-00:00:48,903 --> 00:00:53,674
+00:00:48,196 --> 00:00:52,445
 Desde niño pasaba las horas desmontando motores y herramientas, y estudió para ser
 
 15
-00:00:53,674 --> 00:00:54,197
+00:00:52,445 --> 00:00:52,911
 mecánico.
 
 16
-00:00:54,537 --> 00:00:58,920
+00:00:53,251 --> 00:00:57,432
 Durante la Segunda Guerra Mundial fue destinado como mecánico de la aviación
 
 17
-00:00:58,920 --> 00:01:01,515
+00:00:57,432 --> 00:00:59,908
 italiana en la isla de Rodas, en el mar Egeo.
 
 18
-00:01:01,855 --> 00:01:06,057
+00:01:00,248 --> 00:01:04,533
 Allí aprendió a reparar vehículos con muy pocos recursos, aprovechando cualquier
 
 19
-00:01:06,057 --> 00:01:07,370
+00:01:04,533 --> 00:01:05,872
 pieza que tuviera a mano.
 
 20
-00:01:07,710 --> 00:01:11,912
+00:01:06,212 --> 00:01:10,295
 Al terminar la guerra fue hecho prisionero, y tardó un tiempo en volver a casa.
 
 21
-00:01:12,252 --> 00:01:16,864
+00:01:10,635 --> 00:01:15,457
 Cuando por fin regresó, se encontró con una Italia destrozada… y llena de chatarra
 
 22
-00:01:16,864 --> 00:01:17,314
+00:01:15,457 --> 00:01:15,928
 militar.
 
 23
-00:01:18,604 --> 00:01:23,005
+00:01:17,218 --> 00:01:20,988
 Italia necesitaba reconstruir su agricultura, y faltaban tractores.
 
 24
-00:01:23,345 --> 00:01:28,748
+00:01:21,328 --> 00:01:25,975
 Ferruccio tuvo una idea: comprar vehículos militares abandonados y aprovechar sus
 
 25
-00:01:28,748 --> 00:01:31,483
+00:01:25,975 --> 00:01:28,327
 motores y piezas para fabricar tractores.
 
 26
-00:01:31,823 --> 00:01:35,643
+00:01:28,667 --> 00:01:32,126
 En mil novecientos cuarenta y ocho fundó su empresa de tractores.
 
 27
-00:01:35,983 --> 00:01:40,857
+00:01:32,466 --> 00:01:37,148
 Eran máquinas sencillas, robustas y baratas, perfectas para los agricultores de la
 
 28
-00:01:40,857 --> 00:01:41,451
+00:01:37,148 --> 00:01:37,718
 posguerra.
 
 29
-00:01:41,791 --> 00:01:46,298
+00:01:38,058 --> 00:01:43,138
 El negocio funcionó tan bien que, en pocos años, Lamborghini se convirtió en uno de
 
 30
-00:01:46,298 --> 00:01:48,850
+00:01:43,138 --> 00:01:46,015
 los grandes fabricantes de tractores de Italia.
 
 31
-00:01:49,190 --> 00:01:53,137
+00:01:46,355 --> 00:01:50,667
 Después abrió otra empresa de calefacciones y aparatos de aire acondicionado.
 
 32
-00:01:53,477 --> 00:01:58,273
+00:01:51,007 --> 00:01:55,724
 A principios de los años sesenta, Ferruccio Lamborghini era un hombre muy rico. Y
 
 33
-00:01:58,273 --> 00:02:02,417
+00:01:55,724 --> 00:01:59,800
 como muchos hombres ricos de la época, coleccionaba coches deportivos.
 
 34
-00:02:03,707 --> 00:02:07,550
+00:02:01,090 --> 00:02:05,235
 Y aquí entra en escena el otro protagonista: Enzo Ferrari.
 
 35
-00:02:07,890 --> 00:02:12,203
+00:02:05,575 --> 00:02:09,394
 Ferrari había sido piloto de carreras en los años veinte, y después dirigió el
 
 36
-00:02:12,203 --> 00:02:14,194
+00:02:09,394 --> 00:02:11,157
 equipo de competición de Alfa Romeo.
 
 37
-00:02:14,534 --> 00:02:18,831
+00:02:11,497 --> 00:02:15,728
 En mil novecientos cuarenta y siete, en Maranello, empezaron a salir los primeros
 
 38
-00:02:18,831 --> 00:02:20,316
+00:02:15,728 --> 00:02:17,191
 coches con su propio nombre.
 
 39
-00:02:20,656 --> 00:02:24,983
+00:02:17,531 --> 00:02:22,439
 Para Enzo, lo importante eran las carreras. Vendía coches de calle, sobre todo, para
 
 40
-00:02:24,983 --> 00:02:26,786
+00:02:22,439 --> 00:02:24,484
 financiar su equipo de competición.
 
 41
-00:02:27,126 --> 00:02:31,596
+00:02:24,824 --> 00:02:29,484
 Tenía fama de carácter difícil, orgulloso y poco dispuesto a escuchar críticas.
 
 42
-00:02:31,936 --> 00:02:37,036
+00:02:29,824 --> 00:02:34,302
 Sus coches eran los más admirados del mundo. Y quien compraba un Ferrari sabía que
 
 43
-00:02:37,036 --> 00:02:41,514
+00:02:34,302 --> 00:02:38,235
 no estaba comprando solo un coche: estaba entrando en un club exclusivo.
 
 44
-00:02:41,854 --> 00:02:46,164
+00:02:38,575 --> 00:02:43,008
 Su orgullo era famoso. En mil novecientos sesenta y tres, Ford intentó comprar
 
 45
-00:02:46,164 --> 00:02:48,982
+00:02:43,008 --> 00:02:45,907
 Ferrari, y Enzo se echó atrás en el último momento.
 
 46
-00:02:49,322 --> 00:02:54,366
+00:02:46,247 --> 00:02:51,493
 Ford, furioso, decidió vencerle donde más le dolía: en las carreras. Y lo consiguió
 
 47
-00:02:54,366 --> 00:02:58,680
+00:02:51,493 --> 00:02:55,981
 en las veinticuatro horas de Le Mans de mil novecientos sesenta y seis.
 
 48
-00:02:59,020 --> 00:03:04,335
+00:02:56,321 --> 00:03:02,173
 Aquel mismo año sesenta y tres, Enzo Ferrari se iba a ganar otro enemigo. Mucho más
 
 49
-00:03:04,335 --> 00:03:05,231
+00:03:02,173 --> 00:03:03,160
 cerca de casa.
 
 50
-00:03:05,571 --> 00:03:08,056
+00:03:03,500 --> 00:03:05,733
 Porque Ferruccio Lamborghini tenía varios Ferrari.
 
 51
-00:03:09,346 --> 00:03:14,106
+00:03:07,023 --> 00:03:11,826
 Según contó el propio Ferruccio en entrevistas, sus Ferrari tenían un problema: el
 
 52
-00:03:14,106 --> 00:03:16,312
+00:03:11,826 --> 00:03:14,052
 embrague se estropeaba con frecuencia.
 
 53
-00:03:16,652 --> 00:03:18,753
+00:03:14,392 --> 00:03:16,140
 Lo llevaba a reparar una y otra vez.
 
 54
-00:03:19,093 --> 00:03:22,402
+00:03:16,480 --> 00:03:19,737
 Y como buen mecánico, un día decidió desmontarlo él mismo.
 
 55
-00:03:22,742 --> 00:03:27,825
+00:03:20,077 --> 00:03:24,467
 Su sorpresa fue enorme: según su versión, la pieza era muy parecida a la que él
 
 56
-00:03:27,825 --> 00:03:32,007
+00:03:24,467 --> 00:03:28,079
 usaba en sus tractores… pero en el Ferrari costaba muchísimo más.
 
 57
-00:03:32,347 --> 00:03:36,213
+00:03:28,419 --> 00:03:33,134
 Así que fue a ver a Enzo Ferrari para quejarse y darle algunas ideas.
 
 58
-00:03:36,553 --> 00:03:40,791
+00:03:33,474 --> 00:03:37,959
 La respuesta que se ha contado durante décadas es que Enzo le vino a decir que el
 
 59
-00:03:40,791 --> 00:03:44,924
+00:03:37,959 --> 00:03:42,333
 problema no era el coche, sino el conductor. Y que se dedicara a los tractores.
 
 60
-00:03:45,264 --> 00:03:49,644
+00:03:42,673 --> 00:03:46,907
 Las versiones exactas de aquella conversación varían, y algunos historiadores creen
 
 61
-00:03:49,644 --> 00:03:52,230
+00:03:46,907 --> 00:03:49,407
 que la historia se ha ido adornando con los años.
 
 62
-00:03:52,570 --> 00:03:54,706
+00:03:49,747 --> 00:03:51,825
 Pero lo que es seguro es lo que pasó después.
 
 63
-00:03:55,996 --> 00:04:00,594
+00:03:53,115 --> 00:03:57,596
 En mil novecientos sesenta y tres, Ferruccio Lamborghini fundó su propia marca de
 
 64
-00:04:00,594 --> 00:04:01,615
+00:03:57,596 --> 00:03:58,592
 coches deportivos.
 
 65
-00:04:01,955 --> 00:04:06,254
+00:03:58,932 --> 00:04:03,257
 Construyó una fábrica moderna en Sant'Agata Bolognese, muy cerca de Maranello, el
 
 66
-00:04:06,254 --> 00:04:07,156
+00:04:03,257 --> 00:04:04,164
 hogar de Ferrari.
 
 67
-00:04:07,496 --> 00:04:12,913
+00:04:04,504 --> 00:04:10,001
 Su objetivo era claro: hacer un gran turismo mejor que un Ferrari. Más cómodo, más
 
 68
-00:04:12,913 --> 00:04:14,300
+00:04:10,001 --> 00:04:11,408
 refinado, más fiable.
 
 69
-00:04:14,640 --> 00:04:19,060
+00:04:11,748 --> 00:04:16,215
 Para conseguirlo contrató a ingenieros con experiencia, entre ellos alguno que había
 
 70
-00:04:19,060 --> 00:04:20,271
+00:04:16,215 --> 00:04:17,438
 trabajado para Ferrari.
 
 71
-00:04:20,611 --> 00:04:25,009
+00:04:17,778 --> 00:04:22,445
 El primer coche de serie, el tres cincuenta GT, llegó en mil novecientos sesenta y
 
 72
-00:04:25,009 --> 00:04:27,530
+00:04:22,445 --> 00:04:25,119
 cuatro, con un potente motor de doce cilindros.
 
 73
-00:04:27,870 --> 00:04:32,406
+00:04:25,459 --> 00:04:29,732
 Y había una diferencia importante con Ferrari: Ferruccio no quería competir en
 
 74
-00:04:32,406 --> 00:04:34,616
+00:04:29,732 --> 00:04:31,814
 carreras. Le parecían un gasto enorme.
 
 75
-00:04:34,956 --> 00:04:38,264
+00:04:32,154 --> 00:04:35,537
 Él quería hacer los mejores coches para la carretera. Punto.
 
 76
-00:04:39,554 --> 00:04:42,654
+00:04:36,827 --> 00:04:39,795
 Ferrari tenía un caballo. Lamborghini eligió un toro.
 
 77
-00:04:42,994 --> 00:04:45,583
+00:04:40,135 --> 00:04:42,473
 Ferruccio había nacido bajo el signo de Tauro.
 
 78
-00:04:45,923 --> 00:04:50,988
+00:04:42,813 --> 00:04:47,721
 Y en mil novecientos sesenta y dos había visitado la ganadería de Eduardo Miura, en
 
 79
-00:04:50,988 --> 00:04:54,039
+00:04:47,721 --> 00:04:50,678
 Sevilla, una de las más famosas del mundo taurino.
 
 80
-00:04:54,379 --> 00:04:58,635
+00:04:51,018 --> 00:04:55,574
 Aquella visita le impresionó tanto que decidió que un toro de lidia sería el símbolo
 
 81
-00:04:58,635 --> 00:04:59,243
+00:04:55,574 --> 00:04:56,225
 de su marca.
 
 82
-00:04:59,583 --> 00:05:04,123
+00:04:56,565 --> 00:05:01,977
 Fuerza, bravura, y un animal que no retrocede. Justo la imagen que quería frente al
 
 83
-00:05:04,123 --> 00:05:05,272
+00:05:01,977 --> 00:05:03,347
 caballo de Maranello.
 
 84
-00:05:05,612 --> 00:05:09,293
+00:05:03,687 --> 00:05:07,373
 Y aquel viaje a Sevilla iba a tener una consecuencia todavía mayor.
 
 85
-00:05:10,583 --> 00:05:14,781
+00:05:08,663 --> 00:05:12,323
 Mientras tanto, en la fábrica de Lamborghini, un grupo de jóvenes ingenieros
 
 86
-00:05:14,781 --> 00:05:17,212
+00:05:12,323 --> 00:05:14,443
 trabajaba en un proyecto en su tiempo libre.
 
 87
-00:05:17,552 --> 00:05:21,999
+00:05:14,783 --> 00:05:19,227
 Querían hacer algo radical: un coche de calle con el motor colocado detrás de los
 
 88
-00:05:21,999 --> 00:05:24,251
+00:05:19,227 --> 00:05:21,477
 asientos, como en los coches de carreras.
 
 89
-00:05:24,591 --> 00:05:28,527
+00:05:21,817 --> 00:05:26,585
 Ferruccio no estaba del todo convencido, pero les dejó seguir adelante.
 
 90
-00:05:28,867 --> 00:05:33,151
+00:05:26,925 --> 00:05:31,074
 La carrocería la diseñó un joven diseñador del estudio Bertone, Marcello Gandini.
 
 91
-00:05:33,491 --> 00:05:38,480
+00:05:31,414 --> 00:05:36,497
 En mil novecientos sesenta y seis se presentó en el Salón del Automóvil de Ginebra.
 
 92
-00:05:38,480 --> 00:05:39,563
+00:05:36,497 --> 00:05:37,599
 Y causó sensación.
 
 93
-00:05:39,903 --> 00:05:44,663
+00:05:37,939 --> 00:05:43,543
 Era bajo, ancho, espectacular. Muchos lo consideran el primer superdeportivo de la
 
 94
-00:05:44,663 --> 00:05:45,185
+00:05:43,543 --> 00:05:44,158
 historia.
 
 95
-00:05:45,525 --> 00:05:49,031
+00:05:44,498 --> 00:05:49,166
 Su nombre homenajeaba a aquella ganadería de Sevilla: Miura.
 
 96
-00:05:50,321 --> 00:05:54,462
+00:05:50,456 --> 00:05:54,947
 Desde entonces, muchos de los coches de Lamborghini llevan nombres relacionados con
 
 97
-00:05:54,462 --> 00:05:55,859
+00:05:54,947 --> 00:05:56,462
 el mundo del toro en España.
 
 98
-00:05:56,199 --> 00:06:00,766
+00:05:56,802 --> 00:06:01,064
 El Islero recuerda al toro que hirió de muerte al torero Manolete en mil novecientos
 
 99
-00:06:00,766 --> 00:06:01,691
+00:06:01,064 --> 00:06:01,926
 cuarenta y siete.
 
 100
-00:06:02,031 --> 00:06:04,689
+00:06:02,266 --> 00:06:04,734
 El Espada lleva el nombre de la espada del torero.
 
 101
-00:06:05,029 --> 00:06:08,060
+00:06:05,074 --> 00:06:07,873
 El Jarama hace referencia a una histórica zona ganadera.
 
 102
-00:06:08,400 --> 00:06:12,921
+00:06:08,213 --> 00:06:12,678
 El Murciélago recuerda a un toro famoso que, según la historia, fue indultado en una
 
 103
-00:06:12,921 --> 00:06:16,689
+00:06:12,678 --> 00:06:16,398
 corrida en Córdoba en mil ochocientos setenta y nueve, por su bravura.
 
 104
-00:06:17,029 --> 00:06:20,245
+00:06:16,738 --> 00:06:19,945
 Y el Gallardo homenajea a una antigua casta de toros de lidia.
 
 105
-00:06:20,585 --> 00:06:24,835
+00:06:20,285 --> 00:06:24,715
 Hay alguna excepción famosa, como el Countach, cuyo nombre viene de una exclamación
 
 106
-00:06:24,835 --> 00:06:26,831
+00:06:24,715 --> 00:06:26,797
 de asombro en el dialecto del Piamonte.
 
 107
-00:06:27,171 --> 00:06:31,871
+00:06:27,137 --> 00:06:31,353
 Pero la mayoría de estos superdeportivos italianos llevan, en realidad, nombres
 
 108
-00:06:31,871 --> 00:06:32,465
+00:06:31,353 --> 00:06:31,887
 españoles.
 
 109
-00:06:33,755 --> 00:06:36,878
+00:06:33,177 --> 00:06:36,539
 A principios de los años setenta, todo empezó a torcerse.
 
 110
-00:06:37,218 --> 00:06:42,427
+00:06:36,879 --> 00:06:41,795
 Según la historia de la marca, un enorme pedido de tractores para Bolivia se canceló
 
 111
-00:06:42,427 --> 00:06:47,140
+00:06:41,795 --> 00:06:46,243
 tras un cambio de gobierno en aquel país, y la empresa de tractores entró en
 
 112
-00:06:47,140 --> 00:06:47,760
+00:06:46,243 --> 00:06:46,828
 problemas.
 
 113
-00:06:48,100 --> 00:06:52,586
+00:06:47,168 --> 00:06:51,199
 Llegaron también los conflictos laborales en Italia y la crisis del petróleo, que
 
 114
-00:06:52,586 --> 00:06:56,518
+00:06:51,199 --> 00:06:54,732
 hundió las ventas de coches deportivos que gastaban muchísima gasolina.
 
 115
-00:06:56,858 --> 00:07:01,383
+00:06:55,072 --> 00:06:59,491
 Ferruccio fue vendiendo sus empresas. La marca de coches pasó a manos de unos
 
 116
-00:07:01,383 --> 00:07:04,381
+00:06:59,491 --> 00:07:02,417
 inversores suizos en la primera mitad de la década.
 
 117
-00:07:04,721 --> 00:07:08,668
+00:07:02,757 --> 00:07:06,396
 Y él se retiró a una finca en Umbria, donde se dedicó a hacer vino.
 
 118
-00:07:09,008 --> 00:07:13,327
+00:07:06,736 --> 00:07:10,974
 Murió en mil novecientos noventa y tres. Nunca volvió a fabricar coches.
 
 119
-00:07:14,617 --> 00:07:19,405
+00:07:12,264 --> 00:07:17,118
 Sin su fundador, Lamborghini vivió años muy complicados. A finales de los setenta
 
 120
-00:07:19,405 --> 00:07:23,011
+00:07:17,118 --> 00:07:20,774
 llegó a la quiebra, y pasó por varios propietarios distintos.
 
 121
-00:07:23,351 --> 00:07:28,382
+00:07:21,114 --> 00:07:26,086
 En mil novecientos noventa y ocho, el grupo Audi, del grupo Volkswagen, compró la
 
 122
-00:07:28,382 --> 00:07:32,047
+00:07:26,086 --> 00:07:29,707
 marca. Y con esa estabilidad llegó su gran época de ventas.
 
 123
-00:07:32,387 --> 00:07:37,205
+00:07:30,047 --> 00:07:35,163
 Ferrari tampoco siguió sola. En mil novecientos sesenta y nueve, Fiat compró la
 
 124
-00:07:37,205 --> 00:07:41,779
+00:07:35,163 --> 00:07:40,019
 mitad de la compañía. Enzo Ferrari murió en mil novecientos ochenta y ocho.
 
 125
-00:07:42,119 --> 00:07:47,001
+00:07:40,359 --> 00:07:44,731
 Y en dos mil quince, Ferrari salió a bolsa, convertida en una de las marcas de lujo
 
 126
-00:07:47,001 --> 00:07:48,354
+00:07:44,731 --> 00:07:45,942
 más valiosas del mundo.
 
 127
-00:07:48,694 --> 00:07:52,223
+00:07:46,282 --> 00:07:49,808
 Hoy, las dos fábricas siguen a pocos kilómetros la una de la otra.
 
 128
-00:07:52,563 --> 00:07:56,769
+00:07:50,148 --> 00:07:54,520
 Y, curiosamente, la marca Lamborghini también sigue existiendo en los tractores, que
 
 129
-00:07:56,769 --> 00:07:58,020
+00:07:54,520 --> 00:07:55,822
 hoy fabrica otra empresa.
 
 130
-00:07:59,310 --> 00:08:01,946
+00:07:57,112 --> 00:08:00,195
 ¿Qué nos enseña esta historia? Tres cosas.
 
 131
-00:08:02,286 --> 00:08:07,251
+00:08:00,535 --> 00:08:05,516
 Una: no subestimes nunca a un cliente. Ese cliente puede acabar siendo tu
 
 132
-00:08:07,251 --> 00:08:08,067
+00:08:05,516 --> 00:08:06,334
 competencia.
 
 133
-00:08:08,407 --> 00:08:13,093
+00:08:06,674 --> 00:08:12,352
 Dos: un buen símbolo y una buena historia pueden hacer una marca tan grande como el
 
 134
-00:08:13,093 --> 00:08:17,045
+00:08:12,352 --> 00:08:17,141
 producto. Un toro y unos nombres españoles se convirtieron en leyenda.
 
 135
-00:08:17,385 --> 00:08:22,196
+00:08:17,481 --> 00:08:21,500
 Y tres: a veces la mejor idea no viene del jefe, sino de un grupo de jóvenes
 
 136
-00:08:22,196 --> 00:08:24,096
+00:08:21,500 --> 00:08:23,087
 trabajando en su tiempo libre.
 
 137
-00:08:25,386 --> 00:08:29,701
+00:08:24,377 --> 00:08:29,185
 Un mecánico, unos tractores hechos con restos de guerra, un embrague roto y un toro
 
 138
-00:08:29,701 --> 00:08:30,273
+00:08:29,185 --> 00:08:29,823
 de Sevilla.
 
 139
-00:08:30,613 --> 00:08:32,738
+00:08:30,163 --> 00:08:32,039
 Así nació la gran rival de Ferrari.
 
 140
-00:08:33,078 --> 00:08:37,374
+00:08:32,379 --> 00:08:36,250
 Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
 
 141
-00:08:37,714 --> 00:08:41,464
+00:08:36,590 --> 00:08:40,624
 ¿Tú eres más de Ferrari o de Lamborghini? Cuéntanoslo en los comentarios.
 
 142
-00:08:41,804 --> 00:08:43,719
+00:08:40,964 --> 00:08:42,577
 Y si te ha gustado, suscríbete.
 

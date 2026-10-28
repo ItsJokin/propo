@@ -1,6 +1,6 @@
 # Lamborghini nació por una discusión con Ferrari: la historia completa: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_22_Lamborghini.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 09:00 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_22_Lamborghini.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:59 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,18 +14,18 @@ Ferruccio Lamborghini fabricaba tractores con restos de la guerra. Según su ver
 
 ⏱ Capítulos
 00:00 Introducción
-00:35 1. El hijo de campesinos
-01:18 2. Tractores con restos de guerra
-02:03 3. El hombre del caballo
-03:08 4. El embrague
-03:55 5. Una fábrica a pocos kilómetros
-04:39 6. Un toro de Sevilla
-05:10 7. El Miura
+00:34 1. El hijo de campesinos
+01:16 2. Tractores con restos de guerra
+02:00 3. El hombre del caballo
+03:06 4. El embrague
+03:52 5. Una fábrica a pocos kilómetros
+04:36 6. Un toro de Sevilla
+05:08 7. El Miura
 05:49 8. Nombres de toros españoles
-06:33 9. La caída de Ferruccio
-07:14 10. Dos destinos
-07:58 11. Lo que nos enseña
-08:24 Final
+06:32 9. La caída de Ferruccio
+07:11 10. Dos destinos
+07:56 11. Lo que nos enseña
+08:23 Final
 
 📚 Fuentes
 - Wikipedia, «Ferruccio Lamborghini»: https://en.wikipedia.org/wiki/Ferruccio_Lamborghini
