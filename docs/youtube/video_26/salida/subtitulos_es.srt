@@ -1,0 +1,552 @@
+1
+00:00:00,500 --> 00:00:04,973
+Seguramente hoy, o esta semana, ha llegado a tu casa una caja de cartón con una
+
+2
+00:00:04,973 --> 00:00:05,936
+sonrisa dibujada.
+
+3
+00:00:06,276 --> 00:00:11,303
+Amazon vende casi de todo, a casi todo el mundo. Pero también alquila servidores,
+
+4
+00:00:11,303 --> 00:00:14,468
+produce series y películas, y fabrica dispositivos.
+
+5
+00:00:14,808 --> 00:00:18,694
+Y, sin embargo, empezó vendiendo un solo tipo de producto: libros.
+
+6
+00:00:19,034 --> 00:00:23,249
+Desde un garaje, con mesas hechas con puertas viejas y una campana que sonaba cada
+
+7
+00:00:23,249 --> 00:00:24,791
+vez que alguien compraba algo.
+
+8
+00:00:25,131 --> 00:00:30,354
+Estuvo a punto de llamarse Cadabra. Sus acciones se hundieron más de un noventa por
+
+9
+00:00:30,354 --> 00:00:34,130
+ciento. Y muchos expertos pronosticaron que no sobreviviría.
+
+10
+00:00:34,470 --> 00:00:36,470
+Esta es la historia completa de Amazon.
+
+11
+00:00:37,760 --> 00:00:42,159
+A principios de los años noventa, Jeff Bezos tenía un trabajo muy bien pagado en una
+
+12
+00:00:42,159 --> 00:00:43,993
+empresa de inversión de Nueva York.
+
+13
+00:00:44,333 --> 00:00:49,302
+En mil novecientos noventa y cuatro leyó un dato que le llamó la atención: el uso de
+
+14
+00:00:49,302 --> 00:00:52,438
+internet estaba creciendo a un ritmo enorme cada año.
+
+15
+00:00:52,778 --> 00:00:57,444
+Bezos pensó que algo que crecía tan rápido iba a cambiarlo todo. Y que había que
+
+16
+00:00:57,444 --> 00:00:59,194
+estar allí desde el principio.
+
+17
+00:00:59,534 --> 00:01:02,334
+Pero para eso tenía que dejar un trabajo seguro y estable.
+
+18
+00:01:02,674 --> 00:01:07,899
+Según ha contado él mismo, se imaginó con ochenta años, mirando atrás. Y se preguntó
+
+19
+00:01:07,899 --> 00:01:12,689
+de qué se arrepentiría más: de haberlo intentado y fracasado… o de no haberlo
+
+20
+00:01:12,689 --> 00:01:13,685
+intentado nunca.
+
+21
+00:01:14,025 --> 00:01:17,382
+La respuesta le pareció clara. Dejó el trabajo.
+
+22
+00:01:18,672 --> 00:01:21,914
+Bezos hizo una lista de productos que se podrían vender por internet.
+
+23
+00:01:22,254 --> 00:01:24,087
+Y eligió los libros por varias razones.
+
+24
+00:01:24,427 --> 00:01:29,155
+Había millones de títulos distintos: ninguna librería física podía tenerlos todos,
+
+25
+00:01:29,155 --> 00:01:31,058
+pero una web sí podía ofrecerlos.
+
+26
+00:01:31,398 --> 00:01:36,086
+Los libros eran todos iguales, vinieran de donde vinieran: no había que probárselos
+
+27
+00:01:36,086 --> 00:01:37,724
+ni tocarlos antes de comprar.
+
+28
+00:01:38,064 --> 00:01:39,913
+Y eran fáciles de enviar por correo.
+
+29
+00:01:40,253 --> 00:01:45,014
+Así que en mil novecientos noventa y cuatro, Bezos y su mujer, MacKenzie, se mudaron
+
+30
+00:01:45,014 --> 00:01:49,774
+a Seattle, donde había grandes distribuidores de libros, y montaron la empresa en el
+
+31
+00:01:49,774 --> 00:01:51,531
+garaje de una casa de alquiler.
+
+32
+00:01:51,871 --> 00:01:56,691
+Sus padres invirtieron una parte importante de sus ahorros. Bezos les avisó de que
+
+33
+00:01:56,691 --> 00:01:59,748
+había muchas posibilidades de que lo perdieran todo.
+
+34
+00:02:01,038 --> 00:02:04,558
+El primer nombre de la empresa fue Cadabra, como en abracadabra.
+
+35
+00:02:04,898 --> 00:02:09,193
+Pero según cuenta la historia, un abogado lo entendió mal por teléfono y repitió
+
+36
+00:02:09,193 --> 00:02:09,729
+«cadáver».
+
+37
+00:02:10,069 --> 00:02:11,767
+No era buena señal.
+
+38
+00:02:12,107 --> 00:02:17,794
+Bezos también llegó a registrar otro nombre: Relentless, que en inglés significa
+
+39
+00:02:17,794 --> 00:02:21,846
+implacable. Aquella dirección web todavía lleva a Amazon.
+
+40
+00:02:22,186 --> 00:02:26,712
+Al final eligió el nombre del río más caudaloso del mundo: Amazon. Amazonas.
+
+41
+00:02:27,052 --> 00:02:31,734
+Quería que su tienda fuera la más grande del mundo. Y, además, el nombre empezaba
+
+42
+00:02:31,734 --> 00:02:36,358
+por A, así que aparecía de los primeros en las listas ordenadas alfabéticamente.
+
+43
+00:02:37,648 --> 00:02:40,490
+Los primeros tiempos fueron muy austeros.
+
+44
+00:02:40,830 --> 00:02:46,040
+Bezos y sus primeros empleados trabajaban en mesas hechas con puertas de madera a
+
+45
+00:02:46,040 --> 00:02:49,963
+las que les ponían patas. Eran más baratas que un escritorio.
+
+46
+00:02:50,303 --> 00:02:54,981
+Aquella mesa se convirtió en un símbolo: años después, la empresa seguía dando un
+
+47
+00:02:54,981 --> 00:02:59,543
+premio interno con forma de puerta-escritorio a las ideas que ahorraban dinero.
+
+48
+00:02:59,883 --> 00:03:03,809
+En julio de mil novecientos noventa y cinco, la web abrió al público.
+
+49
+00:03:04,149 --> 00:03:07,797
+Al principio, cada vez que alguien hacía un pedido, sonaba una campana en la
+
+50
+00:03:07,797 --> 00:03:08,181
+oficina.
+
+51
+00:03:08,521 --> 00:03:12,084
+Pero en pocas semanas sonaba tantas veces que tuvieron que quitarla.
+
+52
+00:03:12,424 --> 00:03:17,266
+En su primer mes, Amazon ya había vendido libros en todos los estados del país y en
+
+53
+00:03:17,266 --> 00:03:18,316
+decenas de países.
+
+54
+00:03:19,606 --> 00:03:22,879
+En mil novecientos noventa y siete, Amazon salió a bolsa.
+
+55
+00:03:23,219 --> 00:03:28,124
+Y Bezos escribió una carta a sus accionistas con una idea que repetiría durante
+
+56
+00:03:28,124 --> 00:03:31,042
+décadas: la empresa iba a pensar a largo plazo.
+
+57
+00:03:31,382 --> 00:03:35,791
+Eso significaba invertir casi todo lo que ganaba en crecer, aunque eso supusiera no
+
+58
+00:03:35,791 --> 00:03:37,385
+tener beneficios durante años.
+
+59
+00:03:37,725 --> 00:03:42,592
+Amazon pasó de vender libros a vender música, películas, juguetes, electrónica…
+
+60
+00:03:43,042 --> 00:03:48,088
+Muchos analistas se burlaban. La llamaban «Amazon punto bomba», y decían que era una
+
+61
+00:03:48,088 --> 00:03:50,070
+empresa que nunca ganaría dinero.
+
+62
+00:03:50,410 --> 00:03:55,006
+Y en mil novecientos noventa y nueve, la revista Time nombró a Jeff Bezos persona
+
+63
+00:03:55,006 --> 00:03:55,460
+del año.
+
+64
+00:03:56,750 --> 00:03:59,687
+Y entonces estalló la burbuja de las puntocom.
+
+65
+00:04:00,027 --> 00:04:04,244
+Entre finales de mil novecientos noventa y nueve y dos mil uno, cientos de empresas
+
+66
+00:04:04,244 --> 00:04:05,362
+de internet quebraron.
+
+67
+00:04:05,702 --> 00:04:10,175
+Las acciones de Amazon perdieron más del noventa por ciento de su valor.
+
+68
+00:04:10,515 --> 00:04:13,764
+La empresa tuvo que despedir a trabajadores y cerrar instalaciones.
+
+69
+00:04:14,104 --> 00:04:16,651
+Muchos daban por hecho que sería la siguiente en caer.
+
+70
+00:04:16,991 --> 00:04:21,821
+Pero Amazon tenía algo que otras no: clientes de verdad, que compraban y volvían a
+
+71
+00:04:21,821 --> 00:04:22,293
+comprar.
+
+72
+00:04:22,633 --> 00:04:27,582
+En dos mil uno, por primera vez, consiguió un pequeño beneficio en un trimestre.
+
+73
+00:04:27,582 --> 00:04:28,696
+Había sobrevivido.
+
+74
+00:04:29,986 --> 00:04:35,461
+En dos mil cinco, Amazon lanzó una idea que muchos consideraron una locura: Prime.
+
+75
+00:04:35,801 --> 00:04:40,160
+Pagabas una cuota anual y tenías envíos rápidos gratis en todos tus pedidos.
+
+76
+00:04:40,500 --> 00:04:44,196
+Los cálculos parecían no salir: los envíos costaban mucho dinero.
+
+77
+00:04:44,536 --> 00:04:48,945
+Pero la idea era otra. Una vez que pagas la cuota, quieres aprovecharla. Así que
+
+78
+00:04:48,945 --> 00:04:52,638
+compras más… y compras en Amazon antes que en cualquier otro sitio.
+
+79
+00:04:52,978 --> 00:04:56,680
+Con los años, Prime sumó películas, series, música y otros servicios.
+
+80
+00:04:57,020 --> 00:05:01,157
+Hoy tiene cientos de millones de suscriptores en todo el mundo, y es una de las
+
+81
+00:05:01,157 --> 00:05:03,199
+claves de la fidelidad de sus clientes.
+
+82
+00:05:04,489 --> 00:05:07,579
+Pero el gran negocio de Amazon no es el que ves cuando compras.
+
+83
+00:05:07,919 --> 00:05:12,083
+Para funcionar, la empresa había construido enormes centros de datos y sistemas
+
+84
+00:05:12,083 --> 00:05:12,768
+informáticos.
+
+85
+00:05:13,108 --> 00:05:18,563
+Y en dos mil seis se le ocurrió alquilar esa capacidad a otras empresas: servidores,
+
+86
+00:05:18,563 --> 00:05:21,680
+almacenamiento, potencia de cálculo… en la nube.
+
+87
+00:05:22,020 --> 00:05:23,705
+Así nació Amazon Web Services.
+
+88
+00:05:24,045 --> 00:05:28,810
+Hoy, una parte enorme de las aplicaciones y webs que usas cada día funcionan sobre
+
+89
+00:05:28,810 --> 00:05:31,192
+servidores de Amazon, aunque no lo sepas.
+
+90
+00:05:31,532 --> 00:05:36,090
+Y durante muchos años, ese negocio invisible ha sido una de las partes más rentables
+
+91
+00:05:36,090 --> 00:05:37,175
+de toda la compañía.
+
+92
+00:05:38,465 --> 00:05:42,673
+Amazon también ha fabricado sus propios aparatos. Y no todos salieron bien.
+
+93
+00:05:43,013 --> 00:05:47,607
+En dos mil siete lanzó el Kindle, un lector de libros electrónicos. Se agotó en
+
+94
+00:05:47,607 --> 00:05:51,270
+pocas horas, y cambió la forma de leer de millones de personas.
+
+95
+00:05:51,610 --> 00:05:55,635
+La empresa que empezó vendiendo libros de papel acabó impulsando los libros
+
+96
+00:05:55,635 --> 00:05:56,171
+digitales.
+
+97
+00:05:56,511 --> 00:05:58,990
+En dos mil catorce lanzó su propio teléfono móvil.
+
+98
+00:05:59,330 --> 00:06:03,744
+Fue un fracaso: se vendió muy poco y la empresa tuvo que asumir pérdidas de cientos
+
+99
+00:06:03,744 --> 00:06:04,967
+de millones de dólares.
+
+100
+00:06:05,307 --> 00:06:10,971
+Ese mismo año presentó un altavoz que respondía a la voz, con un asistente llamado
+
+101
+00:06:10,971 --> 00:06:13,458
+Alexa. Y ese sí fue un éxito enorme.
+
+102
+00:06:13,798 --> 00:06:19,031
+Bezos solía decir que, si quieres inventar, tienes que estar dispuesto a fracasar.
+
+103
+00:06:19,031 --> 00:06:23,051
+Amazon fracasó muchas veces… pero sus aciertos fueron gigantes.
+
+104
+00:06:24,341 --> 00:06:26,862
+Amazon llegó a España en septiembre de dos mil once.
+
+105
+00:06:27,202 --> 00:06:31,754
+Al principio, como en sus orígenes, con libros, música y películas. Pero muy pronto
+
+106
+00:06:31,754 --> 00:06:32,742
+con todo lo demás.
+
+107
+00:06:33,082 --> 00:06:37,485
+Hoy tiene grandes centros logísticos repartidos por el país, y miles de pequeñas
+
+108
+00:06:37,485 --> 00:06:40,733
+empresas españolas venden sus productos a través de su web.
+
+109
+00:06:41,073 --> 00:06:45,871
+Para muchos comercios, Amazon es a la vez un gran escaparate… y un competidor muy
+
+110
+00:06:45,871 --> 00:06:46,877
+difícil de batir.
+
+111
+00:06:48,167 --> 00:06:50,265
+Un gigante así también acumula críticas.
+
+112
+00:06:50,605 --> 00:06:55,849
+Sobre las condiciones de trabajo en sus almacenes, con ritmos muy exigentes.
+
+113
+00:06:56,189 --> 00:07:00,341
+Sobre su poder frente a las tiendas tradicionales y los vendedores que dependen de
+
+114
+00:07:00,341 --> 00:07:01,050
+su plataforma.
+
+115
+00:07:01,390 --> 00:07:06,125
+Y sobre los impuestos que paga en los países donde vende, un debate que ha llegado a
+
+116
+00:07:06,125 --> 00:07:09,112
+los gobiernos y a los tribunales en distintos países.
+
+117
+00:07:09,452 --> 00:07:14,079
+La empresa defiende que crea empleo, que mejora los salarios en muchos lugares y que
+
+118
+00:07:14,079 --> 00:07:16,944
+permite a pequeños negocios vender en todo el mundo.
+
+119
+00:07:18,234 --> 00:07:22,189
+En dos mil veintiuno, Jeff Bezos dejó de ser el director general de Amazon.
+
+120
+00:07:22,529 --> 00:07:27,772
+Ese mismo año viajó al espacio a bordo de un cohete de su otra empresa, Blue Origin.
+
+121
+00:07:28,112 --> 00:07:32,043
+El hombre que empezó con mesas hechas con puertas viejas en un garaje se había
+
+122
+00:07:32,043 --> 00:07:34,412
+convertido en uno de los más ricos del planeta.
+
+123
+00:07:34,752 --> 00:07:38,695
+Y la librería online que muchos daban por muerta es hoy una de las empresas más
+
+124
+00:07:38,695 --> 00:07:39,593
+grandes del mundo.
+
+125
+00:07:40,883 --> 00:07:43,504
+¿Qué nos enseña esta historia? Tres cosas.
+
+126
+00:07:43,844 --> 00:07:49,297
+Una: a veces lo que más pesa en una decisión no es el riesgo de fracasar, sino el de
+
+127
+00:07:49,297 --> 00:07:51,764
+arrepentirte por no haberlo intentado.
+
+128
+00:07:52,104 --> 00:07:57,797
+Dos: empezar pequeño no es pensar en pequeño. Amazon empezó con libros, pero siempre
+
+129
+00:07:57,797 --> 00:07:59,153
+quiso venderlo todo.
+
+130
+00:07:59,493 --> 00:08:04,789
+Y tres: el negocio más rentable puede ser el que nadie ve. La nube de Amazon vale
+
+131
+00:08:04,789 --> 00:08:06,162
+tanto como su tienda.
+
+132
+00:08:07,452 --> 00:08:11,912
+Un trabajo seguro abandonado, un garaje, unas mesas hechas con puertas y una campana
+
+133
+00:08:11,912 --> 00:08:14,407
+que había que quitar porque no dejaba de sonar.
+
+134
+00:08:14,747 --> 00:08:18,746
+La próxima vez que llegue a tu casa una de esas cajas, acuérdate de cómo empezó
+
+135
+00:08:18,746 --> 00:08:18,999
+todo.
+
+136
+00:08:19,339 --> 00:08:23,289
+Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
+
+137
+00:08:23,629 --> 00:08:28,159
+¿Qué fue lo primero que compraste en Amazon? Cuéntanoslo en los comentarios.
+
+138
+00:08:28,499 --> 00:08:30,240
+Y si te ha gustado, suscríbete.
+

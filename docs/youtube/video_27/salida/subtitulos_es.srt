@@ -1,540 +1,540 @@
 1
-00:00:00,500 --> 00:00:04,765
+00:00:00,500 --> 00:00:04,587
 Comprar calles, construir casas y hoteles, cobrar alquileres… y arruinar a tu
 
 2
-00:00:04,765 --> 00:00:06,537
+00:00:04,587 --> 00:00:06,285
 familia en una tarde de domingo.
 
 3
-00:00:06,877 --> 00:00:10,349
+00:00:06,625 --> 00:00:09,889
 El Monopoly es uno de los juegos de mesa más vendidos de la historia.
 
 4
-00:00:10,689 --> 00:00:15,586
+00:00:10,229 --> 00:00:14,532
 Durante décadas, la caja contaba que lo había inventado un hombre en paro durante la
 
 5
-00:00:15,586 --> 00:00:18,560
+00:00:14,532 --> 00:00:17,144
 Gran Depresión, que se hizo millonario con su idea.
 
 6
-00:00:18,900 --> 00:00:21,199
+00:00:17,484 --> 00:00:19,228
 Pero la historia real es muy distinta.
 
 7
-00:00:21,539 --> 00:00:26,264
+00:00:19,568 --> 00:00:24,782
 El juego lo inventó una mujer, treinta años antes. Y no lo creó para celebrar el
 
 8
-00:00:26,264 --> 00:00:28,273
+00:00:24,782 --> 00:00:26,998
 capitalismo, sino para criticarlo.
 
 9
-00:00:28,613 --> 00:00:33,320
+00:00:27,338 --> 00:00:32,423
 Esta es la verdadera historia del Monopoly. Y de cómo el juego sobre los monopolios…
 
 10
-00:00:33,320 --> 00:00:34,778
+00:00:32,423 --> 00:00:33,996
 acabó siendo un monopolio.
 
 11
-00:00:36,068 --> 00:00:38,958
+00:00:35,286 --> 00:00:37,892
 Estados Unidos, finales del siglo diecinueve.
 
 12
-00:00:39,298 --> 00:00:44,274
+00:00:38,232 --> 00:00:42,725
 Elizabeth Magie, a la que todos llamaban Lizzie, era una mujer muy poco convencional
 
 13
-00:00:44,274 --> 00:00:45,103
+00:00:42,725 --> 00:00:43,473
 para su época.
 
 14
-00:00:45,443 --> 00:00:50,688
+00:00:43,813 --> 00:00:48,732
 Trabajaba como taquígrafa, escribía poesía y relatos, actuaba en el teatro y se
 
 15
-00:00:50,688 --> 00:00:56,066
+00:00:48,732 --> 00:00:53,774
 ganaba la vida como podía en un mundo donde a las mujeres se les ponían todas las
 
 16
-00:00:56,066 --> 00:00:56,531
+00:00:53,774 --> 00:00:54,210
 trabas.
 
 17
-00:00:56,871 --> 00:01:01,449
+00:00:54,550 --> 00:00:58,729
 En una ocasión llegó a publicar un anuncio en un periódico ofreciéndose a sí misma
 
 18
-00:01:01,449 --> 00:01:05,636
+00:00:58,729 --> 00:01:02,552
 en venta como esposa, para denunciar lo poco que se valoraba a las mujeres.
 
 19
-00:01:05,976 --> 00:01:08,577
+00:01:02,892 --> 00:01:04,879
 Y tenía unas ideas políticas muy claras.
 
 20
-00:01:08,917 --> 00:01:13,805
+00:01:05,219 --> 00:01:09,953
 Era seguidora de un economista muy popular entonces, Henry George, que defendía que
 
 21
-00:01:13,805 --> 00:01:18,693
+00:01:09,953 --> 00:01:14,687
 la tierra debía beneficiar a toda la sociedad, y no solo a unos pocos propietarios.
 
 22
-00:01:19,983 --> 00:01:24,035
+00:01:15,977 --> 00:01:19,710
 Lizzie quería explicar esas ideas de una forma que cualquiera pudiera entender.
 
 23
-00:01:24,375 --> 00:01:26,453
+00:01:20,050 --> 00:01:21,973
 Y pensó que un juego sería perfecto.
 
 24
-00:01:26,793 --> 00:01:30,936
+00:01:22,313 --> 00:01:27,506
 Así que diseñó un tablero cuadrado con propiedades, alquileres, ferrocarriles,
 
 25
-00:01:30,936 --> 00:01:32,795
+00:01:27,506 --> 00:01:29,836
 servicios… y una casilla de cárcel.
 
 26
-00:01:33,135 --> 00:01:37,477
+00:01:30,176 --> 00:01:33,909
 Los jugadores compraban terrenos y cobraban a los demás por pasar por ellos.
 
 27
-00:01:37,817 --> 00:01:42,857
+00:01:34,249 --> 00:01:38,601
 El objetivo era demostrar algo: que si unos pocos acumulan las propiedades, los
 
 28
-00:01:42,857 --> 00:01:44,388
+00:01:38,601 --> 00:01:39,924
 demás acaban arruinados.
 
 29
-00:01:44,728 --> 00:01:49,247
+00:01:40,264 --> 00:01:45,487
 En mil novecientos tres solicitó la patente, que le fue concedida al año siguiente.
 
 30
-00:01:49,247 --> 00:01:51,207
+00:01:45,487 --> 00:01:47,753
 Lo llamó El Juego del Terrateniente.
 
 31
-00:01:51,547 --> 00:01:56,228
+00:01:48,093 --> 00:01:53,372
 Y tenía un detalle muy interesante: dos formas de jugar. Una en la que ganaba quien
 
 32
-00:01:56,228 --> 00:02:00,684
+00:01:53,372 --> 00:01:58,398
 acaparaba más. Y otra en la que todos se beneficiaban cuando se creaba riqueza.
 
 33
-00:02:01,024 --> 00:02:05,431
+00:01:58,738 --> 00:02:02,853
 Quería que los jugadores comprobaran por sí mismos cuál de los dos sistemas era más
 
 34
-00:02:05,431 --> 00:02:05,749
+00:02:02,853 --> 00:02:03,151
 justo.
 
 35
-00:02:07,039 --> 00:02:09,884
+00:02:04,441 --> 00:02:06,995
 El juego de Lizzie nunca fue un gran éxito comercial.
 
 36
-00:02:10,224 --> 00:02:14,717
+00:02:07,335 --> 00:02:11,034
 Pero empezó a extenderse de otra forma: la gente lo copiaba a mano.
 
 37
-00:02:15,057 --> 00:02:20,126
+00:02:11,374 --> 00:02:16,177
 Universitarios, profesores y grupos de amigos se fabricaban sus propios tableros, a
 
 38
-00:02:20,126 --> 00:02:22,324
+00:02:16,177 --> 00:02:18,260
 menudo pintados sobre tela o cartón.
 
 39
-00:02:22,664 --> 00:02:27,758
+00:02:18,600 --> 00:02:23,247
 Y cada uno lo adaptaba: le ponía los nombres de las calles de su ciudad, cambiaba
 
 40
-00:02:27,758 --> 00:02:28,702
+00:02:23,247 --> 00:02:24,107
 algunas reglas…
 
 41
-00:02:29,152 --> 00:02:33,991
+00:02:24,557 --> 00:02:29,202
 En Atlantic City, una ciudad de la costa de Nueva Jersey, un grupo de cuáqueros hizo
 
 42
-00:02:33,991 --> 00:02:36,756
+00:02:29,202 --> 00:02:31,857
 su propia versión con los nombres de sus calles.
 
 43
-00:02:37,096 --> 00:02:42,199
+00:02:32,197 --> 00:02:37,083
 Esos nombres son, precisamente, los que tendría años después el Monopoly original en
 
 44
-00:02:42,199 --> 00:02:43,110
+00:02:37,083 --> 00:02:37,956
 Estados Unidos.
 
 45
-00:02:43,450 --> 00:02:48,387
+00:02:38,296 --> 00:02:43,329
 Durante tres décadas, el juego vivió así: como una especie de juego popular, sin
 
 46
-00:02:48,387 --> 00:02:50,486
+00:02:43,329 --> 00:02:45,468
 dueño, que pasaba de mano en mano.
 
 47
-00:02:51,776 --> 00:02:55,860
+00:02:46,758 --> 00:02:52,257
 Y aquí aparece el hombre al que durante décadas se atribuyó el invento: Charles
 
 48
-00:02:55,860 --> 00:02:56,222
+00:02:52,257 --> 00:02:52,744
 Darrow.
 
 49
-00:02:56,562 --> 00:03:00,825
+00:02:53,084 --> 00:02:57,188
 Darrow era un vendedor de Filadelfia que se había quedado sin trabajo durante la
 
 50
-00:03:00,825 --> 00:03:01,624
+00:02:57,188 --> 00:02:57,957
 Gran Depresión.
 
 51
-00:03:01,964 --> 00:03:06,286
+00:02:58,297 --> 00:03:03,485
 A principios de los años treinta, unos amigos le enseñaron una de esas versiones
 
 52
-00:03:06,286 --> 00:03:07,258
+00:03:03,485 --> 00:03:04,653
 caseras del juego.
 
 53
-00:03:07,598 --> 00:03:12,372
+00:03:04,993 --> 00:03:09,175
 Darrow pidió una copia de las reglas, hizo algunos cambios de diseño, y empezó a
 
 54
-00:03:12,372 --> 00:03:15,714
+00:03:09,175 --> 00:03:12,102
 fabricar y vender el juego por su cuenta, en Filadelfia.
 
 55
-00:03:16,054 --> 00:03:17,331
+00:03:12,442 --> 00:03:14,114
 Lo llamó Monopoly.
 
 56
-00:03:17,671 --> 00:03:21,938
+00:03:14,454 --> 00:03:18,540
 Se vendió tan bien que llamó la atención de una gran empresa de juegos de mesa:
 
 57
-00:03:21,938 --> 00:03:22,802
+00:03:18,540 --> 00:03:19,367
 Parker Brothers.
 
 58
-00:03:24,092 --> 00:03:27,889
+00:03:20,657 --> 00:03:24,414
 Lo curioso es que Parker Brothers, al principio, rechazó el juego.
 
 59
-00:03:28,229 --> 00:03:32,732
+00:03:24,754 --> 00:03:29,361
 Según la historia que se ha contado muchas veces, sus expertos le encontraron
 
 60
-00:03:32,732 --> 00:03:37,410
+00:03:29,361 --> 00:03:34,147
 decenas de fallos: era demasiado largo, demasiado complicado y no tenía un final
 
 61
-00:03:37,410 --> 00:03:37,761
+00:03:34,147 --> 00:03:34,506
 claro.
 
 62
-00:03:38,101 --> 00:03:41,328
+00:03:34,846 --> 00:03:37,626
 Pero las ventas de Darrow en las tiendas no dejaban de crecer.
 
 63
-00:03:41,668 --> 00:03:45,984
+00:03:37,966 --> 00:03:43,298
 Y en mil novecientos treinta y cinco, Parker Brothers cambió de opinión y le compró
 
 64
-00:03:45,984 --> 00:03:46,452
+00:03:43,298 --> 00:03:43,876
 el juego.
 
 65
-00:03:46,792 --> 00:03:50,402
+00:03:44,216 --> 00:03:47,974
 Darrow se presentó como su inventor. Y se convirtió en millonario.
 
 66
-00:03:50,742 --> 00:03:55,626
+00:03:48,314 --> 00:03:52,423
 Durante décadas, la caja del Monopoly contó su historia: la del hombre en paro que
 
 67
-00:03:55,626 --> 00:03:58,068
+00:03:52,423 --> 00:03:54,478
 inventó un juego en la mesa de su cocina.
 
 68
-00:03:59,358 --> 00:04:00,368
+00:03:55,768 --> 00:03:56,580
 ¿Y Lizzie Magie?
 
 69
-00:04:00,788 --> 00:04:05,072
+00:03:57,000 --> 00:04:00,944
 Parker Brothers sabía que existían patentes anteriores de un juego muy parecido.
 
 70
-00:04:05,412 --> 00:04:09,641
+00:04:01,284 --> 00:04:05,733
 Así que compró los derechos de Lizzie sobre su juego. Según las fuentes, por unos
 
 71
-00:04:09,641 --> 00:04:12,564
+00:04:05,733 --> 00:04:08,809
 quinientos dólares, sin ningún porcentaje de las ventas.
 
 72
-00:04:12,904 --> 00:04:17,562
+00:04:09,149 --> 00:04:14,200
 Ella aceptó con una condición: que la empresa publicara también su juego original,
 
 73
-00:04:17,562 --> 00:04:18,755
+00:04:14,200 --> 00:04:15,494
 el del terrateniente.
 
 74
-00:04:19,095 --> 00:04:22,648
+00:04:15,834 --> 00:04:20,562
 Parker Brothers lo hizo, en una tirada pequeña que apenas se vendió.
 
 75
-00:04:22,988 --> 00:04:27,591
+00:04:20,902 --> 00:04:25,264
 Lizzie murió en mil novecientos cuarenta y ocho, sin que casi nadie supiera que el
 
 76
-00:04:27,591 --> 00:04:30,453
+00:04:25,264 --> 00:04:27,978
 juego más famoso del mundo había nacido de su idea.
 
 77
-00:04:30,793 --> 00:04:35,310
+00:04:28,317 --> 00:04:33,951
 Mientras tanto, el Monopoly vendía millones de copias con un mensaje justo contrario
 
 78
-00:04:35,310 --> 00:04:36,923
+00:04:33,951 --> 00:04:35,963
 al que ella quería transmitir.
 
 79
-00:04:38,213 --> 00:04:41,371
+00:04:37,253 --> 00:04:40,192
 La verdad salió a la luz décadas después, por casualidad.
 
 80
-00:04:41,711 --> 00:04:46,238
+00:04:40,532 --> 00:04:46,198
 En los años setenta, un profesor de economía llamado Ralph Anspach creó un juego que
 
 81
-00:04:46,238 --> 00:04:47,586
+00:04:46,198 --> 00:04:47,885
 se llamaba Anti-Monopoly.
 
 82
-00:04:47,926 --> 00:04:51,722
+00:04:48,225 --> 00:04:51,614
 La empresa propietaria del Monopoly lo demandó por usar el nombre.
 
 83
-00:04:52,062 --> 00:04:55,998
+00:04:51,954 --> 00:04:55,467
 Para defenderse, Anspach se puso a investigar el origen del juego.
 
 84
-00:04:56,338 --> 00:05:00,875
+00:04:55,807 --> 00:05:00,879
 Y descubrió las patentes de Lizzie Magie, los tableros caseros, los cuáqueros de
 
 85
-00:05:00,875 --> 00:05:03,710
+00:05:00,879 --> 00:05:04,049
 Atlantic City… toda la historia que nadie contaba.
 
 86
-00:05:04,050 --> 00:05:08,761
+00:05:04,389 --> 00:05:08,687
 El caso se alargó durante años en los tribunales. Y sacó a la luz que Darrow no
 
 87
-00:05:08,761 --> 00:05:11,922
+00:05:08,687 --> 00:05:11,571
 había inventado el juego, sino que lo había adaptado.
 
 88
-00:05:12,262 --> 00:05:17,161
+00:05:11,911 --> 00:05:16,314
 Hoy, la propia marca reconoce el papel de Lizzie Magie en el origen del Monopoly.
 
 89
-00:05:18,451 --> 00:05:22,828
+00:05:17,604 --> 00:05:21,628
 Y el Monopoly tiene otro capítulo increíble: la Segunda Guerra Mundial.
 
 90
-00:05:23,168 --> 00:05:27,749
+00:05:21,968 --> 00:05:26,551
 Los servicios secretos británicos buscaban formas de ayudar a escapar a los soldados
 
 91
-00:05:27,749 --> 00:05:29,658
+00:05:26,551 --> 00:05:28,460
 prisioneros en los campos alemanes.
 
 92
-00:05:29,998 --> 00:05:33,712
+00:05:28,800 --> 00:05:32,521
 Los prisioneros podían recibir paquetes con juegos de mesa enviados por
 
 93
-00:05:33,712 --> 00:05:34,967
+00:05:32,521 --> 00:05:33,779
 organizaciones de ayuda.
 
 94
-00:05:35,307 --> 00:05:39,487
+00:05:34,119 --> 00:05:38,904
 Así que, en colaboración con el fabricante británico del Monopoly, se prepararon
 
 95
-00:05:39,487 --> 00:05:40,427
+00:05:38,904 --> 00:05:39,981
 juegos especiales.
 
 96
-00:05:40,767 --> 00:05:45,347
+00:05:40,321 --> 00:05:44,846
 Escondidos dentro del tablero había mapas de seda, pequeñas brújulas y dinero de
 
 97
-00:05:45,347 --> 00:05:49,010
+00:05:44,846 --> 00:05:48,466
 verdad de distintos países, mezclado con los billetes del juego.
 
 98
-00:05:49,350 --> 00:05:53,739
+00:05:48,806 --> 00:05:52,867
 Ciertas marcas en el tablero indicaban qué juegos llevaban el contenido secreto.
 
 99
-00:05:54,079 --> 00:05:57,225
+00:05:53,207 --> 00:05:56,489
 Durante décadas, aquella operación se mantuvo en secreto.
 
 100
-00:05:58,515 --> 00:06:03,213
+00:05:57,779 --> 00:06:02,026
 Con el paso de las décadas, la empresa que hacía el Monopoly cambió varias veces de
 
 101
-00:06:03,213 --> 00:06:05,760
+00:06:02,026 --> 00:06:04,328
 dueño, y hoy pertenece a la juguetera Hasbro.
 
 102
-00:06:06,100 --> 00:06:10,530
+00:06:04,668 --> 00:06:08,977
 Según la propia marca, el juego se vende en más de cien países y se ha traducido a
 
 103
-00:06:10,530 --> 00:06:11,557
+00:06:08,977 --> 00:06:09,976
 decenas de idiomas.
 
 104
-00:06:11,897 --> 00:06:16,567
+00:06:10,316 --> 00:06:14,514
 Y para mantenerlo vivo, la marca empezó a dejar que los jugadores votaran algunos
 
 105
-00:06:16,567 --> 00:06:17,028
+00:06:14,514 --> 00:06:14,929
 cambios.
 
 106
-00:06:17,368 --> 00:06:22,138
+00:06:15,269 --> 00:06:20,252
 En dos mil trece, una votación por internet decidió retirar una de las fichas
 
 107
-00:06:22,138 --> 00:06:25,112
+00:06:20,252 --> 00:06:23,359
 clásicas, la plancha, y sustituirla por un gato.
 
 108
-00:06:25,452 --> 00:06:30,396
+00:06:23,699 --> 00:06:29,001
 Años después, otra votación eliminó el dedal y otras fichas tradicionales, y añadió
 
 109
-00:06:30,396 --> 00:06:33,196
+00:06:29,001 --> 00:06:32,004
 figuras como un dinosaurio o un patito de goma.
 
 110
-00:06:33,536 --> 00:06:37,899
+00:06:32,344 --> 00:06:36,925
 Para muchos aficionados, cada cambio en las fichas fue casi un drama. Señal de que
 
 111
-00:06:37,899 --> 00:06:40,560
+00:06:36,925 --> 00:06:39,719
 el juego se había convertido en algo muy personal.
 
 112
-00:06:40,900 --> 00:06:45,726
+00:06:40,059 --> 00:06:44,042
 Un juego nacido para criticar a los terratenientes se había convertido en uno de los
 
 113
-00:06:45,726 --> 00:06:48,713
+00:06:44,042 --> 00:06:46,508
 productos más rentables de la industria del juguete.
 
 114
-00:06:50,003 --> 00:06:54,556
+00:06:47,798 --> 00:06:52,148
 En España, varias generaciones han jugado con una versión basada en las calles de
 
 115
-00:06:54,556 --> 00:06:54,949
+00:06:52,148 --> 00:06:52,523
 Madrid.
 
 116
-00:06:55,289 --> 00:07:00,466
+00:06:52,863 --> 00:06:57,811
 En la edición clásica española, la propiedad más cara era el Paseo del Prado. Y las
 
 117
-00:07:00,466 --> 00:07:02,836
+00:06:57,811 --> 00:07:00,076
 más baratas, las del sur de la ciudad.
 
 118
-00:07:03,176 --> 00:07:07,537
+00:07:00,416 --> 00:07:05,086
 Con los años han aparecido versiones de casi todo: de ciudades, de equipos de
 
 119
-00:07:07,537 --> 00:07:09,236
+00:07:05,086 --> 00:07:06,906
 fútbol, de series y películas.
 
 120
-00:07:09,576 --> 00:07:13,941
+00:07:07,246 --> 00:07:11,714
 Y también hay discusiones familiares que se repiten en todo el mundo: ¿se cobra o no
 
 121
-00:07:13,941 --> 00:07:16,020
+00:07:11,714 --> 00:07:13,841
 se cobra el dinero del parking gratuito?
 
 122
-00:07:16,440 --> 00:07:20,863
+00:07:14,261 --> 00:07:18,816
 Esa regla, por cierto, no aparece en las instrucciones oficiales. Es un invento de
 
 123
-00:07:20,863 --> 00:07:21,618
+00:07:18,816 --> 00:07:19,594
 los jugadores.
 
 124
-00:07:22,908 --> 00:07:25,578
+00:07:20,884 --> 00:07:23,530
 ¿Qué nos enseña esta historia? Tres cosas.
 
 125
-00:07:25,918 --> 00:07:30,899
+00:07:23,870 --> 00:07:29,122
 Una: quien inventa algo no siempre es quien se lleva el mérito. Ni el dinero.
 
 126
-00:07:31,239 --> 00:07:35,526
+00:07:29,462 --> 00:07:34,086
 Dos: una idea puede acabar significando lo contrario de lo que pretendía su
 
 127
-00:07:35,526 --> 00:07:40,213
+00:07:34,086 --> 00:07:39,141
 creadora. Un juego contra los monopolios se convirtió en una celebración de ellos.
 
 128
-00:07:40,553 --> 00:07:45,209
+00:07:39,481 --> 00:07:44,674
 Y tres: la historia oficial de una marca no siempre es la verdadera. A veces hace
 
 129
-00:07:45,209 --> 00:07:47,507
+00:07:44,674 --> 00:07:47,239
 falta que alguien se ponga a investigar.
 
 130
-00:07:48,797 --> 00:07:53,899
+00:07:48,529 --> 00:07:53,039
 Una mujer adelantada a su tiempo, unos tableros pintados a mano, un vendedor en
 
 131
-00:07:53,899 --> 00:07:57,064
+00:07:53,039 --> 00:07:55,837
 paro, quinientos dólares y unos mapas escondidos.
 
 132
-00:07:57,404 --> 00:08:01,676
+00:07:56,177 --> 00:08:00,099
 La próxima vez que compres el Paseo del Prado, acuérdate de Lizzie Magie.
 
 133
-00:08:02,016 --> 00:08:06,173
+00:08:00,439 --> 00:08:03,980
 Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
 
 134
-00:08:06,513 --> 00:08:10,286
+00:08:04,320 --> 00:08:09,070
 ¿Tú cobras el dinero del parking gratuito? Cuéntanoslo en los comentarios.
 
 135
-00:08:10,626 --> 00:08:12,541
+00:08:09,410 --> 00:08:11,138
 Y si te ha gustado, suscríbete.
 
