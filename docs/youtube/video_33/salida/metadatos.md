@@ -1,0 +1,66 @@
+# Pringles: el inventor que pidió ser enterrado en su tubo: metadatos para subir a YouTube
+
+**Archivo:** `Codigo_de_Barras_33_Pringles.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:48 · audio normalizado a −14 LUFS
+**Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
+
+## Título (recomendado el primero)
+1. Pringles: el inventor que pidió ser enterrado en su tubo
+2. La historia de Pringles (¿son patatas fritas o no?)
+3. Por qué las Pringles tienen esa forma
+
+## Descripción (copiar y pegar)
+```
+Pringles nació en Procter & Gamble: el químico Fredric Baur diseñó su forma de silla de montar (un paraboloide hiperbólico) y el famoso tubo. En el Reino Unido, los jueces tuvieron que decidir si eran patatas fritas o no. Y cuando Baur murió en 2008, su familia enterró parte de sus cenizas en un tubo de Pringles. Esta es la historia de Pringles.
+
+⏱ Capítulos
+00:00 Introducción
+00:32 1. El problema de la bolsa
+01:11 2. Una silla de montar
+01:57 3. Sabían fatal
+02:28 4. Un escritor en la fábrica
+03:01 5. Un nombre misterioso
+03:42 6. ¿Son patatas fritas?
+04:15 7. Altibajos
+04:55 8. Hacienda contra Pringles
+05:54 9. El inventor en su tubo
+06:29 10. Enemigo del reciclaje
+07:04 11. De mano en mano
+07:42 12. Lo que nos enseña
+08:07 Final
+
+📚 Fuentes
+- Wikipedia, «Pringles»: https://en.wikipedia.org/wiki/Pringles
+- Wikipedia, «Fred Baur»: https://en.wikipedia.org/wiki/Fred_Baur
+- History UK, «Birth of Fredric John Baur, inventor of the Pringles can»: https://www.history.co.uk/this-day-in-history/14-june/birth-of-fredric-john-baur-inventor-of-the-pringles-can
+- Mental Floss, «12 crispy facts about Pringles»: https://www.mentalfloss.com/food/12-crispy-facts-about-pringles
+- CMS, «Are Pringles crisps? The Court of Appeal decides» (2009): https://cms.law/en/gbr/legal-updates/are-pringles-crisps-the-court-of-appeal-decides
+- Marketing Week, «Court of Appeal rules Pringles is a potato crisp»: https://www.marketingweek.com/court-of-appeal-rules-pringles-is-a-potato-crisp/
+- PotatoPro, «The science and design behind stackable potato chips»: https://www.potatopro.com/about/stackable-potato-chips
+
+Nota: el origen del nombre «Pringle» no está confirmado; el papel de Gene Wolfe en la maquinaria procede de varias fuentes biográficas.
+
+ℹ️ Este vídeo no está patrocinado por ninguna de las marcas mencionadas. Las ilustraciones son propias; no se usan logotipos originales.
+🤖 Guion elaborado con asistencia de IA y revisado por una persona. Narración con voz sintética de ElevenLabs.
+🎨 Ilustraciones 3D: Fluent Emoji © Microsoft (licencia MIT). Música y efectos: creación propia.
+
+Código de Barras: la historia que no conoces de lo que tienes en casa. Nuevas historias cada semana.
+💬 ¿Qué marca quieres que investiguemos? Déjala en los comentarios.
+
+#Pringles #HistoriaDeMarcas #Curiosidades
+```
+
+## Etiquetas
+pringles, historia de pringles, fredric baur, tubo de pringles, procter and gamble, paraboloide hiperbólico, gene wolfe, julius pringles, kellogg's, historia de marcas, código de barras
+
+## Ajustes en YouTube Studio
+- **Público:** "No, no es contenido creado para niños".
+- **Contenido alterado o sintético:** No (narración evidente que no imita a ninguna persona real; ilustraciones no realistas).
+- **Promoción pagada:** No · **Categoría:** Educación · **Idioma:** Español (España). Sube `subtitulos_es.srt`.
+- **Pantalla final:** "Vídeo más reciente" sobre el rectángulo de la izquierda y el botón de suscripción sobre el círculo de la derecha (últimos 15 s).
+- **Lista de reproducción:** Comida y bebida.
+- **Comentario fijado:** "¿Qué marca investigamos el mes que viene? Las 3 más votadas entran en la encuesta 👇"
+
+## Revisión antes de publicar
+- [ ] Ver el vídeo entero con sonido: que la imagen cuadre con la voz en los cambios de escena.
+- [ ] Comprobar que los subtítulos coinciden.
+- [ ] Previsualizar la miniatura en tamaño móvil.
