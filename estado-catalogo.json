@@ -1,19 +1,18 @@
 {
  "months": {
   "2026-09": {
-   "ok": false,
-   "at": "2026-10-28T09:29:27.165Z",
-   "entries": 34501,
-   "records": 9118,
-   "evalDocs": 0,
-   "geoRejected": 6,
+   "ok": true,
+   "at": "2026-10-28T15:04:26.384Z",
+   "entries": 130411,
+   "records": 34023,
+   "evalDocs": 49149,
+   "geoRejected": 8,
    "byScope": {
+    "es": 24905,
     "es_sin_pais": 9118
    },
-   "files": 76,
-   "errors": [
-    "p: Command failed: curl -fsSL --retry 3 --retry-delay 20 --max-time 2400 -A PROPO-conocimiento/1.0 (datos abiertos de contratación pública; contacto: hola@propo.es) -o /tmp/propo-k-xj8EcB/m.zip https://c"
-   ]
+   "files": 269,
+   "errors": []
   }
  }
 }
