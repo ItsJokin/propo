@@ -1,504 +1,504 @@
 1
-00:00:00,500 --> 00:00:04,831
+00:00:00,500 --> 00:00:05,256
 Un cuenco, leche y unos copos crujientes. El desayuno de millones de personas.
 
 2
-00:00:05,171 --> 00:00:09,489
+00:00:05,596 --> 00:00:09,582
 Pero los cereales del desayuno no nacieron en una cocina, sino en un sanatorio.
 
 3
-00:00:09,829 --> 00:00:14,639
+00:00:09,922 --> 00:00:14,323
 Los inventaron dos hermanos que trabajaban juntos… y que acabaron sin hablarse
 
 4
-00:00:14,639 --> 00:00:18,955
+00:00:14,323 --> 00:00:18,272
 durante décadas, enfrentados en los tribunales por su propio apellido.
 
 5
-00:00:19,295 --> 00:00:24,062
+00:00:18,612 --> 00:00:23,558
 Uno era un médico famoso con ideas muy extrañas sobre la salud. El otro, el hermano
 
 6
-00:00:24,062 --> 00:00:25,843
+00:00:23,558 --> 00:00:25,405
 pequeño al que todos ignoraban.
 
 7
-00:00:26,183 --> 00:00:30,436
+00:00:25,745 --> 00:00:30,449
 Y en medio, un paciente del sanatorio que copió la idea y se hizo millonario antes
 
 8
-00:00:30,436 --> 00:00:30,955
+00:00:30,449 --> 00:00:31,023
 que ellos.
 
 9
-00:00:31,295 --> 00:00:35,439
+00:00:31,363 --> 00:00:36,566
 Esta es la historia de Kellogg's y de cómo cambió la forma de desayunar del mundo.
 
 10
-00:00:36,729 --> 00:00:39,469
+00:00:37,856 --> 00:00:41,849
 Battle Creek, Michigan, finales del siglo diecinueve.
 
 11
-00:00:39,809 --> 00:00:43,861
+00:00:42,189 --> 00:00:46,021
 John Harvey Kellogg era uno de los médicos más famosos de Estados Unidos.
 
 12
-00:00:44,201 --> 00:00:48,794
+00:00:46,361 --> 00:00:50,705
 Dirigía un enorme sanatorio, una especie de balneario médico, donde personas
 
 13
-00:00:48,794 --> 00:00:51,272
+00:00:50,705 --> 00:00:53,048
 adineradas acudían para mejorar su salud.
 
 14
-00:00:51,612 --> 00:00:56,834
+00:00:53,388 --> 00:00:58,145
 Pertenecía a una comunidad religiosa que defendía una vida muy sana: sin alcohol,
 
 15
-00:00:56,834 --> 00:00:59,413
+00:00:58,145 --> 00:01:00,494
 sin tabaco, y con una dieta vegetariana.
 
 16
-00:00:59,753 --> 00:01:04,840
+00:01:00,834 --> 00:01:05,569
 En el sanatorio se hacían ejercicios, baños, tratamientos con luz y electricidad, y
 
 17
-00:01:04,840 --> 00:01:06,127
+00:01:05,569 --> 00:01:06,767
 dietas muy estrictas.
 
 18
-00:01:06,467 --> 00:01:10,542
+00:01:07,107 --> 00:01:11,295
 Y la comida tenía que ser sencilla, fácil de digerir… y bastante sosa.
 
 19
-00:01:10,882 --> 00:01:15,692
+00:01:11,635 --> 00:01:17,423
 En aquella época, el desayuno típico en Estados Unidos era pesado: carne, huevos,
 
 20
-00:01:15,692 --> 00:01:19,195
+00:01:17,423 --> 00:01:21,639
 patatas, muchas grasas. El doctor Kellogg quería cambiarlo.
 
 21
-00:01:20,485 --> 00:01:24,583
+00:01:22,929 --> 00:01:26,689
 Pero el doctor Kellogg también tenía ideas que hoy nos parecen muy preocupantes.
 
 22
-00:01:24,923 --> 00:01:29,626
+00:01:27,029 --> 00:01:32,076
 Creía que una dieta sosa y sin condimentos ayudaba a controlar los impulsos y los
 
 23
-00:01:29,626 --> 00:01:33,341
+00:01:32,076 --> 00:01:36,063
 deseos de las personas. Y defendía tratamientos muy discutibles.
 
 24
-00:01:33,681 --> 00:01:38,755
+00:01:36,403 --> 00:01:40,911
 También apoyó la eugenesia, un movimiento que pretendía mejorar la especie humana y
 
 25
-00:01:38,755 --> 00:01:42,179
+00:01:40,911 --> 00:01:43,952
 que hoy se considera racista y profundamente equivocado.
 
 26
-00:01:42,519 --> 00:01:47,239
+00:01:44,292 --> 00:01:47,957
 Es una parte de la historia que la marca no suele contar, pero que los historiadores
 
 27
-00:01:47,239 --> 00:01:48,475
+00:01:47,957 --> 00:01:48,917
 han estudiado a fondo.
 
 28
-00:01:48,815 --> 00:01:53,117
+00:01:49,257 --> 00:01:53,698
 Y es importante recordarla, porque explica en parte por qué aquellos primeros
 
 29
-00:01:53,117 --> 00:01:54,458
+00:01:53,698 --> 00:01:55,082
 cereales eran tan sosos.
 
 30
-00:01:55,748 --> 00:01:59,532
+00:01:56,372 --> 00:02:00,412
 En el sanatorio trabajaba también su hermano pequeño, Will Keith Kellogg.
 
 31
-00:01:59,872 --> 00:02:04,006
+00:02:00,752 --> 00:02:06,082
 Will se encargaba de la contabilidad, la gestión y todo lo que hiciera falta.
 
 32
-00:02:04,346 --> 00:02:09,494
+00:02:06,422 --> 00:02:12,074
 Según sus biógrafos, John lo trataba casi como a un ayudante. A veces le hacía tomar
 
 33
-00:02:09,494 --> 00:02:14,458
+00:02:12,074 --> 00:02:17,524
 notas mientras se afeitaba, o le dictaba instrucciones mientras iba en bicicleta.
 
 34
-00:02:14,798 --> 00:02:18,861
+00:02:17,864 --> 00:02:22,485
 Will aguantó durante años, mal pagado y a la sombra de su famoso hermano.
 
 35
-00:02:19,201 --> 00:02:23,334
+00:02:22,825 --> 00:02:26,487
 Pero tenía algo que John no tenía: talento para los negocios.
 
 36
-00:02:24,624 --> 00:02:29,154
+00:02:27,777 --> 00:02:32,010
 Los dos hermanos llevaban tiempo intentando crear un alimento a base de cereales que
 
 37
-00:02:29,154 --> 00:02:30,395
+00:02:32,010 --> 00:02:33,168
 fuera fácil de digerir.
 
 38
-00:02:30,735 --> 00:02:34,183
+00:02:33,508 --> 00:02:36,989
 Y, según la historia más conocida, la solución llegó por un descuido.
 
 39
-00:02:34,523 --> 00:02:38,575
+00:02:37,329 --> 00:02:41,398
 Habían cocido trigo, pero tuvieron que dejarlo reposar más tiempo del previsto.
 
 40
-00:02:38,915 --> 00:02:43,252
+00:02:41,738 --> 00:02:46,766
 Cuando volvieron, en lugar de tirarlo, lo pasaron por unos rodillos. Y en vez de una
 
 41
-00:02:43,252 --> 00:02:44,801
+00:02:46,766 --> 00:02:48,562
 masa, salieron pequeños copos.
 
 42
-00:02:45,141 --> 00:02:49,065
+00:02:48,902 --> 00:02:52,673
 Los tostaron, y el resultado gustó mucho a los pacientes del sanatorio.
 
 43
-00:02:49,405 --> 00:02:53,902
+00:02:53,013 --> 00:02:57,696
 Hay varias versiones sobre cómo y cuándo ocurrió exactamente, y sobre cuál de los
 
 44
-00:02:53,902 --> 00:02:58,565
+00:02:57,696 --> 00:03:02,551
 dos hermanos merece más mérito. Pero de ahí salieron los primeros copos de cereales.
 
 45
-00:02:58,905 --> 00:03:03,523
+00:03:02,891 --> 00:03:07,382
 En mil ochocientos noventa y seis, el doctor Kellogg patentó el proceso para
 
 46
-00:03:03,523 --> 00:03:05,163
+00:03:07,382 --> 00:03:08,977
 fabricar cereales en copos.
 
 47
-00:03:05,503 --> 00:03:10,627
+00:03:09,317 --> 00:03:14,691
 Después probaron con el maíz. Y así nacieron los copos de maíz: los famosos corn
 
 48
-00:03:10,627 --> 00:03:11,076
+00:03:14,691 --> 00:03:15,162
 flakes.
 
 49
-00:03:12,366 --> 00:03:16,522
+00:03:16,452 --> 00:03:20,616
 Entre los pacientes del sanatorio había un hombre llamado Charles William Post.
 
 50
-00:03:16,862 --> 00:03:21,184
+00:03:20,956 --> 00:03:25,313
 Post vio los cereales que se servían allí… y entendió antes que nadie que eso podía
 
 51
-00:03:21,184 --> 00:03:22,226
+00:03:25,313 --> 00:03:26,363
 ser un gran negocio.
 
 52
-00:03:22,566 --> 00:03:26,246
+00:03:26,703 --> 00:03:30,029
 Al salir del sanatorio, montó su propia empresa en la misma ciudad.
 
 53
-00:03:26,586 --> 00:03:31,154
+00:03:30,369 --> 00:03:35,219
 Primero vendió un sustituto del café hecho con cereales. Y después, sus propios
 
 54
-00:03:31,154 --> 00:03:32,368
+00:03:35,219 --> 00:03:36,508
 cereales de desayuno.
 
 55
-00:03:32,708 --> 00:03:37,342
+00:03:36,848 --> 00:03:41,327
 Uno de ellos llevaba en su nombre las palabras uva y nuez… aunque no contenía ni
 
 56
-00:03:37,342 --> 00:03:38,211
+00:03:41,327 --> 00:03:42,167
 uvas ni nueces.
 
 57
-00:03:38,551 --> 00:03:41,918
+00:03:42,507 --> 00:03:46,147
 Con mucha publicidad, Post se hizo millonario en muy pocos años.
 
 58
-00:03:42,258 --> 00:03:46,640
+00:03:46,487 --> 00:03:51,704
 Y no fue el único. Battle Creek se llenó de pequeñas empresas de cereales que
 
 59
-00:03:46,640 --> 00:03:51,306
+00:03:51,704 --> 00:03:57,258
 intentaban copiar el éxito. La ciudad llegó a conocerse como la capital mundial de
 
 60
-00:03:51,306 --> 00:03:52,045
+00:03:57,258 --> 00:03:58,139
 los cereales.
 
 61
-00:03:52,385 --> 00:03:56,451
+00:03:58,479 --> 00:04:03,813
 Mientras tanto, el doctor Kellogg seguía viendo los cereales como un alimento
 
 62
-00:03:56,451 --> 00:03:57,877
+00:04:03,813 --> 00:04:05,684
 médico, no como un negocio.
 
 63
-00:03:59,167 --> 00:04:03,630
+00:04:06,974 --> 00:04:11,981
 Will Kellogg sí lo veía como un negocio. Y tenía una idea para que los copos
 
 64
-00:04:03,630 --> 00:04:06,272
+00:04:11,981 --> 00:04:14,945
 gustaran a mucha más gente: añadirles azúcar.
 
 65
-00:04:06,612 --> 00:04:11,267
+00:04:15,285 --> 00:04:20,287
 Para su hermano, aquello era inaceptable. El azúcar iba en contra de todo lo que
 
 66
-00:04:11,267 --> 00:04:11,790
+00:04:20,287 --> 00:04:20,849
 defendía.
 
 67
-00:04:12,130 --> 00:04:15,253
+00:04:21,189 --> 00:04:23,909
 Las discusiones entre los dos fueron cada vez más fuertes.
 
 68
-00:04:15,593 --> 00:04:20,295
+00:04:24,249 --> 00:04:29,188
 Hasta que, en mil novecientos seis, Will se separó y fundó su propia empresa para
 
 69
-00:04:20,295 --> 00:04:22,037
+00:04:29,188 --> 00:04:31,017
 vender copos de maíz tostados.
 
 70
-00:04:22,377 --> 00:04:26,665
+00:04:31,357 --> 00:04:35,773
 Les añadió azúcar y malta, y lanzó campañas de publicidad muy agresivas, con
 
 71
-00:04:26,665 --> 00:04:29,203
+00:04:35,773 --> 00:04:38,388
 muestras gratis repartidas puerta por puerta.
 
 72
-00:04:29,543 --> 00:04:33,928
+00:04:38,728 --> 00:04:43,477
 Y para distinguirse de las decenas de imitadores, puso su firma en cada caja. Su
 
 73
-00:04:33,928 --> 00:04:35,627
+00:04:43,477 --> 00:04:45,317
 firma se convirtió en la marca.
 
 74
-00:04:36,917 --> 00:04:41,503
+00:04:46,607 --> 00:04:51,627
 Pero había un problema: los dos hermanos querían usar el apellido Kellogg para
 
 75
-00:04:41,503 --> 00:04:42,443
+00:04:51,627 --> 00:04:52,657
 vender cereales.
 
 76
-00:04:42,783 --> 00:04:46,266
+00:04:52,997 --> 00:04:56,147
 John tenía su propia empresa de alimentos con el mismo apellido.
 
 77
-00:04:46,606 --> 00:04:48,766
+00:04:56,487 --> 00:04:58,657
 Así que se enfrentaron en los tribunales.
 
 78
-00:04:49,106 --> 00:04:53,864
+00:04:58,997 --> 00:05:04,659
 El pleito duró años, y en mil novecientos veinte la justicia dio la razón al hermano
 
 79
-00:04:53,864 --> 00:04:57,999
+00:05:04,659 --> 00:05:09,580
 pequeño. Will se quedó con el derecho a usar el apellido en sus cereales.
 
 80
-00:04:58,339 --> 00:05:00,928
+00:05:09,920 --> 00:05:12,109
 Los dos hermanos apenas volvieron a hablarse.
 
 81
-00:05:01,268 --> 00:05:05,173
+00:05:12,449 --> 00:05:17,794
 Según se cuenta, ya muy mayor, John le escribió una carta a Will intentando
 
 82
-00:05:05,173 --> 00:05:07,828
+00:05:17,794 --> 00:05:21,429
 reconciliarse. Pero esa carta no le llegó a tiempo.
 
 83
-00:05:08,168 --> 00:05:12,698
+00:05:21,769 --> 00:05:27,750
 John murió en mil novecientos cuarenta y tres. Will, en mil novecientos cincuenta y
 
 84
-00:05:12,698 --> 00:05:12,916
+00:05:27,750 --> 00:05:28,038
 uno.
 
 85
-00:05:14,206 --> 00:05:17,538
+00:05:29,328 --> 00:05:32,733
 Will Kellogg resultó ser un empresario con ideas muy propias.
 
 86
-00:05:17,878 --> 00:05:23,040
+00:05:33,073 --> 00:05:37,504
 Durante la Gran Depresión, mientras otras empresas despedían a sus trabajadores,
 
 87
-00:05:23,040 --> 00:05:28,332
+00:05:37,504 --> 00:05:42,046
 redujo la jornada en su fábrica a seis horas, para poder contratar a más gente con
 
 88
-00:05:28,332 --> 00:05:29,558
+00:05:42,046 --> 00:05:43,098
 turnos adicionales.
 
 89
-00:05:29,898 --> 00:05:34,963
+00:05:43,438 --> 00:05:48,649
 Y mientras otras empresas de alimentos recortaban la publicidad por la crisis, él la
 
 90
-00:05:34,963 --> 00:05:37,375
+00:05:48,649 --> 00:05:51,130
 aumentó. Sus ventas siguieron creciendo.
 
 91
-00:05:37,715 --> 00:05:42,360
+00:05:51,470 --> 00:05:56,055
 Antes de morir, creó una fundación a la que dejó gran parte de su fortuna, dedicada
 
 92
-00:05:42,360 --> 00:05:43,647
+00:05:56,055 --> 00:05:57,326
 a ayudar a la infancia.
 
 93
-00:05:43,987 --> 00:05:47,981
+00:05:57,666 --> 00:06:01,524
 Hoy es una de las fundaciones filantrópicas más grandes de Estados Unidos.
 
 94
-00:05:49,271 --> 00:05:52,731
+00:06:02,814 --> 00:06:06,038
 Con los años, la empresa llenó los supermercados de cereales.
 
 95
-00:05:53,071 --> 00:05:57,397
+00:06:06,378 --> 00:06:10,891
 Copos con azúcar glas, arroz inflado que cruje al echar la leche, cereales de
 
 96
-00:05:57,397 --> 00:05:57,959
+00:06:10,891 --> 00:06:11,478
 chocolate…
 
 97
-00:05:58,409 --> 00:06:03,273
+00:06:11,928 --> 00:06:16,556
 Y personajes en las cajas para conquistar a los niños: un tigre, unos duendes, el
 
 98
-00:06:03,273 --> 00:06:07,116
+00:06:16,556 --> 00:06:20,213
 gallo que todavía hoy aparece en las cajas de los copos de maíz.
 
 99
-00:06:07,456 --> 00:06:12,589
+00:06:20,553 --> 00:06:24,898
 El tigre, por ejemplo, apareció en las cajas en mil novecientos cincuenta y dos, y
 
 100
-00:06:12,589 --> 00:06:17,220
+00:06:24,898 --> 00:06:28,819
 se convirtió en uno de los personajes publicitarios más famosos del mundo.
 
 101
-00:06:17,560 --> 00:06:21,998
+00:06:29,159 --> 00:06:33,584
 Los cereales pasaron de ser un alimento de sanatorio a ser un producto pensado para
 
 102
-00:06:21,998 --> 00:06:23,121
+00:06:33,584 --> 00:06:34,703
 el desayuno infantil.
 
 103
-00:06:23,461 --> 00:06:27,833
+00:06:35,043 --> 00:06:39,749
 Y con el tiempo llegaron las críticas: muchos cereales infantiles contienen tanto
 
 104
-00:06:27,833 --> 00:06:31,611
+00:06:39,749 --> 00:06:43,816
 azúcar que hoy los nutricionistas recomiendan tomarlos con moderación.
 
 105
-00:06:31,951 --> 00:06:36,378
+00:06:44,156 --> 00:06:48,479
 Una ironía para un producto creado por un médico obsesionado con la comida sana y
 
 106
-00:06:36,378 --> 00:06:36,979
+00:06:48,479 --> 00:06:49,066
 sin azúcar.
 
 107
-00:06:38,269 --> 00:06:41,937
+00:06:50,356 --> 00:06:53,782
 En dos mil veintitrés, la empresa Kellogg se dividió en dos.
 
 108
-00:06:42,277 --> 00:06:47,077
+00:06:54,122 --> 00:06:58,735
 Por un lado, el negocio de los cereales en Norteamérica. Por otro, los aperitivos y
 
 109
-00:06:47,077 --> 00:06:48,175
+00:06:58,735 --> 00:06:59,791
 el resto del mundo.
 
 110
-00:06:48,515 --> 00:06:52,785
+00:07:00,131 --> 00:07:05,573
 Y poco después, el gigante de los chocolates Mars anunció la compra de esa segunda
 
 111
-00:06:52,785 --> 00:06:55,493
+00:07:05,573 --> 00:07:09,025
 empresa por decenas de miles de millones de dólares.
 
 112
-00:06:55,833 --> 00:07:00,241
+00:07:09,365 --> 00:07:13,891
 Más de un siglo después de aquel trigo olvidado en un sanatorio, la historia de los
 
 113
-00:07:00,241 --> 00:07:02,207
+00:07:13,891 --> 00:07:15,908
 hermanos Kellogg sigue escribiéndose.
 
 114
-00:07:03,497 --> 00:07:06,167
+00:07:17,198 --> 00:07:20,101
 ¿Qué nos enseña esta historia? Tres cosas.
 
 115
-00:07:06,507 --> 00:07:11,092
+00:07:20,441 --> 00:07:25,874
 Una: inventar algo no te convierte en su dueño. Un paciente del sanatorio hizo
 
 116
-00:07:11,092 --> 00:07:13,972
+00:07:25,874 --> 00:07:29,287
 fortuna con los cereales antes que sus creadores.
 
 117
-00:07:14,312 --> 00:07:19,379
+00:07:29,627 --> 00:07:34,555
 Dos: un mismo producto puede ser una medicina o un negocio. Depende de quién lo
 
 118
-00:07:19,379 --> 00:07:19,699
+00:07:34,555 --> 00:07:34,867
 mire.
 
 119
-00:07:20,039 --> 00:07:24,870
+00:07:35,207 --> 00:07:40,061
 Y tres: las peleas familiares pueden durar más que las propias empresas. Los
 
 120
-00:07:24,870 --> 00:07:27,539
+00:07:40,061 --> 00:07:42,744
 hermanos Kellogg nunca hicieron las paces.
 
 121
-00:07:28,829 --> 00:07:33,941
+00:07:44,034 --> 00:07:50,049
 Un sanatorio, un médico de ideas extrañas, un hermano ignorado, un trigo olvidado y
 
 122
-00:07:33,941 --> 00:07:35,296
+00:07:50,049 --> 00:07:51,644
 una firma en una caja.
 
 123
-00:07:35,636 --> 00:07:39,932
+00:07:51,984 --> 00:07:55,706
 La próxima vez que eches leche a tus cereales, ya sabes cómo empezó todo.
 
 124
-00:07:40,272 --> 00:07:44,463
+00:07:56,046 --> 00:07:59,760
 Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
 
 125
-00:07:44,803 --> 00:07:48,669
+00:08:00,100 --> 00:08:03,326
 ¿Cuáles son tus cereales favoritos? Cuéntanoslo en los comentarios.
 
 126
-00:07:49,009 --> 00:07:50,983
+00:08:03,666 --> 00:08:05,423
 Y si te ha gustado, suscríbete.
 

@@ -1,544 +1,544 @@
 1
-00:00:00,500 --> 00:00:04,482
+00:00:00,500 --> 00:00:04,887
 Un pan blanco, blandito, en rebanadas iguales, que dura días en su bolsa.
 
 2
-00:00:04,822 --> 00:00:08,990
+00:00:05,227 --> 00:00:09,586
 En España, durante décadas, pedir pan de molde era casi lo mismo que pedir Bimbo.
 
 3
-00:00:09,330 --> 00:00:14,121
+00:00:09,926 --> 00:00:14,670
 Pero la marca no nació en España, sino en México. Y la crearon hijos de emigrantes
 
 4
-00:00:14,121 --> 00:00:14,706
+00:00:14,670 --> 00:00:15,248
 catalanes.
 
 5
-00:00:15,046 --> 00:00:19,005
+00:00:15,588 --> 00:00:19,710
 Su nombre salió de una mezcla de un juego de azar y un personaje de dibujos
 
 6
-00:00:19,005 --> 00:00:19,481
+00:00:19,710 --> 00:00:20,205
 animados.
 
 7
-00:00:19,821 --> 00:00:24,701
+00:00:20,545 --> 00:00:25,426
 Y la marca española y la mexicana estuvieron separadas durante décadas, hasta que
 
 8
-00:00:24,701 --> 00:00:25,846
+00:00:25,426 --> 00:00:26,570
 volvieron a unirse.
 
 9
-00:00:26,186 --> 00:00:30,438
+00:00:26,910 --> 00:00:31,485
 Esta es la historia de Bimbo. Hoy, según la propia empresa, la panificadora más
 
 10
-00:00:30,438 --> 00:00:31,353
+00:00:31,485 --> 00:00:32,469
 grande del mundo.
 
 11
-00:00:32,643 --> 00:00:37,164
+00:00:33,759 --> 00:00:38,005
 A principios del siglo veinte, muchos catalanes emigraron a América buscando una
 
 12
-00:00:37,164 --> 00:00:37,786
+00:00:38,005 --> 00:00:38,589
 vida mejor.
 
 13
-00:00:38,126 --> 00:00:42,854
+00:00:38,929 --> 00:00:44,133
 Uno de ellos, Juan Servitje, llegó a México y acabó montando una pastelería en la
 
 14
-00:00:42,854 --> 00:00:44,430
+00:00:44,133 --> 00:00:45,867
 capital, llamada El Molino.
 
 15
-00:00:44,770 --> 00:00:48,427
+00:00:46,207 --> 00:00:50,438
 Su hijo, Lorenzo Servitje, creció entre hornos, masas y repartos.
 
 16
-00:00:48,767 --> 00:00:53,009
+00:00:50,778 --> 00:00:55,401
 Cuando su padre murió, Lorenzo, todavía muy joven, tuvo que ponerse al frente del
 
 17
-00:00:53,009 --> 00:00:53,899
+00:00:55,401 --> 00:00:56,372
 negocio familiar.
 
 18
-00:00:54,239 --> 00:00:59,136
+00:00:56,712 --> 00:01:01,350
 Y empezó a darle vueltas a una idea: el pan que se vendía en México se ponía duro
 
 19
-00:00:59,136 --> 00:01:02,099
+00:01:01,350 --> 00:01:04,156
 enseguida, y no había casi pan de molde envasado.
 
 20
-00:01:02,439 --> 00:01:06,909
+00:01:04,496 --> 00:01:08,594
 En Estados Unidos, en cambio, el pan de molde en rebanadas ya era habitual.
 
 21
-00:01:08,199 --> 00:01:12,459
+00:01:09,884 --> 00:01:14,362
 Antes de seguir, una pregunta: ¿quién inventó el pan de molde en rebanadas?
 
 22
-00:01:12,879 --> 00:01:17,385
+00:01:14,782 --> 00:01:19,012
 El pan de molde existía desde hacía mucho, pero cortarlo en rebanadas iguales era
 
 23
-00:01:17,385 --> 00:01:17,941
+00:01:19,012 --> 00:01:19,535
 otra cosa.
 
 24
-00:01:18,281 --> 00:01:22,821
+00:01:19,875 --> 00:01:24,815
 En mil novecientos veintiocho, en un pequeño pueblo de Misuri, en Estados Unidos,
 
 25
-00:01:22,821 --> 00:01:27,360
+00:01:24,815 --> 00:01:29,755
 una panadería empezó a vender pan cortado con una máquina inventada por un joyero
 
 26
-00:01:27,360 --> 00:01:28,649
+00:01:29,755 --> 00:01:31,158
 llamado Otto Rohwedder.
 
 27
-00:01:28,989 --> 00:01:33,894
+00:01:31,498 --> 00:01:35,811
 La máquina cortaba la barra entera en rebanadas idénticas y después la envolvía para
 
 28
-00:01:33,894 --> 00:01:34,887
+00:01:35,811 --> 00:01:36,684
 que no se secara.
 
 29
-00:01:35,227 --> 00:01:39,939
+00:01:37,024 --> 00:01:41,627
 Al principio mucha gente desconfiaba: pensaban que el pan cortado se pondría duro
 
 30
-00:01:39,939 --> 00:01:40,521
+00:01:41,627 --> 00:01:42,196
 enseguida.
 
 31
-00:01:40,861 --> 00:01:45,746
+00:01:42,536 --> 00:01:48,262
 Pero tuvo tanto éxito que, en pocos años, la mayor parte del pan que se vendía en
 
 32
-00:01:45,746 --> 00:01:47,978
+00:01:48,262 --> 00:01:50,878
 Estados Unidos ya venía en rebanadas.
 
 33
-00:01:48,318 --> 00:01:52,906
+00:01:51,218 --> 00:01:55,882
 De ahí viene una expresión muy popular en inglés para decir que algo es fantástico:
 
 34
-00:01:52,906 --> 00:01:55,504
+00:01:55,882 --> 00:01:58,523
 es lo mejor desde el pan de molde en rebanadas.
 
 35
-00:01:55,844 --> 00:01:59,536
+00:01:58,863 --> 00:02:01,826
 Y esa era la idea que Lorenzo Servitje quería llevar a México.
 
 36
-00:02:00,826 --> 00:02:06,032
+00:02:03,116 --> 00:02:08,003
 Lorenzo reunió a un grupo de socios: su hermano Roberto, y amigos y familiares,
 
 37
-00:02:06,032 --> 00:02:10,974
+00:02:08,003 --> 00:02:12,642
 varios de ellos también de origen catalán, como Jaime Jorba o Jaime Sendra.
 
 38
-00:02:11,314 --> 00:02:16,044
+00:02:12,982 --> 00:02:17,665
 El dos de diciembre de mil novecientos cuarenta y cinco, en Ciudad de México, nació
 
 39
-00:02:16,044 --> 00:02:17,583
+00:02:17,665 --> 00:02:19,189
 su empresa de panificación.
 
 40
-00:02:17,923 --> 00:02:23,180
+00:02:19,529 --> 00:02:24,163
 Tenían un solo camión de reparto, unas pocas decenas de trabajadores y una fábrica
 
 41
-00:02:23,180 --> 00:02:23,693
+00:02:24,163 --> 00:02:24,615
 modesta.
 
 42
-00:02:24,033 --> 00:02:29,158
+00:02:24,955 --> 00:02:29,713
 Y una idea clara: un pan de calidad, envasado, que se mantuviera fresco varios días
 
 43
-00:02:29,158 --> 00:02:31,011
+00:02:29,713 --> 00:02:31,433
 y llegara a todas las tiendas.
 
 44
-00:02:31,351 --> 00:02:35,879
+00:02:31,773 --> 00:02:36,164
 Los primeros productos fueron el pan de molde blanco, el pan negro y el pan tostado.
 
 45
-00:02:37,169 --> 00:02:38,190
+00:02:37,454 --> 00:02:38,362
 Faltaba el nombre.
 
 46
-00:02:38,530 --> 00:02:42,478
+00:02:38,702 --> 00:02:42,976
 Se barajaron opciones como Pan Rex, Pan Lirio, Pan Nieve o Pan Azteca.
 
 47
-00:02:42,818 --> 00:02:44,594
+00:02:43,316 --> 00:02:44,872
 Pero ninguna convencía del todo.
 
 48
-00:02:44,934 --> 00:02:50,016
+00:02:45,212 --> 00:02:50,597
 Según la historia más repetida, el nombre final salió de mezclar dos palabras muy
 
 49
-00:02:50,016 --> 00:02:54,848
+00:02:50,597 --> 00:02:55,717
 populares entonces: Bingo, el juego, y Bambi, el cervatillo de la película de
 
 50
-00:02:54,848 --> 00:02:58,425
+00:02:55,717 --> 00:02:59,507
 dibujos animados que se había estrenado pocos años antes.
 
 51
-00:02:58,765 --> 00:03:02,851
+00:02:59,847 --> 00:03:04,411
 De ahí salió Bimbo: corto, sonoro, fácil de recordar y fácil de pronunciar.
 
 52
-00:03:03,191 --> 00:03:07,561
+00:03:04,751 --> 00:03:09,323
 Y además sonaba simpático, infantil, perfecto para un pan pensado para toda la
 
 53
-00:03:07,561 --> 00:03:08,010
+00:03:09,323 --> 00:03:09,792
 familia.
 
 54
-00:03:09,300 --> 00:03:11,610
+00:03:11,082 --> 00:03:13,034
 La marca necesitaba también una imagen.
 
 55
-00:03:11,950 --> 00:03:16,729
+00:03:13,374 --> 00:03:18,761
 Y la encontraron en una felicitación de Navidad: el dibujo de un pequeño oso, con
 
 56
-00:03:16,729 --> 00:03:18,440
+00:03:18,761 --> 00:03:20,690
 gorro de cocinero y delantal.
 
 57
-00:03:18,780 --> 00:03:22,988
+00:03:21,030 --> 00:03:26,045
 Las fuentes no coinciden en quién dibujó aquella felicitación. Pero el osito se
 
 58
-00:03:22,988 --> 00:03:24,852
+00:03:26,045 --> 00:03:28,268
 convirtió en la imagen de la marca.
 
 59
-00:03:25,192 --> 00:03:29,743
+00:03:28,608 --> 00:03:33,862
 Representaba lo que querían transmitir: un pan blandito, tierno, para los niños.
 
 60
-00:03:30,083 --> 00:03:34,245
+00:03:34,202 --> 00:03:38,375
 Con los años, el osito ha cambiado de estilo muchas veces, pero sigue ahí, en
 
 61
-00:03:34,245 --> 00:03:35,273
+00:03:38,375 --> 00:03:39,405
 millones de bolsas.
 
 62
-00:03:36,563 --> 00:03:40,742
+00:03:40,695 --> 00:03:44,512
 La clave del éxito de Bimbo no fue solo el pan. Fue la distribución.
 
 63
-00:03:41,082 --> 00:03:45,981
+00:03:44,852 --> 00:03:50,334
 La empresa organizó una red de repartidores que visitaban cada día miles de tiendas
 
 64
-00:03:45,981 --> 00:03:48,106
+00:03:50,334 --> 00:03:52,712
 pequeñas, las misceláneas de barrio.
 
 65
-00:03:48,446 --> 00:03:53,186
+00:03:53,052 --> 00:03:57,112
 Retiraban el pan que no se había vendido y dejaban pan fresco. Así, el cliente
 
 66
-00:03:53,186 --> 00:03:55,981
+00:03:57,112 --> 00:03:59,506
 siempre encontraba un producto en buen estado.
 
 67
-00:03:56,321 --> 00:04:01,208
+00:03:59,846 --> 00:04:05,187
 Ese sistema de reparto directo se convirtió en una de sus grandes ventajas frente a
 
 68
-00:04:01,208 --> 00:04:02,091
+00:04:05,187 --> 00:04:06,152
 la competencia.
 
 69
-00:04:02,431 --> 00:04:07,571
+00:04:06,492 --> 00:04:12,206
 Bimbo fue añadiendo pastelitos, magdalenas y bollería. Y empezó a crecer por todo
 
 70
-00:04:07,571 --> 00:04:08,016
+00:04:12,206 --> 00:04:12,700
 México.
 
 71
-00:04:09,306 --> 00:04:12,696
+00:04:13,990 --> 00:04:16,609
 Y aquí la historia da un salto al otro lado del Atlántico.
 
 72
-00:04:13,036 --> 00:04:17,701
+00:04:16,949 --> 00:04:20,824
 Jaime Jorba, uno de los socios fundadores, había trabajado durante años como
 
 73
-00:04:17,701 --> 00:04:20,524
+00:04:20,824 --> 00:04:23,169
 responsable de ventas de la empresa en México.
 
 74
-00:04:20,864 --> 00:04:25,430
+00:04:23,509 --> 00:04:29,247
 A principios de los años sesenta volvió a España. Y con dos socios decidió fabricar
 
 75
-00:04:25,430 --> 00:04:28,016
+00:04:29,247 --> 00:04:32,496
 allí el mismo tipo de pan, con el mismo nombre.
 
 76
-00:04:28,356 --> 00:04:33,090
+00:04:32,836 --> 00:04:37,289
 La primera fábrica se instaló en Granollers, cerca de Barcelona, y empezó a producir
 
 77
-00:04:33,090 --> 00:04:34,556
+00:04:37,289 --> 00:04:38,667
 a mediados de los sesenta.
 
 78
-00:04:34,896 --> 00:04:39,712
+00:04:39,007 --> 00:04:43,786
 En una España donde el pan se compraba cada día en la panadería, la idea de un pan
 
 79
-00:04:39,712 --> 00:04:42,825
+00:04:43,786 --> 00:04:46,874
 envasado que duraba varios días era toda una novedad.
 
 80
-00:04:43,165 --> 00:04:47,462
+00:04:47,214 --> 00:04:51,337
 Y para muchas familias se convirtió en el pan de los bocadillos del colegio y de las
 
 81
-00:04:47,462 --> 00:04:48,587
+00:04:51,337 --> 00:04:52,416
 tostadas del desayuno.
 
 82
-00:04:48,927 --> 00:04:54,127
+00:04:52,756 --> 00:04:57,640
 Pero ojo: aquella empresa española era independiente de la mexicana. Compartían
 
 83
-00:04:54,127 --> 00:04:57,286
+00:04:57,640 --> 00:05:00,608
 nombre y origen, pero no eran la misma compañía.
 
 84
-00:04:58,576 --> 00:05:02,268
+00:05:01,898 --> 00:05:05,842
 Durante décadas, las dos empresas siguieron caminos distintos.
 
 85
-00:05:02,608 --> 00:05:07,025
+00:05:06,182 --> 00:05:11,289
 La española pasó por varios dueños. Primero se asoció con una gran panificadora
 
 86
-00:05:07,025 --> 00:05:09,597
+00:05:11,289 --> 00:05:14,262
 estadounidense, que acabó haciéndose con ella.
 
 87
-00:05:09,937 --> 00:05:14,036
+00:05:14,602 --> 00:05:18,452
 Más tarde, la filial pasó a manos del grupo estadounidense Sara Lee.
 
 88
-00:05:14,376 --> 00:05:18,799
+00:05:18,792 --> 00:05:23,122
 Mientras tanto, la mexicana se convirtió en un gigante en toda Latinoamérica.
 
 89
-00:05:19,139 --> 00:05:23,152
+00:05:23,462 --> 00:05:27,585
 Y en dos mil ocho dio un gran salto: compró uno de los principales negocios de
 
 90
-00:05:23,152 --> 00:05:24,747
+00:05:27,585 --> 00:05:29,224
 panificación de Estados Unidos.
 
 91
-00:05:25,087 --> 00:05:29,380
+00:05:29,564 --> 00:05:33,726
 La hija mexicana del pan de molde ya era más grande que muchas de las empresas que
 
 92
-00:05:29,380 --> 00:05:30,427
+00:05:33,726 --> 00:05:34,741
 la habían inspirado.
 
 93
-00:05:31,717 --> 00:05:35,698
+00:05:36,031 --> 00:05:39,978
 Para entender el final de esta historia hay que hablar de otro gran nombre de la
 
 94
-00:05:35,698 --> 00:05:36,593
+00:05:39,978 --> 00:05:40,865
 bollería española.
 
 95
-00:05:36,933 --> 00:05:42,117
+00:05:41,205 --> 00:05:46,289
 A principios de los años sesenta, un empresario catalán, Andreu Costafreda, viajó a
 
 96
-00:05:42,117 --> 00:05:47,363
+00:05:46,289 --> 00:05:51,434
 Estados Unidos y descubrió los dónuts, aquellos bollos redondos con un agujero en el
 
 97
-00:05:47,363 --> 00:05:47,800
+00:05:51,434 --> 00:05:51,863
 centro.
 
 98
-00:05:48,140 --> 00:05:52,859
+00:05:52,203 --> 00:05:56,417
 A su vuelta creó en España la empresa Panrico, y empezó a fabricar dónuts envasados,
 
 99
-00:05:52,859 --> 00:05:55,106
+00:05:56,417 --> 00:05:58,424
 que se vendían en las tiendas de barrio.
 
 100
-00:05:55,446 --> 00:05:59,493
+00:05:58,764 --> 00:06:02,772
 Con los años, Panrico lanzó otros bollos que se convirtieron en clásicos de la
 
 101
-00:05:59,493 --> 00:06:00,427
+00:06:02,772 --> 00:06:03,697
 merienda infantil.
 
 102
-00:06:00,767 --> 00:06:05,606
+00:06:04,037 --> 00:06:08,785
 Durante décadas, Bimbo y Panrico fueron grandes rivales en los lineales españoles:
 
 103
-00:06:05,606 --> 00:06:09,974
+00:06:08,785 --> 00:06:13,070
 el pan de molde contra los dónuts, y una competencia feroz en la bollería.
 
 104
-00:06:10,314 --> 00:06:15,004
+00:06:13,410 --> 00:06:18,444
 Panrico vivió después años muy difíciles, con cambios de dueño, deudas y fuertes
 
 105
-00:06:15,004 --> 00:06:16,235
+00:06:18,444 --> 00:06:19,766
 conflictos laborales.
 
 106
-00:06:17,525 --> 00:06:19,498
+00:06:21,056 --> 00:06:23,038
 Y entonces, el círculo se cerró.
 
 107
-00:06:19,838 --> 00:06:24,260
+00:06:23,378 --> 00:06:27,213
 A principios de la década de dos mil diez, el Grupo Bimbo mexicano compró los
 
 108
-00:06:24,260 --> 00:06:26,212
+00:06:27,213 --> 00:06:28,907
 negocios de panadería de Sara Lee.
 
 109
-00:06:26,552 --> 00:06:29,118
+00:06:29,247 --> 00:06:31,760
 Entre ellos estaba el Bimbo de España y Portugal.
 
 110
-00:06:29,458 --> 00:06:34,328
+00:06:32,100 --> 00:06:36,478
 Casi cincuenta años después de que Jaime Jorba volviera de México, las dos marcas
 
 111
-00:06:34,328 --> 00:06:36,854
+00:06:36,478 --> 00:06:38,749
 Bimbo volvían a estar bajo el mismo techo.
 
 112
-00:06:37,194 --> 00:06:39,620
+00:06:39,089 --> 00:06:41,080
 Y la historia tenía un último giro español.
 
 113
-00:06:39,960 --> 00:06:45,186
+00:06:41,420 --> 00:06:46,564
 En dos mil dieciséis, Grupo Bimbo compró también a su gran rival en España: Panrico,
 
 114
-00:06:45,186 --> 00:06:47,240
+00:06:46,564 --> 00:06:48,584
 la empresa de los famosos dónuts.
 
 115
-00:06:47,580 --> 00:06:51,692
+00:06:48,924 --> 00:06:53,030
 Las dos marcas de la merienda de varias generaciones de españoles acabaron en la
 
 116
-00:06:51,692 --> 00:06:52,874
+00:06:53,030 --> 00:06:54,210
 misma empresa mexicana.
 
 117
-00:06:54,164 --> 00:06:58,463
+00:06:55,500 --> 00:07:00,032
 Hoy Grupo Bimbo está presente en decenas de países de América, Europa, Asia y
 
 118
-00:06:58,463 --> 00:06:58,854
+00:07:00,032 --> 00:07:00,444
 África.
 
 119
-00:06:59,194 --> 00:07:02,224
+00:07:00,784 --> 00:07:03,803
 Tiene cientos de fábricas y más de cien mil trabajadores.
 
 120
-00:07:02,564 --> 00:07:06,210
+00:07:04,143 --> 00:07:07,609
 Y, según la propia empresa, es la panificadora más grande del mundo.
 
 121
-00:07:06,550 --> 00:07:09,081
+00:07:07,949 --> 00:07:10,586
 La familia Servitje sigue vinculada a su dirección.
 
 122
-00:07:09,421 --> 00:07:13,733
+00:07:10,926 --> 00:07:15,789
 Lorenzo Servitje murió en dos mil diecisiete, con noventa y ocho años. Había
 
 123
-00:07:13,733 --> 00:07:15,946
+00:07:15,789 --> 00:07:18,285
 empezado con un solo camión de reparto.
 
 124
-00:07:17,236 --> 00:07:19,964
+00:07:19,575 --> 00:07:22,359
 ¿Qué nos enseña esta historia? Tres cosas.
 
 125
-00:07:20,304 --> 00:07:24,929
+00:07:22,699 --> 00:07:28,532
 Una: a veces la oportunidad está en algo tan sencillo como que el pan no se ponga
 
 126
-00:07:24,929 --> 00:07:25,215
+00:07:28,532 --> 00:07:28,892
 duro.
 
 127
-00:07:25,555 --> 00:07:30,405
+00:07:29,232 --> 00:07:34,070
 Dos: el producto importa, pero la distribución puede importar todavía más. Bimbo
 
 128
-00:07:30,405 --> 00:07:32,103
+00:07:34,070 --> 00:07:35,763
 ganó México tienda a tienda.
 
 129
-00:07:32,443 --> 00:07:37,584
+00:07:36,103 --> 00:07:41,266
 Y tres: las marcas también emigran y vuelven. Un pan nacido de catalanes en México
 
 130
-00:07:37,584 --> 00:07:40,907
+00:07:41,266 --> 00:07:44,604
 regresó a España… y acabó reuniéndose con su hermano.
 
 131
-00:07:42,197 --> 00:07:46,459
+00:07:45,894 --> 00:07:50,261
 Unos emigrantes catalanes, una pastelería en México, un juego de bingo, un
 
 132
-00:07:46,459 --> 00:07:49,685
+00:07:50,261 --> 00:07:53,566
 cervatillo de película y un osito con gorro de cocinero.
 
 133
-00:07:50,025 --> 00:07:53,369
+00:07:53,906 --> 00:07:56,970
 La próxima vez que hagas una tostada, ya sabes de dónde viene.
 
 134
-00:07:53,709 --> 00:07:57,853
+00:07:57,310 --> 00:08:01,243
 Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
 
 135
-00:07:58,193 --> 00:08:02,083
+00:08:01,583 --> 00:08:05,585
 ¿Cuál era tu bocadillo del colegio? Cuéntanoslo en los comentarios.
 
 136
-00:08:02,423 --> 00:08:04,304
+00:08:05,925 --> 00:08:07,687
 Y si te ha gustado, suscríbete.
 

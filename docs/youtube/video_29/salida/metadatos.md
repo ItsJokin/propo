@@ -1,6 +1,6 @@
 # Bimbo: el pan de molde que nació de unos catalanes en México: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_29_Bimbo.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:21 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_29_Bimbo.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:24 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,19 +14,19 @@ Bimbo nació el 2 de diciembre de 1945 en Ciudad de México, fundada por Lorenzo
 
 ⏱ Capítulos
 00:00 Introducción
-00:32 1. Una pastelería en México
-01:07 2. El mejor invento desde…
-02:00 3. Seis socios
+00:33 1. Una pastelería en México
+01:09 2. El mejor invento desde…
+02:02 3. Seis socios
 02:36 4. Bingo más Bambi
-03:08 5. El osito
-03:36 6. La conquista de México
-04:08 7. El Bimbo español
-04:58 8. Caminos separados
-05:31 9. La guerra de la merienda
-06:17 10. La reunificación
-06:53 11. El gigante del pan
-07:16 12. Lo que nos enseña
-07:41 Final
+03:10 5. El osito
+03:40 6. La conquista de México
+04:13 7. El Bimbo español
+05:01 8. Caminos separados
+05:35 9. La guerra de la merienda
+06:20 10. La reunificación
+06:55 11. El gigante del pan
+07:19 12. Lo que nos enseña
+07:45 Final
 
 📚 Fuentes
 - Grupo Bimbo, «Historia» (web oficial): https://grupobimbo.com/en/about-us/history
