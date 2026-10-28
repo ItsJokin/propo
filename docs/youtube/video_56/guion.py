@@ -26,7 +26,7 @@ SEGMENTOS = [
         "Fue un éxito. Tanto que aquel obrador se convirtió en la empresa Ferrero.",
         "Pero Pietro murió muy pronto, en mil novecientos cuarenta y nueve. Y el negocio quedó en manos de la familia. Con el tiempo, su hijo Michele acabaría al frente.",
     ], [("cap2", 0, -0.6), ("fr_pietro", 0, 1.0), ("fr_1946", 1, 0), ("fr_cuchillo", 2, 0), ("fr_exito", 3, 0), ("fr_michele", 4, 0)]),
-    ("3. De la pasta a la crema", [
+    ("3. Nace la crema", [
         "La familia siguió mejorando la receta. A principios de los años cincuenta, la pasta pasó a ser una crema que se podía untar directamente.",
         "Y en mil novecientos sesenta y cuatro, Michele Ferrero le dio un nuevo nombre y un nuevo bote, pensado para venderse en toda Europa: Nutella.",
         "El resto es historia. Nutella se convirtió en una de las marcas más famosas del mundo, y Ferrero en uno de los mayores grupos de dulces del planeta.",

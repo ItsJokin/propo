@@ -1,0 +1,512 @@
+1
+00:00:00,500 --> 00:00:03,507
+Bienvenido al especial de Navidad de Código de Barras.
+
+2
+00:00:03,847 --> 00:00:08,644
+Dasher, Dancer, Prancer, Vixen… y el más famoso de todos: Rodolfo, el reno de la
+
+3
+00:00:08,644 --> 00:00:09,304
+nariz roja.
+
+4
+00:00:09,644 --> 00:00:13,636
+Parece una leyenda antiquísima, de esas que pasan de abuelos a nietos desde hace
+
+5
+00:00:13,636 --> 00:00:13,986
+siglos.
+
+6
+00:00:14,326 --> 00:00:18,776
+Pero no. Rodolfo tiene fecha de nacimiento, tiene autor y tiene dueño. Nació en mil
+
+7
+00:00:18,776 --> 00:00:23,173
+novecientos treinta y nueve, en las oficinas de unos grandes almacenes de Chicago.
+
+8
+00:00:23,513 --> 00:00:28,359
+Fue, literalmente, un regalo promocional. Y detrás de su historia hay una tienda, un
+
+9
+00:00:28,359 --> 00:00:33,091
+hombre que lo estaba pasando muy mal y un cuñado con muy buen oído para la música.
+
+10
+00:00:33,431 --> 00:00:37,761
+Hoy te contamos cómo un redactor de publicidad inventó al reno más famoso del mundo.
+
+11
+00:00:39,051 --> 00:00:43,797
+Empecemos por la tienda. Montgomery Ward era una de las grandes cadenas de venta de
+
+12
+00:00:43,797 --> 00:00:45,855
+Estados Unidos, con sede en Chicago.
+
+13
+00:00:46,195 --> 00:00:50,990
+Había nacido como un negocio de venta por catálogo: la gente del campo elegía en un
+
+14
+00:00:50,990 --> 00:00:53,532
+libro lo que quería y lo recibía por correo.
+
+15
+00:00:53,872 --> 00:00:57,158
+Con los años abrió cientos de grandes almacenes por todo el país.
+
+16
+00:00:57,498 --> 00:01:02,441
+Y cada Navidad tenía una costumbre: regalar a los niños que iban con sus padres un
+
+17
+00:01:02,441 --> 00:01:03,767
+librito para colorear.
+
+18
+00:01:04,107 --> 00:01:09,435
+Era un detalle barato que atraía familias a la tienda. Pero había un problema: esos
+
+19
+00:01:09,435 --> 00:01:12,966
+libritos se compraban a otras empresas, y salían caros.
+
+20
+00:01:13,306 --> 00:01:17,569
+Así que a finales de los años treinta, la empresa tuvo una idea para ahorrar: ¿y si
+
+21
+00:01:17,569 --> 00:01:19,111
+hacemos nuestro propio cuento?
+
+22
+00:01:20,481 --> 00:01:24,985
+El encargo fue para uno de sus redactores de publicidad: Robert L. May.
+
+23
+00:01:25,325 --> 00:01:30,168
+May escribía los textos de los catálogos. Y según contó él mismo años después, no se
+
+24
+00:01:30,168 --> 00:01:32,129
+sentía precisamente un triunfador.
+
+25
+00:01:32,469 --> 00:01:37,148
+De niño había sido bajito, tímido y el más pequeño de la clase. Se sentía distinto a
+
+26
+00:01:37,148 --> 00:01:37,705
+los demás.
+
+27
+00:01:38,045 --> 00:01:43,371
+Y en casa, la situación era muy dura: su mujer estaba gravemente enferma. Murió ese
+
+28
+00:01:43,371 --> 00:01:46,323
+mismo año, mientras él trabajaba en el cuento.
+
+29
+00:01:46,663 --> 00:01:50,928
+May tenía una hija pequeña, Barbara. Y, según se cuenta, iba probando la historia
+
+30
+00:01:50,928 --> 00:01:53,350
+con ella, leyéndole cada parte por las noches.
+
+31
+00:01:53,690 --> 00:01:58,220
+Quería que el protagonista fuera alguien con quien él mismo pudiera identificarse:
+
+32
+00:01:58,220 --> 00:02:00,761
+un personaje diferente, del que todos se ríen.
+
+33
+00:02:02,051 --> 00:02:05,754
+Como era un cuento de Navidad, pensó en los renos de Papá Noel.
+
+34
+00:02:06,094 --> 00:02:11,406
+Su protagonista sería un reno joven con una nariz roja y brillante. Los demás renos
+
+35
+00:02:11,406 --> 00:02:13,966
+se burlaban de él y no le dejaban jugar.
+
+36
+00:02:14,306 --> 00:02:18,869
+Hasta que una Nochebuena llega una niebla tan espesa que Papá Noel no puede ver el
+
+37
+00:02:18,869 --> 00:02:22,375
+camino. Y descubre que la nariz de aquel reno ilumina el cielo.
+
+38
+00:02:22,715 --> 00:02:26,942
+Lo que le hacía distinto se convierte en lo que le hace especial. Rodolfo guía el
+
+39
+00:02:26,942 --> 00:02:28,299
+trineo y salva la Navidad.
+
+40
+00:02:28,639 --> 00:02:33,742
+Según se cuenta, a su jefe no le convenció la idea al principio: en aquella época,
+
+41
+00:02:33,742 --> 00:02:36,418
+una nariz roja se asociaba a los borrachos.
+
+42
+00:02:36,758 --> 00:02:41,635
+Para convencerle, May pidió ayuda a un compañero del departamento de arte, Denver
+
+43
+00:02:41,635 --> 00:02:46,152
+Gillen, que fue al zoo de Chicago a dibujar ciervos. Sus dibujos de un reno
+
+44
+00:02:46,152 --> 00:02:48,681
+simpático y tierno acabaron con las dudas.
+
+45
+00:02:49,021 --> 00:02:53,930
+Y el nombre tampoco fue el primero. Según se cuenta, May barajó otros, como Rollo o
+
+46
+00:02:53,930 --> 00:02:58,483
+Reginald, antes de quedarse con Rudolph. En España lo conocemos como Rodolfo.
+
+47
+00:02:59,773 --> 00:03:04,514
+El cuento se tituló Rudolph the Red-Nosed Reindeer. Estaba escrito en verso, como el
+
+48
+00:03:04,514 --> 00:03:06,263
+famoso poema de los ocho renos.
+
+49
+00:03:06,603 --> 00:03:11,463
+En la Navidad de mil novecientos treinta y nueve, Montgomery Ward repartió gratis
+
+50
+00:03:11,463 --> 00:03:15,183
+unos dos millones cuatrocientos mil ejemplares en sus tiendas.
+
+51
+00:03:15,523 --> 00:03:20,052
+Fue un éxito enorme. Los niños querían el cuento y los padres volvían a la tienda a
+
+52
+00:03:20,052 --> 00:03:20,434
+por él.
+
+53
+00:03:20,774 --> 00:03:24,885
+Después llegó la Segunda Guerra Mundial, y la escasez de papel frenó las
+
+54
+00:03:24,885 --> 00:03:25,685
+reimpresiones.
+
+55
+00:03:26,025 --> 00:03:31,150
+Pero en mil novecientos cuarenta y seis, la empresa volvió a imprimirlo. Y repartió
+
+56
+00:03:31,150 --> 00:03:32,817
+millones de ejemplares más.
+
+57
+00:03:33,157 --> 00:03:38,551
+Rodolfo ya era un personaje famoso. Pero había un detalle: no era de su autor. Era
+
+58
+00:03:38,551 --> 00:03:39,473
+de la empresa.
+
+59
+00:03:40,763 --> 00:03:45,212
+Robert May lo había escrito como parte de su trabajo. Así que los derechos eran de
+
+60
+00:03:45,212 --> 00:03:46,080
+Montgomery Ward.
+
+61
+00:03:46,420 --> 00:03:51,276
+May, viudo y con deudas por los gastos médicos de su mujer, no había ganado nada
+
+62
+00:03:51,276 --> 00:03:53,583
+extra con el reno más famoso del país.
+
+63
+00:03:53,923 --> 00:03:58,590
+En mil novecientos cuarenta y siete pidió algo poco habitual: que la empresa le
+
+64
+00:03:58,590 --> 00:04:00,657
+cediera los derechos del personaje.
+
+65
+00:04:00,997 --> 00:04:05,873
+Para la empresa, el cuento ya había cumplido su función: había atraído a millones de
+
+66
+00:04:05,873 --> 00:04:07,208
+familias a sus tiendas.
+
+67
+00:04:07,548 --> 00:04:12,595
+Y el presidente de Montgomery Ward, Sewell Avery, aceptó. Le traspasó los derechos
+
+68
+00:04:12,595 --> 00:04:13,272
+de Rodolfo.
+
+69
+00:04:13,612 --> 00:04:18,765
+Fue un gesto muy generoso. Y para May, le cambió la vida: a partir de entonces, todo
+
+70
+00:04:18,765 --> 00:04:20,973
+lo que ganara Rodolfo sería para él.
+
+71
+00:04:21,313 --> 00:04:26,070
+Ese mismo año se publicó una versión comercial del cuento. Pero lo mejor estaba por
+
+72
+00:04:26,070 --> 00:04:27,617
+llegar. Y llegó con música.
+
+73
+00:04:28,907 --> 00:04:32,402
+Robert May tenía un cuñado compositor: Johnny Marks.
+
+74
+00:04:32,742 --> 00:04:37,336
+Marks convirtió el cuento en una canción, con aquella melodía que hoy conoce todo el
+
+75
+00:04:37,336 --> 00:04:37,664
+mundo.
+
+76
+00:04:38,004 --> 00:04:41,824
+Se la ofreció a varios cantantes famosos. Algunos la rechazaron.
+
+77
+00:04:42,164 --> 00:04:46,440
+Hasta que llegó a Gene Autry, un cantante de música country muy popular, conocido
+
+78
+00:04:46,440 --> 00:04:47,760
+como el vaquero cantante.
+
+79
+00:04:48,100 --> 00:04:52,498
+Según se cuenta, a Autry no le gustaba mucho la canción. Pero su mujer le convenció
+
+80
+00:04:52,498 --> 00:04:55,995
+de que la grabara, porque le recordaba la historia del patito feo.
+
+81
+00:04:56,335 --> 00:05:00,888
+La grabó en mil novecientos cuarenta y nueve. Y en las Navidades de ese año llegó al
+
+82
+00:05:00,888 --> 00:05:03,219
+número uno de las listas de Estados Unidos.
+
+83
+00:05:03,559 --> 00:05:08,065
+Con los años se convirtió en una de las canciones más vendidas de la historia. Se
+
+84
+00:05:08,065 --> 00:05:12,069
+han grabado cientos de versiones, en muchos idiomas, también en español.
+
+85
+00:05:13,359 --> 00:05:17,794
+Faltaba el último paso para que Rodolfo fuera inmortal: la televisión.
+
+86
+00:05:18,134 --> 00:05:23,551
+En mil novecientos sesenta y cuatro, una productora llamada Rankin/Bass estrenó un
+
+87
+00:05:23,551 --> 00:05:25,994
+especial de televisión sobre Rodolfo.
+
+88
+00:05:26,334 --> 00:05:31,731
+No eran dibujos animados normales. Era animación con muñecos, fotograma a fotograma:
+
+89
+00:05:31,731 --> 00:05:35,843
+movían un poco las figuras, hacían una foto, y vuelta a empezar.
+
+90
+00:05:36,183 --> 00:05:41,003
+El especial añadía personajes nuevos, como un elfo que no quería hacer juguetes y
+
+91
+00:05:41,003 --> 00:05:44,275
+quería ser dentista, o una isla de juguetes rechazados.
+
+92
+00:05:44,615 --> 00:05:49,409
+Y se convirtió en una tradición. En Estados Unidos se emite cada Navidad desde hace
+
+93
+00:05:49,409 --> 00:05:53,741
+décadas. Es uno de los especiales navideños que más tiempo lleva en antena.
+
+94
+00:05:54,081 --> 00:05:59,084
+Para muchas familias estadounidenses, la Navidad empieza cuando lo ponen en la tele.
+
+95
+00:06:00,374 --> 00:06:03,289
+Hay un detalle que demuestra hasta qué punto triunfó Rodolfo.
+
+96
+00:06:03,629 --> 00:06:08,458
+En el poema de mil ochocientos veintitrés, Papá Noel tenía ocho renos. Ni uno más.
+
+97
+00:06:08,798 --> 00:06:13,654
+Rodolfo se coló en la lista más de un siglo después. Y hoy, cuando alguien enumera
+
+98
+00:06:13,654 --> 00:06:17,622
+los renos de Papá Noel, casi siempre lo incluye: es el noveno reno.
+
+99
+00:06:17,962 --> 00:06:22,315
+Muchos ni siquiera recuerdan el nombre de los otros ocho. Pero a Rodolfo lo conoce
+
+100
+00:06:22,315 --> 00:06:23,059
+todo el mundo.
+
+101
+00:06:23,399 --> 00:06:27,946
+Un personaje creado para unos grandes almacenes acabó metido en la tradición, como
+
+102
+00:06:27,946 --> 00:06:29,610
+si siempre hubiera estado ahí.
+
+103
+00:06:30,900 --> 00:06:33,187
+Y la tienda que lo creó, ¿qué fue de ella?
+
+104
+00:06:33,607 --> 00:06:38,379
+Montgomery Ward fue perdiendo terreno frente a otras cadenas. Y a principios de los
+
+105
+00:06:38,379 --> 00:06:40,736
+años dos mil cerró sus grandes almacenes.
+
+106
+00:06:41,076 --> 00:06:45,923
+Es curioso: la empresa desapareció de las calles, pero su regalo promocional sigue
+
+107
+00:06:45,923 --> 00:06:46,219
+vivo.
+
+108
+00:06:46,559 --> 00:06:51,105
+Rodolfo aparece en películas, juguetes, jerseys navideños, adornos y anuncios. Y
+
+109
+00:06:51,105 --> 00:06:54,628
+cada vez que se usa, alguien tiene que pagar por los derechos.
+
+110
+00:06:54,968 --> 00:06:59,515
+Robert May dejó su trabajo de redactor unos años después del éxito. Y dedicó buena
+
+111
+00:06:59,515 --> 00:07:01,678
+parte de su vida a gestionar a su reno.
+
+112
+00:07:02,018 --> 00:07:06,400
+Un librito para colorear que la tienda quería hacer para ahorrar dinero acabó siendo
+
+113
+00:07:06,400 --> 00:07:09,007
+uno de los personajes más rentables de la Navidad.
+
+114
+00:07:10,297 --> 00:07:12,933
+¿Qué nos enseña esta historia? Tres cosas.
+
+115
+00:07:13,273 --> 00:07:18,353
+Una: las mejores historias de marca no hablan del producto. El cuento de Rodolfo no
+
+116
+00:07:18,353 --> 00:07:21,597
+vendía nada, pero llevaba a las familias a la tienda.
+
+117
+00:07:21,937 --> 00:07:26,978
+Dos: lo que te hace diferente puede ser tu mayor fuerza. Le pasó a Rodolfo, y le
+
+118
+00:07:26,978 --> 00:07:27,986
+pasó a su autor.
+
+119
+00:07:28,326 --> 00:07:33,030
+Y tres: si creas algo de valor, piensa en quién es el dueño. Robert May tuvo la
+
+120
+00:07:33,030 --> 00:07:37,138
+suerte de recuperar a su personaje. Muchos creadores nunca la tienen.
+
+121
+00:07:38,428 --> 00:07:43,218
+Unos grandes almacenes, un redactor tímido, una niña que escuchaba el cuento por las
+
+122
+00:07:43,218 --> 00:07:46,125
+noches, un cuñado compositor y un vaquero cantante.
+
+123
+00:07:46,465 --> 00:07:51,220
+Así nació el reno más famoso del mundo. No en el Polo Norte, sino en una oficina de
+
+124
+00:07:51,220 --> 00:07:51,678
+Chicago.
+
+125
+00:07:52,018 --> 00:07:56,179
+Esto es Código de Barras: la historia que no conoces de lo que tienes en casa. Y
+
+126
+00:07:56,179 --> 00:07:58,311
+este ha sido nuestro especial de Navidad.
+
+127
+00:07:58,651 --> 00:08:02,610
+¿Cuál es tu canción de Navidad favorita? Cuéntanoslo en los comentarios.
+
+128
+00:08:02,950 --> 00:08:04,924
+Y si te ha gustado, suscríbete.
+

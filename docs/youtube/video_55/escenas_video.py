@@ -1,13 +1,17 @@
 """Escenas del vídeo 55 (especial Navidad: el cava, Codorníu y Freixenet). Motor común; sin logotipos ni etiquetas reales: botellas genéricas."""
 from base import *
+import itertools
+
+_ids = itertools.count()
 
 CAP_ICONOS = {1: "1f4dc", 2: "1f41b", 3: "26ea", 4: "1f3e1", 5: "1f37e", 6: "1f4fa", 7: "1f1eb-1f1f7", 8: "1f30d", 9: "1f9e0"}
 
 def botella(color="#1f5a3a", w=150, d=.2, esmerilada=False):
     """Botella de espumoso genérica, sin etiqueta de marca."""
+    uid = next(_ids)
     an = "" if d is None else f"animation:ePop .5s ease {d}s both;"
-    vidrio = "url(#esm)" if esmerilada else color
-    return (f'<svg width="{w}" height="{w*2.6:.0f}" viewBox="0 0 100 260" style="{an}"><defs><linearGradient id="esm" x1="0" x2="1"><stop offset="0" stop-color="#e9eef2"/>'
+    vidrio = f"url(#esm{uid})" if esmerilada else color
+    return (f'<svg width="{w}" height="{w*2.6:.0f}" viewBox="0 0 100 260" style="{an}"><defs><linearGradient id="esm{uid}" x1="0" x2="1"><stop offset="0" stop-color="#e9eef2"/>'
             f'<stop offset=".5" stop-color="#ffffff"/><stop offset="1" stop-color="#d9e1e7"/></linearGradient></defs>'
             f'<path d="M40,8 L60,8 L60,70 Q86,92 86,130 L86,248 Q86,256 78,256 L22,256 Q14,256 14,248 L14,130 Q14,92 40,70Z" fill="{vidrio}" stroke="{TINTA}" stroke-width="4"/>'
             f'<path d="M38,4 L62,4 L62,48 L38,48Z" fill="#d6b24a" stroke="{TINTA}" stroke-width="3"/>'

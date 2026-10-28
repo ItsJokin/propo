@@ -1,0 +1,64 @@
+# Especial Navidad: Rodolfo, el reno que nació en unos grandes almacenes: metadatos para subir a YouTube
+
+**Archivo:** `Codigo_de_Barras_47_Rodolfo_el_reno.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:21 · audio normalizado a −14 LUFS
+**Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
+
+## Título (recomendado el primero)
+1. Especial Navidad: Rodolfo, el reno que nació en unos grandes almacenes
+2. Especial Navidad: la historia de Rodolfo, el reno de la nariz roja
+3. Especial Navidad: el reno que inventó un redactor de publicidad
+
+## Descripción (copiar y pegar)
+```
+Especial Navidad de Código de Barras. Rodolfo, el reno de la nariz roja, no es una leyenda antigua: lo inventó en 1939 Robert L. May, redactor de los grandes almacenes Montgomery Ward de Chicago, para un cuento promocional que la tienda regalaba a los niños. Repartieron 2,4 millones de ejemplares. Después llegaron los derechos cedidos por la empresa, la canción de su cuñado Johnny Marks, la versión de Gene Autry y el especial de televisión de 1964.
+
+⏱ Capítulos
+00:00 Introducción
+00:38 1. Unos grandes almacenes
+01:19 2. El redactor tímido
+02:01 3. Un reno diferente
+02:59 4. Dos millones de cuentos
+03:40 5. Un regalo del jefe
+04:28 6. La canción de un cuñado
+05:12 7. Muñecos que se mueven
+05:59 8. El noveno reno
+06:30 9. Una marca que no envejece
+07:09 10. Lo que nos enseña
+07:37 Final
+
+📚 Fuentes
+- Smithsonian, «Montgomery Ward Department Store “Rudolph the Red-Nosed Reindeer” Book, 1939»: https://newsdesk.si.edu/snapshot/rudolph-red-nosed-reindeer
+- Wikipedia, «Robert L. May»: https://en.wikipedia.org/wiki/Robert_L._May
+- Wikipedia, «Rudolph, the Red-Nosed Reindeer (song)»: https://en.wikipedia.org/wiki/Rudolph,_the_Red-Nosed_Reindeer_(song)
+- Mental Floss, «12 very shiny facts about Rudolph the Red-Nosed Reindeer»: https://www.mentalfloss.com/holidays/christmas/12-very-shiny-facts-about-rudolph-red-nosed-reindeer
+- Dartmouth, «Rudolph the Red-Nosed Reindeer shines at Dartmouth» (2011): https://home.dartmouth.edu/news/2011/12/rudolph-red-nosed-reindeer-shines-dartmouth
+- Chicago History Museum, blog sobre Rudolph y Montgomery Ward: https://www.chicagohistory.org/?p=135027
+- Encyclopedia.com, «Rudolph the Red-Nosed Reindeer»: https://www.encyclopedia.com/media/encyclopedias-almanacs-transcripts-and-maps/rudolph-red-nosed-reindeer
+
+Nota: las dudas del jefe por la nariz roja, los nombres descartados, la lectura a su hija y el papel de la mujer de Gene Autry proceden de relatos posteriores y se cuentan como tales.
+
+ℹ️ Este vídeo no está patrocinado por ninguna de las marcas mencionadas. Las ilustraciones son propias; no se usan logotipos originales.
+🤖 Guion elaborado con asistencia de IA y revisado por una persona. Narración con voz sintética de ElevenLabs.
+🎨 Ilustraciones 3D: Fluent Emoji © Microsoft (licencia MIT). Música y efectos: creación propia.
+
+Código de Barras: la historia que no conoces de lo que tienes en casa. Nuevas historias cada semana.
+💬 ¿Qué marca quieres que investiguemos? Déjala en los comentarios.
+
+#EspecialNavidad #RodolfoElReno #HistoriaDeMarcas
+```
+
+## Etiquetas
+especial navidad, rodolfo el reno, rudolph the red-nosed reindeer, reno nariz roja, montgomery ward, robert l may, johnny marks, gene autry, rankin bass, historia de marcas, código de barras
+
+## Ajustes en YouTube Studio
+- **Público:** "No, no es contenido creado para niños".
+- **Contenido alterado o sintético:** No (narración evidente que no imita a ninguna persona real; ilustraciones no realistas).
+- **Promoción pagada:** No · **Categoría:** Educación · **Idioma:** Español (España). Sube `subtitulos_es.srt`.
+- **Pantalla final:** "Vídeo más reciente" sobre el rectángulo de la izquierda y el botón de suscripción sobre el círculo de la derecha (últimos 15 s).
+- **Lista de reproducción:** Especial Navidad.
+- **Comentario fijado:** "¿Qué marca investigamos el mes que viene? Las 3 más votadas entran en la encuesta 👇"
+
+## Revisión antes de publicar
+- [ ] Ver el vídeo entero con sonido: que la imagen cuadre con la voz en los cambios de escena.
+- [ ] Comprobar que los subtítulos coinciden.
+- [ ] Previsualizar la miniatura en tamaño móvil.

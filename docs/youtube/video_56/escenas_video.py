@@ -1,17 +1,21 @@
 """Escenas del vídeo 56 (especial Navidad: Ferrero Rocher). Motor común; sin logotipos ni envoltorios de marca: bombones dorados genéricos."""
 from base import *
+import itertools
+
+_ids = itertools.count()
 
 CAP_ICONOS = {1: "1f330", 2: "1f52a", 3: "1f95c", 4: "1faa8", 5: "1f31f", 6: "1f935", 7: "2600-fe0f", 8: "1f910", 9: "1f9e0"}
 
 def bombon(w=160, d=.2):
     """Bombón genérico envuelto en papel dorado, sobre cápsula marrón (sin marca)."""
+    uid = next(_ids)
     an = "" if d is None else f"animation:ePop .45s ease {d}s both;"
     pliegues = "".join(f'<path d="M{100 + 70*__import__("math").cos(a):.0f},{92 + 62*__import__("math").sin(a):.0f} L100,92" stroke="#b8860b" stroke-width="2" opacity=".55"/>' for a in [i*0.52 for i in range(12)])
-    return (f'<svg width="{w}" height="{w}" viewBox="0 0 200 200" style="{an}"><defs><radialGradient id="oro" cx="35%" cy="30%"><stop offset="0" stop-color="#fff6c8"/>'
+    return (f'<svg width="{w}" height="{w}" viewBox="0 0 200 200" style="{an}"><defs><radialGradient id="oro{uid}" cx="35%" cy="30%"><stop offset="0" stop-color="#fff6c8"/>'
             f'<stop offset=".45" stop-color="#f2c94c"/><stop offset="1" stop-color="#a87b12"/></radialGradient></defs>'
             f'<path d="M30,120 L46,186 L154,186 L170,120Z" fill="#6b3f1f" stroke="{TINTA}" stroke-width="4"/>'
             f'<path d="M46,128 L56,180 M70,128 L76,182 M100,128 L100,184 M130,128 L124,182 M154,128 L144,180" stroke="#4a2a12" stroke-width="3"/>'
-            f'<circle cx="100" cy="92" r="72" fill="url(#oro)" stroke="{TINTA}" stroke-width="4"/>{pliegues}</svg>')
+            f'<circle cx="100" cy="92" r="72" fill="url(#oro{uid})" stroke="{TINTA}" stroke-width="4"/>{pliegues}</svg>')
 
 def piramide(base=4, w=110, x0=50, y0=78, d=.2):
     out = []
