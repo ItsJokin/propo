@@ -31,7 +31,9 @@ export interface PriceRule {
   abnormalOfBudget: number | null;  // rebaja (%) sobre el presupuesto a partir de la cual es anormal
   plain: string;                  // explicación en claro
   units: UnitPrice[];
-  singleDiscount?: boolean;       // el pliego pide un único % de baja que se aplica a todos los precios máximos
+  singleDiscount?: boolean;
+  offerType?: string;             // cómo se oferta: total | discount | units | lots (lo decide la IA al leer el pliego)
+  offerWhy?: string;       // el pliego pide un único % de baja que se aplica a todos los precios máximos
   lots: { label: string; budget: number | null }[];
   others: OtherCriterion[];
   model: { doc: string; page: number | null; name: string } | null;
@@ -40,7 +42,7 @@ export interface PriceRule {
   source: { doc: string; page: number | null; quote: string } | null;
   mode: 'ai' | 'rules';
 }
-export interface PriceChoice { mode: 'prudent' | 'recommended' | 'aggressive' | 'own'; baja: number; total: number; points: number | null; units: { id: string; label: string; price: number }[]; vatIncluded?: boolean; doubts?: string; discount?: number }
+export interface PriceChoice { mode: 'prudent' | 'recommended' | 'aggressive' | 'own'; baja: number; total: number; points: number | null; units: { id: string; label: string; price: number }[]; vatIncluded?: boolean; doubts?: string; discount?: number; kind?: 'total' | 'discount' | 'units' | 'lots' }
 export interface Pricing {
   rule: PriceRule | null;
   floor: number | null;           // precio total mínimo que le compensa al cliente, sin IVA
@@ -55,6 +57,7 @@ export interface Pricing {
   unitInfo?: Record<string, UnitInfo> | null;   // qué pide el pliego en cada concepto, explicado en claro
   unitInfoError?: boolean;
   unitInfoV?: number;
+  studio?: { b?: number; lots?: string[] };   // la rebaja y los lotes que el cliente está mirando
 }
 
 export const emptyPricing = (): Pricing => ({ rule: null, floor: null, choice: null, others: {}, approved: null });
@@ -127,6 +130,10 @@ Devuelve SOLO un objeto JSON con esta forma exacta:
   "abnormal_of_budget": número o null,    // si es anormal la rebaja superior a X % del presupuesto
   "plain": "2 o 3 frases para el dueño de una pyme sin jerga: cuántos puntos da el precio, cómo se calculan y un ejemplo con números de esta licitación",
   "unit_prices": [{"label": "concepto", "unit": "unidad (menú, hora…)", "max_price": número o null, "qty": número o null}],
+  "offer_type": "total" | "discount" | "units" | "lots",
+                                      // CÓMO tiene que presentar el licitador su precio: total = un único importe; discount = un único % de baja
+                                      // sobre los precios máximos; units = un precio para cada concepto o servicio; lots = un importe por cada lote
+  "offer_type_reason": "una frase sencilla que explique al licitador por qué se oferta así en esta licitación",
   "single_discount": true | false,    // true si el licitador NO pone un precio a cada concepto sino un único % de baja que se aplica a todos los precios máximos
   "lots": [{"label": "Lote 1 · …", "budget": número o null}],
   "other_formula": [{"label": "criterio", "points": número o null, "rule": "cómo se puntúa, breve", "ask": "pregunta clara al licitador para saber qué ofrece (p. ej. ¿Cuántos años de garantía adicional ofreces?)",
@@ -171,6 +178,7 @@ export async function readPriceRule(p: Project): Promise<PriceRule> {
       plain: String(j.plain || base.plain),
       units: (Array.isArray(j.unit_prices) ? j.unit_prices : []).filter((u: any) => u?.label).slice(0, 30).map((u: any, i: number) => ({ id: `u${i}`, label: String(u.label), unit: String(u.unit || ''), max: n(u.max_price), qty: n(u.qty) })),
       singleDiscount: j.single_discount === true,
+      offerType: ['total', 'discount', 'units', 'lots'].includes(j.offer_type) ? j.offer_type : undefined, offerWhy: j.offer_type_reason ? String(j.offer_type_reason) : undefined,
       lots: (Array.isArray(j.lots) ? j.lots : []).filter((l: any) => l?.label).slice(0, 20).map((l: any) => ({ label: String(l.label), budget: n(l.budget) })),
       others: (Array.isArray(j.other_formula) ? j.other_formula : []).filter((o: any) => o?.label).slice(0, 10).map((o: any, i: number) => ({ id: `o${i}`, label: String(o.label), points: n(o.points), rule: String(o.rule || ''), ask: String(o.ask || `¿Qué ofreces en «${o.label}»?`),
         unit: o.unit ? String(o.unit) : null, perUnit: n(o.points_per_unit), maxValue: n(o.max_value), better: o.better === 'less' ? 'less' : 'more',

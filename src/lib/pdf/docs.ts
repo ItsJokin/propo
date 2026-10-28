@@ -198,8 +198,8 @@ export async function economicOfferPdf(p: Project, s: AppState) {
   }
   if (ch.discount != null) text(w, `Porcentaje de baja único ofertado, aplicado a todos los precios máximos unitarios del pliego: **${(Math.round(ch.discount * 10000) / 100).toLocaleString('es-ES')} %**.`, { gap: 6 });
   if (ch.units.length) {
-    h2(w, ch.discount != null ? 'Precios unitarios resultantes' : 'Precios unitarios');
-    table(w, [{ title: 'Concepto', w: 46 }, { title: 'Precio sin IVA', w: 18, align: 'right' }, { title: `IVA (${vat} %)`, w: 16, align: 'right' }, { title: 'Con IVA', w: 20, align: 'right' }],
+    h2(w, ch.kind === 'lots' ? 'Importe por lote' : ch.discount != null ? 'Precios unitarios resultantes' : 'Precios unitarios');
+    table(w, [{ title: ch.kind === 'lots' ? 'Lote' : 'Concepto', w: 46 }, { title: 'Precio sin IVA', w: 18, align: 'right' }, { title: `IVA (${vat} %)`, w: 16, align: 'right' }, { title: 'Con IVA', w: 20, align: 'right' }],
       ch.units.map((u) => { const i = Math.round(u.price * vat) / 100; return [u.label, eur2(u.price), eur2(i), eur2(Math.round((u.price + i) * 100) / 100)]; }));
   }
   const others = (rule?.others ?? []).filter((o) => pr?.others?.[o.id]?.formal);
