@@ -1,6 +1,6 @@
 # Barbie nació copiando una muñeca alemana: la historia completa: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_24_Barbie.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:21 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_24_Barbie.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:25 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,18 +14,18 @@ Barbie se presentó el 9 de marzo de 1959 en Nueva York. Su creadora, Ruth Handl
 
 ⏱ Capítulos
 00:00 Introducción
-00:36 1. Un taller en un garaje
-01:20 2. Las muñecas de papel
-01:58 3. Una muñeca alemana
-02:38 4. El estreno
-03:31 5. El problema de Lilli
-03:59 6. Mil profesiones
-04:39 7. Las críticas
+00:34 1. Un taller en un garaje
+01:21 2. Las muñecas de papel
+02:01 3. Una muñeca alemana
+02:39 4. El estreno
+03:34 5. El problema de Lilli
+04:02 6. Mil profesiones
+04:40 7. Las críticas
 05:23 8. La caída de Ruth
-06:01 9. Un segundo invento
-06:31 10. La película
-07:19 11. Lo que nos enseña
-07:44 Final
+06:00 9. Un segundo invento
+06:30 10. La película
+07:22 11. Lo que nos enseña
+07:49 Final
 
 📚 Fuentes
 - Wikipedia, «Barbie»: https://en.wikipedia.org/wiki/Barbie
