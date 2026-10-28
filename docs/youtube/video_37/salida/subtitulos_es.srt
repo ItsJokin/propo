@@ -1,0 +1,536 @@
+1
+00:00:00,500 --> 00:00:04,715
+Una máquina en un bar. Dos rayas blancas, una pelota cuadrada, y una sola
+
+2
+00:00:04,715 --> 00:00:08,699
+instrucción: evita fallar la bola para conseguir una puntuación alta.
+
+3
+00:00:09,039 --> 00:00:13,576
+Así empezó una de las industrias más grandes del mundo: la de los videojuegos.
+
+4
+00:00:13,916 --> 00:00:17,606
+La empresa que la puso en marcha tomó su nombre de un juego de mesa japonés
+
+5
+00:00:17,606 --> 00:00:18,098
+milenario.
+
+6
+00:00:18,438 --> 00:00:22,161
+Por sus oficinas pasó un joven Steve Jobs, antes de fundar Apple.
+
+7
+00:00:22,501 --> 00:00:26,742
+Y pocos años después, esa misma empresa acabó enterrando cientos de miles de
+
+8
+00:00:26,742 --> 00:00:28,918
+cartuchos en un vertedero del desierto.
+
+9
+00:00:29,258 --> 00:00:30,945
+Esta es la historia de Atari.
+
+10
+00:00:32,235 --> 00:00:36,297
+Nolan Bushnell creció en Utah, en Estados Unidos, y de estudiante trabajó en un
+
+11
+00:00:36,297 --> 00:00:39,228
+parque de atracciones, en los puestos de juegos de feria.
+
+12
+00:00:39,568 --> 00:00:44,522
+Allí aprendió algo que nunca olvidó: la gente paga con gusto por divertirse un rato.
+
+13
+00:00:44,862 --> 00:00:50,542
+En la universidad descubrió otra cosa: los ordenadores. Unas máquinas enormes en las
+
+14
+00:00:50,542 --> 00:00:54,802
+que algunos estudiantes jugaban a un juego de naves espaciales.
+
+15
+00:00:55,142 --> 00:00:59,787
+Bushnell pensó que, si conseguía meter ese juego en una máquina que funcionara con
+
+16
+00:00:59,787 --> 00:01:01,373
+monedas, podía hacerse rico.
+
+17
+00:01:02,663 --> 00:01:07,409
+Junto a su compañero Ted Dabney, construyó una máquina recreativa de naves
+
+18
+00:01:07,409 --> 00:01:09,141
+espaciales: Computer Space.
+
+19
+00:01:09,481 --> 00:01:12,862
+Tenía un mueble futurista, con curvas, y un aspecto espectacular.
+
+20
+00:01:13,202 --> 00:01:18,357
+Pero tenía un problema: era demasiado complicada. Las instrucciones eran largas, los
+
+21
+00:01:18,357 --> 00:01:22,468
+controles confusos, y en los bares la gente no entendía cómo jugar.
+
+22
+00:01:22,808 --> 00:01:27,431
+Se vendieron algunas unidades, pero no fue el éxito que esperaban.
+
+23
+00:01:27,771 --> 00:01:32,419
+Bushnell sacó una lección que marcaría su carrera: un buen juego tiene que ser fácil
+
+24
+00:01:32,419 --> 00:01:34,245
+de aprender y difícil de dominar.
+
+25
+00:01:35,535 --> 00:01:40,784
+En mil novecientos setenta y dos, Bushnell y Dabney decidieron fundar su propia
+
+26
+00:01:40,784 --> 00:01:41,316
+empresa.
+
+27
+00:01:41,656 --> 00:01:46,599
+Su primera idea de nombre era Syzygy, una palabra de astronomía. Pero ya la usaba
+
+28
+00:01:46,599 --> 00:01:47,392
+otra empresa.
+
+29
+00:01:47,732 --> 00:01:52,379
+Bushnell era aficionado al go, un juego de mesa estratégico de origen chino, muy
+
+30
+00:01:52,379 --> 00:01:53,367
+popular en Japón.
+
+31
+00:01:53,707 --> 00:01:57,105
+Apuntó varias palabras del juego. Y eligió una: atari.
+
+32
+00:01:57,445 --> 00:02:02,603
+En el go, se dice atari cuando una piedra o un grupo de piedras está a punto de ser
+
+33
+00:02:02,603 --> 00:02:05,523
+capturado por el rival. Algo así como un jaque.
+
+34
+00:02:05,863 --> 00:02:10,355
+El veintisiete de junio de mil novecientos setenta y dos, Atari quedó registrada en
+
+35
+00:02:10,355 --> 00:02:10,950
+California.
+
+36
+00:02:12,240 --> 00:02:14,967
+Atari contrató a un joven ingeniero, Al Alcorn.
+
+37
+00:02:15,307 --> 00:02:19,602
+Según contó después Bushnell, para que practicara le encargó un juego muy sencillo:
+
+38
+00:02:19,602 --> 00:02:21,931
+una especie de tenis de mesa en una pantalla.
+
+39
+00:02:22,271 --> 00:02:25,749
+Dos palas, una pelota, un marcador. Nada más.
+
+40
+00:02:26,089 --> 00:02:31,091
+Alcorn lo hizo tan bien, y añadió tantos detalles, como que la pelota cambiara de
+
+41
+00:02:31,091 --> 00:02:35,538
+ángulo según dónde golpeara la pala, que el resultado era muy divertido.
+
+42
+00:02:35,878 --> 00:02:38,893
+Lo llamaron Pong, por el sonido de la pelota al rebotar.
+
+43
+00:02:40,183 --> 00:02:45,424
+Para probarlo, colocaron un prototipo en un bar de Sunnyvale, en California, llamado
+
+44
+00:02:45,424 --> 00:02:46,173
+Andy Capp's.
+
+45
+00:02:46,513 --> 00:02:51,323
+Pocos días después, el dueño del bar llamó a Alcorn: la máquina se había estropeado.
+
+46
+00:02:51,663 --> 00:02:55,761
+Alcorn fue a repararla. Y al abrirla descubrió el problema.
+
+47
+00:02:56,101 --> 00:03:00,745
+El cajón de las monedas estaba tan lleno que se había desbordado. La gente seguía
+
+48
+00:03:00,745 --> 00:03:04,128
+intentando meter monedas, y el mecanismo se había atascado.
+
+49
+00:03:04,468 --> 00:03:09,378
+Era la mejor avería posible. Atari empezó a fabricar máquinas de Pong a toda
+
+50
+00:03:09,378 --> 00:03:13,578
+velocidad, y en poco tiempo había miles en bares de todo el país.
+
+51
+00:03:14,868 --> 00:03:19,881
+El éxito de Pong atrajo a decenas de imitadores. Muchas empresas sacaron sus propias
+
+52
+00:03:19,881 --> 00:03:20,478
+versiones.
+
+53
+00:03:20,818 --> 00:03:25,521
+Pero Atari también tenía un problema: Pong se parecía mucho a un juego de tenis que
+
+54
+00:03:25,521 --> 00:03:26,145
+ya existía.
+
+55
+00:03:26,485 --> 00:03:31,296
+Lo incluía la Magnavox Odyssey, considerada la primera consola de videojuegos
+
+56
+00:03:31,296 --> 00:03:34,607
+doméstica, que había salido a la venta ese mismo año.
+
+57
+00:03:34,947 --> 00:03:39,732
+Según los documentos del caso, Bushnell había probado esa consola en una
+
+58
+00:03:39,732 --> 00:03:41,926
+demostración antes de crear Pong.
+
+59
+00:03:42,266 --> 00:03:47,316
+Magnavox demandó. Y Atari acabó pagando una licencia de setecientos mil dólares para
+
+60
+00:03:47,316 --> 00:03:48,217
+cerrar el caso.
+
+61
+00:03:49,507 --> 00:03:54,124
+En mil novecientos setenta y cuatro, un joven de diecinueve años, con el pelo largo
+
+62
+00:03:54,124 --> 00:03:57,739
+y sin estudios terminados, se presentó en Atari pidiendo trabajo.
+
+63
+00:03:58,079 --> 00:04:02,473
+Se llamaba Steve Jobs. Y, según se cuenta, dijo que no se iría hasta que lo
+
+64
+00:04:02,473 --> 00:04:03,177
+contrataran.
+
+65
+00:04:03,517 --> 00:04:08,962
+Lo contrataron. Era brillante, pero difícil. Según varias biografías, lo pusieron a
+
+66
+00:04:08,962 --> 00:04:12,767
+trabajar de noche, para que no chocara con sus compañeros.
+
+67
+00:04:13,107 --> 00:04:18,830
+En mil novecientos setenta y seis, Atari le encargó diseñar un juego nuevo con el
+
+68
+00:04:18,830 --> 00:04:24,411
+menor número de chips posible: Breakout, el de romper ladrillos con una pelota.
+
+69
+00:04:24,751 --> 00:04:30,231
+Jobs se lo pasó a su amigo Steve Wozniak, que lo diseñó en cuatro noches sin dormir.
+
+70
+00:04:30,571 --> 00:04:35,763
+Según contó después Wozniak, Jobs le dijo que les pagaban setecientos dólares y le
+
+71
+00:04:35,763 --> 00:04:40,892
+dio la mitad. Años más tarde descubrió que Atari había pagado a Jobs una prima de
+
+72
+00:04:40,892 --> 00:04:41,715
+varios miles.
+
+73
+00:04:43,005 --> 00:04:45,831
+Bushnell quería llevar los videojuegos del bar al salón.
+
+74
+00:04:46,171 --> 00:04:51,067
+Primero lanzó una versión de Pong para conectar a la televisión de casa. Y después,
+
+75
+00:04:51,067 --> 00:04:55,903
+algo mucho más ambicioso: una consola en la que se pudieran cambiar los juegos con
+
+76
+00:04:55,903 --> 00:04:56,493
+cartuchos.
+
+77
+00:04:56,833 --> 00:05:01,388
+Para financiarla, en mil novecientos setenta y seis vendió Atari al grupo de
+
+78
+00:05:01,388 --> 00:05:05,043
+comunicación Warner, por unos veintiocho millones de dólares.
+
+79
+00:05:05,383 --> 00:05:10,316
+En mil novecientos setenta y siete salió la consola que acabaría conociéndose como
+
+80
+00:05:10,316 --> 00:05:11,880
+Atari dos mil seiscientos.
+
+81
+00:05:12,220 --> 00:05:17,582
+Al principio se vendió con dificultad. Pero en mil novecientos ochenta llegó una
+
+82
+00:05:17,582 --> 00:05:23,212
+versión doméstica de Space Invaders, el gran éxito de los salones recreativos. Y las
+
+83
+00:05:23,212 --> 00:05:24,620
+ventas se dispararon.
+
+84
+00:05:24,960 --> 00:05:29,111
+Atari se convirtió en una de las empresas que más rápido crecían de Estados Unidos.
+
+85
+00:05:30,401 --> 00:05:32,742
+Pero dentro de la empresa las cosas iban mal.
+
+86
+00:05:33,082 --> 00:05:38,044
+Bushnell chocó con los nuevos dueños y en mil novecientos setenta y ocho salió de
+
+87
+00:05:38,044 --> 00:05:43,128
+Atari. Después fundaría, entre otras cosas, una cadena de pizzerías con juegos para
+
+88
+00:05:43,128 --> 00:05:43,496
+niños.
+
+89
+00:05:43,836 --> 00:05:48,307
+Muchos de los mejores programadores también se marcharon, molestos porque no
+
+90
+00:05:48,307 --> 00:05:53,132
+aparecían sus nombres en los juegos y no cobraban por sus éxitos. Algunos fundaron
+
+91
+00:05:53,132 --> 00:05:54,132
+empresas rivales.
+
+92
+00:05:54,472 --> 00:05:58,698
+El mercado se llenó de consolas y de juegos, muchos de ellos malos, hechos deprisa.
+
+93
+00:05:59,038 --> 00:06:02,301
+Y Atari empezó a fabricar más cartuchos de los que podía vender.
+
+94
+00:06:03,591 --> 00:06:08,886
+En mil novecientos ochenta y dos, la película E.T., el extraterrestre, fue un éxito
+
+95
+00:06:08,886 --> 00:06:09,397
+mundial.
+
+96
+00:06:09,737 --> 00:06:14,090
+Atari pagó una fortuna por los derechos para hacer el videojuego. Y quería tenerlo
+
+97
+00:06:14,090 --> 00:06:15,577
+en las tiendas para Navidad.
+
+98
+00:06:15,917 --> 00:06:20,940
+El programador tuvo, según se cuenta, unas cinco semanas para hacerlo. Un juego
+
+99
+00:06:20,940 --> 00:06:22,721
+normal llevaba varios meses.
+
+100
+00:06:23,061 --> 00:06:27,611
+El resultado fue un juego confuso, en el que el protagonista se caía una y otra vez
+
+101
+00:06:27,611 --> 00:06:28,269
+en agujeros.
+
+102
+00:06:28,609 --> 00:06:33,065
+Atari fabricó millones de cartuchos. Muchísimos se quedaron sin vender, y muchos de
+
+103
+00:06:33,065 --> 00:06:35,105
+los que se vendieron fueron devueltos.
+
+104
+00:06:35,445 --> 00:06:39,498
+Con los años, E.T. ha aparecido una y otra vez en las listas de los peores
+
+105
+00:06:39,498 --> 00:06:40,977
+videojuegos de la historia.
+
+106
+00:06:42,267 --> 00:06:47,564
+En mil novecientos ochenta y tres, la industria del videojuego en Estados Unidos se
+
+107
+00:06:47,564 --> 00:06:51,521
+hundió. Las ventas se desplomaron y muchas empresas quebraron.
+
+108
+00:06:51,861 --> 00:06:57,298
+Y en septiembre de ese año, Atari envió más de una decena de camiones cargados de
+
+109
+00:06:57,298 --> 00:07:02,600
+cartuchos y consolas sin vender a un vertedero de Alamogordo, en el desierto de
+
+110
+00:07:02,600 --> 00:07:03,472
+Nuevo México.
+
+111
+00:07:03,812 --> 00:07:06,124
+Los aplastaron y los cubrieron con cemento.
+
+112
+00:07:06,464 --> 00:07:10,943
+Durante treinta años se convirtió en una leyenda urbana: se decía que allí había
+
+113
+00:07:10,943 --> 00:07:13,238
+millones de cartuchos de E.T. enterrados.
+
+114
+00:07:13,578 --> 00:07:18,287
+En dos mil catorce, un equipo excavó el vertedero. Y los encontró. Antiguos
+
+115
+00:07:18,287 --> 00:07:23,059
+directivos de Atari confirmaron que se habían enterrado unos setecientos mil
+
+116
+00:07:23,059 --> 00:07:25,445
+cartuchos, de muchos juegos distintos.
+
+117
+00:07:25,785 --> 00:07:31,643
+Algunos de aquellos cartuchos desenterrados se subastaron después. Y hoy uno está
+
+118
+00:07:31,643 --> 00:07:33,161
+expuesto en un museo.
+
+119
+00:07:33,501 --> 00:07:38,294
+La marca Atari, mientras tanto, pasó por las manos de muchos dueños distintos. Hoy
+
+120
+00:07:38,294 --> 00:07:43,145
+sigue existiendo, y vende versiones modernas de sus consolas y juegos clásicos para
+
+121
+00:07:43,145 --> 00:07:44,080
+los nostálgicos.
+
+122
+00:07:45,370 --> 00:07:48,581
+¿Qué nos enseña esta historia? Tres cosas.
+
+123
+00:07:48,921 --> 00:07:55,390
+Una: lo sencillo engancha. Computer Space era demasiado complicado. Pong solo tenía
+
+124
+00:07:55,390 --> 00:07:57,183
+dos palas y una pelota.
+
+125
+00:07:57,523 --> 00:08:02,469
+Dos: cuida a quien crea tus productos. Atari perdió a muchos de sus mejores
+
+126
+00:08:02,469 --> 00:08:05,568
+programadores, y con ellos, sus mejores juegos.
+
+127
+00:08:05,908 --> 00:08:11,837
+Y tres: las prisas se pagan. Un juego hecho en cinco semanas acabó enterrado en el
+
+128
+00:08:11,837 --> 00:08:12,488
+desierto.
+
+129
+00:08:13,778 --> 00:08:19,501
+Un juego de mesa japonés, una máquina atascada de monedas, un joven Steve Jobs, una
+
+130
+00:08:19,501 --> 00:08:22,949
+consola en el salón y un vertedero en el desierto.
+
+131
+00:08:23,289 --> 00:08:26,682
+La próxima vez que cojas un mando, acuérdate de dónde empezó todo.
+
+132
+00:08:27,022 --> 00:08:30,593
+Esto es Código de Barras: la historia que no conoces de lo que tienes en casa.
+
+133
+00:08:30,933 --> 00:08:33,905
+¿Cuál fue tu primera consola? Cuéntanoslo en los comentarios.
+
+134
+00:08:34,245 --> 00:08:35,960
+Y si te ha gustado, suscríbete.
+

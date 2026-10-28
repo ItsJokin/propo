@@ -1,0 +1,67 @@
+# Lacoste: el cocodrilo que nació de una apuesta por una maleta: metadatos para subir a YouTube
+
+**Archivo:** `Codigo_de_Barras_36_Lacoste.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:52 · audio normalizado a −14 LUFS
+**Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
+
+## Título (recomendado el primero)
+1. Lacoste: el cocodrilo que nació de una apuesta por una maleta
+2. La historia de Lacoste (y por qué lleva un cocodrilo)
+3. René Lacoste: el tenista que inventó el polo
+
+## Descripción (copiar y pegar)
+```
+René Lacoste fue uno de los «cuatro mosqueteros» del tenis francés. Su apodo, el cocodrilo, nació según se cuenta de una apuesta por una maleta de piel. Diseñó una camiseta de manga corta y punto piqué para jugar más cómodo y en 1933 creó con André Gillier la marca del cocodrilo bordado. Esta es la historia de Lacoste.
+
+⏱ Capítulos
+00:00 Introducción
+00:30 1. Un chico de París
+01:02 2. Los cuatro mosqueteros
+01:39 3. La maleta de cocodrilo
+02:19 4. Bordado en la chaqueta
+02:49 5. Adiós a las mangas largas
+03:35 6. Nace la marca
+04:04 7. Un inventor en la pista
+04:36 8. Una familia de campeones
+05:01 9. De las pistas a la calle
+05:45 10. Un cocodrilo de saldo
+06:33 11. Pelea en la familia
+07:07 12. Cuando el cocodrilo se fue
+07:40 13. Lo que nos enseña
+08:11 Final
+
+📚 Fuentes
+- Wikipedia, «René Lacoste»: https://en.wikipedia.org/wiki/Ren%C3%A9_Lacoste
+- Smithsonian Magazine, «The story behind the Lacoste crocodile shirt»: https://www.smithsonianmag.com/blogs/the-story-behind-the-lacoste-crocodile-shirt-91276898/
+- Fortune, «The origin of the Lacoste crocodile» (2011): https://fortune.com/2011/10/18/the-origin-of-the-lacoste-crocodile
+- WBUR Only A Game, «George Carens and the Lacoste crocodile» (2018): https://www.wbur.org/onlyagame/2018/12/14/george-carens-lacoste-crocodile
+- Olympedia, «René Lacoste»: https://www.olympedia.org/athletes/22
+- Dezeen, «Lacoste replaces crocodile logo with endangered species» (2018): https://www.dezeen.com/2018/03/02/lacoste-crocodile-logo-endangered-species-limited-edition-polo-shirts-fashion-design/amp/
+- Wikipedia, «Catherine Lacoste»: https://en.wikipedia.org/wiki/Catherine_Lacoste
+
+Nota: las versiones sobre la apuesta (maleta de cocodrilo o de caimán, lugar y fecha) varían según la fuente.
+
+ℹ️ Este vídeo no está patrocinado por ninguna de las marcas mencionadas. Las ilustraciones son propias; no se usan logotipos originales.
+🤖 Guion elaborado con asistencia de IA y revisado por una persona. Narración con voz sintética de ElevenLabs.
+🎨 Ilustraciones 3D: Fluent Emoji © Microsoft (licencia MIT). Música y efectos: creación propia.
+
+Código de Barras: la historia que no conoces de lo que tienes en casa. Nuevas historias cada semana.
+💬 ¿Qué marca quieres que investiguemos? Déjala en los comentarios.
+
+#Lacoste #HistoriaDeMarcas #Moda
+```
+
+## Etiquetas
+lacoste, historia de lacoste, rené lacoste, cocodrilo lacoste, polo lacoste, cuatro mosqueteros, copa davis, catherine lacoste, historia de marcas, código de barras
+
+## Ajustes en YouTube Studio
+- **Público:** "No, no es contenido creado para niños".
+- **Contenido alterado o sintético:** No (narración evidente que no imita a ninguna persona real; ilustraciones no realistas).
+- **Promoción pagada:** No · **Categoría:** Educación · **Idioma:** Español (España). Sube `subtitulos_es.srt`.
+- **Pantalla final:** "Vídeo más reciente" sobre el rectángulo de la izquierda y el botón de suscripción sobre el círculo de la derecha (últimos 15 s).
+- **Lista de reproducción:** Moda y deporte.
+- **Comentario fijado:** "¿Qué marca investigamos el mes que viene? Las 3 más votadas entran en la encuesta 👇"
+
+## Revisión antes de publicar
+- [ ] Ver el vídeo entero con sonido: que la imagen cuadre con la voz en los cambios de escena.
+- [ ] Comprobar que los subtítulos coinciden.
+- [ ] Previsualizar la miniatura en tamaño móvil.
