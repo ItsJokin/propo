@@ -1,0 +1,504 @@
+1
+00:00:00,500 --> 00:00:03,484
+Bienvenido al especial de Navidad de Código de Barras.
+
+2
+00:00:03,824 --> 00:00:09,001
+Un señor gordo, con barba blanca, mejillas sonrosadas y un traje rojo con ribetes
+
+3
+00:00:09,001 --> 00:00:09,513
+blancos.
+
+4
+00:00:09,853 --> 00:00:13,924
+Seguro que alguna vez te han contado que Papá Noel viste de rojo porque lo decidió
+
+5
+00:00:13,924 --> 00:00:16,505
+Coca-Cola, para que llevara los colores de la marca.
+
+6
+00:00:16,845 --> 00:00:20,839
+Es una de las historias de marketing más repetidas del mundo. Y es falsa.
+
+7
+00:00:21,179 --> 00:00:26,068
+Pero, como pasa con los buenos mitos, tiene una parte de verdad. Porque Coca-Cola sí
+
+8
+00:00:26,068 --> 00:00:29,968
+hizo algo con Papá Noel que cambió para siempre cómo lo imaginamos.
+
+9
+00:00:30,308 --> 00:00:32,444
+Hoy te contamos la historia completa.
+
+10
+00:00:33,734 --> 00:00:37,437
+Para entender a Papá Noel hay que viajar muy atrás. Al siglo cuarto.
+
+11
+00:00:37,777 --> 00:00:42,004
+En Mira, una ciudad de la actual Turquía, vivía un obispo llamado Nicolás.
+
+12
+00:00:42,344 --> 00:00:47,395
+Según las leyendas, era muy generoso, sobre todo con los niños y los pobres. Una de
+
+13
+00:00:47,395 --> 00:00:52,385
+ellas cuenta que dejó en secreto monedas de oro en una casa para que tres hermanas
+
+14
+00:00:52,385 --> 00:00:53,419
+pudieran casarse.
+
+15
+00:00:53,759 --> 00:00:58,397
+Con el tiempo se convirtió en San Nicolás, uno de los santos más populares de
+
+16
+00:00:58,397 --> 00:01:02,432
+Europa. Patrón de los niños, de los marineros y de muchas ciudades.
+
+17
+00:01:02,772 --> 00:01:07,351
+En los Países Bajos lo llamaban Sinterklaas. Y allí la tradición de que San Nicolás
+
+18
+00:01:07,351 --> 00:01:10,330
+trajera regalos a los niños se mantuvo durante siglos.
+
+19
+00:01:10,670 --> 00:01:14,927
+Cuando los holandeses emigraron a Nueva York, se llevaron a Sinterklaas con ellos. Y
+
+20
+00:01:14,927 --> 00:01:18,170
+en inglés, poco a poco, Sinterklaas se convirtió en Santa Claus.
+
+21
+00:01:19,460 --> 00:01:22,235
+Pero aquel Santa Claus no se parecía mucho al de hoy.
+
+22
+00:01:22,575 --> 00:01:27,830
+A veces era alto y delgado, a veces un duende pequeño, a veces un señor serio con
+
+23
+00:01:27,830 --> 00:01:28,868
+ropas de obispo.
+
+24
+00:01:29,208 --> 00:01:34,066
+Todo empezó a cambiar en mil ochocientos veintitrés, con un poema publicado en un
+
+25
+00:01:34,066 --> 00:01:37,126
+periódico de Nueva York: Una visita de San Nicolás.
+
+26
+00:01:37,466 --> 00:01:41,902
+Según la versión más extendida, su autor fue Clement Clarke Moore, un profesor que
+
+27
+00:01:41,902 --> 00:01:43,363
+lo escribió para sus hijos.
+
+28
+00:01:43,703 --> 00:01:48,963
+Aquel poema describía a un San Nicolás alegre y regordete, que viajaba en un trineo
+
+29
+00:01:48,963 --> 00:01:52,829
+tirado por ocho renos y entraba en las casas por la chimenea.
+
+30
+00:01:53,169 --> 00:01:56,826
+Muchas de las ideas que hoy asociamos a Papá Noel nacieron de esos versos.
+
+31
+00:01:57,166 --> 00:02:02,500
+Incluso los nombres de los renos: Dasher, Dancer, Prancer, Vixen… Ocho renos. El más
+
+32
+00:02:02,500 --> 00:02:07,516
+famoso de todos, el de la nariz roja, no estaba en el poema: llegaría más de un
+
+33
+00:02:07,516 --> 00:02:10,564
+siglo después, y también nació de la publicidad.
+
+34
+00:02:11,854 --> 00:02:16,115
+Faltaba ponerle cara. Y eso lo hizo un dibujante: Thomas Nast.
+
+35
+00:02:16,455 --> 00:02:21,079
+Nast trabajaba para Harper's Weekly, una de las revistas más leídas de Estados
+
+36
+00:02:21,079 --> 00:02:21,493
+Unidos.
+
+37
+00:02:21,833 --> 00:02:26,361
+A partir de los años sesenta del siglo diecinueve, en plena guerra civil
+
+38
+00:02:26,361 --> 00:02:30,135
+estadounidense, empezó a dibujar a Santa Claus cada Navidad.
+
+39
+00:02:30,475 --> 00:02:35,689
+Durante décadas fue perfilando al personaje: la barba blanca, la barriga, el taller
+
+40
+00:02:35,689 --> 00:02:39,646
+de juguetes en el Polo Norte, la lista de niños buenos y malos.
+
+41
+00:02:39,986 --> 00:02:44,800
+Y en muchos de sus dibujos en color, Santa ya aparece con un traje rojo, con ribetes
+
+42
+00:02:44,800 --> 00:02:46,233
+blancos y cinturón negro.
+
+43
+00:02:46,573 --> 00:02:51,339
+Así que, cuando Coca-Cola llegó, Papá Noel llevaba ya décadas vistiendo de rojo en
+
+44
+00:02:51,339 --> 00:02:56,046
+muchas ilustraciones. Aunque también se le pintaba de verde, de azul o de marrón.
+
+45
+00:02:57,336 --> 00:02:59,484
+Ahora sí, entra en escena Coca-Cola.
+
+46
+00:02:59,824 --> 00:03:04,942
+A principios de los años treinta, la marca tenía un problema: la gente la asociaba
+
+47
+00:03:04,942 --> 00:03:07,127
+al calor. Era una bebida de verano.
+
+48
+00:03:07,467 --> 00:03:11,879
+En invierno se vendía bastante menos. Y la empresa quería que se bebiera todo el
+
+49
+00:03:11,879 --> 00:03:12,099
+año.
+
+50
+00:03:12,439 --> 00:03:17,289
+Ya en los años veinte lo había intentado con un eslogan que lo decía todo: la sed no
+
+51
+00:03:17,289 --> 00:03:20,984
+tiene estación. Pero hacía falta algo más potente que una frase.
+
+52
+00:03:21,324 --> 00:03:26,016
+Según varios historiadores de la publicidad, esa fue una de las razones para lanzar
+
+53
+00:03:26,016 --> 00:03:30,368
+campañas navideñas: unir Coca-Cola con la fiesta más importante del invierno.
+
+54
+00:03:30,708 --> 00:03:34,644
+Y para protagonizarlas, eligieron al personaje más querido de la Navidad.
+
+55
+00:03:35,934 --> 00:03:40,218
+El encargo fue para Haddon Sundblom, un ilustrador de Chicago especializado en
+
+56
+00:03:40,218 --> 00:03:40,822
+publicidad.
+
+57
+00:03:41,162 --> 00:03:45,726
+En mil novecientos treinta y uno pintó su primer Papá Noel para Coca-Cola. Y siguió
+
+58
+00:03:45,726 --> 00:03:48,476
+haciéndolo cada año hasta mediados de los sesenta.
+
+59
+00:03:48,816 --> 00:03:54,067
+Sundblom se inspiró en el poema de Clement Clarke Moore. Y pintó a un Papá Noel
+
+60
+00:03:54,067 --> 00:03:59,317
+humano, cálido, cercano: un abuelo bonachón, con mejillas sonrosadas y ojos que
+
+61
+00:03:59,317 --> 00:03:59,915
+sonreían.
+
+62
+00:04:00,255 --> 00:04:04,908
+Según se cuenta, al principio usó como modelo a un amigo suyo, un vendedor jubilado.
+
+63
+00:04:04,908 --> 00:04:08,951
+Y cuando este murió, empezó a pintarse a sí mismo mirándose en un espejo.
+
+64
+00:04:09,291 --> 00:04:13,860
+Aquellos anuncios aparecían en las revistas más leídas del país, en carteles y en
+
+65
+00:04:13,860 --> 00:04:16,849
+tiendas. Millones de personas los veían cada Navidad.
+
+66
+00:04:18,139 --> 00:04:21,529
+Entonces, ¿inventó Coca-Cola el Papá Noel vestido de rojo?
+
+67
+00:04:21,949 --> 00:04:26,999
+No. El rojo ya existía. Incluso otras marcas de refrescos habían usado a un Papá
+
+68
+00:04:26,999 --> 00:04:29,902
+Noel rojo en sus anuncios antes que Coca-Cola.
+
+69
+00:04:30,242 --> 00:04:35,191
+La propia Coca-Cola lo reconoce en su web: Papá Noel ya vestía de rojo antes de que
+
+70
+00:04:35,191 --> 00:04:36,384
+Sundblom lo pintara.
+
+71
+00:04:36,724 --> 00:04:42,142
+Pero lo que sí hizo Coca-Cola fue fijar una imagen. Durante más de treinta años
+
+72
+00:04:42,142 --> 00:04:47,765
+repitió, Navidad tras Navidad, el mismo Papá Noel: rojo, alegre, gordito y humano.
+
+73
+00:04:48,105 --> 00:04:52,476
+Y como sus anuncios llegaban a todo el mundo, aquel Papá Noel se convirtió en el
+
+74
+00:04:52,476 --> 00:04:56,956
+modelo. Hoy, cuando alguien dibuja a Papá Noel, se parece mucho más al de Sundblom
+
+75
+00:04:56,956 --> 00:04:58,322
+que al de cualquier otro.
+
+76
+00:04:58,662 --> 00:05:03,351
+No inventó el traje. Pero sí ayudó a que todos imagináramos a Papá Noel de la misma
+
+77
+00:05:03,351 --> 00:05:03,747
+manera.
+
+78
+00:05:05,037 --> 00:05:09,808
+Hay otra marca que, sin quererlo, creó una de las tradiciones navideñas más curiosas
+
+79
+00:05:09,808 --> 00:05:10,830
+de Estados Unidos.
+
+80
+00:05:11,170 --> 00:05:15,710
+En diciembre de mil novecientos cincuenta y cinco, los grandes almacenes Sears
+
+81
+00:05:15,710 --> 00:05:19,843
+publicaron un anuncio en un periódico de Colorado Springs, en Colorado.
+
+82
+00:05:20,183 --> 00:05:24,800
+Invitaba a los niños a llamar por teléfono a Papá Noel. Pero el número estaba mal
+
+83
+00:05:24,800 --> 00:05:25,256
+impreso.
+
+84
+00:05:25,596 --> 00:05:30,516
+Y en lugar de sonar en Sears, sonaba en un centro de defensa aérea del ejército, que
+
+85
+00:05:30,516 --> 00:05:33,503
+vigilaba el cielo por si llegaban aviones enemigos.
+
+86
+00:05:33,843 --> 00:05:38,542
+Según cuenta el propio ejército estadounidense, el coronel de guardia, Harry Shoup,
+
+87
+00:05:38,542 --> 00:05:43,071
+no colgó. Les siguió el juego a los niños, y empezó a contarles por dónde iba el
+
+88
+00:05:43,071 --> 00:05:43,467
+trineo.
+
+89
+00:05:43,807 --> 00:05:48,589
+De aquella errata nació una tradición que continúa hoy: cada Nochebuena, el mando de
+
+90
+00:05:48,589 --> 00:05:53,143
+defensa aérea de Estados Unidos y Canadá sigue el viaje de Papá Noel por todo el
+
+91
+00:05:53,143 --> 00:05:56,160
+mundo, y millones de niños lo consultan por internet.
+
+92
+00:05:57,450 --> 00:06:00,597
+Coca-Cola nunca dejó de buscar personajes navideños.
+
+93
+00:06:00,937 --> 00:06:05,937
+En mil novecientos noventa y tres lanzó un anuncio con unos osos polares, hechos por
+
+94
+00:06:05,937 --> 00:06:10,817
+ordenador, que se sentaban en la nieve a mirar una aurora boreal como si fuera una
+
+95
+00:06:10,817 --> 00:06:13,139
+película, con una Coca-Cola en la pata.
+
+96
+00:06:13,479 --> 00:06:17,676
+Para la época, la animación por ordenador era espectacular. Y los osos se
+
+97
+00:06:17,676 --> 00:06:20,781
+convirtieron en otro símbolo de la marca durante años.
+
+98
+00:06:21,121 --> 00:06:26,066
+Se trataba de lo mismo que con Papá Noel: asociar la marca al frío, a la nieve y a
+
+99
+00:06:26,066 --> 00:06:26,729
+la ternura.
+
+100
+00:06:28,019 --> 00:06:32,220
+Y en mil novecientos noventa y cinco llegó el anuncio que muchos consideran el que
+
+101
+00:06:32,220 --> 00:06:33,859
+marca el comienzo de la Navidad.
+
+102
+00:06:34,199 --> 00:06:39,199
+Una caravana de camiones rojos, iluminados con miles de luces, recorre de noche
+
+103
+00:06:39,199 --> 00:06:42,616
+paisajes nevados. A su paso, los pueblos se encienden.
+
+104
+00:06:42,956 --> 00:06:47,464
+Con una canción pegadiza que en inglés dice: holidays are coming. En España, muchos
+
+105
+00:06:47,464 --> 00:06:49,365
+la recuerdan como la Navidad llega.
+
+106
+00:06:49,705 --> 00:06:54,718
+El anuncio lo creó una agencia de publicidad estadounidense. Y se ha emitido, con
+
+107
+00:06:54,718 --> 00:06:58,122
+pequeños cambios, durante décadas en decenas de países.
+
+108
+00:06:58,462 --> 00:07:03,184
+En algunos lugares, la marca llegó a organizar giras con camiones de verdad. Miles
+
+109
+00:07:03,184 --> 00:07:05,718
+de personas iban a verlos y a hacerse fotos.
+
+110
+00:07:06,058 --> 00:07:10,133
+Un anuncio que se convirtió en tradición. Igual que aquel Papá Noel de Sundblom.
+
+111
+00:07:11,423 --> 00:07:13,931
+¿Qué nos enseña esta historia? Tres cosas.
+
+112
+00:07:14,271 --> 00:07:19,344
+Una: una marca no necesita inventar algo para quedárselo. Le basta con repetirlo
+
+113
+00:07:19,344 --> 00:07:21,690
+mejor y durante más tiempo que nadie.
+
+114
+00:07:22,030 --> 00:07:26,724
+Dos: si tu producto tiene temporada baja, busca un momento del año al que unirte.
+
+115
+00:07:26,724 --> 00:07:28,520
+Coca-Cola se unió a la Navidad.
+
+116
+00:07:28,860 --> 00:07:33,443
+Y tres: cuidado con las historias demasiado redondas. Las mejores leyendas de
+
+117
+00:07:33,443 --> 00:07:35,884
+marketing a menudo son solo medio verdad.
+
+118
+00:07:37,174 --> 00:07:41,892
+Un obispo generoso, un poema con renos, un dibujante de revistas, un pintor de
+
+119
+00:07:41,892 --> 00:07:44,674
+Chicago y una caravana de camiones iluminados.
+
+120
+00:07:45,014 --> 00:07:49,488
+La próxima vez que alguien te diga que Coca-Cola inventó a Papá Noel, ya sabes la
+
+121
+00:07:49,488 --> 00:07:50,482
+historia completa.
+
+122
+00:07:50,822 --> 00:07:54,937
+Esto es Código de Barras: la historia que no conoces de lo que tienes en casa. Y
+
+123
+00:07:54,937 --> 00:07:57,045
+este ha sido nuestro especial de Navidad.
+
+124
+00:07:57,385 --> 00:08:01,885
+¿En tu casa traía los regalos Papá Noel o los Reyes Magos? Cuéntanoslo en los
+
+125
+00:08:01,885 --> 00:08:02,586
+comentarios.
+
+126
+00:08:02,926 --> 00:08:04,947
+Y si te ha gustado, suscríbete.
+

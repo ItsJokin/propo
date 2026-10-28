@@ -12,8 +12,8 @@ def fachada(w=520, d=.2):
             f'<rect x="170" y="350" width="130" height="60" fill="#5b4636" stroke="{TINTA}" stroke-width="4"/></svg>')
 
 def escena_fachada(titulo, sub="", fondo="navidad", d=.2):
-    munecos = "".join(obj(spr(c, 95), 30 + i * 9, 61, "pop", "jump" if i % 2 else "bob", .8 + i * .2) for i, c in enumerate(["1f43b", "1f430", "1f981", "1f438", "1f427"]))
-    return (f'{F(fondo, True)}<div class="pos" style="left:48%;top:58%">{fachada(560, d)}</div>{munecos}'
+    munecos = "".join(obj(spr(c, 110), 37 + i * 6.5, 68, "pop", "jump" if i % 2 else "bob", .8 + i * .2) for i, c in enumerate(["1f43b", "1f430", "1f981", "1f438", "1f427"]))
+    return (f'{F(fondo, True)}<div class="pos" style="left:50%;top:58%">{fachada(720, d)}</div>{munecos}'
             f'{txt(kt(titulo, "xl hueso", .5), 50, 12, 92)}' + (txt(kt(sub, "l naranja", 1.2), 50, 22, 90) if sub else ""))
 
 def escenas():

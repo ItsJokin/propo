@@ -84,7 +84,8 @@ CODIGOS = ["1f36d", "1f36c", "1f9d2", "270b", "26bd", "1f3ea", "1f3ec", "1f9fe",
            "1f418", "1f427", "1f43b", "1f57a", "1f981",
            "1f468-200d-1f9b2", "1f46b", "1f4c3", "1f917", "1f9cd-200d-2640-fe0f", "1f9d3",
            "1f36f", "1f378", "1f3de-fe0f", "1f42a", "1f469-200d-1f373", "1f54c",
-           "1f3fa"]
+           "1f3fa",
+           "1f34b", "1f416", "1f437", "1f965"]
 CODIGOS = list(dict.fromkeys(CODIGOS))
 LADO, COLS = 200, 10
 
