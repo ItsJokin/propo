@@ -14,7 +14,6 @@ from guion import SEGMENTOS
 from voces import motor
 
 SR = 48000
-LONGITUD = 1.04          # >1 = algo más pausado (ritmo documental)
 FINAL = 15.0           # segundos de pantalla final
 PAUSAS = {".": 0.34, "?": 0.42, "!": 0.38, ":": 0.28, "…": 0.45}
 rng = np.random.default_rng(7)
@@ -89,13 +88,14 @@ def main():
     os.makedirs(trabajo, exist_ok=True)
     todas = [fr for _, frases, _ in SEGMENTOS for fr in frases]
     tts = motor(voz_path, todas)
+    fp = getattr(tts, "pausa", 1.0)   # factor de las pausas entre frases (más cortas con la voz por API)
     n_frase = 0
     voz, efectos, t = [np.zeros(int(0.5 * SR))], [], 0.5
     segs, subs, escenas = [], [], []
     for si, (capitulo, frases, esc) in enumerate(SEGMENTOS):
         inicio_seg = t
         if si > 0:
-            efectos.append((t, pitido())); hueco = np.zeros(int(0.5 * SR)); voz.append(hueco); t += 0.5
+            efectos.append((t, pitido())); hueco = np.zeros(int(0.5 * fp * SR)); voz.append(hueco); t += 0.5 * fp
         ini_frases = []
         for fr in frases:
             ant = todas[n_frase - 1] if n_frase > 0 else ""
@@ -104,9 +104,9 @@ def main():
             a = remuestrear(a, sr_voz)
             ini_frases.append(t); subs.append((t, t + len(a) / SR, fr))
             voz.append(a); t += len(a) / SR
-            p = PAUSAS.get(fr.strip()[-1], 0.3)
+            p = PAUSAS.get(fr.strip()[-1], 0.3) * fp
             voz.append(np.zeros(int(p * SR))); t += p
-        voz.append(np.zeros(int(0.45 * SR))); t += 0.45
+        voz.append(np.zeros(int(0.45 * fp * SR))); t += 0.45 * fp
         for k, (nombre, idx, off) in enumerate(esc):
             ini = inicio_seg if k == 0 else ini_frases[idx] + off
             escenas.append({"nombre": nombre, "inicio": round(ini, 3), "capitulo": k == 0 and si > 0})

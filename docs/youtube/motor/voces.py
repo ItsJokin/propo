@@ -10,11 +10,12 @@
 import hashlib, json, os, re, subprocess, urllib.request
 import numpy as np
 
-def decodificar(ruta_o_bytes, sr=48000):
-    """Decodifica cualquier audio (mp3, wav…) a float32 mono con ffmpeg."""
+def decodificar(ruta_o_bytes, sr=48000, ritmo=1.0):
+    """Decodifica cualquier audio (mp3, wav…) a float32 mono con ffmpeg. ritmo > 1 acelera sin cambiar el tono."""
     entrada = ruta_o_bytes if isinstance(ruta_o_bytes, str) else "pipe:0"
     datos = None if isinstance(ruta_o_bytes, str) else ruta_o_bytes
-    r = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", entrada, "-f", "f32le", "-ac", "1", "-ar", str(sr), "pipe:1"],
+    filtro = ["-af", f"atempo={ritmo}"] if ritmo != 1.0 else []
+    r = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", entrada, *filtro, "-f", "f32le", "-ac", "1", "-ar", str(sr), "pipe:1"],
                        input=datos, capture_output=True, check=True)
     return np.frombuffer(r.stdout, dtype=np.float32).copy(), sr
 
@@ -32,6 +33,10 @@ class ElevenLabs:
         self.modelo, self.ajustes = modelo, {"stability": estabilidad, "similarity_boost": similitud,
                                              "style": estilo, "use_speaker_boost": True}
         self.cache = os.environ.get("ELEVENLABS_CACHE", "cache_elevenlabs")
+        # Generada frase a frase, la voz sale más pausada que una locución completa: se acelera un poco al
+        # decodificar (gratis, no cambia la caché) y audio.py acorta las pausas entre frases con self.pausa.
+        self.ritmo = float(os.environ.get("ELEVENLABS_RITMO", "1.04"))
+        self.pausa = 0.7
         os.makedirs(self.cache, exist_ok=True)
     def speak(self, texto, anterior="", siguiente=""):
         cuerpo = {"text": texto, "model_id": self.modelo, "voice_settings": self.ajustes,
@@ -49,7 +54,7 @@ class ElevenLabs:
                     if intento == 4: raise
                     print("  reintento ElevenLabs:", e); import time; time.sleep(2 ** (intento + 1))
             open(clave_cache, "wb").write(datos)
-        a, sr = decodificar(clave_cache)
+        a, sr = decodificar(clave_cache, ritmo=self.ritmo)
         return recortar_silencio(a, sr), sr
 
 class LocucionManual:
