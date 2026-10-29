@@ -1,6 +1,6 @@
 # Especial Navidad: ¿Coca-Cola vistió a Papá Noel de rojo?: metadatos para subir a YouTube
 
-**Archivo:** `Codigo_de_Barras_46_Coca_Cola_Papa_Noel.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:42 · audio normalizado a −14 LUFS
+**Archivo:** `Codigo_de_Barras_46_Coca_Cola_Papa_Noel.mp4` · 1920×1080 · 25 fps · voz ElevenLabs · 08:15 · audio normalizado a −14 LUFS
 **Miniatura:** `miniatura.png` (1280×720) · **Subtítulos:** `subtitulos_es.srt` (español)
 
 ## Título (recomendado el primero)
@@ -14,17 +14,17 @@ Especial Navidad de Código de Barras. ¿Coca-Cola vistió a Papá Noel de rojo?
 
 ⏱ Capítulos
 00:00 Introducción
-00:33 1. Un obispo de Turquía
-01:23 2. Un poema y unos renos
-02:15 3. El dibujante del traje rojo
-03:01 4. Un refresco de verano
-03:40 5. El pintor de Chicago
-04:26 6. Entonces, ¿mito o verdad?
-05:17 7. Un anuncio con una errata
-06:12 8. Osos polares
-06:43 9. La Navidad llega
-07:29 10. Lo que nos enseña
-07:57 Final
+00:31 1. Un obispo de Turquía
+01:18 2. Un poema y unos renos
+02:08 3. El dibujante del traje rojo
+02:51 4. Un refresco de verano
+03:28 5. El pintor de Chicago
+04:12 6. Entonces, ¿mito o verdad?
+05:00 7. Un anuncio con una errata
+05:53 8. Osos polares
+06:21 9. La Navidad llega
+07:05 10. Lo que nos enseña
+07:32 Final
 
 📚 Fuentes
 - Coca-Cola Canada, «Did Coca-Cola invent Santa Claus?» (FAQ oficial): https://www.coca-cola.ca/faqs/coca-cola-faqs-history/did-coca-cola-invent-santa-claus
