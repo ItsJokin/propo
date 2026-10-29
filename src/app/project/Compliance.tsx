@@ -13,7 +13,7 @@ import { plainRequirement } from '../../lib/glossary';
 import { ACCEPTED } from '../../lib/pipeline/parse';
 import { nowIso, fmtDate } from '../../lib/util';
 import { openSource } from '../common';
-import { reviewCoherence, fixIssue, coherenceStale, coherenceHash, openIssues, type CoherenceIssue } from '../../lib/coherence';
+import { reviewCoherence, fixIssue, coherenceStale, coherenceHash, openIssues, sameIssue, type CoherenceIssue } from '../../lib/coherence';
 import { planObra, emptyObra } from '../../lib/obra';
 
 /** Revisión de coherencia en segundo plano (una a la vez por proyecto). Aplica las correcciones seguras al texto. */
@@ -28,8 +28,9 @@ async function runCoherence(id: string, onDone?: () => void) {
     updateProject(id, (x) => {
       // Lo que el cliente ya descartó o PROPO ya arregló no vuelve a salir si la IA lo repite con el mismo título.
       const prev = (x.coherence?.issues ?? []).filter((i) => i.title);   // las de la versión anterior (sin título) no se arrastran
-      const gone = new Set(prev.filter((i) => i.dismissed || i.fixed || i.answer).map((i) => i.title.toLowerCase()));
-      coherence.issues = coherence.issues.filter((i) => !gone.has(i.title.toLowerCase())).concat(prev.filter((i) => (i.fixed && i.fixes?.length) || i.answer));
+      const gone = prev.filter((i) => i.dismissed || i.fixed || i.answer);
+      // Se conservan todas las ya resueltas (también las descartadas), para que ninguna revisión futura las vuelva a preguntar.
+      coherence.issues = coherence.issues.filter((i) => !gone.some((g) => sameIssue(g, i))).concat(gone);
       x.coherence = coherence;
       x.activity.unshift({ at: nowIso(), text: `Revisión de coherencia: ${openIssues(x).length} incoherencias por arreglar` });
     });
