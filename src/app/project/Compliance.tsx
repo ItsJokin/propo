@@ -330,13 +330,17 @@ function FinancialStep({ p }: { p: Project }) {
 }
 
 /** Una incoherencia: PROPO la arregla con un botón; solo si le falta un dato que únicamente tiene el cliente, lo pregunta. */
-const ABOUT_YOU = /experiencia|contrato|trabajos?|referencias?|personal|plantilla|equipo|trabajador|camarer|cociner|t[ée]cnic|medios|maquinaria|veh[ií]cul|certificad|carn[eé]|formaci[oó]n|seguro|solvencia/i;
+const ABOUT_YOU = /\bCV\b|responsable|director|experiencia|contrato|trabajos?|referencias?|personal|plantilla|equipo|trabajador|camarer|cociner|t[ée]cnic|medios|maquinaria|veh[ií]cul|certificad|carn[eé]|formaci[oó]n|seguro|solvencia/i;
 /** Ayuda para que el cliente sepa qué contar según de qué trata la incoherencia. */
-function explainHint(t: string) {
+function explainHint(title: string, problem: string) {
+  return hintFor(title) ?? hintFor(problem) ?? 'Cuéntalo como se lo contarías a un compañero: PROPO lo redacta con el tono de la oferta.';
+}
+function hintFor(t: string): string | null {
+  if (/\bCV\b|curr[ií]cul|responsable|director|coordinador|personal|plantilla|equipo|trabajador|camarer|cociner/i.test(t)) return 'Por ejemplo: quién es el responsable y su experiencia o titulación, cuántas personas trabajan con vosotros, si contratáis personal por horas o de refuerzo.';
   if (/experiencia|contrato|trabajos?|referencias?|solvencia/i.test(t)) return 'Por ejemplo: otros trabajos parecidos que habéis hecho (para quién, cuándo, de qué tamaño), aunque no estén en la ficha de la empresa.';
-  if (/personal|plantilla|equipo|trabajador|camarer|cociner|t[ée]cnic/i.test(t)) return 'Por ejemplo: cuántas personas trabajan con vosotros, qué hacen, si contratáis personal por horas o de refuerzo, su experiencia o formación.';
+  if (/t[ée]cnic/i.test(t)) return 'Por ejemplo: quién se encarga, su experiencia o formación, y cómo lo organizáis.';
   if (/medios|maquinaria|veh[ií]cul/i.test(t)) return 'Por ejemplo: qué medios, vehículos o maquinaria tenéis o podéis alquilar para este contrato.';
-  return 'Cuéntalo como se lo contarías a un compañero: PROPO lo redacta con el tono de la oferta.';
+  return null;
 }
 
 function IssueStep({ p, issue }: { p: Project; issue: CoherenceIssue }) {
@@ -389,7 +393,7 @@ function IssueStep({ p, issue }: { p: Project; issue: CoherenceIssue }) {
         </div>
       ) : explain ? (
         <div className="stack gap-8">
-          <div className="fin-said"><LuMessageCircle /><div><strong>{aboutYou ? 'Antes de cambiar nada, cuéntame cómo es en realidad.' : 'Explícamelo con tus palabras.'}</strong> {explainHint(`${issue.title} ${issue.problem}`)}</div></div>
+          <div className="fin-said"><LuMessageCircle /><div><strong>{aboutYou ? 'Antes de cambiar nada, cuéntame cómo es en realidad.' : 'Explícamelo con tus palabras.'}</strong> {explainHint(issue.title, issue.problem)}</div></div>
           <textarea className="textarea" rows={4} value={text} onChange={(e) => setText(e.target.value)} placeholder="Escríbelo con tus palabras, sin preocuparte por cómo queda: PROPO lo redacta" />
           <div className="row-wrap">
             <button className="btn btn-primary" disabled={!text.trim()} onClick={() => fix(text.trim())}><LuSend /> Enviar y que PROPO lo arregle</button>
