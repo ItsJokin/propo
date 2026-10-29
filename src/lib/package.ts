@@ -20,6 +20,19 @@ export function sobres(p: Project): Record<Sobre, string> {
   return { admin: 'Sobre 1 - Documentación administrativa', tecnico: 'Sobre 2 - Criterios de juicio de valor', economico: jv ? 'Sobre 3 - Oferta económica y criterios de fórmula' : 'Sobre 2 - Oferta económica', completar: 'Formularios del pliego por completar', interno: '_Interno (no presentar)' };
 }
 
+/** Nombres de carpeta cortos para el ZIP (los largos de `sobres` son para la pantalla). */
+export function sobreDirs(p: Project): Record<Sobre, string> {
+  const jv = p.criteria.some((c) => c.kind === 'judgement');
+  return { admin: 'Sobre 1 Administrativo', tecnico: 'Sobre 2 Tecnico', economico: jv ? 'Sobre 3 Economico' : 'Sobre 2 Economico', completar: 'Formularios por completar', interno: '_No presentar' };
+}
+/** Un nombre de archivo de 50 caracteres como mucho, sin caracteres que Windows no admite y conservando la extensión. */
+export function shortFile(name: string, max = 50): string {
+  const clean = name.replace(/[<>:"/\\|?*\u0000-\u001f]+/g, ' ').replace(/\s+/g, ' ').trim();
+  const dot = clean.lastIndexOf('.'); const ext = dot > 0 && clean.length - dot <= 6 ? clean.slice(dot) : '';
+  const base = (ext ? clean.slice(0, dot) : clean).trim();
+  return base.length + ext.length <= max ? base + ext : base.slice(0, max - ext.length - 1).trim() + ext;
+}
+
 const WIN = '€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ';
 function clean(s: string) {
   return s.replace(/≥/g, '>=').replace(/≤/g, '<=').replace(/→/g, '->').replace(/ /g, ' ')
@@ -70,26 +83,26 @@ export async function buildPackageZip(p: Project, s: AppState): Promise<Uint8Arr
   const items = packageItems(p, s);
   const files: ZipEntry[] = [];
   const enc = new TextEncoder();
-  const folder = (p.name || 'Propuesta').replace(/[^\p{L}\p{N}\- ]+/gu, '').trim().slice(0, 60) || 'Propuesta';
-  const put = (name: string, data: Uint8Array) => files.push({ name: `${folder}/${name}`, data });
+  // Rutas cortas: Windows no abre archivos cuya ruta completa pasa de 260 caracteres al descomprimir en el escritorio.
+  const put = (name: string, data: Uint8Array) => { const parts = name.split('/'); parts[parts.length - 1] = shortFile(parts[parts.length - 1]); let n = `Oferta/${parts.join('/')}`; for (let k = 2; files.some((f) => f.name === n); k++) n = `Oferta/${parts.slice(0, -1).concat(parts[parts.length - 1].replace(/(\.[^.]+)?$/, ` (${k})$1`)).join('/')}`; files.push({ name: n, data }); };
   // Ordenado por sobres, tal como se presenta en la plataforma de contratación.
-  const S = sobres(p); const jv = p.criteria.some((c) => c.kind === 'judgement');
+  const S = sobreDirs(p); const jv = p.criteria.some((c) => c.kind === 'judgement');
   const tec = jv ? S.tecnico : S.admin;
   put(`${tec}/Memoria técnica.pdf`, await technicalProposalPdf(p, s));
-  if (p.obra?.gantt) put(`${tec}/Plan de obra (Gantt).pdf`, await ganttPdf(p, s));
+  if (p.obra?.gantt) put(`${tec}/Plan de obra.pdf`, await ganttPdf(p, s));
   if (p.planos?.items?.length) put(`${tec}/Planos de la oferta.pdf`, await planosPdf(p, s));
   put(`${S.admin}/Declaración responsable.pdf`, await declarationPdf(p, s));
-  put(`${S.admin}/DEUC prellenado (copiar en el servicio DEUC).pdf`, await deucPdf(p, s));
+  put(`${S.admin}/DEUC prellenado.pdf`, await deucPdf(p, s));
   if (s.pastProjects.length) put(`${S.admin}/Experiencia.pdf`, await experiencePdf(p, s));
-  if (items.some((i) => i.id === 'company')) put(`${S.admin}/Documentación de empresa.pdf`, await companyIndexPdf(p, s));
+  if (items.some((i) => i.id === 'company')) put(`${S.admin}/Documentacion de empresa.pdf`, await companyIndexPdf(p, s));
   // Anexos administrativos rellenados por PROPO sobre el documento original del organismo.
   for (const a of p.annexes?.items ?? []) if (a.key && !a.economic) { const b = await getFile(a.key); if (b) put(`${S.admin}/Anexos/${a.name}`, new Uint8Array(b)); }
   if (p.pricing?.choice) put(`${S.economico}/Oferta económica.pdf`, await economicOfferPdf(p, s));
   if (p.obra?.budget) { const b = await getFile(p.obra.budget.key); if (b) put(`${S.economico}/${p.obra.budget.name}`, new Uint8Array(b)); }
   if (p.pricing?.approved && p.pricing.filled) { const b = await getFile(p.pricing.filled.key); if (b) put(`${S.economico}/${p.pricing.filled.name}`, new Uint8Array(b)); }
-  if (items.some((i) => i.id === 'justif')) put(`${S.interno}/Justificación de la oferta (borrador, solo si la piden).pdf`, await abnormalJustificationPdf(p, s));
+  if (items.some((i) => i.id === 'justif')) put(`${S.interno}/Justificacion de la oferta (borrador).pdf`, await abnormalJustificationPdf(p, s));
   for (const it of items) {
-    if (it.vaultKey) { const b = await getFile(it.vaultKey); if (b) put(`${S.admin}/Documentos de empresa/${it.name}`, new Uint8Array(b)); }
+    if (it.vaultKey) { const b = await getFile(it.vaultKey); if (b) put(`${S.admin}/Empresa/${it.name}`, new Uint8Array(b)); }
     if (it.tenderKey) { const b = await getFile(it.tenderKey); if (b) put(`${S.completar}/${it.name}`, new Uint8Array(b)); }
   }
   put(`${S.interno}/Informe de cumplimiento.pdf`, await complianceReportPdf(p, s));
@@ -104,11 +117,11 @@ export async function buildPackageZip(p: Project, s: AppState): Promise<Uint8Arr
     ...manual.map((i) => `- ${i.name}: ${i.note}`),
     '- Firma todos los documentos con la firma electrónica cualificada del representante legal.',
     '- Cada carpeta corresponde a un sobre o archivo electrónico. Comprueba en el pliego cuántos sobres hay y cómo se llaman: algunas plataformas los llaman "archivo A, B, C".',
-    `- La oferta económica (carpeta "${sobres(p).economico}") va solo en su sobre. Nunca incluyas precios ni valores de criterios de fórmula en el sobre técnico.`,
+    `- La oferta económica (carpeta "${sobreDirs(p).economico}") va solo en su sobre. Nunca incluyas precios ni valores de criterios de fórmula en el sobre técnico.`,
     '- El DEUC se cumplimenta en el servicio DEUC electrónico (visor.registrodelicitadores.gob.es/espd-web) copiando los datos del PDF prellenado.',
-    '- Los formularios de la carpeta "Formularios del pliego por completar" van en el sobre que indique el pliego.',
+    `- Los formularios de la carpeta "${sobreDirs(p).completar}" van en el sobre que indique el pliego.`,
     '',
-    'La carpeta "_Interno (no presentar)" es para tu equipo y no debe presentarse.',
+    `La carpeta "${sobreDirs(p).interno}" es para tu equipo y no debe presentarse.`,
   ].join('\r\n');
   put('LEEME.txt', enc.encode(readme));
   return writeZip(files);

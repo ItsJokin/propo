@@ -1535,3 +1535,47 @@ a.comp-award-t:hover { color: var(--accent); }
 .ps-floor summary strong { color: var(--fg); }
 @media (max-width: 760px) { .ps-head, .ps-read { grid-template-columns: 1fr; } .ps-quick { margin-left: 0; } }
 
+/* Contraseña con ojo */
+.pw-wrap { position: relative; }
+.pw-wrap .input { width: 100%; padding-right: 44px; }
+.pw-eye { position: absolute; top: 50%; right: 6px; transform: translateY(-50%); width: 34px; height: 34px; display: grid; place-items: center; border: 0; border-radius: 8px; background: transparent; color: var(--fg-3); cursor: pointer; }
+.pw-eye:hover { color: var(--fg); background: var(--surface-2); }
+.pw-eye svg { width: 18px; height: 18px; }
+.input[aria-invalid="true"] { border-color: var(--bad); }
+
+/* Redactando la propuesta */
+.drafting-card { margin: 8px 0 4px; padding: 20px 22px; border-radius: 16px; background: var(--accent-soft); border: 1px solid var(--accent-line); display: grid; gap: 14px; }
+.drafting-head { display: flex; align-items: center; gap: 14px; }
+.drafting-ic { width: 44px; height: 44px; flex: none; display: grid; place-items: center; border-radius: 12px; background: var(--accent); color: var(--accent-fg); }
+.drafting-ic svg { width: 22px; height: 22px; }
+.drafting-t { font: 700 19px/1.3 var(--font-display); color: var(--fg); }
+.drafting-bar { height: 8px; border-radius: 4px; background: var(--surface); overflow: hidden; }
+.drafting-bar i { display: block; height: 100%; border-radius: 4px; background: var(--accent); transition: width .6s; }
+.drafting-warn { display: flex; gap: 8px; align-items: flex-start; padding: 10px 12px; border-radius: 10px; background: var(--warn-soft); font-size: 13.5px; line-height: 1.5; color: var(--fg-2); }
+.drafting-warn svg { flex: none; width: 17px; height: 17px; margin-top: 1px; color: var(--warn); }
+
+/* Guía «Presentar la oferta» */
+.sg-cta { box-shadow: 0 6px 18px rgba(20, 99, 255, .25); }
+.sg-deadline { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; background: var(--surface-2); font-size: 14px; margin-bottom: 14px; }
+.sg-deadline > svg { flex: none; width: 18px; height: 18px; margin-top: 2px; color: var(--fg-3); }
+.sg-deadline.urgent { background: var(--warn-soft); } .sg-deadline.urgent > svg { color: var(--warn); }
+.sg-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.sg-step { display: flex; gap: 14px; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); }
+.sg-step.now { border-color: var(--accent-line); background: var(--accent-soft); }
+.sg-step.done { opacity: .75; }
+.sg-check { flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--border-strong); background: var(--surface); font: 700 13px var(--font-display); color: var(--fg-2); cursor: pointer; }
+.sg-step.now .sg-check { border-color: var(--accent); color: var(--accent); }
+.sg-step.done .sg-check, .sg-final.done .sg-check { background: var(--ok); border-color: var(--ok); color: #fff; }
+.sg-check svg { width: 16px; height: 16px; }
+.sg-body { flex: 1; min-width: 0; }
+.sg-title { display: flex; align-items: center; gap: 8px; font: 600 15.5px/1.3 var(--font-display); color: var(--fg); min-height: 30px; }
+.sg-title svg { width: 17px; height: 17px; color: var(--accent); flex: none; }
+.sg-step.done .sg-title { text-decoration: line-through; text-decoration-color: var(--fg-3); }
+.sg-text { margin-top: 4px; font-size: 14px; line-height: 1.55; color: var(--fg-2); }
+.sg-list { margin: 8px 0; padding-left: 18px; display: grid; gap: 6px; }
+.sg-list a, .sg-text a:not(.btn) { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.sg-list a svg { width: 12px; height: 12px; vertical-align: -1px; }
+.sg-final { display: flex; gap: 14px; align-items: flex-start; margin-top: 10px; padding: 14px 16px; border-radius: 14px; border: 1px dashed var(--border-strong); }
+.sg-final.done { border-style: solid; border-color: transparent; background: var(--ok-soft); }
+.sg-check.big { cursor: default; }
+

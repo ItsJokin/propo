@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { LuDownload, LuEye, LuFileText, LuShieldCheck, LuCircleCheck, LuCircleAlert, LuInfo, LuLoaderCircle, LuExternalLink } from 'react-icons/lu';
+import { LuDownload, LuEye, LuFileText, LuShieldCheck, LuCircleCheck, LuCircleAlert, LuInfo, LuLoaderCircle, LuExternalLink, LuSend } from 'react-icons/lu';
+import { SubmitGuide } from './SubmitGuide';
 import type { Project } from '../../lib/types';
 import { useStore, navigate, toast, track } from '../../lib/store';
 import { packageItems, buildPackageZip, technicalProposalPdf, declarationPdf, experiencePdf, companyIndexPdf, complianceReportPdf, economicOfferPdf, abnormalJustificationPdf, ganttPdf, deucPdf, sobres, type PkgStatus, type Sobre } from '../../lib/package';
@@ -20,12 +21,14 @@ export function Package({ p }: { p: Project }) {
   const s = useStore((x) => x);
   const items = packageItems(p, s);
   const [busy, setBusy] = useState(false);
+  const [guide, setGuide] = useState(false);
+  const submitted = !!p.manualChecks.submitted;
   const fails = complianceChecks(p).filter((c) => c.state === 'fail').length;
   const download = async () => {
     setBusy(true);
     try {
       const zip = await buildPackageZip(p, s);
-      const name = `${p.name.replace(/[^\p{L}\p{N}\- ]+/gu, '').trim() || 'Propuesta'} — paquete de presentación.zip`;
+      const name = `Oferta ${p.name.replace(/[^\p{L}\p{N}\- ]+/gu, '').trim().split(/\s+/).slice(0, 4).join(' ').slice(0, 32).trim() || 'PROPO'}.zip`;   // corto: al descomprimir, la ruta no puede pasar de 260 caracteres
       const r = await offerDownload(name, zip);
       track('package_downloaded', { projectId: p.id, result: r });
       if (r === 'saved') toast('Paquete de presentación listo', 'ok');
@@ -68,16 +71,18 @@ export function Package({ p }: { p: Project }) {
         <div className="row-wrap" style={{ justifyContent: 'space-between', gap: 16 }}>
           <div>
             <div className="eyebrow">Paquete de presentación</div>
-            <h2 className="mt-8" style={{ fontSize: 22 }}>{p.markedReady ? 'Listo para presentar' : 'Vista previa del paquete'}</h2>
+            <h2 className="mt-8" style={{ fontSize: 22 }}>{submitted ? <><LuCircleCheck style={{ color: 'var(--ok)', verticalAlign: -3 }} /> Oferta presentada</> : p.markedReady ? 'Listo para presentar' : 'Vista previa del paquete'}</h2>
             <p className="muted mt-4">{p.markedReady ? `Marcado como listo el ${fmtDate(p.markedReady)}.` : fails ? `${fails} incidencia${fails > 1 ? 's' : ''} de cumplimiento abierta${fails > 1 ? 's' : ''}. Puedes descargar un paquete en borrador cuando quieras.` : 'Todas las comprobaciones bloqueantes están superadas.'}</p>
           </div>
           <div className="row-wrap">
-            <button className="btn btn-primary" onClick={download} disabled={busy}>{busy ? <LuLoaderCircle className="spin" /> : <LuDownload />} Descargar paquete de presentación</button>
+            <button className="btn btn-primary btn-lg sg-cta" onClick={() => setGuide(true)}><LuSend /> {submitted ? 'Ver los pasos de la presentación' : 'Presentar la oferta'}</button>
+            <button className="btn btn-secondary" onClick={download} disabled={busy}>{busy ? <LuLoaderCircle className="spin" /> : <LuDownload />} Descargar paquete</button>
             <button className="btn btn-secondary" onClick={word} disabled={!p.sections.length}><LuFileText /> Memoria en Word</button>
             {!p.markedReady && <button className="btn btn-secondary" onClick={() => navigate(`/app/projects/${p.id}/compliance`)}><LuShieldCheck /> Marcar como lista</button>}
           </div>
         </div>
       </div>
+      {guide && <SubmitGuide p={p} onClose={() => setGuide(false)} onDownload={download} busy={busy} />}
       <AnnexesCard p={p} onView={setView} />
       {(['admin', 'tecnico', 'economico', 'completar', 'interno'] as Sobre[]).filter((k) => items.some((it) => it.sobre === k)).map((k) => (
       <div key={k} className="card">
@@ -103,7 +108,7 @@ export function Package({ p }: { p: Project }) {
           <iframe className="pdf-view" src={view.url} title={view.name} />
         </Modal>
       )}
-      <div className="callout neutral small"><LuInfo /><div>PROPO no presenta ofertas. Descarga el paquete, firma los documentos con firma electrónica cualificada y preséntalos en la plataforma de contratación. <span className="subtle">La presentación automática está prevista donde sea legal y técnicamente posible.</span></div></div>
+      <div className="callout neutral small"><LuInfo /><div>PROPO no presenta ofertas por ti: la firma y la presentación las hace tu empresa con su certificado digital. Pulsa <button className="link" onClick={() => setGuide(true)}>«Presentar la oferta»</button> y te guiamos paso a paso.</div></div>
       <p className="xs subtle row"><LuExternalLink style={{ width: 12, height: 12 }} />El ZIP incluye los PDF generados, los documentos de empresa de tu biblioteca y los formularios del pliego por completar, además de un LÉEME con los pasos pendientes.</p>
     </div>
   );

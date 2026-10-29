@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { LuSend, LuUpload, LuSparkles, LuArrowRight, LuCheck, LuX, LuCircleCheck, LuLoaderCircle, LuFileText, LuRotateCcw, LuBuilding2 } from 'react-icons/lu';
+import { LuSend, LuUpload, LuSparkles, LuArrowRight, LuCheck, LuX, LuCircleCheck, LuLoaderCircle, LuFileText, LuRotateCcw, LuBuilding2, LuTriangleAlert } from 'react-icons/lu';
 import type { Project, InterviewMsg } from '../../lib/types';
 import { navigate, updateProject, getState } from '../../lib/store';
 import { pendingQuestions, startInterview, askNext, answer, interviewStats, outcomeOf, type Question } from '../../lib/interview';
@@ -23,6 +23,14 @@ export function Assistant({ p }: { p: Project }) {
   const [multi, setMulti] = useState<string[]>([]);
   const [busy, setBusy] = useState(false);
   const [drafting, setDrafting] = useState<string | null>(null);
+  const [prog, setProg] = useState<{ i: number; n: number }>({ i: 0, n: 0 });
+  // Mientras redacta, avisar si se intenta cerrar o recargar la pestaña
+  useEffect(() => {
+    if (!drafting) return;
+    const h = (e: BeforeUnloadEvent) => { e.preventDefault(); e.returnValue = ''; };
+    window.addEventListener('beforeunload', h);
+    return () => window.removeEventListener('beforeunload', h);
+  }, [!!drafting]);
   const end = useRef<HTMLDivElement>(null);
   const file = useRef<HTMLInputElement>(null);
   const q: Question | undefined = useMemo(() => pendingQuestions(p)[0], [p]);
@@ -49,7 +57,7 @@ export function Assistant({ p }: { p: Project }) {
   };
   const draftAll = async () => {
     const todo = getState().projects.find((x) => x.id === p.id)!.sections.filter((s) => s.status === 'not_started');
-    for (const s of todo) { setDrafting(s.title); await runGenerate(p.id, s.id, false, true); }
+    for (const [i, s] of todo.entries()) { setProg({ i, n: todo.length }); setDrafting(s.title); await runGenerate(p.id, s.id, false, true); }
     const mode = getState().projects.find((x) => x.id === p.id)!.sections.some((s) => s.generatedBy === 'ai') ? 'ai' : 'template';
     setDrafting(null);
     setTimeout(() => navigate(`/app/projects/${p.id}/proposal`), 0);
@@ -164,7 +172,14 @@ export function Assistant({ p }: { p: Project }) {
           </div>
         )}
 
-        {drafting && <div className="asst-msg propo"><span className="asst-avatar"><LuSparkles /></span><div className="asst-bubble"><span className="row small"><LuLoaderCircle className="spin" /> Redactando «{drafting}»…</span></div></div>}
+        {drafting && (
+          <div className="drafting-card" role="status" aria-live="polite">
+            <div className="drafting-head"><span className="drafting-ic"><LuLoaderCircle className="spin" /></span>
+              <div><div className="drafting-t">PROPO está redactando tu propuesta</div><div className="small muted">Sección {prog.i + 1} de {prog.n}: «{drafting}»</div></div></div>
+            <div className="drafting-bar"><i style={{ width: `${Math.round(((prog.i + 0.5) / Math.max(1, prog.n)) * 100)}%` }} /></div>
+            <div className="drafting-warn"><LuTriangleAlert /> <span><strong>No cierres esta pestaña ni el navegador</strong> hasta que termine. Tarda unos minutos; puedes dejarla abierta y hacer otra cosa mientras tanto.</span></div>
+          </div>
+        )}
 
         {!q && !drafting && !busy && (
           <div className="conv-done">

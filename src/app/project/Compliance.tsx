@@ -28,8 +28,8 @@ async function runCoherence(id: string, onDone?: () => void) {
     updateProject(id, (x) => {
       // Lo que el cliente ya descartó o PROPO ya arregló no vuelve a salir si la IA lo repite con el mismo título.
       const prev = (x.coherence?.issues ?? []).filter((i) => i.title);   // las de la versión anterior (sin título) no se arrastran
-      const gone = new Set(prev.filter((i) => i.dismissed || i.fixed).map((i) => i.title.toLowerCase()));
-      coherence.issues = coherence.issues.filter((i) => !gone.has(i.title.toLowerCase())).concat(prev.filter((i) => i.fixed && i.fixes?.length));
+      const gone = new Set(prev.filter((i) => i.dismissed || i.fixed || i.answer).map((i) => i.title.toLowerCase()));
+      coherence.issues = coherence.issues.filter((i) => !gone.has(i.title.toLowerCase())).concat(prev.filter((i) => (i.fixed && i.fixes?.length) || i.answer));
       x.coherence = coherence;
       x.activity.unshift({ at: nowIso(), text: `Revisión de coherencia: ${openIssues(x).length} incoherencias por arreglar` });
     });
@@ -330,9 +330,20 @@ function FinancialStep({ p }: { p: Project }) {
 }
 
 /** Una incoherencia: PROPO la arregla con un botón; solo si le falta un dato que únicamente tiene el cliente, lo pregunta. */
+const ABOUT_YOU = /experiencia|contrato|trabajos?|referencias?|personal|plantilla|equipo|trabajador|camarer|cociner|t[ée]cnic|medios|maquinaria|veh[ií]cul|certificad|carn[eé]|formaci[oó]n|seguro|solvencia/i;
+/** Ayuda para que el cliente sepa qué contar según de qué trata la incoherencia. */
+function explainHint(t: string) {
+  if (/experiencia|contrato|trabajos?|referencias?|solvencia/i.test(t)) return 'Por ejemplo: otros trabajos parecidos que habéis hecho (para quién, cuándo, de qué tamaño), aunque no estén en la ficha de la empresa.';
+  if (/personal|plantilla|equipo|trabajador|camarer|cociner|t[ée]cnic/i.test(t)) return 'Por ejemplo: cuántas personas trabajan con vosotros, qué hacen, si contratáis personal por horas o de refuerzo, su experiencia o formación.';
+  if (/medios|maquinaria|veh[ií]cul/i.test(t)) return 'Por ejemplo: qué medios, vehículos o maquinaria tenéis o podéis alquilar para este contrato.';
+  return 'Cuéntalo como se lo contarías a un compañero: PROPO lo redacta con el tono de la oferta.';
+}
+
 function IssueStep({ p, issue }: { p: Project; issue: CoherenceIssue }) {
   const [busy, setBusy] = useState(false);
   const [text, setText] = useState('');
+  const aboutYou = ABOUT_YOU.test(`${issue.title} ${issue.problem}`);
+  const [explain, setExplain] = useState(aboutYou);
   const title = (id: string) => (id === 'obra' ? 'Plan de obra' : p.sections.find((x) => x.id === id)?.title ?? id);
   const patch = (fn: (i: CoherenceIssue) => void) => updateProject(p.id, (x) => { const it = x.coherence?.issues.find((i) => i.id === issue.id); if (it) fn(it); });
   const fix = async (answer?: string) => {
@@ -351,11 +362,13 @@ function IssueStep({ p, issue }: { p: Project; issue: CoherenceIssue }) {
       updateProject(p.id, (x) => {
         for (const sec of x.sections) if (r.contents[sec.id] != null && r.contents[sec.id] !== sec.content) { sec.content = r.contents[sec.id]; sec.updatedAt = nowIso(); }
         const it = x.coherence?.issues.find((i) => i.id === issue.id);
-        if (it) { it.fixes = r.fixes; it.fixed = applied.length > 0; it.answer = answer; it.question = applied.length ? null : (r.question ?? 'No he encontrado cómo arreglarlo sin un dato tuyo. ¿Puedes contarme cómo es en realidad?'); }
+        // Con la explicación del cliente la incoherencia queda resuelta: nunca se vuelve a hacer la misma pregunta.
+        if (it) { it.fixes = r.fixes; it.fixed = applied.length > 0; it.answer = answer ?? it.answer; if (answer && !applied.length) it.dismissed = true; it.question = applied.length || answer ? null : (r.question ?? 'No he encontrado cómo arreglarlo sin un dato tuyo. ¿Puedes contarme cómo es en realidad?'); }
         if (x.coherence) x.coherence.hash = coherenceHash(x);   // arreglar una no obliga a revisar todo otra vez
         if (applied.length) x.activity.unshift({ at: nowIso(), text: `PROPO ha arreglado una incoherencia: ${issue.title}` });
       });
-      if (applied.length) toast('Arreglado. Lo tienes en «Lo que ha arreglado PROPO», por si quieres deshacerlo.', 'ok');
+      if (applied.length) toast(answer ? 'Hecho: he añadido tu explicación a la memoria. Lo tienes en «Lo que ha arreglado PROPO», por si quieres deshacerlo.' : 'Arreglado. Lo tienes en «Lo que ha arreglado PROPO», por si quieres deshacerlo.', 'ok');
+      else if (answer) toast(`He guardado tu explicación y PROPO la tendrá en cuenta. Si quieres, revisa el texto en «${issue.where.map(title).join(', ') || 'la propuesta'}».`, 'ok');
       else if (!getState().projects.find((x) => x.id === p.id)?.coherence?.issues.some((i) => i.id === issue.id)) toast('No he podido arreglarlo solo. Revísalo en la sección indicada.', 'warn');
     } catch (e: any) { toast(friendlyAIError(e?.code ?? 'upstream_error'), 'bad'); }
     finally { setBusy(false); }
@@ -374,9 +387,20 @@ function IssueStep({ p, issue }: { p: Project; issue: CoherenceIssue }) {
             <button className="btn btn-ghost btn-sm" onClick={() => patch((i) => { i.dismissed = true; })}>No es un problema</button>
           </div>
         </div>
+      ) : explain ? (
+        <div className="stack gap-8">
+          <div className="fin-said"><LuMessageCircle /><div><strong>{aboutYou ? 'Antes de cambiar nada, cuéntame cómo es en realidad.' : 'Explícamelo con tus palabras.'}</strong> {explainHint(`${issue.title} ${issue.problem}`)}</div></div>
+          <textarea className="textarea" rows={4} value={text} onChange={(e) => setText(e.target.value)} placeholder="Escríbelo con tus palabras, sin preocuparte por cómo queda: PROPO lo redacta" />
+          <div className="row-wrap">
+            <button className="btn btn-primary" disabled={!text.trim()} onClick={() => fix(text.trim())}><LuSend /> Enviar y que PROPO lo arregle</button>
+            <button className="btn btn-secondary btn-sm" onClick={() => { setExplain(false); fix(); }}><LuSparkles /> Que PROPO lo arregle sin más</button>
+            <button className="btn btn-ghost btn-sm" onClick={() => patch((i) => { i.dismissed = true; })}>No es un problema</button>
+          </div>
+        </div>
       ) : (
         <div className="row-wrap">
           <button className="btn btn-primary" onClick={() => fix()}><LuSparkles /> Que PROPO lo arregle</button>
+          <button className="btn btn-secondary" onClick={() => setExplain(true)}><LuMessageCircle /> Explicarlo con mis palabras</button>
           <button className="btn btn-ghost btn-sm" onClick={() => patch((i) => { i.dismissed = true; })}>No es un problema</button>
         </div>
       )}

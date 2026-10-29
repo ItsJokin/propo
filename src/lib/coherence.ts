@@ -64,7 +64,10 @@ export function ruleIssues(p: Project): CoherenceIssue[] {
 
 function context(p: Project, f: Facts) {
   const c = f.company; const g = p.obra?.gantt;
-  const said = p.requirements.filter((r) => r.status === 'fulfilled' && r.humanValidated).map((r) => `- ${r.title}: confirmado por la empresa${r.note ? ` (${r.note.replace(/\s+/g, ' ').slice(0, 160)})` : ''}`).join('\n');
+  const said = [
+    ...p.requirements.filter((r) => r.status === 'fulfilled' && r.humanValidated).map((r) => `- ${r.title}: confirmado por la empresa${r.note ? ` (${r.note.replace(/\s+/g, ' ').slice(0, 160)})` : ''}`),
+    ...(p.coherence?.issues ?? []).filter((i) => i.answer).map((i) => `- Sobre «${i.title}», la empresa explica: ${i.answer!.replace(/\s+/g, ' ').slice(0, 500)}`),
+  ].join('\n');
   const reqs = p.requirements.filter((r) => r.mandatory !== false && /technical|team|format|experience/.test(r.category)).slice(0, 40).map((r) => `- ${r.title}: ${(r.plain || r.text).replace(/\s+/g, ' ').slice(0, 220)}`).join('\n');
   const formula = (p.pricing?.rule?.others ?? []).filter((o) => p.pricing?.others?.[o.id]).map((o) => `- ${o.label}: ${p.pricing!.others[o.id].text}`).join('\n');
   return `Datos de la empresa:
@@ -171,6 +174,34 @@ Reglas:
     if (fx.after.length > fx.before.length * 3 + (issue.kind === 'lesson' ? 1500 : 300)) continue;   // corrección, no reescritura (completar lo que falta admite algo más)
     contents[fx.section] = cur.slice(0, at) + fx.after + cur.slice(at + fx.before.length);
     fx.applied = true;
+  }
+  // Con la explicación del cliente no se vuelve a preguntar: si no se ha podido corregir una frase, se añade un párrafo con lo que ha contado.
+  if (answer && !fixes.some((x) => x.applied)) {
+    const target = involved.find((id) => contents[id]?.trim()) ?? p.sections.find((s) => s.content.trim() && !s.form)?.id;
+    const sec = target ? p.sections.find((s) => s.id === target) : null;
+    if (sec && contents[sec.id]) {
+      try {
+        const k = await ai.json<any>(`Eres el jefe de licitaciones de una empresa española. En la memoria técnica hay un problema y la empresa te ha explicado cómo es en realidad. Escribe un párrafo (de 2 a 5 frases, tono profesional, en tercera persona: «la empresa…») para añadir al final del apartado «${sec.title}» que lo resuelva usando SOLO lo que explica la empresa y sus datos.
+
+Problema: ${issue.problem}
+Lo que explica la empresa (es cierto): «${answer.slice(0, 1200)}»
+${context(p, f)}
+
+Final actual del apartado (no lo repitas):
+${contents[sec.id].slice(-1500)}
+
+No inventes nombres, cifras, fechas ni clientes que no aparezcan arriba. Devuelve SOLO JSON: {"paragraph": "el párrafo"}`, { tier: 'default', project: p.isSample ? '' : p.id });
+        const para = String(k?.paragraph || '').trim();
+        if (para.length > 40 && para.length < 2500 && nums(para).every((n) => corpus.has(n))) {
+          const cur = contents[sec.id]; const tail = cur.slice(-Math.min(cur.length, 120));
+          if (cur.indexOf(tail) === cur.length - tail.length) {
+            contents[sec.id] = `${cur.replace(/\s+$/, '')}\n\n${para}`;
+            fixes.push({ section: sec.id, before: tail, after: `${tail.replace(/\s+$/, '')}\n\n${para}`, applied: true });
+          }
+        }
+      } catch { /* se queda guardada la explicación */ }
+    }
+    return { contents, fixes, question: null };
   }
   const question = fixes.some((x) => x.applied) ? null : (j?.question ? String(j.question).slice(0, 300) : null);
   return { contents, fixes, question };

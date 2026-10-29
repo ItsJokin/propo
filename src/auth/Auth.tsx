@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { LuArrowRight, LuCheck, LuUpload, LuPlus, LuX, LuCircleCheck, LuTriangleAlert, LuBuilding2, LuFileText, LuBriefcase, LuAward, LuSearch } from 'react-icons/lu';
+import { LuArrowRight, LuCheck, LuUpload, LuPlus, LuX, LuCircleCheck, LuTriangleAlert, LuBuilding2, LuFileText, LuBriefcase, LuAward, LuSearch, LuEye, LuEyeOff } from 'react-icons/lu';
 import { Logo, Modal, Ring } from '../components/ui';
 import { navigate, setState, newWorkspace, getState, update, track, useStore, toast } from '../lib/store';
 import { addVaultFiles } from '../lib/actions';
@@ -13,6 +13,17 @@ import { enterCloud } from '../lib/cloudSync';
 import { HeroVideo } from '../marketing/HeroVideo';
 
 const EMAIL = /^\S+@\S+\.\S+$/;
+
+/** Campo de contraseña con el ojo para verla mientras se escribe. */
+function PasswordInput({ id, value, onChange, autoComplete, invalid }: { id: string; value: string; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; autoComplete: string; invalid?: boolean }) {
+  const [show, setShow] = useState(false);
+  return (
+    <div className="pw-wrap">
+      <input id={id} className="input" type={show ? 'text' : 'password'} value={value} onChange={onChange} autoComplete={autoComplete} aria-invalid={invalid || undefined} />
+      <button type="button" className="pw-eye" onClick={() => setShow(!show)} aria-label={show ? 'Ocultar la contraseña' : 'Mostrar la contraseña'} title={show ? 'Ocultar' : 'Mostrar'}>{show ? <LuEyeOff /> : <LuEye />}</button>
+    </div>
+  );
+}
 
 const ROLES = ['Gerencia / Dirección', 'Licitaciones', 'Comercial / Desarrollo de negocio', 'Operaciones', 'Administración y finanzas', 'Consultoría', 'Otro'];
 
@@ -65,7 +76,7 @@ function AuthSide() {
 }
 
 export function Signup() {
-  const [f, setF] = useState({ name: '', email: '', password: '', company: '', role: ROLES[1], industry: '' });
+  const [f, setF] = useState({ name: '', email: '', password: '', password2: '', company: '', role: ROLES[1], industry: '' });
   const [err, setErr] = useState<string | null>(null);
   const [google, setGoogle] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -75,6 +86,7 @@ export function Signup() {
     e.preventDefault();
     if (!/^\S+@\S+\.\S+$/.test(f.email)) return setErr('Introduce un email de trabajo válido.');
     if (f.password.length < 8) return setErr('Usa al menos 8 caracteres en la contraseña.');
+    if (f.password !== f.password2) return setErr('Las dos contraseñas no coinciden. Escríbelas otra vez.');
     if (!f.company.trim()) return setErr('Introduce el nombre de tu empresa.');
     if (!f.industry) return setErr('Elige tu sector.');
     if (cloud.cloudEnabled) {
@@ -116,7 +128,11 @@ export function Signup() {
               <div className="field"><label htmlFor="su-company">Empresa</label><input id="su-company" className="input" value={f.company} onChange={set('company')} autoComplete="organization" /></div>
             </div>
             <div className="field"><label htmlFor="su-email">Email de trabajo</label><input id="su-email" className="input" type="email" value={f.email} onChange={set('email')} autoComplete="email" /></div>
-            <div className="field"><label htmlFor="su-pass">Contraseña</label><input id="su-pass" className="input" type="password" value={f.password} onChange={set('password')} autoComplete="new-password" /><span className="hint">Al menos 8 caracteres.</span></div>
+            <div className="grid-2">
+              <div className="field"><label htmlFor="su-pass">Contraseña</label><PasswordInput id="su-pass" value={f.password} onChange={set('password')} autoComplete="new-password" /><span className="hint">Al menos 8 caracteres.</span></div>
+              <div className="field"><label htmlFor="su-pass2">Repite la contraseña</label><PasswordInput id="su-pass2" value={f.password2} onChange={set('password2')} autoComplete="new-password" invalid={!!f.password2 && f.password2 !== f.password} />
+                {f.password2 && <span className="hint" style={{ color: f.password2 === f.password ? 'var(--ok-ink)' : 'var(--bad-ink)' }}>{f.password2 === f.password ? '✓ Coinciden' : 'No coinciden todavía'}</span>}</div>
+            </div>
             {!cloud.cloudEnabled && <p className="small muted" style={{ marginTop: -6 }}>Versión de prueba: tu cuenta y tu trabajo se guardan solo en este navegador, no en un servidor. Si borras sus datos o cambias de dispositivo, no estarán.</p>}
             <div className="grid-2">
               <div className="field"><label htmlFor="su-role">Cargo</label><select id="su-role" className="select" value={f.role} onChange={set('role')}>{ROLES.map((r) => <option key={r}>{r}</option>)}</select></div>
@@ -199,7 +215,7 @@ export function Login() {
           <form className="stack mt-24" onSubmit={submit} noValidate>
             {mode === 'forgot' && <p className="small muted" style={{ margin: 0 }}>Escribe el email de tu cuenta y te enviaremos un enlace para elegir una contraseña nueva.</p>}
             <div className="field"><label htmlFor="li-email">Email de trabajo</label><input id="li-email" className="input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" /></div>
-            {mode === 'login' && <div className="field"><label htmlFor="li-pass">Contraseña</label><input id="li-pass" className="input" type="password" value={pw} onChange={(e) => setPw(e.target.value)} autoComplete="current-password" />
+            {mode === 'login' && <div className="field"><label htmlFor="li-pass">Contraseña</label><PasswordInput id="li-pass" value={pw} onChange={(e) => setPw(e.target.value)} autoComplete="current-password" />
               {cloud.cloudEnabled && <button type="button" className="link xs" style={{ justifySelf: 'start', marginTop: 4 }} onClick={() => { setMode('forgot'); setErr(null); }}>¿Has olvidado tu contraseña?</button>}</div>}
             {err && <div className="error-text" role="alert">{err}</div>}
             {unconfirmed && <ResendButton email={email.trim()} />}
@@ -285,8 +301,8 @@ export function ResetPassword() {
           <h1>Elige una contraseña nueva</h1>
           {has ? (
             <form className="stack mt-24" onSubmit={submit} noValidate>
-              <div className="field"><label htmlFor="rp-1">Contraseña nueva</label><input id="rp-1" className="input" type="password" value={pw} onChange={(e) => setPw(e.target.value)} autoComplete="new-password" /><span className="hint">Al menos 8 caracteres.</span></div>
-              <div className="field"><label htmlFor="rp-2">Repítela</label><input id="rp-2" className="input" type="password" value={pw2} onChange={(e) => setPw2(e.target.value)} autoComplete="new-password" /></div>
+              <div className="field"><label htmlFor="rp-1">Contraseña nueva</label><PasswordInput id="rp-1" value={pw} onChange={(e) => setPw(e.target.value)} autoComplete="new-password" /><span className="hint">Al menos 8 caracteres.</span></div>
+              <div className="field"><label htmlFor="rp-2">Repítela</label><PasswordInput id="rp-2" value={pw2} onChange={(e) => setPw2(e.target.value)} autoComplete="new-password" invalid={!!pw2 && pw2 !== pw} /></div>
               {err && <div className="error-text" role="alert">{err}</div>}
               <button className="btn btn-primary btn-lg" disabled={busy}>{busy ? 'Guardando…' : 'Guardar y entrar'}</button>
             </form>
