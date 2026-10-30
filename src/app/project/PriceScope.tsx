@@ -72,7 +72,7 @@ export function PriceScope({ p, pr, save }: { p: Project; pr: PricingState; save
         {lines.map((l) => { const t = lineTotal(l); const isExtra = extra.some((x) => x.id === l.id); return (
           <div key={l.id} className="sc-row" role="row">
             <div className="sc-concept"><strong>{l.concept}</strong>{l.why && <span className="xs muted">{l.why}</span>}</div>
-            <div className="sc-cell"><input className="input" inputMode="decimal" aria-label={`Cantidad de ${l.concept}`} placeholder={l.qty != null ? l.qty.toLocaleString('es-ES') : '1'} value={vals[l.id]?.qty ?? ''} onChange={(e) => setVal(l.id, 'qty', e.target.value)} />{l.unit && <span className="xs muted">{l.unit}</span>}</div>
+            <div className="sc-cell"><input className="input" inputMode="decimal" aria-label={`Cantidad de ${l.concept}`} placeholder="1" value={vals[l.id]?.qty ?? (l.qty != null ? String(l.qty) : '')} onChange={(e) => setVal(l.id, 'qty', e.target.value)} />{l.unit && <span className="xs muted">{l.unit}</span>}</div>
             <div className="sc-cell"><input className="input" inputMode="decimal" aria-label={`Coste por unidad de ${l.concept}`} placeholder="0,00" value={vals[l.id]?.cost ?? ''} onChange={(e) => setVal(l.id, 'cost', e.target.value)} /><span className="xs muted">€</span></div>
             <div className="sc-total num">{t != null ? eur2(t) : <span className="muted">—</span>}</div>
             <div>{isExtra && <button className="uc-del" style={{ position: 'static' }} aria-label={`Quitar ${l.concept}`} onClick={() => save((x) => { x.scopeExtra = (x.scopeExtra ?? []).filter((y) => y.id !== l.id); const all = { ...(x.scopeCosts ?? {}) }; delete all[l.id]; x.scopeCosts = all; })}><LuTrash2 /></button>}</div>

@@ -9,7 +9,7 @@ import { num } from './pricing';
 export interface ScopeItem { id: string; what: string; qty: number | null; unit: string; when: string; where: string; details: string; budget: number | null; doc: string; page: number | null }
 export interface ScopeCost { id: string; concept: string; qty: number | null; unit: string; why: string }
 export interface Scope { v: number; summary: string; duration: string; items: ScopeItem[]; costs: ScopeCost[] }
-export const SCOPE_V = 1;
+export const SCOPE_V = 2;
 
 const WORK = /personas|comensales|asistentes|invitados|men[uú]s?\b|c[oó]ctel|coffee|fecha|horario|lugar|ubicaci|cantidad|unidades|servicios? a prestar|objeto del contrato|prescripciones|presupuesto|lote|duraci[oó]n|plazo de ejecuci|trabajadores|personal m[ií]nimo|frecuencia|medici[oó]n/gi;
 async function workPages(p: Project): Promise<string> {
@@ -75,14 +75,16 @@ Devuelve SOLO JSON:
 }
 Reglas:
 - Como mucho 15 items y 10 gastos. Lo más grande primero.
-- Copia las cantidades del pliego: nunca las inventes, estimes ni sumes. Si el pliego no da una cantidad (se pide según necesidad), pon null y dilo en "details".
+- Los items son solo trabajos que hay que hacer: nada de facturación, pagos, garantías ni trámites administrativos.
+- Si un mismo presupuesto cubre varios trabajos, ponlo solo en el primero y di en sus "details" qué más cubre.
+- Copia las cantidades del pliego: nunca las inventes, estimes ni sumes. Si el pliego no da una cantidad (se pide según necesidad), deja qty vacío y dilo con palabras normales en "details".
 - NO pongas ningún coste o precio de mercado: el coste lo escribe la empresa. Los gastos son solo los conceptos.
 - Incluye en los gastos lo que obliga el pliego aunque no se vea a primera vista: personal, subrogación, seguros, transporte, materiales, licencias, garantías.
 - Escribe para alguien sin conocimientos de licitaciones. Nunca hables de «extractos» ni de «fragmentos».`, { tier: 'default', project: p.isSample ? '' : p.id });
   const digits = pages.replace(/(\d)[.\s](?=\d{3}\b)/g, '$1');
   const n = (x: any) => (x == null || x === '' ? null : num(x) || null);
-  const str = (x: any) => (x ? String(x).trim() : '');
-  const items: ScopeItem[] = (Array.isArray(j?.items) ? j.items : []).filter((x: any) => x?.what).slice(0, 15).map((x: any, i: number) => ({
+  const str = (x: any) => (x ? String(x).replace(/\s*\(?\bnull\b\)?/gi, '').trim() : '');   // que no se cuele jerga de la respuesta
+  const items: ScopeItem[] = (Array.isArray(j?.items) ? j.items : []).filter((x: any) => x?.what && !/^(facturaci|pagos?\b|garant[ií]a|tr[aá]mites?)/i.test(String(x.what))).slice(0, 15).map((x: any, i: number) => ({
     id: `i${i}`, what: str(x.what), qty: inPliego(n(x.qty), digits), unit: str(x.unit), when: str(x.when), where: str(x.where), details: str(x.details),
     budget: inPliego(n(x.budget), digits), doc: str(x.doc), page: n(x.page),
   }));
@@ -90,6 +92,14 @@ Reglas:
     id: `c${i}`, concept: str(x.concept), qty: inPliego(n(x.qty), digits), unit: str(x.unit), why: str(x.why),
   }));
   if (!items.length) return null;
+  // Un mismo presupuesto no se enseña dos veces: se queda en el primer trabajo y dice qué más cubre.
+  items.forEach((it, i) => {
+    if (it.budget == null) return;
+    const same = items.slice(i + 1).filter((o) => o.budget === it.budget);
+    if (!same.length) return;
+    same.forEach((o) => { o.budget = null; });
+    it.details = `${it.details ? `${it.details} ` : ''}Este presupuesto cubre también: ${same.map((o) => o.what).join(', ')}.`;
+  });
   return { v: SCOPE_V, summary: str(j?.summary), duration: str(j?.duration), items, costs };
 }
 
