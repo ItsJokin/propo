@@ -42,3 +42,18 @@ export function unknownTerms(c: Corpus, text: string): string[] {
   }
   return out;
 }
+
+/** Las páginas donde están las palabras poco comunes de una descripción («escudella», «sushi»): la IA no siempre las cita todas. */
+export function pagesForTerms(c: Corpus, text: string, maxPerTerm = 2): { page: PliegoPage; term: string }[] {
+  const out: { page: PliegoPage; term: string }[] = [];
+  const seen = new Set<string>();
+  for (const raw of text.match(/[\p{L}]{5,}/gu) ?? []) {
+    const w = normalize(raw); if (seen.has(w) || GENERIC.has(w)) continue; seen.add(w);
+    const re = new RegExp(`\\b${w}`);
+    const hits = c.pages.filter((p) => re.test(p.norm));
+    if (!hits.length || hits.length > maxPerTerm) continue;   // en muchas páginas no es una palabra que identifique nada
+    hits.forEach((page) => { if (!out.some((o) => o.page === page)) out.push({ page, term: raw }); });
+  }
+  return out;
+}
+

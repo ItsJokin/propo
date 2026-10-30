@@ -3,13 +3,13 @@
 import type { Project } from './types';
 import { ai } from './ai/provider';
 import { projectPages } from './ai/engine';
-import { buildCorpus, locate, unknownTerms } from './scopeCheck';
+import { buildCorpus, locate, pagesForTerms, unknownTerms } from './scopeCheck';
 import { num } from './pricing';
 
 export interface ScopeItem { id: string; what: string; qty: number | null; unit: string; when: string; where: string; details: string; budget: number | null; sources: { docId: string; doc: string; page: number; quote: string }[]; unknown: string[] }
 export interface ScopeCost { id: string; concept: string; qty: number | null; unit: string; why: string }
 export interface Scope { v: number; summary: string; duration: string; items: ScopeItem[]; costs: ScopeCost[]; included?: string[] }
-export const SCOPE_V = 6;
+export const SCOPE_V = 7;
 
 const CHARGE_RULE = `Una línea es algo que se le cobra al cliente: lo que aparecería en el presupuesto o la factura que le enviarías, es decir, lo que el cliente RECIBE.
 - SÍ son líneas: «Cóctel de pie», «Cena para llevar», «Barra de bebidas», «Camareros», «Montaje y desmontaje», «Transporte y entrega»; «Limpieza diaria del colegio»; «Demolición de pavimento», «Instalación de tubería»; «Informe de auditoría», «Horas de consultoría».
@@ -64,6 +64,7 @@ Devuelve SOLO JSON:
   "items": [{
     "what": "el trabajo concreto, en pocas palabras (p. ej. «Cóctel de pie», «Limpieza diaria del colegio», «Renovación de 400 m de tubería»)",
     "qty": número o null,   // la cantidad que da el pliego para ese trabajo
+    "qty_parts": [números] o null,   // si son varias cifras del pliego que se suman (82 + 82 menús), esas cifras; qty es su suma
     "unit": "personas, comensales, servicios, m², horas… o ''",
     "when": "fecha, frecuencia u horario que da el pliego, o ''",
     "where": "lugar que da el pliego, o ''",
@@ -96,17 +97,6 @@ Reglas:
   const digits = pages.replace(/(\d)[.\s](?=\d{3}\b)/g, '$1');
   const n = (x: any) => (x == null || x === '' ? null : num(x) || null);
   const str = (x: any) => (x ? String(x).replace(/\s*\(?\bnull\b\)?/gi, '').trim() : '');   // que no se cuele jerga de la respuesta
-  const items: ScopeItem[] = (Array.isArray(j?.items) ? j.items : []).filter((x: any) => x?.what && !/^(facturaci|pagos?\b|garant[ií]a|tr[aá]mites?)/i.test(String(x.what))).slice(0, 15).map((x: any, i: number) => ({
-    id: `i${i}`, what: str(x.what), qty: inPliego(n(x.qty), digits), unit: str(x.unit), when: str(x.when), where: str(x.where), details: str(x.details),
-    budget: inPliego(n(x.budget), digits),
-    // Cada enlace apunta a la página donde la frase está de verdad; si no está en ninguna, no se enseña
-    sources: (Array.isArray(x.evidence) ? x.evidence : []).reduce((acc: ScopeItem['sources'], e: any) => {
-      const hit = e?.quote ? locate(corpus, String(e.quote), { doc: str(e.doc), page: n(e.page) }) : null;
-      if (hit && acc.length < 5 && !acc.some((a) => a.docId === hit.docId && a.page === hit.page)) acc.push({ docId: hit.docId, doc: hit.doc, page: hit.page, quote: String(e.quote) });
-      return acc;
-    }, []).sort((a: { page: number }, b: { page: number }) => a.page - b.page),
-    unknown: unknownTerms(corpus, `${str(x.what)} ${str(x.when)} ${str(x.where)} ${str(x.details)}`),
-  }));
   // Una suma solo vale si cada sumando está en el pliego y el resultado cuadra (82 + 82 = 164 menús).
   const summed = (x: any) => {
     const parts = (Array.isArray(x.qty_parts) ? x.qty_parts : []).map(n);
@@ -114,6 +104,17 @@ Reglas:
     const sum = parts.reduce((a: number, v: number) => a + v, 0);
     return n(x.qty) === sum ? sum : null;
   };
+  const items: ScopeItem[] = (Array.isArray(j?.items) ? j.items : []).filter((x: any) => x?.what && !/^(facturaci|pagos?\b|garant[ií]a|tr[aá]mites?)/i.test(String(x.what))).slice(0, 15).map((x: any, i: number) => ({
+    id: `i${i}`, what: str(x.what), qty: inPliego(n(x.qty), digits) ?? summed(x), unit: str(x.unit), when: str(x.when), where: str(x.where), details: str(x.details),
+    budget: inPliego(n(x.budget), digits),
+    // Cada enlace apunta a la página donde la frase está de verdad; si no está en ninguna, no se enseña
+    sources: (Array.isArray(x.evidence) ? x.evidence : []).reduce((acc: ScopeItem['sources'], e: any) => {
+      const hit = e?.quote ? locate(corpus, String(e.quote), { doc: str(e.doc), page: n(e.page) }) : null;
+      if (hit && acc.length < 5 && !acc.some((a) => a.docId === hit.docId && a.page === hit.page)) acc.push({ docId: hit.docId, doc: hit.doc, page: hit.page, quote: String(e.quote) });
+      return acc;
+    }, []),
+    unknown: unknownTerms(corpus, `${str(x.what)} ${str(x.when)} ${str(x.where)} ${str(x.details)}`),
+  }));
   // Antes de enseñarlas, una segunda lectura quita lo que no se le puede cobrar al cliente.
   let lines: any[] = Array.isArray(j?.costs) ? j.costs : [];
   let included: any[] = Array.isArray(j?.included) ? j.included : [];
@@ -135,6 +136,13 @@ Mantén tal cual las cantidades de las líneas que se quedan. Une las líneas qu
     id: `c${i}`, concept: str(x.concept), qty: inPliego(n(x.qty), digits) ?? summed(x), unit: str(x.unit), why: unknownTerms(corpus, str(x.why)).length ? '' : str(x.why),
   }));
   if (!items.length) return null;
+  // Además de lo que cita la IA, las páginas donde están las palabras propias de cada descripción
+  for (const it of items) {
+    for (const { page, term } of pagesForTerms(corpus, `${it.what} ${it.details}`)) {
+      if (it.sources.length < 6 && !it.sources.some((a) => a.docId === page.docId && a.page === page.page)) it.sources.push({ docId: page.docId, doc: page.doc, page: page.page, quote: term });
+    }
+    it.sources.sort((a, b) => a.page - b.page);
+  }
   // Un mismo presupuesto no se enseña dos veces: se queda en el primer trabajo y dice qué más cubre.
   items.forEach((it, i) => {
     if (it.budget == null) return;
