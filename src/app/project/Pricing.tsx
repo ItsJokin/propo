@@ -155,10 +155,10 @@ export function Pricing({ p }: { p: Project }) {
       </div>
 
       {/* Lo que hay que hacer de verdad y cuánto cuesta */}
-      <PriceScope p={p} pr={pr} m={m} fmt={fmt.type} save={save} />
+      <PriceScope p={p} pr={pr} save={save} />
 
-      {/* 2 · El estudio de precio: PROPO propone, el cliente ajusta */}
-      {!ch && <PriceStudio p={p} pr={pr} rule={rule} m={m} fmt={fmt.type} save={save} />}
+      {/* 2 · El precio: lo pone el cliente o lo pone PROPO */}
+      {!ch && <PriceChooser p={p} pr={pr} rule={rule} m={m} fmt={fmt.type} save={save} />}
 
       {/* 3 · El precio elegido */}
       {ch && (
@@ -281,15 +281,96 @@ function OtherCriteria({ p, pr }: { p: Project; pr: PricingState }) {
 const r2 = (x: number) => Math.round(x * 100) / 100;
 const pctIn = (b: number) => String(Math.round(b * 10000) / 100).replace('.', ',');
 
-/** PROPO elige la rebaja que más puntos da sin riesgo y la presenta en el formato que pide el pliego; el cliente la ajusta. */
-function PriceStudio({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingState; rule: PriceRule; m: Market; fmt: OfferType; save: (fn: (x: PricingState) => void) => void }) {
+/** Dos caminos para el precio: lo escribe el cliente o lo pone PROPO. */
+function PriceChooser({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingState; rule: PriceRule; m: Market; fmt: OfferType; save: (fn: (x: PricingState) => void) => void }) {
   const s = priceStrategy(rule, m, pr.floor);
-  const [b, setB] = useState<number>(pr.studio?.b ?? s.rec);
+  const mode = pr.studio?.mode;
+  const pick = (v: 'own' | 'propo') => save((x) => { x.studio = { ...(x.studio ?? {}), mode: v }; });
+  const lotsBudget = rule.lots.reduce((a, l) => a + (l.budget ?? 0), 0);
+  const base = rule.budget ?? (fmt === 'lots' ? lotsBudget : 0);
+  return (
+    <>
+      <div className="card card-pad">
+        <h3 style={{ fontSize: 20 }}>¿Qué precio ponemos?</h3>
+        <div className="pc-btns mt-12">
+          <button className={`pc-btn${mode === 'own' ? ' on' : ''}`} aria-pressed={mode === 'own'} onClick={() => pick('own')}>
+            <LuPencil /><strong>Pongo yo el precio</strong><span>{fmt === 'discount' ? 'Escribes tu % de rebaja' : fmt === 'units' ? 'Escribes el precio de cada servicio, como pide el pliego' : 'Escribes el importe'} y ves qué rebaja supone, los puntos y el riesgo.</span>
+          </button>
+          <button className={`pc-btn${mode === 'propo' ? ' on' : ''}`} aria-pressed={mode === 'propo'} onClick={() => pick('propo')}>
+            <LuSparkles /><strong>Que PROPO ponga el precio</strong><span>El que más puntos da sin riesgo{base && fmt !== 'discount' ? `: ${eur2(r2(base * (1 - s.rec)))}, ` : ': '}una rebaja del {pct1(s.rec)}.</span>
+          </button>
+        </div>
+      </div>
+      {mode === 'propo' && <PriceStudio key="propo" p={p} pr={pr} rule={rule} m={m} fmt={fmt} save={save} />}
+      {mode === 'own' && (fmt === 'units' && rule.units.some((u) => u.max != null)
+        ? <PriceStudio key="own" manual p={p} pr={pr} rule={rule} m={m} fmt={fmt} save={save} />
+        : <OwnPrice p={p} pr={pr} rule={rule} m={m} fmt={fmt} save={save} />)}
+    </>
+  );
+}
+
+/** El cliente escribe su precio (o su % si el pliego pide una rebaja única) y ve lo que supone. */
+function OwnPrice({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingState; rule: PriceRule; m: Market; fmt: OfferType; save: (fn: (x: PricingState) => void) => void }) {
+  const s = priceStrategy(rule, m, pr.floor);
+  const [txt, setTxt] = useState(pr.studio?.own ?? '');
+  const change = (v: string) => { const clean = v.replace(/[^\d.,]/g, ''); setTxt(clean); save((x) => { x.studio = { ...(x.studio ?? {}), own: clean }; }); };
+  const isPct = fmt === 'discount';
+  const lotsAll = rule.lots.filter((l) => l.budget);
+  const selLots = pr.studio?.lots ?? lotsAll.map((l) => l.label);
+  const chosenLots = lotsAll.filter((l) => selLots.includes(l.label));
+  const base = fmt === 'lots' ? chosenLots.reduce((a, l) => a + l.budget!, 0) : rule.budget ?? 0;
+  const v = num(txt);
+  const baja = isPct ? v / 100 : base && v ? 1 - v / base : 0;
+  const total = isPct ? (base ? r2(base * (1 - baja)) : 0) : v;
+  const over = isPct ? v >= 100 : !!base && v > base + 0.005;
+  const ready = v > 0 && !over && (fmt !== 'lots' || chosenLots.length > 0);
+  const E = ready ? s.exp(Math.max(0, baja)) : null;
+  const risky = baja >= s.abn;
+  const belowFloor = !!pr.floor && !!total && total < pr.floor;
+  const gap = base && !isPct && ready ? r2(total - base * (1 - s.rec)) : null;
+  const build = (): PriceChoice => {
+    if (isPct) {
+      const prices = Object.fromEntries(rule.units.filter((u) => u.max != null).map((u) => [u.id, String(r2(u.max! * (1 - baja)))]));
+      return { ...(unitChoice(rule, unitLines(rule, prices), '', baja) ?? { mode: 'own', baja, total: 0, points: E, units: [], discount: baja }), points: E, kind: fmt };
+    }
+    if (fmt === 'lots') return { mode: 'own', baja, total, points: E, kind: fmt, units: chosenLots.map((l) => ({ id: `lot${rule.lots.indexOf(l)}`, label: l.label, price: r2(l.budget! * (1 - baja)) })) };
+    return { mode: 'own', baja, total, points: E, units: unitPricesFor(rule, baja), kind: fmt };
+  };
+  const use = () => {
+    const c = build();
+    updateProject(p.id, (x) => { const cur = x.pricing ?? emptyPricing(); cur.choice = c; cur.approved = null; cur.filled = null; cur.fillNote = ''; x.pricing = cur; x.manualChecks.financialApproved = false; });
+    toast('Precio preparado. Revísalo y confírmalo.', 'ok');
+  };
+  return (
+    <div className="card card-pad">
+      <h3 style={{ fontSize: 20 }}>{isPct ? 'Tu % de rebaja' : 'Tu precio'}</h3>
+      {fmt === 'lots' && <div className="ps-lots mt-12">{lotsAll.map((l) => { const on = selLots.includes(l.label); return (
+        <label key={l.label} className={`ps-lot${on ? ' on' : ''}`}><input type="checkbox" checked={on} onChange={() => save((x) => { const cur = x.studio?.lots ?? lotsAll.map((y) => y.label); x.studio = { ...(x.studio ?? {}), lots: on ? cur.filter((y) => y !== l.label) : [...cur, l.label] }; })} />
+          <span className="grow">{l.label}</span><span className="num muted">máx. {eur2(l.budget!)}</span></label>
+      ); })}</div>}
+      <div className="pr-money pc-input mt-12"><input className="input" inputMode="decimal" autoFocus aria-label={isPct ? 'Porcentaje de rebaja' : 'Tu precio sin IVA'} placeholder={isPct ? pctIn(s.rec).toString() : base ? r2(base * (1 - s.rec)).toLocaleString('es-ES') : '0,00'} value={txt} onChange={(e) => change(e.target.value)} /><span>{isPct ? '% de rebaja sobre los precios máximos' : `€ sin IVA${fmt === 'lots' ? ', por todos los lotes marcados' : ', por todo el contrato'}`}</span></div>
+      {v > 0 && <div className="sc-sum mt-16">
+        {!isPct && <div className="final"><span>Tu precio, sin IVA</span><strong className="num">{eur2(total)}</strong><em>{eur2(total * (1 + (rule.vat ?? 21) / 100))} con IVA</em></div>}
+        {(!!base || isPct) && <div className={over ? 'bad' : isPct ? 'final' : ''}><span>{over ? (isPct ? 'Rebaja no válida' : 'Te pasas del máximo') : 'Rebaja sobre el máximo'}</span><strong className="num">{over ? (isPct ? 'Menos del 100 %' : eur2(v - base)) : pct1(Math.max(0, baja))}</strong>{!!base && !isPct && <em>Máximo: {eur2(base)}</em>}</div>}
+        {E != null && <div><span>Puntos que esperas</span><strong className="num">{pts(E)} de {pts(s.P)}</strong><em>Según lo que suelen rebajar los demás</em></div>}
+        {ready && <div className={risky || belowFloor ? 'bad' : 'ok'}><span>Riesgo</span><strong>{risky ? 'Baja temeraria' : belowFloor ? 'Bajo tu coste' : 'Sin riesgo'}</strong><em>{risky ? 'Te pedirían justificarla' : belowFloor ? `Tu mínimo es ${eur2(pr.floor!)}` : `Temeraria a partir del ${pct1(s.abn)}`}</em></div>}
+      </div>}
+      {over && !isPct && <div className="callout bad small mt-8"><LuTriangleAlert /><div>Una oferta por encima del presupuesto máximo se excluye. Baja el precio hasta {eur2(base)} o menos.</div></div>}
+      {gap != null && Math.abs(gap) >= 1 && s.P != null && <p className="small mt-8">{gap > 0 ? <>Para llegar a la rebaja que recomienda PROPO ({pct1(s.rec)}) tendrías que bajar <strong>{eur2(gap)}</strong>.</> : <>Estás <strong>{eur2(-gap)}</strong> por debajo de la rebaja que recomienda PROPO ({pct1(s.rec)}): podrías cobrar más sin perder apenas puntos.</>}</p>}
+      <button className="btn btn-primary mt-16" disabled={!ready} onClick={use}>Usar este precio <LuArrowRight /></button>
+    </div>
+  );
+}
+
+/** PROPO elige la rebaja que más puntos da sin riesgo y la presenta en el formato que pide el pliego; el cliente la ajusta. */
+function PriceStudio({ p, pr, rule, m, fmt, save, manual }: { p: Project; pr: PricingState; rule: PriceRule; m: Market; fmt: OfferType; save: (fn: (x: PricingState) => void) => void; manual?: boolean }) {
+  const s = priceStrategy(rule, m, pr.floor);
+  const [b, setB] = useState<number>(manual ? 0 : pr.studio?.b ?? s.rec);   // a mano se parte de los precios máximos
   const [pctTxt, setPctTxt] = useState<string | null>(null);
   const [floorTxt, setFloorTxt] = useState(pr.floor ? String(pr.floor).replace('.', ',') : '');
   const [own, setOwn] = useState(pr.ownText ?? '');
   const [ordering, setOrdering] = useState(false);
-  useEffect(() => { const t = setTimeout(() => { if (pr.studio?.b !== b) save((x) => { x.studio = { ...(x.studio ?? {}), b }; }); }, 500); return () => clearTimeout(t); }, [b]);
+  useEffect(() => { if (manual) return; const t = setTimeout(() => { if (pr.studio?.b !== b) save((x) => { x.studio = { ...(x.studio ?? {}), b }; }); }, 500); return () => clearTimeout(t); }, [b]);
   const go = (v: number) => { setB(Math.max(0, Math.min(s.hi, Math.round(v * 200) / 200))); setPctTxt(null); };
 
   // El precio en el formato de esta licitación
@@ -334,7 +415,11 @@ function PriceStudio({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingSta
 
   return (
     <div className="card card-pad ps-studio">
-      <div className="eyebrow"><LuTarget style={{ verticalAlign: '-2px' }} /> O deja que PROPO te lo calcule</div>
+      {manual ? <>
+        <h3 style={{ fontSize: 20 }}>Pon tu precio a cada servicio</h3>
+        <p className="muted mt-4">Este pliego pide un precio por servicio. Cada uno empieza en su máximo: cámbialo por el tuyo, sin IVA. Ninguno puede pasar del máximo.</p>
+      </> : <>
+      <div className="eyebrow"><LuTarget style={{ verticalAlign: '-2px' }} /> El precio de PROPO</div>
       <h3 className="mt-8" style={{ fontSize: 22 }}>PROPO te recomienda una rebaja del <span className="ps-accent">{pct1(s.rec)}</span></h3>
       <p className="muted mt-4" style={{ lineHeight: 1.6 }}>{s.P ? <>Es el punto donde consigues casi todos los puntos del precio ({pts(s.exp(s.rec))} de {pts(s.P)}) sin regalar dinero y sin entrar en la baja temeraria. </> : null}Puedes moverla tú: la curva te enseña lo que ganas y lo que arriesgas.</p>
 
@@ -364,10 +449,11 @@ function PriceStudio({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingSta
         <div className="ps-why-t"><LuSparkles /> Por qué este precio</div>
         <ul>{s.why.map((w, i) => <li key={i}>{w}</li>)}</ul>
       </div>
+      </>}
 
       {(fmt === 'units' || fmt === 'discount') && lines.length > 0 && <>
-        <h4 className="ps-sub">{fmt === 'discount' ? 'Así quedan tus servicios con esta rebaja' : 'Así quedan tus precios'}</h4>
-        <p className="small muted">{fmt === 'discount' ? 'No tienes que escribir nada: el pliego aplica tu % a todos los precios máximos. ' : 'PROPO ha puesto cada precio con la rebaja elegida. Si quieres, cambia cualquiera: no te dejará pasar del máximo. '}Toca un servicio para ver qué tienes que dar.</p>
+        {!manual && <h4 className="ps-sub">{fmt === 'discount' ? 'Así quedan tus servicios con esta rebaja' : 'Así quedan tus precios'}</h4>}
+        <p className={`small muted${manual ? ' mt-16' : ''}`}>{manual ? '' : fmt === 'discount' ? 'No tienes que escribir nada: el pliego aplica tu % a todos los precios máximos. ' : 'PROPO ha puesto cada precio con la rebaja elegida. Si quieres, cambia cualquiera: no te dejará pasar del máximo. '}Toca un servicio para ver qué tienes que dar.</p>
         <ServiceCards p={p} pr={pr} save={save} lines={lines} editable={fmt === 'units'} edited={Object.keys(overrides)} auto={auto} />
         {fmt === 'units' && Object.keys(overrides).length > 0 && <button className="link small mt-8" onClick={() => save((x) => { x.unitDraft = {}; })}><LuRotateCcw style={{ verticalAlign: '-2px' }} /> Volver a calcular todos con la rebaja elegida</button>}
       </>}
@@ -380,6 +466,7 @@ function PriceStudio({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingSta
         ); })}</div>
       </>}
 
+      {!manual && <>
       <details className="ps-floor mt-20" open={!!pr.floor}>
         <summary><span><strong>¿Sabes tu coste mínimo?</strong> Opcional: con él PROPO nunca te recomienda un precio con el que pierdas dinero.</span></summary>
         <div className="row mt-12" style={{ gap: 8, flexWrap: 'wrap' }}>
@@ -395,13 +482,15 @@ function PriceStudio({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingSta
         <button className="btn btn-secondary mt-8" disabled={!own.trim() || ordering} onClick={order}>{ordering ? 'Ordenando…' : 'Que PROPO lo ordene'}</button>
       </details>
 
+      </>}
+
       <div className="uc-bar mt-20">
         <div className="uc-bar-txt">
           {choice ? <><strong>{fmt === 'discount' ? `${pct1(b)} de rebaja` : fmt === 'units' ? `${lines.filter((l) => l.price != null).length} precios` : eur2(choice.total)}</strong>{E != null && <> · <strong>{pts(E)}</strong> de {pts(s.P)} puntos esperados</>}</> : fmt === 'lots' ? 'Elige al menos un lote' : 'Elige tu rebaja'}
           {over.length > 0 && <div className="xs" style={{ color: 'var(--bad-ink)' }}>{over.length === 1 ? '1 precio pasa' : `${over.length} precios pasan`} del máximo</div>}
           {zone === 'bad' && <div className="xs" style={{ color: 'var(--bad-ink)' }}>En zona de baja temeraria</div>}
         </div>
-        <button className="btn btn-primary" disabled={!choice || over.length > 0} onClick={use}>Usar esta rebaja <LuArrowRight /></button>
+        <button className="btn btn-primary" disabled={!choice || over.length > 0} onClick={use}>Usar este precio <LuArrowRight /></button>
       </div>
     </div>
   );
