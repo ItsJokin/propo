@@ -2,7 +2,7 @@ import { GROUP } from '../lib/plans';
 import React, { useMemo } from 'react';
 import { LuPlus, LuArrowRight, LuChevronRight, LuCircleAlert, LuFolderKanban, LuTriangleAlert, LuSearch, LuSparkles, LuCheck, LuBuilding2, LuFileCheck, LuTarget } from 'react-icons/lu';
 import { useStore, navigate } from '../lib/store';
-import { readiness, projectStatus, issuesCount, deadlineLabel } from '../lib/derive';
+import { readiness, projectStatus, issuesCount, deadlineLabel, myProjects } from '../lib/derive';
 import { Bar, Empty, SampleBadge } from '../components/ui';
 import { StatusBadge } from './common';
 import { daysUntil } from '../lib/util';
@@ -53,9 +53,9 @@ export function Dashboard() {
   const inactive = !subscriptionActive(s);
   const own = s.projects.filter((p) => !p.isSample);
   const byDeadline = (a: Project, b: Project) => (daysUntil(a.analysis?.deadline) ?? 999) - (daysUntil(b.analysis?.deadline) ?? 999);
-  const all = [...s.projects].sort((a, b) => Number(!!a.markedReady) - Number(!!b.markedReady) || Number(a.isSample) - Number(b.isSample) || byDeadline(a, b));
+  const all = [...myProjects(s)].sort((a, b) => Number(!!a.markedReady) - Number(!!b.markedReady) || Number(a.isSample) - Number(b.isSample) || byDeadline(a, b));
   const pendingOf = (p: Project) => p.requirements.filter((r) => r.status === 'needs_info' || r.status === 'missing').length;
-  const pending = s.projects.reduce((a, p) => a + (p.markedReady ? 0 : pendingOf(p)), 0);
+  const pending = myProjects(s).reduce((a, p) => a + (p.markedReady ? 0 : pendingOf(p)), 0);
 
   const hasProfile = s.company.cpvs.length > 0 && !!s.company.description;
   const hasTender = own.length > 0 || s.savedTenders.length > 0;

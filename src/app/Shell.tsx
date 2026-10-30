@@ -5,7 +5,7 @@ import {
 } from 'react-icons/lu';
 import { Logo, Menu, Bar } from '../components/ui';
 import { navigate, useRoute, useStore, update } from '../lib/store';
-import { knowledgeScore } from '../lib/derive';
+import { knowledgeScore, myProjects } from '../lib/derive';
 import { daysUntil, timeAgo } from '../lib/util';
 import { PLANS } from '../lib/plans';
 import { AIBadge } from './common';
@@ -29,7 +29,7 @@ export function AppShell({ children, fullBleed, showSetup }: { children: React.R
   const nav: [string, string, React.ReactNode, number?][] = [
     ['/app', 'Inicio', <LuHouse />],
     ['/app/tenders', 'Licitaciones', <LuSearch />],
-    ['/app/projects', 'Mis proyectos', <LuFolderKanban />, state.projects.filter((p) => !p.markedReady).length],
+    ['/app/projects', 'Mis proyectos', <LuFolderKanban />, myProjects(state).filter((p) => !p.markedReady).length],
     ['/app/company', 'Empresa', <LuBuilding2 />],
     ['/app/documents', 'Documentos', <LuFiles />, state.vault.length],
     ['/app/templates', 'Plantillas', <LuLayoutTemplate />],
@@ -104,7 +104,7 @@ function GlobalSearch() {
     const t = q.trim().toLowerCase();
     if (t.length < 2) return [];
     const out: { label: string; sub: string; to: string; icon: React.ReactNode }[] = [];
-    s.projects.forEach((p) => {
+    myProjects(s).forEach((p) => {
       if ((p.name + ' ' + p.organization).toLowerCase().includes(t)) out.push({ label: p.name, sub: 'Proyecto', to: `/app/projects/${p.id}`, icon: <LuFolderKanban /> });
       p.requirements.forEach((r) => { if ((r.title + ' ' + r.text).toLowerCase().includes(t)) out.push({ label: r.title, sub: `Requisito · ${p.name}`, to: `/app/projects/${p.id}/requirements`, icon: <LuListChecks /> }); });
     });

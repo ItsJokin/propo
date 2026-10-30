@@ -157,6 +157,9 @@ export function deadlineLabel(iso: string | null | undefined) {
   return `${d} día${d === 1 ? '' : 's'}`;
 }
 
+/** Los proyectos del cliente: los de ejemplo solo cuentan en la demo. */
+export const myProjects = (s: Pick<AppState, 'projects' | 'demo'>) => (s.demo ? s.projects : s.projects.filter((p) => !p.isSample));
+
 export function pendingAITasks(state: AppState) {
   return state.projects.reduce((a, p) => a + p.sections.filter((s) => s.status === 'ai_generated' || s.status === 'generating').length, 0);
 }

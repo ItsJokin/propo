@@ -36,10 +36,8 @@ export function newWorkspace(p: { name: string; email: string; role: string; com
   s.user = { id: userId, name: p.name, email: p.email, role: p.role, createdAt: nowIso() };
   s.company = { ...emptyCompany(), legalName: p.company, tradeName: p.company, industry: p.industry, cpvs: cpvsForSectors(INDUSTRY_TO_SECTORS[p.industry] ?? []) };
   s.members = [{ id: userId, name: p.name, email: p.email, role: 'owner', status: 'active' }];
-  s.projects = buildSampleProjects();
   s.notifications = [
-    { id: uid('n'), at: nowIso(), kind: 'system', title: 'Te damos la bienvenida a PROPO', body: 'Busca licitaciones para tu empresa, explora el proyecto de ejemplo y crea tu primera propuesta. Tu prueba incluye una propuesta completa.', read: false },
-    ...sampleNotifications().slice(0, 2),
+    { id: uid('n'), at: nowIso(), kind: 'system', title: 'Te damos la bienvenida a PROPO', body: 'Busca licitaciones para tu empresa, y crea tu primera propuesta. Tu prueba incluye una propuesta completa.', read: false },
   ];
   s.templates = [];
   s.subscription.trialEndsAt = addDays(TRIAL_DAYS);
@@ -50,6 +48,7 @@ export function newWorkspace(p: { name: string; email: string; role: string; com
 /** "Explore the demo": a fully populated sample company. */
 export function demoWorkspace(): AppState {
   const s = newWorkspace({ name: 'Anna Roig', email: 'demo@propo.example', role: 'Licitaciones y administración', company: SAMPLE_COMPANY.legalName, industry: SAMPLE_COMPANY.industry });
+  s.projects = buildSampleProjects();
   s.company = { ...SAMPLE_COMPANY };
   s.pastProjects = SAMPLE_PAST_PROJECTS.map((x) => ({ ...x }));
   s.certifications = SAMPLE_CERTS.map((x) => ({ ...x }));
@@ -67,9 +66,15 @@ export function demoWorkspace(): AppState {
 
 // ---------------------------------------------------------------------------
 
+/** Las cuentas creadas antes recibieron avisos inventados de los proyectos de ejemplo: fuera de la demo no se muestran. */
+function withoutFakeAlerts(s: AppState): AppState {
+  if (s.demo || !s.notifications?.some((n) => n.id === 'n1' || n.id === 'n2')) return s;
+  return { ...s, notifications: s.notifications.filter((n) => n.id !== 'n1' && n.id !== 'n2') };
+}
+
 let state: AppState = (() => {
   const saved = loadState<AppState>();
-  if (saved && saved.version === STATE_VERSION) return saved;
+  if (saved && saved.version === STATE_VERSION) return withoutFakeAlerts(saved);
   return initialState();
 })();
 
@@ -85,7 +90,7 @@ function emit() {
 
 export function getState() { return state; }
 
-export function setState(next: AppState) { state = next; emit(); }
+export function setState(next: AppState) { state = withoutFakeAlerts(next); emit(); }
 /** Lo que llega del servidor no se vuelve a subir. */
 export function setStateFromCloud(next: AppState) { fromCloud = true; try { setState(next); } finally { fromCloud = false; } }
 

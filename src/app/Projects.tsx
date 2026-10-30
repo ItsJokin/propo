@@ -3,7 +3,7 @@ import { LuPlus, LuUpload, LuX, LuFileText, LuFolderKanban, LuTriangleAlert, LuS
 import { useStore, navigate, getState } from '../lib/store';
 import { Empty, Modal } from '../components/ui';
 import { ProjectRows } from './Dashboard';
-import { projectStatus } from '../lib/derive';
+import { projectStatus, myProjects } from '../lib/derive';
 import { createProject, canCreateProposal, type LimitReason } from '../lib/actions';
 import { UpgradeModal } from './common';
 import { ACCEPTED, kindOf } from '../lib/pipeline/parse';
@@ -15,6 +15,9 @@ import type { TedNotice } from '../lib/discovery/tedSnapshot';
 
 export function Projects({ openNew }: { openNew?: boolean }) {
   const projects = useStore((s) => s.projects);
+  const demo = useStore((s) => s.demo);
+  const mine = myProjects({ projects, demo });
+  const samples = projects.filter((p) => p.isSample);
   const [filter, setFilter] = useState<'all' | 'progress' | 'ready' | 'sample'>('all');
   const [q, setQ] = useState('');
   const [showNew, setShowNew] = useState(false);
@@ -25,11 +28,10 @@ export function Projects({ openNew }: { openNew?: boolean }) {
     setShowNew(true);
   };
   useEffect(() => { if (openNew) { tryNew(); navigate('/app/projects'); } }, [openNew]);
-  const list = projects.filter((p) => {
+  const list = (filter === 'sample' ? samples : mine).filter((p) => {
     const st = projectStatus(p);
     if (filter === 'progress' && st === 'Lista para presentar') return false;
     if (filter === 'ready' && !(st === 'Lista para presentar' || st === 'Lista para revisar')) return false;
-    if (filter === 'sample' && !p.isSample) return false;
     return !q || (p.name + p.organization).toLowerCase().includes(q.toLowerCase());
   });
   return (
@@ -43,12 +45,12 @@ export function Projects({ openNew }: { openNew?: boolean }) {
       </div>
       <div className="row-wrap" style={{ marginBottom: 16, justifyContent: 'space-between' }}>
         <div className="seg">
-          {([['all', 'Todos'], ['progress', 'En curso'], ['ready', 'Listos'], ['sample', 'Ejemplos']] as const).map(([k, l]) => <button key={k} className={filter === k ? 'on' : ''} onClick={() => setFilter(k)}>{l}</button>)}
+          {([['all', 'Todos'], ['progress', 'En curso'], ['ready', 'Listos'], ...(samples.length ? [['sample', 'Ejemplos']] : [])] as ['all' | 'progress' | 'ready' | 'sample', string][]).map(([k, l]) => <button key={k} className={filter === k ? 'on' : ''} onClick={() => setFilter(k)}>{l}</button>)}
         </div>
         <label className="search" style={{ width: 280, display: 'flex' }}><LuSearch /><input aria-label="Filtrar proyectos" placeholder="Filtrar proyectos" value={q} onChange={(e) => setQ(e.target.value)} /></label>
       </div>
       <div className="card">
-        {projects.length === 0 ? (
+        {list.length === 0 && mine.length === 0 && filter !== 'sample' ? (
           <Empty icon={<LuFolderKanban />} title="Aquí vivirán tus propuestas." body="Crea tu primera propuesta: sube los documentos de la licitación y PROPO se encarga de leerlos." action={<button className="btn btn-primary" onClick={tryNew}><LuPlus /> Crear mi primera propuesta</button>} />
         ) : list.length === 0 ? (
           <Empty icon={<LuSearch />} title="Ningún proyecto coincide" body="Prueba con otro filtro o búsqueda." />
