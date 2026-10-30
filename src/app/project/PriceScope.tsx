@@ -1,4 +1,4 @@
-// «Lo que vas a tener que hacer»: el trabajo real de la licitación y una tabla para calcular los gastos antes de poner precio.
+// «Lo que vas a tener que hacer»: el trabajo real de la licitación y una tabla para poner precio a cada cosa; la suma es la oferta.
 import React, { useEffect, useState } from 'react';
 import { LuClipboardList, LuFileText, LuLoaderCircle, LuPlus, LuRotateCcw, LuTrash2, LuTriangleAlert, LuCalendar, LuMapPin, LuArrowRight } from 'react-icons/lu';
 import type { Project } from '../../lib/types';
@@ -122,6 +122,7 @@ export function PriceScope({ p, pr, m, fmt, save }: { p: Project; pr: PricingSta
           {isCurrent
             ? <span className="small" style={{ color: 'var(--ok-ink)', fontWeight: 600 }}>✓ Este es el precio de tu oferta.</span>
             : <button className="btn btn-primary" disabled={over} onClick={useTotal}>{pr.choice ? 'Cambiar mi oferta a este precio' : 'Usar este precio'} <LuArrowRight /></button>}
+          {isCurrent && pr.choice && pr.choice.total > 0 && Math.abs(pr.choice.total - total) >= 0.5 && <span className="xs muted">Con la rebaja aplicada a cada precio del pliego y redondeada a céntimos, el total de la oferta queda en {eur2(pr.choice.total)}.</span>}
           <span className="xs muted">En la oferta va el precio final. Este desglose es para ti{fmt === 'discount' ? ': el pliego pide un % único, así que tu precio se presenta como esa rebaja' : ''}.</span>
         </div>
       </>}

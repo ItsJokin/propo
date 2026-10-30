@@ -334,7 +334,7 @@ function PriceStudio({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingSta
 
   return (
     <div className="card card-pad ps-studio">
-      <div className="eyebrow"><LuTarget style={{ verticalAlign: '-2px' }} /> Tu precio ideal</div>
+      <div className="eyebrow"><LuTarget style={{ verticalAlign: '-2px' }} /> O deja que PROPO te lo calcule</div>
       <h3 className="mt-8" style={{ fontSize: 22 }}>PROPO te recomienda una rebaja del <span className="ps-accent">{pct1(s.rec)}</span></h3>
       <p className="muted mt-4" style={{ lineHeight: 1.6 }}>{s.P ? <>Es el punto donde consigues casi todos los puntos del precio ({pts(s.exp(s.rec))} de {pts(s.P)}) sin regalar dinero y sin entrar en la baja temeraria. </> : null}Puedes moverla tú: la curva te enseña lo que ganas y lo que arriesgas.</p>
 
@@ -401,7 +401,7 @@ function PriceStudio({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingSta
           {over.length > 0 && <div className="xs" style={{ color: 'var(--bad-ink)' }}>{over.length === 1 ? '1 precio pasa' : `${over.length} precios pasan`} del máximo</div>}
           {zone === 'bad' && <div className="xs" style={{ color: 'var(--bad-ink)' }}>En zona de baja temeraria</div>}
         </div>
-        <button className="btn btn-primary" disabled={!choice || over.length > 0} onClick={use}>Usar este precio <LuArrowRight /></button>
+        <button className="btn btn-primary" disabled={!choice || over.length > 0} onClick={use}>Usar esta rebaja <LuArrowRight /></button>
       </div>
     </div>
   );

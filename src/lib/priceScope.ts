@@ -79,7 +79,7 @@ Reglas:
 - Los items son solo trabajos que hay que hacer: nada de facturación, pagos, garantías ni trámites administrativos.
 - Si un mismo presupuesto cubre varios trabajos, ponlo solo en el primero y di en sus "details" qué más cubre.
 - Copia las cantidades del pliego: nunca las inventes ni las estimes. En esos conceptos solo se pueden sumar cifras del pliego, indicándolas en "qty_parts". Si el pliego no da una cantidad (se pide según necesidad), deja qty vacío y dilo con palabras normales en "details".
-- NO pongas ningún precio: lo escribe la empresa. Aquí van solo los conceptos.
+- NO pongas ningún precio: lo escribe la empresa. Aquí van solo los conceptos, y solo lo que forma parte del servicio: nada de los trámites para presentarse a la licitación.
 - Incluye en esos conceptos lo que obliga el pliego aunque no se vea a primera vista: personal, subrogación, seguros, transporte, materiales, licencias, garantías.
 - Escribe para alguien sin conocimientos de licitaciones. Nunca hables de «extractos» ni de «fragmentos».`, { tier: 'default', project: p.isSample ? '' : p.id });
   const digits = pages.replace(/(\d)[.\s](?=\d{3}\b)/g, '$1');
