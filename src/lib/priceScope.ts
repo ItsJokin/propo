@@ -8,8 +8,13 @@ import { num } from './pricing';
 
 export interface ScopeItem { id: string; what: string; qty: number | null; unit: string; when: string; where: string; details: string; budget: number | null; doc: string; page: number | null }
 export interface ScopeCost { id: string; concept: string; qty: number | null; unit: string; why: string }
-export interface Scope { v: number; summary: string; duration: string; items: ScopeItem[]; costs: ScopeCost[] }
-export const SCOPE_V = 3;
+export interface Scope { v: number; summary: string; duration: string; items: ScopeItem[]; costs: ScopeCost[]; included?: string[] }
+export const SCOPE_V = 4;
+
+const CHARGE_RULE = `Una línea es algo que se le cobra al cliente: lo que aparecería en el presupuesto o la factura que le enviarías, es decir, lo que el cliente RECIBE.
+- SÍ son líneas: «Cóctel de pie», «Cena para llevar», «Barra de bebidas», «Camareros», «Montaje y desmontaje», «Transporte y entrega»; «Limpieza diaria del colegio»; «Demolición de pavimento», «Instalación de tubería»; «Informe de auditoría», «Horas de consultoría».
+- NO son líneas, porque son medios u obligaciones de la empresa para poder hacer el trabajo y su coste va dentro de los precios: cocina central, vehículos refrigerados, maquinaria, instalaciones, materias primas sueltas, prevención de riesgos, seguros, certificados, coordinación de actividades, gestión administrativa, trámites de la licitación, garantías.
+- Si un medio se puede convertir en algo que se cobra, conviértelo: «vehículos refrigerados» es «Transporte y entrega». Si no, va a "included".`;
 
 const WORK = /personas|comensales|asistentes|invitados|men[uú]s?\b|c[oó]ctel|coffee|fecha|horario|lugar|ubicaci|cantidad|unidades|servicios? a prestar|objeto del contrato|prescripciones|presupuesto|lote|duraci[oó]n|plazo de ejecuci|trabajadores|personal m[ií]nimo|frecuencia|medici[oó]n/gi;
 async function workPages(p: Project): Promise<string> {
@@ -67,20 +72,22 @@ Devuelve SOLO JSON:
     "doc": "documento donde lo has leído", "page": número o null
   }],
   "costs": [{
-    "concept": "una de las cosas a las que la empresa tendrá que ponerle precio (p. ej. «Comida y bebida del cóctel», «Camareros», «Transporte y montaje», «Alquiler de menaje»)",
+    "concept": "una línea del presupuesto que se le enviaría al cliente",
     "qty": número o null,   // cantidad que sale del pliego, para calcular el gasto
     "qty_parts": [números] o null,   // si la cantidad es una suma de cifras del pliego (82 + 82 menús), esas cifras; qty es su suma
     "unit": "personas, horas, viajes… o ''",
     "why": "qué pide el pliego sobre esto, en pocas palabras"
-  }]
+  }],
+  "included": ["medios y obligaciones que la empresa tiene que asumir y cuyo coste va dentro de sus precios, en pocas palabras"]
 }
+${CHARGE_RULE}
 Reglas:
-- Como mucho 15 items y 10 gastos. Lo más grande primero.
+- Como mucho 15 items, de 2 a 8 líneas en "costs" y 8 en "included". Lo más grande primero.
 - Los items son solo trabajos que hay que hacer: nada de facturación, pagos, garantías ni trámites administrativos.
 - Si un mismo presupuesto cubre varios trabajos, ponlo solo en el primero y di en sus "details" qué más cubre.
 - Copia las cantidades del pliego: nunca las inventes ni las estimes. En esos conceptos solo se pueden sumar cifras del pliego, indicándolas en "qty_parts". Si el pliego no da una cantidad (se pide según necesidad), deja qty vacío y dilo con palabras normales en "details".
-- NO pongas ningún precio: lo escribe la empresa. Aquí van solo los conceptos, y solo lo que forma parte del servicio: nada de los trámites para presentarse a la licitación.
-- Incluye en esos conceptos lo que obliga el pliego aunque no se vea a primera vista: personal, subrogación, seguros, transporte, materiales, licencias, garantías.
+- NO pongas ningún precio: lo escribe la empresa.
+- Pon en "included" lo que obliga el pliego aunque no se vea a primera vista: personal subrogado, seguros, materiales, licencias, garantías.
 - Escribe para alguien sin conocimientos de licitaciones. Nunca hables de «extractos» ni de «fragmentos».`, { tier: 'default', project: p.isSample ? '' : p.id });
   const digits = pages.replace(/(\d)[.\s](?=\d{3}\b)/g, '$1');
   const n = (x: any) => (x == null || x === '' ? null : num(x) || null);
@@ -96,7 +103,24 @@ Reglas:
     const sum = parts.reduce((a: number, v: number) => a + v, 0);
     return n(x.qty) === sum ? sum : null;
   };
-  const costs: ScopeCost[] = (Array.isArray(j?.costs) ? j.costs : []).filter((x: any) => x?.concept).slice(0, 10).map((x: any, i: number) => ({
+  // Antes de enseñarlas, una segunda lectura quita lo que no se le puede cobrar al cliente.
+  let lines: any[] = Array.isArray(j?.costs) ? j.costs : [];
+  let included: any[] = Array.isArray(j?.included) ? j.included : [];
+  try {
+    const r = await ai.json<any>(`Revisa esta lista de líneas para ponerle precio a una licitación. Quédate solo con las que de verdad se le pueden cobrar al cliente.
+
+${CHARGE_RULE}
+
+Licitación: ${p.name}
+Trabajos que pide: ${items.map((x) => x.what).join('; ')}
+Líneas propuestas (JSON): ${JSON.stringify(lines)}
+Medios ya apartados (JSON): ${JSON.stringify(included)}
+
+Devuelve SOLO JSON con la misma forma: {"costs": [{"concept": "", "qty": número o null, "qty_parts": [números] o null, "unit": "", "why": ""}], "included": [""]}
+Mantén tal cual las cantidades de las líneas que se quedan. Une las líneas que el cliente vería como una sola. No inventes trabajos que no estén en la lista.`, { tier: 'quick', project: p.isSample ? '' : p.id });
+    if (Array.isArray(r?.costs) && r.costs.length) { lines = r.costs; if (Array.isArray(r.included)) included = r.included; }
+  } catch { /* se queda la primera lectura */ }
+  const costs: ScopeCost[] = lines.filter((x: any) => x?.concept).slice(0, 8).map((x: any, i: number) => ({
     id: `c${i}`, concept: str(x.concept), qty: inPliego(n(x.qty), digits) ?? summed(x), unit: str(x.unit), why: str(x.why),
   }));
   if (!items.length) return null;
@@ -108,7 +132,7 @@ Reglas:
     same.forEach((o) => { o.budget = null; });
     it.details = `${it.details ? `${it.details} ` : ''}Este presupuesto cubre también: ${same.map((o) => o.what).join(', ')}.`;
   });
-  return { v: SCOPE_V, summary: str(j?.summary), duration: str(j?.duration), items, costs };
+  return { v: SCOPE_V, summary: str(j?.summary), duration: str(j?.duration), items, costs, included: [...new Set(included.map(str).filter(Boolean))].slice(0, 8) };
 }
 
 /** Busca el documento por su nombre para poder abrirlo en la página citada. */

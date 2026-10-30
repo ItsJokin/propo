@@ -5,7 +5,7 @@ import type { Project } from '../../lib/types';
 import { toast, updateProject } from '../../lib/store';
 import { uid } from '../../lib/util';
 import { openSource } from '../common';
-import { emptyPricing, eur2, num, pct1, unitChoice, unitLines, unitPricesFor, type Market, type PriceChoice, type Pricing as PricingState } from '../../lib/pricing';
+import { emptyPricing, eur2, num, pct1, unitPricesFor, type Market, type PriceChoice, type Pricing as PricingState } from '../../lib/pricing';
 import { priceStrategy, type OfferType } from '../../lib/priceStrategy';
 import { readScope, scopeDoc, SCOPE_V } from '../../lib/priceScope';
 
@@ -53,18 +53,17 @@ export function PriceScope({ p, pr, m, fmt, save }: { p: Project; pr: PricingSta
   const target = rule.budget ? Math.round(rule.budget * (1 - strat.rec) * 100) / 100 : null;
   const gap = target != null && total ? Math.round((total - target) * 100) / 100 : null;
   const buildChoice = (): PriceChoice => {
-    const pts = expPts;
-    const prices = Object.fromEntries(rule.units.filter((u) => u.max != null).map((u) => [u.id, String(Math.round(u.max! * (1 - baja) * 100) / 100)]));
-    if (fmt === 'discount') return { ...(unitChoice(rule, unitLines(rule, prices), '', baja) ?? { mode: 'own', baja, total: 0, points: pts, units: [], discount: baja }), points: pts, kind: fmt };
-    if (fmt === 'units') { const c = unitChoice(rule, unitLines(rule, prices), ''); if (c) return { ...c, points: pts, kind: fmt }; }
-    if (fmt === 'lots') { const lots = rule.lots.filter((l) => l.budget); return { mode: 'own', baja, total, points: pts, kind: fmt, units: lots.map((l) => ({ id: `lot${rule.lots.indexOf(l)}`, label: l.label, price: Math.round(l.budget! * (1 - baja) * 100) / 100 })) }; }
-    return { mode: 'own', baja, total, points: pts, units: unitPricesFor(rule, baja), kind: 'total' };
+    if (fmt === 'discount') return { mode: 'own', baja, total: 0, points: expPts, units: [], discount: baja, kind: fmt };
+    if (fmt === 'lots') { const lots = rule.lots.filter((l) => l.budget); return { mode: 'own', baja, total, points: expPts, kind: fmt, units: lots.map((l) => ({ id: `lot${rule.lots.indexOf(l)}`, label: l.label, price: Math.round(l.budget! * (1 - baja) * 100) / 100 })) }; }
+    return { mode: 'own', baja, total, points: expPts, units: unitPricesFor(rule, baja), kind: 'total' };
   };
   const useTotal = () => {
     const c = buildChoice();
     updateProject(p.id, (x) => { const cur = x.pricing ?? emptyPricing(); cur.choice = c; cur.approved = null; cur.filled = null; cur.fillNote = ''; cur.studio = { ...(cur.studio ?? {}), b: Math.max(0, baja) }; x.pricing = cur; x.manualChecks.financialApproved = false; });
     toast('Precio preparado. Revísalo abajo y confírmalo.', 'ok');
   };
+  // Si el pliego ya fija los servicios y sus precios máximos, se les pone precio directamente abajo: esta tabla sobraría.
+  const fixedByPliego = fmt === 'units' || (fmt === 'discount' && rule.units.some((u) => u.max != null));
   const isCurrent = !!pr.choice && pr.choice.kind === fmt && Math.abs(pr.choice.baja - baja) < 0.0005 && total > 0;
 
   return (
@@ -89,6 +88,9 @@ export function PriceScope({ p, pr, m, fmt, save }: { p: Project; pr: PricingSta
       </div>
       <p className="xs muted mt-8">Lo ha resumido la IA de PROPO y las cifras salen del pliego. Compruébalo en el pliego antes de presentar.</p>
 
+      {scope.included && scope.included.length > 0 && <div className="sc-incl mt-12"><strong>Ya va dentro de tus precios, no se cobra aparte:</strong> {scope.included.join(' · ')}.</div>}
+
+      {fixedByPliego ? <p className="small muted mt-12">{fmt === 'units' ? 'El pliego ya fija qué servicios se cobran y su precio máximo: ponles precio más abajo.' : 'El pliego ya fija el precio máximo de cada servicio: tú solo eliges el % de rebaja, más abajo.'}</p> : <>
       <h4 className="ps-sub">¿Qué precio le pones a cada cosa?</h4>
       <p className="small muted">Escribe lo que quieres cobrar por cada cosa, sin IVA y con tu beneficio incluido. PROPO lo suma y te dice <strong>tu precio final</strong>, qué rebaja supone y cuántos puntos te da.</p>
       <div className="sc-table mt-8" role="table" aria-label="Precio de cada cosa">
@@ -122,9 +124,9 @@ export function PriceScope({ p, pr, m, fmt, save }: { p: Project; pr: PricingSta
           {isCurrent
             ? <span className="small" style={{ color: 'var(--ok-ink)', fontWeight: 600 }}>✓ Este es el precio de tu oferta.</span>
             : <button className="btn btn-primary" disabled={over} onClick={useTotal}>{pr.choice ? 'Cambiar mi oferta a este precio' : 'Usar este precio'} <LuArrowRight /></button>}
-          {isCurrent && pr.choice && pr.choice.total > 0 && Math.abs(pr.choice.total - total) >= 0.5 && <span className="xs muted">Con la rebaja aplicada a cada precio del pliego y redondeada a céntimos, el total de la oferta queda en {eur2(pr.choice.total)}.</span>}
-          <span className="xs muted">En la oferta va el precio final. Este desglose es para ti{fmt === 'discount' ? ': el pliego pide un % único, así que tu precio se presenta como esa rebaja' : ''}.</span>
+                    <span className="xs muted">En la oferta va el precio final. Este desglose es para ti{fmt === 'discount' ? ': el pliego pide un % único, así que tu precio se presenta como esa rebaja' : ''}.</span>
         </div>
+      </>}
       </>}
     </div>
   );
