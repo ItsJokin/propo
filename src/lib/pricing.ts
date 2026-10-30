@@ -60,9 +60,7 @@ export interface Pricing {
   unitInfoV?: number;
   scope?: import('./priceScope').Scope | null;   // lo que hay que hacer de verdad, leído del pliego (null: el pliego no lo dice)
   scopeError?: boolean;
-  scopeCosts?: Record<string, { qty?: string; cost?: string }>;   // los gastos que calcula el cliente
-  scopeExtra?: { id: string; concept: string }[];
-  studio?: { b?: number; lots?: string[] };   // la rebaja y los lotes que el cliente está mirando
+  studio?: { b?: number; lots?: string[]; mode?: 'own' | 'propo'; own?: string };   // la rebaja y los lotes que el cliente está mirando
 }
 
 export const emptyPricing = (): Pricing => ({ rule: null, floor: null, choice: null, others: {}, approved: null });
