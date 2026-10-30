@@ -75,7 +75,7 @@ export function PriceScope({ p, pr, m, fmt, save }: { p: Project; pr: PricingSta
       {scope.summary && <p className="mt-4" style={{ fontSize: 15, lineHeight: 1.6 }}>{scope.summary}</p>}
 
       <div className="sc-items mt-12">
-        {scope.items.map((it) => { const docs = new Set(it.sources.map((x) => x.docId)); return (
+        {scope.items.map((it) => { const main = it.sources[0]?.docId; return (
           <div key={it.id} className="sc-item">
             <div className={`sc-qty${it.qty == null ? ' none' : ''}`}>{it.qty != null ? <><strong>{it.qty.toLocaleString('es-ES')}</strong><span>{it.unit}</span></> : <span>{it.unit || 'según pedidos'}</span>}</div>
             <div className="grow" style={{ minWidth: 0 }}>
@@ -83,7 +83,7 @@ export function PriceScope({ p, pr, m, fmt, save }: { p: Project; pr: PricingSta
               {(it.when || it.where) && <div className="sc-meta">{it.when && <span><LuCalendar /> {it.when}</span>}{it.where && <span><LuMapPin /> {it.where}</span>}</div>}
               {it.details && <div className="small muted mt-4">{it.details}</div>}
               {it.unknown.length > 0 && <div className="sc-unknown"><LuTriangleAlert /> No aparece en el pliego, compruébalo: {it.unknown.join(', ')}</div>}
-              {it.sources.length > 0 ? <div className="sc-src"><LuFileText /> <span>Verlo en el pliego:</span>{it.sources.map((x) => <button key={`${x.docId}-${x.page}`} className="link" title={x.doc} onClick={() => openSource({ project: p, docId: x.docId, page: x.page, quote: x.quote })}>{docs.size > 1 ? `${x.doc.slice(0, 18)}… ` : ''}pág. {x.page}</button>)}</div>
+              {it.sources.length > 0 ? <div className="sc-src"><LuFileText /> <span>Verlo en el pliego:</span>{it.sources.map((x) => <button key={`${x.docId}-${x.page}`} className="link" title={x.doc} onClick={() => openSource({ project: p, docId: x.docId, page: x.page, quote: x.quote })}>{x.docId !== main ? `${x.doc.slice(0, 14).trim()}… ` : ''}pág. {x.page}</button>)}</div>
                 : <div className="sc-unknown"><LuTriangleAlert /> No he podido localizar esto en el pliego: compruébalo antes de presentar.</div>}
             </div>
             {it.budget != null && <div className="sc-budget"><span>Presupuesto</span><strong className="num">{eur2(it.budget)}</strong><span>sin IVA</span></div>}

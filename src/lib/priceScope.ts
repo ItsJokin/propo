@@ -9,7 +9,7 @@ import { num } from './pricing';
 export interface ScopeItem { id: string; what: string; qty: number | null; unit: string; when: string; where: string; details: string; budget: number | null; sources: { docId: string; doc: string; page: number; quote: string }[]; unknown: string[] }
 export interface ScopeCost { id: string; concept: string; qty: number | null; unit: string; why: string }
 export interface Scope { v: number; summary: string; duration: string; items: ScopeItem[]; costs: ScopeCost[]; included?: string[] }
-export const SCOPE_V = 7;
+export const SCOPE_V = 8;
 
 const CHARGE_RULE = `Una línea es algo que se le cobra al cliente: lo que aparecería en el presupuesto o la factura que le enviarías, es decir, lo que el cliente RECIBE.
 - SÍ son líneas: «Cóctel de pie», «Cena para llevar», «Barra de bebidas», «Camareros», «Montaje y desmontaje», «Transporte y entrega»; «Limpieza diaria del colegio»; «Demolición de pavimento», «Instalación de tubería»; «Informe de auditoría», «Horas de consultoría».
@@ -136,12 +136,13 @@ Mantén tal cual las cantidades de las líneas que se quedan. Une las líneas qu
     id: `c${i}`, concept: str(x.concept), qty: inPliego(n(x.qty), digits) ?? summed(x), unit: str(x.unit), why: unknownTerms(corpus, str(x.why)).length ? '' : str(x.why),
   }));
   if (!items.length) return null;
-  // Además de lo que cita la IA, las páginas donde están las palabras propias de cada descripción
+  // Además de lo que cita la IA, las páginas que hagan falta para cubrir toda la descripción
   for (const it of items) {
-    for (const { page, term } of pagesForTerms(corpus, `${it.what} ${it.details}`)) {
-      if (it.sources.length < 6 && !it.sources.some((a) => a.docId === page.docId && a.page === page.page)) it.sources.push({ docId: page.docId, doc: page.doc, page: page.page, quote: term });
+    for (const { page, term } of pagesForTerms(corpus, `${it.what} ${it.details}`, it.sources)) {
+      if (it.sources.length < 6) it.sources.push({ docId: page.docId, doc: page.doc, page: page.page, quote: term });
     }
-    it.sources.sort((a, b) => a.page - b.page);
+    const uses = (d: string) => it.sources.filter((x) => x.docId === d).length;   // primero el documento del que más sale
+    it.sources.sort((a, b) => uses(b.docId) - uses(a.docId) || a.docId.localeCompare(b.docId) || a.page - b.page);
   }
   // Un mismo presupuesto no se enseña dos veces: se queda en el primer trabajo y dice qué más cubre.
   items.forEach((it, i) => {

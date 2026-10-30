@@ -35,7 +35,9 @@ const GENERIC = new Set(['tienes', 'tendras', 'tendra', 'hacer', 'habra', 'hacen
 /** Palabras y cifras del texto que no aparecen en ningún documento del pliego (se aceptan variantes: «sushis», «estaciones»). */
 export function unknownTerms(c: Corpus, text: string): string[] {
   const out: string[] = [];
-  for (const raw of text.match(/[\p{L}\p{N}]+/gu) ?? []) {
+  // Lo que se nombra para decir que el pliego no lo da («no da número de viajes») no es algo añadido
+  const said = text.split(/(?<=[.;])\s+/).filter((f) => !/\bno (da|dan|indica|indican|fija|fijan|detalla|detallan|concreta|especifica|dice|consta|menciona)\b/i.test(f)).join(' ');
+  for (const raw of said.match(/[\p{L}\p{N}]+/gu) ?? []) {
     const w = normalize(raw); if (!w || GENERIC.has(w)) continue;
     const known = /^\d+$/.test(w) ? w.length < 2 || c.numbers.has(w) : w.length < 5 || c.prefixes.has(w.slice(0, 5));
     if (!known && !out.includes(raw)) out.push(raw);
@@ -43,17 +45,18 @@ export function unknownTerms(c: Corpus, text: string): string[] {
   return out;
 }
 
-/** Las páginas donde están las palabras poco comunes de una descripción («escudella», «sushi»): la IA no siempre las cita todas. */
-export function pagesForTerms(c: Corpus, text: string, maxPerTerm = 2): { page: PliegoPage; term: string }[] {
+/** Páginas que faltan para cubrir una descripción: si una palabra propia («escudella») no está en ninguna página ya citada, se añade la suya. */
+export function pagesForTerms(c: Corpus, text: string, cited: { docId: string; page: number }[] = [], maxPerTerm = 3): { page: PliegoPage; term: string }[] {
   const out: { page: PliegoPage; term: string }[] = [];
   const seen = new Set<string>();
+  const isCovered = (p: PliegoPage) => cited.some((x) => x.docId === p.docId && x.page === p.page) || out.some((o) => o.page === p);
+  const mainDoc = cited[0]?.docId;
   for (const raw of text.match(/[\p{L}]{5,}/gu) ?? []) {
     const w = normalize(raw); if (seen.has(w) || GENERIC.has(w)) continue; seen.add(w);
     const re = new RegExp(`\\b${w}`);
     const hits = c.pages.filter((p) => re.test(p.norm));
-    if (!hits.length || hits.length > maxPerTerm) continue;   // en muchas páginas no es una palabra que identifique nada
-    hits.forEach((page) => { if (!out.some((o) => o.page === page)) out.push({ page, term: raw }); });
+    if (!hits.length || hits.length > maxPerTerm || hits.some(isCovered)) continue;   // en muchas páginas no identifica nada; si ya está citada, sobra
+    out.push({ page: hits.find((p) => p.docId === mainDoc) ?? hits[0], term: raw });
   }
   return out;
 }
-
