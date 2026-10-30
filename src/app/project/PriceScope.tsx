@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { LuClipboardList, LuFileText, LuLoaderCircle, LuPlus, LuRotateCcw, LuTrash2, LuTriangleAlert, LuCalendar, LuMapPin, LuArrowRight } from 'react-icons/lu';
 import type { Project } from '../../lib/types';
 import { toast, updateProject } from '../../lib/store';
-import { uid } from '../../lib/util';
+import { uid, normalize } from '../../lib/util';
 import { openSource } from '../common';
 import { emptyPricing, eur2, num, pct1, unitPricesFor, type Market, type PriceChoice, type Pricing as PricingState } from '../../lib/pricing';
 import { priceStrategy, type OfferType } from '../../lib/priceStrategy';
@@ -64,6 +64,8 @@ export function PriceScope({ p, pr, m, fmt, save }: { p: Project; pr: PricingSta
   };
   // Si el pliego ya fija los servicios y sus precios máximos, se les pone precio directamente abajo: esta tabla sobraría.
   const fixedByPliego = fmt === 'units' || (fmt === 'discount' && rule.units.some((u) => u.max != null));
+  // Lo que ya tiene su línea en la tabla no se repite como «incluido» (p. ej. el transporte)
+  const inside = (scope.included ?? []).filter((x) => { const w = normalize(x).split(/\s+/)[0]; return !lines.some((l) => normalize(l.concept).includes(w)); });
   const isCurrent = !!pr.choice && pr.choice.kind === fmt && Math.abs(pr.choice.baja - baja) < 0.0005 && total > 0;
 
   return (
@@ -88,7 +90,7 @@ export function PriceScope({ p, pr, m, fmt, save }: { p: Project; pr: PricingSta
       </div>
       <p className="xs muted mt-8">Lo ha resumido la IA de PROPO y las cifras salen del pliego. Compruébalo en el pliego antes de presentar.</p>
 
-      {scope.included && scope.included.length > 0 && <div className="sc-incl mt-12"><strong>Ya va dentro de tus precios, no se cobra aparte:</strong> {scope.included.join(' · ')}.</div>}
+      {inside.length > 0 && <div className="sc-incl mt-12"><strong>Ya va dentro de tus precios, no se cobra aparte:</strong> {inside.join(' · ')}.</div>}
 
       {fixedByPliego ? <p className="small muted mt-12">{fmt === 'units' ? 'El pliego ya fija qué servicios se cobran y su precio máximo: ponles precio más abajo.' : 'El pliego ya fija el precio máximo de cada servicio: tú solo eliges el % de rebaja, más abajo.'}</p> : <>
       <h4 className="ps-sub">¿Qué precio le pones a cada cosa?</h4>
@@ -98,7 +100,7 @@ export function PriceScope({ p, pr, m, fmt, save }: { p: Project; pr: PricingSta
         {lines.map((l) => { const t = lineTotal(l); const isExtra = extra.some((x) => x.id === l.id); return (
           <div key={l.id} className="sc-row" role="row">
             <div className="sc-concept"><strong>{l.concept}</strong>{l.why && <span className="xs muted">{l.why}</span>}</div>
-            <div className="sc-cell"><input className="input" inputMode="decimal" aria-label={`Cantidad de ${l.concept}`} placeholder="1" value={vals[l.id]?.qty ?? (l.qty != null ? String(l.qty) : '')} onChange={(e) => setVal(l.id, 'qty', e.target.value)} />{l.unit && <span className="xs muted">{l.unit}</span>}</div>
+            <div className="sc-cell"><input className="input" inputMode="decimal" aria-label={`Cantidad de ${l.concept}`} placeholder="1" value={vals[l.id]?.qty ?? (l.qty != null ? String(l.qty).replace('.', ',') : '')} onChange={(e) => setVal(l.id, 'qty', e.target.value)} />{l.unit && <span className="xs muted">{l.unit}</span>}</div>
             <div className="sc-cell"><input className="input" inputMode="decimal" aria-label={`Precio por unidad de ${l.concept}`} placeholder="0,00" value={vals[l.id]?.cost ?? ''} onChange={(e) => setVal(l.id, 'cost', e.target.value)} /><span className="xs muted">€</span></div>
             <div className="sc-total num">{t != null ? eur2(t) : <span className="muted">—</span>}</div>
             <div>{isExtra && <button className="uc-del" style={{ position: 'static' }} aria-label={`Quitar ${l.concept}`} onClick={() => save((x) => { x.scopeExtra = (x.scopeExtra ?? []).filter((y) => y.id !== l.id); const all = { ...(x.scopeCosts ?? {}) }; delete all[l.id]; x.scopeCosts = all; })}><LuTrash2 /></button>}</div>
