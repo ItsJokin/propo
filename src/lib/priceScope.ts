@@ -9,7 +9,7 @@ import { num } from './pricing';
 export interface ScopeItem { id: string; what: string; qty: number | null; unit: string; when: string; where: string; details: string; budget: number | null; doc: string; page: number | null }
 export interface ScopeCost { id: string; concept: string; qty: number | null; unit: string; why: string }
 export interface Scope { v: number; summary: string; duration: string; items: ScopeItem[]; costs: ScopeCost[]; included?: string[] }
-export const SCOPE_V = 4;
+export const SCOPE_V = 5;
 
 const CHARGE_RULE = `Una línea es algo que se le cobra al cliente: lo que aparecería en el presupuesto o la factura que le enviarías, es decir, lo que el cliente RECIBE.
 - SÍ son líneas: «Cóctel de pie», «Cena para llevar», «Barra de bebidas», «Camareros», «Montaje y desmontaje», «Transporte y entrega»; «Limpieza diaria del colegio»; «Demolición de pavimento», «Instalación de tubería»; «Informe de auditoría», «Horas de consultoría».
@@ -78,7 +78,7 @@ Devuelve SOLO JSON:
     "unit": "personas, horas, viajes… o ''",
     "why": "qué pide el pliego sobre esto, en pocas palabras"
   }],
-  "included": ["medios y obligaciones que la empresa tiene que asumir y cuyo coste va dentro de sus precios, en pocas palabras"]
+  "included": ["medio u obligación que la empresa asume y cuyo coste va dentro de sus precios, de 2 a 5 palabras (p. ej. «Vehículos refrigerados», «Seguro de responsabilidad civil»)"]
 }
 ${CHARGE_RULE}
 Reglas:
@@ -116,7 +116,7 @@ Trabajos que pide: ${items.map((x) => x.what).join('; ')}
 Líneas propuestas (JSON): ${JSON.stringify(lines)}
 Medios ya apartados (JSON): ${JSON.stringify(included)}
 
-Devuelve SOLO JSON con la misma forma: {"costs": [{"concept": "", "qty": número o null, "qty_parts": [números] o null, "unit": "", "why": ""}], "included": [""]}
+Devuelve SOLO JSON con la misma forma: {"costs": [{"concept": "", "qty": número o null, "qty_parts": [números] o null, "unit": "", "why": ""}], "included": ["de 2 a 5 palabras cada uno"]}
 Mantén tal cual las cantidades de las líneas que se quedan. Une las líneas que el cliente vería como una sola. No inventes trabajos que no estén en la lista.`, { tier: 'quick', project: p.isSample ? '' : p.id });
     if (Array.isArray(r?.costs) && r.costs.length) { lines = r.costs; if (Array.isArray(r.included)) included = r.included; }
   } catch { /* se queda la primera lectura */ }
