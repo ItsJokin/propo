@@ -3,13 +3,13 @@
 import type { Project } from './types';
 import { ai } from './ai/provider';
 import { projectPages } from './ai/engine';
-import { normalize } from './util';
+import { buildCorpus, locate, unknownTerms } from './scopeCheck';
 import { num } from './pricing';
 
-export interface ScopeItem { id: string; what: string; qty: number | null; unit: string; when: string; where: string; details: string; budget: number | null; doc: string; page: number | null }
+export interface ScopeItem { id: string; what: string; qty: number | null; unit: string; when: string; where: string; details: string; budget: number | null; sources: { docId: string; doc: string; page: number; quote: string }[]; unknown: string[] }
 export interface ScopeCost { id: string; concept: string; qty: number | null; unit: string; why: string }
 export interface Scope { v: number; summary: string; duration: string; items: ScopeItem[]; costs: ScopeCost[]; included?: string[] }
-export const SCOPE_V = 5;
+export const SCOPE_V = 6;
 
 const CHARGE_RULE = `Una línea es algo que se le cobra al cliente: lo que aparecería en el presupuesto o la factura que le enviarías, es decir, lo que el cliente RECIBE.
 - SÍ son líneas: «Cóctel de pie», «Cena para llevar», «Barra de bebidas», «Camareros», «Montaje y desmontaje», «Transporte y entrega»; «Limpieza diaria del colegio»; «Demolición de pavimento», «Instalación de tubería»; «Informe de auditoría», «Horas de consultoría».
@@ -69,7 +69,8 @@ Devuelve SOLO JSON:
     "where": "lugar que da el pliego, o ''",
     "details": "lo más importante que incluye, en una frase, o ''",
     "budget": número o null,   // importe o precio máximo SIN IVA que el pliego da para este trabajo en total (no el precio por persona)
-    "doc": "documento donde lo has leído", "page": número o null
+    "evidence": [{"doc": "documento", "page": número, "quote": "frase copiada LITERALMENTE del documento, de 4 a 15 palabras"}]
+    // una por cada página de la que sale algo de lo que cuentas: composición, cantidades, fechas, lugar, presupuesto
   }],
   "costs": [{
     "concept": "una línea del presupuesto que se le enviaría al cliente",
@@ -88,13 +89,23 @@ Reglas:
 - Copia las cantidades del pliego: nunca las inventes ni las estimes. En esos conceptos solo se pueden sumar cifras del pliego, indicándolas en "qty_parts". Si el pliego no da una cantidad (se pide según necesidad), deja qty vacío y dilo con palabras normales en "details".
 - NO pongas ningún precio: lo escribe la empresa.
 - Pon en "included" lo que obliga el pliego aunque no se vea a primera vista: personal subrogado, seguros, materiales, licencias, garantías.
+- En lo que describes usa las mismas palabras del pliego para productos, materiales y servicios, y no añadas nada que no ponga.
 - Escribe para alguien sin conocimientos de licitaciones. Nunca hables de «extractos» ni de «fragmentos».`, { tier: 'default', project: p.isSample ? '' : p.id });
+  const all = await projectPages(p);
+  const corpus = buildCorpus(p.docs.map((d) => ({ id: d.id, name: d.name, pages: all.get(d.id) ?? [] })));
   const digits = pages.replace(/(\d)[.\s](?=\d{3}\b)/g, '$1');
   const n = (x: any) => (x == null || x === '' ? null : num(x) || null);
   const str = (x: any) => (x ? String(x).replace(/\s*\(?\bnull\b\)?/gi, '').trim() : '');   // que no se cuele jerga de la respuesta
   const items: ScopeItem[] = (Array.isArray(j?.items) ? j.items : []).filter((x: any) => x?.what && !/^(facturaci|pagos?\b|garant[ií]a|tr[aá]mites?)/i.test(String(x.what))).slice(0, 15).map((x: any, i: number) => ({
     id: `i${i}`, what: str(x.what), qty: inPliego(n(x.qty), digits), unit: str(x.unit), when: str(x.when), where: str(x.where), details: str(x.details),
-    budget: inPliego(n(x.budget), digits), doc: str(x.doc), page: n(x.page),
+    budget: inPliego(n(x.budget), digits),
+    // Cada enlace apunta a la página donde la frase está de verdad; si no está en ninguna, no se enseña
+    sources: (Array.isArray(x.evidence) ? x.evidence : []).reduce((acc: ScopeItem['sources'], e: any) => {
+      const hit = e?.quote ? locate(corpus, String(e.quote), { doc: str(e.doc), page: n(e.page) }) : null;
+      if (hit && acc.length < 5 && !acc.some((a) => a.docId === hit.docId && a.page === hit.page)) acc.push({ docId: hit.docId, doc: hit.doc, page: hit.page, quote: String(e.quote) });
+      return acc;
+    }, []).sort((a: { page: number }, b: { page: number }) => a.page - b.page),
+    unknown: unknownTerms(corpus, `${str(x.what)} ${str(x.when)} ${str(x.where)} ${str(x.details)}`),
   }));
   // Una suma solo vale si cada sumando está en el pliego y el resultado cuadra (82 + 82 = 164 menús).
   const summed = (x: any) => {
@@ -121,7 +132,7 @@ Mantén tal cual las cantidades de las líneas que se quedan. Une las líneas qu
     if (Array.isArray(r?.costs) && r.costs.length) { lines = r.costs; if (Array.isArray(r.included)) included = r.included; }
   } catch { /* se queda la primera lectura */ }
   const costs: ScopeCost[] = lines.filter((x: any) => x?.concept).slice(0, 8).map((x: any, i: number) => ({
-    id: `c${i}`, concept: str(x.concept), qty: inPliego(n(x.qty), digits) ?? summed(x), unit: str(x.unit), why: str(x.why),
+    id: `c${i}`, concept: str(x.concept), qty: inPliego(n(x.qty), digits) ?? summed(x), unit: str(x.unit), why: unknownTerms(corpus, str(x.why)).length ? '' : str(x.why),
   }));
   if (!items.length) return null;
   // Un mismo presupuesto no se enseña dos veces: se queda en el primer trabajo y dice qué más cubre.
@@ -133,10 +144,4 @@ Mantén tal cual las cantidades de las líneas que se quedan. Une las líneas qu
     it.details = `${it.details ? `${it.details} ` : ''}Este presupuesto cubre también: ${same.map((o) => o.what).join(', ')}.`;
   });
   return { v: SCOPE_V, summary: str(j?.summary), duration: str(j?.duration), items, costs, included: [...new Set(included.map(str).filter(Boolean))].slice(0, 8) };
-}
-
-/** Busca el documento por su nombre para poder abrirlo en la página citada. */
-export function scopeDoc(p: Project, name: string) {
-  const k = normalize(name);
-  return p.docs.find((d) => normalize(d.name) === k) ?? p.docs.find((d) => k && normalize(d.name).includes(k));
 }

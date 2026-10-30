@@ -1590,6 +1590,11 @@ a.comp-award-t:hover { color: var(--accent); }
 .sc-meta { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 4px; font-size: 13px; color: var(--fg-2); }
 .sc-meta span { display: inline-flex; align-items: center; gap: 5px; }
 .sc-meta svg { flex: none; width: 13px; height: 13px; color: var(--fg-3); }
+.sc-src { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 6px; font-size: 12px; color: var(--fg-3); }
+.sc-src > svg { width: 12px; height: 12px; }
+.sc-src .link { font-size: 12px; }
+.sc-unknown { display: flex; align-items: flex-start; gap: 5px; margin-top: 6px; font-size: 12px; color: var(--warn-ink); }
+.sc-unknown svg { flex: none; width: 13px; height: 13px; margin-top: 2px; }
 .sc-budget { flex: none; display: grid; justify-items: end; text-align: right; }
 .sc-budget span { font-size: 11.5px; color: var(--fg-3); }
 .sc-budget strong { font: 700 15px var(--font-display); color: var(--fg); }

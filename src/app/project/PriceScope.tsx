@@ -7,7 +7,7 @@ import { uid, normalize } from '../../lib/util';
 import { openSource } from '../common';
 import { emptyPricing, eur2, num, pct1, unitPricesFor, type Market, type PriceChoice, type Pricing as PricingState } from '../../lib/pricing';
 import { priceStrategy, type OfferType } from '../../lib/priceStrategy';
-import { readScope, scopeDoc, SCOPE_V } from '../../lib/priceScope';
+import { readScope, SCOPE_V } from '../../lib/priceScope';
 
 const reading = new Set<string>();   // proyectos cuyo pliego se está leyendo
 
@@ -75,20 +75,22 @@ export function PriceScope({ p, pr, m, fmt, save }: { p: Project; pr: PricingSta
       {scope.summary && <p className="mt-4" style={{ fontSize: 15, lineHeight: 1.6 }}>{scope.summary}</p>}
 
       <div className="sc-items mt-12">
-        {scope.items.map((it) => { const d = scopeDoc(p, it.doc); return (
+        {scope.items.map((it) => { const docs = new Set(it.sources.map((x) => x.docId)); return (
           <div key={it.id} className="sc-item">
             <div className={`sc-qty${it.qty == null ? ' none' : ''}`}>{it.qty != null ? <><strong>{it.qty.toLocaleString('es-ES')}</strong><span>{it.unit}</span></> : <span>{it.unit || 'según pedidos'}</span>}</div>
             <div className="grow" style={{ minWidth: 0 }}>
               <div className="sc-what">{it.what}</div>
               {(it.when || it.where) && <div className="sc-meta">{it.when && <span><LuCalendar /> {it.when}</span>}{it.where && <span><LuMapPin /> {it.where}</span>}</div>}
               {it.details && <div className="small muted mt-4">{it.details}</div>}
-              {d && <button className="link xs mt-4" onClick={() => openSource({ project: p, docId: d.id, page: it.page ?? 1, quote: it.what })}><LuFileText style={{ width: 12, height: 12, verticalAlign: -1, marginRight: 3 }} />Verlo en el pliego{it.page ? ` · página ${it.page}` : ''}</button>}
+              {it.unknown.length > 0 && <div className="sc-unknown"><LuTriangleAlert /> No aparece en el pliego, compruébalo: {it.unknown.join(', ')}</div>}
+              {it.sources.length > 0 ? <div className="sc-src"><LuFileText /> <span>Verlo en el pliego:</span>{it.sources.map((x) => <button key={`${x.docId}-${x.page}`} className="link" title={x.doc} onClick={() => openSource({ project: p, docId: x.docId, page: x.page, quote: x.quote })}>{docs.size > 1 ? `${x.doc.slice(0, 18)}… ` : ''}pág. {x.page}</button>)}</div>
+                : <div className="sc-unknown"><LuTriangleAlert /> No he podido localizar esto en el pliego: compruébalo antes de presentar.</div>}
             </div>
             {it.budget != null && <div className="sc-budget"><span>Presupuesto</span><strong className="num">{eur2(it.budget)}</strong><span>sin IVA</span></div>}
           </div>
         ); })}
       </div>
-      <p className="xs muted mt-8">Lo ha resumido la IA de PROPO y las cifras salen del pliego. Compruébalo en el pliego antes de presentar.</p>
+      <p className="xs muted mt-8">Lo ha resumido la IA de PROPO. Las cantidades y los presupuestos están comprobados contra el pliego, y cada trabajo enlaza a las páginas de donde sale. Aun así, revísalo antes de presentar.</p>
 
       {inside.length > 0 && <div className="sc-incl mt-12"><strong>Ya va dentro de tus precios, no se cobra aparte:</strong> {inside.join(' · ')}.</div>}
 
