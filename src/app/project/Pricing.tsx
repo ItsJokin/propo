@@ -294,7 +294,7 @@ function PriceChooser({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingSt
         <h3 style={{ fontSize: 20 }}>¿Qué precio ponemos?</h3>
         <div className="pc-btns mt-12">
           <button className={`pc-btn${mode === 'own' ? ' on' : ''}`} aria-pressed={mode === 'own'} onClick={() => pick('own')}>
-            <LuPencil /><strong>Pongo yo el precio</strong><span>{fmt === 'discount' ? 'Escribes tu % de rebaja' : fmt === 'units' ? 'Escribes el precio de cada servicio, como pide el pliego' : 'Escribes el importe'} y ves qué rebaja supone, los puntos y el riesgo.</span>
+            <LuPencil /><strong>Pongo yo el precio</strong><span>{fmt === 'discount' ? 'Escribes tu % de rebaja y ves los puntos y el riesgo.' : fmt === 'units' ? 'Escribes el precio de cada servicio, como pide el pliego, y ves los puntos.' : 'Escribes el importe y ves qué rebaja supone, los puntos y el riesgo.'}</span>
           </button>
           <button className={`pc-btn${mode === 'propo' ? ' on' : ''}`} aria-pressed={mode === 'propo'} onClick={() => pick('propo')}>
             <LuSparkles /><strong>Que PROPO ponga el precio</strong><span>El que más puntos da sin riesgo{base && fmt !== 'discount' ? `: ${eur2(r2(base * (1 - s.rec)))}, ` : ': '}una rebaja del {pct1(s.rec)}.</span>
@@ -353,7 +353,7 @@ function OwnPrice({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingState;
         {!isPct && <div className="final"><span>Tu precio, sin IVA</span><strong className="num">{eur2(total)}</strong><em>{eur2(total * (1 + (rule.vat ?? 21) / 100))} con IVA</em></div>}
         {(!!base || isPct) && <div className={over ? 'bad' : isPct ? 'final' : ''}><span>{over ? (isPct ? 'Rebaja no válida' : 'Te pasas del máximo') : 'Rebaja sobre el máximo'}</span><strong className="num">{over ? (isPct ? 'Menos del 100 %' : eur2(v - base)) : pct1(Math.max(0, baja))}</strong>{!!base && !isPct && <em>Máximo: {eur2(base)}</em>}</div>}
         {E != null && <div><span>Puntos que esperas</span><strong className="num">{pts(E)} de {pts(s.P)}</strong><em>Según lo que suelen rebajar los demás</em></div>}
-        {ready && <div className={risky || belowFloor ? 'bad' : 'ok'}><span>Riesgo</span><strong>{risky ? 'Baja temeraria' : belowFloor ? 'Bajo tu coste' : 'Sin riesgo'}</strong><em>{risky ? 'Te pedirían justificarla' : belowFloor ? `Tu mínimo es ${eur2(pr.floor!)}` : `Temeraria a partir del ${pct1(s.abn)}`}</em></div>}
+        {ready && !!base && <div className={risky || belowFloor ? 'bad' : 'ok'}><span>Riesgo</span><strong>{risky ? 'Baja temeraria' : belowFloor ? 'Bajo tu coste' : 'Sin riesgo'}</strong><em>{risky ? 'Te pedirían justificarla' : belowFloor ? `Tu mínimo es ${eur2(pr.floor!)}` : `Temeraria a partir del ${pct1(s.abn)}`}</em></div>}
       </div>}
       {over && !isPct && <div className="callout bad small mt-8"><LuTriangleAlert /><div>Una oferta por encima del presupuesto máximo se excluye. Baja el precio hasta {eur2(base)} o menos.</div></div>}
       {gap != null && Math.abs(gap) >= 1 && s.P != null && <p className="small mt-8">{gap > 0 ? <>Para llegar a la rebaja que recomienda PROPO ({pct1(s.rec)}) tendrías que bajar <strong>{eur2(gap)}</strong>.</> : <>Estás <strong>{eur2(-gap)}</strong> por debajo de la rebaja que recomienda PROPO ({pct1(s.rec)}): podrías cobrar más sin perder apenas puntos.</>}</p>}
