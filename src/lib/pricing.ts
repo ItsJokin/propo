@@ -58,6 +58,10 @@ export interface Pricing {
   unitInfo?: Record<string, UnitInfo> | null;   // qué pide el pliego en cada concepto, explicado en claro
   unitInfoError?: boolean;
   unitInfoV?: number;
+  scope?: import('./priceScope').Scope | null;   // lo que hay que hacer de verdad, leído del pliego (null: el pliego no lo dice)
+  scopeError?: boolean;
+  scopeCosts?: Record<string, { qty?: string; cost?: string }>;   // los gastos que calcula el cliente
+  scopeExtra?: { id: string; concept: string }[];
   studio?: { b?: number; lots?: string[] };   // la rebaja y los lotes que el cliente está mirando
 }
 

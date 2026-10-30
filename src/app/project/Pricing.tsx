@@ -16,6 +16,7 @@ import {
 } from '../../lib/pricing';
 import { offerType, priceStrategy, OFFER, type OfferType, type Strategy } from '../../lib/priceStrategy';
 import { Economic } from './Economic';
+import { PriceScope } from './PriceScope';
 import { samplePriceRule } from '../../lib/samplePricing';
 
 const pts = (x: number | null) => (x == null ? '—' : String(Math.round(x * 10) / 10).replace('.', ','));
@@ -152,6 +153,9 @@ export function Pricing({ p }: { p: Project }) {
         {rule.labor && <div className="callout warn small mt-12"><LuTriangleAlert /><div><strong>Ojo con los costes de personal.</strong> {rule.labor} Un precio que no cubra estos costes se puede excluir.</div></div>}
         {rule.mode === 'rules' && <div className="callout neutral small mt-12"><LuInfo /><div>No hemos podido leer la fórmula exacta con la IA: estos datos salen del análisis general. Compruébalos en el apartado de criterios de adjudicación del pliego.</div></div>}
       </div>
+
+      {/* Lo que hay que hacer de verdad y cuánto cuesta */}
+      <PriceScope p={p} pr={pr} save={save} />
 
       {/* 2 · El estudio de precio: PROPO propone, el cliente ajusta */}
       {!ch && <PriceStudio p={p} pr={pr} rule={rule} m={m} fmt={fmt.type} save={save} />}
@@ -312,6 +316,14 @@ function PriceStudio({ p, pr, rule, m, fmt, save }: { p: Project; pr: PricingSta
   const isRec = Math.abs(b - s.rec) < 1e-6;
 
   const use = () => { if (!choice) return; save((x) => { x.choice = choice; x.approved = null; x.studio = { ...(x.studio ?? {}), b }; }); toast('Precio preparado. Revísalo y confírmalo.', 'ok'); };
+  // Si el coste mínimo llega desde la tabla de gastos, la recomendación se recalcula
+  const lastFloor = useRef(pr.floor);
+  useEffect(() => {
+    if (lastFloor.current === pr.floor) return;
+    lastFloor.current = pr.floor;
+    setFloorTxt(pr.floor ? String(pr.floor).replace('.', ',') : '');
+    go(priceStrategy(rule, m, pr.floor).rec);
+  }, [pr.floor]);
   const applyFloor = () => { const f = num(floorTxt) || null; save((x) => { x.floor = f; }); go(priceStrategy(rule, m, f).rec); };
   const order = async () => {
     if (!own.trim()) return;
