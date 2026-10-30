@@ -67,20 +67,20 @@ Devuelve SOLO JSON:
     "doc": "documento donde lo has leído", "page": número o null
   }],
   "costs": [{
-    "concept": "un gasto que tendrá la empresa para hacer este trabajo (p. ej. «Comida y bebida del cóctel», «Camareros», «Transporte y montaje», «Alquiler de menaje»)",
+    "concept": "una de las cosas a las que la empresa tendrá que ponerle precio (p. ej. «Comida y bebida del cóctel», «Camareros», «Transporte y montaje», «Alquiler de menaje»)",
     "qty": número o null,   // cantidad que sale del pliego, para calcular el gasto
     "qty_parts": [números] o null,   // si la cantidad es una suma de cifras del pliego (82 + 82 menús), esas cifras; qty es su suma
     "unit": "personas, horas, viajes… o ''",
-    "why": "por qué hay que contar este gasto, en pocas palabras y citando lo que pide el pliego"
+    "why": "qué pide el pliego sobre esto, en pocas palabras"
   }]
 }
 Reglas:
 - Como mucho 15 items y 10 gastos. Lo más grande primero.
 - Los items son solo trabajos que hay que hacer: nada de facturación, pagos, garantías ni trámites administrativos.
 - Si un mismo presupuesto cubre varios trabajos, ponlo solo en el primero y di en sus "details" qué más cubre.
-- Copia las cantidades del pliego: nunca las inventes ni las estimes. En los gastos solo se pueden sumar cifras del pliego, indicándolas en "qty_parts". Si el pliego no da una cantidad (se pide según necesidad), deja qty vacío y dilo con palabras normales en "details".
-- NO pongas ningún coste o precio de mercado: el coste lo escribe la empresa. Los gastos son solo los conceptos.
-- Incluye en los gastos lo que obliga el pliego aunque no se vea a primera vista: personal, subrogación, seguros, transporte, materiales, licencias, garantías.
+- Copia las cantidades del pliego: nunca las inventes ni las estimes. En esos conceptos solo se pueden sumar cifras del pliego, indicándolas en "qty_parts". Si el pliego no da una cantidad (se pide según necesidad), deja qty vacío y dilo con palabras normales en "details".
+- NO pongas ningún precio: lo escribe la empresa. Aquí van solo los conceptos.
+- Incluye en esos conceptos lo que obliga el pliego aunque no se vea a primera vista: personal, subrogación, seguros, transporte, materiales, licencias, garantías.
 - Escribe para alguien sin conocimientos de licitaciones. Nunca hables de «extractos» ni de «fragmentos».`, { tier: 'default', project: p.isSample ? '' : p.id });
   const digits = pages.replace(/(\d)[.\s](?=\d{3}\b)/g, '$1');
   const n = (x: any) => (x == null || x === '' ? null : num(x) || null);

@@ -100,10 +100,10 @@ export function Pricing({ p }: { p: Project }) {
     if (r === 'unavailable') toast('Las descargas no están disponibles en esta vista.', 'warn');
   };
   const reset = () => { updateProject(p.id, (x) => { x.pricing = { ...(x.pricing ?? emptyPricing()), choice: null, approved: null, ownText: '', filled: null, fillNote: '', studio: {}, unitDraft: {} }; x.manualChecks.financialApproved = false; }); };
-  const adjust = () => save((x) => {
-    const c = x.choice!; x.studio = { ...(x.studio ?? {}), b: c.baja };
+  const adjust = () => updateProject(p.id, (o) => {
+    const x = o.pricing ?? emptyPricing(); const c = x.choice!; x.studio = { ...(x.studio ?? {}), b: c.baja };
     if (c.kind === 'units') x.unitDraft = Object.fromEntries(c.units.map((u) => [u.id, String(u.price).replace('.', ',')]));
-    x.choice = null; x.approved = null;
+    x.choice = null; x.approved = null; o.pricing = x; o.manualChecks.financialApproved = false;
   });
 
   return (
@@ -155,7 +155,7 @@ export function Pricing({ p }: { p: Project }) {
       </div>
 
       {/* Lo que hay que hacer de verdad y cuánto cuesta */}
-      <PriceScope p={p} pr={pr} save={save} />
+      <PriceScope p={p} pr={pr} m={m} fmt={fmt.type} save={save} />
 
       {/* 2 · El estudio de precio: PROPO propone, el cliente ajusta */}
       {!ch && <PriceStudio p={p} pr={pr} rule={rule} m={m} fmt={fmt.type} save={save} />}

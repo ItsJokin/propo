@@ -1,16 +1,19 @@
 // «Lo que vas a tener que hacer»: el trabajo real de la licitación y una tabla para calcular los gastos antes de poner precio.
 import React, { useEffect, useState } from 'react';
-import { LuClipboardList, LuFileText, LuLoaderCircle, LuPlus, LuRotateCcw, LuTrash2, LuTriangleAlert, LuCalendar, LuMapPin, LuArrowDown } from 'react-icons/lu';
+import { LuClipboardList, LuFileText, LuLoaderCircle, LuPlus, LuRotateCcw, LuTrash2, LuTriangleAlert, LuCalendar, LuMapPin, LuArrowRight } from 'react-icons/lu';
 import type { Project } from '../../lib/types';
-import { toast } from '../../lib/store';
+import { toast, updateProject } from '../../lib/store';
 import { uid } from '../../lib/util';
 import { openSource } from '../common';
-import { eur2, num, type Pricing as PricingState } from '../../lib/pricing';
+import { emptyPricing, eur2, num, pct1, unitChoice, unitLines, unitPricesFor, type Market, type PriceChoice, type Pricing as PricingState } from '../../lib/pricing';
+import { priceStrategy, type OfferType } from '../../lib/priceStrategy';
 import { readScope, scopeDoc, SCOPE_V } from '../../lib/priceScope';
 
 const reading = new Set<string>();   // proyectos cuyo pliego se está leyendo
 
-export function PriceScope({ p, pr, save }: { p: Project; pr: PricingState; save: (fn: (x: PricingState) => void) => void }) {
+const fmtPts = (x: number | null) => (x == null ? '—' : String(Math.round(x * 10) / 10).replace('.', ','));
+
+export function PriceScope({ p, pr, m, fmt, save }: { p: Project; pr: PricingState; m: Market; fmt: OfferType; save: (fn: (x: PricingState) => void) => void }) {
   const rule = pr.rule!;
   const scope = pr.scope?.v === SCOPE_V ? pr.scope : null;
   const [newCost, setNewCost] = useState('');
@@ -39,9 +42,30 @@ export function PriceScope({ p, pr, save }: { p: Project; pr: PricingState; save
   const lineTotal = (l: { id: string; qty: number | null }) => { const c = num(vals[l.id]?.cost ?? ''); return c ? Math.round(c * qtyOf(l) * 100) / 100 : null; };
   const total = Math.round(lines.reduce((a, l) => a + (lineTotal(l) ?? 0), 0) * 100) / 100;
   const filled = lines.filter((l) => lineTotal(l) != null).length;
-  const margin = rule.budget && total ? Math.round((rule.budget - total) * 100) / 100 : null;
-  const offer = pr.choice?.total ? Math.round((pr.choice.total - total) * 100) / 100 : null;
-  const useAsFloor = () => { save((x) => { x.floor = total; }); toast('Hecho: PROPO no te recomendará un precio por debajo de tus gastos.', 'ok'); };
+  // El precio final sale de la suma, y se presenta en la forma que pide este pliego
+  const strat = priceStrategy(rule, m, pr.floor);
+  const rawBaja = rule.budget && total ? 1 - total / rule.budget : 0;
+  const baja = fmt === 'discount' ? Math.round(rawBaja * 1000) / 1000 : rawBaja;
+  const over = !!rule.budget && total > rule.budget + 0.005;
+  const expPts = total ? strat.exp(Math.max(0, baja)) : null;
+  const risky = baja >= strat.abn;
+  const belowFloor = !!pr.floor && total > 0 && total < pr.floor;
+  const target = rule.budget ? Math.round(rule.budget * (1 - strat.rec) * 100) / 100 : null;
+  const gap = target != null && total ? Math.round((total - target) * 100) / 100 : null;
+  const buildChoice = (): PriceChoice => {
+    const pts = expPts;
+    const prices = Object.fromEntries(rule.units.filter((u) => u.max != null).map((u) => [u.id, String(Math.round(u.max! * (1 - baja) * 100) / 100)]));
+    if (fmt === 'discount') return { ...(unitChoice(rule, unitLines(rule, prices), '', baja) ?? { mode: 'own', baja, total: 0, points: pts, units: [], discount: baja }), points: pts, kind: fmt };
+    if (fmt === 'units') { const c = unitChoice(rule, unitLines(rule, prices), ''); if (c) return { ...c, points: pts, kind: fmt }; }
+    if (fmt === 'lots') { const lots = rule.lots.filter((l) => l.budget); return { mode: 'own', baja, total, points: pts, kind: fmt, units: lots.map((l) => ({ id: `lot${rule.lots.indexOf(l)}`, label: l.label, price: Math.round(l.budget! * (1 - baja) * 100) / 100 })) }; }
+    return { mode: 'own', baja, total, points: pts, units: unitPricesFor(rule, baja), kind: 'total' };
+  };
+  const useTotal = () => {
+    const c = buildChoice();
+    updateProject(p.id, (x) => { const cur = x.pricing ?? emptyPricing(); cur.choice = c; cur.approved = null; cur.filled = null; cur.fillNote = ''; cur.studio = { ...(cur.studio ?? {}), b: Math.max(0, baja) }; x.pricing = cur; x.manualChecks.financialApproved = false; });
+    toast('Precio preparado. Revísalo abajo y confírmalo.', 'ok');
+  };
+  const isCurrent = !!pr.choice && pr.choice.kind === fmt && Math.abs(pr.choice.baja - baja) < 0.0005 && total > 0;
 
   return (
     <div className="card card-pad">
@@ -65,37 +89,40 @@ export function PriceScope({ p, pr, save }: { p: Project; pr: PricingState; save
       </div>
       <p className="xs muted mt-8">Lo ha resumido la IA de PROPO y las cifras salen del pliego. Compruébalo en el pliego antes de presentar.</p>
 
-      <h4 className="ps-sub">¿Cuánto te cuesta hacerlo?</h4>
-      <p className="small muted">Escribe lo que te cuesta cada cosa, sin IVA. No hace falta que sea exacto ni que rellenes todo. Es un cálculo tuyo: <strong>no aparece en ningún documento de la oferta</strong>.</p>
-      <div className="sc-table mt-8" role="table" aria-label="Gastos de la empresa">
-        <div className="sc-row head" role="row"><span>Gasto</span><span>Cantidad</span><span>Coste por unidad</span><span>Total</span><span /></div>
+      <h4 className="ps-sub">¿Qué precio le pones a cada cosa?</h4>
+      <p className="small muted">Escribe lo que quieres cobrar por cada cosa, sin IVA y con tu beneficio incluido. PROPO lo suma y te dice <strong>tu precio final</strong>, qué rebaja supone y cuántos puntos te da.</p>
+      <div className="sc-table mt-8" role="table" aria-label="Precio de cada cosa">
+        <div className="sc-row head" role="row"><span>Qué</span><span>Cantidad</span><span>Tu precio por unidad</span><span>Total</span><span /></div>
         {lines.map((l) => { const t = lineTotal(l); const isExtra = extra.some((x) => x.id === l.id); return (
           <div key={l.id} className="sc-row" role="row">
             <div className="sc-concept"><strong>{l.concept}</strong>{l.why && <span className="xs muted">{l.why}</span>}</div>
             <div className="sc-cell"><input className="input" inputMode="decimal" aria-label={`Cantidad de ${l.concept}`} placeholder="1" value={vals[l.id]?.qty ?? (l.qty != null ? String(l.qty) : '')} onChange={(e) => setVal(l.id, 'qty', e.target.value)} />{l.unit && <span className="xs muted">{l.unit}</span>}</div>
-            <div className="sc-cell"><input className="input" inputMode="decimal" aria-label={`Coste por unidad de ${l.concept}`} placeholder="0,00" value={vals[l.id]?.cost ?? ''} onChange={(e) => setVal(l.id, 'cost', e.target.value)} /><span className="xs muted">€</span></div>
+            <div className="sc-cell"><input className="input" inputMode="decimal" aria-label={`Precio por unidad de ${l.concept}`} placeholder="0,00" value={vals[l.id]?.cost ?? ''} onChange={(e) => setVal(l.id, 'cost', e.target.value)} /><span className="xs muted">€</span></div>
             <div className="sc-total num">{t != null ? eur2(t) : <span className="muted">—</span>}</div>
             <div>{isExtra && <button className="uc-del" style={{ position: 'static' }} aria-label={`Quitar ${l.concept}`} onClick={() => save((x) => { x.scopeExtra = (x.scopeExtra ?? []).filter((y) => y.id !== l.id); const all = { ...(x.scopeCosts ?? {}) }; delete all[l.id]; x.scopeCosts = all; })}><LuTrash2 /></button>}</div>
           </div>
         ); })}
       </div>
       <form className="row-wrap mt-8" style={{ gap: 6 }} onSubmit={(e) => { e.preventDefault(); if (!newCost.trim()) return; save((x) => { x.scopeExtra = [...(x.scopeExtra ?? []), { id: uid('sc'), concept: newCost.trim() }]; }); setNewCost(''); }}>
-        <input className="input" style={{ maxWidth: 280, height: 36 }} placeholder="¿Falta un gasto? Escríbelo aquí" value={newCost} onChange={(e) => setNewCost(e.target.value)} aria-label="Añadir un gasto" />
+        <input className="input" style={{ maxWidth: 280, height: 36 }} placeholder="¿Falta algo? Escríbelo aquí" value={newCost} onChange={(e) => setNewCost(e.target.value)} aria-label="Añadir un concepto" />
         <button className="btn btn-ghost btn-sm" disabled={!newCost.trim()}><LuPlus /> Añadir</button>
       </form>
 
       {filled > 0 && <>
         <div className="sc-sum mt-16">
-          <div><span>Tus gastos</span><strong className="num">{eur2(total)}</strong></div>
-          {rule.budget != null && <div><span>Presupuesto máximo</span><strong className="num">{eur2(rule.budget)}</strong></div>}
-          {margin != null && <div className={margin < 0 ? 'bad' : 'ok'}><span>Te quedaría, como mucho</span><strong className="num">{eur2(margin)}</strong></div>}
-          {offer != null && <div className={offer < 0 ? 'bad' : 'ok'}><span>Con el precio que has elegido</span><strong className="num">{eur2(offer)}</strong></div>}
+          <div className="final"><span>Tu precio final, sin IVA</span><strong className="num">{eur2(total)}</strong><em>{eur2(total * (1 + (rule.vat ?? 21) / 100))} con IVA</em></div>
+          {rule.budget != null && <div className={over ? 'bad' : ''}><span>{over ? 'Te pasas del máximo' : fmt === 'discount' ? 'Equivale a una rebaja única del' : 'Rebaja sobre el máximo'}</span><strong className="num">{over ? eur2(total - rule.budget) : pct1(Math.max(0, baja))}</strong><em>Máximo: {eur2(rule.budget)}</em></div>}
+          {expPts != null && !over && <div><span>Puntos que esperas</span><strong className="num">{fmtPts(expPts)} de {fmtPts(strat.P)}</strong><em>Según lo que suelen rebajar los demás</em></div>}
+          {!over && <div className={risky || belowFloor ? 'bad' : 'ok'}><span>Riesgo</span><strong>{risky ? 'Baja temeraria' : belowFloor ? 'Bajo tu coste' : 'Sin riesgo'}</strong><em>{risky ? 'Te pedirían justificarla' : belowFloor ? `Tu mínimo es ${eur2(pr.floor!)}` : `Temeraria a partir del ${pct1(strat.abn)}`}</em></div>}
         </div>
-        {margin != null && margin < 0 && <div className="callout bad small mt-8"><LuTriangleAlert /><div>Tus gastos superan el presupuesto máximo: con estos números perderías dinero aunque no hicieras ninguna rebaja.</div></div>}
+        {filled < lines.length && <p className="xs muted mt-8">Llevas {filled} de {lines.length} conceptos con precio. Los que dejes vacíos no suman nada: rellénalos para que el precio final sea real.</p>}
+        {!over && gap != null && Math.abs(gap) >= 1 && strat.P != null && <p className="small mt-8">{gap > 0 ? <>Para llegar a la rebaja que recomienda PROPO ({pct1(strat.rec)}) tendrías que bajar <strong>{eur2(gap)}</strong>.</> : <>Estás <strong>{eur2(-gap)}</strong> por debajo de la rebaja que recomienda PROPO ({pct1(strat.rec)}): podrías cobrar más sin perder apenas puntos.</>}</p>}
+        {over && <div className="callout bad small mt-8"><LuTriangleAlert /><div>Una oferta por encima del presupuesto máximo se excluye. Baja algún precio hasta quedar en {eur2(rule.budget!)} o menos.</div></div>}
         <div className="row-wrap mt-12" style={{ gap: 10, alignItems: 'center' }}>
-          {pr.floor === total
-            ? <span className="small" style={{ color: 'var(--ok-ink)', fontWeight: 600 }}>✓ PROPO no te recomendará un precio por debajo de estos gastos.</span>
-            : <><button className="btn btn-secondary" onClick={useAsFloor}><LuArrowDown /> Que PROPO no baje de esta cifra</button><span className="xs muted">Ajusta la rebaja recomendada para que no pierdas dinero. Súmale el beneficio que quieras ganar.</span></>}
+          {isCurrent
+            ? <span className="small" style={{ color: 'var(--ok-ink)', fontWeight: 600 }}>✓ Este es el precio de tu oferta.</span>
+            : <button className="btn btn-primary" disabled={over} onClick={useTotal}>{pr.choice ? 'Cambiar mi oferta a este precio' : 'Usar este precio'} <LuArrowRight /></button>}
+          <span className="xs muted">En la oferta va el precio final. Este desglose es para ti{fmt === 'discount' ? ': el pliego pide un % único, así que tu precio se presenta como esa rebaja' : ''}.</span>
         </div>
       </>}
     </div>
