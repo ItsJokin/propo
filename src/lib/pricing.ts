@@ -158,7 +158,7 @@ function fromRules(p: Project): PriceRule {
   const points = p.criteria.filter((c) => PRICE.test(c.name)).reduce((a, c) => a + (c.points || 0), 0) || null;
   const total = p.criteria.reduce((a, c) => a + (c.points || 0), 0) || null;
   return {
-    budget: budget ? Math.round(budget) : null, vat: 21, totalPoints: total, points, formula: 'inverse', formulaText: '', satiation: null,
+    budget: budget ? Math.round(budget * 100) / 100 : null, vat: 21, totalPoints: total, points, formula: 'inverse', formulaText: '', satiation: null,
     abnormalText: 'Regla general: se presume anormal la oferta más de 10 puntos por debajo de la media (con 4 o más ofertas).', abnormalBelowMean: 10, abnormalOfBudget: null,
     plain: points ? `En esta licitación el precio vale ${points} puntos${total ? ` de ${total}` : ''}. Normalmente, la oferta más barata se lleva todos y las demás, en proporción.` : 'No hemos podido leer cuántos puntos da el precio. Revisa el apartado de criterios de adjudicación del pliego.',
     units: [], lots: [], others: p.criteria.filter((c) => c.kind === 'formula' && !PRICE.test(c.name)).map((c, i) => ({ id: `o${i}`, label: c.name, points: c.points || null, rule: c.description, ask: `¿Qué ofreces en «${c.name}»?` })),

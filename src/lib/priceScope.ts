@@ -9,7 +9,7 @@ import { num } from './pricing';
 export interface ScopeItem { id: string; what: string; qty: number | null; unit: string; when: string; where: string; details: string; budget: number | null; doc: string; page: number | null }
 export interface ScopeCost { id: string; concept: string; qty: number | null; unit: string; why: string }
 export interface Scope { v: number; summary: string; duration: string; items: ScopeItem[]; costs: ScopeCost[] }
-export const SCOPE_V = 2;
+export const SCOPE_V = 3;
 
 const WORK = /personas|comensales|asistentes|invitados|men[uú]s?\b|c[oó]ctel|coffee|fecha|horario|lugar|ubicaci|cantidad|unidades|servicios? a prestar|objeto del contrato|prescripciones|presupuesto|lote|duraci[oó]n|plazo de ejecuci|trabajadores|personal m[ií]nimo|frecuencia|medici[oó]n/gi;
 async function workPages(p: Project): Promise<string> {
@@ -69,6 +69,7 @@ Devuelve SOLO JSON:
   "costs": [{
     "concept": "un gasto que tendrá la empresa para hacer este trabajo (p. ej. «Comida y bebida del cóctel», «Camareros», «Transporte y montaje», «Alquiler de menaje»)",
     "qty": número o null,   // cantidad que sale del pliego, para calcular el gasto
+    "qty_parts": [números] o null,   // si la cantidad es una suma de cifras del pliego (82 + 82 menús), esas cifras; qty es su suma
     "unit": "personas, horas, viajes… o ''",
     "why": "por qué hay que contar este gasto, en pocas palabras y citando lo que pide el pliego"
   }]
@@ -77,7 +78,7 @@ Reglas:
 - Como mucho 15 items y 10 gastos. Lo más grande primero.
 - Los items son solo trabajos que hay que hacer: nada de facturación, pagos, garantías ni trámites administrativos.
 - Si un mismo presupuesto cubre varios trabajos, ponlo solo en el primero y di en sus "details" qué más cubre.
-- Copia las cantidades del pliego: nunca las inventes, estimes ni sumes. Si el pliego no da una cantidad (se pide según necesidad), deja qty vacío y dilo con palabras normales en "details".
+- Copia las cantidades del pliego: nunca las inventes ni las estimes. En los gastos solo se pueden sumar cifras del pliego, indicándolas en "qty_parts". Si el pliego no da una cantidad (se pide según necesidad), deja qty vacío y dilo con palabras normales en "details".
 - NO pongas ningún coste o precio de mercado: el coste lo escribe la empresa. Los gastos son solo los conceptos.
 - Incluye en los gastos lo que obliga el pliego aunque no se vea a primera vista: personal, subrogación, seguros, transporte, materiales, licencias, garantías.
 - Escribe para alguien sin conocimientos de licitaciones. Nunca hables de «extractos» ni de «fragmentos».`, { tier: 'default', project: p.isSample ? '' : p.id });
@@ -88,8 +89,15 @@ Reglas:
     id: `i${i}`, what: str(x.what), qty: inPliego(n(x.qty), digits), unit: str(x.unit), when: str(x.when), where: str(x.where), details: str(x.details),
     budget: inPliego(n(x.budget), digits), doc: str(x.doc), page: n(x.page),
   }));
+  // Una suma solo vale si cada sumando está en el pliego y el resultado cuadra (82 + 82 = 164 menús).
+  const summed = (x: any) => {
+    const parts = (Array.isArray(x.qty_parts) ? x.qty_parts : []).map(n);
+    if (parts.length < 2 || parts.some((v: number | null) => inPliego(v, digits) == null)) return null;
+    const sum = parts.reduce((a: number, v: number) => a + v, 0);
+    return n(x.qty) === sum ? sum : null;
+  };
   const costs: ScopeCost[] = (Array.isArray(j?.costs) ? j.costs : []).filter((x: any) => x?.concept).slice(0, 10).map((x: any, i: number) => ({
-    id: `c${i}`, concept: str(x.concept), qty: inPliego(n(x.qty), digits), unit: str(x.unit), why: str(x.why),
+    id: `c${i}`, concept: str(x.concept), qty: inPliego(n(x.qty), digits) ?? summed(x), unit: str(x.unit), why: str(x.why),
   }));
   if (!items.length) return null;
   // Un mismo presupuesto no se enseña dos veces: se queda en el primer trabajo y dice qué más cubre.

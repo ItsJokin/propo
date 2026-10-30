@@ -18,7 +18,7 @@ export function PriceScope({ p, pr, save }: { p: Project; pr: PricingState; save
   const load = () => {
     if (reading.has(p.id)) return; reading.add(p.id);
     save((x) => { x.scopeError = false; });
-    readScope(p).then((s) => save((x) => { x.scope = s; }), () => save((x) => { x.scopeError = true; })).finally(() => reading.delete(p.id));
+    readScope(p).then((s) => save((x) => { x.scope = s; x.scopeCosts = {}; }), () => save((x) => { x.scopeError = true; })).finally(() => reading.delete(p.id));
   };
   useEffect(() => { if (pending) load(); }, [p.id]);   // una sola vez por proyecto: queda guardado
 
