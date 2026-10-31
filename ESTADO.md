@@ -1,6 +1,6 @@
 # Base de conocimiento de PROPO — estado
 
-Generado: 2026-10-31T07:41:02.389Z
+Generado: 2026-10-31T13:14:24.412Z
 
 | Fase | Cifra |
 |---|---|
