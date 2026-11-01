@@ -1,8 +1,287 @@
 {
  "cpv2": "80",
- "generated": "2026-10-31T19:16:49.253Z",
+ "generated": "2026-11-01T02:12:03.203Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
+  {
+   "crit": "O alumnado",
+   "max": 8,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-10-30",
+   "offers": 2,
+   "top": {
+    "pts": 8,
+    "winner": true
+   },
+   "low": {
+    "pts": 8
+   },
+   "best": [
+    "Caracterización detallada de las áreas de desarrollo del alumnado.",
+    "Protocolo de adaptación muy completo y con temporalización concreta.",
+    "Proyecto de Integración con objetivos, fases y dinámicas de intervención.",
+    "Plan de acollida con tres fases, quendas y horarios concretos.",
+    "Programa de integración desarrollado dentro del Plan de Atención a la Diversidad."
+   ],
+   "weak": [
+    "Aspectos psicoevolutivos presentados de forma esquematizada."
+   ],
+   "hypothesis": {
+    "premia": "Protocolo de adaptación pormenorizado y temporalizado, con Proyecto de Integración desarrollado por fases.",
+    "penaliza": "Tratamiento esquemático de los aspectos psicoevolutivos del alumnado."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "A Escola Infantil Municipal de Bembrive",
+   "max": 7,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-10-30",
+   "offers": 2,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Descripción pormenorizada de instalaciones y espacios por aulas.",
+    "Contextualización socioeconómica del barrio y de las familias muy exhaustiva.",
+    "Identifica servicios del barrio y relaciones con otros centros.",
+    "Ubicación socioeconómica, tejido asociativo y equipamientos comunitarios enumerados."
+   ],
+   "weak": [
+    "Cita la biblioteca municipal, que se corresponde con una biblioteca escolar.",
+    "Algunas actividades no parecen factibles por emplear recursos de centros ajenos."
+   ],
+   "hypothesis": {
+    "premia": "Descripción exhaustiva de instalaciones, aulas y contexto socioeconómico con recursos reales del entorno.",
+    "penaliza": "Errores en la tipología de recursos citados (biblioteca escolar como municipal) y actividades poco factibles."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Estrutura do centro e do persoal",
+   "max": 5,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-10-30",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Titulaciones y funciones desglosadas por categoría laboral.",
+    "Plan de formación continua con cuadro resumen temporalizado y cómputo horario.",
+    "Organigrama, funciones por categoría y programa de formación con cuadro gráfico.",
+    "Descripción pormenorizada de aulas, espacios y control de materiales."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Participación das familias",
+   "max": 5,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-10-30",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Aspectos singulares de la relación escuela-familias, con canales concretos.",
+    "Procedimientos y medidas viables para fomentar la participación y la ANPA.",
+    "Procedimientos de participación activa y medidas para dinamizar la ANPA.",
+    "Cuadro resumen temporalizado de actividades complementarias por mensualidades."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Descrición da organización dos servizos de comedor e orientación",
+   "max": 7,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-10-30",
+   "offers": 2,
+   "top": {
+    "pts": 7,
+    "winner": true
+   },
+   "low": {
+    "pts": 7
+   },
+   "best": [
+    "Servicio de comedor muy completo, con ejemplos de menús y dietas.",
+    "APPCC supervisado por empresa acreditada y trazabilidad de proveedores.",
+    "Plan de actuación temporalizado del Equipo de Atención Temperá.",
+    "Programa de alimentación saludable detallado y extenso.",
+    "Funciones y medidas concretas del Equipo de Atención Temperá."
+   ],
+   "weak": [],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Obxectivos e programación",
+   "max": 7,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-10-30",
+   "offers": 2,
+   "top": {
+    "pts": 7,
+    "winner": false
+   },
+   "low": {
+    "pts": 6
+   },
+   "best": [
+    "Cuadro de actividades con responsables, temporalización, recursos y evaluación.",
+    "Programación basada en 11 unidades didácticas y cronograma adaptado.",
+    "Objetivos relacionados con las Normas de funcionamento, por ámbitos.",
+    "Unidades didácticas temporalizadas y cronograma general y por aulas."
+   ],
+   "weak": [
+    "Cuadro resumen de programación de compleja lectura.",
+    "Solo desarrolla en detalle el contenido de una unidad didáctica."
+   ],
+   "hypothesis": {
+    "premia": "Cuadros de actividades con responsables, temporalización, recursos y evaluación asociados.",
+    "penaliza": "Cuadros resumen de compleja lectura y desarrollo detallado de una sola unidad didáctica."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Principios básicos e sinais de identidade",
+   "max": 5,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-10-30",
+   "offers": 2,
+   "top": {
+    "pts": 5,
+    "winner": true
+   },
+   "low": {
+    "pts": 5
+   },
+   "best": [
+    "Metodología pormenorizada con premisas, principios y procedimientos.",
+    "Referencia a la normativa del gallego y proyecto de multiculturalidad.",
+    "Valores de coeducación e igualdad de género concretados en actividades.",
+    "Estrategias contra la discriminación incluidas en PEC y PAD."
+   ],
+   "weak": [
+    "Principios metodológicos y pedagógicos bastante teóricos."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Outras actividades",
+   "max": 3,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-10-30",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": {
+    "pts": 2
+   },
+   "best": [
+    "Obradoiros mensuales identificados y actividades extraescolares temporalizadas.",
+    "Logística organizativa de las salidas escolares explicitada con claridad.",
+    "Ejemplos de actividades complementarias, inglés, horto escolar y salidas."
+   ],
+   "weak": [
+    "No prevé colaboración con otros servicios municipales en las actividades.",
+    "Propone recursos tecnológicos sin considerar recomendaciones de limitar pantallas."
+   ],
+   "hypothesis": {
+    "premia": "Obradoiros mensuales identificados y logística de salidas escolares explicitada.",
+    "penaliza": "Falta de colaboración con otros servicios municipales y uso de recursos tecnológicos poco acordes a recomendaciones."
+   },
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
+  {
+   "crit": "Seguimento e avaliación",
+   "max": 3,
+   "exp": "p:18917261",
+   "ref": "99420-332",
+   "title": "Gestión de la Escuela Infantil de Bembrive",
+   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
+   "nuts": "ES114",
+   "date": "2026-10-30",
+   "offers": 2,
+   "top": {
+    "pts": 3,
+    "winner": true
+   },
+   "low": {
+    "pts": 3
+   },
+   "best": [
+    "Plan de acción tutorial en cuadro temporalizado con objetivos y actividades.",
+    "Evaluación del PAT en tres niveles y control de asistencia.",
+    "Objetivos, ámbitos y mecanismos de evaluación y seguimento detallados."
+   ],
+   "weak": [
+    "Reflexiones genéricas sobre el papel de la tutora en el PAT."
+   ],
+   "hypothesis": null,
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
+   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
+  },
   {
    "crit": "Estructura y coherencia de la propuesta",
    "max": 22,
@@ -310,285 +589,6 @@
    },
    "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=8zxvW%2FDCBpzua%2Fi14w%2FPLA%3D%3D",
    "doc": "2026-c6a59742-d1a1-4087-b861-ac72fbb1b5e0"
-  },
-  {
-   "crit": "O alumnado",
-   "max": 8,
-   "exp": "p:18917261",
-   "ref": "99420-332",
-   "title": "Gestión de la Escuela Infantil de Bembrive",
-   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
-   "nuts": "ES114",
-   "date": "2026-08-07",
-   "offers": 2,
-   "top": {
-    "pts": 8,
-    "winner": false
-   },
-   "low": {
-    "pts": 8
-   },
-   "best": [
-    "Caracterización detallada de las áreas de desarrollo del alumnado.",
-    "Protocolo de adaptación muy completo y con temporalización concreta.",
-    "Proyecto de Integración con objetivos, fases y dinámicas de intervención.",
-    "Plan de acollida con tres fases, quendas y horarios concretos.",
-    "Programa de integración desarrollado dentro del Plan de Atención a la Diversidad."
-   ],
-   "weak": [
-    "Aspectos psicoevolutivos presentados de forma esquematizada."
-   ],
-   "hypothesis": {
-    "premia": "Protocolo de adaptación pormenorizado y temporalizado, con Proyecto de Integración desarrollado por fases.",
-    "penaliza": "Tratamiento esquemático de los aspectos psicoevolutivos del alumnado."
-   },
-   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
-   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
-  },
-  {
-   "crit": "A Escola Infantil Municipal de Bembrive",
-   "max": 7,
-   "exp": "p:18917261",
-   "ref": "99420-332",
-   "title": "Gestión de la Escuela Infantil de Bembrive",
-   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
-   "nuts": "ES114",
-   "date": "2026-08-07",
-   "offers": 2,
-   "top": {
-    "pts": 7,
-    "winner": false
-   },
-   "low": {
-    "pts": 6
-   },
-   "best": [
-    "Descripción pormenorizada de instalaciones y espacios por aulas.",
-    "Contextualización socioeconómica del barrio y de las familias muy exhaustiva.",
-    "Identifica servicios del barrio y relaciones con otros centros.",
-    "Ubicación socioeconómica, tejido asociativo y equipamientos comunitarios enumerados."
-   ],
-   "weak": [
-    "Cita la biblioteca municipal, que se corresponde con una biblioteca escolar.",
-    "Algunas actividades no parecen factibles por emplear recursos de centros ajenos."
-   ],
-   "hypothesis": {
-    "premia": "Descripción exhaustiva de instalaciones, aulas y contexto socioeconómico con recursos reales del entorno.",
-    "penaliza": "Errores en la tipología de recursos citados (biblioteca escolar como municipal) y actividades poco factibles."
-   },
-   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
-   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
-  },
-  {
-   "crit": "Estrutura do centro e do persoal",
-   "max": 5,
-   "exp": "p:18917261",
-   "ref": "99420-332",
-   "title": "Gestión de la Escuela Infantil de Bembrive",
-   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
-   "nuts": "ES114",
-   "date": "2026-08-07",
-   "offers": 2,
-   "top": {
-    "pts": 5,
-    "winner": false
-   },
-   "low": {
-    "pts": 5
-   },
-   "best": [
-    "Titulaciones y funciones desglosadas por categoría laboral.",
-    "Plan de formación continua con cuadro resumen temporalizado y cómputo horario.",
-    "Organigrama, funciones por categoría y programa de formación con cuadro gráfico.",
-    "Descripción pormenorizada de aulas, espacios y control de materiales."
-   ],
-   "weak": [],
-   "hypothesis": null,
-   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
-   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
-  },
-  {
-   "crit": "Participación das familias",
-   "max": 5,
-   "exp": "p:18917261",
-   "ref": "99420-332",
-   "title": "Gestión de la Escuela Infantil de Bembrive",
-   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
-   "nuts": "ES114",
-   "date": "2026-08-07",
-   "offers": 2,
-   "top": {
-    "pts": 5,
-    "winner": false
-   },
-   "low": {
-    "pts": 5
-   },
-   "best": [
-    "Aspectos singulares de la relación escuela-familias, con canales concretos.",
-    "Procedimientos y medidas viables para fomentar la participación y la ANPA.",
-    "Procedimientos de participación activa y medidas para dinamizar la ANPA.",
-    "Cuadro resumen temporalizado de actividades complementarias por mensualidades."
-   ],
-   "weak": [],
-   "hypothesis": null,
-   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
-   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
-  },
-  {
-   "crit": "Descrición da organización dos servizos de comedor e orientación",
-   "max": 7,
-   "exp": "p:18917261",
-   "ref": "99420-332",
-   "title": "Gestión de la Escuela Infantil de Bembrive",
-   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
-   "nuts": "ES114",
-   "date": "2026-08-07",
-   "offers": 2,
-   "top": {
-    "pts": 7,
-    "winner": false
-   },
-   "low": {
-    "pts": 7
-   },
-   "best": [
-    "Servicio de comedor muy completo, con ejemplos de menús y dietas.",
-    "APPCC supervisado por empresa acreditada y trazabilidad de proveedores.",
-    "Plan de actuación temporalizado del Equipo de Atención Temperá.",
-    "Programa de alimentación saludable detallado y extenso.",
-    "Funciones y medidas concretas del Equipo de Atención Temperá."
-   ],
-   "weak": [],
-   "hypothesis": null,
-   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
-   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
-  },
-  {
-   "crit": "Obxectivos e programación",
-   "max": 7,
-   "exp": "p:18917261",
-   "ref": "99420-332",
-   "title": "Gestión de la Escuela Infantil de Bembrive",
-   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
-   "nuts": "ES114",
-   "date": "2026-08-07",
-   "offers": 2,
-   "top": {
-    "pts": 7,
-    "winner": true
-   },
-   "low": {
-    "pts": 6
-   },
-   "best": [
-    "Cuadro de actividades con responsables, temporalización, recursos y evaluación.",
-    "Programación basada en 11 unidades didácticas y cronograma adaptado.",
-    "Objetivos relacionados con las Normas de funcionamento, por ámbitos.",
-    "Unidades didácticas temporalizadas y cronograma general y por aulas."
-   ],
-   "weak": [
-    "Cuadro resumen de programación de compleja lectura.",
-    "Solo desarrolla en detalle el contenido de una unidad didáctica."
-   ],
-   "hypothesis": {
-    "premia": "Cuadros de actividades con responsables, temporalización, recursos y evaluación asociados.",
-    "penaliza": "Cuadros resumen de compleja lectura y desarrollo detallado de una sola unidad didáctica."
-   },
-   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
-   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
-  },
-  {
-   "crit": "Principios básicos e sinais de identidade",
-   "max": 5,
-   "exp": "p:18917261",
-   "ref": "99420-332",
-   "title": "Gestión de la Escuela Infantil de Bembrive",
-   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
-   "nuts": "ES114",
-   "date": "2026-08-07",
-   "offers": 2,
-   "top": {
-    "pts": 5,
-    "winner": false
-   },
-   "low": {
-    "pts": 5
-   },
-   "best": [
-    "Metodología pormenorizada con premisas, principios y procedimientos.",
-    "Referencia a la normativa del gallego y proyecto de multiculturalidad.",
-    "Valores de coeducación e igualdad de género concretados en actividades.",
-    "Estrategias contra la discriminación incluidas en PEC y PAD."
-   ],
-   "weak": [
-    "Principios metodológicos y pedagógicos bastante teóricos."
-   ],
-   "hypothesis": null,
-   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
-   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
-  },
-  {
-   "crit": "Outras actividades",
-   "max": 3,
-   "exp": "p:18917261",
-   "ref": "99420-332",
-   "title": "Gestión de la Escuela Infantil de Bembrive",
-   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
-   "nuts": "ES114",
-   "date": "2026-08-07",
-   "offers": 2,
-   "top": {
-    "pts": 3,
-    "winner": false
-   },
-   "low": {
-    "pts": 2
-   },
-   "best": [
-    "Obradoiros mensuales identificados y actividades extraescolares temporalizadas.",
-    "Logística organizativa de las salidas escolares explicitada con claridad.",
-    "Ejemplos de actividades complementarias, inglés, horto escolar y salidas."
-   ],
-   "weak": [
-    "No prevé colaboración con otros servicios municipales en las actividades.",
-    "Propone recursos tecnológicos sin considerar recomendaciones de limitar pantallas."
-   ],
-   "hypothesis": {
-    "premia": "Obradoiros mensuales identificados y logística de salidas escolares explicitada.",
-    "penaliza": "Falta de colaboración con otros servicios municipales y uso de recursos tecnológicos poco acordes a recomendaciones."
-   },
-   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
-   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
-  },
-  {
-   "crit": "Seguimento e avaliación",
-   "max": 3,
-   "exp": "p:18917261",
-   "ref": "99420-332",
-   "title": "Gestión de la Escuela Infantil de Bembrive",
-   "buyer": "Junta de Gobierno del Ayuntamiento de Vigo",
-   "nuts": "ES114",
-   "date": "2026-08-07",
-   "offers": 2,
-   "top": {
-    "pts": 3,
-    "winner": false
-   },
-   "low": {
-    "pts": 3
-   },
-   "best": [
-    "Plan de acción tutorial en cuadro temporalizado con objetivos y actividades.",
-    "Evaluación del PAT en tres niveles y control de asistencia.",
-    "Objetivos, ámbitos y mecanismos de evaluación y seguimento detallados."
-   ],
-   "weak": [
-    "Reflexiones genéricas sobre el papel de la tutora en el PAT."
-   ],
-   "hypothesis": null,
-   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=K7vvRZALPyZJ8Trn0ZPzLw%3D%3D",
-   "doc": "2026-79f0286b-c995-495c-ac0a-a994b7c20dc5"
   },
   {
    "crit": "Memoria Descriptiva",

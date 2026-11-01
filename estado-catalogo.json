@@ -13,6 +13,20 @@
    },
    "files": 269,
    "errors": []
+  },
+  "2026-10": {
+   "ok": true,
+   "at": "2026-11-01T01:26:33.243Z",
+   "entries": 88406,
+   "records": 33064,
+   "evalDocs": 46123,
+   "geoRejected": 4,
+   "byScope": {
+    "es": 23011,
+    "es_sin_pais": 10053
+   },
+   "files": 181,
+   "errors": []
   }
  }
 }

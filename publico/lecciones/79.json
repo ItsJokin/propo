@@ -1,6 +1,6 @@
 {
  "cpv2": "79",
- "generated": "2026-10-31T19:16:49.249Z",
+ "generated": "2026-11-01T02:12:03.198Z",
  "note": "best/weak resumen comentarios reales del tribunal (hecho documentado); hypothesis es una deducción a partir de ellos.",
  "items": [
   {
@@ -1037,7 +1037,7 @@
    "offers": 2,
    "top": {
     "pts": 5,
-    "winner": false
+    "winner": true
    },
    "low": {
     "pts": 5
@@ -1070,7 +1070,7 @@
    "offers": 2,
    "top": {
     "pts": 5,
-    "winner": false
+    "winner": true
    },
    "low": {
     "pts": 5
@@ -1103,7 +1103,7 @@
    "offers": 2,
    "top": {
     "pts": 5,
-    "winner": false
+    "winner": true
    },
    "low": {
     "pts": 5
@@ -1134,7 +1134,7 @@
    "offers": 2,
    "top": {
     "pts": 5,
-    "winner": false
+    "winner": true
    },
    "low": {
     "pts": 5
@@ -1165,7 +1165,7 @@
    "offers": 2,
    "top": {
     "pts": 5,
-    "winner": false
+    "winner": true
    },
    "low": {
     "pts": 5
