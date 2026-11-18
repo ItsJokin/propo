@@ -15,18 +15,18 @@
    "errors": []
   },
   "2026-10": {
-   "ok": true,
-   "at": "2026-11-18T09:35:04.518Z",
-   "entries": 88491,
-   "records": 33088,
-   "evalDocs": 46175,
-   "geoRejected": 4,
-   "byScope": {
-    "es": 23029,
-    "es_sin_pais": 10059
-   },
-   "files": 181,
-   "errors": []
+   "ok": false,
+   "at": "2026-11-18T20:34:28.589Z",
+   "entries": 0,
+   "records": 0,
+   "evalDocs": 0,
+   "geoRejected": 0,
+   "byScope": {},
+   "files": 0,
+   "errors": [
+    "p: Command failed: unzip -Z1 /tmp/propo-k-A1arTq/m.zip\n[/tmp/propo-k-A1arTq/m.zip]\n  End-of-central-directory signature not found.  Either this file is not\n  a zipfile, or it constitutes one disk of a mu",
+    "a: Command failed: unzip -Z1 /tmp/propo-k-b10Gjl/m.zip\n[/tmp/propo-k-b10Gjl/m.zip]\n  End-of-central-directory signature not found.  Either this file is not\n  a zipfile, or it constitutes one disk of a mu"
+   ]
   }
  }
 }
